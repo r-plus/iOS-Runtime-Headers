@@ -13,12 +13,12 @@
     bool  _shouldIncludeContentItemID;
 }
 
-@property (nonatomic) Class itemClass;
+@property (nonatomic, retain) Class itemClass;
 @property (nonatomic, retain) MPModelKind *itemKind;
 @property (nonatomic, copy) MPPropertySet *itemProperties;
 @property (nonatomic, copy) NSArray *itemSortDescriptors;
 @property (nonatomic, copy) NSString *label;
-@property (nonatomic) Class sectionClass;
+@property (nonatomic, retain) Class sectionClass;
 @property (nonatomic, retain) MPModelKind *sectionKind;
 @property (nonatomic, copy) MPPropertySet *sectionProperties;
 @property (nonatomic, copy) NSArray *sectionSortDescriptors;

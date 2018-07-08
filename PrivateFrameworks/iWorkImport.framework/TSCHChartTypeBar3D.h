@@ -11,6 +11,7 @@
 - (struct TSCH3DChartRotationLimit { float x1; float x2; float x3; float x4; })rotation3DLimit;
 - (id)titlePositionerWithInfo:(id)arg1 scene:(id)arg2;
 - (id)userInterfaceName;
+- (long long)userInterfaceTag;
 - (double)valueAxisTitleRotation;
 
 @end

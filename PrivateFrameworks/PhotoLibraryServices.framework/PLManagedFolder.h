@@ -28,6 +28,7 @@
 + (id)entityName;
 + (id)insertInManagedObjectContext:(id)arg1;
 + (id)localizedRecoveredTitle;
++ (id)validKindsForPersistence;
 
 - (id)_prettyDescription;
 - (id)_typeDescription;

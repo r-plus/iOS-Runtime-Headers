@@ -29,14 +29,10 @@
 - (bool)disableAuthorizationForApplet:(id)arg1 authorization:(id)arg2 error:(id*)arg3;
 - (id)dumpDomain:(unsigned char)arg1 forSEID:(id)arg2;
 - (id)dumpDomain:(unsigned char)arg1 forSEID:(id)arg2 error:(id*)arg3;
-- (id)expressAccessIdentifiers;
-- (id)expressAccessIdentifiersWithError:(id*)arg1;
 - (id)expressAppletIdentifiers;
 - (id)expressAppletIdentifiersWithError:(id*)arg1;
 - (bool)expressModesEnabled;
 - (bool)expressModesEnabledWithError:(id*)arg1;
-- (id)expressTransitIdentifier;
-- (id)expressTransitIdentifierWithError:(id*)arg1;
 - (id)felicaAppletState:(id)arg1;
 - (id)felicaAppletState:(id)arg1 error:(id*)arg2;
 - (id)getAttackCounterLogForSEID:(id)arg1;
@@ -56,7 +52,7 @@
 - (bool)restoreAuthorizationForAllAppletsExcept:(id)arg1;
 - (bool)restoreAuthorizationForAllAppletsExcept:(id)arg1 error:(id*)arg2;
 - (unsigned int)runScript:(id)arg1 forSEID:(id)arg2 results:(id*)arg3 lastStatus:(unsigned long long*)arg4;
-- (unsigned int)runScript:(id)arg1 whitelist:(id)arg2 forSEID:(id)arg3 results:(id*)arg4 lastStatus:(unsigned long long*)arg5 willCheckWhitelist:(bool)arg6 initialSelectBeforeRun:(bool)arg7;
+- (unsigned int)runScript:(id)arg1 parameters:(id)arg2 outputResults:(id*)arg3;
 - (bool)setExpressModesEnabled:(bool)arg1;
 - (bool)setExpressModesEnabled:(bool)arg1 error:(id*)arg2;
 - (id)signChallenge:(id)arg1 certs:(id*)arg2;
@@ -70,6 +66,7 @@
 - (id)stateInformationWithError:(id*)arg1;
 - (id)transceive:(id)arg1 forSEID:(id)arg2;
 - (id)transceive:(id)arg1 forSEID:(id)arg2 error:(id*)arg3;
+- (id)transitAppletState:(id)arg1 error:(id*)arg2;
 - (unsigned int)validateSEPairings:(id*)arg1;
 
 @end

@@ -14,6 +14,7 @@
 - (bool)supportsGroupedShadows;
 - (id)titlePositionerWithInfo:(id)arg1 scene:(id)arg2;
 - (id)userInterfaceName;
+- (long long)userInterfaceTag;
 - (id)valueLabelPositioner;
 
 @end

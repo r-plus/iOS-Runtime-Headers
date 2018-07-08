@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMServiceGroup : NSObject <HFFavoritable, HFHomeStatusVisible, HFNotificationPreferences, HFPrettyDescription, HFReorderableHomeKitObject, HFStateDumpSerializable, HMFMessageReceiver, HMMutableApplicationData, HMObjectMerge, NSSecureCoding> {
+@interface HMServiceGroup : NSObject <HFFavoritable, HFHomeKitObject, HFHomeStatusVisible, HFNotificationPreferences, HFPrettyDescription, HFReorderableHomeKitObject, HFStateDumpSerializable, HMFMessageReceiver, HMMutableApplicationData, HMObjectMerge, NSSecureCoding> {
     HMApplicationData * _applicationData;
     NSObject<OS_dispatch_queue> * _clientQueue;
     HMThreadSafeMutableArrayCollection * _currentServices;
@@ -105,6 +105,7 @@
 - (bool)hf_isFavorite;
 - (bool)hf_isShowNotificationsStatus;
 - (bool)hf_isSupported;
+- (bool)hf_isValidObject;
 - (bool)hf_isVisibleInHomeStatus;
 - (id)hf_notificationsCondition;
 - (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;

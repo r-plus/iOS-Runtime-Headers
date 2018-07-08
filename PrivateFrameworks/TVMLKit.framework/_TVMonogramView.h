@@ -32,7 +32,6 @@
 @property (nonatomic) double unfocusedImageAlpha;
 
 - (void).cxx_destruct;
-- (id)_copyMonogramDescriptionWithoutImageURL:(id)arg1;
 - (void)_loadWithMonogramDescription:(id)arg1 imageProxy:(id)arg2;
 - (void)_updateAppearanceForSelectionStateWithCoordinator:(id)arg1;
 - (id)configuration;
@@ -49,6 +48,7 @@
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id /* block */)pressCompletionBlock;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })selectionMarginsForSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setImage:(id)arg1;
 - (void)setImageProxy:(id)arg1;
 - (void)setImageView:(id)arg1;

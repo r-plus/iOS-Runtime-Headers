@@ -27,7 +27,9 @@
     NSString * _label;
     NSString * _myAppleID;
     CUAppleIDClient * _myAppleIDInfoClient;
+    bool  _needsAWDL;
     bool  _needsKeyboard;
+    bool  _needsNAN;
     bool  _needsSetup;
     bool  _overrideScreenOff;
     NSDictionary * _pairSetupACL;
@@ -94,7 +96,9 @@
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic, copy) NSString *myAppleID;
 @property (nonatomic, retain) CUAppleIDClient *myAppleIDInfoClient;
+@property (nonatomic) bool needsAWDL;
 @property (nonatomic) bool needsKeyboard;
+@property (nonatomic) bool needsNAN;
 @property (nonatomic) bool needsSetup;
 @property (nonatomic) bool overrideScreenOff;
 @property (nonatomic, copy) NSDictionary *pairSetupACL;
@@ -176,7 +180,9 @@
 - (id)label;
 - (id)myAppleID;
 - (id)myAppleIDInfoClient;
+- (bool)needsAWDL;
 - (bool)needsKeyboard;
+- (bool)needsNAN;
 - (bool)needsSetup;
 - (bool)overrideScreenOff;
 - (id)pairSetupACL;
@@ -234,7 +240,9 @@
 - (void)setLabel:(id)arg1;
 - (void)setMyAppleID:(id)arg1;
 - (void)setMyAppleIDInfoClient:(id)arg1;
+- (void)setNeedsAWDL:(bool)arg1;
 - (void)setNeedsKeyboard:(bool)arg1;
+- (void)setNeedsNAN:(bool)arg1;
 - (void)setNeedsSetup:(bool)arg1;
 - (void)setOverrideScreenOff:(bool)arg1;
 - (void)setPairSetupACL:(id)arg1;

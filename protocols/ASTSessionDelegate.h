@@ -21,7 +21,10 @@
 - (void)session:(void *)arg1 didUpdateSettings:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 9: ASTSession *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, NSError *, void*
 - (void)session:(ASTSession *)arg1 didUpdateTestSuiteImage:(NSData *)arg2;
 - (void)session:(ASTSession *)arg1 didUpdateTestSuiteProgress:(NSNumber *)arg2;
+- (void)session:(ASTSession *)arg1 performActions:(NSArray *)arg2 sequentially:(bool)arg3 stopOnError:(bool)arg4;
+- (void)sessionDidAbortWhilePerformingActions:(ASTSession *)arg1;
 - (void)sessionDidCancelSuite:(ASTSession *)arg1;
+- (void)sessionDidInvalidate:(ASTSession *)arg1;
 - (void)sessionDidResume:(ASTSession *)arg1;
 - (void)sessionDidStart:(ASTSession *)arg1;
 

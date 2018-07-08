@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CoreUtils.framework/CoreUtils
  */
 
-@interface CUBluetoothClient : NSObject <CBPeripheralManagerDelegate> {
+@interface CUBluetoothClient : NSObject <CBCentralManagerDelegate, CBPeripheralManagerDelegate> {
     id /* block */  _bluetoothAddressChangedHandler;
     struct BTAccessoryManagerImpl { } * _btAccessoryManager;
     NSData * _btAdvertisingAddress;
+    CBCentralManager * _btCentralManager;
+    bool  _btCentralManagerNeeded;
     struct BTLocalDeviceImpl { } * _btLocalDevice;
     NSData * _btLocalDeviceAddr;
     struct { 
@@ -29,6 +31,7 @@
     id /* block */  _devicePairedHandler;
     id /* block */  _deviceUnpairedHandler;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
+    struct NSMutableArray { Class x1; } * _findDeviceRequests;
     unsigned int  _flags;
     id /* block */  _interruptionHandler;
     bool  _invalidateCalled;
@@ -54,16 +57,19 @@
 - (void).cxx_destruct;
 - (void)_btEnsureStarted;
 - (void)_btEnsureStopped;
+- (void)_findDeviceByAddress:(struct { unsigned char x1[6]; })arg1 completion:(id /* block */)arg2;
 - (void)_handleBluetoothAddressChanged;
 - (void)_handlePairingStatusChanged;
 - (void)_interrupted;
 - (void)_invalidated;
 - (void)activate;
 - (id /* block */)bluetoothAddressChangedHandler;
+- (void)centralManagerDidUpdateState:(id)arg1;
 - (void)dealloc;
 - (id /* block */)devicePairedHandler;
 - (id /* block */)deviceUnpairedHandler;
 - (id)dispatchQueue;
+- (void)findDeviceByAddress:(struct { unsigned char x1[6]; })arg1 completion:(id /* block */)arg2;
 - (unsigned int)flags;
 - (id)init;
 - (id /* block */)interruptionHandler;

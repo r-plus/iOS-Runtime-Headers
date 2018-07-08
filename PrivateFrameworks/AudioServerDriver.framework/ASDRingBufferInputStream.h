@@ -5,7 +5,7 @@
 @interface ASDRingBufferInputStream : ASDStream {
     struct unique_ptr<ASDBufferList, std::__1::default_delete<ASDBufferList> > { 
         struct __compressed_pair<ASDBufferList *, std::__1::default_delete<ASDBufferList> > { 
-            struct ASDBufferList {} *__first_; 
+            struct ASDBufferList {} *__value_; 
         } __ptr_; 
     }  _bufferList;
     <ASDManagedRingBuffer> * _ringBuffer;

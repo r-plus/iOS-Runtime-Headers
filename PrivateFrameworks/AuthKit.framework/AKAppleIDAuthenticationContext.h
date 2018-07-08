@@ -9,6 +9,7 @@
     <AKAnisetteServiceProtocol> * _anisetteDataProvider;
     bool  _anticipateEscrowAttempt;
     unsigned long long  _attemptIndex;
+    unsigned long long  _authenticationType;
     unsigned long long  _capabilityForUIDisplay;
     <CDPStateUIProvider> * _cdpUiProvider;
     id  _clientInfo;
@@ -27,6 +28,7 @@
     NSString * _helpBook;
     NSDictionary * _httpHeadersForRemoteUI;
     NSUUID * _identifier;
+    NSString * _identityToken;
     NSString * _interpolatedReason;
     NSNumber * _isAppleIDLoginEnabled;
     bool  _isEphemeral;
@@ -64,6 +66,7 @@
     bool  _shouldRequestConfigurationInfo;
     bool  _shouldRequestRecoveryPET;
     bool  _shouldRequestShortLivedToken;
+    bool  _shouldSendGrandSlamTokensForRemoteUI;
     bool  _shouldSendIdentityTokenForRemoteUI;
     bool  _shouldSkipInitialReachabilityCheck;
     bool  _shouldSkipSettingsLaunchAlert;
@@ -77,7 +80,9 @@
 @property (nonatomic) unsigned long long _attemptIndex;
 @property (nonatomic, readonly) unsigned long long _capabilityForUIDisplay;
 @property (nonatomic, readonly) NSUUID *_identifier;
+@property (setter=_setIdentityToken:, nonatomic, copy) NSString *_identityToken;
 @property (nonatomic, readonly) NSString *_interpolatedReason;
+@property (nonatomic, readonly) NSString *_interpolatedReasonWithBlame;
 @property (nonatomic) bool _isPasswordEditable;
 @property (setter=_setProxyingForApp:, nonatomic) bool _isProxyingForApp;
 @property (setter=_setMessage:, nonatomic, copy) NSString *_message;
@@ -85,12 +90,15 @@
 @property (nonatomic, copy) NSString *_passwordPromptTitle;
 @property (setter=_setProxiedAppBundleID:, nonatomic, copy) NSString *_proxiedAppBundleID;
 @property (setter=_setProxiedAppName:, nonatomic, copy) NSString *_proxiedAppName;
+@property (nonatomic, readonly) bool _requiresPasswordInput;
 @property (setter=_setShortLivedToken:, nonatomic, copy) NSString *_shortLivedToken;
+@property (nonatomic) bool _shouldSendGrandSlamTokensForRemoteUI;
 @property (nonatomic) bool _shouldSendIdentityTokenForRemoteUI;
 @property (nonatomic, readonly) bool _shouldSkipInitialReachabilityCheck;
 @property (nonatomic, copy) NSString *altDSID;
 @property (nonatomic, copy) <AKAnisetteServiceProtocol> *anisetteDataProvider;
 @property (nonatomic) bool anticipateEscrowAttempt;
+@property (nonatomic) unsigned long long authenticationType;
 @property (nonatomic, retain) <CDPStateUIProvider> *cdpUiProvider;
 @property (nonatomic, retain) id clientInfo;
 @property (nonatomic, copy) AKDevice *companionDevice;
@@ -153,8 +161,10 @@
 - (unsigned long long)_capabilityForUIDisplay;
 - (void)_handleSecondFactorCodeEntry;
 - (id)_identifier;
+- (id)_identityToken;
 - (id)_initWithIdentifier:(id)arg1;
 - (id)_interpolatedReason;
+- (id)_interpolatedReasonWithBlame;
 - (bool)_isPasswordEditable;
 - (bool)_isProxyingForApp;
 - (bool)_localUserHasEmptyPassword;
@@ -163,8 +173,10 @@
 - (id)_passwordPromptTitle;
 - (id)_proxiedAppBundleID;
 - (id)_proxiedAppName;
+- (bool)_requiresPasswordInput;
 - (id)_sanitizedCopy;
 - (id)_secondFactorQueue;
+- (void)_setIdentityToken:(id)arg1;
 - (void)_setMessage:(id)arg1;
 - (void)_setPassword:(id)arg1;
 - (void)_setProxiedAppBundleID:(id)arg1;
@@ -172,6 +184,7 @@
 - (void)_setProxyingForApp:(bool)arg1;
 - (void)_setShortLivedToken:(id)arg1;
 - (id)_shortLivedToken;
+- (bool)_shouldSendGrandSlamTokensForRemoteUI;
 - (bool)_shouldSendIdentityTokenForRemoteUI;
 - (bool)_shouldSkipInitialReachabilityCheck;
 - (void)_startListeningForSecondFactorCodeEntryNotification;
@@ -180,6 +193,9 @@
 - (id)altDSID;
 - (id)anisetteDataProvider;
 - (bool)anticipateEscrowAttempt;
+- (id)authKitAccount:(id*)arg1;
+- (id)authKitAccountForSilentServiceToken:(id*)arg1;
+- (unsigned long long)authenticationType;
 - (id)cdpUiProvider;
 - (id)clientInfo;
 - (id)companionDevice;
@@ -231,6 +247,7 @@
 - (void)setAnisetteDataProvider:(id)arg1;
 - (void)setAnticipateEscrowAttempt:(bool)arg1;
 - (void)setAppleIDLoginEnabled:(id)arg1;
+- (void)setAuthenticationType:(unsigned long long)arg1;
 - (void)setCdpUiProvider:(id)arg1;
 - (void)setClientInfo:(id)arg1;
 - (void)setCompanionDevice:(id)arg1;
@@ -281,6 +298,7 @@
 - (void)set_attemptIndex:(unsigned long long)arg1;
 - (void)set_isPasswordEditable:(bool)arg1;
 - (void)set_passwordPromptTitle:(id)arg1;
+- (void)set_shouldSendGrandSlamTokensForRemoteUI:(bool)arg1;
 - (void)set_shouldSendIdentityTokenForRemoteUI:(bool)arg1;
 - (bool)shouldAllowAppleIDCreation;
 - (bool)shouldForceInteractiveAuth;

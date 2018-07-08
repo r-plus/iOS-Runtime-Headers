@@ -4,29 +4,28 @@
 
 @interface FCSpecialEventGroupConfig : FCGroupConfig {
     NSArray * _breakingNewsArticleIDs;
-    FCColorGradient * _groupBackgroundColorGradient;
     NSArray * _specialEventArticleIDs;
     NSArray * _specialEventItems;
+    NSDictionary * _specialEventsArticleMetadataByArticleID;
 }
 
 @property (nonatomic, retain) NSArray *breakingNewsArticleIDs;
-@property (nonatomic, retain) FCColorGradient *groupBackgroundColorGradient;
-@property (nonatomic, readonly) NSString *groupMicaAnimationFileUrlString;
-@property (nonatomic, readonly) NSString *groupMicaAnimationFileUrlStringiPad;
+@property (nonatomic, readonly) NSString *groupMicaAnimationFileURLString;
+@property (nonatomic, readonly) NSString *groupMicaAnimationFileURLStringiPad;
 @property (nonatomic, retain) NSArray *specialEventArticleIDs;
 @property (nonatomic, retain) NSArray *specialEventItems;
+@property (nonatomic, readonly) NSDictionary *specialEventsArticleMetadataByArticleID;
 
 - (void).cxx_destruct;
 - (id)breakingNewsArticleIDs;
-- (id)groupBackgroundColorGradient;
-- (id)groupMicaAnimationFileUrlString;
-- (id)groupMicaAnimationFileUrlStringiPad;
+- (id)groupMicaAnimationFileURLString;
+- (id)groupMicaAnimationFileURLStringiPad;
 - (id)initWithDictionary:(id)arg1;
 - (void)setBreakingNewsArticleIDs:(id)arg1;
-- (void)setGroupBackgroundColorGradient:(id)arg1;
 - (void)setSpecialEventArticleIDs:(id)arg1;
 - (void)setSpecialEventItems:(id)arg1;
 - (id)specialEventArticleIDs;
 - (id)specialEventItems;
+- (id)specialEventsArticleMetadataByArticleID;
 
 @end

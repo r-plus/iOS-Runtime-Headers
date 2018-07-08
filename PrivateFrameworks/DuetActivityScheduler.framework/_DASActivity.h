@@ -55,6 +55,7 @@
     unsigned long long  _uploadSize;
     NSDictionary * _userInfo;
     NSUUID * _uuid;
+    bool  _wasForceRun;
 }
 
 @property (nonatomic, retain) CDAttribute *admissionAttribute;
@@ -114,6 +115,7 @@
 @property (nonatomic) unsigned long long uploadSize;
 @property (nonatomic, retain) NSDictionary *userInfo;
 @property (nonatomic, retain) NSUUID *uuid;
+@property (nonatomic) bool wasForceRun;
 
 + (id)activityWithName:(id)arg1 priority:(unsigned long long)arg2 duration:(unsigned long long)arg3 startingAfter:(id)arg4 startingBefore:(id)arg5;
 + (id)anyApplicationActivityWithName:(id)arg1 priority:(unsigned long long)arg2 duration:(unsigned long long)arg3 startingAfter:(id)arg4 startingBefore:(id)arg5 limitedToApplications:(id)arg6;
@@ -246,6 +248,7 @@
 - (void)setUploadSize:(unsigned long long)arg1;
 - (void)setUserInfo:(id)arg1;
 - (void)setUuid:(id)arg1;
+- (void)setWasForceRun:(bool)arg1;
 - (id)shortDescription;
 - (bool)shouldBePersisted;
 - (id)startAfter;
@@ -264,5 +267,6 @@
 - (unsigned long long)uploadSize;
 - (id)userInfo;
 - (id)uuid;
+- (bool)wasForceRun;
 
 @end

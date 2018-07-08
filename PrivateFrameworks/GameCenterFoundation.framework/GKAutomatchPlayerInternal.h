@@ -8,6 +8,8 @@
 
 @property (nonatomic) long long automatchPosition;
 
++ (bool)supportsSecureCoding;
+
 - (id)alias;
 - (long long)automatchPosition;
 - (bool)isAutomatchPlayer;

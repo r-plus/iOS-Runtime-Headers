@@ -5,10 +5,8 @@
 @interface SFDeviceOperationHomeKitSetup : NSObject <HMAccessoryBrowserDelegate, HMHomeManagerDelegate, HMHomeManagerDelegatePrivate> {
     bool  _active;
     NSDictionary * _appDataSelf;
-    NSDictionary * _appDataStereoCounterpart;
     id /* block */  _completionHandler;
-    bool  _configuredStereoPairPeer;
-    bool  _configuredStereoPairSelf;
+    bool  _configuredStereoPair;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     bool  _hasHomePod;
     bool  _homeAppInstallUserDidChoose;
@@ -22,6 +20,7 @@
     HMHome * _homeKitSelectedHome;
     HMRoom * _homeKitSelectedRoom;
     NSString * _homeKitSelectedRoomName;
+    NSString * _iTunesAccountID;
     bool  _keyExchangeOnly;
     double  _metricNonUserSeconds;
     double  _metricUserSeconds;
@@ -38,14 +37,12 @@
     int  _state;
     HMAccessory * _stereoCounterpart;
     int  _stereoRole;
-    NSString * _tightSyncGroupID;
     NSObject<OS_dispatch_source> * _timeoutTimer;
     TROperationQueue * _trOperationQueue;
     TRSession * _trSession;
 }
 
 @property (nonatomic, copy) NSDictionary *appDataSelf;
-@property (nonatomic, copy) NSDictionary *appDataStereoCounterpart;
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -54,6 +51,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HMHome *homeKitSelectedHome;
 @property (nonatomic, readonly, copy) NSString *homeKitSelectedRoomName;
+@property (nonatomic, copy) NSString *iTunesAccountID;
 @property (nonatomic) bool keyExchangeOnly;
 @property (nonatomic, readonly) double metricNonUserSeconds;
 @property (nonatomic, readonly) double metricUserSeconds;
@@ -66,14 +64,13 @@
 @property (nonatomic, retain) HMAccessory *stereoCounterpart;
 @property (nonatomic) int stereoRole;
 @property (readonly) Class superclass;
-@property (nonatomic, copy) NSString *tightSyncGroupID;
 @property (nonatomic, retain) TRSession *trSession;
 
 - (void).cxx_destruct;
 - (void)_cleanup;
 - (void)_completeWithError:(id)arg1;
-- (void)_findStereoCounterpartWithCompletion:(id /* block */)arg1;
 - (bool)_isOwnerOfHome:(id)arg1;
+- (id)_mediaSystemForAccessory:(id)arg1;
 - (id)_normalizedString:(id)arg1;
 - (void)_removeSimilarRoomNames:(id)arg1 home:(id)arg2;
 - (void)_restoreHomeApp;
@@ -83,8 +80,7 @@
 - (void)_runHomeKitAddHome;
 - (void)_runHomeKitAssignRoom;
 - (id)_runHomeKitAutoSelectHome:(bool)arg1;
-- (bool)_runHomeKitConfigureStereoPairPeer;
-- (bool)_runHomeKitConfigureStereoPairSelf;
+- (bool)_runHomeKitConfigureStereoPairAndReturnError:(id*)arg1;
 - (void)_runHomeKitDeviceSetup;
 - (void)_runHomeKitSelectRoom;
 - (void)_runHomeKitSetupRoom;
@@ -96,10 +92,9 @@
 - (void)accessoryBrowser:(id)arg1 didRemoveNewAccessory:(id)arg2;
 - (void)activate;
 - (id)appDataSelf;
-- (id)appDataStereoCounterpart;
 - (id /* block */)completionHandler;
 - (id)dispatchQueue;
-- (void)findStereoCounterpartWithCompletion:(id /* block */)arg1;
+- (id)findStereoCounterparts;
 - (bool)hasHomePod;
 - (void)homeAppInstallChoice:(bool)arg1;
 - (id)homeKitSelectedHome;
@@ -107,6 +102,7 @@
 - (void)homeManager:(id)arg1 didUpdateStatus:(unsigned long long)arg2;
 - (void)homeManagerDidUpdateDataSyncState:(id)arg1;
 - (void)homeManagerDidUpdateHomes:(id)arg1;
+- (id)iTunesAccountID;
 - (id)init;
 - (void)invalidate;
 - (bool)keyExchangeOnly;
@@ -123,9 +119,9 @@
 - (void)selectHome:(id)arg1;
 - (void)selectRoom:(id)arg1;
 - (void)setAppDataSelf:(id)arg1;
-- (void)setAppDataStereoCounterpart:(id)arg1;
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setDispatchQueue:(id)arg1;
+- (void)setITunesAccountID:(id)arg1;
 - (void)setKeyExchangeOnly:(bool)arg1;
 - (void)setPauseAfterUserInput:(bool)arg1;
 - (void)setPauseHandler:(id /* block */)arg1;
@@ -135,11 +131,9 @@
 - (void)setPromptToInstallHomeAppHandler:(id /* block */)arg1;
 - (void)setStereoCounterpart:(id)arg1;
 - (void)setStereoRole:(int)arg1;
-- (void)setTightSyncGroupID:(id)arg1;
 - (void)setTrSession:(id)arg1;
 - (id)stereoCounterpart;
 - (int)stereoRole;
-- (id)tightSyncGroupID;
 - (id)trSession;
 
 @end

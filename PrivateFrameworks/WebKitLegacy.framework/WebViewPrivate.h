@@ -13,7 +13,7 @@
     bool  _didPerformFirstNavigation;
     WebFixedPositionContent * _fixedPositionContent;
     <WebGeolocationProvider> * _geolocationProvider;
-    struct RefPtr<WebCore::HistoryItem> { 
+    struct RefPtr<WebCore::HistoryItem, WTF::DumbPtrTraits<WebCore::HistoryItem> > { 
         struct HistoryItem {} *m_ptr; 
     }  _globalHistoryItem;
     int  _keyboardUIMode;
@@ -35,7 +35,6 @@
     unsigned long long  deviceOrientation;
     int  didDrawTiles;
     id  downloadDelegate;
-    unsigned long long  dragSourceAction;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -45,7 +44,8 @@
             double width; 
             double height; 
         } size; 
-    }  draggedElementBounds;
+    }  dragPreviewFrameInRootViewCoordinates;
+    unsigned long long  dragSourceAction;
     struct RetainPtr<NSString> { 
         void *m_ptr; 
     }  draggedLinkTitle;
@@ -61,7 +61,7 @@
     }  fixedLayoutSize;
     <WebFormDelegate> * formDelegate;
     id  formDelegateForwarder;
-    struct RefPtr<WebCore::ValidationBubble> { 
+    struct RefPtr<WebCore::ValidationBubble, WTF::DumbPtrTraits<WebCore::ValidationBubble> > { 
         struct ValidationBubble {} *m_ptr; 
     }  formValidationBubble;
     id  frameLoadDelegate;
@@ -99,7 +99,7 @@
         int (*webThreadDidLayoutFunc)(); 
     }  frameLoadDelegateImplementations;
     WebVideoFullscreenController * fullscreenController;
-    struct RefPtr<WebViewGroup> { 
+    struct RefPtr<WebViewGroup, WTF::DumbPtrTraits<WebViewGroup> > { 
         struct WebViewGroup {} *m_ptr; 
     }  group;
     bool  hasSpellCheckerDocumentTag;
@@ -130,7 +130,7 @@
         double width; 
         double height; 
     }  lastLayoutSize;
-    struct RefPtr<LayerFlushController> { 
+    struct RefPtr<LayerFlushController, WTF::DumbPtrTraits<LayerFlushController> > { 
         struct LayerFlushController {} *m_ptr; 
     }  layerFlushController;
     <WebDeviceOrientationProvider> * m_deviceOrientationProvider;
@@ -209,7 +209,7 @@
     }  textIndicatorData;
     bool  useSiteSpecificSpoofing;
     struct String { 
-        struct RefPtr<WTF::StringImpl> { 
+        struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
             struct StringImpl {} *m_ptr; 
         } m_impl; 
     }  userAgent;

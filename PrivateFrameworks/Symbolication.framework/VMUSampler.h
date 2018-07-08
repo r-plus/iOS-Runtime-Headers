@@ -28,7 +28,6 @@
     NSMutableArray * _samples;
     bool  _sampling;
     struct sampling_context_t { } * _samplingContext;
-    unsigned int  _samplingThreadPort;
     bool  _stacksFixed;
     NSConditionLock * _stateLock;
     struct _CSTypeRef { 

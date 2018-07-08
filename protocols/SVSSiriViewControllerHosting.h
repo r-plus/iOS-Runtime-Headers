@@ -34,7 +34,7 @@
 - (void)serviceOpenURL:(void *)arg1 delaySessionEndForTTS:(void *)arg2 replyHandler:(void *)arg3; // needs 3 arg types, found 8: NSURL *, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 - (void)servicePresentationDidChangePeekMode:(unsigned long long)arg1;
 - (void)serviceRequestsActivationSourceWithReplyHandler:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, void*
-- (void)serviceRequestsDismissal:(bool)arg1;
+- (void)serviceRequestsDismissalWithDelayForTTS:(bool)arg1 userInfo:(NSDictionary *)arg2;
 - (void)serviceStartGuidedAccess;
 - (void)serviceStartRequestWithOptions:(AFUIRequestOptions *)arg1;
 - (void)serviceUserRelevantEventDidOccur;

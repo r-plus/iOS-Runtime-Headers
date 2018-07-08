@@ -11,7 +11,7 @@
         struct BarElementInfo {} *__begin_; 
         struct BarElementInfo {} *__end_; 
         struct __compressed_pair<TSCH3D::BarElementInfo *, std::__1::allocator<TSCH3D::BarElementInfo> > { 
-            struct BarElementInfo {} *__first_; 
+            struct BarElementInfo {} *__value_; 
         } __end_cap_; 
     }  mElementInfos;
     float  mElementsXOffset;
@@ -36,7 +36,7 @@
         float *__begin_; 
         float *__end_; 
         struct __compressed_pair<float *, std::__1::allocator<float> > { 
-            float *__first_; 
+            float *__value_; 
         } __end_cap_; 
     }  mMaxValues;
     struct vector<(anonymous namespace)::Range, std::__1::allocator<(anonymous namespace)::Range> >="__begin_"^{Range {}  mRangeCache;

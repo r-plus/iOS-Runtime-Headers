@@ -10,6 +10,8 @@
     NSArray * _temporaryRemoteIDs;
 }
 
++ (bool)supportsSecureCoding;
+
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

@@ -10,12 +10,16 @@
     UIImage * _passSnapshot;
     UIImage * _passSnapshotPlaceHolder;
     PKPaymentCredential * _paymentCredential;
+    bool  _previouslyAcceptedTerms;
     PKPaymentSetupProduct * _setupProduct;
+    bool  _shouldAutoProvision;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, copy) UIImage *passSnapshot;
+@property (nonatomic) bool shouldAutoProvision;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -38,15 +42,19 @@
 - (id)defaultFields;
 - (id)defaultHeaderViewSubTitle;
 - (id)defaultHeaderViewTitle;
-- (id)initWithProvisioningController:(id)arg1 context:(long long)arg2 setupDelegate:(id)arg3 paymentCredential:(id)arg4 setupProduct:(id)arg5 allowsManualEntry:(bool)arg6;
+- (id)initWithProvisioningController:(id)arg1 context:(long long)arg2 setupDelegate:(id)arg3 paymentCredential:(id)arg4 setupProduct:(id)arg5 allowsManualEntry:(bool)arg6 previouslyAcceptedTerms:(bool)arg7;
 - (bool)isComplete;
 - (void)loadView;
 - (id)newPaymentEligibilityRequest;
 - (id)newPaymentRequirementsRequest;
+- (id)passSnapshot;
 - (void)paymentPassUpdatedOnCredential:(id)arg1;
 - (void)performNextActionForProvisioningState:(long long)arg1 withCompletion:(id /* block */)arg2;
 - (void)preflightWithCompletion:(id /* block */)arg1;
 - (id)readonlyFieldIdentifiers;
+- (void)setPassSnapshot:(id)arg1;
+- (void)setShouldAutoProvision:(bool)arg1;
+- (bool)shouldAutoProvision;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)viewWillAppear:(bool)arg1;
 - (id)visibleFieldIdentifiers;

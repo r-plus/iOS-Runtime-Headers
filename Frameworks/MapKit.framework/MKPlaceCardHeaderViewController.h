@@ -4,7 +4,6 @@
 
 @interface MKPlaceCardHeaderViewController : MKPlaceSectionViewController <MKETAProviderObserver, MKModuleViewControllerProtocol, _MKInfoCardChildViewControllerAnalyticsDelegate, _MKStackViewDelegate> {
     _MKTokenAttributedString * _categoryToken;
-    _MKTokenAttributedString * _closedToken;
     NSArray * _constraints;
     bool  _constraintsCreated;
     _MKDataHeaderModel * _dataModel;
@@ -17,8 +16,10 @@
     unsigned long long  _layout;
     UILayoutGuide * _leadingGuide;
     <GEOTransitLineItem> * _lineItem;
+    _MKLocalizedHoursBuilder * _localizedHoursBuilder;
     UIImageView * _logoImageView;
     NSURL * _logoURL;
+    _MKTokenAttributedString * _openStateToken;
     bool  _optionSmallScreen;
     <_MKPlaceItem> * _placeItem;
     _MKTokenAttributedString * _priceToken;
@@ -41,6 +42,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <GEOTransitLineItem> *lineItem;
+@property (nonatomic, retain) _MKLocalizedHoursBuilder *localizedHoursBuilder;
 @property (nonatomic, readonly) <_MKPlaceItem> *placeItem;
 @property (readonly) Class superclass;
 
@@ -48,7 +50,6 @@
 
 - (void).cxx_destruct;
 - (void)ETAProviderUpdated:(id)arg1;
-- (id)_closedNow;
 - (void)_commonInit;
 - (void)_contentSizeDidChange;
 - (void)_createViews;
@@ -56,6 +57,7 @@
 - (void)_loadLogo;
 - (id)_localizedHours;
 - (bool)_mapItemShouldDisplayDistance:(id)arg1;
+- (id)_openStateString;
 - (id)_reviewLabelText;
 - (void)_setupDatas;
 - (id)_verifiedText;
@@ -67,11 +69,13 @@
 - (id)initWithLineItem:(id)arg1 layout:(unsigned long long)arg2;
 - (id)initWithPlaceItem:(id)arg1 layout:(unsigned long long)arg2;
 - (id)lineItem;
+- (id)localizedHoursBuilder;
 - (id)newLabel;
 - (id)placeItem;
 - (void)setConstraints;
 - (void)setContentAlpha:(double)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setLocalizedHoursBuilder:(id)arg1;
 - (id)titleFont;
 - (void)updateHeaderTitle;
 - (void)updateViews;

@@ -14,6 +14,7 @@
     NSString * _lastGeneratedTextImageText;
     UIStatusBarLayoutManager * _layoutManager;
     _UILegibilityView * _legibilityView;
+    bool  _shouldTintContentImage;
     bool  _visible;
 }
 
@@ -21,20 +22,14 @@
 @property (nonatomic, readonly) UIStatusBarForegroundStyleAttributes *foregroundStyle;
 @property (nonatomic, readonly) UIStatusBarItem *item;
 @property (nonatomic) UIStatusBarLayoutManager *layoutManager;
+@property (nonatomic, readonly) bool shouldTintContentImage;
 @property (getter=isVisible, nonatomic) bool visible;
-
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)createViewForItem:(id)arg1 withData:(id)arg2 actions:(int)arg3 foregroundStyle:(id)arg4;
 
 - (void).cxx_destruct;
 - (bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (bool)_shouldReverseLayoutDirection;
-- (void)dealloc;
-- (id)description;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)accessibilityHUDRepresentation;
 - (double)addContentOverlap:(double)arg1;
 - (double)adjustFrameToNewSize:(double)arg1;
@@ -49,6 +44,8 @@
 - (double)currentLeftOverlap;
 - (double)currentOverlap;
 - (double)currentRightOverlap;
+- (void)dealloc;
+- (id)description;
 - (void)endDisablingRasterization;
 - (void)endImageContext;
 - (double)extraLeftPadding;
@@ -58,6 +55,7 @@
 - (id)imageFromImageContextClippedToWidth:(double)arg1;
 - (id)imageWithShadowNamed:(id)arg1;
 - (id)imageWithText:(id)arg1;
+- (id)imageWithText:(id)arg1 shouldCache:(bool)arg2;
 - (id)initWithItem:(id)arg1 data:(id)arg2 actions:(int)arg3 style:(id)arg4;
 - (bool)isVisible;
 - (id)item;
@@ -79,6 +77,7 @@
 - (void)setVisible:(bool)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 duration:(double)arg3;
 - (void)setVisible:(bool)arg1 settingAlpha:(bool)arg2;
 - (double)shadowPadding;
+- (bool)shouldTintContentImage;
 - (double)standardPadding;
 - (long long)textAlignment;
 - (id)textFont;

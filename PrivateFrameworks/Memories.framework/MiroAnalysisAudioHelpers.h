@@ -18,14 +18,14 @@
         float *__begin_; 
         float *__end_; 
         struct __compressed_pair<float *, std::__1::allocator<float> > { 
-            float *__first_; 
+            float *__value_; 
         } __end_cap_; 
     }  _loudnessSampleBuffer;
     struct vector<double, std::__1::allocator<double> > { 
         double *__begin_; 
         double *__end_; 
         struct __compressed_pair<double *, std::__1::allocator<double> > { 
-            double *__first_; 
+            double *__value_; 
         } __end_cap_; 
     }  _momentaryEnergyValues;
     unsigned int  _numberOfSamplesPerBuffer;

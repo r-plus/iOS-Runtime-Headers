@@ -24,7 +24,9 @@
 - (void).cxx_destruct;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_cancelButtonTouchUpInside:(id)arg1;
+- (void)_dismissViewControllerAnimated:(bool)arg1;
 - (double)_heightForOptionAtRow:(unsigned long long)arg1;
+- (id)_modalPresenterPresentedViewController;
 - (void)_updatePreferredContentSize;
 - (struct CGSize { double x1; double x2; })calculatedPreferredContentSize;
 - (id)cancelButtonItem;

@@ -24,14 +24,14 @@
         float *__begin_; 
         float *__end_; 
         struct __compressed_pair<float *, std::__1::allocator<float> > { 
-            float *__first_; 
+            float *__value_; 
         } __end_cap_; 
     }  _edgeIndex;
     struct vector<float, std::__1::allocator<float> > { 
         float *__begin_; 
         float *__end_; 
         struct __compressed_pair<float *, std::__1::allocator<float> > { 
-            float *__first_; 
+            float *__value_; 
         } __end_cap_; 
     }  _edgeKernel;
     int  _edgeKernelSize;
@@ -84,14 +84,14 @@
         unsigned short *__begin_; 
         unsigned short *__end_; 
         struct __compressed_pair<unsigned short *, std::__1::allocator<unsigned short> > { 
-            unsigned short *__first_; 
+            unsigned short *__value_; 
         } __end_cap_; 
     }  _modelIndices;
     struct vector<Vertex, std::__1::allocator<Vertex> > { 
         struct Vertex {} *__begin_; 
         struct Vertex {} *__end_; 
         struct __compressed_pair<Vertex *, std::__1::allocator<Vertex> > { 
-            struct Vertex {} *__first_; 
+            struct Vertex {} *__value_; 
         } __end_cap_; 
     }  _modelVertices;
     struct float4x4 { 
@@ -118,14 +118,14 @@
         float *__begin_; 
         float *__end_; 
         struct __compressed_pair<float *, std::__1::allocator<float> > { 
-            float *__first_; 
+            float *__value_; 
         } __end_cap_; 
     }  _smoothIndex;
     struct vector<float, std::__1::allocator<float> > { 
         float *__begin_; 
         float *__end_; 
         struct __compressed_pair<float *, std::__1::allocator<float> > { 
-            float *__first_; 
+            float *__value_; 
         } __end_cap_; 
     }  _smoothKernel;
     int  _smoothKernelSize;

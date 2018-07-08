@@ -12,7 +12,6 @@
 
 - (void)adjustMinMaxForDataRangeInAnalysis:(id)arg1;
 - (id)computeMajorGridlinesFromMinMaxInAnalysis:(id)arg1;
-- (void)dealloc;
 - (id)defaultProperties;
 - (bool)editableFormatForValueStrings;
 - (id)g_genericToSpecificPropertyMap;

@@ -78,6 +78,7 @@
 - (id)callbackRunLoop;
 - (id)callbackThread;
 - (void)dealloc;
+- (void)dispatchCertificateTrustAction:(long long)arg1 profile:(id)arg2;
 - (bool)extraLoggingEnabled;
 - (bool)hasShownSBPickerDontAsk;
 - (id)hotspotInterface;

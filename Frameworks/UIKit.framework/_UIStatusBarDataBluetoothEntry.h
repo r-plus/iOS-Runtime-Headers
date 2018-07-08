@@ -10,6 +10,8 @@
 @property (nonatomic, copy) _UIStatusBarDataBatteryEntry *batteryEntry;
 @property (nonatomic) long long state;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)_ui_descriptionBuilder;
 - (id)batteryEntry;

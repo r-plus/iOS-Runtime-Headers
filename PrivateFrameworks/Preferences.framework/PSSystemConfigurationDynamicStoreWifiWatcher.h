@@ -9,7 +9,6 @@
     struct __CFString { } * _wifiKey;
 }
 
-+ (void)releaseSharedInstance;
 + (id)sharedInstance;
 + (bool)wifiEnabled;
 

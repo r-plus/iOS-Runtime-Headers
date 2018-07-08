@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@interface SGRTCLogging : NSObject <NSCoding> {
+@interface SGRTCLogging : NSObject <NSSecureCoding> {
     NSObject<OS_dispatch_queue> * _interactionsWriteQueue;
     struct _opaque_pthread_mutex_t { 
         long long __sig; 
@@ -26,6 +26,7 @@
 + (id)locationTypeForRealtimeEvent:(id)arg1;
 + (unsigned long long)numberOfDaysBetweenDate:(id)arg1 andDate:(id)arg2;
 + (double)round:(double)arg1 toSignificantFigures:(long long)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_createInteractionForEventWithStartTime:(id)arg1 interactionKey:(id)arg2 interactionAttributes:(id)arg3;

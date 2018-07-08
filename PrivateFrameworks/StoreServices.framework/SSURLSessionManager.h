@@ -22,6 +22,8 @@
     NSObject<OS_dispatch_queue> * _sessionsQueue;
     NSMapTable * _taskDelegates;
     NSObject<OS_dispatch_queue> * _taskDelegatesQueue;
+    NSMutableDictionary * _taskMetrics;
+    NSObject<OS_dispatch_queue> * _taskMetricsQueue;
 }
 
 @property (nonatomic, copy) NSArray *customURLProtocols;
@@ -45,18 +47,25 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSMapTable *taskDelegates;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *taskDelegatesQueue;
+@property (nonatomic, retain) NSMutableDictionary *taskMetrics;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *taskMetricsQueue;
 
 + (id)_DNSServerIPAddresses;
-+ (id)_bagPerformanceValues;
-+ (id)_bagValueForKey:(id)arg1;
++ (id)_bagPerformanceValuesWithDelegate:(id)arg1;
 + (id)_fetchNetworkQualityReports;
++ (bool)_fetchedFromCache:(id)arg1;
++ (id)_legacyBagValueForKey:(id)arg1;
 + (double)_localTimeIntervalToServerTimeInterval:(double)arg1;
 + (unsigned long long)_messageSizeFromTask:(id)arg1 isRequest:(bool)arg2 delegate:(id)arg3;
++ (id)_metricsDictionaryWithDelegate:(id)arg1;
++ (double)_randomDouble;
 + (id)_resolvedIPAddressFromTask:(id)arg1;
++ (id)_responseDateFromTask:(id)arg1 delegate:(id)arg2;
 + (bool)_shouldCollectNetworkLogs;
 + (bool)_shouldCreateLocalCache;
 + (id)_tidStateForTask:(id)arg1 delegate:(id)arg2;
 + (double)_timingDataMetricToServerTimeInterval:(id)arg1;
++ (id)bagValueForKey:(id)arg1 delegate:(id)arg2 type:(unsigned long long)arg3;
 + (id)eventFromTimingData:(id)arg1 delegate:(id)arg2 task:(id)arg3 error:(id)arg4;
 + (id)eventFromTimingData:(id)arg1 requestProperties:(id)arg2 task:(id)arg3 error:(id)arg4;
 + (id)eventFromTimingData:(id)arg1 task:(id)arg2;
@@ -77,26 +86,31 @@
 - (id)_URLCacheIDForDelegate:(id)arg1;
 - (void)_appendResponseData:(id)arg1 forSessionTask:(id)arg2;
 - (id)_delegateForTask:(id)arg1;
-- (void)_insertEventIntoDatabase:(id)arg1;
+- (void)_insertEventIntoDatabase:(id)arg1 delegate:(id)arg2;
 - (void)_listenForLowMemoryWarning;
+- (void)_logAPSResultsWithTask:(id)arg1;
 - (void)_logCacheHitForTask:(id)arg1 metrics:(id)arg2;
 - (void)_removeDelegateForTask:(id)arg1;
 - (void)_removeRecordResponseDataForSessionTask:(id)arg1;
 - (void)_removeResponseDataForSessionTask:(id)arg1;
 - (id)_requestDataForSessionTask:(id)arg1;
 - (id)_responseDataForSessionTask:(id)arg1;
-- (void)_saveHTTPArchiveBufferToDiskDecompressed:(bool)arg1;
+- (id)_saveHTTPArchiveBufferToDiskDecompressed:(bool)arg1;
 - (bool)_sendTimingDataForSessionTask:(id)arg1;
 - (id)_sessionConfigurationWithDelegate:(id)arg1 collectTimingData:(bool)arg2;
 - (id)_sessionIDWithDelegate:(id)arg1 collectTimingData:(bool)arg2;
 - (id)_sessionWithDelegate:(id)arg1 collectTimingData:(bool*)arg2;
+- (void)_setAPSTopicWithTask:(id)arg1;
 - (void)_setDelegate:(id)arg1 forTask:(id)arg2;
 - (void)_setRequestData:(id)arg1 forSessionTask:(id)arg2;
 - (void)_setSendTimingData:(id)arg1 forSessionTask:(id)arg2;
+- (void)_setTaskMetrics:(id)arg1 forSessionTask:(id)arg2;
 - (bool)_shouldDisableCellularForDelegate:(id)arg1;
+- (bool)_shouldEnableAPSRWithTask:(id)arg1;
 - (bool)_shouldRecordResponseBodyForDataTask:(id)arg1;
 - (bool)_shouldRequireCelluarForDelegate:(id)arg1;
 - (bool)_shouldSetCookiesForDelegate:(id)arg1;
+- (id)_taskMetricsForSessionTask:(id)arg1;
 - (id)customURLProtocols;
 - (id)dataTaskWithRequest:(id)arg1 delegate:(id)arg2;
 - (void)dealloc;
@@ -133,7 +147,11 @@
 - (void)setSessionsQueue:(id)arg1;
 - (void)setTaskDelegates:(id)arg1;
 - (void)setTaskDelegatesQueue:(id)arg1;
+- (void)setTaskMetrics:(id)arg1;
+- (void)setTaskMetricsQueue:(id)arg1;
 - (id)taskDelegates;
 - (id)taskDelegatesQueue;
+- (id)taskMetrics;
+- (id)taskMetricsQueue;
 
 @end

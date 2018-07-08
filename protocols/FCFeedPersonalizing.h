@@ -5,6 +5,7 @@
 
 @required
 
+- (double)decayedPublisherDiversificationPenalty;
 - (NSArray *)diversifyArticles:(NSArray *)arg1 limit:(unsigned long long)arg2;
 - (NSArray *)diversifyArticles:(NSArray *)arg1 limit:(unsigned long long)arg2 preselectedArticles:(NSArray *)arg3;
 - (NSArray *)limitArticlesByFlowRate:(NSArray *)arg1 timeInterval:(double)arg2 publisherCount:(unsigned long long)arg3;

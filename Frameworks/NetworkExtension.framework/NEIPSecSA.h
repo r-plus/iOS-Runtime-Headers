@@ -24,7 +24,7 @@
     NWAddressEndpoint * _remoteAddress;
     unsigned int  _replayWindowSize;
     unsigned int  _spi;
-    NWInterface * _tunnelInterface;
+    NSString * _tunnelInterfaceName;
 }
 
 @property int authenticationAlgorithm;
@@ -48,7 +48,7 @@
 @property (retain) NWAddressEndpoint *remoteAddress;
 @property unsigned int replayWindowSize;
 @property unsigned int spi;
-@property (retain) NWInterface *tunnelInterface;
+@property (retain) NSString *tunnelInterfaceName;
 
 - (void).cxx_destruct;
 - (int)authenticationAlgorithm;
@@ -99,8 +99,8 @@
 - (void)setRemoteAddress:(id)arg1;
 - (void)setReplayWindowSize:(unsigned int)arg1;
 - (void)setSpi:(unsigned int)arg1;
-- (void)setTunnelInterface:(id)arg1;
+- (void)setTunnelInterfaceName:(id)arg1;
 - (unsigned int)spi;
-- (id)tunnelInterface;
+- (id)tunnelInterfaceName;
 
 @end

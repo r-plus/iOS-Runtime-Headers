@@ -81,15 +81,6 @@
 - (bool)_touchHasHighlighted;
 - (void)_unhighlight;
 - (bool)_wasLastHighlightSuccessful;
-- (void)dealloc;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyObjectsInGroupWithID:(id)arg1 outOptions:(id*)arg2;
-- (id)debugHierarchyPropertyDescriptions;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)actionsForTarget:(id)arg1 forControlEvent:(unsigned long long)arg2;
 - (void)addTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned long long)arg3;
 - (void)addTarget:(id)arg1 action:(SEL)arg2 forEvents:(int)arg3;
@@ -104,6 +95,7 @@
 - (long long)contentHorizontalAlignment;
 - (long long)contentVerticalAlignment;
 - (bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)dealloc;
 - (long long)effectiveContentHorizontalAlignment;
 - (void)encodeWithCoder:(id)arg1;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;

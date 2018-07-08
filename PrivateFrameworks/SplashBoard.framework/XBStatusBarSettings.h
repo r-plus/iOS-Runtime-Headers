@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SplashBoard.framework/SplashBoard
  */
 
-@interface XBStatusBarSettings : NSObject <BSSettingDescriptionProvider, NSCoding, NSCopying, NSMutableCopying> {
+@interface XBStatusBarSettings : NSObject <BSSettingDescriptionProvider, NSCopying, NSMutableCopying, NSSecureCoding> {
     BSMutableSettings * _settings;
 }
 
@@ -14,15 +14,19 @@
 @property (nonatomic, readonly) long long style;
 @property (readonly) Class superclass;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)_initWithBSSettings:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (bool)isBackgroundActivityEnabled;
+- (bool)isEqual:(id)arg1;
 - (bool)isHidden;
 - (id)keyDescriptionForSetting:(unsigned long long)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;

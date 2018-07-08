@@ -45,7 +45,7 @@
 - (struct CGSize { double x1; double x2; })_layoutTokenViewsWithWidth:(double)arg1;
 - (void)_loadContentData;
 - (struct NSObject { Class x1; }*)_loadContentView;
-- (void)_loadFeaturesFromPhotosGraphData:(id)arg1;
+- (void)_loadFeaturesFromPhotosGraphProperties:(id)arg1;
 - (void)_showReportFeedback;
 - (id)_tokenViewsWithSuperview:(struct NSObject { Class x1; }*)arg1;
 - (bool)allowUserInteractionWithSubtitle;

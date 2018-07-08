@@ -36,15 +36,16 @@
 - (id)_credentialMatchesEligibleForUpdateForURL:(id)arg1 username:(id)arg2 oldPassword:(id)arg3;
 - (void)_didFillFieldWithGeneratedPassword:(id)arg1 inFrame:(id)arg2 webView:(id)arg3;
 - (id)_displayDataWithTextField:(id)arg1 displayedInQuickType:(bool)arg2 prefix:(id)arg3;
-- (void)_processCorrectionsForFormWithDomain:(id)arg1 formMetadata:(id)arg2;
-- (id)_relatedCredentialMatchesToUpdateForUser:(id)arg1 protectionSpace:(id)arg2 oldCredential:(id*)arg3 matchesForCurrentHost:(id*)arg4;
+- (void)_processCorrectionsForFormWithDomain:(id)arg1 formMetadata:(id)arg2 uniqueIDsOfControlsThatWereAutoFilled:(id)arg3;
+- (id)_relatedCredentialMatchesToUpdateForUser:(id)arg1 protectionSpace:(id)arg2 oldCredential:(id*)arg3 matchesForCurrentHost:(id*)arg4 relatedMatchesAreForAssociatedDomains:(bool*)arg5;
 - (void)_replaceCredentialsWithDontSaveMarkerForProtectionSpace:(id)arg1;
 - (void)_saveUser:(id)arg1 password:(id)arg2 forURL:(id)arg3 andPromptToUpdateRelatedCredentialsWithWebView:(id)arg4;
 - (bool)_saveUser:(id)arg1 password:(id)arg2 forURL:(id)arg3 formType:(unsigned long long)arg4 promptingPolicy:(long long)arg5 webView:(id)arg6 completionHandler:(id /* block */)arg7;
 - (bool)_shouldSaveCreditCardDataInWebView:(id)arg1 frame:(id)arg2;
 - (bool)_shouldSaveUsernamesAndPasswordsForURL:(id)arg1 inWebView:(id)arg2;
+- (bool)_shouldTryToSaveCredentialsFromLastForm:(id)arg1 currentFormMetadata:(id)arg2 frame:(id)arg3;
 - (void)_showCreditCardPromptForWebView:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)_showPasswordPromptForWebView:(id)arg1 formType:(unsigned long long)arg2 username:(id)arg3 host:(id)arg4 hasCredentialForCurrentHost:(bool)arg5 existingCredentialMatchesForCurrentHost:(id)arg6 otherSubdomainCredentialMatches:(id)arg7 completionHandler:(id /* block */)arg8;
+- (void)_showPasswordPromptForWebView:(id)arg1 formType:(unsigned long long)arg2 username:(id)arg3 host:(id)arg4 hasCredentialForCurrentHost:(bool)arg5 existingCredentialMatchesForCurrentHost:(id)arg6 otherSubdomainCredentialMatches:(id)arg7 hasCredentialsForAssociatedDomains:(bool)arg8 completionHandler:(id /* block */)arg9;
 - (bool)_updateCredentialsWithGeneratedPasswordForForm:(id)arg1 inWebView:(id)arg2 frame:(id)arg3;
 - (bool)_webView:(id)arg1 formSubmission:(bool)arg2 willSubmitNewAccountOrChangePasswordFormWithMetadata:(id)arg3 fromFrame:(id)arg4 submissionHandler:(id /* block */)arg5;
 - (bool)_webView:(id)arg1 saveCredentialsForURL:(id)arg2 formSubmission:(bool)arg3 formWithMetadata:(id)arg4 fromFrame:(id)arg5 username:(id)arg6 password:(id)arg7 submissionHandler:(id /* block */)arg8;
@@ -90,7 +91,7 @@
 - (bool)shouldAutoGeneratePasswordsForURL:(id)arg1 inWebView:(id)arg2;
 - (void)textDidChangeInForm:(id)arg1 inWebView:(id)arg2 frame:(id)arg3;
 - (id)uniqueIDOfContact:(id)arg1;
-- (bool)webView:(id)arg1 frame:(id)arg2 willNavigateFromForm:(id)arg3 bySubmitting:(bool)arg4 processMetadataCorrections:(bool)arg5 submissionHandler:(id /* block */)arg6;
+- (bool)webView:(id)arg1 frame:(id)arg2 willNavigateFromForm:(id)arg3 bySubmitting:(bool)arg4 processMetadataCorrections:(bool)arg5 uniqueIDsOfControlsThatWereAutoFilled:(id)arg6 submissionHandler:(id /* block */)arg7;
 - (bool)whiteListAllowsURL:(id)arg1;
 
 @end

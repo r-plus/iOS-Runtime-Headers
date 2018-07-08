@@ -19,10 +19,10 @@
 @property (nonatomic) bool hasRecordingState;
 @property (nonatomic) int recordingState;
 
+- (void).cxx_destruct;
 - (int)StringAsRecordingState:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)descriptor;
 - (unsigned int)deviceID;

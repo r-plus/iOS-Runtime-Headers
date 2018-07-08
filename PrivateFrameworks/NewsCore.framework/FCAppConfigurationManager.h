@@ -4,7 +4,7 @@
 
 @interface FCAppConfigurationManager : NSObject <FCJSONEncodableObjectProviding> {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    <FCAppConfiguration> * _appConfiguration;
+    <FCNewsAppConfiguration> * _appConfiguration;
     bool  _attemptedAppConfigFetch;
     FCAsyncSerialQueue * _configRefreshSerialQueue;
     FCAsyncSerialQueue * _configRequestSerialQueue;
@@ -13,6 +13,7 @@
     FCCKContentDatabase * _contentDatabase;
     NSURL * _contentDirectoryFileURL;
     NSNumber * _currentModdedBucketID;
+    NSNumber * _currentTreatmentOverride;
     NSNumber * _currentUserBucket;
     NSMutableArray * _observationBlocks;
     NSHashTable * _observers;
@@ -25,7 +26,7 @@
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *accessQueue;
-@property (nonatomic, copy) <FCAppConfiguration> *appConfiguration;
+@property (nonatomic, copy) <FCNewsAppConfiguration> *appConfiguration;
 @property (nonatomic) bool attemptedAppConfigFetch;
 @property (nonatomic, readonly) NSArray *availableExperiments;
 @property (nonatomic, retain) FCAsyncSerialQueue *configRefreshSerialQueue;
@@ -35,11 +36,12 @@
 @property (nonatomic, retain) FCCKContentDatabase *contentDatabase;
 @property (nonatomic, copy) NSURL *contentDirectoryFileURL;
 @property (nonatomic, copy) NSNumber *currentModdedBucketID;
+@property (nonatomic, copy) NSNumber *currentTreatmentOverride;
 @property (nonatomic, copy) NSNumber *currentUserBucket;
-@property (nonatomic, readonly) <FCAppConfiguration> *fetchedAppConfig;
+@property (nonatomic, readonly) <FCNewsAppConfiguration> *fetchedAppConfig;
 @property (nonatomic, retain) NSMutableArray *observationBlocks;
 @property (nonatomic, retain) NSHashTable *observers;
-@property (nonatomic, readonly) <FCAppConfiguration> *possiblyUnfetchedAppConfig;
+@property (nonatomic, readonly) <FCNewsAppConfiguration> *possiblyUnfetchedAppConfig;
 @property (nonatomic, retain) NSSet *preferredLanguages;
 @property (nonatomic, readonly, copy) NSURL *remoteURL;
 @property (nonatomic, retain) FCKeyValueStore *resourceCache;
@@ -47,7 +49,7 @@
 @property (nonatomic, retain) NSString *trendingSearchesResourceID;
 @property (nonatomic, retain) FCAsyncSerialQueue *trendingSerialQueue;
 @property (nonatomic, copy) NSArray *trendingTopics;
-@property (nonatomic, readonly) <FCAppConfiguration> *unsafeFetchedAppConfig;
+@property (nonatomic, readonly) <FCNewsAppConfiguration> *unsafeFetchedAppConfig;
 
 + (void)initialize;
 + (id)overrideAppConfigID;
@@ -67,8 +69,10 @@
 - (void)_extractPrefetchConfigFromTreatmentConfig:(id)arg1 controlConfig:(id)arg2 defaultConfig:(id)arg3 intoConfig:(id)arg4;
 - (void)_extractTopStoriesIntervals:(id)arg1 controlConfig:(id)arg2 defaultConfig:(id)arg3 intoConfig:(id)arg4;
 - (void)_extractTrendingTopicsFromLanguageConfiguration:(id)arg1;
+- (void)_extractVideoGroupsConfigFromTreatmentConfig:(id)arg1 controlConfig:(id)arg2 defaultConfig:(id)arg3 intoConfig:(id)arg4;
 - (id)_extractWidgetConfigFromTreatmentConfig:(id)arg1 controlConfig:(id)arg2 defaultConfig:(id)arg3;
 - (void)_extractiAdValuesFromTreatmentConfig:(id)arg1 controlConfig:(id)arg2 defaultConfig:(id)arg3 intoConfig:(id)arg4;
+- (void)_fetchConfigurationIfNeededWithCompletionQueue:(id)arg1 force:(bool)arg2 refreshCompletion:(id /* block */)arg3 completion:(id /* block */)arg4;
 - (id)_languageConfigurationsFromTreatmentConfig:(id)arg1 controlConfig:(id)arg2 defaultConfig:(id)arg3;
 - (id)_languageConfigurationsInProtobufTrendingConfiguration:(id)arg1;
 - (id)_loadConfigurationResourceFromCache;
@@ -82,6 +86,7 @@
 - (id)_resolvedWidgetSectionConfigRecordIDForLanguageConfiguration:(id)arg1;
 - (bool)_selectConfigurationForBucket:(id)arg1 configurationData:(id)arg2;
 - (bool)_selectConfigurationForTreatment:(id)arg1 configurationData:(id)arg2;
+- (id)_treatmentOverride;
 - (id)_userBucket;
 - (id)accessQueue;
 - (void)addChangeObservationBlock:(id /* block */)arg1;
@@ -96,11 +101,14 @@
 - (id)contentDatabase;
 - (id)contentDirectoryFileURL;
 - (id)currentModdedBucketID;
+- (id)currentTreatmentOverride;
 - (id)currentUserBucket;
 - (void)fetchAppConfigurationIfNeededWithCompletion:(id /* block */)arg1;
 - (void)fetchAppConfigurationIfNeededWithCompletionQueue:(id)arg1 completion:(id /* block */)arg2;
 - (void)fetchAppConfigurationIfNeededWithCompletionQueue:(id)arg1 force:(bool)arg2 completion:(id /* block */)arg3;
-- (void)fetchAppConfigurationIfNeededWithCompletionQueue:(id)arg1 force:(bool)arg2 refreshCompletion:(id /* block */)arg3 completion:(id /* block */)arg4;
+- (void)fetchCoreConfigurationIfNeededWithCompletion:(id /* block */)arg1;
+- (void)fetchCoreConfigurationIfNeededWithCompletionQueue:(id)arg1 completion:(id /* block */)arg2;
+- (void)fetchCoreConfigurationIfNeededWithCompletionQueue:(id)arg1 force:(bool)arg2 completion:(id /* block */)arg3;
 - (void)fetchTrendingSearchesIfNeededWithCompletion:(id /* block */)arg1;
 - (id)fetchedAppConfig;
 - (id)init;
@@ -126,6 +134,7 @@
 - (void)setContentDatabase:(id)arg1;
 - (void)setContentDirectoryFileURL:(id)arg1;
 - (void)setCurrentModdedBucketID:(id)arg1;
+- (void)setCurrentTreatmentOverride:(id)arg1;
 - (void)setCurrentUserBucket:(id)arg1;
 - (void)setObservationBlocks:(id)arg1;
 - (void)setObservers:(id)arg1;

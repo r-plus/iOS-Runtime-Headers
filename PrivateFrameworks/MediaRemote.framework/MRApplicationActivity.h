@@ -20,10 +20,10 @@
 
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)_copyWithZone:(struct _NSZone { }*)arg1 usingConcreteClass:(Class)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)creatorProcessID;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -5,8 +5,10 @@
 @interface PSUISoftwareUpdateManager : NSObject <SUManagerClientDelegate, SUNetworkObserver> {
     SUManagerClient * _SUManager;
     NSString * _actionString;
+    bool  _allowCellularOverride;
     bool  _anyScanInProgress;
     SUAutoInstallOperation * _autoInstallOperation;
+    bool  _bypassTermsAndConditions;
     bool  _connectedToPowerSource;
     <PSUISoftwareUpdateManagerDelegate> * _delegate;
     SUDownload * _download;
@@ -14,6 +16,7 @@
     NSDateComponentsFormatter * _durationFormatter;
     UIViewController * _hostController;
     SUInstallPolicy * _installPolicy;
+    bool  _isDelayingUpdates;
     bool  _manuallyStartedScan;
     int  _networkType;
     unsigned char  _originalCellFlag;
@@ -30,6 +33,8 @@
 
 @property (nonatomic, readonly) SUManagerClient *SUManager;
 @property (nonatomic, readonly) NSString *actionString;
+@property (nonatomic) bool allowCellularOverride;
+@property (nonatomic) bool bypassTermsAndConditions;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PSUISoftwareUpdateManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -38,6 +43,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) UIViewController *hostController;
 @property (nonatomic, retain) SUInstallPolicy *installPolicy;
+@property (nonatomic) bool isDelayingUpdates;
 @property (nonatomic, readonly) NSString *prettyUpdateName;
 @property (nonatomic, readonly) NSString *progressString;
 @property (nonatomic, retain) RUIStyle *serverFlowStyle;
@@ -53,11 +59,13 @@
 - (void)_didBecomeActive:(id)arg1;
 - (void)_notifyScanFailed:(id)arg1;
 - (bool)_readyToDownloadWithError:(id*)arg1;
-- (void)_reallyDownloadAndInstallAcceptingCellularFees:(bool)arg1 completion:(id /* block */)arg2;
-- (void)_reallyResumeDownloadAcceptingCellularFees:(bool)arg1;
+- (void)_reallyDownloadAndInstallAcceptingCellularFees:(int)arg1 completion:(id /* block */)arg2;
+- (void)_reallyResumeDownloadAcceptingCellularFees:(int)arg1;
 - (void)_setState:(int)arg1 error:(id)arg2;
 - (void)_updateDownloadProgressWithDownload:(id)arg1 stateFromDownload:(int*)arg2;
 - (id)actionString;
+- (bool)allowCellularOverride;
+- (bool)bypassTermsAndConditions;
 - (bool)canCancelAutoInstall;
 - (void)cancelAutoInstall;
 - (void)checkAndSetReadyToInstall;
@@ -81,6 +89,7 @@
 - (id)humanReadableDescriptionForError:(id)arg1 enableButton:(bool*)arg2 showAsButtonFooter:(bool*)arg3;
 - (id)initWithDelegate:(id)arg1 hostController:(id)arg2;
 - (id)installPolicy;
+- (bool)isDelayingUpdates;
 - (Class)managerClientClass;
 - (void)networkChangedFromNetworkType:(int)arg1 toNetworkType:(int)arg2;
 - (void)presentTermsIfNecessaryCompletion:(id /* block */)arg1;
@@ -97,12 +106,15 @@
 - (void)scanFinishedWithUpdate:(id)arg1 error:(id)arg2;
 - (void)scanForUpdateCompletion:(id /* block */)arg1;
 - (id)serverFlowStyle;
+- (void)setAllowCellularOverride:(bool)arg1;
 - (void)setAutoInstall:(id /* block */)arg1;
+- (void)setBypassTermsAndConditions:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDownload:(id)arg1;
 - (void)setDownloadMetadata:(id)arg1;
 - (void)setHostController:(id)arg1;
 - (void)setInstallPolicy:(id)arg1;
+- (void)setIsDelayingUpdates:(bool)arg1;
 - (void)setServerFlowStyle:(id)arg1;
 - (void)setState:(int)arg1;
 - (void)setState:(int)arg1 error:(id)arg2;

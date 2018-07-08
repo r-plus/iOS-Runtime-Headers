@@ -5,6 +5,7 @@
 
 @required
 
+- (NSSet *)childItemsForItem:(HFItem *)arg1;
 - (NAFuture *)performItemUpdateRequest:(HFItemUpdateRequest *)arg1;
 
 @end

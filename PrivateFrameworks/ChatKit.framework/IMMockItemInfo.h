@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface IMMockItemInfo : NSObject <NSCoding> {
+@interface IMMockItemInfo : NSObject <NSSecureCoding> {
     bool  _outgoing;
     long long  _type;
 }
@@ -13,6 +13,7 @@
 + (id)decodedMockItemInfoArray:(id)arg1;
 + (id)defaultMockInfoArray;
 + (id)encodedMockItemInfoArray:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

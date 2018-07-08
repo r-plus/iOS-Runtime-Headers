@@ -24,6 +24,8 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
++ (id)installedAssetSizeWithError:(id*)arg1;
++ (id)purgeInstalledAssetsWithError:(id*)arg1;
 + (id)speechProfileDataLastModifiedDataForLanguage:(id)arg1;
 
 - (void).cxx_destruct;
@@ -32,6 +34,7 @@
 - (void)_readProfileAndUserDataWithLanguage:(id)arg1 allowOverride:(bool)arg2 completion:(id /* block */)arg3;
 - (id)_service;
 - (id)_serviceWithFunctionName:(id)arg1 errorHandler:(id /* block */)arg2;
+- (id)_synchronousServiceWithErrorHandler:(id /* block */)arg1;
 - (void)_writeDESRecord;
 - (void)addAudioPacket:(id)arg1;
 - (void)createSpeechProfileWithLanguage:(id)arg1 JSONData:(id)arg2 completion:(id /* block */)arg3;

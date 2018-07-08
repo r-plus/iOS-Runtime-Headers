@@ -6,7 +6,9 @@
     NSString * _aceHost;
     NSString * _assistantIdentifier;
     NSString * _connectionId;
+    SAConnectionPolicy * _connectionPolicy;
     SAConnectionPolicyRoute * _connectionPolicyRoute;
+    bool  _forceReconnect;
     bool  _imposePolicyBan;
     NSString * _languageCode;
     NSString * _peerAssistantIdentifier;
@@ -22,7 +24,9 @@
 @property (nonatomic, copy) NSString *aceHost;
 @property (nonatomic, copy) NSString *assistantIdentifier;
 @property (nonatomic, copy) NSString *connectionId;
+@property (nonatomic, copy) SAConnectionPolicy *connectionPolicy;
 @property (nonatomic, copy) SAConnectionPolicyRoute *connectionPolicyRoute;
+@property (nonatomic) bool forceReconnect;
 @property (nonatomic) bool imposePolicyBan;
 @property (nonatomic, copy) NSString *languageCode;
 @property (nonatomic, copy) NSString *peerAssistantIdentifier;
@@ -39,8 +43,10 @@
 - (id)aceHost;
 - (id)assistantIdentifier;
 - (id)connectionId;
+- (id)connectionPolicy;
 - (id)connectionPolicyRoute;
 - (id)description;
+- (bool)forceReconnect;
 - (bool)imposePolicyBan;
 - (id)languageCode;
 - (id)peerAssistantIdentifier;
@@ -49,7 +55,9 @@
 - (void)setAceHost:(id)arg1;
 - (void)setAssistantIdentifier:(id)arg1;
 - (void)setConnectionId:(id)arg1;
+- (void)setConnectionPolicy:(id)arg1;
 - (void)setConnectionPolicyRoute:(id)arg1;
+- (void)setForceReconnect:(bool)arg1;
 - (void)setImposePolicyBan:(bool)arg1;
 - (void)setLanguageCode:(id)arg1;
 - (void)setPeerAssistantIdentifier:(id)arg1;

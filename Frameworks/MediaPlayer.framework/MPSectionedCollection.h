@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPSectionedCollection : NSObject <NSCopying, NSMutableCopying> {
+@interface MPSectionedCollection : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     NSArray * _sectionedItems;
     NSArray * _sections;
 }
@@ -13,12 +13,15 @@
 @property (nonatomic, readonly) id lastSection;
 @property (nonatomic, readonly) long long totalItemCount;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (void)_initializeAsEmptySectionedCollection;
 - (id)changeDetailsToSectionedCollection:(id)arg1 isEqualBlock:(id /* block */)arg2 isUpdatedBlock:(id /* block */)arg3;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugDescription;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (void)enumerateItemIdentifiersInSectionAtIndex:(long long)arg1 usingBlock:(id /* block */)arg2;
 - (void)enumerateItemIdentifiersUsingBlock:(id /* block */)arg1;
 - (void)enumerateItemsInSectionAtIndex:(long long)arg1 usingBlock:(id /* block */)arg2;
@@ -34,6 +37,7 @@
 - (id)indexPathForGlobalIndex:(long long)arg1;
 - (id)indexPathForItemWithIdentifiersIntersectingSet:(id)arg1;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)itemAtIndexPath:(id)arg1;
 - (id)itemsInSectionAtIndex:(long long)arg1;
 - (id)lastItem;

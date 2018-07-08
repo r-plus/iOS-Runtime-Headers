@@ -2,13 +2,14 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface __NSFileSecurity : NSFileSecurity <NSCoding, NSCopying> {
+@interface __NSFileSecurity : NSFileSecurity <NSCopying, NSSecureCoding> {
     struct _filesec { } * _filesec;
 }
 
 + (id)__new:(struct _filesec { }*)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (bool)automaticallyNotifiesObserversForKey:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (struct _filesec { }*)_filesec;
 - (bool)clearProperties:(unsigned long long)arg1;

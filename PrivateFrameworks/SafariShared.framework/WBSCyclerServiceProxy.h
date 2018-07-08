@@ -15,7 +15,6 @@
 - (id /* block */)connectionInvalidationHandler;
 - (void)dealloc;
 - (id /* block */)errorHandler;
-- (void)fetchDeviceAddressWithReply:(id /* block */)arg1;
 - (void)fetchStatusWithReply:(id /* block */)arg1;
 - (id)init;
 - (void)sendRequestToTestSuite:(id)arg1 reply:(id /* block */)arg2;

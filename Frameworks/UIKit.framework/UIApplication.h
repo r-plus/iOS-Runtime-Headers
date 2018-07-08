@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIApplication : UIResponder <DebugHierarchyEntryPoint, DebugHierarchyObject, FBSDisplayLayoutObserver, FBSUIApplicationSystemServiceDelegate, FBSUIApplicationWorkspaceDelegate, UIActivityContinuationManagerApplicationContext, UIApplicationSnapshotPreparing, UIStatusBarStyleDelegate_SpringBoardOnly, UNRemoteNotificationRegistrarDelegate> {
+@interface UIApplication : UIResponder <FBSDisplayLayoutObserver, FBSUIApplicationSystemServiceDelegate, FBSUIApplicationWorkspaceDelegate, UIActivityContinuationManagerApplicationContext, UIApplicationSnapshotPreparing, UIStatusBarStyleDelegate_SpringBoardOnly, UNRemoteNotificationRegistrarDelegate> {
     id /* block */  _HIDGameControllerEventObserver;
     NSObject<OS_dispatch_queue> * _HIDGameControllerEventQueue;
     id /* block */  ___queuedOrientationChange;
@@ -232,6 +232,7 @@
 + (id)stringForStatusBarStyle:(long long)arg1;
 
 - (void).cxx_destruct;
+- (struct __GSKeyboard { }*)GSKeyboardForHWLayout:(id)arg1 forceRebuild:(bool)arg2;
 - (bool)_UIApplicationLegacyVoipAllowed;
 - (void)__completeAndRunAsPlugin;
 - (void)__forceEndIgnoringInteractionEvents;
@@ -642,24 +643,6 @@
 - (id)_whitePointAdaptivityStyleControllingWindow;
 - (id)_windowForSystemAppButtonEventsForScreen:(id)arg1;
 - (id)_workspace;
-- (unsigned long long)beginBackgroundTaskWithExpirationHandler:(id /* block */)arg1;
-- (unsigned long long)beginBackgroundTaskWithName:(id)arg1 expirationHandler:(id /* block */)arg2;
-- (void)dealloc;
-- (void)endBackgroundTask:(unsigned long long)arg1;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)debugHierarchyGroupingIDs;
-+ (id)debugHierarchyObjectsInGroupWithID:(id)arg1 outOptions:(id*)arg2;
-
-- (id)debugHierarchyAdditionalGroupingIDs;
-- (id)debugHierarchyObjectsInGroupWithID:(id)arg1 outOptions:(id*)arg2;
-- (id)debugHierarchyPropertyDescriptions;
-- (void)updateDebugHierarchyValueForPropertyWithDescription:(id)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
-- (struct __GSKeyboard { }*)GSKeyboardForHWLayout:(id)arg1 forceRebuild:(bool)arg2;
 - (void)acceleratedInX:(float)arg1 Y:(float)arg2 Z:(float)arg3;
 - (void)accessoryKeyStateChanged:(struct __GSEvent { }*)arg1;
 - (long long)activeInterfaceOrientation;
@@ -700,6 +683,8 @@
 - (float)backlightLevel;
 - (void)batteryStatusDidChange:(id)arg1;
 - (bool)becomeFirstResponder;
+- (unsigned long long)beginBackgroundTaskWithExpirationHandler:(id /* block */)arg1;
+- (unsigned long long)beginBackgroundTaskWithName:(id)arg1 expirationHandler:(id /* block */)arg2;
 - (void)beginIgnoringInteractionEvents;
 - (void)beginReceivingRemoteControlEvents;
 - (void)beginRemoteSheet:(id)arg1 delegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void*)arg4;
@@ -717,6 +702,7 @@
 - (void)clearKeepAliveTimeout;
 - (void)completeStateRestoration;
 - (id)currentUserNotificationSettings;
+- (void)dealloc;
 - (double)defaultImageSnapshotExpiration;
 - (id)delegate;
 - (void)didDismissActionSheet;
@@ -728,6 +714,7 @@
 - (void)emitPPTStartTracePointForSubTestName:(id)arg1 identifier:(unsigned long long)arg2 testIdentifier:(unsigned long long)arg3;
 - (void)emitPPTStartTracePointForTestName:(id)arg1 identifier:(unsigned long long)arg2;
 - (unsigned long long)enabledRemoteNotificationTypes;
+- (void)endBackgroundTask:(unsigned long long)arg1;
 - (void)endIgnoringInteractionEvents;
 - (void)endReceivingRemoteControlEvents;
 - (void)endRemoteSheet:(id)arg1;
@@ -810,7 +797,6 @@
 - (id)nextResponder;
 - (void)noteActiveInterfaceOrientationDidChangeToOrientation:(long long)arg1 willAnimateWithSettings:(id)arg2 fromOrientation:(long long)arg3;
 - (void)noteActiveInterfaceOrientationWillChangeToOrientation:(long long)arg1;
-- (bool)openURL:(id)arg1;
 - (void)openURL:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)openURL:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (long long)overridenRequestedStyleFromStyle:(long long)arg1;
@@ -986,6 +972,10 @@
 - (void)workspaceShouldExit:(id)arg1;
 - (void)workspaceShouldExit:(id)arg1 withTransitionContext:(id)arg2;
 
+// Image: /Library/TweakInject/Activator.dylib
+
+- (bool)openURL:(id)arg1;
+
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
 + (id)_pu_debugSearchViewController:(id)arg1 usingBlock:(id /* block */)arg2;
@@ -1061,7 +1051,7 @@
 
 - (void)_accessibilityAddKeyboardWindowToArray:(id)arg1 forModalWindow:(id)arg2;
 - (id)_accessibilityElementWindowsWithOptions:(id)arg1 referenceWindow:(id)arg2;
-- (void)_accessibilityEnumerateSiblingsWithParent:(id*)arg1 options:(id)arg2 usingBlock:(id /* block */)arg3;
+- (bool)_accessibilityEnumerateSiblingsWithParent:(id*)arg1 options:(id)arg2 usingBlock:(id /* block */)arg3;
 - (bool)_accessibilityIsAppReadyToBeProbed;
 - (bool)_accessibilityIsSystemAppServer;
 - (bool)_accessibilitySystemAppServerIsReady;

@@ -8,7 +8,6 @@
     NSMutableArray * _diagnosticReasons;
     NSMutableDictionary * _diagnosticReasonsByTaskID;
     NSObject<OS_dispatch_queue> * _diagnosticReasonsQueue;
-    NSObject<OS_dispatch_queue> * _diagnosticSessionQueue;
     NSObject<OS_dispatch_queue> * _sessionQueue;
     NSObject<OS_dispatch_queue> * _stateQueue;
     unsigned long long  _taskIDCounter;
@@ -41,6 +40,7 @@
 - (id)_urlRequestTaggedWithDiagnosticReasonHeader:(id)arg1 forTaskID:(unsigned long long)arg2;
 - (id)_urlRequestTaggedWithWebServiceSessionMarkerHeader:(id)arg1;
 - (id)account;
+- (void)addDiagnosticReason:(id)arg1;
 - (bool)canBypassTrustExtendedValidation;
 - (id)dataTaskWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)diagnosticSessionWithReason:(id)arg1 sessionHandler:(id /* block */)arg2;
@@ -59,6 +59,7 @@
 - (id)primaryAppleAccount;
 - (void)processRetryRequest:(id)arg1 responseData:(id)arg2 orginalRequest:(id)arg3 completion:(id /* block */)arg4;
 - (void)refreshSessionWithConfiguration:(id)arg1;
+- (void)removeDiagnosticReason:(id)arg1;
 - (void)resetWebServiceSessionMarker;
 - (id)sessionConfiguration;
 - (void)setUrlSession:(id)arg1;

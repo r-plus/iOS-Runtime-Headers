@@ -107,7 +107,6 @@
 @property (nonatomic, readonly) NSURL *faceTimeQuicklookURL;
 @property (nonatomic, readonly, copy) NSString *familyName;
 @property (readonly, copy) NSString *firstName;
-@property (nonatomic, readonly) NSString *fullName;
 @property (nonatomic, readonly, copy) NSString *fullName;
 @property (nonatomic, readonly, copy) NSData *fullscreenImageData;
 @property (nonatomic, readonly, copy) NSString *givenName;
@@ -167,6 +166,7 @@
 @property (nonatomic, readonly, copy) NSString *pronunciationGivenName;
 @property (nonatomic, retain) CRRecentContact *recentContact;
 @property (nonatomic, readonly, copy) NSArray *relatedNames;
+@property (nonatomic, readonly) NSString *safari_fullName;
 @property (nonatomic, readonly, copy) NSString *searchIndex;
 @property (nonatomic, readonly, copy) NSString *sectionForSortingByFamilyName;
 @property (nonatomic, readonly, copy) NSString *sectionForSortingByGivenName;
@@ -450,7 +450,7 @@
 
 - (void*)ABPerson;
 - (id)_fullNameFromComponents:(id)arg1 style:(long long)arg2;
-- (id)_fullNameFromComponents:(id)arg1 style:(long long)arg2 preferPhoneticName:(bool)arg3;
+- (id)_phoneticNameFromComponents:(id)arg1 style:(long long)arg2;
 - (unsigned long long)contactSource;
 - (id)contactWithCleanedUpDistrict;
 - (bool)isSubsetOfMeCard;
@@ -464,7 +464,6 @@
 - (id)pkFormattedContactAddressIncludingPhoneticName:(bool)arg1;
 - (id)pkFullAndPhoneticName;
 - (id)pkFullName;
-- (id)pkFullNameForDisplay;
 - (id)pkFullyQualifiedName;
 - (id)pkPhoneticName;
 - (id)pkSingleLineFormattedContactAddress;
@@ -478,7 +477,7 @@
 + (id)safari_defaultDescriptors;
 + (id)safari_imageViewDescriptors;
 
-- (id)fullName;
+- (id)safari_fullName;
 - (id)safari_valueForWBSABProperty:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities

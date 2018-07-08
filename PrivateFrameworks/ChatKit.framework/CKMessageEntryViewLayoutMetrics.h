@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKMessageEntryViewLayoutMetrics : NSObject <NSCoding> {
+@interface CKMessageEntryViewLayoutMetrics : NSObject <NSSecureCoding> {
     double  _defaultEntryContentViewHeight;
     double  _defaultEntryViewHeight;
     double  _defaultSubjectEntryContentViewHeight;
@@ -27,6 +27,8 @@
 @property (nonatomic, readonly) double defaultSubjectEntryViewHeight;
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } entryViewContentInsets;
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } entryViewTextAlignmentInsets;
+
++ (bool)supportsSecureCoding;
 
 - (void)calculateTextMetrics;
 - (double)defaultEntryContentViewHeight;

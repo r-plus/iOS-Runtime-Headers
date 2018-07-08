@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutput.framework/ScreenReaderOutput
  */
 
-@interface SCROBrailleKeyboardKey : SCROBrailleKey {
+@interface SCROBrailleKeyboardKey : SCROBrailleKey <NSSecureCoding> {
     unsigned int  _keyCode;
     NSString * _keyString;
     unsigned int  _modifiers;
@@ -13,6 +13,8 @@
 @property (nonatomic, retain) NSString *keyString;
 @property (nonatomic) unsigned int modifiers;
 @property (nonatomic) unsigned int virtualKeyCode;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

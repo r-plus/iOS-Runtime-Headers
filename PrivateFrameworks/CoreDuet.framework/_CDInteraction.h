@@ -4,6 +4,7 @@
 
 @interface _CDInteraction : NSObject <NSSecureCoding, _CDPDataPoint> {
     NSString * _account;
+    NSArray * _attachments;
     NSString * _bundleId;
     NSURL * _contentURL;
     long long  _direction;
@@ -16,10 +17,12 @@
     NSArray * _recipients;
     _CDContact * _sender;
     NSDate * _startDate;
+    NSString * _targetBundleId;
     NSString * _uuid;
 }
 
 @property (retain) NSString *account;
+@property (retain) NSArray *attachments;
 @property (retain) NSString *bundleId;
 @property (retain) NSURL *contentURL;
 @property (readonly, copy) NSString *debugDescription;
@@ -37,6 +40,7 @@
 @property (retain) _CDContact *sender;
 @property (retain) NSDate *startDate;
 @property (readonly) Class superclass;
+@property (retain) NSString *targetBundleId;
 @property (nonatomic, readonly) NSDate *timestamp;
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) bool userIsSender;
@@ -47,6 +51,7 @@
 
 - (void).cxx_destruct;
 - (id)account;
+- (id)attachments;
 - (id)bundleId;
 - (id)contentURL;
 - (id)description;
@@ -57,7 +62,7 @@
 - (id)endDate;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initwithINInteraction:(id)arg1 bundleID:(id)arg2;
+- (id)initWithINInteraction:(id)arg1 bundleID:(id)arg2;
 - (bool)isResponse;
 - (id)keywords;
 - (id)locationUUID;
@@ -66,6 +71,7 @@
 - (id)recipients;
 - (id)sender;
 - (void)setAccount:(id)arg1;
+- (void)setAttachments:(id)arg1;
 - (void)setBundleId:(id)arg1;
 - (void)setContentURL:(id)arg1;
 - (void)setDirection:(long long)arg1;
@@ -78,8 +84,10 @@
 - (void)setRecipients:(id)arg1;
 - (void)setSender:(id)arg1;
 - (void)setStartDate:(id)arg1;
+- (void)setTargetBundleId:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (id)startDate;
+- (id)targetBundleId;
 - (id)timestamp;
 - (id)title;
 - (bool)userIsSender;

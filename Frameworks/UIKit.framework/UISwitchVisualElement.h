@@ -14,14 +14,9 @@
 @property (nonatomic, retain) UIImpactFeedbackGenerator *impactFeedbackGenerator;
 @property (nonatomic) <UISwitchControl> *switchControl;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 + (struct CGSize { double x1; double x2; })preferredContentSize;
 
 - (void).cxx_destruct;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)enabled;
 - (double)enabledAlpha;
 - (id)impactFeedbackGenerator;

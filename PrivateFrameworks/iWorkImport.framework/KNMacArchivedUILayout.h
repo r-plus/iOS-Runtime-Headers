@@ -3,12 +3,12 @@
  */
 
 @interface KNMacArchivedUILayout : TSPObject {
-    KNMacUILayout * mUILayout;
+    KNMacUILayout * _uiLayout;
 }
 
 @property (nonatomic, readonly) KNMacUILayout *uiLayout;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithUILayout:(id)arg1 context:(id)arg2;
 - (void)loadFromUnarchiver:(id)arg1;
 - (void)saveToArchiver:(id)arg1;

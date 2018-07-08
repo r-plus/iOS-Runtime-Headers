@@ -20,6 +20,8 @@
 @property (nonatomic, copy) id /* block */ serializedLogMessageBlock;
 @property (nonatomic, copy) id /* block */ serializedSignpostEventBlock;
 
++ (bool)serializeSignpostDataToPath:(id)arg1 LogArchivePath:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 errorOut:(id*)arg5;
+
 - (void).cxx_destruct;
 - (id)_dataArrayForSignpostSupportObjectArray:(id)arg1 errorOut:(id*)arg2;
 - (bool)_hasProcessingBlocks;

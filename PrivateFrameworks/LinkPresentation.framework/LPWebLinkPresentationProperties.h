@@ -9,6 +9,7 @@
     LPImage * _image;
     LPCaptionBarPresentationProperties * _mediaBottomCaptionBar;
     LPCaptionBarPresentationProperties * _mediaTopCaptionBar;
+    NSNumber * _minimumHeight;
     bool  _preliminary;
     NSString * _quotedText;
     long long  _style;
@@ -24,6 +25,7 @@
 @property (nonatomic, retain) LPImage *image;
 @property (nonatomic, retain) LPCaptionBarPresentationProperties *mediaBottomCaptionBar;
 @property (nonatomic, retain) LPCaptionBarPresentationProperties *mediaTopCaptionBar;
+@property (nonatomic, retain) NSNumber *minimumHeight;
 @property (getter=isPreliminary, nonatomic) bool preliminary;
 @property (nonatomic, copy) NSString *quotedText;
 @property (nonatomic) long long style;
@@ -38,6 +40,7 @@
 - (bool)isPreliminary;
 - (id)mediaBottomCaptionBar;
 - (id)mediaTopCaptionBar;
+- (id)minimumHeight;
 - (id)quotedText;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setCaptionBar:(id)arg1;
@@ -45,6 +48,7 @@
 - (void)setImage:(id)arg1;
 - (void)setMediaBottomCaptionBar:(id)arg1;
 - (void)setMediaTopCaptionBar:(id)arg1;
+- (void)setMinimumHeight:(id)arg1;
 - (void)setPreliminary:(bool)arg1;
 - (void)setQuotedText:(id)arg1;
 - (void)setStyle:(long long)arg1;

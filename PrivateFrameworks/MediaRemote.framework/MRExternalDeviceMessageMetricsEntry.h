@@ -14,8 +14,9 @@
 @property (nonatomic) unsigned long long max;
 @property (nonatomic) unsigned long long min;
 @property (nonatomic) unsigned long long total;
-@property (nonatomic) NSMutableArray *values;
+@property (nonatomic, retain) NSMutableArray *values;
 
+- (void).cxx_destruct;
 - (unsigned long long)avg;
 - (id)description;
 - (id)init;

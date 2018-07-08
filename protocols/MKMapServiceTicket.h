@@ -22,6 +22,7 @@
 - (NSArray *)relatedSearchSuggestions;
 - (double)requestResponseTime;
 - (NSString *)resultDisplayHeader;
+- (NSArray *)retainedSearchMetadata;
 - (int)searchResultType;
 - (NSString *)sectionHeader;
 - (bool)shouldEnableRedoSearch;

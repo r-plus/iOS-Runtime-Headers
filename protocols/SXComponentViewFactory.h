@@ -5,6 +5,6 @@
 
 @required
 
-- (SXComponentView *)componentViewForComponent:(SXComponent *)arg1;
+- (SXComponentView *)componentViewForComponent:(id <SXComponent>)arg1;
 
 @end

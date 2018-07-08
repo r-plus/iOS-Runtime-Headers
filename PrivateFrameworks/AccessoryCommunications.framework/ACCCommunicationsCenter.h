@@ -8,6 +8,8 @@
     <ACCCommunicationsCenterCallStateDelegate> * _callStateDelegate;
     <ACCCommunicationsCenterCommunicationsDelegate> * _communicationsDelegate;
     <ACCCommunicationsCenterListUpdatesDelegate> * _listUpdatesDelegate;
+    unsigned long long  _maxFavoritesListEntries;
+    unsigned long long  _maxRecentsListEntries;
     <ACCCommunicationsXPCServerProtocol> * _remoteObject;
     NSXPCConnection * _serverConnection;
     NSSet * _subscriberList;
@@ -21,6 +23,8 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) <ACCCommunicationsCenterListUpdatesDelegate> *listUpdatesDelegate;
+@property (nonatomic, readonly) unsigned long long maxFavoritesListEntries;
+@property (nonatomic, readonly) unsigned long long maxRecentsListEntries;
 @property (nonatomic, retain) <ACCCommunicationsXPCServerProtocol> *remoteObject;
 @property (nonatomic, retain) NSXPCConnection *serverConnection;
 @property (nonatomic, retain) NSSet *subscriberList;
@@ -38,13 +42,17 @@
 - (void)dealloc;
 - (void)endAllCalls;
 - (void)endCallWithAction:(int)arg1 callUUID:(id)arg2;
+- (void)favoritesListDidChange;
 - (id)init;
 - (id)initWithCallStateDelegate:(id)arg1 andCommunicationsDelegate:(id)arg2 andCallControlsDelegate:(id)arg3 andListUpdatesDelegate:(id)arg4;
 - (void)initiateCallToDestination:(id)arg1 withService:(int)arg2 addressBookID:(id)arg3;
 - (void)initiateCallToVoicemail;
 - (void)initiateRedial;
 - (id)listUpdatesDelegate;
+- (unsigned long long)maxFavoritesListEntries;
+- (unsigned long long)maxRecentsListEntries;
 - (void)mergeCalls;
+- (void)recentsListDidChange;
 - (id)remoteObject;
 - (void)sendDTMF:(int)arg1 forCallWithUUID:(id)arg2;
 - (id)serverConnection;
@@ -58,8 +66,9 @@
 - (void)setSubscriberList:(id)arg1;
 - (id)subscriberList;
 - (void)swapCalls;
-- (void)triggerCallStateUpdates;
-- (void)triggerCommunicationsUpdate;
+- (void)triggerCallStateUpdatesWithReply:(id /* block */)arg1;
+- (void)triggerCommunicationsUpdateWithReply:(id /* block */)arg1;
+- (void)triggerUpdateForListType:(int)arg1 coalesce:(bool)arg2 withReply:(id /* block */)arg3;
 - (void)updateHoldStatus:(bool)arg1 forCallWithUUID:(id)arg2;
 - (void)updateMuteStatus:(bool)arg1;
 - (void)updateSubscriberList:(id)arg1 withReply:(id /* block */)arg2;

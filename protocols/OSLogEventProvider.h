@@ -13,6 +13,7 @@
 - (unsigned long long)creatorActivityIdentifier;
 - (unsigned long long)creatorProcessUniqueIdentifier;
 - (NSDate *)date;
+- (OSLogEventDecomposedMessage *)decomposedMessage;
 - (NSString *)formatString;
 - (unsigned long long)logType;
 - (unsigned long long)machContinuousTimestamp;

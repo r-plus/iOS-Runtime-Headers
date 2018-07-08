@@ -9,6 +9,7 @@
     int  _getProblemsState;
     SFDeviceOperationHomeKitSetup * _homeKitSetupOperation;
     int  _homeKitSetupState;
+    NSString * _idsIdentifier;
     bool  _invalidateCalled;
     int  _pairVerifyState;
     SFDevice * _peerDevice;
@@ -34,6 +35,7 @@
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
+@property (nonatomic, readonly, copy) NSString *idsIdentifier;
 @property (nonatomic, retain) SFDevice *peerDevice;
 @property (nonatomic, retain) UIViewController *presentingViewController;
 @property (nonatomic, copy) id /* block */ progressHandler;
@@ -55,6 +57,7 @@
 - (void)activate;
 - (void)dealloc;
 - (id)dispatchQueue;
+- (id)idsIdentifier;
 - (id)init;
 - (void)invalidate;
 - (id)peerDevice;

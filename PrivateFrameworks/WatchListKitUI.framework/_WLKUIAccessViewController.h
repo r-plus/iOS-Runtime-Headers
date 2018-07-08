@@ -12,6 +12,7 @@
     bool  _hasOptedIn;
     WLKUISpinnerView * _loadingView;
     NSDictionary * _options;
+    OBPrivacyLinkController * _privacyController;
     bool  _shouldDenyOnCancel;
     bool  _suppressWelcomeVideoAddOnOptIn;
 }
@@ -26,7 +27,6 @@
 - (void)_fetchRemoteAppInfo;
 - (void)_handleMenuGesture:(id)arg1;
 - (void)_handleNackButton:(id)arg1;
-- (void)_handlePrivacyButton:(id)arg1;
 - (void)_handleSeeAllButton:(id)arg1;
 - (id)_imageForBundleID:(id)arg1;
 - (void)_init;
@@ -34,6 +34,7 @@
 - (void)_setupAccessViews;
 - (void)_toggleLoadingScreen;
 - (id)_watchListAppIcon;
+- (id)cappedTraitCollection;
 - (id /* block */)completionHandler;
 - (void)dealloc;
 - (id)init;

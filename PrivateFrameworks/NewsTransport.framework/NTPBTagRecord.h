@@ -4,6 +4,7 @@
 
 @interface NTPBTagRecord : PBCodable <NSCopying> {
     NSMutableArray * _allowedStorefrontIDs;
+    NSData * _articleRecirculationConfiguration;
     NTPBRecordBase * _base;
     long long  _behaviorFlags;
     NSMutableArray * _blockedStorefrontIDs;
@@ -65,6 +66,8 @@
     NSString * _publisherPaidVerificationURL;
     bool  _publisherPaidWebOptIn;
     NSString * _publisherPaidWebaccessURL;
+    NSMutableArray * _publisherSpecifiedArticleIds;
+    NTPBDate * _publisherSpecifiedArticleIdsModifiedDate;
     NSMutableArray * _purchaseOfferableConfigurations;
     NSMutableArray * _relatedChannelIDs;
     NSMutableArray * _relatedChannelIDsForOnboardings;
@@ -72,11 +75,13 @@
     NSMutableArray * _relatedTopicIDsForOnboardings;
     NSString * _replacementID;
     long long  _score;
+    NSString * _subtitle;
     NSString * _templateJson;
     int  _type;
 }
 
 @property (nonatomic, retain) NSMutableArray *allowedStorefrontIDs;
+@property (nonatomic, retain) NSData *articleRecirculationConfiguration;
 @property (nonatomic, retain) NTPBRecordBase *base;
 @property (nonatomic) long long behaviorFlags;
 @property (nonatomic, retain) NSMutableArray *blockedStorefrontIDs;
@@ -88,6 +93,7 @@
 @property (nonatomic, retain) NSString *coverImageURL;
 @property (nonatomic, retain) NTPBFeedConfiguration *feedConfiguration;
 @property (nonatomic) int groupingAvailability;
+@property (nonatomic, readonly) bool hasArticleRecirculationConfiguration;
 @property (nonatomic, readonly) bool hasBase;
 @property (nonatomic) bool hasBehaviorFlags;
 @property (nonatomic, readonly) bool hasChannelDefaultSectionID;
@@ -124,8 +130,10 @@
 @property (nonatomic, readonly) bool hasPublisherPaidVerificationURL;
 @property (nonatomic) bool hasPublisherPaidWebOptIn;
 @property (nonatomic, readonly) bool hasPublisherPaidWebaccessURL;
+@property (nonatomic, readonly) bool hasPublisherSpecifiedArticleIdsModifiedDate;
 @property (nonatomic, readonly) bool hasReplacementID;
 @property (nonatomic) bool hasScore;
+@property (nonatomic, readonly) bool hasSubtitle;
 @property (nonatomic, readonly) bool hasTemplateJson;
 @property (nonatomic) bool hasType;
 @property (nonatomic) bool hideAccessoryText;
@@ -160,6 +168,8 @@
 @property (nonatomic, retain) NSString *publisherPaidVerificationURL;
 @property (nonatomic) bool publisherPaidWebOptIn;
 @property (nonatomic, retain) NSString *publisherPaidWebaccessURL;
+@property (nonatomic, retain) NSMutableArray *publisherSpecifiedArticleIds;
+@property (nonatomic, retain) NTPBDate *publisherSpecifiedArticleIdsModifiedDate;
 @property (nonatomic, retain) NSMutableArray *purchaseOfferableConfigurations;
 @property (nonatomic, retain) NSMutableArray *relatedChannelIDs;
 @property (nonatomic, retain) NSMutableArray *relatedChannelIDsForOnboardings;
@@ -167,6 +177,7 @@
 @property (nonatomic, retain) NSMutableArray *relatedTopicIDsForOnboardings;
 @property (nonatomic, retain) NSString *replacementID;
 @property (nonatomic) long long score;
+@property (nonatomic, retain) NSString *subtitle;
 @property (nonatomic, retain) NSString *templateJson;
 @property (nonatomic) int type;
 
@@ -180,6 +191,7 @@
 + (Class)iAdKeywordsType;
 + (Class)pinnedArticleIDsType;
 + (Class)publisherPaidFeldsparablePurchaseIDsType;
++ (Class)publisherSpecifiedArticleIdsType;
 + (Class)purchaseOfferableConfigurationType;
 + (Class)relatedChannelIDsForOnboardingType;
 + (Class)relatedChannelIDsType;
@@ -194,6 +206,7 @@
 - (void)addIAdKeywords:(id)arg1;
 - (void)addPinnedArticleIDs:(id)arg1;
 - (void)addPublisherPaidFeldsparablePurchaseIDs:(id)arg1;
+- (void)addPublisherSpecifiedArticleIds:(id)arg1;
 - (void)addPurchaseOfferableConfiguration:(id)arg1;
 - (void)addRelatedChannelIDs:(id)arg1;
 - (void)addRelatedChannelIDsForOnboarding:(id)arg1;
@@ -202,6 +215,7 @@
 - (id)allowedStorefrontIDs;
 - (id)allowedStorefrontIDsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)allowedStorefrontIDsCount;
+- (id)articleRecirculationConfiguration;
 - (id)base;
 - (long long)behaviorFlags;
 - (id)blockedStorefrontIDs;
@@ -222,6 +236,7 @@
 - (void)clearIAdKeywords;
 - (void)clearPinnedArticleIDs;
 - (void)clearPublisherPaidFeldsparablePurchaseIDs;
+- (void)clearPublisherSpecifiedArticleIds;
 - (void)clearPurchaseOfferableConfigurations;
 - (void)clearRelatedChannelIDs;
 - (void)clearRelatedChannelIDsForOnboardings;
@@ -236,6 +251,7 @@
 - (id)dictionaryRepresentation;
 - (id)feedConfiguration;
 - (int)groupingAvailability;
+- (bool)hasArticleRecirculationConfiguration;
 - (bool)hasBase;
 - (bool)hasBehaviorFlags;
 - (bool)hasChannelDefaultSectionID;
@@ -272,8 +288,10 @@
 - (bool)hasPublisherPaidVerificationURL;
 - (bool)hasPublisherPaidWebOptIn;
 - (bool)hasPublisherPaidWebaccessURL;
+- (bool)hasPublisherSpecifiedArticleIdsModifiedDate;
 - (bool)hasReplacementID;
 - (bool)hasScore;
+- (bool)hasSubtitle;
 - (bool)hasTemplateJson;
 - (bool)hasType;
 - (unsigned long long)hash;
@@ -319,6 +337,10 @@
 - (id)publisherPaidVerificationURL;
 - (bool)publisherPaidWebOptIn;
 - (id)publisherPaidWebaccessURL;
+- (id)publisherSpecifiedArticleIds;
+- (id)publisherSpecifiedArticleIdsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)publisherSpecifiedArticleIdsCount;
+- (id)publisherSpecifiedArticleIdsModifiedDate;
 - (id)purchaseOfferableConfigurationAtIndex:(unsigned long long)arg1;
 - (id)purchaseOfferableConfigurations;
 - (unsigned long long)purchaseOfferableConfigurationsCount;
@@ -338,6 +360,7 @@
 - (id)replacementID;
 - (long long)score;
 - (void)setAllowedStorefrontIDs:(id)arg1;
+- (void)setArticleRecirculationConfiguration:(id)arg1;
 - (void)setBase:(id)arg1;
 - (void)setBehaviorFlags:(long long)arg1;
 - (void)setBlockedStorefrontIDs:(id)arg1;
@@ -397,6 +420,8 @@
 - (void)setPublisherPaidVerificationURL:(id)arg1;
 - (void)setPublisherPaidWebOptIn:(bool)arg1;
 - (void)setPublisherPaidWebaccessURL:(id)arg1;
+- (void)setPublisherSpecifiedArticleIds:(id)arg1;
+- (void)setPublisherSpecifiedArticleIdsModifiedDate:(id)arg1;
 - (void)setPurchaseOfferableConfigurations:(id)arg1;
 - (void)setRelatedChannelIDs:(id)arg1;
 - (void)setRelatedChannelIDsForOnboardings:(id)arg1;
@@ -404,8 +429,10 @@
 - (void)setRelatedTopicIDsForOnboardings:(id)arg1;
 - (void)setReplacementID:(id)arg1;
 - (void)setScore:(long long)arg1;
+- (void)setSubtitle:(id)arg1;
 - (void)setTemplateJson:(id)arg1;
 - (void)setType:(int)arg1;
+- (id)subtitle;
 - (id)templateJson;
 - (int)type;
 - (void)writeTo:(id)arg1;

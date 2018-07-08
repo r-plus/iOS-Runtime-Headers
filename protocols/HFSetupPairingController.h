@@ -9,6 +9,7 @@
 
 - (void)addPairingObserver:(id <HFSetupPairingObserver>)arg1;
 - (NAFuture *)cancel;
+- (HMAccessorySetupCompletedInfo *)completedInfo;
 - (HFDiscoveredAccessory *)discoveredAccessoryToPair;
 - (HMHome *)home;
 - (NSSet *)pairedAccessories;

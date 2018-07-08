@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@interface AutoEncodeDecodeObject : NSObject <NSCopying> {
+@interface AutoEncodeDecodeObject : NSObject <NSCopying, NSSecureCoding> {
     NSArray * _keysToEncode;
 }
 
 @property (nonatomic, retain) NSArray *keysToEncode;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

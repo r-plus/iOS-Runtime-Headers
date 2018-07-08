@@ -6,6 +6,7 @@
     GEOSQLiteDB * _db;
     bool  _enabled;
     double  _maxAge;
+    long long  _nextId;
 }
 
 @property (nonatomic) bool enabled;
@@ -13,15 +14,17 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
+- (void)_populateNextID:(struct sqlite3 { }*)arg1;
 - (void)_purgeOlderThan:(id)arg1;
 - (void)countsStartingFrom:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)dealloc;
 - (bool)enabled;
 - (void)fetchTrafficProbeCollectionsStartingFrom:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)incrementAtTime:(id)arg1 app:(id)arg2 requestType:(unsigned char)arg3 result:(unsigned char)arg4 xmitBytes:(unsigned int)arg5 recvBytes:(unsigned int)arg6 withCompletion:(id /* block */)arg7;
-- (void)incrementForApp:(id)arg1 requestType:(unsigned char)arg2 result:(unsigned char)arg3 xmitBytes:(unsigned int)arg4 recvBytes:(unsigned int)arg5 withCompletion:(id /* block */)arg6;
+- (void)incrementForApp:(id)arg1 time:(id)arg2 requestId:(long long)arg3 requestType:(unsigned char)arg4 requestMode:(unsigned char)arg5 result:(unsigned char)arg6 xmitBytes:(long long)arg7 recvBytes:(long long)arg8 withCompletion:(id /* block */)arg9;
 - (id)init;
 - (id)initWithDBFilePath:(id)arg1 maxCountAge:(double)arg2;
+- (void)logsStartingFrom:(id)arg1 withCompletion:(id /* block */)arg2;
+- (long long)nextRequestID;
 - (void)purgeAllCounts;
 - (void)recordTrafficProbeCollectionAt:(id)arg1 tripId:(id)arg2 locationCount:(int)arg3 result:(unsigned char)arg4;
 - (void)setEnabled:(bool)arg1;

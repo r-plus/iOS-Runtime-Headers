@@ -24,14 +24,14 @@
             struct { /* ? */ } *__begin_; 
             struct { /* ? */ } *__end_; 
             struct __compressed_pair<PKPoint *, std::__1::allocator<PKPoint> > { 
-                struct { /* ? */ } *__first_; 
+                struct { /* ? */ } *__value_; 
             } __end_cap_; 
         } _linePoints; 
         struct vector<PKDebugDrawPacket::color4, std::__1::allocator<PKDebugDrawPacket::color4> > { 
             struct { /* ? */ } *__begin_; 
             struct { /* ? */ } *__end_; 
             struct __compressed_pair<PKDebugDrawPacket::color4 *, std::__1::allocator<PKDebugDrawPacket::color4> > { 
-                struct { /* ? */ } *__first_; 
+                struct { /* ? */ } *__value_; 
             } __end_cap_; 
         } _colors; 
     }  drawPacket;

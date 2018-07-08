@@ -23,7 +23,7 @@
         struct _NSRange {} *__begin_; 
         struct _NSRange {} *__end_; 
         struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange> > { 
-            struct _NSRange {} *__first_; 
+            struct _NSRange {} *__value_; 
         } __end_cap_; 
     }  _visualRanges;
 }

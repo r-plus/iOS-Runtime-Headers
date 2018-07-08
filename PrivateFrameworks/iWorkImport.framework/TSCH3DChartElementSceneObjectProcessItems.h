@@ -7,7 +7,7 @@
         struct RenderElementInfo {} *__begin_; 
         struct RenderElementInfo {} *__end_; 
         struct __compressed_pair<TSCH3D::RenderElementInfo *, std::__1::allocator<TSCH3D::RenderElementInfo> > { 
-            struct RenderElementInfo {} *__first_; 
+            struct RenderElementInfo {} *__value_; 
         } __end_cap_; 
     }  mDelayedItems;
     TSCH3DSceneRenderPipeline * mPipeline;

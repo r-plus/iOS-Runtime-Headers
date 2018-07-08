@@ -16,7 +16,7 @@
 - (void).cxx_destruct;
 - (id)deviceRegistrationServiceCoordinator;
 - (id)initWithConnection:(id)arg1;
-- (void)performDeviceRegistrationWithCompletion:(id /* block */)arg1;
+- (void)performDeviceRegistrationForReason:(id)arg1 completion:(id /* block */)arg2;
 - (void)setDeviceRegistrationServiceCoordinator:(id)arg1;
 
 @end

@@ -5,12 +5,15 @@
 @interface CUPowerSource : NSObject <NSSecureCoding> {
     NSString * _accessoryCategory;
     NSString * _accessoryID;
+    long long  _adapterErrorFlags;
     long long  _adapterFamilyCode;
     NSString * _adapterName;
     bool  _adapterSharedSource;
     long long  _adapterSourceID;
+    bool  _aggregate;
     double  _chargeLevel;
     bool  _charging;
+    unsigned int  _expectedComponents;
     long long  _familyCode;
     NSString * _groupID;
     NSDictionary * _ioKitAdapterDescription;
@@ -24,6 +27,7 @@
     long long  _productID;
     struct OpaqueIOPSPowerSourceID { } * _psID;
     int  _role;
+    bool  _showChargingUI;
     long long  _sourceID;
     NSString * _state;
     CUPowerSource * _subCase;
@@ -38,16 +42,20 @@
 
 @property (nonatomic, copy) NSString *accessoryCategory;
 @property (nonatomic, copy) NSString *accessoryID;
+@property (nonatomic) long long adapterErrorFlags;
 @property (nonatomic) long long adapterFamilyCode;
 @property (nonatomic, copy) NSString *adapterName;
 @property (nonatomic) bool adapterSharedSource;
 @property (nonatomic) long long adapterSourceID;
+@property (nonatomic) bool aggregate;
 @property (nonatomic) double chargeLevel;
 @property (nonatomic) bool charging;
+@property (nonatomic) unsigned int expectedComponents;
 @property (nonatomic) long long familyCode;
 @property (nonatomic, copy) NSString *groupID;
 @property (nonatomic, copy) NSDictionary *ioKitAdapterDescription;
 @property (nonatomic, copy) NSDictionary *ioKitDescription;
+@property (readonly) bool isMe;
 @property (nonatomic) double maxCapacity;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *partID;
@@ -56,6 +64,7 @@
 @property (nonatomic) bool present;
 @property (nonatomic) long long productID;
 @property (nonatomic) int role;
+@property (nonatomic) bool showChargingUI;
 @property (nonatomic) long long sourceID;
 @property (nonatomic, copy) NSString *state;
 @property (nonatomic, retain) CUPowerSource *subCase;
@@ -67,28 +76,37 @@
 @property (nonatomic, copy) NSString *type;
 @property (nonatomic) long long vendorID;
 
+// Image: /System/Library/PrivateFrameworks/CoreUtils.framework/CoreUtils
+
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accessoryCategory;
 - (id)accessoryID;
+- (long long)adapterErrorFlags;
 - (long long)adapterFamilyCode;
 - (id)adapterName;
 - (bool)adapterSharedSource;
 - (long long)adapterSourceID;
+- (bool)aggregate;
 - (double)chargeLevel;
 - (bool)charging;
 - (void)dealloc;
 - (id)description;
 - (id)detailedDescription;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned int)expectedComponents;
 - (long long)familyCode;
 - (id)groupID;
+- (void)handleSubComponentsUpdated;
+- (void)handleSubComponentsUpdatedWithBaseSource:(id)arg1;
+- (bool)hasAllComponents;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (void)invalidate;
 - (id)ioKitAdapterDescription;
 - (id)ioKitDescription;
+- (bool)isAggregateComponent;
 - (bool)isEqual:(id)arg1;
 - (double)maxCapacity;
 - (id)name;
@@ -101,12 +119,15 @@
 - (int)role;
 - (void)setAccessoryCategory:(id)arg1;
 - (void)setAccessoryID:(id)arg1;
+- (void)setAdapterErrorFlags:(long long)arg1;
 - (void)setAdapterFamilyCode:(long long)arg1;
 - (void)setAdapterName:(id)arg1;
 - (void)setAdapterSharedSource:(bool)arg1;
 - (void)setAdapterSourceID:(long long)arg1;
+- (void)setAggregate:(bool)arg1;
 - (void)setChargeLevel:(double)arg1;
 - (void)setCharging:(bool)arg1;
+- (void)setExpectedComponents:(unsigned int)arg1;
 - (void)setFamilyCode:(long long)arg1;
 - (void)setGroupID:(id)arg1;
 - (void)setIoKitAdapterDescription:(id)arg1;
@@ -119,6 +140,7 @@
 - (void)setPresent:(bool)arg1;
 - (void)setProductID:(long long)arg1;
 - (void)setRole:(int)arg1;
+- (void)setShowChargingUI:(bool)arg1;
 - (void)setSourceID:(long long)arg1;
 - (void)setState:(id)arg1;
 - (void)setSubCase:(id)arg1;
@@ -129,6 +151,7 @@
 - (void)setTransportType:(id)arg1;
 - (void)setType:(id)arg1;
 - (void)setVendorID:(long long)arg1;
+- (bool)showChargingUI;
 - (long long)sourceID;
 - (id)state;
 - (id)subCase;
@@ -141,5 +164,9 @@
 - (unsigned int)updateWithPowerAdapterDetails:(id)arg1;
 - (unsigned int)updateWithPowerSourceDescription:(id)arg1;
 - (long long)vendorID;
+
+// Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
+
+- (bool)isMe;
 
 @end

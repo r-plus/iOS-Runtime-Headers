@@ -16,6 +16,7 @@
 @property (nonatomic, readonly) NSArray *iCloudMediaUsage;
 @property (nonatomic, readonly) NSURL *manageStorageURL;
 @property (nonatomic, readonly) NSNumber *totalStorageInByes;
+@property (nonatomic, readonly) NSNumber *totalStorageInBytes;
 @property (nonatomic, readonly) NSArray *usage;
 @property (nonatomic, readonly) NSNumber *usedStorageInBytes;
 
@@ -27,6 +28,7 @@
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 - (id)manageStorageURL;
 - (id)totalStorageInByes;
+- (id)totalStorageInBytes;
 - (id)usage;
 - (id)usedStorageInBytes;
 

@@ -2,18 +2,20 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDShapeLibrary : NSObject {
+@interface TSDShapeLibrary : NSObject <TSDShapeSearchResultProviding> {
     NSArray * _categories;
     NSArray * _categorySort;
     unsigned long long  _dataLoadStatus;
     NSDictionary * _library;
     NSURL * _libraryURL;
+    TSULocale * _locale;
     TSDShapeSearchIndex * _searchIndex;
     NSCache * _shapeCache;
     NSSet * _shapeIDsToRemove;
 }
 
 @property (nonatomic, readonly) NSArray *categories;
+@property (nonatomic, readonly) TSULocale *locale;
 @property (nonatomic, retain) NSArray *p_categorySort;
 @property (nonatomic) unsigned long long p_dataLoadStatus;
 @property (nonatomic, retain) NSDictionary *p_library;
@@ -27,7 +29,8 @@
 
 - (void).cxx_destruct;
 - (id)categories;
-- (id)initWithShapeLibraryURL:(id)arg1 categorySortURL:(id)arg2;
+- (id)initWithShapeLibraryURL:(id)arg1 categorySortURL:(id)arg2 locale:(id)arg3;
+- (id)locale;
 - (void)p_cacheDataAfterParsingWithSearchIndex:(id)arg1;
 - (id)p_categorySort;
 - (void)p_createSearchIndexWithCompletionHandler:(id /* block */)arg1;
@@ -57,6 +60,7 @@
 - (void)setP_libraryURL:(id)arg1;
 - (void)setP_searchIndex:(id)arg1;
 - (void)setP_shapeCache:(id)arg1;
+- (id)shapeFromSearchResult:(id)arg1;
 - (id)shapeWithID:(id)arg1;
 - (id)shapeWithLocalizationKey:(id)arg1;
 

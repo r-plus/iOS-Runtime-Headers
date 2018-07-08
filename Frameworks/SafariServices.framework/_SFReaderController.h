@@ -3,6 +3,8 @@
  */
 
 @interface _SFReaderController : NSObject <SFReaderContext, SFReaderEventsListener, WKNavigationDelegate, WKUIDelegatePrivate> {
+    id /* block */  _actionsDelayedUntilReaderWebViewIsReady;
+    NSTimer * _actionsDelayedUntilReaderWebViewIsReadyTimer;
     NSString * _articleText;
     NSMutableDictionary * _bookmarkIdentifierToReadingListItemInfoCompletionMap;
     <_SFReaderControllerDelegate> * _delegate;
@@ -13,6 +15,7 @@
     id /* block */  _readerMailContentCompletionHandler;
     id /* block */  _readerPrintContentCompletionHandler;
     WKWebView * _readerWebView;
+    bool  _readerWebViewContentDidBecomeReady;
     WKWebView * _webView;
     <WKUIDelegatePrivate> * _webViewUIDelegate;
 }
@@ -28,10 +31,13 @@
 @property (readonly) WKWebView *webView;
 @property (nonatomic) <WKUIDelegatePrivate> *webViewUIDelegate;
 
-+ (id)_defaultInitialConfiguration;
-
 - (void).cxx_destruct;
+- (void)_collectReaderContentForMailWithCompletion:(id /* block */)arg1;
+- (void)_performActionsDelayedUntilReaderWebViewIsReady;
+- (void)_performActionsDelayedUntilReaderWebViewIsReadyDidTimeout:(id)arg1;
+- (bool)_readerWebViewIsReady;
 - (void)_setUpReaderActivityListener;
+- (void)_setUpReaderWebViewIfNeededAndPerformBlock:(id /* block */)arg1;
 - (id)_webView:(id)arg1 actionsForElement:(id)arg2 defaultActions:(id)arg3;
 - (void)_webView:(id)arg1 commitPreviewedViewController:(id)arg2;
 - (void)_webView:(id)arg1 dataInteraction:(id)arg2 session:(id)arg3 didEndWithOperation:(unsigned long long)arg4;
@@ -49,6 +55,7 @@
 - (void)collectReaderContentForMailWithCompletion:(id /* block */)arg1;
 - (void)collectReadingListInfoWithBookmarkID:(int)arg1 completionHandler:(id /* block */)arg2;
 - (id)configuration;
+- (void)contentDidBecomeReadyWithDetectedLanguage:(id)arg1;
 - (void)createArticleFinder;
 - (void)deactivateReaderNow:(unsigned long long)arg1;
 - (void)dealloc;
@@ -58,7 +65,6 @@
 - (void)didCollectReadingListItemInfo:(id)arg1 bookmarkID:(id)arg2;
 - (void)didCreateReaderWebView:(id)arg1;
 - (void)didDetermineReaderAvailability:(bool)arg1 dueToSameDocumentNavigation:(bool)arg2;
-- (void)didPrepareReaderContentForDisplay:(id)arg1;
 - (void)didPrepareReaderContentForPrinting:(id)arg1;
 - (void)didSetReaderConfiguration:(id)arg1;
 - (id)fontManager;

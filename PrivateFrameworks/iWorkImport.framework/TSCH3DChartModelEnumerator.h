@@ -15,7 +15,7 @@
         double *__begin_; 
         double *__end_; 
         struct __compressed_pair<double *, std::__1::allocator<double> > { 
-            double *__first_; 
+            double *__value_; 
         } __end_cap_; 
     }  mCoordinateValues;
     double  mIntercept;
@@ -33,7 +33,7 @@
         double *__begin_; 
         double *__end_; 
         struct __compressed_pair<double *, std::__1::allocator<double> > { 
-            double *__first_; 
+            double *__value_; 
         } __end_cap_; 
     }  mSeriesValues;
     double  mUnitSpaceIntercept;

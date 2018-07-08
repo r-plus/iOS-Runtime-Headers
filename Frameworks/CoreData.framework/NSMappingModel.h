@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSMappingModel : NSObject {
+@interface NSMappingModel : NSObject <NSSecureCoding> {
     NSMutableArray * _entityMappings;
     NSMutableDictionary * _entityMappingsByName;
     struct __modelMappingFlags { 
@@ -24,6 +24,7 @@
 + (id)mappingModelFromBundles:(id)arg1 forSourceModel:(id)arg2 destinationModel:(id)arg3;
 + (int)migrationDebugLevel;
 + (void)setMigrationDebugLevel:(int)arg1;
++ (bool)supportsSecureCoding;
 
 - (void)_addEntityMapping:(id)arg1;
 - (void)_createCachesAndOptimizeState;

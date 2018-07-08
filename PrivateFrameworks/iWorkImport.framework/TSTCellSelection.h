@@ -9,6 +9,7 @@
         unsigned char reserved; 
     }  _anchorCellID;
     TSTCellRegion * _baseRegion;
+    bool  _beginImplicitEditing;
     TSTCellRegion * _cellRegion;
     struct TSUCellCoord { 
         unsigned short row; 
@@ -24,6 +25,7 @@
 
 @property (nonatomic, readonly) struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; } anchorCellID;
 @property (nonatomic, readonly) TSTCellRegion *baseRegion;
+@property (nonatomic, readonly) bool beginImplicitEditing;
 @property (nonatomic, readonly) unsigned long long cellCount;
 @property (nonatomic, readonly) TSTCellRegion *cellRegion;
 @property (nonatomic, readonly) struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; } cursorCellID;
@@ -47,6 +49,7 @@
 - (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })anchorCellID;
 - (bool)areCellsInTheSameRegionInTable:(id)arg1;
 - (id)baseRegion;
+- (bool)beginImplicitEditing;
 - (bool)canEditWithCellSubselectionInTable:(id)arg1;
 - (bool)canEditWithControlCellSubselectionInTable:(id)arg1;
 - (bool)canEditWithStockCellSubselectionInTable:(id)arg1;
@@ -60,7 +63,7 @@
 - (id)description;
 - (id)initWithArchive:(const struct SelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct CellID {} *x6; struct RepeatedPtrField<TST::CellRange> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct RepeatedPtrField<TST::CellRange> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct CellID {} *x9; int x10; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithCellRegion:(id)arg1 anchorCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2 cursorCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg3 baseRegion:(id)arg4 selectionType:(long long)arg5;
-- (id)initWithCellRegion:(id)arg1 anchorCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2 cursorCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg3 baseRegion:(id)arg4 selectionType:(long long)arg5 searchReferenceRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg6;
+- (id)initWithCellRegion:(id)arg1 anchorCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2 cursorCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg3 baseRegion:(id)arg4 selectionType:(long long)arg5 searchReferenceRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg6 beginImplicitEditing:(bool)arg7;
 - (id)initWithTableModel:(id)arg1 andCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (id)initWithTableModel:(id)arg1 andCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
 - (id)initWithTableModel:(id)arg1 andPreviousSelection:(id)arg2 offsetBy:(struct { int x1; int x2; })arg3;
@@ -93,6 +96,7 @@
 - (id)selectionByAddingCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 inTable:(id)arg2 withAnchor:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg3 cursor:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg4 selectionType:(long long)arg5;
 - (id)selectionByExtendingWithCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 inTable:(id)arg2 selectionType:(long long)arg3 cursorCell:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg4;
 - (id)selectionByRemovingCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 inTable:(id)arg2 withAnchor:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg3 cursor:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg4 selectionType:(long long)arg5;
+- (id)selectionToBeginImplicitEditing;
 - (long long)selectionType;
 - (void)setCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (void)setSearchReferenceRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;

@@ -2,70 +2,40 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXUpNextViewController : UIViewController <SXVideoControlItem> {
-    UIActivityIndicatorView * _activityIndicator;
-    SXVideoButton * _advanceButton;
-    <SXUpNextViewControllerDelegate> * _delegate;
-    double  _duration;
-    SXUpNextItem * _item;
-    SXVideoButton * _replayButton;
-    SXSkipButton * _skipButton;
-    double  _time;
-    SXTimeline * _timeline;
-    SXUpNextButton * _upNextButton;
+@interface SXUpNextViewController : UIViewController <SXVideoAccessoryItem, SXVideoTransitionObserver> {
+    unsigned long long  _displayMode;
+    <SXVideoQueueProviding> * _queueProvider;
+    SXSkipViewController * _skipViewController;
+    <SXNowPlayingVideoTitleProviding> * _titleProvider;
+    SXNowPlayingButton * _upNextButton;
 }
 
-@property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
-@property (nonatomic, retain) SXVideoButton *advanceButton;
-@property (nonatomic, readonly) double autoAppearanceTimeInterval;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <SXUpNextViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) double duration;
+@property (nonatomic) unsigned long long displayMode;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) bool hideable;
-@property (nonatomic, retain) SXUpNextItem *item;
-@property (nonatomic, retain) SXVideoButton *replayButton;
-@property (nonatomic, retain) SXSkipButton *skipButton;
+@property (nonatomic, readonly) <SXVideoQueueProviding> *queueProvider;
+@property (nonatomic, readonly) SXSkipViewController *skipViewController;
 @property (readonly) Class superclass;
-@property (nonatomic) double time;
-@property (nonatomic, retain) SXTimeline *timeline;
-@property (nonatomic, retain) SXUpNextButton *upNextButton;
-@property (retain) SXUpNextView *view;
+@property (nonatomic, readonly) <SXNowPlayingVideoTitleProviding> *titleProvider;
+@property (nonatomic, readonly) SXNowPlayingButton *upNextButton;
+@property (nonatomic, readonly) UIView *view;
+@property (nonatomic, readonly) UIViewController *viewController;
 
 - (void).cxx_destruct;
-- (id)accessoryViewsConfiguredForItem:(id)arg1;
-- (id)activityIndicator;
-- (id)advanceButton;
-- (double)autoAppearanceTimeInterval;
-- (id)delegate;
-- (double)duration;
-- (void)hide:(bool)arg1 withAnimationCoordinator:(id)arg2;
-- (bool)hideable;
-- (id)init;
-- (bool)isVisible;
-- (id)item;
-- (void)loadView;
-- (void)populateWithItem:(id)arg1;
-- (void)replay;
-- (id)replayButton;
-- (void)scheduleAutoAppearanceOfReplayButton;
-- (void)scheduleSkipDurationUpdateWithSeconds:(long long)arg1;
-- (void)setActivityIndicator:(id)arg1;
-- (void)setAdvanceButton:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setDuration:(double)arg1;
-- (void)setItem:(id)arg1;
-- (void)setReplayButton:(id)arg1;
-- (void)setSkipButton:(id)arg1;
-- (void)setTime:(double)arg1;
-- (void)setTimeline:(id)arg1;
-- (void)setUpNextButton:(id)arg1;
-- (void)skip;
-- (id)skipButton;
-- (double)time;
-- (id)timeline;
+- (void)_layoutSkipViewController;
+- (void)_layoutUpNextButton;
+- (unsigned long long)displayMode;
+- (id)initWithUpNextButton:(id)arg1 skipViewController:(id)arg2 titleProvider:(id)arg3 queueProvider:(id)arg4;
+- (id)queueProvider;
+- (void)setDisplayMode:(unsigned long long)arg1;
+- (id)skipViewController;
+- (id)titleProvider;
 - (id)upNextButton;
+- (id)viewController;
 - (void)viewDidLoad;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)willTransitionToDisplayMode:(unsigned long long)arg1 withTransitionCoordinator:(id)arg2;
+- (void)willTransitionToVideo:(id)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

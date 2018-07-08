@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIPickerView : UIView <DebugHierarchyObject, NSCoding, UIPickerTableViewContainerDelegate, UIPickerViewScrollTesting, UITableViewDataSource, UITableViewDelegate> {
+@interface UIPickerView : UIView <NSCoding, UIPickerTableViewContainerDelegate, UIPickerViewScrollTesting, UITableViewDataSource, UITableViewDelegate> {
     UIView * _backgroundView;
     UIImageView * _bottomGradient;
     UIView * _bottomLineView;
@@ -146,18 +146,11 @@
 - (bool)_usesModernStyle;
 - (double)_wheelShift;
 - (void)_willPlayClickSound;
-- (void)dealloc;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)allowsMultipleSelection;
 - (long long)columnForTableView:(id)arg1;
 - (id)createDividerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)dataSource;
+- (void)dealloc;
 - (struct CGSize { double x1; double x2; })defaultSize;
 - (id)delegate;
 - (void)didMoveToWindow;

@@ -9,6 +9,7 @@
     unsigned long long  _dataMigrationStage;
     <NSObject> * _dataMigrationStartObserver;
     unsigned long long  _dirty_time;
+    NSDictionary * _fileProviderAppToExtensionBundleMap;
     NSObject<OS_dispatch_queue> * _firstUnlockQueue;
     NSObject<OS_dispatch_source> * _idleTimer;
     NSObject<OS_dispatch_queue> * _indexQueue;
@@ -37,6 +38,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) unsigned long long dirty_time;
 @property <CSIndexExtensionDelegate> *extensionDelegate;
+@property (retain) NSDictionary *fileProviderAppToExtensionBundleMap;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *firstUnlockQueue;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *idleTimer;
@@ -60,11 +62,14 @@
 + (void)initialize;
 + (void)preheat;
 + (void)setIndexerDelegate:(id)arg1;
++ (void)setMemoryPressureStatus:(unsigned long long)arg1;
++ (void)setPrivate:(bool)arg1;
 + (id)sharedInstance;
 + (id)sharedInstanceWithDelegate:(id)arg1;
 + (void)shrink:(unsigned long long)arg1;
 + (void)shutdown;
 + (void)sync;
++ (void)unlock;
 + (void)writeDiagnostic:(id)arg1 bundleID:(id)arg2 identifier:(id)arg3;
 
 - (void).cxx_destruct;
@@ -107,9 +112,11 @@
 - (void)dirty;
 - (unsigned long long)dirty_time;
 - (id)extensionDelegate;
+- (void)extensionsChanged:(id)arg1;
 - (void)extensionsLoaded;
 - (void)fetchAttributesForProtectionClass:(id)arg1 attributes:(id)arg2 bundleID:(id)arg3 identifiers:(id)arg4 completion:(id /* block */)arg5;
 - (void)fetchLastClientStateWithProtectionClass:(id)arg1 forBundleID:(id)arg2 clientStateName:(id)arg3 options:(long long)arg4 completionHandler:(id /* block */)arg5;
+- (id)fileProviderAppToExtensionBundleMap;
 - (id)firstUnlockQueue;
 - (void)flush;
 - (void)getDBLogsWithCompletionHandler:(id /* block */)arg1;
@@ -159,6 +166,7 @@
 - (void)setDataMigrationStartObserver:(id)arg1;
 - (void)setDirty_time:(unsigned long long)arg1;
 - (void)setExtensionDelegate:(id)arg1;
+- (void)setFileProviderAppToExtensionBundleMap:(id)arg1;
 - (void)setFirstUnlockQueue:(id)arg1;
 - (void)setIdleTimer:(id)arg1;
 - (void)setIndexQueue:(id)arg1;
@@ -180,7 +188,7 @@
 - (id)taskForQueryWithQueryString:(id)arg1 queryContext:(id)arg2 resultsHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (id)taskForTopHitQueryWithQueryString:(id)arg1 queryContext:(id)arg2 resultsHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (long long)transactionCount;
-- (void)unlockFirstUnlockInSB:(bool)arg1;
+- (void)unlock;
 - (void)userPerformedAction:(id)arg1 withItem:(id)arg2 protectionClass:(id)arg3 forBundleID:(id)arg4;
 - (void)willModifySearchableItemsWithIdentifiers:(id)arg1 protectionClass:(id)arg2 forBundleID:(id)arg3 options:(long long)arg4 completionHandler:(id /* block */)arg5;
 

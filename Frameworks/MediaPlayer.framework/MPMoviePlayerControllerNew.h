@@ -120,7 +120,6 @@
 - (void)_setControlsHidden:(bool)arg1 animated:(bool)arg2;
 - (void)_setCurrentPlaybackTime:(double)arg1 timeOption:(long long)arg2;
 - (void)_setDelegate:(id)arg1;
-- (void)_setDisallowsAMRAudio:(bool)arg1;
 - (void)_setHTTPHeaderFields:(id)arg1;
 - (void)_setMovieMediaTypesOverride:(unsigned long long)arg1;
 - (void)_setMoviePlayer:(id)arg1;
@@ -159,7 +158,6 @@
 - (float)currentPlaybackRate;
 - (double)currentPlaybackTime;
 - (void)dealloc;
-- (bool)disallowsAMRAudio;
 - (double)duration;
 - (double)endPlaybackTime;
 - (void)endSeeking;

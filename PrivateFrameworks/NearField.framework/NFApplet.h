@@ -5,6 +5,7 @@
 @interface NFApplet : NSObject <NSSecureCoding> {
     unsigned char  _activationState;
     NSObject<NFAppletCollection> * _appletCollection;
+    unsigned char  _appletGPState;
     bool  _authTransientConfigurable;
     bool  _authTransientSupport;
     NSData * _discretionaryData;
@@ -16,7 +17,6 @@
     NSData * _identifierAsData;
     bool  _isContainer;
     bool  _isProxy;
-    unsigned char  _lifecycleState;
     NSString * _moduleIdentifier;
     NSArray * _multiSEApplicationGroupMemberIDs;
     NSString * _packageIdentifier;
@@ -33,6 +33,7 @@
 @property (nonatomic, readonly) NSArray *groupMembers;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) NSData *identifierAsData;
+@property (nonatomic, readonly) bool isGPLocked;
 @property (nonatomic, readonly) bool isTypeF;
 @property (nonatomic, readonly) unsigned char lifecycleState;
 @property (nonatomic, readonly) NSArray *referencedApps;
@@ -63,6 +64,8 @@
 - (bool)isContainer;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToApplet:(id)arg1;
+- (bool)isGPLocked;
+- (bool)isPPSEControllable;
 - (bool)isProxy;
 - (bool)isTypeF;
 - (unsigned char)lifecycleState;
@@ -70,6 +73,7 @@
 - (id)multiSEGroupMemberIDs;
 - (id)multiSSDMembers;
 - (id)packageIdentifier;
+- (unsigned long long)rawGPState;
 - (id)referencedApps;
 - (id)seIdentifier;
 - (void)setAppletCollection:(id)arg1;

@@ -13,7 +13,8 @@
 - (GEOMapItemAdditionalPlaceInfo *)_asPlaceInfo;
 - (GEOAssociatedApp *)_associatedApp;
 - (GEOMapItemPlaceAttribution *)_attribution;
-- (NSURL *)_bestBrandIconURLForSize:(struct CGSize { double x1; double x2; })arg1 allowSmaller:(bool)arg2;
+- (NSURL *)_bestAvatarBrandIconURLForSize:(struct CGSize { double x1; double x2; })arg1 allowSmaller:(bool)arg2;
+- (NSURL *)_bestNavbarBrandIconURLForSize:(struct CGSize { double x1; double x2; })arg1 allowSmaller:(bool)arg2;
 - (NSArray *)_browseCategories;
 - (GEOPDBusinessClaim *)_businessClaim;
 - (NSString *)_businessURL;
@@ -38,6 +39,8 @@
 - (bool)_hasEncyclopedicInfo;
 - (bool)_hasFeatureLink;
 - (bool)_hasFlyover;
+- (bool)_hasGenderNeutralRestroom;
+- (bool)_hasGenderNeutralRestroomAmenity;
 - (bool)_hasGoodForKidsAmenity;
 - (bool)_hasLocalizedCategoryNamesForType:(unsigned int)arg1;
 - (bool)_hasMUID;

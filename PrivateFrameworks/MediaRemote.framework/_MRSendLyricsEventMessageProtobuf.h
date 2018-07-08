@@ -9,9 +9,9 @@
 @property (nonatomic, retain) _MRLyricsEventProtobuf *event;
 @property (nonatomic, readonly) bool hasEvent;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)event;

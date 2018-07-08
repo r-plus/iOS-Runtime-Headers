@@ -10,6 +10,8 @@
 - (HDBackgroundTaskScheduler *)backgroundTaskScheduler;
 - (_HKBehavior *)behavior;
 - (HDXPCListener *)createXPCListenerWithMachServiceName:(NSString *)arg1;
+- (<HDHealthDaemonExtension> *)daemonExtensionWithIdentifier:(NSString *)arg1;
+- (NSArray *)daemonExtensionsConformingToProtocol:(Protocol *)arg1;
 - (HDPluginManager *)pluginManager;
 - (HDPrimaryProfile *)primaryProfile;
 - (void)registerForDaemonReady:(id <HDHealthDaemonReadyObserver>)arg1;

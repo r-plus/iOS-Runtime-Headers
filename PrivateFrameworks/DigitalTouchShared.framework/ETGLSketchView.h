@@ -4,7 +4,7 @@
 
 @interface ETGLSketchView : UIView <ETGLSketchRendererDelegate> {
     EAGLContext * _context;
-    struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >="__begin_"^"__end_"^"__end_cap_"{__compressed_pair<float * __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >="__first_"^ {}  _controlBatches;
+    struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >="__begin_"^"__end_"^"__end_cap_"{__compressed_pair<float * __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >="__value_"^ {}  _controlBatches;
     unsigned long long  _currentPointIndex;
     UIColor * _currentStrokeColor;
     unsigned long long  _currentStrokeIndex;
@@ -30,7 +30,7 @@
         unsigned long long *__begin_; 
         unsigned long long *__end_; 
         struct __compressed_pair<unsigned long *, std::__1::allocator<unsigned long> > { 
-            unsigned long long *__first_; 
+            unsigned long long *__value_; 
         } __end_cap_; 
     }  _secondaryVertexBatchCount;
     ETBoxcarFilterPointFIFO * _smoothingFIFO;
@@ -41,7 +41,7 @@
         unsigned long long *__begin_; 
         unsigned long long *__end_; 
         struct __compressed_pair<unsigned long *, std::__1::allocator<unsigned long> > { 
-            unsigned long long *__first_; 
+            unsigned long long *__value_; 
         } __end_cap_; 
     }  _vertexBatchCount;
     struct vector<std::__1::vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >, std::__1::allocator<std::__1::vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> > > >="__begin_"^{vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> > {}  _vertexBatches;

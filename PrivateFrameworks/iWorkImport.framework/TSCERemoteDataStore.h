@@ -75,6 +75,8 @@
 - (id)tspSemaphore;
 - (id)unSyncedStocks;
 - (void)unregisterWithCoordinator;
+- (void)updateCachedStocksFromKnownStocks:(id)arg1;
+- (void)updateCachedStocksIntoStore:(id)arg1;
 - (id)updateQueue;
 - (void)updateWithRemoteDataMap:(id)arg1 quotes:(struct NSDictionary { Class x1; }*)arg2 syncKey:(double)arg3;
 - (struct TSCEValue { unsigned long long x1[10]; int x2; })valueForRemoteData:(id)arg1;

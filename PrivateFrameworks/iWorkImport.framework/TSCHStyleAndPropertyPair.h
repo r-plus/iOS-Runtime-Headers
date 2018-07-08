@@ -9,8 +9,8 @@
 
 + (id)pairWithStyle:(id)arg1 property:(int)arg2;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (unsigned long long)hash;
 - (id)initWithStyle:(id)arg1 property:(int)arg2;

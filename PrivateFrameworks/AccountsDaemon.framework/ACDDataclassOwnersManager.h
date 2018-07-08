@@ -16,5 +16,6 @@
 - (id)init;
 - (bool)isPerformingDataclassActionsForAccount:(id)arg1;
 - (bool)performDataclassActions:(id)arg1 forAccount:(id)arg2 withChildren:(id)arg3 withError:(id*)arg4;
+- (void)preloadDataclassOwnersWithError:(id*)arg1;
 
 @end

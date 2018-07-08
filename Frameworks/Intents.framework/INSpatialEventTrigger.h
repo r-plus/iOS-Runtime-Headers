@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INSpatialEventTrigger : NSObject {
+@interface INSpatialEventTrigger : NSObject <NSSecureCoding> {
     long long  _event;
     CLPlacemark * _placemark;
 }

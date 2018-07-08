@@ -7,7 +7,7 @@
         void *m_ptr; 
     }  _frameHandle;
     struct String { 
-        struct RefPtr<WTF::StringImpl> { 
+        struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
             struct StringImpl {} *m_ptr; 
         } m_impl; 
     }  _urlString;
@@ -24,6 +24,6 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (bool)attemptRecovery;
-- (id)initWithWebView:(id)arg1 frameHandle:(id)arg2 urlString:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg3;
+- (id)initWithWebView:(id)arg1 frameHandle:(id)arg2 urlString:(const struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_1_1; } x1; }*)arg3;
 
 @end

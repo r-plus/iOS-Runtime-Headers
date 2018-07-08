@@ -4,17 +4,20 @@
 
 @interface CRKSession : NSObject <CATRemoteTransportDelegate, CATTransportDelegate> {
     bool  _allowUntrustedConnections;
+    <CRKGrowthFunction> * _backoffGrowthFunction;
     <CRKSessionDelegate> * _delegate;
     double  _failedConnectionRetryInterval;
     NSString * _ipAddress;
     double  _lostBeaconTimeout;
     bool  _requiresBeacon;
     double  _willLoseBeaconWarningTimeout;
+    double  mCurrentBackoffInterval;
     CATStateMachine * mFSM;
     CATRemoteTransport * mTransport;
 }
 
 @property (nonatomic, readonly) bool allowUntrustedConnections;
+@property (nonatomic, readonly) <CRKGrowthFunction> *backoffGrowthFunction;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CRKSessionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -30,6 +33,8 @@
 
 - (void).cxx_destruct;
 - (bool)allowUntrustedConnections;
+- (void)backoffDidFinish;
+- (id)backoffGrowthFunction;
 - (void)cancelConnectionAttempt;
 - (void)connect;
 - (id)delegate;
@@ -41,7 +46,10 @@
 - (void)delegateInvalidated;
 - (void)delegateWillLoseBeacon;
 - (void)didConnect;
-- (void)disconnect;
+- (void)enterBackoffCanConnect;
+- (void)enterNoNetwork;
+- (void)enterOutOfRange;
+- (void)exitBackoffCanConnect;
 - (double)failedConnectionRetryInterval;
 - (void)failedToConnect;
 - (void)foundBeacon;
@@ -54,7 +62,9 @@
 - (double)lostBeaconTimeout;
 - (void)lostConnection;
 - (void)registerDefaults;
+- (void)rejected;
 - (bool)requiresBeacon;
+- (void)resetBackoff;
 - (void)setDelegate:(id)arg1;
 - (void)setFailedConnectionRetryInterval:(double)arg1;
 - (void)setLostBeaconTimeout:(double)arg1;

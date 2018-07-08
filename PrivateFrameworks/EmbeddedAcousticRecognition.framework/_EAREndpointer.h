@@ -5,10 +5,12 @@
 @interface _EAREndpointer : NSObject {
     struct unique_ptr<quasar::HybridEndpointer, std::__1::default_delete<quasar::HybridEndpointer> > { 
         struct __compressed_pair<quasar::HybridEndpointer *, std::__1::default_delete<quasar::HybridEndpointer> > { 
-            struct HybridEndpointer {} *__first_; 
+            struct HybridEndpointer {} *__value_; 
         } __ptr_; 
     }  _endpointer;
 }
+
++ (void)initialize;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

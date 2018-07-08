@@ -21,6 +21,6 @@
 - (id)responsePayload;
 - (void)setPasscode:(id)arg1;
 - (void)setPasscodeValid:(bool)arg1;
-- (void)setResponseFromDictionary:(id)arg1;
+- (void)setResponseFromData:(id)arg1;
 
 @end

@@ -12,6 +12,7 @@
     UITableViewController * _tableViewController;
     bool  _userLikedIt;
     bool  _wantsCustomFeedbackSection;
+    bool  _wantsPositiveFeedbackSection;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -22,11 +23,13 @@
 @property (nonatomic, retain) UITableViewController *tableViewController;
 
 - (void).cxx_destruct;
+- (long long)_feedbackFormSectionForSectionIndex:(long long)arg1;
 - (id)_feedbackKeyForIndexPath:(id)arg1;
 - (void)_handleDoneButtonWasPressedOnCustomFeedbackView;
 - (bool)_isSelectedRow:(id)arg1 inSection:(long long)arg2;
 - (void)_markCell:(id)arg1 asSelected:(bool)arg2;
 - (void)_setSelectionStateForKey:(id)arg1 inSection:(long long)arg2 to:(bool)arg3;
+- (void)cancelFeedback:(id)arg1;
 - (id)delegate;
 - (id)initWithDelegate:(id)arg1 positiveKeys:(id)arg2 negativeKeys:(id)arg3 wantsCustomFeedbackSection:(bool)arg4;
 - (long long)numberOfSectionsInTableView:(id)arg1;

@@ -18,7 +18,6 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_hashRouteID:(id)arg1;
 - (void)_registerForMessages;
 - (void)addAdvertisement:(id)arg1;
 - (id)advertisement;
@@ -26,9 +25,10 @@
 - (void)configure:(id)arg1 msgDispatcher:(id)arg2 accessoryConfigureGroup:(id)arg3;
 - (id)dumpSimpleState;
 - (id)dumpState;
+- (void)encodeWithCoder:(id)arg1;
 - (void)handleRoomNameChanged:(id)arg1;
 - (void)handleUpdatedAdvertisement:(id)arg1;
-- (void)handleUpdatedMinimumUserPriviledge:(long long)arg1;
+- (void)handleUpdatedMinimumUserPrivilege:(long long)arg1;
 - (void)handleUpdatedPassword:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -36,6 +36,7 @@
 - (id)mediaProfile;
 - (id)name;
 - (void)notifyConnectivityChangedWithReachabilityState:(bool)arg1;
+- (bool)providesHashRouteID;
 - (long long)reachableTransports;
 - (void)removeAdvertisement:(id)arg1;
 - (void)setAdvertisement:(id)arg1;

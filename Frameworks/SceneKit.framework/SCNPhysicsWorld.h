@@ -8,14 +8,14 @@
             struct c3dPhysicsField {} **__begin_; 
             struct c3dPhysicsField {} **__end_; 
             struct __compressed_pair<c3dPhysicsField **, std::__1::allocator<c3dPhysicsField *> > { 
-                struct c3dPhysicsField {} **__first_; 
+                struct c3dPhysicsField {} **__value_; 
             } __end_cap_; 
         } _fields; 
         struct vector<c3dPhysicsField *, std::__1::allocator<c3dPhysicsField *> > { 
             struct c3dPhysicsField {} **__begin_; 
             struct c3dPhysicsField {} **__end_; 
             struct __compressed_pair<c3dPhysicsField **, std::__1::allocator<c3dPhysicsField *> > { 
-                struct c3dPhysicsField {} **__first_; 
+                struct c3dPhysicsField {} **__value_; 
             } __end_cap_; 
         } _activeFields; 
         unsigned int _lastOverrideIndex; 

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITextField : UIControl <ABText, DebugHierarchyObject, MPUAutoupdatingTextContainer, NSCoding, UIContentSizeCategoryAdjusting, UIGestureRecognizerDelegate, UIKeyInputPrivate, UIKeyboardInput, UIPopoverControllerDelegate, UITextDragSupporting, UITextDraggable, UITextDropSupporting, UITextDroppable, UITextFieldContent, UITextInput, UITextInputTraits_Private, UITextPasteConfigurationSupporting, UITextPasteConfigurationSupporting_Internal, UIViewGhostedRangeSupporting, _UIFloatingContentViewDelegate, _UILayoutBaselineUpdating, _UITextFieldContentViewContextProvider, _UITextFieldContent_Internal, _UITextFieldVisualStyleSubject> {
+@interface UITextField : UIControl <ABText, MPUAutoupdatingTextContainer, NSCoding, UIContentSizeCategoryAdjusting, UIGestureRecognizerDelegate, UIKeyInputPrivate, UIKeyboardInput, UIPopoverControllerDelegate, UITextDragSupporting, UITextDraggable, UITextDropSupporting, UITextDroppable, UITextFieldContent, UITextInput, UITextInputTraits_Private, UITextPasteConfigurationSupporting, UITextPasteConfigurationSupporting_Internal, UIViewGhostedRangeSupporting, _UIFloatingContentViewDelegate, _UILayoutBaselineUpdating, _UITextFieldContentViewContextProvider, _UITextFieldContent_Internal, _UITextFieldVisualStyleSubject> {
     _UIFieldEditorLayoutManager * __layoutManager;
     NSTextContainer * __textContainer;
     bool  _adjustsFontForContentSizeCategory;
@@ -481,15 +481,6 @@
 - (void)_willUpdateAfterDetachingFieldEditor;
 - (void)_windowBecameKey;
 - (void)_windowResignedKey;
-- (void)dealloc;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
-- (id)debugHierarchyValueForPropertyWithName:(id)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)actualFont;
 - (double)actualMinimumFontSize;
 - (void)addGhostedRange:(id)arg1;
@@ -547,6 +538,7 @@
 - (id)createTextLabelWithTextColor:(id)arg1;
 - (id)customOverlayContainer;
 - (void)cut:(id)arg1;
+- (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)decreaseSize:(id)arg1;
 - (id)defaultTextAttributes;
@@ -816,6 +808,10 @@
 - (id)ab_textAttributes;
 - (void)setAb_text:(id)arg1;
 - (void)setAb_textAttributes:(id)arg1;
+
+// Image: /System/Library/Frameworks/UIKit.framework/Frameworks/DocumentManager.framework/DocumentManager
+
++ (bool)doc_setDefaultKeyboardAppearanceIfPossible:(long long)arg1;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
 

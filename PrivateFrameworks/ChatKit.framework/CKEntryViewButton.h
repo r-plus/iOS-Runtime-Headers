@@ -10,6 +10,7 @@
 @property (nonatomic, retain) UIColor *ckTintColor;
 @property (nonatomic) long long entryViewButtonType;
 
++ (id)entryViewButtonImageForType:(long long)arg1;
 + (id)entryViewButtonOfType:(long long)arg1;
 + (id)imageNameForEntryViewButtonType:(long long)arg1;
 + (void)prewarmEntryViewButtons;

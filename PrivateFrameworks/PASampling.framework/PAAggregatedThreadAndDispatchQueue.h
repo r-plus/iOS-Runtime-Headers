@@ -5,6 +5,8 @@
 @interface PAAggregatedThreadAndDispatchQueue : NSObject <PAAggregatedStack> {
     PAAggregatedProcessInstance * _aggregatedTask;
     NSMutableArray * _contiguousStacks;
+    unsigned long long  _cpuCyclesCached;
+    unsigned long long  _cpuInstructionsCached;
     unsigned long long  _cpuTimeNsCached;
     unsigned long long  _dispatchQueueId;
     int  _maxBasePriority;
@@ -44,6 +46,8 @@
 - (id)copyDescriptionForSampleFrame:(id)arg1 inSampleTask:(id)arg2;
 - (id)copyStringForMissingSamplesBeforeContiguousStackIndex:(unsigned long long)arg1;
 - (int)count;
+- (unsigned long long)cpuCycles;
+- (unsigned long long)cpuInstructions;
 - (unsigned long long)cpuTimeNs;
 - (id)debugDescription;
 - (unsigned long long)dispatchQueueId;

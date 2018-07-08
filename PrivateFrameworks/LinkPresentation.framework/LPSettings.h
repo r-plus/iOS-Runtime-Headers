@@ -7,5 +7,6 @@
 + (bool)disableLegacyStoreLookups;
 + (void)initialize;
 + (bool)showDebugIndicators;
++ (bool)subsampleImagesToScreenSize;
 
 @end

@@ -28,6 +28,7 @@
         } size; 
     }  _sourceRect;
     UIView * _sourceView;
+    UITapGestureRecognizer * _tapGestureRecognizer;
     bool  _visible;
 }
 
@@ -55,6 +56,7 @@
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } sourceRect;
 @property (nonatomic, retain) UIView *sourceView;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) UITapGestureRecognizer *tapGestureRecognizer;
 @property (getter=isVisible, nonatomic, readonly) bool visible;
 
 + (bool)avatarCardEnabled;
@@ -123,9 +125,11 @@
 - (void)setRolloverGestureRecognizer:(id)arg1;
 - (void)setSourceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setSourceView:(id)arg1;
+- (void)setTapGestureRecognizer:(id)arg1;
 - (void)showContact;
 - (void)showContact:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })sourceRect;
 - (id)sourceView;
+- (id)tapGestureRecognizer;
 
 @end

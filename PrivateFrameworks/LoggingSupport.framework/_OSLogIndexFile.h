@@ -23,10 +23,10 @@
 - (bool)_loadCatalogMetadata;
 - (bool)_loadHeaderMetadata:(id)arg1;
 - (const char *)bootUUID;
+- (id)copyMappedChunkStore:(id*)arg1;
 - (unsigned long long)endTime;
 - (id)initWithChunkStore:(id)arg1 error:(id*)arg2;
 - (id)initWithTraceFile:(id)arg1 error:(id*)arg2;
-- (id)map:(id*)arg1;
 - (unsigned long long)oldestTime;
 
 @end

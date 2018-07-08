@@ -11,6 +11,7 @@
     long long  _leadingAccessoryType;
     LPImage * _leadingIcon;
     UIColor * _leadingIconMaskColor;
+    NSNumber * _minimumHeight;
     LPCaptionRowPresentationProperties * _top;
     long long  _trailingAccessoryType;
     LPImage * _trailingIcon;
@@ -22,9 +23,11 @@
 @property (nonatomic, retain) LPImage *belowLeadingIcon;
 @property (nonatomic, retain) UIColor *belowLeadingIconMaskColor;
 @property (nonatomic, readonly, retain) LPCaptionRowPresentationProperties *bottom;
+@property (nonatomic, readonly) bool hasAnyContent;
 @property (nonatomic) long long leadingAccessoryType;
 @property (nonatomic, retain) LPImage *leadingIcon;
 @property (nonatomic, retain) UIColor *leadingIconMaskColor;
+@property (nonatomic, retain) NSNumber *minimumHeight;
 @property (nonatomic, readonly, retain) LPCaptionRowPresentationProperties *top;
 @property (nonatomic) long long trailingAccessoryType;
 @property (nonatomic, retain) LPImage *trailingIcon;
@@ -48,6 +51,7 @@
 - (long long)leftAccessoryType;
 - (id)leftIcon;
 - (id)leftIconMaskColor;
+- (id)minimumHeight;
 - (long long)rightAccessoryType;
 - (id)rightIcon;
 - (id)rightIconMaskColor;
@@ -56,6 +60,7 @@
 - (void)setLeadingAccessoryType:(long long)arg1;
 - (void)setLeadingIcon:(id)arg1;
 - (void)setLeadingIconMaskColor:(id)arg1;
+- (void)setMinimumHeight:(id)arg1;
 - (void)setTrailingAccessoryType:(long long)arg1;
 - (void)setTrailingIcon:(id)arg1;
 - (void)setTrailingIconMaskColor:(id)arg1;

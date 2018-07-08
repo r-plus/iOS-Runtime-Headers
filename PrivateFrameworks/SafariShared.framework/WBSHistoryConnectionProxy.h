@@ -27,6 +27,8 @@
 - (bool)isRegisteredForHistoryNotifications;
 - (void)killService;
 - (void)processRemoteHistoryNotification:(id)arg1;
+- (void)queryMemoryFootprint:(id /* block */)arg1;
+- (id)queryMemoryFootprintWithError:(id*)arg1;
 - (void)registerForHistoryNotifications;
 - (void)unregisterForHistoryNotifications;
 

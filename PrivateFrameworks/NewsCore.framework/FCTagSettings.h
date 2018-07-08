@@ -15,7 +15,6 @@
 + (id)commandsToMergeLocalDataToCloud:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)_entryIDForTagID:(id)arg1;
 - (id)accessTokenForTagID:(id)arg1;
 - (id)allTagSettingsRecords;
 - (id)authenticatedAccessTokensByTagID;

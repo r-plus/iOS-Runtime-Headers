@@ -8,7 +8,7 @@
             struct HistogramBucket {} *__begin_; 
             struct HistogramBucket {} *__end_; 
             struct __compressed_pair<HistogramBucket *, std::__1::allocator<HistogramBucket> > { 
-                struct HistogramBucket {} *__first_; 
+                struct HistogramBucket {} *__value_; 
             } __end_cap_; 
         } _dateBuckets; 
         double _histogramBucketAnchor; 

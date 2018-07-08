@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
  */
 
-@interface CAMNebulaSecondaryState : NSObject <NSCoding> {
+@interface CAMNebulaSecondaryState : NSObject <NSSecureCoding> {
     long long  _failedStateReadAttemptsCount;
     NSDate * _lastMovieWriteAttemptTime;
     long long  _movieWriteAttemptsCount;
@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSDate *stopTime;
 
 + (id)secondaryStateWithContentsOfFile:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (bool)addStopReasons:(long long)arg1 stopTime:(id)arg2;

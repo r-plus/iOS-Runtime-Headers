@@ -8,6 +8,7 @@
 - (_SFPBDate *)arrivalActualTime;
 - (_SFPBAirport *)arrivalAirport;
 - (NSString *)arrivalGate;
+- (_SFPBDate *)arrivalGateTime;
 - (_SFPBDate *)arrivalPublishedTime;
 - (_SFPBDate *)arrivalRunwayTime;
 - (NSString *)arrivalTerminal;
@@ -23,6 +24,7 @@
 - (bool)hasArrivalActualTime;
 - (bool)hasArrivalAirport;
 - (bool)hasArrivalGate;
+- (bool)hasArrivalGateTime;
 - (bool)hasArrivalPublishedTime;
 - (bool)hasArrivalRunwayTime;
 - (bool)hasArrivalTerminal;
@@ -43,6 +45,7 @@
 - (void)setArrivalActualTime:(_SFPBDate *)arg1;
 - (void)setArrivalAirport:(_SFPBAirport *)arg1;
 - (void)setArrivalGate:(NSString *)arg1;
+- (void)setArrivalGateTime:(_SFPBDate *)arg1;
 - (void)setArrivalPublishedTime:(_SFPBDate *)arg1;
 - (void)setArrivalRunwayTime:(_SFPBDate *)arg1;
 - (void)setArrivalTerminal:(NSString *)arg1;

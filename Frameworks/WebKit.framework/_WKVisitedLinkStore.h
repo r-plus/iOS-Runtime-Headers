@@ -5,7 +5,7 @@
 @interface _WKVisitedLinkStore : NSObject <WKObject> {
     struct ObjectStorage<WebKit::VisitedLinkStore> { 
         struct type { 
-            unsigned char __lx[192]; 
+            unsigned char __lx[208]; 
         } data; 
     }  _visitedLinkStore;
 }
@@ -17,9 +17,12 @@
 @property (readonly) Class superclass;
 
 - (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
+- (void)addVisitedLinkWithString:(id)arg1;
 - (void)addVisitedLinkWithURL:(id)arg1;
+- (bool)containsVisitedLinkWithURL:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)removeAll;
+- (void)removeVisitedLinkWithURL:(id)arg1;
 
 @end

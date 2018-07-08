@@ -51,6 +51,7 @@
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })expandPrefixToLongestRange:(id)arg1 forText:(id)arg2 usingPattern:(id)arg3;
 - (id)findQuerySuggestionFromParsecForResult:(id)arg1;
 - (void)findSilentEngagementCandidateFromVisibleResults:(id)arg1;
+- (id)initWithStore:(id)arg1 clientIdentifier:(id)arg2;
 - (bool)isSpotlight;
 - (id)parameters;
 - (id)prefix;

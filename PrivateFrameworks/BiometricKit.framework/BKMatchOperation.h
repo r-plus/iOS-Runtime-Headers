@@ -24,6 +24,7 @@
 - (void).cxx_destruct;
 - (bool)captureOnly;
 - (id)credentialSet;
+- (void)dealloc;
 - (id)initWithDevice:(id)arg1;
 - (void)matchResult:(id)arg1 details:(id)arg2 client:(unsigned long long)arg3;
 - (id)optionsDictionaryWithError:(id*)arg1;

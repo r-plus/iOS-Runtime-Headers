@@ -59,7 +59,7 @@
 + (void)initialize;
 + (bool)isSystemSpeaking;
 + (void)refreshAllAvailableVoices;
-+ (id)speechMarkupStringForType:(long long)arg1 forIdentifier:(id)arg2;
++ (id)speechMarkupStringForType:(long long)arg1 forIdentifier:(id)arg2 string:(id)arg3;
 + (id)supportedIPAPhonemeLanguages;
 + (void)testingSetAllVoices:(id)arg1;
 + (id)voiceForIdentifier:(id)arg1;

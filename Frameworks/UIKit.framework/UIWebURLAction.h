@@ -4,7 +4,13 @@
 
 @interface UIWebURLAction : NSObject
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (void)performDataDetectorsDefaultActionForDOMNode:(id)arg1 forFrame:(id)arg2 inView:(id)arg3;
+
+// Image: /System/Library/AccessibilityBundles/GAXClient.bundle/GAXClient
+
 + (bool)performDefaultActionForURL:(id)arg1 andDOMNode:(id)arg2 withAllowedTypes:(unsigned long long)arg3 forFrame:(id)arg4 inView:(id)arg5;
++ (Class)safeCategoryBaseClass;
 
 @end

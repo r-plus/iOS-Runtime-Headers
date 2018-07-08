@@ -19,6 +19,7 @@
     WFOtherNetworkViewController * _otherNetworkVC;
     WFPasswordOperation * _passwordOperation;
     bool  _powered;
+    bool  _refreshedKnownNetworks;
     bool  _scanForPersonalHotspots;
     WFScanManager * _scanManager;
     bool  _scannedForAssociation;
@@ -48,6 +49,7 @@
 @property (nonatomic, retain) WFOtherNetworkViewController *otherNetworkVC;
 @property (nonatomic, retain) WFPasswordOperation *passwordOperation;
 @property (nonatomic) bool powered;
+@property (nonatomic) bool refreshedKnownNetworks;
 @property (nonatomic) bool scanForPersonalHotspots;
 @property (nonatomic, retain) WFScanManager *scanManager;
 @property (nonatomic) bool scannedForAssociation;
@@ -79,6 +81,7 @@
 - (bool)_canStartAssociationToUserSuppliedNetwork:(id)arg1;
 - (void)_clientRestartedNotification:(id)arg1;
 - (bool)_disablePersonalHotspot;
+- (void)_downloadHomeApp;
 - (void)_handleAssociationError:(id)arg1 network:(id)arg2 profile:(id)arg3;
 - (void)_handleAssociationResult:(bool)arg1 error:(id)arg2 network:(id)arg3 profile:(id)arg4;
 - (id)_hotspotFailureAlertControllerForDevice:(id)arg1;
@@ -89,16 +92,22 @@
 - (void)_networkHealthIssuesDidChange:(id)arg1;
 - (void)_networkLinkQualityDidChangeNotification:(id)arg1;
 - (void)_networkRestrictionStateDidChange:(id)arg1;
+- (void)_openHomeAppForNetwork:(id)arg1;
 - (void)_pauseHotspotScanning;
 - (void)_pauseScanning;
 - (void)_powerDidChangeNotification:(id)arg1;
 - (void)_powerStateChanged;
 - (void)_presentAssociationFailureAlertController:(id)arg1;
 - (void)_promptCredentialsForNetwork:(id)arg1 profile:(id)arg2;
+- (void)_promptForSecureWACDevice:(id)arg1;
+- (void)_promptHomeDownload;
+- (void)_promptHomeDownloadInProgress;
+- (void)_promptOpenNetworkInHome:(id)arg1;
 - (void)_promptToDisableCarPlayForNetworkName:(id)arg1 handler:(id /* block */)arg2;
 - (void)_promptTrustCertificateForNetwork:(id)arg1 certificateChain:(id)arg2 profile:(id)arg3;
 - (void)_registerForApplicationNotifications;
 - (void)_resumeScanning;
+- (void)_runUnconfiguredJoinOperationForNetwork:(id)arg1;
 - (void)_saveLogsWithComment:(id)arg1 diagnosticsViewController:(id)arg2;
 - (void)_scanNetworkForAssociation:(id)arg1 profile:(id)arg2;
 - (void)_setupWithInterface:(id)arg1;
@@ -170,7 +179,9 @@
 - (void)otherNetworkViewControllerUserDidTapJoin:(id)arg1;
 - (id)passwordOperation;
 - (bool)powered;
+- (void)presentTrustCertificateForNetwork:(id)arg1 profile:(id)arg2;
 - (void)pushDataUsageViewController;
+- (bool)refreshedKnownNetworks;
 - (void)removeScanCache;
 - (bool)scanForPersonalHotspots;
 - (id)scanManager;
@@ -198,6 +209,7 @@
 - (void)setOtherNetworkVC:(id)arg1;
 - (void)setPasswordOperation:(id)arg1;
 - (void)setPowered:(bool)arg1;
+- (void)setRefreshedKnownNetworks:(bool)arg1;
 - (void)setScanForPersonalHotspots:(bool)arg1;
 - (void)setScanManager:(id)arg1;
 - (void)setScannedForAssociation:(bool)arg1;

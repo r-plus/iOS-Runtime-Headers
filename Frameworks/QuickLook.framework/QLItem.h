@@ -191,6 +191,7 @@
 - (void)setUseFullPDFTransition:(bool)arg1;
 - (void)setUuid:(id)arg1;
 - (void)setWantsPreviewInDebugViewController:(bool)arg1;
+- (id)shareableURL;
 - (bool)shouldUseExtensionPreview;
 - (bool)shouldUseExtensionThumbnail;
 - (id)spotlightQueryString;

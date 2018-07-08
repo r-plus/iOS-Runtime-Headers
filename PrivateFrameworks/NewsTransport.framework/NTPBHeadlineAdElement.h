@@ -4,6 +4,7 @@
 
 @interface NTPBHeadlineAdElement : PBCodable <NSCopying> {
     NSMutableArray * _articleIAdCategories;
+    NSMutableArray * _articleIAdKeywords;
     NSMutableArray * _articleIAdSectionIDs;
     NSString * _articleID;
     NSString * _articleRating;
@@ -24,6 +25,7 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *articleIAdCategories;
+@property (nonatomic, retain) NSMutableArray *articleIAdKeywords;
 @property (nonatomic, retain) NSMutableArray *articleIAdSectionIDs;
 @property (nonatomic, retain) NSString *articleID;
 @property (nonatomic, retain) NSString *articleRating;
@@ -45,18 +47,23 @@
 @property (nonatomic) bool sponsoredArticle;
 
 + (Class)articleIAdCategoriesType;
++ (Class)articleIAdKeywordsType;
 + (Class)articleIAdSectionIDsType;
 + (Class)channelIAdCategoriesType;
 + (Class)channelIAdKeywordsType;
 
 - (void).cxx_destruct;
 - (void)addArticleIAdCategories:(id)arg1;
+- (void)addArticleIAdKeywords:(id)arg1;
 - (void)addArticleIAdSectionIDs:(id)arg1;
 - (void)addChannelIAdCategories:(id)arg1;
 - (void)addChannelIAdKeywords:(id)arg1;
 - (id)articleIAdCategories;
 - (id)articleIAdCategoriesAtIndex:(unsigned long long)arg1;
 - (unsigned long long)articleIAdCategoriesCount;
+- (id)articleIAdKeywords;
+- (id)articleIAdKeywordsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)articleIAdKeywordsCount;
 - (id)articleIAdSectionIDs;
 - (id)articleIAdSectionIDsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)articleIAdSectionIDsCount;
@@ -72,6 +79,7 @@
 - (id)channelID;
 - (id)channelRating;
 - (void)clearArticleIAdCategories;
+- (void)clearArticleIAdKeywords;
 - (void)clearArticleIAdSectionIDs;
 - (void)clearChannelIAdCategories;
 - (void)clearChannelIAdKeywords;
@@ -93,6 +101,7 @@
 - (bool)paidArticle;
 - (bool)readFrom:(id)arg1;
 - (void)setArticleIAdCategories:(id)arg1;
+- (void)setArticleIAdKeywords:(id)arg1;
 - (void)setArticleIAdSectionIDs:(id)arg1;
 - (void)setArticleID:(id)arg1;
 - (void)setArticleRating:(id)arg1;

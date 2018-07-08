@@ -114,6 +114,8 @@
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)interactionMode;
 - (unsigned long long)interactionModeForPreparing;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToConfiguration:(id)arg1;
 - (bool)isFilesApp;
 - (unsigned long long)maximumNumberOfItemsToFetch;
 - (unsigned long long)maximumNumberOfRows;

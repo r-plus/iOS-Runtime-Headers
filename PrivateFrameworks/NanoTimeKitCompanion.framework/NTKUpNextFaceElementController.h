@@ -3,6 +3,7 @@
  */
 
 @interface NTKUpNextFaceElementController : NSObject <NTKUpNextElementCoordinatorObserver> {
+    bool  _allowsLocationUse;
     NSMutableDictionary * _becameVisibleDates;
     NTKUpNextElementCoordinator * _coordinator;
     <NTKUpNextFaceElementControllerDelegate> * _delegate;
@@ -28,6 +29,7 @@
     unsigned long long  _state;
 }
 
+@property (nonatomic) bool allowsLocationUse;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NTKUpNextFaceElementControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -58,8 +60,10 @@
 - (void)_performOrEnqueueOperation:(id)arg1;
 - (void)_setDataSource:(id)arg1 enabled:(bool)arg2;
 - (void)_setElement:(id)arg1 atIndexPath:(id)arg2 hidden:(bool)arg3;
+- (void)_updateMetrics;
 - (void)_updateMonitoringVisibilityForAllElement;
 - (void)_updateNoContentState;
+- (bool)allowsLocationUse;
 - (id)complicationDescriptors;
 - (void)dealloc;
 - (id)delegate;
@@ -83,6 +87,7 @@
 - (bool)isDataSourceWithBundleIdentifierEnabled:(id)arg1;
 - (unsigned long long)numberOfElementsInSection:(unsigned long long)arg1;
 - (void)scrollViewDidScroll;
+- (void)setAllowsLocationUse:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEnabled:(bool)arg1 forDataSourceWithBundleIdentifier:(id)arg2;
 - (void)setShowsCanonicalContent:(bool)arg1;

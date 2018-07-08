@@ -9,9 +9,9 @@
 @property (nonatomic, retain) _MRVoiceInputDeviceDescriptorProtobuf *descriptor;
 @property (nonatomic, readonly) bool hasDescriptor;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)descriptor;
 - (id)dictionaryRepresentation;

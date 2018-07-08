@@ -11,7 +11,6 @@
 @property (nonatomic) double maximumNeighbourDistance;
 
 - (id)_groupablesForItems:(id)arg1;
-- (id)init;
 - (id)initWithHeuristics:(long long)arg1;
 - (double)maximumDistanceForAligningEdges;
 - (double)maximumNeighbourDistance;

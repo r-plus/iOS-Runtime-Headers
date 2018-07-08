@@ -35,6 +35,7 @@
         double bottom; 
         double right; 
     }  _marginInsets;
+    NSString * _mostRecentlyTouchedPlugin;
     struct CGPoint { 
         double x; 
         double y; 
@@ -85,6 +86,7 @@
 @property (nonatomic) bool isPerformingRegenerateOnlyUpdate;
 @property (nonatomic, retain) UITapGestureRecognizer *loggingTapGestureRecognizer;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } marginInsets;
+@property (nonatomic) NSString *mostRecentlyTouchedPlugin;
 @property (nonatomic) struct CGPoint { double x1; double x2; } peekSampleTranslation;
 @property (getter=isPeeking, nonatomic) bool peeking;
 @property (nonatomic) bool playedLastImpactEffectForTransitionFromComposing;
@@ -154,6 +156,7 @@
 - (void)audioControllerPlayingDidChange:(id)arg1;
 - (id)avatarView:(id)arg1 orderedPropertiesForProperties:(id)arg2 category:(id)arg3;
 - (double)balloonMaxWidth;
+- (id)balloonPluginForViewController:(id)arg1;
 - (void)balloonView:(id)arg1 mediaObjectDidFinishPlaying:(id)arg2;
 - (void)balloonViewDoubleTapped:(id)arg1;
 - (id)balloonViewForChatItem:(id)arg1;
@@ -177,6 +180,7 @@
 - (id)chatItemsWithBulletins:(id)arg1;
 - (id)chatItemsWithIMChatItems:(id)arg1;
 - (void)chatRegistryDidLoad:(id)arg1;
+- (void)clearRecentPluginTouch;
 - (id)collectionView;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
@@ -219,6 +223,7 @@
 - (id)fullscreenEffectManager;
 - (id)gradientReferenceView;
 - (bool)hasHiddenItems;
+- (bool)hasRecentTouchForSendingPlugin:(id)arg1;
 - (id)hiddenBalloonViews;
 - (id)hiddenItems;
 - (void)highlightItemAtIndexPathWhenDisplayed:(id)arg1;
@@ -235,8 +240,12 @@
 - (bool)isPeeking;
 - (bool)isPerformingRegenerateOnlyUpdate;
 - (bool)isTranscriptUpdateAnimated;
+- (bool)isVisiblePlugin:(id)arg1;
 - (id)lastMessagePartChatItem;
+- (void)liveBalloonTouched:(id)arg1;
 - (void)liveViewController:(id)arg1 requestPresentationStyleExpanded:(bool)arg2;
+- (void)liveViewController:(id)arg1 stagePayload:(id)arg2 skipShelf:(bool)arg3 allowAllCommits:(bool)arg4 completionHandler:(id /* block */)arg5;
+- (void)liveViewController:(id)arg1 stageSticker:(id)arg2 skipShelf:(bool)arg3 allowAllCommits:(bool)arg4 completionHandler:(id /* block */)arg5;
 - (void)loadEarlierMessages;
 - (void)loadEarlierMessagesIfNeeded;
 - (void)loadMoreRecentMessages;
@@ -248,6 +257,7 @@
 - (id)loggingTapGestureRecognizer;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })marginInsets;
 - (id)messagePartForBalloonView:(id)arg1;
+- (id)mostRecentlyTouchedPlugin;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (void)parentControllerDidBecomeActive;
 - (struct CGPoint { double x1; double x2; })peekSampleTranslation;
@@ -303,6 +313,7 @@
 - (void)setIsPerformingRegenerateOnlyUpdate:(bool)arg1;
 - (void)setLoggingTapGestureRecognizer:(id)arg1;
 - (void)setMarginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setMostRecentlyTouchedPlugin:(id)arg1;
 - (void)setPeekSampleTranslation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setPeeking:(bool)arg1;
 - (void)setPlayedLastImpactEffectForTransitionFromComposing:(bool)arg1;

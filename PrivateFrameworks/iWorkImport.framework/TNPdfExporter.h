@@ -11,7 +11,7 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)p_renderingExporterDelegate;
 - (void)setCopyPassphrase:(id)arg1 hint:(id)arg2;
 - (void)setOptions:(id)arg1;

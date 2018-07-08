@@ -14,6 +14,8 @@
 @property (nonatomic) double nextAsthmaAttackSampleTime;
 @property (nonatomic, retain) NSMutableDictionary *nextSpirometrySampleTimes;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (double)_computeSpirometryForDemoPerson:(id)arg1 atTime:(double)arg2 type:(long long)arg3 computeLowerLimitOfNormality:(bool)arg4 height:(double)arg5;
 - (bool)_isAsthmaAttackAllowedForDemoPerson:(id)arg1 atTime:(double)arg2;

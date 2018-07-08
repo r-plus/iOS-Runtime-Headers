@@ -3,8 +3,8 @@
  */
 
 @interface _RWIRelayClientConnection : NSObject <_RWIRelayToClientMessageProxy> {
+    bool  _closed;
     <_RWIRelayClientConnectionDelegate> * _delegate;
-    bool  _didReportClose;
     bool  _sleeping;
     NSString * _tag;
 }
@@ -13,10 +13,13 @@
 @property (nonatomic) bool sleeping;
 @property (nonatomic, copy) NSString *tag;
 
-- (void)_dispatchMessage:(id)arg1;
-- (void)_reportClose;
+- (void)_closeAndNotifyDelegate:(bool)arg1;
+- (void)close;
+- (void)closeFromConnection;
+- (void)closeInternal;
 - (void)dealloc;
 - (id)delegate;
+- (void)dispatchRelayMessage:(id)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (id)initWithDelegate:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUIPearlPasscodeController : PSUIBiometricController <LAUIDelegate, PSPearlEnrollControllerDelegate> {
+@interface PSUIPearlPasscodeController : PSUIBiometricController <BKUIPearlEnrollControllerDelegate, LAUIDelegate> {
     PSPearlAttentionGroupController * _attentionGroupController;
     LAContext * _authContext;
     PSSetupController * _enrollFaceController;

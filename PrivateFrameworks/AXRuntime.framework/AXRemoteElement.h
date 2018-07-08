@@ -73,7 +73,7 @@
 
 // Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
 
-- (void)_accessibilityEnumerateSiblingsWithParent:(id*)arg1 options:(id)arg2 usingBlock:(id /* block */)arg3;
+- (bool)_accessibilityEnumerateSiblingsWithParent:(id*)arg1 options:(id)arg2 usingBlock:(id /* block */)arg3;
 - (bool)_accessibilityIsRemoteElement;
 - (id)_ancestorElementThatSupportsActivationAction;
 - (bool)accessibilityActivate;

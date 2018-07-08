@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIScrollView : UIView <DebugHierarchyObject, NSCoding, UIGestureRecognizerDelegate, UIIndexBarAccessoryViewDelegate, UIScrollViewDelayedTouchesBeganGestureRecognizerClient, _UIScrollToTopView> {
+@interface UIScrollView : UIView <NSCoding, UIGestureRecognizerDelegate, UIIndexBarAccessoryViewDelegate, UIScrollViewDelayedTouchesBeganGestureRecognizerClient, _UIScrollToTopView> {
     NSArray * __allowedTouchTypesForScrolling;
     struct UIEdgeInsets { 
         double top; 
@@ -562,7 +562,7 @@
 - (id)_horizontalScrollIndicator;
 - (double)_horizontalScrollIndicatorHeight;
 - (double)_horizontalVelocity;
-- (void)_incrementForScrollTest;
+- (void)_incrementForScrollTest:(id)arg1;
 - (id)_indexBarEntries;
 - (long long)_indicatorInsetAdjustmentBehavior;
 - (struct CGSize { double x1; double x2; })_interpageSpacing;
@@ -592,6 +592,7 @@
 - (id)_layoutVariablesWithAmbiguousValue;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_layoutVerticalScrollIndicatorWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 effectiveInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2 contentOffset:(struct CGPoint { double x1; double x2; })arg3 fraction:(double)arg4 additionalInset:(double)arg5 cornerAdjust:(double)arg6 showing:(bool)arg7 recalcSize:(bool)arg8;
 - (void)_lowFidelityScrollInDirection:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_managedSubviewAdded:(id)arg1;
 - (void)_markScrollViewAnimationForKey:(id)arg1 ofView:(id)arg2;
 - (double)_maxTopOffsetAdjustedForRevealableContentPadding:(double)arg1;
 - (struct CGPoint { double x1; double x2; })_maximumContentOffset;
@@ -818,19 +819,6 @@
 - (double)_zoomScaleFromPresentationLayer:(bool)arg1;
 - (void)_zoomToCenter:(struct CGPoint { double x1; double x2; })arg1 scale:(double)arg2 duration:(double)arg3;
 - (void)_zoomToCenter:(struct CGPoint { double x1; double x2; })arg1 scale:(double)arg2 duration:(double)arg3 force:(bool)arg4;
-- (void)dealloc;
-- (id)description;
-- (void)nsis_valueOfVariable:(id)arg1 didChangeInEngine:(id)arg2;
-- (id)nsli_contentHeightVariable;
-- (id)nsli_contentWidthVariable;
-- (id)nsli_layoutMarginsItem;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })accessoryInsets;
 - (void)accessoryInsetsDidChange:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (id)accessoryViewAtEdge:(long long)arg1;
@@ -856,11 +844,13 @@
 - (id)contentLayoutGuide;
 - (struct CGPoint { double x1; double x2; })contentOffset;
 - (struct CGSize { double x1; double x2; })contentSize;
+- (void)dealloc;
 - (double)decelerationRate;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)delayed:(id)arg1;
 - (bool)delaysContentTouches;
 - (id)delegate;
+- (id)description;
 - (id)directionalPressGestureRecognizer;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -896,6 +886,10 @@
 - (double)maxVelocityInDirection:(int)arg1;
 - (double)maximumZoomScale;
 - (double)minimumZoomScale;
+- (void)nsis_valueOfVariable:(id)arg1 didChangeInEngine:(id)arg2;
+- (id)nsli_contentHeightVariable;
+- (id)nsli_contentWidthVariable;
+- (id)nsli_layoutMarginsItem;
 - (id)panGestureRecognizer;
 - (void)performWhileAnimatingAutomaticContentOffsetAdjustments:(id /* block */)arg1;
 - (id)pinchGestureRecognizer;

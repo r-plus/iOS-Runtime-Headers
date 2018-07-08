@@ -13,6 +13,7 @@
 @property (nonatomic, readonly) double stickyCommentScaleMultiplier;
 @property (nonatomic, readonly) bool supportHeaderFooterParagraphAlignmentInInspectors;
 
+- (void).cxx_destruct;
 - (double)bodyWidth;
 - (bool)cellCommentsAllowedOnInfo:(id)arg1;
 - (id)changeSessionManagerForModel:(id)arg1;
@@ -24,7 +25,9 @@
 - (id)documentTSWPFontObjects;
 - (id)equationEnvironment;
 - (id)flowInfoContainer;
-- (struct __CFLocale { }*)hyphenationLocale;
+- (void)fontUpdatedForStyleClient:(id)arg1;
+- (bool)has_30356142_build;
+- (const struct __CFLocale { }*)hyphenationLocale;
 - (bool)isChangeTrackingEnabled;
 - (bool)isDrawableOnPageMaster:(id)arg1;
 - (int)naturalAlignmentAtCharIndex:(unsigned long long)arg1 inTextStorage:(id)arg2;

@@ -46,6 +46,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) bool userCanChangeShuffleAndRepeatType;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (void)_commonInit;
 - (void)_handleConfiguredQueueFeeder:(id)arg1 fromPlaybackContext:(id)arg2;
@@ -111,7 +113,7 @@
 - (long long)playlistIndexOfItemIdentifier:(id)arg1;
 - (long long)playlistIndexOfQueueIdentifier:(id)arg1 inPlaylistFeeder:(id)arg2;
 - (long long)playlistIndexWithDelta:(long long)arg1 fromIndex:(long long)arg2 ignoreElapsedTime:(bool)arg3 didReachEnd:(bool*)arg4;
-- (unsigned long long)playlistItemCount;
+- (long long)playlistItemCount;
 - (bool)preventsHardQueueModificationsForItem:(id)arg1;
 - (id)queueCoordinator:(id)arg1 itemToFollowItem:(id)arg2;
 - (void)queueFeeder:(id)arg1 didChangeContentsWithPreferredStartIndex:(unsigned long long)arg2 error:(id)arg3;
@@ -136,6 +138,7 @@
 - (id)softQueueModifications;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })softQueuePlaylistIndexRange;
 - (bool)supportsAddToQueue;
+- (id)uniqueIdentifier;
 - (long long)upNextItemCount;
 - (void)updateLocationDependentPropertiesForItem:(id)arg1;
 - (bool)userCanChangeShuffleAndRepeatType;

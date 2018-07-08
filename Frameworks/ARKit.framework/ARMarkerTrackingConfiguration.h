@@ -9,6 +9,7 @@
 @property (nonatomic, copy) NSArray *markers;
 
 + (id)new;
++ (id)supportedVideoFormats;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

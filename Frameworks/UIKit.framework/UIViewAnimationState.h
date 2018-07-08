@@ -123,5 +123,6 @@
 - (void)setAnimationAttributes:(id)arg1 correctZeroDuration:(bool)arg2 skipDelegateAssignment:(bool)arg3 customCurve:(id)arg4;
 - (void)setupCustomTimingCurve;
 - (void)setupWithDuration:(double)arg1 delay:(double)arg2 view:(id)arg3 options:(unsigned long long)arg4 factory:(id)arg5 parentState:(id)arg6 start:(id /* block */)arg7 completion:(id /* block */)arg8;
+- (bool)shouldAnimatePropertyWithKey:(id)arg1;
 
 @end

@@ -26,9 +26,9 @@
 + (id)mailNavigationDialogWithCompletionHandler:(id /* block */)arg1;
 + (id)noFeedAppDialogWithCompletionHandler:(id /* block */)arg1;
 + (id)pageLoadErrorWithMessage:(id)arg1;
++ (id)permanentlyAcceptCertificateDialogWithAcceptanceHandler:(id /* block */)arg1;
 + (id)printBlockedDialogWithCompletionHandler:(id /* block */)arg1;
 + (id)redirectDialogWithMessage:(id)arg1 completionHandler:(id /* block */)arg2;
-+ (id)saveBasicAuthenticationPasswordDialog:(bool)arg1 presentsAsActionSheet:(bool)arg2 completionHandler:(id /* block */)arg3;
 + (id)telephonyNavigationDialogWithCompletionHandler:(id /* block */)arg1;
 + (id)userMediaPermissionDialogWithHost:(id)arg1 devices:(id)arg2 completionHandler:(id /* block */)arg3;
 

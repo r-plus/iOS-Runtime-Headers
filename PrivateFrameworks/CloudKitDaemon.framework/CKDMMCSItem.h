@@ -10,6 +10,7 @@
     NSString * _authToken;
     NSData * _boundaryKey;
     unsigned int  _chunkCount;
+    NSData * _clearAssetKey;
     NSFileHandle * _clientOpenedFileHandle;
     NSURL * _contentBaseURL;
     NSNumber * _deviceID;
@@ -59,6 +60,7 @@
 @property (nonatomic, retain) NSString *authToken;
 @property (nonatomic, retain) NSData *boundaryKey;
 @property (nonatomic) unsigned int chunkCount;
+@property (nonatomic, retain) NSData *clearAssetKey;
 @property (nonatomic, retain) NSFileHandle *clientOpenedFileHandle;
 @property (nonatomic, retain) NSURL *contentBaseURL;
 @property (nonatomic, retain) NSNumber *deviceID;
@@ -111,6 +113,7 @@
 - (id)boundaryKey;
 - (bool)canBeRegistered;
 - (unsigned int)chunkCount;
+- (id)clearAssetKey;
 - (void)clearFileSize;
 - (id)clientOpenedFileHandle;
 - (id)contentBaseURL;
@@ -161,6 +164,7 @@
 - (void)setAuthToken:(id)arg1;
 - (void)setBoundaryKey:(id)arg1;
 - (void)setChunkCount:(unsigned int)arg1;
+- (void)setClearAssetKey:(id)arg1;
 - (void)setClientOpenedFileHandle:(id)arg1;
 - (void)setContentBaseURL:(id)arg1;
 - (void)setDeviceID:(id)arg1;

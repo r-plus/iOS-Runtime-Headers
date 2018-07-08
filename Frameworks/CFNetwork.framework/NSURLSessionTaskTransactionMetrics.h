@@ -4,6 +4,8 @@
 
 @interface NSURLSessionTaskTransactionMetrics : NSObject
 
+@property bool _apsRelayAttempted;
+@property bool _apsRelaySucceeded;
 @property bool _cellular;
 @property (copy) NSUUID *_connectionIdentifier;
 @property bool _connectionRace;

@@ -33,6 +33,7 @@
 @property (nonatomic, readonly) bool isDBReady;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *isolationQueue;
 @property (nonatomic, readonly) NSError *lastError;
+@property (nonatomic, readonly) NSObject<OS_os_log> *log;
 @property (nonatomic, readonly) NSDictionary *pragmas;
 @property (nonatomic, readonly) struct sqlite3 { }*sqliteDB;
 
@@ -74,6 +75,8 @@
 - (bool)deleteExternalResourceAtURL:(id)arg1 error:(id*)arg2;
 - (id)description;
 - (double)doubleForColumn:(int)arg1 inStatment:(struct sqlite3_stmt { }*)arg2;
+- (bool)dropAllTables;
+- (bool)dropTablesLike:(id)arg1;
 - (void)executeAsync:(id /* block */)arg1;
 - (void)executeAsync:(id /* block */)arg1 errorHandler:(id /* block */)arg2;
 - (bool)executeInTransaction:(id /* block */)arg1;
@@ -81,6 +84,8 @@
 - (bool)executeStatement:(id)arg1 statementBlock:(id /* block */)arg2;
 - (void)executeSync:(id /* block */)arg1;
 - (void)executeSync:(id /* block */)arg1 errorHandler:(id /* block */)arg2;
+- (id)getAllTables;
+- (id)getTablesLike:(id)arg1;
 - (id)initWithQueueName:(const char *)arg1 log:(id)arg2 databaseFileURL:(id)arg3 sqliteFlags:(int)arg4 pragmas:(id)arg5 setupBlock:(id /* block */)arg6;
 - (id)initWithQueueName:(const char *)arg1 logFacility:(const char *)arg2 dbFilePath:(id)arg3 sqliteFlags:(int)arg4 pragmas:(id)arg5 setupBlock:(id /* block */)arg6;
 - (long long)int64ForColumn:(int)arg1 inStatment:(struct sqlite3_stmt { }*)arg2;
@@ -89,6 +94,7 @@
 - (id)isolationQueue;
 - (id)lastError;
 - (long long)lastInsertRowID;
+- (id)log;
 - (id)noCopyBlobForColumn:(int)arg1 inStatment:(struct sqlite3_stmt { }*)arg2;
 - (id)pragmas;
 - (bool)prepareStatement:(const char *)arg1 forKey:(id)arg2;

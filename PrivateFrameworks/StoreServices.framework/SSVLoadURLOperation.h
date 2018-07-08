@@ -27,6 +27,8 @@
     SSVFairPlaySAPSession * _sapSession;
     SSVSAPSignaturePolicy * _sapSignaturePolicy;
     bool  _shouldRetry;
+    bool  _shouldSuppressCookies;
+    bool  _shouldSuppressUserInfo;
     bool  _stopped;
     NSString * _storeFrontSuffix;
     SSURLBag * _urlBag;
@@ -66,6 +68,8 @@
 @property (nonatomic, readonly) bool shouldDisableCellular;
 @property (nonatomic, readonly) bool shouldRequireCellular;
 @property (nonatomic, readonly) bool shouldSetCookies;
+@property bool shouldSuppressCookies;
+@property bool shouldSuppressUserInfo;
 @property (nonatomic, readonly) NSData *sourceAppAuditTokenData;
 @property (nonatomic, readonly) NSString *sourceAppBundleID;
 @property (copy) NSString *storeFrontSuffix;
@@ -145,7 +149,11 @@
 - (void)setReferrerURLString:(id)arg1;
 - (void)setSAPSession:(id)arg1;
 - (void)setSAPSignaturePolicy:(id)arg1;
+- (void)setShouldSuppressCookies:(bool)arg1;
+- (void)setShouldSuppressUserInfo:(bool)arg1;
 - (void)setStoreFrontSuffix:(id)arg1;
+- (bool)shouldSuppressCookies;
+- (bool)shouldSuppressUserInfo;
 - (id)storeFrontSuffix;
 
 @end

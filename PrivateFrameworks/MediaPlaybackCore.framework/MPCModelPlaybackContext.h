@@ -21,11 +21,13 @@
 + (id)defaultRequestEnvironment;
 + (Class)queueFeederClass;
 + (id)requiredPropertiesForStaticMediaClips;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)assetStoreFronts;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endTimeModifications;
+- (void)getRemotePlaybackQueueRepresentationWithPlayerPath:(id)arg1 completion:(id /* block */)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)playbackRequestEnvironment;

@@ -2,19 +2,21 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSURL : NSObject <AFSecurityDigestibleChunksProviding, CKXPCSuitableString, NSCopying, NSItemProviderReading, NSItemProviderWriting, NSSecureCoding, PQLValuable, QLPreviewItem, SBFFileCacheFileIdentifier, SFJSONSerializable, TSUDownloadItem, UIItemProviderReading, UIItemProviderWriting> {
+@interface NSURL : NSObject <AFSecurityDigestibleChunksProviding, CKXPCSuitableString, NSCopying, NSItemProviderReading, NSItemProviderWriting, NSSecureCoding, PQLValuable, QLPreviewItem, SBFFileCacheFileIdentifier, SFJSONSerializable, TSUDownloadItem, TSUURLWrapper, UIItemProviderReading, UIItemProviderWriting> {
     NSURL * _baseURL;
     void * _clients;
     void * _reserved;
     NSString * _urlString;
 }
 
+@property (readonly) NSURL *URL;
 @property (readonly, copy) NSURL *URLByDeletingLastPathComponent;
 @property (readonly, copy) NSURL *URLByDeletingPathExtension;
 @property (readonly, copy) NSURL *URLByResolvingSymlinksInPath;
 @property (readonly, copy) NSURL *URLByStandardizingPath;
 @property (getter=_pb_isDirectory, nonatomic, readonly) bool _pb_directory;
 @property (getter=_pb_isFileProvider, nonatomic, readonly) bool _pb_isFileProvider;
+@property (nonatomic, readonly) NSString *_sf_highLevelDomainFromHostFallingBackToHostOrAbsoluteString;
 @property (nonatomic, readonly) NSString *_sf_topLevelDomain;
 @property (setter=_setTitle:, nonatomic, copy) NSString *_title;
 @property (readonly, copy) NSString *absoluteString;
@@ -34,6 +36,9 @@
 @property (nonatomic, readonly) bool ckShouldShowComposeUI;
 @property (nonatomic, readonly) bool ckShouldShowDigitalTouchCanvas;
 @property (nonatomic, readonly) NSArray *ckSuggestedReplies;
+@property (nonatomic, readonly) bool cls_fileExists;
+@property (nonatomic, readonly) bool cls_isUbiquitous;
+@property (nonatomic, readonly) bool cls_isUploaded;
 @property (readonly, copy) NSData *dataRepresentation;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -81,6 +86,10 @@
 @property (readonly, copy) NSString *relativePath;
 @property (readonly, copy) NSString *relativeString;
 @property (readonly, copy) NSString *resourceSpecifier;
+@property (nonatomic, readonly) bool safari_isEligibleToShowNotSecureWarning;
+@property (nonatomic, readonly) bool safari_isLocalOrPrivateNetworkURL;
+@property (nonatomic, readonly) bool safari_isTopLevelURL;
+@property (nonatomic, readonly) bool safari_isURLTooLongToDisplay;
 @property (readonly, copy) NSString *scheme;
 @property (nonatomic, readonly) NSString *sf_absoluteStringWithoutFragment;
 @property (nonatomic, readonly) LSAppLink *sf_appLink;
@@ -94,6 +103,7 @@
 @property (readonly) bool suppressAssist;
 @property (nonatomic, readonly) long long totalBytesExpectedToBeDownloaded;
 @property (nonatomic, readonly) NSString *tsu_UTI;
+@property (getter=tsu_isInTrash, readonly) bool tsu_inTrash;
 @property (nonatomic, readonly) NSURL *uniquedURL;
 @property (readonly, copy) NSString *user;
 @property (readonly) bool wasAlreadyAssisted;
@@ -125,8 +135,23 @@
 
 // Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
 
-- (bool)_isSafeDirectoryForDownloads:(int)arg1;
-- (bool)_isSafeFileForBackgroundUpload:(int)arg1;
+- (bool)_isSafeDirectoryForDownloads:(int)arg1 withToken:(struct { unsigned int x1[8]; })arg2;
+- (bool)_isSafeFileForBackgroundUpload:(int)arg1 withToken:(struct { unsigned int x1[8]; })arg2;
+
+// Image: /System/Library/Frameworks/ClassKit.framework/ClassKit
+
++ (id)cls_configURL;
++ (id)cls_documentsURL;
++ (id)cls_draftsURL;
++ (id)cls_libraryURL;
++ (id)cls_ubiquitousContainerURL;
+
+- (id)cls_createDirectoryIfNeeded;
+- (bool)cls_fileExists;
+- (bool)cls_isParentOfURL:(id)arg1;
+- (bool)cls_isUbiquitous;
+- (bool)cls_isUploaded;
+- (id)cls_pathRelativeToURL:(id)arg1;
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
@@ -146,11 +171,12 @@
 + (id)fp_supportDirectory;
 
 - (id)fp_addDocumentTrackingWithError:(id*)arg1;
-- (void)fp_associateThumbnailFromDocumentAtURL:(id)arg1 error:(id*)arg2;
+- (bool)fp_associateThumbnailFromDocumentAtURL:(id)arg1 error:(id*)arg2;
 - (void)fp_coordinatedDeleteWithHandler:(id /* block */)arg1;
 - (id)fp_copyToTempFolderWithFilename:(id)arg1 error:(id*)arg2;
 - (bool)fp_createSubFolder:(id)arg1 completionHandler:(id /* block */)arg2;
 - (bool)fp_deleteWithCompletionHandler:(id /* block */)arg1;
+- (id)fp_directorySizeWithError:(id*)arg1;
 - (id)fp_existingURLOfChildWithName:(id)arg1;
 - (unsigned long long)fp_fileSize;
 - (void)fp_hideExtension:(bool)arg1;
@@ -285,9 +311,12 @@
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
-+ (id)hk_tapToHealthRadarURLWithTitle:(id)arg1 description:(id)arg2 classification:(long long)arg3 reproducibility:(long long)arg4 keywords:(id)arg5;
-+ (id)hk_tapToRadarURLForBundleID:(id)arg1 title:(id)arg2 description:(id)arg3 classification:(long long)arg4 reproducibility:(long long)arg5 keywords:(id)arg6;
++ (id)hk_safeURLWithString:(id)arg1;
++ (id)hk_tapToHealthRadarURLForComponent:(unsigned long long)arg1 title:(id)arg2 description:(id)arg3 classification:(long long)arg4 reproducibility:(long long)arg5 autoDiagnostics:(long long)arg6;
++ (id)hk_tapToHealthRadarURLWithTitle:(id)arg1 description:(id)arg2 classification:(long long)arg3 reproducibility:(long long)arg4 keywords:(id)arg5 autoDiagnostics:(long long)arg6;
++ (id)hk_tapToRadarURLForBundleID:(id)arg1 component:(unsigned long long)arg2 title:(id)arg3 description:(id)arg4 classification:(long long)arg5 reproducibility:(long long)arg6 keywords:(id)arg7 autoDiagnostics:(long long)arg8;
 
+- (bool)hk_hasBaseURL:(id)arg1 error:(id*)arg2;
 - (id)hk_valueForFirstInstanceOfParameterNamed:(id)arg1;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
@@ -344,6 +373,7 @@
 + (bool)_sf_canCreateURLsFromDropSession:(id)arg1;
 + (void)_sf_urlsFromDragItems:(id)arg1 completionHandler:(id /* block */)arg2;
 
+- (id)_sf_highLevelDomainFromHostFallingBackToHostOrAbsoluteString;
 - (id)_sf_topLevelDomain;
 - (id)sf_absoluteStringWithoutFragment;
 - (id)sf_appLink;
@@ -430,10 +460,17 @@
 
 // Image: /System/Library/Frameworks/WebKit.framework/WebKit
 
-+ (id)_web_URLWithWTFString:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
-+ (id)_web_URLWithWTFString:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1 relativeToURL:(id)arg2;
++ (id)_web_URLWithWTFString:(const struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
++ (id)_web_URLWithWTFString:(const struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_1_1; } x1; }*)arg1 relativeToURL:(id)arg2;
 
-- (struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; })_web_originalDataAsWTFString;
+- (struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_1_1; } x1; })_web_originalDataAsWTFString;
+
+// Image: /System/Library/Frameworks/iAd.framework/iAd
+
++ (id)proxyURLForVideoURL:(id)arg1 identifier:(id)arg2 changeScheme:(bool)arg3;
++ (id)queryParametersForURL:(id)arg1;
++ (id)removeQueryItemForKey:(id)arg1 fromURL:(id)arg2;
++ (id)valueForKey:(id)arg1 fromQueryItems:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
 
@@ -578,6 +615,7 @@
 - (id)br_containerIDIfIsDocumentsContainerURL;
 - (void)br_containerIDsWithExternalReferencesWithHandler:(id /* block */)arg1;
 - (id)br_debugDescription;
+- (id)br_documentRecordIDWithError:(id*)arg1;
 - (id)br_externalDocumentPropertiesWithError:(id*)arg1;
 - (bool)br_getTagNames:(id*)arg1 error:(id*)arg2;
 - (void)br_isConflictedWithHandler:(id /* block */)arg1;
@@ -754,7 +792,11 @@
 - (void)chmod:(unsigned short)arg1;
 - (id)gs_URLByUpdatingPathExtensionWithPathOrURL:(id)arg1;
 - (id)gs_issueExtension:(const char *)arg1 error:(id*)arg2;
-- (id)gs_issueReadExtensionIfNeededForPid:(int)arg1;
+- (id)gs_issueReadExtensionIfNeededForAuditToken:(struct { unsigned int x1[8]; })arg1;
+
+// Image: /System/Library/PrivateFrameworks/HealthRecordServices.framework/HealthRecordServices
+
+- (id)hrs_fhirResourcePathComponentsAgainstBaseURL:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
 
@@ -762,6 +804,7 @@
 + (id)hu_locationDeviceSettingsURL;
 + (id)hu_locationServicesSettingsURL;
 + (id)hu_notificationSettingsURL;
++ (id)hu_wifiSettingsURL;
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
@@ -788,6 +831,7 @@
 - (id)_lp_pathComponentAtIndex:(unsigned long long)arg1;
 - (id)_lp_simplifiedDisplayString;
 - (id)_lp_userVisibleString;
+- (bool)_lp_userVisibleStringUsesEncodedHost;
 - (id)_lp_valueForQueryKey:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
@@ -856,8 +900,8 @@
 - (id)fc_feldsparTagID;
 - (bool)fc_isEqualToURL:(id)arg1;
 - (bool)fc_isFeldsparInterstitialPreviewURL;
-- (bool)fc_isFeldsparTagURL;
 - (bool)fc_isNewsArticleURL;
+- (bool)fc_isNewsTagURL;
 - (bool)fc_isNewsURL;
 - (bool)fc_isResourceURL;
 - (id)fc_resourceID;
@@ -865,15 +909,25 @@
 // Image: /System/Library/PrivateFrameworks/NewsServicesInternal.framework/NewsServicesInternal
 
 + (id)nss_NewsURLForArticleID:(id)arg1;
-+ (id)nss_NewsURLForArticleID:(id)arg1 internal:(bool)arg2;
++ (id)nss_NewsURLForArticleID:(id)arg1 internal:(bool)arg2 targetIsVideo:(bool)arg3;
++ (id)nss_NewsURLForArticleID:(id)arg1 targetIsVideo:(bool)arg2;
 + (id)nss_NewsURLForArticleID:(id)arg1 title:(id)arg2;
 + (id)nss_NewsURLForForYou;
++ (id)nss_NewsURLForTagID:(id)arg1;
 + (id)nss_NewsURLForWebLinkURL:(id)arg1;
++ (id)nss_NewsURLForWidgetVideoPlaylist;
 + (id)nss_NewsURLWithPathComponents:(id)arg1 internal:(bool)arg2;
 
+- (id)_nss_URLByAppendingQueryItem:(id)arg1;
+- (id)_nss_valueForQueryParameterWithKey:(id)arg1;
 - (id)nss_URLWithCampaignID:(id)arg1;
+- (id)nss_URLWithVideoTarget:(bool)arg1;
 - (id)nss_campaignID;
+- (bool)nss_isNewsArticleURL;
+- (bool)nss_isNewsArticleVideoURL;
+- (bool)nss_isNewsTagURL;
 - (bool)nss_isNewsURL;
+- (bool)nss_isNewsWidgetVideoPlaylist;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
@@ -965,10 +1019,12 @@
 - (id)safari_URLByDeletingPort;
 - (id)safari_URLByDeletingScheme;
 - (id)safari_URLByDeletingUserAndPassword;
+- (id)safari_URLByRemovingUserAndPath;
 - (id)safari_URLByReplacingHostWithString:(id)arg1;
 - (id)safari_URLByReplacingQueryWithString:(id)arg1;
 - (id)safari_URLByReplacingSchemeWithString:(id)arg1;
 - (id)safari_URLWithUniqueFilename;
+- (bool)safari_canBeSafelyRedirectedToURL:(id)arg1;
 - (id)safari_canonicalURL;
 - (id)safari_displayNameWithTitle:(id)arg1;
 - (bool)safari_hasCharactersBeyondPath;
@@ -976,12 +1032,18 @@
 - (bool)safari_hasScheme:(id)arg1;
 - (bool)safari_hasUserOrPassword;
 - (bool)safari_isDataURL;
+- (bool)safari_isEligibleToShowNotSecureWarning;
 - (bool)safari_isHTTPFamilyURL;
+- (bool)safari_isHTTPURL;
+- (bool)safari_isLocalOrPrivateNetworkURL;
+- (bool)safari_isTopLevelURL;
+- (bool)safari_isURLTooLongToDisplay;
 - (id)safari_originalDataAsString;
 - (id)safari_path;
 - (id)safari_userVisibleHost;
 - (id)safari_userVisibleHostWithoutWWWSubdomain;
 - (id)safari_userVisibleString;
+- (id)safari_userVisibleStringConsideringLongURLs;
 
 // Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
 
@@ -1180,7 +1242,6 @@
 + (id)_web_uniqueWebDataURL;
 + (id)_webkit_URLWithUserTypedString:(id)arg1;
 + (id)_webkit_URLWithUserTypedString:(id)arg1 relativeToURL:(id)arg2;
-+ (id)uniqueURLWithRelativePart:(id)arg1;
 
 - (id)_web_URLByRemovingUserInfo;
 - (const char *)_web_URLCString;
@@ -1250,6 +1311,7 @@
 
 + (id)tsu_fileURLWithPath:(id)arg1;
 
+- (id)URL;
 - (bool)_isShareRole:(out bool*)arg1 role:(id)arg2 error:(id*)arg3;
 - (id)tsp_URLExceptPrivate;
 - (id)tsp_embeddedUTI;
@@ -1274,6 +1336,7 @@
 - (bool)tsu_isDocumentUploaded;
 - (bool)tsu_isDocumentUploaded:(out bool*)arg1 error:(id*)arg2;
 - (bool)tsu_isFileSizeTooLargeForSharing;
+- (bool)tsu_isInTrash;
 - (bool)tsu_isOnAPFSVolume;
 - (bool)tsu_isOnForeignVolume;
 - (bool)tsu_isOnSameVolumeAs:(id)arg1;
@@ -1286,9 +1349,8 @@
 - (void)tsu_performSecurityScopedResourceAccessAsynchronouslyUsingBlock:(id /* block */)arg1;
 - (void)tsu_performSecurityScopedResourceAccessUsingBlock:(id /* block */)arg1;
 - (id)tsu_reachableFileURLByDeletingUnreachablePathComponents;
+- (void)tsu_removeCachedResourceValueForKeys:(id)arg1;
 - (bool)tsu_setNeedsDocumentIdentifierAndReturnError:(out id*)arg1;
-- (id)tsu_shareOwnerName;
-- (bool)tsu_shareOwnerName:(out id*)arg1 error:(id*)arg2;
 
 // Image: /usr/lib/libprequelite.dylib
 

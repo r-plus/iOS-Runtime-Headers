@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSKAnimatedGIFController : NSObject <TSKMediaPlayerController> {
+@interface TSKAnimatedGIFController : NSObject <TSKLayerMediaPlayerController> {
     bool  fastForwarding;
     bool  fastReversing;
     double  mAbsoluteCurrentTime;
@@ -13,6 +13,7 @@
     NSArray * mFrames;
     double  mLastDisplayUpdateTime;
     NSMutableSet * mLayers;
+    NSMutableSet * mObservationTokens;
     bool  mPlaying;
     float  mRate;
     float  mRateBeforeScrubbing;
@@ -23,34 +24,17 @@
     float  mVolume;
 }
 
-@property (nonatomic, readonly) double absoluteCurrentTime;
-@property (nonatomic, readonly) double absoluteDuration;
-@property (nonatomic, readonly) bool canFastForward;
-@property (nonatomic, readonly) bool canFastReverse;
-@property (nonatomic, readonly) bool canPlay;
-@property (nonatomic, readonly) double currentTime;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, readonly) <TSKMediaPlayerControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) double duration;
-@property (nonatomic) double endTime;
-@property (getter=isFastForwarding, nonatomic) bool fastForwarding;
-@property (getter=isFastReversing, nonatomic) bool fastReversing;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) struct CGImage { }*imageForCurrentTime;
 @property (nonatomic) double lastDisplayUpdateTime;
-@property (getter=isPlaying, nonatomic) bool playing;
-@property (nonatomic) float rate;
-@property (nonatomic, readonly) double remainingTime;
-@property (nonatomic) long long repeatMode;
-@property (getter=isScrubbing, nonatomic, readonly) bool scrubbing;
-@property (nonatomic) double startTime;
 @property (readonly) Class superclass;
-@property (nonatomic) float volume;
 
 - (double)absoluteCurrentTime;
 - (double)absoluteDuration;
 - (void)addLayer:(id)arg1;
+- (void)addObservationToken:(id)arg1;
 - (id)addPeriodicTimeObserverForInterval:(double)arg1 block:(id /* block */)arg2;
 - (void)beginScrubbing;
 - (bool)canFastForward;
@@ -85,6 +69,7 @@
 - (float)rate;
 - (double)remainingTime;
 - (void)removeLayer:(id)arg1;
+- (void)removeObservationToken:(id)arg1;
 - (void)removePeriodicTimeObserver:(id)arg1;
 - (long long)repeatMode;
 - (void)scrubToTime:(double)arg1 withTolerance:(double)arg2;

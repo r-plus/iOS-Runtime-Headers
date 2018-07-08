@@ -7,7 +7,7 @@
     NSArray * _tagSequence;
     struct unique_ptr<quasar::CommandTagging, std::__1::default_delete<quasar::CommandTagging> > { 
         struct __compressed_pair<quasar::CommandTagging *, std::__1::default_delete<quasar::CommandTagging> > { 
-            struct CommandTagging {} *__first_; 
+            struct CommandTagging {} *__value_; 
         } __ptr_; 
     }  _tagging;
 }

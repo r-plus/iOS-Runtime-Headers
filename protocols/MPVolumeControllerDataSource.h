@@ -6,6 +6,7 @@
 @required
 
 - (float)EUVolumeLimit;
+- (void)adjustVolumeValue:(float)arg1;
 - (bool)applicationShouldOverrideHardwareVolumeBehavior;
 - (<MPVolumeControllerDataSourceDelegate> *)delegate;
 - (bool)isMuted;

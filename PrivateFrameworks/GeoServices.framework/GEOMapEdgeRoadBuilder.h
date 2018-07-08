@@ -9,12 +9,12 @@
             struct { /* ? */ } **__begin_; 
             struct { /* ? */ } **__end_; 
             struct __compressed_pair<GEORoadEdge **, std::__1::allocator<GEORoadEdge *> > { 
-                struct { /* ? */ } **__first_; 
+                struct { /* ? */ } **__value_; 
             } __end_cap_; 
         } __map_; 
         unsigned long long __start_; 
         struct __compressed_pair<unsigned long, std::__1::allocator<GEORoadEdge> > { 
-            unsigned long long __first_; 
+            unsigned long long __value_; 
         } __size_; 
     }  _edges;
 }

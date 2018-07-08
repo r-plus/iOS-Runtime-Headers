@@ -3,11 +3,11 @@
  */
 
 @interface KNAnimationPluginMenu : NSObject {
-    unsigned long long  mDefaultDirection;
-    NSMutableDictionary * mDirectionToLocalizedStringMap;
-    NSMutableArray * mDirections;
-    NSMutableArray * mLocalizedDirections;
-    NSMutableDictionary * mLocalizedStringToDirectionMap;
+    unsigned long long  _defaultDirection;
+    NSMutableDictionary * _directionToLocalizedStringMap;
+    NSMutableArray * _directions;
+    NSMutableArray * _localizedDirections;
+    NSMutableDictionary * _localizedStringToDirectionMap;
 }
 
 @property (nonatomic, readonly) unsigned long long count;
@@ -18,11 +18,11 @@
 + (id)animationPluginMenu;
 + (id)localizedStringForDirection:(unsigned long long)arg1 shortVersion:(bool)arg2;
 
+- (void).cxx_destruct;
 - (void)addDirection:(unsigned long long)arg1 localizedMenuString:(id)arg2;
 - (void)addDirection:(unsigned long long)arg1 useShortString:(bool)arg2;
 - (bool)containsDirection:(unsigned long long)arg1;
 - (unsigned long long)count;
-- (void)dealloc;
 - (unsigned long long)defaultDirection;
 - (unsigned long long)directionForIndex:(unsigned long long)arg1;
 - (id)directions;

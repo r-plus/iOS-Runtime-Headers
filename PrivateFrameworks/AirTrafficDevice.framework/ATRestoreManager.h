@@ -21,6 +21,7 @@
 
 - (void).cxx_destruct;
 - (id)_dataClasses;
+- (bool)_iCloudPhotoLibraryEnabled;
 - (void)_start;
 - (void)environmentMonitorDidChangeNetworkReachability:(id)arg1;
 - (id)init;

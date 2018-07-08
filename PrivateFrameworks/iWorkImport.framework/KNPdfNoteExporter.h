@@ -3,7 +3,7 @@
  */
 
 @interface KNPdfNoteExporter : KNPdfExporter {
-    bool  mIsPrintingNote;
+    bool  _isPrintingNote;
 }
 
 - (id)currentInfos;

@@ -4,6 +4,6 @@
 
 @interface IMCloudKitSyncProgressIsSyncing : IMCloudKitSyncProgress
 
-- (void)updateState;
+- (void)configureSelf;
 
 @end

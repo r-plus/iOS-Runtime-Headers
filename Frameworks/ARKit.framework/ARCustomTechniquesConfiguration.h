@@ -11,14 +11,19 @@
 + (id)new;
 
 - (void).cxx_destruct;
+- (void)_updateCaptureSettings;
 - (void)configureRecordingTechnique;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)ensureTechniqueAndCustomSensorCompatibility;
 - (id)init;
 - (bool)isEqual:(id)arg1;
+- (bool)isLightEstimationEnabled;
+- (void)setCameraPosition:(long long)arg1;
 - (void)setCustomSensors:(id)arg1;
 - (void)setTechniques:(id)arg1;
+- (void)setVideoFormat:(id)arg1;
 - (id)techniques;
+- (long long)worldAlignment;
 
 @end

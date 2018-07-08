@@ -23,6 +23,8 @@
 
 + (Class)externalDeviceClass;
 
+- (void).cxx_destruct;
+- (bool)_isManagedConfigIDAllowed:(id)arg1;
 - (void)beginDiscovery;
 - (id)bonjourServiceType;
 - (void)dealloc;

@@ -150,6 +150,12 @@
 
 - (id)localTimeDescription;
 
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
++ (id)hk_dateComponentsWithCodableDateComponents:(id)arg1;
+
+- (id)hk_codableDateComponents;
+
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
 + (unsigned long long)_hf_allPossibleComponents;

@@ -6,6 +6,7 @@
     ARDeviceOrientationData * _currentOrientationData;
     <ARSensorDelegate> * _delegate;
     CMMotionManager * _motionManager;
+    double  _previousCaptureEndingTimestamp;
     NSOperationQueue * _updateQueueDeviceMotion;
     long long  _worldAlignment;
 }

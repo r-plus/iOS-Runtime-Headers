@@ -10,6 +10,10 @@
     unsigned long long  _ss_flags;
     int  _suspend_count;
     long long  _task_size_bytes;
+    unsigned long long  _terminatedThreadsCycles;
+    unsigned long long  _terminatedThreadsInstructions;
+    unsigned long long  _terminatedThreadsSystemTimeInNs;
+    unsigned long long  _terminatedThreadsUserTimeInNs;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -38,6 +42,10 @@
 @property (readonly) Class superclass;
 @property (readonly) int suspendCount;
 @property (readonly) long long taskSizeInBytes;
+@property (readonly) unsigned long long terminatedThreadsCycles;
+@property (readonly) unsigned long long terminatedThreadsInstructions;
+@property (readonly) unsigned long long terminatedThreadsSystemTimeInNs;
+@property (readonly) unsigned long long terminatedThreadsUserTimeInNs;
 @property (readonly) bool wqExceededConstrainedThreadLimit;
 @property (readonly) bool wqExceededTotalThreadLimit;
 
@@ -46,12 +54,12 @@
 
 - (bool)addSelfToBufferAtPosition:(void*)arg1 withCompletedSerializationDictionary:(id)arg2;
 - (void)addSelfToSerializationDictionary:(id)arg1;
-- (bool)correspondsToKCDataStackshotDeltaTask:(const struct task_delta_snapshot_v2 { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; }*)arg1;
-- (bool)correspondsToKCDataStackshotTask:(const struct task_snapshot_v2 { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; int x15; BOOL x16[32]; }*)arg1;
-- (bool)correspondsToTaskSnapshot:(const struct task_snapshot { unsigned int x1; int x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned char x6[16]; unsigned long long x7; unsigned int x8; int x9; int x10; int x11; int x12; int x13; unsigned int x14; unsigned long long x15; unsigned long long x16; BOOL x17[17]; unsigned int x18; unsigned int x19; unsigned int x20; unsigned long long x21; unsigned long long x22; unsigned long long x23; unsigned long long x24; unsigned long long x25[4]; unsigned long long x26[4]; unsigned long long x27; unsigned long long x28; unsigned long long x29; unsigned long long x30; unsigned long long x31; unsigned long long x32; unsigned long long x33; unsigned long long x34; unsigned int x35; }*)arg1;
-- (id)initWithKCDataStackshotDeltaTask:(const struct task_delta_snapshot_v2 { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; }*)arg1;
-- (id)initWithKCDataStackshotTask:(const struct task_snapshot_v2 { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; int x15; BOOL x16[32]; }*)arg1;
-- (id)initWithTaskSnapshot:(const struct task_snapshot { unsigned int x1; int x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned char x6[16]; unsigned long long x7; unsigned int x8; int x9; int x10; int x11; int x12; int x13; unsigned int x14; unsigned long long x15; unsigned long long x16; BOOL x17[17]; unsigned int x18; unsigned int x19; unsigned int x20; unsigned long long x21; unsigned long long x22; unsigned long long x23; unsigned long long x24; unsigned long long x25[4]; unsigned long long x26[4]; unsigned long long x27; unsigned long long x28; unsigned long long x29; unsigned long long x30; unsigned long long x31; unsigned long long x32; unsigned long long x33; unsigned long long x34; unsigned int x35; }*)arg1;
+- (bool)correspondsToKCDataStackshotDeltaTask:(const struct task_delta_snapshot_v2 { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; }*)arg1 andTerminatedThreadsInstructionCycles:(const struct instrs_cycles_snapshot { unsigned long long x1; unsigned long long x2; }*)arg2 machTimebase:(struct mach_timebase_info { unsigned int x1; unsigned int x2; })arg3;
+- (bool)correspondsToKCDataStackshotTask:(const struct task_snapshot_v2 { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; int x15; BOOL x16[32]; }*)arg1 andTerminatedThreadsInstructionCycles:(const struct instrs_cycles_snapshot { unsigned long long x1; unsigned long long x2; }*)arg2 machTimebase:(struct mach_timebase_info { unsigned int x1; unsigned int x2; })arg3;
+- (bool)correspondsToTaskSnapshot:(const struct task_snapshot { unsigned int x1; int x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned char x6[16]; unsigned long long x7; unsigned int x8; int x9; int x10; int x11; int x12; int x13; unsigned int x14; unsigned long long x15; unsigned long long x16; BOOL x17[17]; unsigned int x18; unsigned int x19; unsigned int x20; unsigned long long x21; unsigned long long x22; unsigned long long x23; unsigned long long x24; unsigned long long x25[4]; unsigned long long x26[4]; unsigned long long x27; unsigned long long x28; unsigned long long x29; unsigned long long x30; unsigned long long x31; unsigned long long x32; unsigned long long x33; unsigned long long x34; unsigned int x35; }*)arg1 machTimebase:(struct mach_timebase_info { unsigned int x1; unsigned int x2; })arg2;
+- (id)initWithKCDataStackshotDeltaTask:(const struct task_delta_snapshot_v2 { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; }*)arg1 andTerminatedThreadsInstructionCycles:(const struct instrs_cycles_snapshot { unsigned long long x1; unsigned long long x2; }*)arg2 machTimebase:(struct mach_timebase_info { unsigned int x1; unsigned int x2; })arg3;
+- (id)initWithKCDataStackshotTask:(const struct task_snapshot_v2 { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; int x15; BOOL x16[32]; }*)arg1 andTerminatedThreadsInstructionCycles:(const struct instrs_cycles_snapshot { unsigned long long x1; unsigned long long x2; }*)arg2 machTimebase:(struct mach_timebase_info { unsigned int x1; unsigned int x2; })arg3;
+- (id)initWithTaskSnapshot:(const struct task_snapshot { unsigned int x1; int x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned char x6[16]; unsigned long long x7; unsigned int x8; int x9; int x10; int x11; int x12; int x13; unsigned int x14; unsigned long long x15; unsigned long long x16; BOOL x17[17]; unsigned int x18; unsigned int x19; unsigned int x20; unsigned long long x21; unsigned long long x22; unsigned long long x23; unsigned long long x24; unsigned long long x25[4]; unsigned long long x26[4]; unsigned long long x27; unsigned long long x28; unsigned long long x29; unsigned long long x30; unsigned long long x31; unsigned long long x32; unsigned long long x33; unsigned long long x34; unsigned int x35; }*)arg1 machTimebase:(struct mach_timebase_info { unsigned int x1; unsigned int x2; })arg2;
 - (bool)isBoosted;
 - (bool)isDarwinBG;
 - (bool)isDarwinExtBG;
@@ -76,6 +84,10 @@
 - (unsigned long long)ss_flags;
 - (int)suspendCount;
 - (long long)taskSizeInBytes;
+- (unsigned long long)terminatedThreadsCycles;
+- (unsigned long long)terminatedThreadsInstructions;
+- (unsigned long long)terminatedThreadsSystemTimeInNs;
+- (unsigned long long)terminatedThreadsUserTimeInNs;
 - (bool)wqExceededConstrainedThreadLimit;
 - (bool)wqExceededTotalThreadLimit;
 

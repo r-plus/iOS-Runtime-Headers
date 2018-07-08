@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDProfile : NSObject {
+@interface HDProfile : NSObject <HDHealthDaemonReadyObserver> {
     HDAuthorizationManager * _authorizationManager;
     HDAWDSubmissionManager * _awdSubmissionManager;
     HDDaemon * _daemon;
@@ -16,7 +16,9 @@
     NSString * _medicalIDDirectoryPath;
     HDMetadataManager * _metadataManager;
     HDMigrationManager * _migrationManager;
+    NSDictionary * _profileExtensionsByIdentifier;
     long long  _profileType;
+    NSObject<OS_dispatch_queue> * _queue;
     HDSessionAssertionManager * _sessionAssertionManager;
     HDSourceManager * _sourceManager;
     HDSourceOrderManager * _sourceOrderManager;
@@ -36,10 +38,13 @@
 @property (nonatomic, readonly) HDDataProvenanceManager *dataProvenanceManager;
 @property (nonatomic, readonly) HDDatabase *database;
 @property (nonatomic, readonly) HDDatabasePruningManager *databasePruningManager;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) HDDeviceManager *deviceManager;
 @property (nonatomic, readonly, copy) NSString *directoryPath;
 @property (nonatomic, readonly, copy) NSURL *directoryURL;
 @property (nonatomic, readonly) HDFitnessMachineManager *fitnessMachineManager;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <HDHealthDaemon> *healthDaemon;
 @property (nonatomic, readonly) <HDHealthDatabase> *healthDatabase;
 @property (nonatomic, readonly) HDMedicalIDDataManager *medicalIDDataManager;
@@ -54,6 +59,7 @@
 @property (nonatomic, readonly) HDSessionAssertionManager *sessionAssertionManager;
 @property (nonatomic, readonly) HDSourceManager *sourceManager;
 @property (nonatomic, readonly) HDSourceOrderManager *sourceOrderManager;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) <HDSyncEngine> *syncEngine;
 @property (nonatomic, readonly) HDUnitPreferencesManager *unitPreferencesManager;
 @property (nonatomic, readonly) HDUserCharacteristicsManager *userCharacteristicsManager;
@@ -62,12 +68,14 @@
 - (void).cxx_destruct;
 - (id)_newAWDSubmissionManager;
 - (id)_newUserCharacteristicsManager;
+- (void)_queue_createExtensionsIfNeeded;
 - (id)appSubscriptionManager;
 - (id)authorizationManager;
 - (id)awdSubmissionManager;
 - (id)cloudSyncManager;
 - (id)currentActivitySummaryHelper;
 - (id)daemon;
+- (void)daemonReady:(id)arg1;
 - (id)dataCollectionManager;
 - (id)dataManager;
 - (id)dataProvenanceManager;
@@ -93,6 +101,8 @@
 - (id)notificationManager;
 - (void)obliterateAndTerminateWithOptions:(unsigned long long)arg1 reason:(id)arg2 completion:(id /* block */)arg3;
 - (void)obliterateWithOptions:(unsigned long long)arg1 reason:(id)arg2;
+- (id)profileExtensionWithIdentifier:(id)arg1;
+- (id)profileExtensionsConformingToProtocol:(id)arg1;
 - (long long)profileType;
 - (id)serviceConnectionManager;
 - (id)serviceManager;

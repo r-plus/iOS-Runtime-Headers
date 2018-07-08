@@ -6,7 +6,7 @@
 
 + (id)sharedStyle;
 
-- (struct CGSize { double x1; double x2; })_effectiveSizeForIcon:(id)arg1 inView:(id)arg2;
+- (struct CGSize { double x1; double x2; })_effectiveSizeForIconSize:(struct CGSize { double x1; double x2; })arg1 inView:(id)arg2;
 - (void)applyThemeToAllTableViews;
 - (void)applyThemeToLabel:(id)arg1;
 - (void)applyThemeToNavigationController:(id)arg1;
@@ -25,10 +25,11 @@
 - (double)headerIconBaselineOffsetForView:(id)arg1;
 - (double)headerSubheaderBaselineSpacingForView:(id)arg1;
 - (double)headerTitleBaselineOffsetForView:(id)arg1 hasIcon:(bool)arg2;
-- (double)headerTitleBaselineOffsetForView:(id)arg1 icon:(id)arg2;
+- (double)headerTitleBaselineOffsetForView:(id)arg1 iconSize:(struct CGSize { double x1; double x2; })arg2;
 - (double)headerTitleBaselineOffsetHasIcon:(bool)arg1;
 - (id)headerTitleFont;
 - (double)headerYOffsetForIcon:(id)arg1 inView:(id)arg2;
+- (double)headerYOffsetForIconSize:(struct CGSize { double x1; double x2; })arg1 inView:(id)arg2;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })horizontalInsetsForContainingInView:(id)arg1 width:(double)arg2;
 - (double)horizontalMarginForView:(id)arg1;
 - (double)nonTableHorizontalMargin;

@@ -8,6 +8,7 @@
     long long  _type;
 }
 
+@property (getter=_isError, readonly) bool _error;
 @property (nonatomic, readonly) NSArray *affectedContainers;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -16,6 +17,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) long long type;
 
++ (id)_actionForError:(id)arg1;
 + (id)actionWithType:(long long)arg1;
 + (id)destructiveActionWithType:(long long)arg1;
 + (id)destructiveActionWithType:(long long)arg1 affectedContainers:(id)arg2;
@@ -26,6 +28,7 @@
 - (id)_encodeProtobufData;
 - (id)_initWithProtobuf:(id)arg1;
 - (id)_initWithProtobufData:(id)arg1;
+- (bool)_isError;
 - (id)affectedContainers;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

@@ -10,11 +10,13 @@
     NSFileHandle * _fileHandle;
     bool  _hasAppliedChange;
     CKServerChangeToken * _initialServerChangeToken;
+    NSUUID * _operationIdentifier;
     NSProgress * _perAssetRecordProgress;
     NSProgress * _progress;
     NSObject<OS_dispatch_queue> * _queue;
     bool  _queue_hasStarted;
     CKServerChangeToken * _serverChangeToken;
+    NSDate * _startTime;
     HDCloudSyncStoreRecord * _storeRecord;
     HDCloudSyncStore * _syncStore;
 }

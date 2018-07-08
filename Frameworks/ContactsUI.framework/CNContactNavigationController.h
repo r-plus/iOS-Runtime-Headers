@@ -15,6 +15,7 @@
     CNContactStore * _contactStore;
     CNContactStyle * _contactStyle;
     UIAlertController * _facebookContactsAlertController;
+    bool  _hasPendingShowCard;
     bool  _ignoresMapsData;
     long long  _leftButtonBehavior;
     CNContactStoreDataSource * _nonServerDataSource;
@@ -38,6 +39,7 @@
 @property (nonatomic) <CNContactNavigationControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) UIAlertController *facebookContactsAlertController;
+@property (nonatomic) bool hasPendingShowCard;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool hidesSearchableSources;
 @property (nonatomic) bool ignoresMapsData;
@@ -84,6 +86,7 @@
 - (void)dealloc;
 - (void)done:(id)arg1;
 - (id)facebookContactsAlertController;
+- (bool)hasPendingShowCard;
 - (bool)hidesSearchableSources;
 - (bool)ignoresMapsData;
 - (id)initWithDataSource:(id)arg1;
@@ -118,6 +121,7 @@
 - (void)setContactStore:(id)arg1;
 - (void)setContactStyle:(id)arg1;
 - (void)setFacebookContactsAlertController:(id)arg1;
+- (void)setHasPendingShowCard:(bool)arg1;
 - (void)setHidesSearchableSources:(bool)arg1;
 - (void)setIgnoresMapsData:(bool)arg1;
 - (void)setLeftButtonBehavior:(long long)arg1;

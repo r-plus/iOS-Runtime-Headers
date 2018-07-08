@@ -21,6 +21,7 @@
 - (void)getVisitsAndTombstonesNeedingSyncWithVisitSyncWindow:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 15: double, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSSet *, NSSet *, long long, id /* block */, void*, void, id /* block */, bool, void*, void*
 - (void)getVisitsCreatedAfterDate:(void *)arg1 beforeDate:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 8: NSDate *, NSDate *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSSet *, void*
 - (double)historyAgeLimit;
+- (bool)isUsingInMemoryDatabase;
 - (void)itemWasReplaced:(WBSHistoryItem *)arg1 byItem:(WBSHistoryItem *)arg2;
 - (void)itemsWereAdded:(NSArray *)arg1 byUserInitiatedAction:(bool)arg2;
 - (void)itemsWereModified:(NSArray *)arg1 byUserInitiatedAction:(bool)arg2;

@@ -7,7 +7,7 @@
     AUAudioUnit * _audioUnit;
     struct unique_ptr<CABufferList, std::__1::default_delete<CABufferList> > { 
         struct __compressed_pair<CABufferList *, std::__1::default_delete<CABufferList> > { 
-            struct CABufferList {} *__first_; 
+            struct CABufferList {} *__value_; 
         } __ptr_; 
     }  _destBufferList;
     struct CAExtAudioFile { 
@@ -43,7 +43,7 @@
     id /* block */  _renderBlock;
     struct unique_ptr<CABufferList, std::__1::default_delete<CABufferList> > { 
         struct __compressed_pair<CABufferList *, std::__1::default_delete<CABufferList> > { 
-            struct CABufferList {} *__first_; 
+            struct CABufferList {} *__value_; 
         } __ptr_; 
     }  _srcBufferList;
     struct CAExtAudioFile { 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SetupAssistantUI.framework/SetupAssistantUI
  */
 
-@interface BFFFaceIDViewController : BFFSplashController <PSPearlEnrollControllerDelegate> {
+@interface BFFFaceIDViewController : OBSplashController <BKUIPearlEnrollControllerDelegate> {
     bool  _completesOnCancel;
     <BFFFaceIDViewControllerDelegate> * _faceIDViewControllerDelegate;
     UIImageView * _splashImageView;
@@ -29,6 +29,7 @@
 - (void)resetColorsAnimated:(bool)arg1;
 - (void)setCompletesOnCancel:(bool)arg1;
 - (void)setFaceIDViewControllerDelegate:(id)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(bool)arg1;
 - (void)willStartOver;
 

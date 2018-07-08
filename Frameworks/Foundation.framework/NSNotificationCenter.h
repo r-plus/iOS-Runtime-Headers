@@ -49,4 +49,8 @@
 
 - (id)mtNotifiyingQueue;
 
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
+- (id)tsu_addObserverForName:(id)arg1 object:(id)arg2 queue:(id)arg3 usingBlock:(id /* block */)arg4;
+
 @end

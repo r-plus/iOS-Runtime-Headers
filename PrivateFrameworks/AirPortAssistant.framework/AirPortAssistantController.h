@@ -22,11 +22,13 @@
 + (void)downloadAssetsIfNeeded;
 + (bool)isAirPlayDevice:(id)arg1;
 + (bool)isGenericMFiAccessory:(id)arg1;
++ (bool)isHomeKitSecureWACDevice:(id)arg1;
 + (bool)isSTAOnlyDevice:(id)arg1;
 + (bool)isUnconfiguredDevice:(id)arg1;
 + (bool)launchAUForNetwork:(id)arg1 withMacAddress:(id)arg2 getAUFromAppStore:(bool)arg3;
 + (bool)launchAUForNetwork:(id)arg1 withMacAddress:(id)arg2 getAUFromAppStore:(bool)arg3 viewController:(id)arg4;
 + (id)sharedInstance;
++ (id)unconfiguredDeviceID:(id)arg1;
 + (id)unconfiguredDeviceName:(id)arg1;
 + (id)uniqueBaseStationName:(id)arg1 withBssid:(id)arg2;
 

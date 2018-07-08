@@ -49,7 +49,6 @@
 @property (nonatomic) unsigned long long referent;
 @property (nonatomic, readonly) KNSlide *slide;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) bool supportsWithStart;
 @property (nonatomic, readonly) NSString *title;
 
 + (void)i_repairChunkToBuildReferencesFromUUIDsForChunks:(id)arg1 builds:(id)arg2 context:(id)arg3;
@@ -60,7 +59,6 @@
 - (unsigned long long)activeIndexOnSlide;
 - (id)availableEventTriggers;
 - (id)build;
-- (bool)canBuildWithChunk:(id)arg1;
 - (bool)canEditAnimations;
 - (id)chunkIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -97,10 +95,6 @@
 - (void)loadFromArchive:(const struct BuildChunkArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; double x6; double x7; unsigned int x8; bool x9; bool x10; struct BuildChunkIdentifierArchive {} *x11; struct UUID {} *x12; }*)arg1 unarchiver:(id)arg2;
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)nextChunkOnSlide;
-- (bool)p_canBuildWithChunk:(id)arg1 checkOtherChunksBuildingWithThisChunk:(bool)arg2;
-- (id)p_chunksBuildingWithThisChunk;
-- (bool)p_chunksBuildingWithThisChunkCanBuildWithChunk:(id)arg1;
-- (id)p_previousActiveChunkOnSlide;
 - (void)p_setDelayFromBuildAttributes:(id)arg1 withReferent:(unsigned long long)arg2 automatic:(bool)arg3;
 - (void)p_setDurationFromBuildAttributes:(id)arg1;
 - (id)p_stringForReferent:(unsigned long long)arg1;
@@ -114,7 +108,6 @@
 - (void)setDuration:(double)arg1;
 - (void)setReferent:(unsigned long long)arg1;
 - (id)slide;
-- (bool)supportsWithStart;
 - (id)title;
 
 @end

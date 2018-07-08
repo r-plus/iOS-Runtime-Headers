@@ -3,6 +3,7 @@
  */
 
 @interface MSConversation : NSObject {
+    _MSMessageAppContext * _context;
     NSString * _conversationIdentifier;
     <MSConversationDelegate> * _delegate;
     NSData * _engramID;
@@ -14,6 +15,7 @@
     NSString * _senderAddress;
 }
 
+@property (nonatomic, retain) _MSMessageAppContext *context;
 @property (nonatomic, readonly) NSString *conversationIdentifier;
 @property (nonatomic) <MSConversationDelegate> *delegate;
 @property (nonatomic, readonly) NSData *engramID;
@@ -27,7 +29,7 @@
 + (id)activeConversation;
 
 - (void).cxx_destruct;
-- (id)_initWithState:(id)arg1;
+- (id)_initWithState:(id)arg1 context:(id)arg2;
 - (void)_insertAttachment:(id)arg1 adamID:(id)arg2 appName:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_insertAttachment:(id)arg1 withAlternateFilename:(id)arg2 skipShelf:(bool)arg3 completionHandler:(id /* block */)arg4;
 - (void)_insertMessage:(id)arg1 localizedChangeDescription:(id)arg2 skipShelf:(bool)arg3 completionHandler:(id /* block */)arg4;
@@ -66,6 +68,7 @@
 - (void)sendText:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)senderAddress;
 - (id)senderIdentifier;
+- (void)setContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setRemoteParticipantIdentifiers:(id)arg1;
 - (void)setSelectedMessage:(id)arg1;

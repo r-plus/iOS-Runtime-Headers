@@ -5,7 +5,6 @@
 @interface TSWPTOCInfo : TSWPShapeInfo <TSWPTextualEquivalentProvider> {
     NSArray * _pageNumberRanges;
     TSWPTOCPartitioner * _partitioner;
-    <TSWPTOCController> * _tocController;
     NSArray * _tocEntries;
     TSWPTOCSettings * _tocSettings;
 }
@@ -16,7 +15,6 @@
 @property (nonatomic, retain) NSArray *pageNumberRanges;
 @property (nonatomic, readonly) NSSet *paragraphStylesShownInTOC;
 @property (readonly) Class superclass;
-@property (nonatomic) <TSWPTOCController> *tocController;
 @property (setter=setTOCEntries:, nonatomic, retain) NSArray *tocEntries;
 @property (setter=setTOCSettings:, nonatomic, retain) TSWPTOCSettings *tocSettings;
 @property (nonatomic, readonly) NSArray *visibleTOCEntries;
@@ -43,10 +41,8 @@
 - (void)setPageNumberRanges:(id)arg1;
 - (void)setTOCEntries:(id)arg1;
 - (void)setTOCSettings:(id)arg1;
-- (void)setTocController:(id)arg1;
 - (bool)supportsAttachedComments;
 - (id)textualEquivalent;
-- (id)tocController;
 - (id)tocEntries;
 - (id)tocSettings;
 - (id)visibleTOCEntries;

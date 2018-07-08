@@ -50,7 +50,7 @@
 @property (nonatomic, readonly) NSData *movieData;
 @property (nonatomic, readonly) unsigned long long notificationState;
 @property (getter=isPending, nonatomic, readonly) bool pending;
-@property (nonatomic, readonly) NSData *photosGraphData;
+@property (nonatomic, readonly) NSDictionary *photosGraphProperties;
 @property (nonatomic, readonly) long long photosGraphVersion;
 @property (nonatomic, readonly) long long playCount;
 @property (getter=isRejected, nonatomic, readonly) bool rejected;
@@ -87,7 +87,6 @@
 - (void).cxx_destruct;
 - (id)_curatedAssetIDs;
 - (id)_extendedCuratedAssetIDs;
-- (id)_photosGraphProperties;
 - (id)_representativeAndCuratedAssetIDs;
 - (id)assetListPredicate;
 - (id)blacklistableFeatures;
@@ -119,7 +118,7 @@
 - (id)movieData;
 - (id)movieStateDataForAsset:(id)arg1;
 - (unsigned long long)notificationState;
-- (id)photosGraphData;
+- (id)photosGraphProperties;
 - (long long)photosGraphVersion;
 - (long long)playCount;
 - (id)predicateForAllAssets;

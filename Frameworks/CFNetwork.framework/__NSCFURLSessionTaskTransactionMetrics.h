@@ -3,6 +3,8 @@
  */
 
 @interface __NSCFURLSessionTaskTransactionMetrics : NSURLSessionTaskTransactionMetrics <NSSecureCoding> {
+    bool  __apsRelayAttempted;
+    bool  __apsRelaySucceeded;
     bool  __cellular;
     NSUUID * __connectionIdentifier;
     bool  __connectionRace;
@@ -37,6 +39,8 @@
 
 + (bool)supportsSecureCoding;
 
+- (bool)_apsRelayAttempted;
+- (bool)_apsRelaySucceeded;
 - (bool)_cellular;
 - (id)_connectionIdentifier;
 - (bool)_connectionRace;
@@ -90,6 +94,8 @@
 - (void)setReusedConnection:(bool)arg1;
 - (void)setSecureConnectionEndDate:(id)arg1;
 - (void)setSecureConnectionStartDate:(id)arg1;
+- (void)set_apsRelayAttempted:(bool)arg1;
+- (void)set_apsRelaySucceeded:(bool)arg1;
 - (void)set_cellular:(bool)arg1;
 - (void)set_connectionIdentifier:(id)arg1;
 - (void)set_connectionRace:(bool)arg1;

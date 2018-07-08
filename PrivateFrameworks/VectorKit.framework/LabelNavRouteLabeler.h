@@ -7,7 +7,7 @@
         struct shared_ptr<md::NavLabel> {} *__begin_; 
         struct shared_ptr<md::NavLabel> {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<md::NavLabel> *, std::__1::allocator<std::__1::shared_ptr<md::NavLabel> > > { 
-            struct shared_ptr<md::NavLabel> {} *__first_; 
+            struct shared_ptr<md::NavLabel> {} *__value_; 
         } __end_cap_; 
     }  _activeSigns;
     struct VKLabelNavArtworkCache { struct unique_ptr<LRUCache<unsigned long, VKRoadSignArtwork *, std::__1::hash<unsigned long> >, std::__1::default_delete<LRUCache<unsigned long, VKRoadSignArtwork *, std::__1::hash<unsigned long> > > > { struct __compressed_pair<LRUCache<unsigned long, VKRoadSignArtwork *, std::__1::hash<unsigned long> > *, std::__1::default_delete<LRUCache<unsigned long, VKRoadSignArtwork *, std::__1::hash<unsigned long> > > > { struct LRUCache<unsigned long, VKRoadSignArtwork *, std::__1::hash<unsigned long> > {} *x_1_2_1; } x_1_1_1; } x1; struct unique_ptr<LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> >, std::__1::default_delete<LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> > > > { struct __compressed_pair<LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> > *, std::__1::default_delete<LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> > > > { struct LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> > {} *x_1_2_1; } x_2_1_1; } x2; struct unique_ptr<LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> >, std::__1::default_delete<LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> > > > { struct __compressed_pair<LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> > *, std::__1::default_delete<LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> > > > { struct LRUCache<unsigned long, CGImage *, std::__1::hash<unsigned long> > {} *x_1_2_1; } x_3_1_1; } x3; } * _artworkCache;
@@ -30,7 +30,7 @@
     bool  _debugEnableShieldsOnRouteLine;
     bool  _disableTileParseForOneLayout;
     bool  _drawRoadSigns;
-    /* Warning: unhandled struct encoding: '{vector<VKLabelNavRoadLabel *, std::__1::allocator<VKLabelNavRoadLabel *> >="__begin_"^@"__end_"^@"__end_cap_"{__compressed_pair<VKLabelNavRoadLabel **, std::__1::allocator<VKLabelNavRoadLabel *> >="__first_"^@}}' */ struct vector<VKLabelNavRoadLabel *, std::__1::allocator<VKLabelNavRoadLabel *> > { 
+    /* Warning: unhandled struct encoding: '{vector<VKLabelNavRoadLabel *, std::__1::allocator<VKLabelNavRoadLabel *> >="__begin_"^@"__end_"^@"__end_cap_"{__compressed_pair<VKLabelNavRoadLabel **, std::__1::allocator<VKLabelNavRoadLabel *> >="__value_"^@}}' */ struct vector<VKLabelNavRoadLabel *, std::__1::allocator<VKLabelNavRoadLabel *> > { 
         __end_ **__begin_; 
     }  _externalCollisionLabelsForLayout;
     NSMutableArray * _fadingLabels;

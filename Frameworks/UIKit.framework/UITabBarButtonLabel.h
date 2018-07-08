@@ -17,8 +17,6 @@
 @property (getter=_tabBarButton, setter=_setTabBarButton:, nonatomic) UITabBarButton *tabBarButton;
 @property (getter=_unselectedTintColor, setter=_setUnselectedTintColor:, nonatomic, retain) UIColor *unselectedTintColor;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 + (double)_fontPointSizeForIdiom:(long long)arg1;
 
 - (void).cxx_destruct;
@@ -45,9 +43,6 @@
 - (id)_unselectedTintColor;
 - (void)_updateForFontChangeWithIdiom:(long long)arg1;
 - (void)_updateLabelsVibrancy;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)setHighlighted:(bool)arg1;
 - (void)setSelected:(bool)arg1;
 - (void)sizeToFitBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

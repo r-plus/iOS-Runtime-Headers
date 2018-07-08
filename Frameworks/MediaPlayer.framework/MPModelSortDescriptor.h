@@ -9,6 +9,7 @@
 @property (nonatomic, copy) NSArray *keyPath;
 
 + (id)sortDescriptorWithKeyPath:(id)arg1 ascending:(bool)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

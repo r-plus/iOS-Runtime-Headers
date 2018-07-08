@@ -8,27 +8,31 @@
         struct shared_ptr<mlcore::EntityCache> {} *__begin_; 
         struct shared_ptr<mlcore::EntityCache> {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<mlcore::EntityCache> *, std::__1::allocator<std::__1::shared_ptr<mlcore::EntityCache> > > { 
-            struct shared_ptr<mlcore::EntityCache> {} *__first_; 
+            struct shared_ptr<mlcore::EntityCache> {} *__value_; 
         } __end_cap_; 
     }  _entityCaches;
+    NSDictionary * _itemIndexPathToOverridePropertySet;
+    MPPropertySet * _itemProperties;
     MPMediaLibraryView * _libraryView;
     NSMapTable * _relativeModelClassToMappingResponse;
+    MPPropertySet * _sectionProperties;
     NSMutableDictionary * _sectionToLibraryAddedOverride;
     MPMediaLibraryEntityTranslationContext * _translatingContext;
     MPSectionedCollection * _unpersonalizedContentDescriptors;
-    MPModelRequest * _unpersonalizedRequest;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSDictionary *itemIndexPathToOverridePropertySet;
+@property (nonatomic, copy) MPPropertySet *itemProperties;
 @property (nonatomic, copy) MPMediaLibraryView *libraryView;
 @property (nonatomic, copy) NSMapTable *relativeModelClassToMappingResponse;
+@property (nonatomic, copy) MPPropertySet *sectionProperties;
 @property (nonatomic, copy) NSMutableDictionary *sectionToLibraryAddedOverride;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) MPMediaLibraryEntityTranslationContext *translatingContext;
 @property (nonatomic, retain) MPSectionedCollection *unpersonalizedContentDescriptors;
-@property (nonatomic, copy) MPModelRequest *unpersonalizedRequest;
 
 + (id)_completePersonalizedObjectWithLibraryObject:(id)arg1 personalizationProperties:(id)arg2 overrideLibraryAddedStatus:(long long)arg3;
 + (id)_identifiersByCombiningPersonalizedIdentifiers:(id)arg1 unpersonalizedIdentifiers:(id)arg2;
@@ -50,20 +54,24 @@
 - (id)indexPathForItemWithIdentifiersIntersectingSet:(id)arg1;
 - (id)init;
 - (id)itemAtIndexPath:(id)arg1;
+- (id)itemIndexPathToOverridePropertySet;
+- (id)itemProperties;
 - (id)libraryView;
 - (unsigned long long)numberOfItemsInSection:(unsigned long long)arg1;
 - (unsigned long long)numberOfSections;
 - (id)relativeModelClassToMappingResponse;
 - (id)sectionAtIndex:(unsigned long long)arg1;
+- (id)sectionProperties;
 - (id)sectionToLibraryAddedOverride;
+- (void)setItemIndexPathToOverridePropertySet:(id)arg1;
+- (void)setItemProperties:(id)arg1;
 - (void)setLibraryView:(id)arg1;
 - (void)setRelativeModelClassToMappingResponse:(id)arg1;
+- (void)setSectionProperties:(id)arg1;
 - (void)setSectionToLibraryAddedOverride:(id)arg1;
 - (void)setTranslatingContext:(id)arg1;
 - (void)setUnpersonalizedContentDescriptors:(id)arg1;
-- (void)setUnpersonalizedRequest:(id)arg1;
 - (id)translatingContext;
 - (id)unpersonalizedContentDescriptors;
-- (id)unpersonalizedRequest;
 
 @end

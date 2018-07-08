@@ -12,12 +12,7 @@
 @property (nonatomic, copy) UIColor *headerTextColor;
 @property (nonatomic) bool useVibrantBlend;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 - (void).cxx_destruct;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (double)headerFontSize;
 - (id)headerName;
 - (double)headerOpacity;

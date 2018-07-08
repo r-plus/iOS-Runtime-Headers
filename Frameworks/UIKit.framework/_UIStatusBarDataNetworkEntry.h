@@ -8,6 +8,8 @@
 
 @property (nonatomic) long long status;
 
++ (bool)supportsSecureCoding;
+
 - (id)_ui_descriptionBuilder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;

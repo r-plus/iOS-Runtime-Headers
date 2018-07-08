@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (void)_removeFromGlobalPromiseStorage;
 - (void)addErrorBlock:(id /* block */)arg1;
+- (void)addFinishBlock:(id /* block */)arg1;
 - (void)addSuccessBlock:(id /* block */)arg1;
 - (id)backingPromise;
 - (id /* block */)completionHandlerAdapter;

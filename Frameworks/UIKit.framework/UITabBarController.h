@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITabBarController : UIViewController <DebugHierarchyObject, GKContentRefresh, GKURLHandling, NSCoding, UIGestureRecognizerDelegate, UILayoutContainerViewDelegate, UITabBarDelegate> {
+@interface UITabBarController : UIViewController <GKContentRefresh, GKURLHandling, NSCoding, UIGestureRecognizerDelegate, UILayoutContainerViewDelegate, UITabBarDelegate> {
     <UIViewControllerAnimatedTransitioning> * __animator;
     NSString * __backdropGroupName;
     <UIViewControllerInteractiveTransitioning> * __interactor;
@@ -258,10 +258,6 @@
 - (void)willAnimateSecondHalfOfRotationFromInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 

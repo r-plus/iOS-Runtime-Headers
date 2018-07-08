@@ -87,6 +87,8 @@
     NSString * _publisherPaidVerificationURL;
     bool  _publisherPaidWebAccessOptIn;
     NSString * _publisherPaidWebAccessURL;
+    NSArray * _publisherSpecifiedArticleIDs;
+    NSDate * _publisherSpecifiedArticleIDsModifiedDate;
     NSArray * _relatedChannelIDs;
     NSArray * _relatedChannelIDsForOnboarding;
     NSArray * _relatedTopicIDs;
@@ -95,6 +97,7 @@
     long long  _score;
     NSArray * _sectionFeedConfigurations;
     NSArray * _sectionIDs;
+    NSString * _subtitle;
     FCInterestToken * _tagInterestToken;
     NTPBTagRecord * _tagRecord;
     FCInterestToken * _tagRecordInterestToken;
@@ -104,6 +107,7 @@
 
 @property (nonatomic, readonly) bool allowCustomBottomStyle;
 @property (nonatomic, readonly) NSArray *allowedStorefrontIDs;
+@property (nonatomic, readonly) NSString *articleRecirculationConfigJSON;
 @property (nonatomic, readonly) <FCChannelProviding> *asChannel;
 @property (nonatomic, readonly) <FCSectionProviding> *asSection;
 @property (nonatomic, readonly) <FCTopicProviding> *asTopic;
@@ -130,7 +134,7 @@
 @property (nonatomic, readonly) long long feedType;
 @property (nonatomic, readonly) FCColor *foregroundColor;
 @property (nonatomic, copy) NSString *foregroundColorHexString;
-@property (nonatomic, readonly) FCColor *groupTitleColor;
+@property (nonatomic, readonly, copy) FCColor *groupTitleColor;
 @property (nonatomic, copy) NSString *groupTitleColorHexString;
 @property (nonatomic, readonly) unsigned long long groupingEligibility;
 @property (readonly) unsigned long long hash;
@@ -181,6 +185,8 @@
 @property (nonatomic, readonly, copy) NSString *publisherPaidVerificationURL;
 @property (nonatomic, readonly) bool publisherPaidWebAccessOptIn;
 @property (nonatomic, readonly, copy) NSString *publisherPaidWebAccessURL;
+@property (nonatomic, readonly) NSArray *publisherSpecifiedArticleIDs;
+@property (nonatomic, readonly) NSDate *publisherSpecifiedArticleIDsModifiedDate;
 @property (nonatomic, readonly) NSArray *relatedChannelIDs;
 @property (nonatomic, readonly) NSArray *relatedChannelIDsForOnboarding;
 @property (nonatomic, readonly) NSArray *relatedTopicIDs;
@@ -189,6 +195,7 @@
 @property (nonatomic, readonly) long long score;
 @property (nonatomic, copy) NSArray *sectionFeedConfigurations;
 @property (nonatomic, readonly, copy) NSArray *sectionIDs;
+@property (nonatomic, readonly, copy) NSString *subtitle;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) bool supportsNotifications;
 @property (nonatomic, retain) FCInterestToken *tagInterestToken;
@@ -205,6 +212,7 @@
 - (void)_inflateFromVersionlessJSONDictionary:(id)arg1;
 - (bool)allowCustomBottomStyle;
 - (id)allowedStorefrontIDs;
+- (id)articleRecirculationConfigJSON;
 - (id)asChannel;
 - (id)asSection;
 - (id)asTopic;
@@ -301,6 +309,8 @@
 - (id)publisherPaidVerificationURL;
 - (bool)publisherPaidWebAccessOptIn;
 - (id)publisherPaidWebAccessURL;
+- (id)publisherSpecifiedArticleIDs;
+- (id)publisherSpecifiedArticleIDsModifiedDate;
 - (id)purchaseOfferableConfigurationsFromProtobufList:(id)arg1;
 - (id)relatedChannelIDs;
 - (id)relatedChannelIDsForOnboarding;
@@ -322,6 +332,7 @@
 - (void)setPptFeedIDOverride:(id)arg1;
 - (void)setSectionFeedConfigurations:(id)arg1;
 - (void)setTagInterestToken:(id)arg1;
+- (id)subtitle;
 - (bool)supportsNotifications;
 - (id)tagInterestToken;
 - (id)tagRecord;

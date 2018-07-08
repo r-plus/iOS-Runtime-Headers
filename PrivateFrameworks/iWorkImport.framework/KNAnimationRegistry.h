@@ -3,12 +3,12 @@
  */
 
 @interface KNAnimationRegistry : NSObject {
-    NSDictionary * mAlternateEffectIdentifiersForEffectIdentifierAndFilter;
-    NSArray * mAnimationInfos;
-    NSDictionary * mClassesForTypeAndCategory;
-    NSDictionary * mClassesForTypeAndFilter;
-    NSDictionary * mClassesForTypeAndName;
-    NSDictionary * mClassesForTypeAndObsoleteName;
+    NSDictionary * _alternateEffectIdentifiersForEffectIdentifierAndFilter;
+    NSArray * _animationInfos;
+    NSDictionary * _classesForTypeAndCategory;
+    NSDictionary * _classesForTypeAndFilter;
+    NSDictionary * _classesForTypeAndName;
+    NSDictionary * _classesForTypeAndObsoleteName;
 }
 
 + (id)animationsInBundle;
@@ -17,6 +17,7 @@
 + (id)localizedCategoryNameForCategory:(long long)arg1;
 + (id)localizedNameForUnsupportedAnimation:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)allAnimationInfos;
 - (id)animationInfoForEffectIdentifier:(id)arg1 animationType:(long long)arg2;
 - (id)animationInfoForEffectIdentifier:(id)arg1 animationType:(long long)arg2 includeObsoleteNames:(bool)arg3;
@@ -24,7 +25,6 @@
 - (id)animationInfosForAnimationType:(long long)arg1 category:(id)arg2;
 - (id)animationInfosForAnimationType:(long long)arg1 filter:(id)arg2;
 - (bool)canMapEffectIdentifier:(id)arg1 animationType:(long long)arg2 toEffectIdentifier:(id)arg3 includeObsoleteNames:(bool)arg4 forDrawable:(id)arg5;
-- (void)dealloc;
 - (id)distinctCategoriesForType:(long long)arg1;
 - (id)init;
 - (id)p_buildAlternateFilterMap;

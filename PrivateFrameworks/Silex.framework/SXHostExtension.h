@@ -2,13 +2,18 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXHostExtension : SXHost {
+@interface SXHostExtension : NSObject <SXHost> {
     NSExtensionContext * _extensionContext;
     bool  _isActive;
 }
 
+@property (nonatomic, readonly) bool active;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) NSExtensionContext *extensionContext;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) bool isActive;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (bool)active;

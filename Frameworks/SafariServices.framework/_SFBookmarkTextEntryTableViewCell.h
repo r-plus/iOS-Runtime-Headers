@@ -12,6 +12,7 @@
 - (void).cxx_destruct;
 - (id)editableTextField;
 - (id)initWithText:(id)arg1 autocapitalizationType:(long long)arg2 autocorrectionType:(long long)arg3;
+- (void)layoutMarginsDidChange;
 - (void)setSeparatorInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)updateConstraints;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSEntityMapping : NSObject {
+@interface NSEntityMapping : NSObject <NSSecureCoding> {
     NSMutableArray * _attributeMappings;
     NSString * _destinationEntityName;
     NSData * _destinationEntityVersionHash;
@@ -36,6 +36,7 @@
 @property (nonatomic, retain) NSDictionary *userInfo;
 
 + (void)initialize;
++ (bool)supportsSecureCoding;
 
 - (void)_addAttributeMapping:(id)arg1;
 - (void)_addRelationshipMapping:(id)arg1;

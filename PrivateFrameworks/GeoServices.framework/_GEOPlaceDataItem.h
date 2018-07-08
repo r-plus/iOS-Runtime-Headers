@@ -5,7 +5,8 @@
 @interface _GEOPlaceDataItem : NSObject <GEOMapItem> {
     GEOAddressObject * _addressObject;
     NSMapTable * _attributionMap;
-    NSArray * _currentOperatingHours;
+    double  _cacheLastChecked;
+    NSArray * _completeOperatingHoursCache;
     GEOMapItemDetourInfo * _detourInfo;
     GEOPDMultiLocalizedString * _disambiguationLabel;
     _GEOEncyclopedicInfo * _encyclopedicInfo;
@@ -73,6 +74,8 @@
 @property (nonatomic, readonly) bool hasExpiredComponents;
 @property (getter=_hasFeatureLink, nonatomic, readonly) bool hasFeatureLink;
 @property (getter=_hasFlyover, nonatomic, readonly) bool hasFlyover;
+@property (getter=_hasGenderNeutralRestroom, nonatomic, readonly) bool hasGenderNeutralRestroom;
+@property (getter=_hasGenderNeutralRestroomAmenity, nonatomic, readonly) bool hasGenderNeutralRestroomAmenity;
 @property (getter=_hasGoodForKidsAmenity, nonatomic, readonly) bool hasGoodForKidsAmenity;
 @property (getter=_hasMUID, nonatomic, readonly) bool hasMUID;
 @property (getter=_hasOperatingHours, nonatomic, readonly) bool hasOperatingHours;
@@ -153,13 +156,15 @@
 - (id)_associatedApp;
 - (id)_attribution;
 - (id)_attributionInfoForAttribution:(id)arg1 requirement:(int)arg2;
-- (id)_bestBrandIconURLForSize:(struct CGSize { double x1; double x2; })arg1 allowSmaller:(bool)arg2;
+- (id)_bestAvatarBrandIconURLForSize:(struct CGSize { double x1; double x2; })arg1 allowSmaller:(bool)arg2;
+- (id)_bestNavbarBrandIconURLForSize:(struct CGSize { double x1; double x2; })arg1 allowSmaller:(bool)arg2;
 - (id)_browseCategories;
 - (id)_businessClaim;
 - (id)_businessURL;
 - (id)_childPlaces;
 - (id)_clientAttributes;
 - (id)_completeOperatingHours;
+- (bool)_completeOperatingHoursCacheIsStale;
 - (id)_containedPlace;
 - (unsigned long long)_customIconID;
 - (id)_disambiguationName;
@@ -179,6 +184,8 @@
 - (bool)_hasEncyclopedicInfo;
 - (bool)_hasFeatureLink;
 - (bool)_hasFlyover;
+- (bool)_hasGenderNeutralRestroom;
+- (bool)_hasGenderNeutralRestroomAmenity;
 - (bool)_hasGoodForKidsAmenity;
 - (bool)_hasLocalizedCategoryNamesForType:(unsigned int)arg1;
 - (bool)_hasMUID;

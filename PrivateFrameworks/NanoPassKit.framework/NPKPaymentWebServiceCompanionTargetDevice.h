@@ -30,6 +30,7 @@
 - (bool)_deviceIsDaytonaOrLater;
 - (bool)_deviceIsFortuneOrLater;
 - (bool)_deviceSupportAccessExpressMode;
+- (bool)_deviceSupportExpressModeTypeAGeneric;
 - (void)_getPairingInfoAndSetAuthRandomIfNotPaired:(bool)arg1 completion:(id /* block */)arg2;
 - (id)_sendProtobuf:(id)arg1 responseExpected:(bool)arg2;
 - (id)_sendProtobuf:(id)arg1 responseExpected:(bool)arg2 extraOptions:(id)arg3;
@@ -37,6 +38,7 @@
 - (void)_setNewAuthRandomIfNecessaryReturningPairingState:(id /* block */)arg1;
 - (void)_setNewAuthRandomReturningPairingState:(id /* block */)arg1;
 - (void)_setOrResetCleanupTimerForRequest:(id)arg1;
+- (bool)_shouldAllowSetExpressWithPassInformation:(id)arg1;
 - (void)archiveBackgroundContext:(id)arg1;
 - (void)archiveContext:(id)arg1;
 - (id)bridgedClientInfo;
@@ -86,6 +88,8 @@
 - (void)initializeCloudStoreIfNecessaryWithHandler:(id /* block */)arg1;
 - (void)initializeCloudStoreIfNecessaryWithHandlerResponse:(id)arg1;
 - (id)internalQueue;
+- (void)markAllAppletsForDeletionResponse:(id)arg1;
+- (void)markAllAppletsForDeletionWithCompletion:(id /* block */)arg1;
 - (unsigned long long)maximumPaymentCards;
 - (void)noteProvisioningDidBegin;
 - (void)noteProvisioningDidEnd;
@@ -161,6 +165,7 @@
 - (void)setResponseQueue:(id)arg1;
 - (void)signDataResponse:(id)arg1;
 - (bool)supportsAutomaticPassPresentation;
+- (bool)supportsCredentialType:(long long)arg1;
 - (bool)supportsExpressModeForExpressPassType:(long long)arg1;
 - (id)trustedDeviceEnrollmentInfoForWebService:(id)arg1;
 - (void)updatePaymentPass:(id)arg1;

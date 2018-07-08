@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSData : NSObject <AFSecurityDigestibleChunksProviding, ASParsingLeafNode, CKLParsedObject, CKRecordValue, FCKeyValueStoreCoding, HFPropertyListConvertible, NSCopying, NSMutableCopying, NSSecureCoding, PQLValuable, SiriCoreSQLiteValue, TSPSplitableData>
+@interface NSData : NSObject <AFSecurityDigestibleChunksProviding, ASParsingLeafNode, CKLParsedObject, CKRecordValue, CLSMetaPropertyValue, FCKeyValueStoreCoding, HFPropertyListConvertible, NSCopying, NSMutableCopying, NSSecureCoding, PQLValuable, SiriCoreSQLiteValue, TSPSplitableData>
 
 @property (nonatomic, readonly) NSData *NRSHA256;
 @property (nonatomic, readonly) NSData *SHA1Data;
@@ -17,17 +17,15 @@
 @property (readonly) const void*bytes;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly, copy) NSString *fm_hexString;
 @property (nonatomic, readonly, copy) NSData *fm_md5Hash;
 @property (nonatomic, readonly, copy) NSData *fm_sha1Hash;
 @property (nonatomic, readonly, copy) NSData *fm_sha256Hash;
 @property (nonatomic, readonly, copy) NSData *fm_sha512Hash;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly, copy) NSString *hexString;
 @property (readonly) NSString *hmf_hexidecimalRepresentation;
 @property (getter=hmf_isZeroed, readonly) bool hmf_zeroed;
+@property (nonatomic, readonly) NSString *ic_md5;
 @property (readonly) unsigned long long length;
-@property (nonatomic, readonly) NSString *md5;
 @property (nonatomic, readonly) NSString *px_md5Hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned long long tsp_length;
@@ -36,14 +34,10 @@
 
 + (bool)supportsSecureCoding;
 
-// Image: /Developer/Library/PrivateFrameworks/DebugHierarchyFoundation.framework/DebugHierarchyFoundation
-
-- (id)dbg_gzipDeflate;
-- (id)dbg_gzipInflate;
-
 // Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
 
 - (bool)_isSafeResumeDataForBackgroundDownload;
+- (id)_requestFromResumeData;
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
@@ -57,7 +51,6 @@
 - (id)CKLowercaseHexStringWithoutSpaces;
 - (id)CKSHA256;
 - (id)CKUppercaseHexStringWithoutSpaces;
-- (id)ck_securelyDecodeRootObjectOfClass:(Class)arg1;
 - (id)hashedDescription;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
@@ -146,7 +139,10 @@
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (id)hk_dataWithSHA256Fingerprint:(id)arg1 error:(out id*)arg2;
++ (id)hk_nilDataMD5;
++ (id)hk_randomDataOfLength:(long long)arg1;
 
+- (id)hk_MD5;
 - (unsigned long long)hk_countOfUUIDs;
 - (void)hk_enumerateUUIDsUsingBlock:(id /* block */)arg1;
 - (id)hk_stripCorruptedUUIDs;
@@ -163,9 +159,6 @@
 // Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
 
 + (id)safari_readingListThumbnailImageDataWithCGImage:(struct CGImage { }*)arg1;
-
-- (id)safari_SHA1Hash;
-- (id)safari_dataByAppendingData:(id)arg1;
 
 // Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
 
@@ -329,8 +322,8 @@
 
 // Image: /System/Library/PrivateFrameworks/CoreSpeech.framework/CoreSpeech
 
-- (id)initWithXPCObject:(id)arg1;
-- (id)xpcObject;
+- (id)_cs_initWithXPCObject:(id)arg1;
+- (id)_cs_xpcObject;
 
 // Image: /System/Library/PrivateFrameworks/CourseKit.framework/CourseKit
 
@@ -362,9 +355,17 @@
 
 - (id)digestForSubCal;
 
+// Image: /System/Library/PrivateFrameworks/FMCore.framework/FMCore
+
++ (id)fm_randomBytes:(unsigned long long)arg1;
+
 // Image: /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
 
 - (id)fm_hexString;
+- (id)fm_hmac_md5WithKey:(id)arg1;
+- (id)fm_hmac_sha1WithKey:(id)arg1;
+- (id)fm_hmac_sha256WithKey:(id)arg1;
+- (id)fm_hmac_sha512WithKey:(id)arg1;
 - (id)fm_md5Hash;
 - (id)fm_sha1Hash;
 - (id)fm_sha256Hash;
@@ -469,6 +470,7 @@
 + (id)dataWithMessageSummaryInfoDictionary:(id)arg1;
 
 - (id)__im_engramStringRepresentation;
+- (bool)isArchivable_im;
 
 // Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
 
@@ -549,9 +551,11 @@
 // Image: /System/Library/PrivateFrameworks/NanoRegistry.framework/NanoRegistry
 
 + (id)dataWithRandomBytesOfSize:(unsigned long long)arg1;
++ (id)fromUUID:(id)arg1;
 
 - (id)NRSHA256;
 - (void)NRSHA256:(unsigned char)arg1;
+- (id)toUUID;
 
 // Image: /System/Library/PrivateFrameworks/NanoResourceGrabber.framework/NanoResourceGrabber
 
@@ -579,8 +583,8 @@
 
 // Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
 
+- (id)ic_md5;
 - (id)ic_stringValue;
-- (id)md5;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
@@ -666,10 +670,16 @@
 - (id)propertyListForRadioResponseReturningError:(id*)arg1;
 - (id)propertyListForRadioResponseReturningError:(id*)arg1 unparsedResponseDictionary:(id*)arg2;
 
+// Image: /System/Library/PrivateFrameworks/RemoteManagement.framework/RemoteManagement
+
+- (id)RMHexString;
+- (id)RMSHA1Hash;
+
 // Image: /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
 
 - (id)safari_SHA1Hash;
 - (bool)safari_dataAppearsToBeCompressed;
+- (id)safari_dataByAppendingData:(id)arg1;
 - (id)safari_dataByCompressingData;
 - (id)safari_dataByDecompressingData;
 - (id)safari_descriptionWithoutSpaces;

@@ -5,9 +5,11 @@
 @interface PKEnteredValueActionItem : NSObject <NSSecureCoding> {
     NSString * _currency;
     NSArray * _defaultSuggestions;
-    NSDecimalNumber * _maxAmount;
     bool  _maxAmountIncludesLocalBalance;
-    NSDecimalNumber * _minAmount;
+    NSDecimalNumber * _maxLoadAmount;
+    NSDecimalNumber * _maxLoadedBalance;
+    NSDecimalNumber * _minLoadAmount;
+    NSDecimalNumber * _minLoadedBalance;
     NSDictionary * _serviceProviderData;
 }
 
@@ -15,7 +17,11 @@
 @property (nonatomic, readonly, copy) NSArray *defaultSuggestions;
 @property (nonatomic, readonly, copy) NSDecimalNumber *maxAmount;
 @property (nonatomic, readonly) bool maxAmountIncludesLocalBalance;
+@property (nonatomic, readonly, copy) NSDecimalNumber *maxLoadAmount;
+@property (nonatomic, readonly, copy) NSDecimalNumber *maxLoadedBalance;
 @property (nonatomic, readonly, copy) NSDecimalNumber *minAmount;
+@property (nonatomic, readonly, copy) NSDecimalNumber *minLoadAmount;
+@property (nonatomic, readonly, copy) NSDecimalNumber *minLoadedBalance;
 @property (nonatomic, readonly, copy) NSDictionary *serviceProviderData;
 
 + (bool)supportsSecureCoding;
@@ -29,7 +35,11 @@
 - (id)initWithDictionary:(id)arg1;
 - (id)maxAmount;
 - (bool)maxAmountIncludesLocalBalance;
+- (id)maxLoadAmount;
+- (id)maxLoadedBalance;
 - (id)minAmount;
+- (id)minLoadAmount;
+- (id)minLoadedBalance;
 - (id)serviceProviderData;
 
 @end

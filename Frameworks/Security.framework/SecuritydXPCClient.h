@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)connection;
-- (id)initWithEndpoint:(id)arg1;
+- (id)init;
 - (void)setConnection:(id)arg1;
 
 @end

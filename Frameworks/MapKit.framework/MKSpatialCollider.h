@@ -8,7 +8,7 @@
     long long  _options;
     _MKSpatialColliderPairSet * _previousCollisionPairs;
     _MKSpatialColliderPairSet * _registeredCollisonPairs;
-    /* Warning: unhandled struct encoding: '{vector<MKAnnotationView *, std::__1::allocator<MKAnnotationView *> >="__begin_"^@"__end_"^@"__end_cap_"{__compressed_pair<MKAnnotationView **, std::__1::allocator<MKAnnotationView *> >="__first_"^@}}' */ struct vector<MKAnnotationView *, std::__1::allocator<MKAnnotationView *> > { 
+    /* Warning: unhandled struct encoding: '{vector<MKAnnotationView *, std::__1::allocator<MKAnnotationView *> >="__begin_"^@"__end_"^@"__end_cap_"{__compressed_pair<MKAnnotationView **, std::__1::allocator<MKAnnotationView *> >="__value_"^@}}' */ struct vector<MKAnnotationView *, std::__1::allocator<MKAnnotationView *> > { 
         __end_ **__begin_; 
     }  _sortedAnnotationViews;
     unsigned long long  mutator;

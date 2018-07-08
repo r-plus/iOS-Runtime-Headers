@@ -31,6 +31,7 @@
     NSString * _paymentHash;
     NSString * _peerPaymentCounterpartHandle;
     NSString * _peerPaymentMemo;
+    NSDate * _peerPaymentMessageReceivedDate;
     long long  _peerPaymentType;
     NSDecimalNumber * _primaryFundingSourceAmount;
     NSString * _primaryFundingSourceCurrencyCode;
@@ -52,6 +53,7 @@
     NSDecimalNumber * _subtotalAmount;
     long long  _technologyType;
     NSDate * _transactionDate;
+    long long  _transactionDeclinedReason;
     unsigned long long  _transactionSource;
     long long  _transactionStatus;
     NSDate * _transactionStatusChangedDate;
@@ -96,6 +98,7 @@
 @property (nonatomic, copy) NSString *paymentHash;
 @property (nonatomic, copy) NSString *peerPaymentCounterpartHandle;
 @property (nonatomic, copy) NSString *peerPaymentMemo;
+@property (nonatomic, copy) NSDate *peerPaymentMessageReceivedDate;
 @property (nonatomic) long long peerPaymentStatus;
 @property (nonatomic) long long peerPaymentType;
 @property (nonatomic, copy) NSDecimalNumber *primaryFundingSourceAmount;
@@ -121,6 +124,7 @@
 @property (nonatomic, readonly) PKCurrencyAmount *subtotalCurrencyAmount;
 @property (nonatomic) long long technologyType;
 @property (nonatomic, copy) NSDate *transactionDate;
+@property (nonatomic) long long transactionDeclinedReason;
 @property (nonatomic) unsigned long long transactionSource;
 @property (nonatomic) long long transactionStatus;
 @property (nonatomic, copy) NSDate *transactionStatusChangedDate;
@@ -139,6 +143,7 @@
 - (id)_formatBalanceAdjustmentAmount:(id)arg1;
 - (id)_transactionSourceString;
 - (id)_transactionTypeString;
+- (id)_transitSubtypeString;
 - (void)addUpdateReasons:(unsigned long long)arg1;
 - (long long)adjustmentType;
 - (id)administrativeArea;
@@ -187,6 +192,7 @@
 - (id)paymentHash;
 - (id)peerPaymentCounterpartHandle;
 - (id)peerPaymentMemo;
+- (id)peerPaymentMessageReceivedDate;
 - (long long)peerPaymentStatus;
 - (long long)peerPaymentType;
 - (id)primaryFundingSourceAmount;
@@ -235,6 +241,7 @@
 - (void)setPaymentHash:(id)arg1;
 - (void)setPeerPaymentCounterpartHandle:(id)arg1;
 - (void)setPeerPaymentMemo:(id)arg1;
+- (void)setPeerPaymentMessageReceivedDate:(id)arg1;
 - (void)setPeerPaymentStatus:(long long)arg1;
 - (void)setPeerPaymentType:(long long)arg1;
 - (void)setPrimaryFundingSourceAmount:(id)arg1;
@@ -257,6 +264,7 @@
 - (void)setSubtotalAmount:(id)arg1;
 - (void)setTechnologyType:(long long)arg1;
 - (void)setTransactionDate:(id)arg1;
+- (void)setTransactionDeclinedReason:(long long)arg1;
 - (void)setTransactionSource:(unsigned long long)arg1;
 - (void)setTransactionStatus:(long long)arg1;
 - (void)setTransactionStatusChangedDate:(id)arg1;
@@ -270,6 +278,7 @@
 - (id)subtotalCurrencyAmount;
 - (long long)technologyType;
 - (id)transactionDate;
+- (long long)transactionDeclinedReason;
 - (unsigned long long)transactionSource;
 - (long long)transactionStatus;
 - (id)transactionStatusChangedDate;
@@ -278,5 +287,6 @@
 - (long long)transitType;
 - (unsigned long long)updateReasons;
 - (id)updateReasonsDescription;
+- (void)updateTransactionTypeFromDetailString:(id)arg1;
 
 @end

@@ -27,6 +27,7 @@
 - (void)dealloc;
 - (id /* block */)deallocHandler;
 - (id)delegate;
+- (void)fetchAuthModeWithContext:(id)arg1 completion:(id /* block */)arg2;
 - (void)fetchDeviceListWithContext:(id)arg1 completion:(id /* block */)arg2;
 - (id)fetchDeviceListWithContext:(id)arg1 error:(id*)arg2;
 - (void)fetchURLBagWithCompletion:(id /* block */)arg1;

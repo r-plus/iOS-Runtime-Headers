@@ -130,6 +130,12 @@
 - (id)signerOrganization;
 - (id)uniqueIdentifier;
 
+// Image: /System/Library/Frameworks/ClassKit.framework/ClassKit
+
++ (id)cls_appExtensionContainerBundleProxyForConnection:(id)arg1;
++ (id)cls_appExtensionContainerBundleProxyForCurrentTask;
++ (id)cls_appExtensionContainerBundleProxyWithProperties:(id)arg1;
+
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (id)_hk_appExtensionContainerBundleProxyWithProperties:(id)arg1;

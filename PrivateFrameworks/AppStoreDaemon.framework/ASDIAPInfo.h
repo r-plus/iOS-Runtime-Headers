@@ -11,6 +11,7 @@
     bool  _hasUsedIntroPricingOffer;
     NSNumber * _lastModifiedTimestamp;
     NSNumber * _purchaseTimestamp;
+    NSString * _subscriptionFamilyId;
     unsigned char  _type;
 }
 
@@ -22,6 +23,7 @@
 @property (nonatomic) bool hasUsedIntroPricingOffer;
 @property (nonatomic, retain) NSNumber *lastModifiedTimestamp;
 @property (nonatomic, retain) NSNumber *purchaseTimestamp;
+@property (nonatomic, retain) NSString *subscriptionFamilyId;
 @property (nonatomic) unsigned char type;
 
 + (bool)supportsSecureCoding;
@@ -47,7 +49,9 @@
 - (void)setHasUsedIntroPricingOffer:(bool)arg1;
 - (void)setLastModifiedTimestamp:(id)arg1;
 - (void)setPurchaseTimestamp:(id)arg1;
+- (void)setSubscriptionFamilyId:(id)arg1;
 - (void)setType:(unsigned char)arg1;
+- (id)subscriptionFamilyId;
 - (unsigned char)type;
 
 @end

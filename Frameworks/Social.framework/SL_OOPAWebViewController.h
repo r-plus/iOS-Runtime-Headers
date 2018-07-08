@@ -6,11 +6,12 @@
     NSObject<SL_OOPAuthFlowDelegate> * _authFlowDelegate;
     NSURL * _authURL;
     <SL_OOPAWebViewControllerDelegate> * _delegate;
+    bool  _didFinish;
+    bool  _didLoadWebView;
     bool  _hidingWebView;
     SL_OOPASpinnerTitle * _spinnerTitleView;
     struct __CFURLStorageSession { } * _storageSession;
     UIWebView * _uiWebView;
-    NSMutableURLRequest * _urlRequest;
     NSString * _username;
     WKWebView * _wkWebView;
 }
@@ -27,6 +28,9 @@
 
 - (void).cxx_destruct;
 - (void)_cancelButtonTapped:(id)arg1;
+- (void)_didFinishWithSuccess:(bool)arg1 response:(id)arg2 error:(id)arg3;
+- (void)_evaluateDocumentTitleForUIWebView:(id)arg1 retryCount:(unsigned long long)arg2 completion:(id /* block */)arg3;
+- (void)_evaluateDocumentTitleForWebView:(id)arg1 retryCount:(unsigned long long)arg2 completion:(id /* block */)arg3;
 - (void)_loadWebView;
 - (void)_loadWebViewIfReady;
 - (void)_updateNavigationPromptWithActiveURL:(id)arg1;

@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
  */
 
-@interface HUEditUserViewController : HUUserTableViewController <HUAboutResidentDeviceFooterViewDelegate, HUAboutResidentDeviceViewControllerDelegate, HUPersonalRequestsDevicesModuleControllerDelegate, HUSwitchCellDelegate> {
+@interface HUEditUserViewController : HUUserTableViewController <HUAboutResidentDeviceFooterViewDelegate, HUAboutResidentDeviceViewControllerDelegate, HUSwitchCellDelegate> {
     HUAboutResidentDeviceFooterView * _aboutResidentDeviceFooterView;
     HUEditUserItemManager * _editUserItemManager;
     HUPendingAccessoriesGridViewController * _pendingAccessoriesViewController;
-    HUPersonalRequestsDevicesModuleController * _personalRequestsDevicesModuleController;
     HFUserItem * _userItem;
 }
 
@@ -16,7 +15,6 @@
 @property (nonatomic, readonly) HUEditUserItemManager *editUserItemManager;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HUPendingAccessoriesGridViewController *pendingAccessoriesViewController;
-@property (nonatomic, readonly) HUPersonalRequestsDevicesModuleController *personalRequestsDevicesModuleController;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) HFUserItem *userItem;
 
@@ -27,13 +25,10 @@
 - (void)aboutResidentDeviceViewControllerDidFinish:(id)arg1;
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
 - (id)childViewControllersToPreload;
-- (void)devicesModuleController:(id)arg1 presentViewController:(id)arg2;
 - (id)editUserItemManager;
 - (id)initWithItem:(id)arg1 home:(id)arg2;
-- (id)itemModuleControllers;
 - (void)learnMoreLinkTapped:(id)arg1;
 - (id)pendingAccessoriesViewController;
-- (id)personalRequestsDevicesModuleController;
 - (void)setAboutResidentDeviceFooterView:(id)arg1;
 - (void)setupCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3;
 - (bool)shouldHideSeparatorsForCell:(id)arg1 indexPath:(id)arg2;

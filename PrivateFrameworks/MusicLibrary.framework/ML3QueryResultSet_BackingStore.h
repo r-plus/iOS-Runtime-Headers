@@ -7,14 +7,14 @@
         long long *__begin_; 
         long long *__end_; 
         struct __compressed_pair<long long *, std::__1::allocator<long long> > { 
-            long long *__first_; 
+            long long *__value_; 
         } __end_cap_; 
     }  _persistentIDs;
     struct vector<unsigned char, std::__1::allocator<unsigned char> > { 
         char *__begin_; 
         char *__end_; 
         struct __compressed_pair<unsigned char *, std::__1::allocator<unsigned char> > { 
-            char *__first_; 
+            char *__value_; 
         } __end_cap_; 
     }  _sections;
 }

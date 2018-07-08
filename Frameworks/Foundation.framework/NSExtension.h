@@ -4,11 +4,9 @@
 
 @interface NSExtension : NSObject <CXCallDirectoryStoreMigratorExtension, _NSExtensionContextHosting> {
     NSSet * __allowedErrorClasses;
-    long long  __assertionRefCount;
     NSBundle * __extensionBundle;
     NSMutableDictionary * __extensionContexts;
     NSMutableDictionary * __extensionExpirationIdentifiers;
-    BKSProcessAssertion * __extensionProcessAssertion;
     NSMutableDictionary * __extensionServiceConnections;
     <PKPlugIn> * __plugIn;
     id /* block */  __requestPostCompletionBlock;
@@ -28,11 +26,9 @@
 }
 
 @property (setter=_setAllowedErrorClasses:, nonatomic, copy) NSSet *_allowedErrorClasses;
-@property (setter=_setAssertionRefCount:, nonatomic) long long _assertionRefCount;
 @property (setter=_setExtensionBundle:, nonatomic, retain) NSBundle *_extensionBundle;
 @property (setter=_setExtensionContexts:, nonatomic, retain) NSMutableDictionary *_extensionContexts;
 @property (setter=_setExtensionExpirationsIdentifiers:, nonatomic, retain) NSMutableDictionary *_extensionExpirationIdentifiers;
-@property (setter=_setExtensionProcessAssertion:, retain) BKSProcessAssertion *_extensionProcessAssertion;
 @property (setter=_setExtensionServiceConnections:, nonatomic, retain) NSMutableDictionary *_extensionServiceConnections;
 @property (getter=_extensionState, setter=_setExtensionState:, nonatomic, copy) NSDictionary *_extensionState;
 @property (getter=_isMarkedNew, nonatomic, readonly) bool _markedNew;
@@ -81,7 +77,6 @@
 + (id)predicateForActivationRule:(id)arg1;
 
 - (id)_allowedErrorClasses;
-- (long long)_assertionRefCount;
 - (id)_bareExtensionServiceConnection;
 - (void)_cancelRequestWithError:(id)arg1 forExtensionContextWithUUID:(id)arg2 completion:(id /* block */)arg3;
 - (void)_completeRequestReturningItems:(id)arg1 forExtensionContextWithUUID:(id)arg2 completion:(id /* block */)arg3;
@@ -93,7 +88,6 @@
 - (id)_extensionContextForUUID:(id)arg1;
 - (id)_extensionContexts;
 - (id)_extensionExpirationIdentifiers;
-- (id)_extensionProcessAssertion;
 - (id)_extensionServiceConnections;
 - (id)_extensionState;
 - (void)_hostDidBecomeActiveNote:(id)arg1;
@@ -112,20 +106,20 @@
 - (void)_openURL:(id)arg1 completion:(id /* block */)arg2;
 - (id)_plugIn;
 - (int)_plugInProcessIdentifier;
-- (void)_reallyBeginExtensionRequestWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 completion:(id /* block */)arg3;
+- (void)_reallyBeginExtensionRequestWithInputItems:(id)arg1 processAssertion:(id)arg2 listenerEndpoint:(id)arg3 completion:(id /* block */)arg4;
 - (id /* block */)_requestPostCompletionBlock;
 - (id /* block */)_requestPostCompletionBlockWithItems;
 - (void)_resetExtensionState;
 - (id)_safePluginQueue;
 - (void)_safelyBeginUsing:(id /* block */)arg1;
+- (void)_safelyBeginUsing_withAssertion:(id /* block */)arg1;
+- (void)_safelyBeginUsing_withAssertion_onSafeQueue:(id /* block */)arg1;
 - (void)_safelyEndUsing:(id /* block */)arg1;
 - (void)_safelyEndUsingWithProcessAssertion:(id)arg1 continuation:(id /* block */)arg2;
 - (void)_setAllowedErrorClasses:(id)arg1;
-- (void)_setAssertionRefCount:(long long)arg1;
 - (void)_setExtensionBundle:(id)arg1;
 - (void)_setExtensionContexts:(id)arg1;
 - (void)_setExtensionExpirationsIdentifiers:(id)arg1;
-- (void)_setExtensionProcessAssertion:(id)arg1;
 - (void)_setExtensionServiceConnections:(id)arg1;
 - (void)_setExtensionState:(id)arg1;
 - (void)_setObservingHostAppStateChanges:(bool)arg1;

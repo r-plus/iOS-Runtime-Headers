@@ -13,6 +13,7 @@
     bool  _didBuyParamsChange;
     bool  _didFallbackToPassword;
     bool  _isIdentityMapInvalid;
+    bool  _isPayment;
     NSLock * _lock;
     NSString * _passwordEquivalentToken;
     SSPaymentSheet * _paymentSheet;
@@ -36,7 +37,7 @@
 @property bool didFallbackToPassword;
 @property (readonly) unsigned long long hash;
 @property bool isIdentityMapInvalid;
-@property (readonly) bool isPayment;
+@property bool isPayment;
 @property (copy) NSString *passwordEquivalentToken;
 @property (retain) SSPaymentSheet *paymentSheet;
 @property (copy) NSURL *redirectURL;
@@ -75,6 +76,7 @@
 - (void)setDidBuyParamsChange:(bool)arg1;
 - (void)setDidFallbackToPassword:(bool)arg1;
 - (void)setIsIdentityMapInvalid:(bool)arg1;
+- (void)setIsPayment:(bool)arg1;
 - (void)setPasswordEquivalentToken:(id)arg1;
 - (void)setPaymentSheet:(id)arg1;
 - (void)setRedirectURL:(id)arg1;

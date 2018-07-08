@@ -18,12 +18,7 @@
 
 @property (nonatomic) double fontScaleFactor;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 - (void).cxx_destruct;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (double)fontScaleFactor;
 - (id)initWithDelegate:(id)arg1;
 - (void)setFontScaleFactor:(double)arg1;

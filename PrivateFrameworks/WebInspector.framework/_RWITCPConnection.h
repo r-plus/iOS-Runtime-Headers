@@ -24,6 +24,7 @@
 + (id)TCPConnectionWithLockdownConnection:(struct _lockdown_connection { }*)arg1;
 + (id)TCPConnectionWithPort:(unsigned short)arg1;
 + (id)TCPConnectionWithResolvedNetService:(id)arg1;
++ (id)TCPConnectionWithSocketPath:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_closeInputStream;

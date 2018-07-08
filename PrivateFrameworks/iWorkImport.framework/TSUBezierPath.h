@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSUBezierPath : NSObject <NSCoding, NSCopying> {
+@interface TSUBezierPath : NSObject <NSCopying> {
     struct { 
         unsigned int sfr_flags : 8; 
         unsigned int sfr_pathState : 2; 
@@ -33,7 +33,7 @@
     long long  sfr_lastSubpathIndex;
     double  sfr_lineWidth;
     double  sfr_miterLimit;
-    void * sfr_path;
+    struct CGPath { } * sfr_path;
     double  sfr_totalLength;
 }
 
@@ -48,6 +48,7 @@
 @property (nonatomic, readonly) NSArray *visuallyDistinctSubregions;
 
 + (id)appendBezierPaths:(id)arg1;
++ (id)arrayOfFillablePathsFromPaths:(id)arg1 withConnectionThreshold:(double)arg2;
 + (id)bezierPath;
 + (id)bezierPathWithCGPath:(struct CGPath { }*)arg1;
 + (id)bezierPathWithConvexHullOfPoints:(struct CGPoint { double x1; double x2; }*)arg1 count:(unsigned long long)arg2;
@@ -80,7 +81,10 @@
 + (id)outsideEdgeOfBezierPath:(id)arg1;
 + (struct Path { int x1; int x2; int x3; struct path_descr {} *x4; int x5; int x6; bool x7; bool x8; int x9; int x10; int x11; char *x12; }*)p_bezierToPath:(id)arg1;
 + (id)p_booleanWithBezierPaths:(id)arg1 operation:(int)arg2;
++ (id)p_connectionPathsForFillableAreas:(id)arg1 withConnectionThreshold:(double)arg2;
 + (struct CGPoint { double x1; double x2; })p_findPointWithGreatestSlopeFromStartPoint:(struct CGPoint { double x1; double x2; })arg1 toPointA:(struct CGPoint { double x1; double x2; })arg2 orPointB:(struct CGPoint { double x1; double x2; })arg3;
++ (id)p_mergeIntersectingSubpaths:(id)arg1 stopAfterFoundTwo:(bool)arg2;
++ (id)p_normalizeSubpaths:(id)arg1;
 + (id)p_pathToBezier:(struct Path { int x1; int x2; int x3; struct path_descr {} *x4; int x5; int x6; bool x7; bool x8; int x9; int x10; int x11; char *x12; }*)arg1;
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })p_pathToBounds:(struct Path { int x1; int x2; int x3; struct path_descr {} *x4; int x5; int x6; bool x7; bool x8; int x9; int x10; int x11; char *x12; }*)arg1;
 + (void)setDefaultFlatness:(double)arg1;
@@ -108,7 +112,7 @@
 - (struct CGPath { }*)CGPath;
 - (void)_addPathSegment:(long long)arg1 point:(struct CGPoint { double x1; double x2; })arg2;
 - (void)_appendArcSegmentWithCenter:(struct CGPoint { double x1; double x2; })arg1 radius:(double)arg2 angle1:(double)arg3 angle2:(double)arg4;
-- (void)_appendToPath:(id)arg1;
+- (void)_appendToPath:(id)arg1 skippingInitialMoveIfPossible:(bool)arg2;
 - (struct CGPoint { double x1; double x2; })_checkPointForValidity:(struct CGPoint { double x1; double x2; })arg1;
 - (id)_copyFlattenedPath;
 - (void)_deviceClosePath;
@@ -128,6 +132,7 @@
 - (void)appendBezierPath:(id)arg1;
 - (void)appendBezierPath:(id)arg1 fromSegment:(long long)arg2 t:(double)arg3 toSegment:(long long)arg4 t:(double)arg5 withoutMove:(bool)arg6;
 - (void)appendBezierPath:(id)arg1 fromSegment:(long long)arg2 toSegment:(long long)arg3;
+- (void)appendBezierPath:(id)arg1 skippingInitialMoveIfPossible:(bool)arg2;
 - (void)appendBezierPathWithArcFromPoint:(struct CGPoint { double x1; double x2; })arg1 toPoint:(struct CGPoint { double x1; double x2; })arg2 radius:(double)arg3;
 - (void)appendBezierPathWithArcWithCenter:(struct CGPoint { double x1; double x2; })arg1 radius:(double)arg2 startAngle:(double)arg3 endAngle:(double)arg4;
 - (void)appendBezierPathWithArcWithCenter:(struct CGPoint { double x1; double x2; })arg1 radius:(double)arg2 startAngle:(double)arg3 endAngle:(double)arg4 clockwise:(bool)arg5;
@@ -136,6 +141,8 @@
 - (void)appendBezierPathWithOvalInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)appendBezierPathWithPoints:(struct CGPoint { double x1; double x2; }*)arg1 count:(long long)arg2;
 - (void)appendBezierPathWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)appendPointsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 fromBezierPath:(id)arg2;
+- (id)arrayOfSubpathsWithEffectivelyEmptySubpathsRemoved:(bool)arg1;
 - (id)bezierPathByFittingCurve;
 - (id)bezierPathByFittingCurve:(id)arg1;
 - (id)bezierPathByFlatteningPath;
@@ -160,6 +167,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })controlPointBounds;
 - (id)copyFromSegment:(int)arg1 t:(double)arg2 toSegment:(int)arg3 t:(double)arg4;
 - (void)copyPathAttributesTo:(id)arg1;
+- (id)copyWithPointsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct CGPoint { double x1; double x2; })currentPoint;
 - (double)curvatureAt:(double)arg1;
@@ -174,7 +182,6 @@
 - (long long)elementCount;
 - (long long)elementPercentage:(double*)arg1 forOverallPercentage:(double)arg2;
 - (double)elementPercentageFromElement:(long long)arg1 forOverallPercentage:(double)arg2;
-- (void)encodeWithCoder:(id)arg1;
 - (void)fill;
 - (double)flatness;
 - (void)flattenIntoPath:(id)arg1;
@@ -188,7 +195,6 @@
 - (id)init;
 - (id)initWithArchive:(const struct Path { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Path_Element> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1;
 - (id)initWithCString:(const char *)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)intersectBezierPath:(id)arg1;
 - (bool)intersectsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 hasFill:(bool)arg2;
 - (bool)isCircular;
@@ -204,6 +210,7 @@
 - (bool)isRectangular;
 - (bool)isSelfIntersecting;
 - (bool)isTriangular;
+- (void)iterateOverPathWithPointDistancePerIteration:(double)arg1 usingBlock:(id /* block */)arg2;
 - (double)length;
 - (double)lengthOfElement:(long long)arg1;
 - (double)lengthToElement:(long long)arg1;
@@ -220,10 +227,13 @@
 - (id)outlineStroke;
 - (id)p_aliasedPathInContext:(struct CGContext { }*)arg1 viewScale:(float)arg2 effectiveStrokeWidth:(float)arg3;
 - (id)p_bezierPathByRemovingRedundantElementAndSubregionsSmallerThanThreshold:(double)arg1;
-- (id)p_mergeIntersectingSubpaths:(id)arg1 stopAfterFoundTwo:(bool)arg2;
+- (id)p_copyWithPointsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 countingSubpaths:(unsigned long long*)arg2;
+- (id)p_pathBySplittingAtPointGuaranteedToBeOnPath:(struct CGPoint { double x1; double x2; })arg1 controlPointDistanceEqual:(bool)arg2 elementIndex:(long long)arg3 parametricValue:(double)arg4;
+- (id)pathByCreatingHoleInPathAtPoint:(struct CGPoint { double x1; double x2; })arg1 withDiameter:(double)arg2 andThreshold:(double)arg3 updatingPatternOffsetsBySubpath:(id)arg4;
 - (id)pathBySplittingAtPointOnPath:(struct CGPoint { double x1; double x2; })arg1 controlPointDistanceEqual:(bool)arg2;
 - (id)pathByWobblingByUpTo:(double)arg1 subdivisions:(unsigned long long)arg2;
 - (struct CGPoint { double x1; double x2; })pointAlongPathAtPercentage:(double)arg1;
+- (struct CGPoint { double x1; double x2; })pointAlongPathAtPercentage:(double)arg1 withFlattenedPath:(id)arg2 andLength:(double*)arg3 atStartIndex:(unsigned long long*)arg4;
 - (struct CGPoint { double x1; double x2; })pointAt:(double)arg1;
 - (struct CGPoint { double x1; double x2; })pointAt:(double)arg1 fromElement:(long long)arg2;
 - (bool)pointOnPath:(struct CGPoint { double x1; double x2; })arg1 tolerance:(double)arg2;

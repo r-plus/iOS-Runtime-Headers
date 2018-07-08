@@ -18,10 +18,10 @@
 @property (nonatomic, readonly) bool hasTime;
 @property (nonatomic, retain) _MRAudioTimeProtobuf *time;
 
+- (void).cxx_destruct;
 - (id)buffer;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (double)gain;

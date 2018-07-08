@@ -38,7 +38,7 @@
 - (void)_setRightBarButtonItems:(id)arg1 animated:(bool)arg2;
 - (void)_setRightBarButtonItemsEnabled:(bool)arg1;
 - (void)_setTableViewHeaderActivityIndicatorActive:(bool)arg1 title:(id)arg2 subtitle:(id)arg3 animated:(bool)arg4;
-- (void)_triggerNextActionLoop;
+- (void)_triggerNextActionLoop:(bool)arg1;
 - (void)_updateNavigationItemAnimated:(bool)arg1;
 - (void)_updateRightBarButtonState;
 - (id)allCells;
@@ -85,6 +85,7 @@
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)triggerNextActionLoop;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

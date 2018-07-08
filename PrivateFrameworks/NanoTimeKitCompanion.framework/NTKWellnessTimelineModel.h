@@ -5,6 +5,7 @@
 @interface NTKWellnessTimelineModel : NSObject {
     HKQuantityType * _calorieGoalType;
     HKUnit * _countUnit;
+    NSDate * _currentDate;
     _HKDelayedOperation * _delayedProcessingOperation;
     HKHealthStore * _healthStore;
     HKUnit * _kcalUnit;
@@ -38,14 +39,15 @@
 - (id)_createCalorieGoalObserverQuery;
 - (void)_fetchCalorieGoalSamples;
 - (void)_handleTimeChange;
+- (void)_handleTimeTravelPrefChange;
 - (bool)_loadingStateForActivitySummary:(id)arg1;
 - (id)_queue_calorieGoalSampleForDate:(id)arg1;
 - (void)_queue_fetchCalorieGoalSamples;
 - (bool)_queue_historicalDataLoaded;
 - (void)_queue_processMoveActivityStatistics:(id)arg1 exerciseActivityStatistics:(id)arg2 standActivityStatistics:(id)arg3;
 - (void)_queue_processNewCalorieGoals:(id)arg1 deletedSamples:(id)arg2;
-- (void)_queue_restartQueries;
 - (void)_queue_restartQueriesIfQueryInUse:(id)arg1;
+- (void)_queue_restartQueriesPreservingHisoricalData:(bool)arg1;
 - (id)_queue_standHourForDate:(id)arg1;
 - (void)_queue_startQueries;
 - (void)_queue_stopQueriesPreservingHistoricalData:(bool)arg1;

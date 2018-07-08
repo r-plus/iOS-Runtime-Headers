@@ -27,7 +27,6 @@
 - (id)creationDate;
 - (id)creatorCode;
 - (id)generic;
-- (id)init;
 - (bool)isInvisible;
 - (bool)isNegative;
 - (bool)isSynchronizable;

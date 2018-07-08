@@ -7,7 +7,7 @@
         struct NewServerListener {} *__begin_; 
         struct NewServerListener {} *__end_; 
         struct __compressed_pair<NewServerListener *, std::__1::allocator<NewServerListener> > { 
-            struct NewServerListener {} *__first_; 
+            struct NewServerListener {} *__value_; 
         } __end_cap_; 
     }  mNewServerListeners;
     int  mNotifyToken;
@@ -15,7 +15,7 @@
         struct PropertyListener {} *__begin_; 
         struct PropertyListener {} *__end_; 
         struct __compressed_pair<PropertyListener *, std::__1::allocator<PropertyListener> > { 
-            struct PropertyListener {} *__first_; 
+            struct PropertyListener {} *__value_; 
         } __end_cap_; 
     }  mPropertyListeners;
     <AUPBRegistrarHosting> * mProxyInterface;

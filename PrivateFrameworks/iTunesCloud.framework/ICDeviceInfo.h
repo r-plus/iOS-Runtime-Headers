@@ -3,6 +3,7 @@
  */
 
 @interface ICDeviceInfo : NSObject {
+    NSObject<OS_dispatch_queue> * _accessQueue;
     NSString * _buildVersion;
     NSString * _currentLocale;
     int  _deviceClass;
@@ -14,6 +15,10 @@
     struct atomic_flag { 
         bool _Value; 
     }  _hasRegisteredForNameNotifications;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _mainScreenSize;
     NSString * _name;
     struct MGNotificationTokenStruct { } * _nameNotificationToken;
     NSString * _pairedDeviceGUID;
@@ -38,6 +43,7 @@
 @property (nonatomic, readonly) bool isIPhone;
 @property (nonatomic, readonly) bool isIPod;
 @property (nonatomic, readonly) bool isWatch;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } mainScreenSize;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSString *pairedDeviceGUID;
 @property (nonatomic, readonly, copy) NSString *productPlatform;
@@ -51,6 +57,7 @@
 
 - (void).cxx_destruct;
 - (int)_gestaltDeviceClass;
+- (id)_init;
 - (id)buildVersion;
 - (id)currentLocale;
 - (void)dealloc;
@@ -67,6 +74,7 @@
 - (bool)isIPod;
 - (bool)isInternalBuild;
 - (bool)isWatch;
+- (struct CGSize { double x1; double x2; })mainScreenSize;
 - (id)name;
 - (id)pairedDeviceGUID;
 - (id)productPlatform;

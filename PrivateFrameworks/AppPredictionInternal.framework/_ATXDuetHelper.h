@@ -7,11 +7,17 @@
 + (id)datePredicateWithStartDate:(id)arg1 endDate:(id)arg2;
 + (id)sharedInstance;
 
-- (id)_queryDuetStreams:(id)arg1 withPredicate:(id)arg2 limit:(unsigned long long)arg3;
+- (id)_queryDuetStream:(id)arg1 withPredicate:(id)arg2 limit:(unsigned long long)arg3;
+- (id)getActivityEventForPredicate:(id)arg1 bundleIdFilter:(id)arg2 limit:(unsigned long long)arg3;
+- (id)getActivityEventsBetweenStartDate:(id)arg1 endDate:(id)arg2;
+- (id)getActivityEventsBetweenStartDate:(id)arg1 endDate:(id)arg2 bundleIdFilter:(id)arg3;
 - (id)getAppLaunchesBetweenStartDate:(id)arg1 endDate:(id)arg2;
 - (id)getAppLaunchesBetweenStartDate:(id)arg1 endDate:(id)arg2 limit:(unsigned long long)arg3;
-- (id)getIntentEventForPredicate:(id)arg1 forSource:(long long)arg2;
+- (id)getFirstActivityEventBetweenStartDate:(id)arg1 endDate:(id)arg2 bundleIdFilter:(id)arg3;
+- (id)getFirstIntentEventBetweenStartDate:(id)arg1 endDate:(id)arg2 bundleIdFilter:(id)arg3 forSource:(long long)arg4;
+- (id)getIntentEventForPredicate:(id)arg1 bundleIdFilter:(id)arg2 forSource:(long long)arg3 forLimit:(unsigned long long)arg4;
 - (id)getIntentEventForUUID:(id)arg1 forSource:(long long)arg2;
+- (id)getIntentEventsBetweenStartDate:(id)arg1 endDate:(id)arg2 bundleIdFilter:(id)arg3 forSource:(long long)arg4;
 - (id)getIntentEventsBetweenStartDate:(id)arg1 endDate:(id)arg2 forSource:(long long)arg3;
 - (id)getScreenTransitionsBetweenStartDate:(id)arg1 endDate:(id)arg2;
 - (id)getSurfExtensionLaunchesBetweenStartDate:(id)arg1 endDate:(id)arg2;

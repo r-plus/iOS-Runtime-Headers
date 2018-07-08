@@ -20,8 +20,12 @@
 - (void)_resizeFramebuffer;
 - (void)_setupGL;
 - (id)_snapshotInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 scale:(double)arg2 time:(double)arg3;
+- (void)addQuad:(id)arg1;
+- (void)addQuadsFromArray:(id)arg1;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
+- (void)removeAllQuads;
+- (void)removeQuad:(id)arg1;
 
 @end

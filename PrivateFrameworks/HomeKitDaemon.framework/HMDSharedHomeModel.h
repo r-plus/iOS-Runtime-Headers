@@ -9,4 +9,6 @@
 
 + (id)properties;
 
+- (bool)isReplayable;
+
 @end

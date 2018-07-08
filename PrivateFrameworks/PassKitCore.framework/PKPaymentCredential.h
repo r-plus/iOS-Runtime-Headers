@@ -17,21 +17,27 @@
 @property (nonatomic, copy) NSString *longDescription;
 @property (nonatomic, retain) PKPaymentRequirementsResponse *requirementsResponse;
 @property (nonatomic, copy) NSString *sanitizedPrimaryAccountNumber;
+@property (getter=isTransitCredential, nonatomic, readonly) bool transitCredential;
 
 + (id)fakeRemoteCredentials;
 
 - (void).cxx_destruct;
 - (id)contactlessProductCredential;
 - (long long)credentialType;
+- (id)digitalIssuanceProductCredential;
 - (id)eligibilityResponse;
 - (id)expiration;
 - (bool)isContactlessProductCredential;
+- (bool)isDigitalIssuanceProductCredential;
 - (bool)isLocalPassCredential;
 - (bool)isPeerPaymentCredential;
+- (bool)isPurchasedProductCredential;
 - (bool)isRemoteCredential;
+- (bool)isTransitCredential;
 - (id)localPassCredential;
 - (id)longDescription;
 - (id)peerPaymentCredential;
+- (id)purchasedProductCredential;
 - (id)remoteCredential;
 - (id)requirementsResponse;
 - (id)sanitizedPrimaryAccountNumber;

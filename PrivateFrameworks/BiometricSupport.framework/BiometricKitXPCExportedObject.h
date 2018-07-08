@@ -56,6 +56,7 @@
 - (void)isAriadneSignpostsEnabled:(unsigned long long)arg1 replyBlock:(id /* block */)arg2;
 - (void)isFingerOn:(unsigned long long)arg1 replyBlock:(id /* block */)arg2;
 - (void)isXARTAvailable:(unsigned long long)arg1 replyBlock:(id /* block */)arg2;
+- (void)logEventOrCode:(unsigned long long)arg1;
 - (void)match:(id)arg1 options:(id)arg2 client:(unsigned long long)arg3 replyBlock:(id /* block */)arg4;
 - (void)notifyAppIsBackground:(bool)arg1 client:(unsigned long long)arg2;
 - (void)notifyAppIsInactive:(bool)arg1 client:(unsigned long long)arg2;

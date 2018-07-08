@@ -33,7 +33,7 @@
 - (void)goForward;
 - (void)goToItem:(id)arg1;
 - (id)init;
-- (id)initWithBackForwardList:(struct Ref<BackForwardList> { struct BackForwardList {} *x1; }*)arg1;
+- (id)initWithBackForwardList:(struct Ref<BackForwardList, WTF::DumbPtrTraits<BackForwardList> > { struct BackForwardList {} *x1; }*)arg1;
 - (id)itemAtIndex:(int)arg1;
 - (unsigned long long)pageCacheSize;
 - (void)removeItem:(id)arg1;

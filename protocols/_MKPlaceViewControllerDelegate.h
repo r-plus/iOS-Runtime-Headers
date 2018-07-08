@@ -17,7 +17,6 @@
 - (void)placeViewController:(_MKPlaceViewController *)arg1 didSelectSearchCategory:(GEOSearchCategory *)arg2;
 - (void)placeViewController:(_MKPlaceViewController *)arg1 didSelectTransitConnectionInformation:(id <GEOTransitConnectionInfo>)arg2;
 - (void)placeViewController:(_MKPlaceViewController *)arg1 didSelectTransitLine:(id <MKTransitLineMarker>)arg2;
-- (void)placeViewController:(_MKPlaceViewController *)arg1 getOfflineMap:(id <_MKPlaceItem>)arg2;
 - (void)placeViewController:(void *)arg1 hasFavoriteForPlaceItem:(void *)arg2 result:(void *)arg3; // needs 3 arg types, found 8: _MKPlaceViewController *, <_MKPlaceItem> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 - (void)placeViewController:(void *)arg1 removeFavoriteForPlaceItem:(void *)arg2 result:(void *)arg3; // needs 3 arg types, found 9: _MKPlaceViewController *, <_MKPlaceItem> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
 - (void)placeViewController:(void *)arg1 requestPasscodeUnlockWithCompletion:(void *)arg2; // needs 2 arg types, found 7: _MKPlaceViewController *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
@@ -39,5 +38,6 @@
 - (void)placeViewControllerDidSelectWriteAReview:(_MKPlaceViewController *)arg1;
 - (void)placeViewControllerDidUpdateHeight:(_MKPlaceViewController *)arg1;
 - (double)placeViewControllerPlaceCardHeaderTitleTrailingConstant:(_MKPlaceViewController *)arg1;
+- (GEOMapServiceTraits *)traitsForPlaceViewController:(_MKPlaceViewController *)arg1;
 
 @end

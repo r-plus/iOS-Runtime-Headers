@@ -53,6 +53,8 @@
 - (id)init;
 - (id)initWithQueryString:(id)arg1;
 - (id)initWithQueryString:(id)arg1 queryID:(long long)arg2;
+- (id)initWithQueryString:(id)arg1 queryID:(long long)arg2 triggerEvent:(unsigned long long)arg3;
+- (id)initWithQueryString:(id)arg1 triggerEvent:(unsigned long long)arg2;
 - (bool)isForLastSearch;
 - (id)normalizedQueryStringForParsec;
 - (id)parsecFeedbackQueryIdentifier;

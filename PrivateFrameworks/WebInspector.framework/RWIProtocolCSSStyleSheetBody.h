@@ -22,6 +22,9 @@
 
 // Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
 
++ (id)ik_stylesheetBodyFromRuleList:(id)arg1 forStyleMarkup:(id)arg2 withHeader:(id)arg3;
++ (id)safe_initWithStyleSheetId:(id)arg1 rules:(id)arg2;
+
 - (id)ik_ruleList;
 - (void)ik_setRuleList:(id)arg1;
 - (void)ik_setTextNewLineIndexSet:(id)arg1;

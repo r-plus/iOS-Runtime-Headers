@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UINavigationItem : NSObject <DebugHierarchyObject, NSCoding> {
+@interface UINavigationItem : NSObject <NSCoding> {
     bool  __alignLargeTitleAccessoryViewToBaseline;
     NSArray * __alternateLargeTitles;
     bool  __backgroundHidden;
@@ -81,9 +81,6 @@
 @property (nonatomic, retain) UIBarButtonItem *customRightItem;
 @property (nonatomic, retain) UIView *customRightView;
 @property (nonatomic, retain) UIView *customTitleView;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
 @property (nonatomic) bool hidesBackButton;
 @property (nonatomic) bool hidesSearchBarWhenScrolling;
 @property (nonatomic) long long largeTitleDisplayMode;
@@ -100,7 +97,6 @@
 @property (nonatomic, retain) UIBarButtonItem *rightBarButtonItem;
 @property (nonatomic, copy) NSArray *rightBarButtonItems;
 @property (nonatomic, retain) UISearchController *searchController;
-@property (readonly) Class superclass;
 @property (nonatomic) long long tag;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, retain) UIView *titleView;
@@ -286,10 +282,6 @@
 - (id)titleView;
 - (void)updateNavigationBarButtonsAnimated:(bool)arg1;
 - (bool)useRelativeLargeTitleInsets;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 

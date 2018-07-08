@@ -6,7 +6,6 @@
 
 + (bool)ignoreHTTPCache;
 + (bool)logDocumentXML;
-+ (unsigned long long)logLevel;
 + (void)setupJSCoreConsoleLogging;
 
 @end

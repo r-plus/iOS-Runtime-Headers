@@ -67,8 +67,6 @@
 @property (nonatomic) int state;
 @property (nonatomic, retain) NSTimer *updateTimer;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 + (id)activeInstance;
 + (id)cellWidthOptions;
 + (unsigned long long)maxNumberOfAutofillCandidate;
@@ -82,11 +80,6 @@
 
 - (void)_commitPrediction:(id)arg1;
 - (void)_setPredictions:(id)arg1 autocorrection:(id)arg2 emojiList:(id)arg3;
-- (void)dealloc;
-- (id)description;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)acceptCandidate;
 - (void)acceptCandidateAtCell:(id)arg1;
 - (void)acceptPredictiveInput:(id)arg1;
@@ -98,12 +91,15 @@
 - (id)createCells:(unsigned long long)arg1;
 - (id)currentFirstTextSuggestion;
 - (void)deactivateCandidate;
+- (void)dealloc;
 - (void)delayActivateCellForPrediction:(id)arg1;
+- (id)description;
 - (void)dimKeys:(id)arg1;
 - (bool)enabled;
 - (bool)hasPredictions;
 - (double)heightBeforeStateChangeForInterfaceOrientation:(long long)arg1;
 - (double)heightForInterfaceOrientation:(long long)arg1;
+- (double)heightForInterfaceOrientation:(long long)arg1 state:(int)arg2;
 - (unsigned long long)indexForPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)initCells;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

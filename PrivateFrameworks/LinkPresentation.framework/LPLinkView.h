@@ -42,6 +42,7 @@
     LPCaptionBarPresentationProperties * _mediaTopCaptionBar;
     UIView * _mediaViewBackground;
     LPLinkMetadata * _metadata;
+    double  _minimumHeight;
     bool  _needsRebuild;
     UIColor * _overrideBackgroundColor;
     LPMetadataProvider * _pendingMetadataProvider;

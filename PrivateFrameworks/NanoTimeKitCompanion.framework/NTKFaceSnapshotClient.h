@@ -22,6 +22,7 @@
 - (id)init;
 - (void)performAfterCompletingCurrentlyPendingSnapshots:(id /* block */)arg1;
 - (void)requestSnapshotOfFace:(id)arg1;
+- (void)snapshotFace:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
 - (void)synchronouslyUpdateAllSnapshots;
 
 @end

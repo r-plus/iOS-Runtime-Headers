@@ -80,7 +80,6 @@
 + (unsigned long long)_spacingIntervalFromAxisSpacing:(id)arg1;
 
 - (void).cxx_destruct;
-- (bool)_assertPropertiesValid;
 - (void)_clearCache;
 - (void)_clearFormatters;
 - (void)_generateAxisLabels;
@@ -94,6 +93,7 @@
 - (id)_stringFromDate:(id)arg1 withTimeInterval:(unsigned long long)arg2 textStyle:(unsigned long long)arg3 forceAMPM:(bool)arg4;
 - (id)_subLabelAtIndex:(unsigned long long)arg1;
 - (id)_subLabelsForSpacingInterval:(unsigned long long)arg1 withSpacing:(id)arg2 textStyle:(unsigned long long)arg3;
+- (bool)_validateProperties;
 - (id)anchorRule;
 - (double)axisDescriptorPadding;
 - (id)axisLabels;

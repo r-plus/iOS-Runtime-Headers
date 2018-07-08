@@ -26,6 +26,7 @@
 
 + (unsigned char)styleOwnerPathType;
 
+- (void).cxx_destruct;
 - (id)chartInfo;
 - (void)clearParent;
 - (id)context;

@@ -50,8 +50,9 @@
 - (id)init;
 - (bool)isFrameAnnotated:(id)arg1;
 - (bool)isFrameOrChildAnnotated:(id)arg1;
+- (id)metadataForActiveFormInPageWithMainFrame:(id)arg1;
 - (id)metadataForForm:(id)arg1 inFrame:(id)arg2 requestType:(unsigned long long)arg3;
-- (struct FrameMetadata { int (**x1)(); struct Vector<OpaqueJSValue *, 0, WTF::CrashOnOverflow, 16> { struct OpaqueJSValue {} **x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; unsigned int x_2_1_4; } x2; struct OpaqueJSValue {} *x3; struct OpaqueJSValue {} *x4; struct OpaqueJSContext {} *x5; id x6; }*)metadataForFrame:(id)arg1 requestType:(unsigned long long)arg2;
+- (struct FrameMetadata { int (**x1)(); struct Vector<OpaqueJSValue *, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { struct OpaqueJSValue {} **x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; unsigned int x_2_1_4; } x2; struct OpaqueJSValue {} *x3; struct OpaqueJSValue {} *x4; struct OpaqueJSContext {} *x5; id x6; }*)metadataForFrame:(id)arg1 requestType:(unsigned long long)arg2;
 - (bool)pageWithMainFrameMeetsEditedFormTextWarningCriteria:(id)arg1;
 - (void)passwordFieldBlurred:(id)arg1 inFrame:(id)arg2 page:(id)arg3 textFieldMetadata:(id)arg4 formMetadata:(id)arg5;
 - (void)passwordFieldFocused:(id)arg1 inFrame:(id)arg2;
@@ -70,7 +71,7 @@
 - (id)uniqueIDForTextField:(id)arg1 inFrame:(id)arg2;
 - (unsigned long long)userEditedTextControlCountInArray:(struct OpaqueJSValue { }*)arg1 context:(struct OpaqueJSContext { }*)arg2 expectTextFieldsRatherThanTextAreas:(bool)arg3;
 - (void)usernameFieldBlurred:(id)arg1 inFrame:(id)arg2 page:(id)arg3 textFieldMetadata:(id)arg4 formMetadata:(id)arg5;
-- (void)usernameFieldFocused:(id)arg1 inForm:(id)arg2 inFrame:(id)arg3;
+- (void)usernameFieldFocused:(id)arg1 fieldMetadata:(id)arg2 inForm:(id)arg3 inFrame:(id)arg4;
 - (id)visibleNonEmptyTextFieldsInForm:(id)arg1 inFrame:(id)arg2;
 - (void)willSendSubmitEventForForm:(id)arg1 inFrame:(id)arg2;
 - (void)willSubmitForm:(id)arg1 inFrame:(id)arg2;

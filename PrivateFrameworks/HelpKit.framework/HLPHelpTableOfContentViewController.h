@@ -9,6 +9,7 @@
     <HLPHelpTableOfContentViewControllerDelegate> * _delegate;
     NSMutableArray * _displayHelpItems;
     UIButton * _footerViewOverlayButton;
+    bool  _fullBookView;
     HLPHelpBookController * _helpBookController;
     HLPHelpSearchIndexController * _helpSearchIndexController;
     HLPHelpLocale * _locale;
@@ -23,6 +24,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HLPHelpTableOfContentViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) bool fullBookView;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HLPHelpBookController *helpBookController;
 @property (nonatomic, retain) HLPHelpSearchIndexController *helpSearchIndexController;
@@ -40,9 +42,11 @@
 - (void)copyrightButtonTapped;
 - (id)delegate;
 - (void)deselectCurrentRow;
+- (bool)fullBookView;
 - (id)helpBookController;
 - (id)helpSearchIndexController;
 - (id)initWithStyle:(long long)arg1;
+- (void)loadError;
 - (id)locale;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (long long)numberOfVisibleHelpItemForSectionItem:(id)arg1;
@@ -51,6 +55,7 @@
 - (id)searchController;
 - (id)searchTerms;
 - (void)setDelegate:(id)arg1;
+- (void)setFullBookView:(bool)arg1;
 - (void)setHelpBookController:(id)arg1;
 - (void)setHelpSearchIndexController:(id)arg1;
 - (void)setLocale:(id)arg1;

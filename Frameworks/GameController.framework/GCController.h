@@ -28,6 +28,7 @@
 + (void)__daemon__setUserActivityUserInfo:(id)arg1;
 + (void)__daemon__startBonjourService;
 + (void)__openXPC__;
++ (void)__openXPC_and_CBApplicationDidBecomeActive__;
 + (void)__open__;
 + (void)__setLogger__:(id /* block */)arg1;
 + (void)_startWirelessControllerDiscoveryWithCompanions:(bool)arg1 btClassic:(bool)arg2 btle:(bool)arg3 completionHandler:(id /* block */)arg4;

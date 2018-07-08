@@ -58,6 +58,7 @@
 - (id)deviceUUID;
 - (void)enumerateFaceNamesUsingBlock:(id /* block */)arg1;
 - (void)enumerateFacesUsingBlock:(id /* block */)arg1;
+- (void)enumerateFacesWithIndexesUsingBlock:(id /* block */)arg1;
 - (id)faceAtIndex:(unsigned long long)arg1;
 - (id)facesByUUID;
 - (bool)hasLoaded;

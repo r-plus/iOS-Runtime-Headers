@@ -4,7 +4,7 @@
 
 @interface MRAVMutableDistantExternalDeviceMetadata : MRAVDistantExternalDeviceMetadata
 
-@property (nonatomic) void*deviceInfo;
+@property (nonatomic, retain) _MRDeviceInfoMessageProtobuf *deviceInfo;
 @property (nonatomic, copy) NSString *hostName;
 @property (nonatomic) long long hostPort;
 @property (nonatomic, copy) NSString *name;
@@ -12,7 +12,7 @@
 @property (nonatomic, retain) MRSupportedProtocolMessages *supportedMessages;
 @property (nonatomic) bool usingSystemPairing;
 
-- (void)setDeviceInfo:(void*)arg1;
+- (void)setDeviceInfo:(id)arg1;
 - (void)setHostName:(id)arg1;
 - (void)setHostPort:(long long)arg1;
 - (void)setName:(id)arg1;

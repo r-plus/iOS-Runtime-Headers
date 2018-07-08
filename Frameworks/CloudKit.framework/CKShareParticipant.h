@@ -9,6 +9,7 @@
     NSData * _encryptedPersonalInfo;
     NSString * _inviterID;
     bool  _isCurrentUser;
+    bool  _isOrgAdminUser;
     long long  _originalAcceptanceStatus;
     long long  _originalParticipantType;
     long long  _originalPermission;
@@ -27,6 +28,7 @@
 @property (nonatomic, retain) NSData *encryptedPersonalInfo;
 @property (nonatomic, retain) NSString *inviterID;
 @property (nonatomic) bool isCurrentUser;
+@property (nonatomic) bool isOrgAdminUser;
 @property (nonatomic) long long originalAcceptanceStatus;
 @property (nonatomic) long long originalParticipantType;
 @property (nonatomic) long long originalPermission;
@@ -59,6 +61,7 @@
 - (id)inviterID;
 - (bool)isCurrentUser;
 - (bool)isEqual:(id)arg1;
+- (bool)isOrgAdminUser;
 - (long long)originalAcceptanceStatus;
 - (long long)originalParticipantType;
 - (long long)originalPermission;
@@ -72,6 +75,7 @@
 - (void)setEncryptedPersonalInfo:(id)arg1;
 - (void)setInviterID:(id)arg1;
 - (void)setIsCurrentUser:(bool)arg1;
+- (void)setIsOrgAdminUser:(bool)arg1;
 - (void)setOriginalAcceptanceStatus:(long long)arg1;
 - (void)setOriginalParticipantType:(long long)arg1;
 - (void)setOriginalPermission:(long long)arg1;

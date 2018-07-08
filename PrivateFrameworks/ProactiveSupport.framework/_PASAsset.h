@@ -3,21 +3,12 @@
  */
 
 @interface _PASAsset : NSObject <_PASAssetProtocol> {
-    unsigned long long  _bestAssetVersionObserved;
-    ASAsset * _bestAvailableAsset;
-    unsigned long long  _bestAvailableVersion;
     NSString * _bundleIdentifier;
     unsigned long long  _compatibilityVersion;
-    NSString * _defaultBundlePath;
-    unsigned long long  _defaultBundleVersion;
     int  _installNotificationToken;
-    struct _opaque_pthread_mutex_t { 
-        long long __sig; 
-        BOOL __opaque[56]; 
-    }  _lock;
+    _PASLock * _lock;
     int  _metadataNotificationToken;
     NSObject<OS_dispatch_queue> * _notificationQueue;
-    NSMutableDictionary * _overrides;
     NSDictionary * _requiredMobileAssetProperties;
     _PASNotificationTracker * _updateNotificationTracker;
 }
@@ -35,7 +26,7 @@
 - (id)_assetDescription;
 - (id)_initWithBundleIdentifier:(id)arg1 defaultBundlePath:(id)arg2 compatibilityVersion:(unsigned long long)arg3 matchingKeysAndValues:(id)arg4 notificationQueue:(id)arg5 enableAssetUpdates:(bool)arg6;
 - (void)_issueUpdateNotificationsWithCallback:(id /* block */)arg1;
-- (void)_loadDefaultBundleVersion;
+- (void)_loadDefaultBundleVersionWithGuardedData:(id)arg1;
 - (void)_updateAssetMetadata;
 - (void)addOverridePath:(id)arg1 forResource:(id)arg2 ofType:(id)arg3;
 - (id)assetType;

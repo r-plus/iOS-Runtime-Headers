@@ -6,11 +6,11 @@
     NSMutableSet * _anchoredDrawableLayouts;
     bool  _childLayoutsValid;
     bool  _childTextLayoutsNeedInvalidationForExteriorWrap;
-    int  _contentFlags;
+    unsigned long long  _contentFlags;
     TPFootnoteContainerLayout * _footnoteContainerLayout;
     <TSWPHeaderFooterProvider> * _headerFooterProvider;
     int  _inInvalidationClusterCount;
-    TPMarginAdjustLayout * _marginAdjustLayout;
+    TPiOSMarginAdjustLayout * _marginAdjustLayout;
     <TPMasterDrawableProvider> * _masterDrawableProvider;
     TSURetainedPointerKeyDictionary * _oldChildLayouts;
     unsigned long long  _pageCount;
@@ -30,7 +30,8 @@
 @property (nonatomic, readonly) NSArray *floatingDrawableLayouts;
 @property (nonatomic, readonly) TPFootnoteContainerLayout *footnoteContainerLayout;
 @property (nonatomic, readonly) TSWPPadding *layoutMargins;
-@property (nonatomic, readonly) TPMarginAdjustLayout *marginAdjustLayout;
+@property (nonatomic, readonly) TPiOSMarginAdjustLayout *marginAdjustLayout;
+@property (nonatomic, readonly) bool marginsAreMirrored;
 @property (nonatomic, readonly) <TPMasterDrawableProvider> *masterDrawableProvider;
 @property (nonatomic, readonly) unsigned long long pageCount;
 @property (nonatomic, readonly) unsigned long long pageIndex;
@@ -93,6 +94,7 @@
 - (id)layoutsForChildInfo:(id)arg1;
 - (id)layoutsForProvidingGuidesForChildLayouts;
 - (id)marginAdjustLayout;
+- (bool)marginsAreMirrored;
 - (id)masterDrawableProvider;
 - (double)maxAutoGrowHeightForTextLayout:(id)arg1;
 - (double)maxAutoGrowWidthForTextLayout:(id)arg1;
@@ -108,7 +110,6 @@
 - (void)p_insertFootnoteContainerLayout;
 - (id)p_insertValidatedChildLayoutForInfo:(id)arg1;
 - (void)p_insertValidatedFloatingLayouts;
-- (void)p_insertValidatedMarginAdjustLayout;
 - (void)p_insertValidatedMasterLayouts;
 - (bool)p_isHeaderFooterLayout:(id)arg1;
 - (id)p_orderedChildInfos;
@@ -136,7 +137,7 @@
 - (void)setChildren:(id)arg1;
 - (void)setNeedsInflation;
 - (void)setValidating:(bool)arg1;
-- (bool)shouldHeaderFooterBeVisible:(int)arg1;
+- (bool)shouldHeaderFooterBeVisible:(long long)arg1;
 - (bool)shouldHeaderFooterBeVisibleForPageIndex:(unsigned long long)arg1;
 - (bool)shouldProvideGuidesDuringExclusiveAlignmentOperation;
 - (bool)shrinkTextToFit;

@@ -3,7 +3,7 @@
  */
 
 @interface FCFeedViewportExpandGroupGapOperation : FCOperation {
-    <FCAppConfiguration> * _appConfiguration;
+    <FCCoreConfiguration> * _configuration;
     FCCloudContext * _context;
     unsigned long long  _desiredHeadlineCount;
     id /* block */  _expandGapCompletionHandler;
@@ -21,7 +21,7 @@
     FCFeedViewport * _viewport;
 }
 
-@property (nonatomic, copy) <FCAppConfiguration> *appConfiguration;
+@property (nonatomic, copy) <FCCoreConfiguration> *configuration;
 @property (nonatomic, retain) FCCloudContext *context;
 @property (nonatomic) unsigned long long desiredHeadlineCount;
 @property (nonatomic, copy) id /* block */ expandGapCompletionHandler;
@@ -41,7 +41,7 @@
 - (void).cxx_destruct;
 - (id)_associatedForYouCatchUpOperationForEdition:(id)arg1;
 - (id)_groupsFromRefreshSessionContainingGap:(id)arg1 internalElements:(id)arg2;
-- (id)appConfiguration;
+- (id)configuration;
 - (id)context;
 - (unsigned long long)desiredHeadlineCount;
 - (id /* block */)expandGapCompletionHandler;
@@ -58,7 +58,7 @@
 - (id)resultError;
 - (id)resultInsertedGroup;
 - (id)resultInternalElements;
-- (void)setAppConfiguration:(id)arg1;
+- (void)setConfiguration:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDesiredHeadlineCount:(unsigned long long)arg1;
 - (void)setExpandGapCompletionHandler:(id /* block */)arg1;

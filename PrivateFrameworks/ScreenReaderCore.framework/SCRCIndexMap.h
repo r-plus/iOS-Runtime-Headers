@@ -2,9 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@interface SCRCIndexMap : NSObject <NSCoding, NSCopying> {
+@interface SCRCIndexMap : NSObject <NSCopying, NSSecureCoding> {
     struct __CFDictionary { } * _map;
 }
+
++ (bool)supportsSecureCoding;
 
 - (unsigned long long*)_createIndexesWithSize:(unsigned long long*)arg1;
 - (id)_initAndDeepCopyIndexMap:(id)arg1;

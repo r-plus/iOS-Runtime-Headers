@@ -21,7 +21,7 @@
         float *__begin_; 
         float *__end_; 
         struct __compressed_pair<float *, std::__1::allocator<float> > { 
-            float *__first_; 
+            float *__value_; 
         } __end_cap_; 
     }  _powerLevelBuffer;
     float  _powerLevelBufferLastPushedValue;

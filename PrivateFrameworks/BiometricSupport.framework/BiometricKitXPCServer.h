@@ -34,7 +34,7 @@
 - (bool)fileRadarWithLogs:(id)arg1 withDescription:(id)arg2;
 - (int)forceBioLockoutForUser:(unsigned int)arg1 withOptions:(id)arg2 withClient:(id)arg3;
 - (int)getAugmentationEligibility:(bool*)arg1 forIdentity:(id)arg2 withClient:(id)arg3;
-- (long long)getBioLockoutStateForUser:(unsigned int)arg1 withClient:(id)arg2;
+- (int)getBioLockoutState:(long long*)arg1 forUser:(unsigned int)arg2 withClient:(id)arg3;
 - (id)getBioLog;
 - (int)getBiometrickitdInfo:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned long long x4; unsigned char x5; unsigned char x6; unsigned char x7; }*)arg1;
 - (int)getBiometryAvailability:(long long*)arg1 forUser:(unsigned int)arg2 withClient:(id)arg3;

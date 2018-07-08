@@ -7,7 +7,7 @@
     UIView * _emptyInputView;
     WBSFormMetadata * _formMetadata;
     SFFormAutoFillFrameHandle * _frame;
-    <_WKFormInputSession> * _inputSession;
+    _SFFormAutoFillInputSession * _inputSession;
     WBSFormAutoFillMetadataCorrector * _metadataCorrector;
     NSString * _prefixForSuggestions;
     NSDictionary * _textFieldMetadata;
@@ -27,7 +27,7 @@
 - (void)autoFillValuesAfterAuthenticationIfNeeded:(id)arg1;
 - (void)dealloc;
 - (void)fetchFormMetadataWithCompletion:(id /* block */)arg1;
-- (void)fillCredentialAfterAuthenticationIfNeeded:(id)arg1;
+- (void)fillCredentialAfterAuthenticationIfNeeded:(id)arg1 setAsDefaultCredential:(bool)arg2;
 - (void)fillGeneratedPassword:(id)arg1 inField:(id)arg2;
 - (id)frame;
 - (void)getTextFieldMetadata:(id*)arg1 formMetadata:(id*)arg2;

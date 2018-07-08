@@ -10,6 +10,7 @@
     bool  _isCrossDocumentPaste;
     bool  _isSmartCopyPaste;
     bool  _isTextPrimary;
+    TSPObject * _nativeContentDescription;
     NSArray * _styles;
     TSPObject * _stylesheet;
     NSArray * _topLevelObjects;
@@ -23,6 +24,7 @@
 @property (nonatomic, readonly) bool isCrossDocumentPaste;
 @property (nonatomic) bool isSmartCopyPaste;
 @property (nonatomic) bool isTextPrimary;
+@property (nonatomic, retain) TSPObject *nativeContentDescription;
 @property (nonatomic, copy) NSArray *styles;
 @property (nonatomic, retain) TSPObject *stylesheet;
 @property (nonatomic, retain) NSArray *topLevelObjects;
@@ -38,12 +40,14 @@
 - (bool)isSmartCopyPaste;
 - (bool)isTextPrimary;
 - (void)loadFromUnarchiver:(id)arg1;
+- (id)nativeContentDescription;
 - (void)saveToArchiver:(id)arg1;
 - (void)setAppNativeObject:(id)arg1;
 - (void)setDrawables:(id)arg1;
 - (void)setGuideStorage:(id)arg1;
 - (void)setIsSmartCopyPaste:(bool)arg1;
 - (void)setIsTextPrimary:(bool)arg1;
+- (void)setNativeContentDescription:(id)arg1;
 - (void)setStyles:(id)arg1;
 - (void)setStylesheet:(id)arg1;
 - (void)setTopLevelObjects:(id)arg1;

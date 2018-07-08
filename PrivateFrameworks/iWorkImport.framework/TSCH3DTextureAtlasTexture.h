@@ -11,7 +11,7 @@
         struct tvec2<int> {} *__begin_; 
         struct tvec2<int> {} *__end_; 
         struct __compressed_pair<glm::detail::tvec2<int> *, std::__1::allocator<glm::detail::tvec2<int> > > { 
-            struct tvec2<int> {} *__first_; 
+            struct tvec2<int> {} *__value_; 
         } __end_cap_; 
     }  mPositions;
     TSCH3DTextureAtlasTextureResource * mResource;

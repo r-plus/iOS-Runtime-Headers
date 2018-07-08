@@ -20,11 +20,11 @@
 @property (nonatomic, readonly, copy) NSDictionary *userInfo;
 @property (nonatomic, readonly) float volume;
 
++ (id)newWithBuilder:(id /* block */)arg1;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_descriptionWithIndent:(unsigned long long)arg1;
-- (id)builder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -36,6 +36,7 @@
 - (bool)isEqual:(id)arg1;
 - (id)itemData;
 - (id)itemURL;
+- (id)mutatedCopyWithMutator:(id /* block */)arg1;
 - (long long)numberOfLoops;
 - (id)userInfo;
 - (float)volume;

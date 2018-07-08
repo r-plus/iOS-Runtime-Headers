@@ -19,12 +19,12 @@
 @property (nonatomic, retain) NSString *text;
 @property (nonatomic) double timestamp;
 
+- (void).cxx_destruct;
 - (int)StringAsActionType:(id)arg1;
 - (int)actionType;
 - (id)actionTypeAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasActionType;

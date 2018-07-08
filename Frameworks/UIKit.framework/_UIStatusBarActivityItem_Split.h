@@ -10,8 +10,8 @@
 @property (nonatomic, retain) _UIStatusBarActivityView *activityView;
 @property (nonatomic, retain) UIActivityIndicatorView *syncStartView;
 
++ (id)pillDisplayIdentifier;
 + (id)syncStartDisplayIdentifier;
-+ (id)verticalDisplayIdentifier;
 
 - (void).cxx_destruct;
 - (bool)_enableForType:(long long)arg1;

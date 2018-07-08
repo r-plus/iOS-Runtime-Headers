@@ -12,6 +12,8 @@
 @property (nonatomic) long long articleVersion;
 @property (nonatomic, copy) NSDate *readDate;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)articleID;
 - (long long)articleVersion;

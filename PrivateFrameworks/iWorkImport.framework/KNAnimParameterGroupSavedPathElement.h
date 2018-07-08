@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNAnimParameterGroupSavedPathElement : NSObject <NSCoding> {
+@interface KNAnimParameterGroupSavedPathElement : NSObject <NSSecureCoding> {
     struct CGPoint { 
         double x; 
         double y; 
@@ -22,6 +22,8 @@
 @property (nonatomic) struct CGPoint { double x1; double x2; } cp2;
 @property (nonatomic) unsigned long long elementType;
 @property (nonatomic) struct CGPoint { double x1; double x2; } toPoint;
+
++ (bool)supportsSecureCoding;
 
 - (struct CGPoint { double x1; double x2; })cp1;
 - (struct CGPoint { double x1; double x2; })cp2;

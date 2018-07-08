@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CVML.framework/CVML
  */
 
-@interface MPImageDescriptor : NSObject <NSCoding> {
+@interface MPImageDescriptor : NSObject <NSSecureCoding> {
     void * _colorGaborDescriptor;
     long long  _descriptorId;
     long long  _exifTimestamp;
@@ -38,6 +38,8 @@
 @property (readonly) float quality;
 @property (readonly) NSData *rawColorGaborDescriptor;
 @property (readonly) void*sceneClassifierDescriptor;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void*)colorGaborDescriptor;

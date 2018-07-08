@@ -5,6 +5,7 @@
 @interface GEOPDClientMetadata : PBCodable <NSCopying> {
     GEOABSecondPartyPlaceRequestClientMetaData * _abClientMetadata;
     GEOAdditionalEnabledMarkets * _additionalEnabledMarkets;
+    NSMutableArray * _businessChatPreflightIdentifiers;
     unsigned int  _dayOfWeek;
     NSString * _debugApiKey;
     NSString * _deviceCountryCode;
@@ -41,6 +42,7 @@
 
 @property (nonatomic, retain) GEOABSecondPartyPlaceRequestClientMetaData *abClientMetadata;
 @property (nonatomic, retain) GEOAdditionalEnabledMarkets *additionalEnabledMarkets;
+@property (nonatomic, retain) NSMutableArray *businessChatPreflightIdentifiers;
 @property (nonatomic) unsigned int dayOfWeek;
 @property (nonatomic, retain) NSString *debugApiKey;
 @property (nonatomic, retain) NSString *deviceCountryCode;
@@ -74,6 +76,7 @@
 @property (nonatomic) unsigned int timeSinceMapEnteredForeground;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
++ (Class)businessChatPreflightIdentifierType;
 + (Class)deviceHistoricalLocationType;
 
 - (void).cxx_destruct;
@@ -82,13 +85,19 @@
 - (int)StringAsRequiredVersion:(id)arg1;
 - (int)StringAsResultListAttributionSupport:(id)arg1;
 - (id)abClientMetadata;
+- (void)addBusinessChatPreflightIdentifier:(id)arg1;
 - (void)addDeviceHistoricalLocation:(id)arg1;
 - (void)addKnownClientResolvedType:(int)arg1;
 - (void)addKnownClientResolvedTypeDeprecated:(int)arg1;
 - (id)additionalEnabledMarkets;
+- (id)businessChatPreflightIdentifierAtIndex:(unsigned long long)arg1;
+- (id)businessChatPreflightIdentifiers;
+- (unsigned long long)businessChatPreflightIdentifiersCount;
+- (void)clearBusinessChatPreflightIdentifiers;
 - (void)clearDeviceHistoricalLocations;
 - (void)clearKnownClientResolvedTypeDeprecateds;
 - (void)clearKnownClientResolvedTypes;
+- (void)clearLocations;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)dayOfWeek;
@@ -139,6 +148,7 @@
 - (id)resultListAttributionSupportAsString:(int)arg1;
 - (void)setAbClientMetadata:(id)arg1;
 - (void)setAdditionalEnabledMarkets:(id)arg1;
+- (void)setBusinessChatPreflightIdentifiers:(id)arg1;
 - (void)setDayOfWeek:(unsigned int)arg1;
 - (void)setDebugApiKey:(id)arg1;
 - (void)setDeviceCountryCode:(id)arg1;

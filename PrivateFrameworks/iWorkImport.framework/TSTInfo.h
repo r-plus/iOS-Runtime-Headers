@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSTInfo : TSDDrawableInfo <TSCECalculationEngineRegistration, TSCEFormulaOwning, TSCEReferenceResolving, TSCETableModeling, TSDCompatibilityAwareMediaContainer, TSDContainerInfo, TSDMixing, TSDReducibleImageContainer, TSDReplaceableMediaContainer, TSKModel, TSKSearchable, TSSPresetSource, TSSStyleClient, TSTCustomStrokeProviding, TSTStyleProviding, TSTTableHiddenRowColumnProviding, TSTTableInternalGeometryProviding, TSTTableMergeRangeProviding, TSTTableStrokeProviding, TSWPStorageParent, TSWPTextStatisticsTrackerProvider> {
+@interface TSTInfo : TSDDrawableInfo <TSCECalculationEngineRegistration, TSCEFormulaOwning, TSCEReferenceResolving, TSCETableModeling, TSDCompatibilityAwareMediaContainer, TSDContainerInfo, TSDMixing, TSDReducibleImageContainer, TSDReplaceableMediaContainer, TSKModel, TSKSearchable, TSSPresetSource, TSSPropertySource, TSSStyleClient, TSTCustomStrokeProviding, TSTStyleProviding, TSTTableHiddenRowColumnProviding, TSTTableInternalGeometryProviding, TSTTableMergeRangeProviding, TSTTableStrokeProviding, TSWPStorageParent, TSWPTextStatisticsTrackerProvider> {
     bool  _hasReference;
     TSTMasterLayout * _masterLayout;
     bool  _migratingStylesOnly;
@@ -12,6 +12,8 @@
 
 @property (getter=isAnchoredToText, nonatomic, readonly) bool anchoredToText;
 @property (getter=isAttachedToBodyText, nonatomic, readonly) bool attachedToBodyText;
+@property (nonatomic, readonly) bool autoListRecognition;
+@property (nonatomic, readonly) bool autoListTermination;
 @property (nonatomic, readonly) TSDFill *backgroundFill;
 @property (nonatomic, retain) TSTCellStyle *bodyCellStyle;
 @property (nonatomic, readonly) TSDStroke *bodyColumnStroke;
@@ -23,6 +25,7 @@
 @property (nonatomic, readonly) TSTCellDictionary *cellsPendingWrite;
 @property (nonatomic, readonly) TSCECellCoordinateVector *cellsToInvalidateAfterRecalc;
 @property (nonatomic, readonly) TSCECellCoordinateVector *cellsToInvalidateNonoverflowingAfterRecalc;
+@property (nonatomic, readonly) NSArray *childInfos;
 @property NSArray *columnWidths;
 @property (nonatomic, readonly) TSTConditionalStyleFormulaOwner *conditionalStyleFormulaOwner;
 @property (nonatomic, readonly) struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; } conditionalStyleFormulaOwnerUID;
@@ -80,6 +83,7 @@
 @property (nonatomic) bool matchesObjectPlaceholderGeometry;
 @property (nonatomic, readonly) TSTMergeOwner *mergeOwner;
 @property (nonatomic) bool migratingStylesOnly;
+@property (getter=isNewlyImported, nonatomic, readonly) bool newlyImported;
 @property (nonatomic, readonly) NSUUID *nsTableUID;
 @property (nonatomic) unsigned short numberOfColumns;
 @property (nonatomic, readonly) unsigned short numberOfFilteredRows;
@@ -100,11 +104,14 @@
 @property (nonatomic) NSObject<TSDContainerInfo> *parentInfo;
 @property (nonatomic, retain) TSTTablePartitioner *partitioner;
 @property (nonatomic) bool presetNeedsStrongOwnership;
+@property (nonatomic, readonly) bool preventsComments;
+@property (getter=isReimportable, nonatomic, readonly) bool reimportable;
 @property (nonatomic) bool repeatingHeaderColumnsEnabled;
 @property (nonatomic) bool repeatingHeaderRowsEnabled;
 @property NSArray *rowHeights;
 @property (nonatomic, copy) TSTTableSortOrder *sortOrder;
 @property (nonatomic, readonly) TSTSortRuleReferenceTracker *sortRuleReferenceTracker;
+@property (nonatomic, readonly) bool storageChangesInvalidateWrap;
 @property (nonatomic, readonly) TSTStrokeSidecar *strokeSidecar;
 @property (nonatomic) bool styleApplyClearsAll;
 @property (readonly) Class superclass;
@@ -121,6 +128,9 @@
 @property (nonatomic, retain) TSTTableStylePreset *tableStylePreset;
 @property (nonatomic) struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; } tableUID;
 @property (nonatomic, readonly) int tableWritingDirection;
+@property (nonatomic, retain) TSTStructuredTextImportRecord *textImportRecord;
+@property (nonatomic, readonly) bool textIsLinked;
+@property (nonatomic, readonly) bool textIsVertical;
 @property (nonatomic, readonly) TSTHiddenStateIndexSet *userHiddenRows;
 @property (nonatomic, retain) TSTImportWarningSetByCoordinateMap *warningSetsForUndo;
 @property (nonatomic) bool wasCut;
@@ -185,6 +195,7 @@
 - (void)assertCollaborationConvergence;
 - (bool)autoListRecognition;
 - (bool)autoListTermination;
+- (struct CGPoint { double x1; double x2; })autosizePositionOffsetForGeometry:(id)arg1 dynamicallyDraggedLayout:(id)arg2;
 - (id)backgroundFill;
 - (void)bakeFormulas;
 - (id)bandedFillObject;
@@ -256,6 +267,7 @@
 - (struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x1; struct UUIDData<TSP::UUIDData> {} *x2; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_3_1_1; } x3; })columnUIDsForColumnIndexes:(id)arg1;
 - (struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x1; struct UUIDData<TSP::UUIDData> {} *x2; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_3_1_1; } x3; })columnUIDsForColumnRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)columnWidths;
+- (id)commandForSettingTableDirection:(int)arg1 icc:(id)arg2;
 - (id)commentHostingAtCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (id)commentHostingAtCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1 forCommentStorage:(id)arg2;
 - (id)compatibilityCheckerForData:(id)arg1 associatedHint:(id)arg2;
@@ -265,12 +277,13 @@
 - (id)conditionalStyleFormulaOwner;
 - (struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; })conditionalStyleFormulaOwnerUID;
 - (id)conditionalStyleSetAtCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (bool)containsProperty:(int)arg1;
 - (long long)contentWritingDirection;
+- (bool)contentsAreRightToLeft;
 - (void)convertFormulasToUidForm:(id)arg1 atCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (void)convertFormulasToUidForm:(id)arg1 atCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2 preserveHostCell:(bool)arg3;
 - (id)copyWithContext:(id)arg1;
 - (Class)dataStoreIteratorClass;
-- (id)datasForReplacingMediaContentsWithAssociatedHints;
 - (void)dealloc;
 - (id)defaultBodyCell;
 - (id)defaultCellStyleForCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
@@ -302,6 +315,7 @@
 - (id)filterSet;
 - (void)filterSetUpdated;
 - (bool)findChartableRangesFromTableRange:(struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg1 getBodyRange:(out struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; }*)arg2 headerColumnRange:(out struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; }*)arg3 headerRowRange:(out struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; }*)arg4;
+- (float)floatValueForProperty:(int)arg1;
 - (id)fontColorAtCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1 optionalCell:(id)arg2;
 - (struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })footerRangeCoordinate;
 - (id)footerRowBodyColumnStroke;
@@ -317,6 +331,7 @@
 - (struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; })formulaOwnerUID;
 - (id)formulasForUndo;
 - (struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; })fromTableUID;
+- (id)geometryForRTLTableWithGeometry:(id)arg1;
 - (int)getCell:(id)arg1 atCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (int)getCell:(id)arg1 atCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2 holdingReadLockWithAccessController:(id)arg3;
 - (int)getCell:(id)arg1 atCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2 suppressCellBorder:(bool)arg3;
@@ -409,7 +424,9 @@
 - (bool)isCellRangeHidden:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (bool)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
 - (bool)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1 styleComparisonBlock:(id /* block */)arg2;
+- (bool)isNewlyImported;
 - (bool)isRegisteredWithCalculationEngine:(id)arg1;
+- (bool)isReimportable;
 - (bool)isSafeToConvertToAttributedString;
 - (bool)isSafeToConvertToImage;
 - (bool)isSafeToConvertToImageForImagePaste;
@@ -421,8 +438,11 @@
 - (void)iterateCellsInRegion:(id)arg1 flags:(unsigned long long)arg2 searchFlags:(unsigned long long)arg3 usingBlock:(id /* block */)arg4;
 - (void)iterateCellsWithFlags:(unsigned long long)arg1 searchFlags:(unsigned long long)arg2 usingBlock:(id /* block */)arg3;
 - (Class)layoutClass;
+- (void)loadFromArchive:(const struct TableInfoArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DrawableArchive {} *x5; struct Reference {} *x6; struct Reference {} *x7; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromUnarchiver:(id)arg1;
 - (struct TSCETableReference { id x1; /* Warning: Unrecognized filer type: 'U' using 'void*' */ void*x2; void*x3; unsigned int x4; long doublex5; long doublex6; void*x7; void*x8; void*x9; void*x10; void*x11; unsigned short x12; void*x13; SEL x14; SEL x15; void*x16; void*x17; unsigned int x18; long doublex19; long doublex20; void*x21; void*x22; void*x23; void*x24; void*x25; union { unsigned char x_26_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_26_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_26_1_3; } x26; })makeReference:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1 bottomRight:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (void)mapTableStylesToStylesheet:(id)arg1 withMapper:(id)arg2;
+- (id)mappingForSortWithRules:(id)arg1 inRows:(id)arg2;
 - (id)masterLayout;
 - (double)masterLayoutEffectiveTableNameHeight;
 - (int)maxStrokeOrder;
@@ -451,6 +471,7 @@
 - (void)mutateFormulaFiltersUsingBlock:(id /* block */)arg1;
 - (bool)needsFilterFormulaRewriteForImport;
 - (id)newCell;
+- (void)notifyAboutStructuredTextImportState;
 - (void)notifyTableOfNewResults;
 - (id)nsTableUID;
 - (unsigned int)numberOfCells;
@@ -472,11 +493,11 @@
 - (unsigned short)numberOfUserVisibleBodyRows;
 - (unsigned short)numberOfVisibleBodyColumns;
 - (unsigned short)numberOfVisibleBodyRows;
+- (id)objectForProperty:(int)arg1;
 - (id)objectToArchiveInDependencyTracker;
 - (id)ownerUIDMapper;
 - (void)p_bakeMixedCellStrokesIntoTable:(id)arg1 outgoingTable:(id)arg2 incomingTable:(id)arg3 fraction:(double)arg4;
-- (id)p_combinedTableInfoHintFromReplacementDictionary:(id)arg1 andHintsDictionary:(id)arg2;
-- (void)p_didLoadRichTextPayloadTable:(id)arg1;
+- (void)p_gatherReorganizeValuesForColumn:(unsigned char)arg1 inRows:(id)arg2 outValues:(struct TSTCellReorganizeValue { unsigned int x1 : 8; unsigned int x2 : 8; union { double x_3_1_1; bool x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; struct TSTCellReorganizePopupInfo { unsigned int x_5_2_1; long long x_5_2_2; } x_3_1_5; } x3; }*)arg3;
 - (id)p_imageFillAtCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (void)p_initializeDefaultHeight:(double)arg1 andWidth:(double)arg2;
 - (void)p_iterateCellsAndTerminateWithIterator:(id)arg1 usingBlock:(id /* block */)arg2;
@@ -503,11 +524,13 @@
 - (void)prepareForPasteWithSourceOffset:(struct { int x1; int x2; })arg1;
 - (id)presetKind;
 - (bool)presetNeedsStrongOwnership;
+- (bool)preventsComments;
 - (bool)prohibitsModificationToChildren;
 - (id)prunedCellUIDListFromCellUIDList:(id)arg1 allowMergeFragment:(bool)arg2 addingPrunedIndicesToIndexSet:(id)arg3;
 - (struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x1; struct UUIDData<TSP::UUIDData> {} *x2; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_3_1_1; } x3; })prunedColumnUIDsFromColumnUIDs:(const struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x1; struct UUIDData<TSP::UUIDData> {} *x2; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_3_1_1; } x3; }*)arg1;
 - (struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x1; struct UUIDData<TSP::UUIDData> {} *x2; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_3_1_1; } x3; })prunedRowUIDsFromRowUIDs:(const struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x1; struct UUIDData<TSP::UUIDData> {} *x2; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_3_1_1; } x3; }*)arg1;
 - (struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })range;
+- (void)rearrangeWithMapping:(id)arg1;
 - (void)reassignPasteboardCustomFormatKeys;
 - (struct { bool x1; bool x2; bool x3; })recalculateForCalculationEngine:(id)arg1 formulaID:(struct { unsigned int x1 : 24; })arg2 isInCycle:(bool)arg3 hasCalculatedPrecedents:(bool)arg4;
 - (struct TSCERangeRef { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct TSUCellCoord { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_2_1_1; } x2; })referenceToHiddenStateFromColumn:(unsigned char)arg1 toColumn:(unsigned char)arg2;
@@ -546,9 +569,10 @@
 - (struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x1; struct UUIDData<TSP::UUIDData> {} *x2; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_3_1_1; } x3; })rowUIDs;
 - (struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x1; struct UUIDData<TSP::UUIDData> {} *x2; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_3_1_1; } x3; })rowUIDsForRowIndexes:(id)arg1;
 - (struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x1; struct UUIDData<TSP::UUIDData> {} *x2; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_3_1_1; } x3; })rowUIDsForRowRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)saveToArchive:(struct TableInfoArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DrawableArchive {} *x5; struct Reference {} *x6; struct Reference {} *x7; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchiver:(id)arg1;
 - (void)scaleInfoGeometry:(struct CGSize { double x1; double x2; })arg1;
 - (id)searchForAnnotationsWithHitBlock:(id /* block */)arg1;
-- (id)searchForString:(id)arg1 options:(unsigned long long)arg2 searchCanvasDelegate:(id)arg3 onHit:(id /* block */)arg4;
 - (void)setBodyCellStyle:(id)arg1;
 - (void)setBodyTextStyle:(id)arg1;
 - (void)setCalcEngine:(id)arg1;
@@ -582,6 +606,7 @@
 - (void)setHeaderRowTextStyle:(id)arg1;
 - (void)setHeaderRowsFrozen:(bool)arg1;
 - (void)setHeight:(double)arg1 ofRowAtIndex:(unsigned short)arg2;
+- (void)setInsertionCenterPosition:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setMasterLayout:(id)arg1;
 - (void)setMigratingStylesOnly:(bool)arg1;
 - (void)setNeedsFilterFormulaRewriteForImport:(bool)arg1;
@@ -617,6 +642,7 @@
 - (void)setTableStyle:(id)arg1;
 - (void)setTableStylePreset:(id)arg1;
 - (void)setTableUID:(struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; })arg1;
+- (void)setTextImportRecord:(id)arg1;
 - (int)setTextStyle:(id)arg1 atCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (int)setTextStyle:(id)arg1 ofColumnAtIndex:(unsigned char)arg2;
 - (int)setTextStyle:(id)arg1 ofRowAtIndex:(unsigned short)arg2;
@@ -650,6 +676,7 @@
 - (unsigned long long)tableAreaForColumn:(unsigned char)arg1;
 - (unsigned long long)tableAreaForRow:(unsigned short)arg1;
 - (id)tableAreasForCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (id)tableInfo;
 - (id)tableModel;
 - (Class)tableModelClass;
 - (id)tableName;
@@ -665,6 +692,7 @@
 - (struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; })tableUID;
 - (int)tableWritingDirection;
 - (struct CGSize { double x1; double x2; })targetSizeForImageData:(id)arg1 associatedHint:(id)arg2;
+- (id)textImportRecord;
 - (bool)textIsLinked;
 - (bool)textIsVertical;
 - (bool)textStyle:(id)arg1 isEqualToDefaultTextStyleForCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;

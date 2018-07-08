@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEODataXPCSessionTask : NSObject <GEODataSessionTask, GEODataXPCSessionTaskQueueTask, GEOStateCapturing> {
+@interface GEODataXPCSessionTask : NSObject <GEODataSessionTask, GEODataSessionUpdatableTask, GEODataXPCSessionTaskQueueTask, GEOStateCapturing> {
     NSObject<OS_os_activity> * _activity;
     bool  _canceled;
     <GEODataSessionTaskDelegate> * _delegate;
@@ -10,6 +10,7 @@
     bool  _didNotifyDelegate;
     double  _endTime;
     NSError * _error;
+    <NSObject> * _parsedResponse;
     float  _priority;
     NSData * _receivedData;
     GEODataRequest * _request;
@@ -18,6 +19,7 @@
     double  _startTime;
     unsigned long long  _stateCaptureHandle;
     unsigned int  _taskIdentifier;
+    NSObject<OS_voucher> * _voucher;
 }
 
 @property (nonatomic, readonly) NSObject<OS_os_activity> *activity;
@@ -28,27 +30,31 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool didNotifyDelegate;
 @property (readonly) double elapsedTime;
-@property (nonatomic, readonly) NSError *error;
+@property (nonatomic, retain) NSError *error;
 @property (nonatomic, readonly) bool failedDueToCancel;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) unsigned long long incomingPayloadSize;
 @property (nonatomic, readonly) bool isCancelled;
 @property (nonatomic, readonly) unsigned long long outgoingPayloadSize;
+@property (nonatomic, readonly) <NSObject> *parsedResponse;
 @property float priority;
 @property (nonatomic, readonly) bool protocolBufferHasPreamble;
 @property (nonatomic, readonly) NSData *receivedData;
 @property (nonatomic, readonly) NSString *remoteAddressAndPort;
 @property (nonatomic, readonly) GEODataRequest *request;
+@property (nonatomic, readonly) <GEORequestCounterTicket> *requestCounterTicket;
 @property (nonatomic, readonly) GEODataXPCSession *session;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *sessionIsolation;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned int taskIdentifier;
 @property (nonatomic, readonly) unsigned int taskQueue;
 @property (nonatomic, readonly) float taskQueuePriority;
+@property (nonatomic, readonly) double timeoutInterval;
 @property (nonatomic, readonly) NSObject<OS_xpc_object> *xpcRequest;
 @property (nonatomic, readonly) unsigned long long xpcRequestIdentifier;
 
 - (void).cxx_destruct;
+- (void)_finishAndNotifyDelegate;
 - (id)activity;
 - (void)cancel;
 - (id)captureStateWithHints:(struct os_state_hints_s { unsigned int x1; char *x2; unsigned int x3; unsigned int x4; }*)arg1;
@@ -66,25 +72,32 @@
 - (bool)isCancelled;
 - (void)notifyDelegate;
 - (unsigned long long)outgoingPayloadSize;
+- (id)parsedResponse;
 - (float)priority;
 - (bool)processFailedReplyXPCDictionary:(id)arg1;
 - (bool)processReplyXPCDictionary:(id)arg1;
-- (void)processResult:(int)arg1 xpcReply:(id)arg2;
+- (void)processResult:(int)arg1 xpcReply:(id)arg2 error:(id)arg3;
 - (void)processTaskCancelled;
-- (void)processXPCReply:(id)arg1;
+- (void)processTaskTimeout;
+- (void)processXPCReply:(id)arg1 error:(id)arg2;
 - (bool)protocolBufferHasPreamble;
 - (id)receivedData;
 - (id)remoteAddressAndPort;
 - (id)request;
+- (id)requestCounterTicket;
 - (id)session;
 - (id)sessionIsolation;
 - (void)setDidNotifyDelegate:(bool)arg1;
+- (void)setError:(id)arg1;
+- (void)setParsedResponse:(id)arg1;
 - (void)setPriority:(float)arg1;
 - (void)start;
 - (unsigned int)taskIdentifier;
 - (unsigned int)taskQueue;
 - (float)taskQueuePriority;
+- (double)timeoutInterval;
 - (unsigned long long)updateXPCRequestIdentifier;
+- (void)willSendTask:(id /* block */)arg1;
 - (id)xpcRequest;
 - (unsigned long long)xpcRequestIdentifier;
 

@@ -4,9 +4,12 @@
 
 @interface GEOToolLocalProxy : NSObject <GEOToolProxy>
 
+- (unsigned long long)calculatePurgableSpaceForUrgency:(int)arg1;
+- (unsigned long long)freePurgableSpace:(unsigned long long)arg1 forUrgency:(int)arg2;
 - (id)getDefault:(id)arg1;
 - (void)lockDBs;
 - (void)resetMapDataExtension;
 - (void)unlockDBs;
+- (void)validateMapLayerDataWithHandler:(id /* block */)arg1;
 
 @end

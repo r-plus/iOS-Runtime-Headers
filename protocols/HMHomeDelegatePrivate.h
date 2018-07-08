@@ -21,6 +21,7 @@
 - (void)home:(HMHome *)arg1 didUpdateMediaPassword:(NSString *)arg2;
 - (void)home:(HMHome *)arg1 didUpdateMediaPeerToPeerEnabled:(bool)arg2;
 - (void)home:(HMHome *)arg1 didUpdateMinimumMediaUserPrivilege:(long long)arg2;
+- (void)home:(HMHome *)arg1 didUpdateReprovisionStateForAccessory:(HMAccessory *)arg2;
 - (void)home:(HMHome *)arg1 didUpdateStateForOutgoingInvitations:(NSArray *)arg2;
 - (void)homeDidUpdateApplicationData:(HMHome *)arg1;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@interface WKUserContentController : NSObject <NSCoding, WKObject> {
+@interface WKUserContentController : NSObject <NSSecureCoding, WKObject> {
     struct ObjectStorage<WebKit::WebUserContentControllerProxy> { 
         struct type { 
             unsigned char __lx[144]; 
@@ -17,6 +17,8 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSArray *userScripts;
+
++ (bool)supportsSecureCoding;
 
 - (void)_addScriptMessageHandler:(id)arg1 name:(id)arg2 userContentWorld:(id)arg3;
 - (void)_addUserContentFilter:(id)arg1;

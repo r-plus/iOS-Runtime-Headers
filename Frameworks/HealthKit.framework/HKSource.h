@@ -32,17 +32,20 @@
 + (id)_localDeviceSource;
 + (bool)_representsCurrentDeviceWithBundleIdentifier:(id)arg1;
 + (id)_sourceBundleIdentifierWithEntitlements:(id)arg1 processBundleIdentifier:(id)arg2 isExtension:(bool)arg3;
++ (id)_sourceForClinicalAccountIdentifier:(id)arg1;
 + (id)_sourceNameWithRepresentsCurrentDevice:(bool)arg1 defaultSource:(bool)arg2;
 + (id)_sourceWithBundleIdentifier:(id)arg1 name:(id)arg2 productType:(id)arg3 options:(unsigned long long)arg4;
 + (id)defaultSource;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_clinicalAccountIdentifier;
 - (bool)_hasFirstPartyBundleID;
 - (id)_init;
 - (bool)_isAppleDevice;
 - (bool)_isAppleWatch;
 - (bool)_isApplication;
+- (bool)_isClinicalSource;
 - (bool)_isConnectedGymBundleID;
 - (bool)_isConnectedGymSource;
 - (bool)_isHidden;

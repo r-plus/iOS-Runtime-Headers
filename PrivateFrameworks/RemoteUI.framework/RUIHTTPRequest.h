@@ -2,18 +2,14 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@interface RUIHTTPRequest : NSObject <NSURLSessionTaskDelegate> {
+@interface RUIHTTPRequest : NSObject {
     NSURLSessionDataTask * _dataTask;
     id  _delegate;
     NSURLRequest * _request;
     NSURLSession * _urlSession;
 }
 
-@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) id delegate;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
-@property (readonly) Class superclass;
 
 + (bool)anyRequestLoading;
 + (id)errorWithCode:(unsigned long long)arg1;
@@ -42,6 +38,7 @@
 - (id)request;
 - (id)sessionConfiguration;
 - (void)setDelegate:(id)arg1;
+- (id)urlSessionDelegate;
 - (void)willParseData;
 
 @end

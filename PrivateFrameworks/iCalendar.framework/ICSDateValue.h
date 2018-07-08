@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@interface ICSDateValue : NSObject <NSCoding> {
+@interface ICSDateValue : NSObject <NSSecureCoding> {
     long long  _day;
     long long  _month;
     long long  _year;
@@ -14,6 +14,7 @@
 
 + (id)dateFromICSString:(id)arg1;
 + (id)dateFromICSUTF8String:(const char *)arg1;
++ (bool)supportsSecureCoding;
 
 - (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
 - (long long)compare:(id)arg1;

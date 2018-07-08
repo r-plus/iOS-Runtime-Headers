@@ -2,10 +2,17 @@
    Image: /System/Library/PrivateFrameworks/WatchListKit.framework/WatchListKit
  */
 
-@interface _WLKBagInvalidator : NSObject
+@interface _WLKBagInvalidator : NSObject {
+    NSOperationQueue * _opQueue;
+}
 
-- (void)_accountStoreChangedNotification:(id)arg1;
+@property (retain) NSOperationQueue *opQueue;
+
+- (void).cxx_destruct;
+- (void)_SSChangedNotification:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)opQueue;
+- (void)setOpQueue:(id)arg1;
 
 @end

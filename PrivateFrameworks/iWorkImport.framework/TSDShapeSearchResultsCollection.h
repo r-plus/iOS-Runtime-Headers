@@ -3,9 +3,11 @@
  */
 
 @interface TSDShapeSearchResultsCollection : NSObject <TSDShapeCollection> {
+    NSArray<TSDShapeCollectionShape> * _allShapes;
     TSDBasicShapeLibrary * _basicShapeLibrary;
-    NSOrderedSet<TSDShapeCollectionShape> * _exactMatches;
-    NSOrderedSet<TSDShapeCollectionShape> * _partialMatches;
+    NSArray<TSDShapeCollectionShape> * _exactMatches;
+    TSULocale * _locale;
+    NSArray<TSDShapeCollectionShape> * _partialMatches;
     NSString * _searchTerm;
     TSDShapeLibrary * _shapeLibrary;
     TSUNoCopyDictionary * _shapeToDisplayNameMap;
@@ -20,9 +22,11 @@
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) unsigned long long numberOfSections;
 @property (nonatomic, readonly) unsigned long long numberOfShapes;
+@property (nonatomic, copy) NSArray<TSDShapeCollectionShape> *p_allShapes;
 @property (nonatomic, retain) TSDBasicShapeLibrary *p_basicShapeLibrary;
-@property (nonatomic, copy) NSOrderedSet<TSDShapeCollectionShape> *p_exactMatches;
-@property (nonatomic, copy) NSOrderedSet<TSDShapeCollectionShape> *p_partialMatches;
+@property (nonatomic, copy) NSArray<TSDShapeCollectionShape> *p_exactMatches;
+@property (nonatomic, retain) TSULocale *p_locale;
+@property (nonatomic, copy) NSArray<TSDShapeCollectionShape> *p_partialMatches;
 @property (nonatomic, retain) TSDShapeLibrary *p_shapeLibrary;
 @property (nonatomic, retain) TSUNoCopyDictionary *p_shapeToDisplayNameMap;
 @property (nonatomic, retain) TSDUserDefinedShapeLibrary *p_userDefinedShapeLibrary;
@@ -42,18 +46,26 @@
 - (id)p_allShapes;
 - (id)p_basicShapeLibrary;
 - (id /* block */)p_comparatorForSortingMatches;
+- (long long)p_comparePositionOfShape:(id)arg1 withOtherShape:(id)arg2;
 - (id)p_exactMatches;
 - (bool)p_hasPartialMatches;
+- (id)p_locale;
 - (id)p_partialMatches;
-- (id)p_separateExactAndPartialMatchesFromResults:(id)arg1 searchTerm:(id)arg2 shapeToDisplayNameDict:(id)arg3 searchResultToShapeMap:(id /* block */)arg4;
+- (id)p_separateExactAndPartialMatchesFromResults:(id)arg1 searchTerm:(id)arg2 withProvider:(id)arg3 shapeToDisplayNameDict:(id)arg4;
+- (long long)p_sequentialShapePosition:(id)arg1;
 - (id)p_shapeLibrary;
 - (id)p_shapeToDisplayNameMap;
+- (id)p_shapesByMappingSearchResults:(id)arg1 withProvider:(id)arg2 shapeToDisplayNameDict:(id)arg3;
+- (bool)p_updateSearchResultsBasedOnAnchoredSearchForSearchTerm:(id)arg1;
+- (bool)p_updateSearchResultsBasedOnStringScoreSearchForSearchTerm:(id)arg1;
 - (bool)p_updateSearchResultsForSearchTerm:(id)arg1;
 - (id)p_userDefinedShapeLibrary;
 - (void)resetSearchResults;
 - (id)searchTerm;
+- (void)setP_allShapes:(id)arg1;
 - (void)setP_basicShapeLibrary:(id)arg1;
 - (void)setP_exactMatches:(id)arg1;
+- (void)setP_locale:(id)arg1;
 - (void)setP_partialMatches:(id)arg1;
 - (void)setP_shapeLibrary:(id)arg1;
 - (void)setP_shapeToDisplayNameMap:(id)arg1;

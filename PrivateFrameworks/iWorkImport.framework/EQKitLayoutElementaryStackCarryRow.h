@@ -7,7 +7,7 @@
         int *__begin_; 
         int *__end_; 
         struct __compressed_pair<EQKitTypes::Crossout::Enum *, std::__1::allocator<EQKitTypes::Crossout::Enum> > { 
-            int *__first_; 
+            int *__value_; 
         } __end_cap_; 
     }  mCrossouts;
 }

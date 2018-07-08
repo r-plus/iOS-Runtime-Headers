@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@interface WKWebsiteDataStore : NSObject <NSCoding, WKObject> {
+@interface WKWebsiteDataStore : NSObject <NSSecureCoding, WKObject> {
     struct ObjectStorage<API::WebsiteDataStore> { 
         struct type { 
             unsigned char __lx[32]; 
@@ -10,8 +10,13 @@
     }  _websiteDataStore;
 }
 
+@property (setter=_setAllowsCellularAccess:, nonatomic) bool _allowsCellularAccess;
 @property (readonly) /* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*_apiObject;
+@property (setter=_setBoundInterfaceIdentifier:, nonatomic) NSString *_boundInterfaceIdentifier;
+@property (setter=_setCacheStorageDirectory:, nonatomic) NSString *_cacheStorageDirectory;
+@property (setter=_setCacheStoragePerOriginQuota:, nonatomic) unsigned long long _cacheStoragePerOriginQuota;
 @property (setter=_setResourceLoadStatisticsEnabled:, nonatomic) bool _resourceLoadStatisticsEnabled;
+@property (setter=_setServiceWorkerRegistrationDirectory:, nonatomic) NSString *_serviceWorkerRegistrationDirectory;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -22,11 +27,18 @@
 // Image: /System/Library/Frameworks/WebKit.framework/WebKit
 
 + (id)_allWebsiteDataTypesIncludingPrivate;
++ (void)_allowWebsiteDataRecordsForAllOrigins;
++ (bool)_defaultDataStoreExists;
 + (id)allWebsiteDataTypes;
 + (id)defaultDataStore;
 + (id)nonPersistentDataStore;
++ (bool)supportsSecureCoding;
 
+- (bool)_allowsCellularAccess;
 - (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
+- (id)_boundInterfaceIdentifier;
+- (id)_cacheStorageDirectory;
+- (unsigned long long)_cacheStoragePerOriginQuota;
 - (void)_fetchDataRecordsOfTypes:(id)arg1 withOptions:(unsigned long long)arg2 completionHandler:(id /* block */)arg3;
 - (id)_initWithConfiguration:(id)arg1;
 - (void)_resourceLoadStatisticsClearInMemoryAndPersistentStore;
@@ -41,6 +53,7 @@
 - (void)_resourceLoadStatisticsResetToConsistentState;
 - (void)_resourceLoadStatisticsSetGrandfatheringTime:(double)arg1;
 - (void)_resourceLoadStatisticsSetHadUserInteraction:(bool)arg1 forHost:(id)arg2;
+- (void)_resourceLoadStatisticsSetHasHadNonRecentUserInteractionForHost:(id)arg1;
 - (void)_resourceLoadStatisticsSetIsGrandfathered:(bool)arg1 forHost:(id)arg2;
 - (void)_resourceLoadStatisticsSetIsPrevalentResource:(bool)arg1 forHost:(id)arg2;
 - (void)_resourceLoadStatisticsSetLastSeen:(double)arg1 forHost:(id)arg2;
@@ -59,8 +72,14 @@
 - (void)_resourceLoadStatisticsSetTimeToLiveUserInteraction:(double)arg1;
 - (void)_resourceLoadStatisticsSubmitTelemetry;
 - (void)_resourceLoadStatisticsUpdateCookiePartitioning;
+- (id)_serviceWorkerRegistrationDirectory;
+- (void)_setAllowsCellularAccess:(bool)arg1;
+- (void)_setBoundInterfaceIdentifier:(id)arg1;
+- (void)_setCacheStorageDirectory:(id)arg1;
+- (void)_setCacheStoragePerOriginQuota:(unsigned long long)arg1;
 - (void)_setResourceLoadStatisticsEnabled:(bool)arg1;
 - (void)_setResourceLoadStatisticsTestingCallback:(id /* block */)arg1;
+- (void)_setServiceWorkerRegistrationDirectory:(id)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (void)fetchDataRecordsOfTypes:(id)arg1 completionHandler:(id /* block */)arg2;

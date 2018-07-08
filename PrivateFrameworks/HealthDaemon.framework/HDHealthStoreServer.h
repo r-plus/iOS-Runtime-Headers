@@ -136,6 +136,7 @@
 - (void)remote_fetchDaemonPreferenceForKey:(id)arg1 completion:(id /* block */)arg2;
 - (void)remote_fetchDevicesMatchingProperty:(id)arg1 values:(id)arg2 completion:(id /* block */)arg3;
 - (void)remote_fetchDisplayNameWithCompletion:(id /* block */)arg1;
+- (void)remote_fetchPluginServiceEndpointWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)remote_fetchUnitPreferencesForTypes:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)remote_finishWorkoutRoute:(id)arg1 workout:(id)arg2 metadata:(id)arg3 completion:(id /* block */)arg4;
 - (void)remote_getDefaultForKey:(id)arg1 withHandler:(id /* block */)arg2;
@@ -170,6 +171,7 @@
 - (void)remote_setAuthorizationStatuses:(id)arg1 forBundleIdentifier:(id)arg2 completion:(id /* block */)arg3;
 - (void)remote_setBackgroundDeliveryFrequency:(long long)arg1 forDataType:(id)arg2 handler:(id /* block */)arg3;
 - (void)remote_setCharacteristic:(id)arg1 forDataType:(id)arg2 handler:(id /* block */)arg3;
+- (void)remote_setDaemonPreferenceValue:(id)arg1 forKey:(id)arg2 completion:(id /* block */)arg3;
 - (void)remote_setDefaultValue:(id)arg1 forKey:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)remote_setHealthLiteValue:(id)arg1 forKey:(id)arg2 completion:(id /* block */)arg3;
 - (void)remote_setObjectAuthorizationStatuses:(id)arg1 forBundleIdentifier:(id)arg2 completion:(id /* block */)arg3;

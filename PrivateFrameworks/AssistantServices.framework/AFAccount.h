@@ -7,6 +7,7 @@
     NSString * _assistantIdentifier;
     NSDictionary * _connectionPolicy;
     NSDate * _connectionPolicyDate;
+    NSDate * _connectionPolicyFirstFailureDate;
     NSString * _connectionPolicyHostname;
     NSString * _group;
     NSString * _hostname;
@@ -16,6 +17,7 @@
     NSDictionary * _lastSyncDates;
     NSString * _localeIdentifier;
     NSString * _peerAssistantIdentifier;
+    NSString * _peerHostname;
     NSString * _peerLanguageCode;
     bool  _peerSiriEnabled;
     NSString * _peerSpeechIdentifier;
@@ -28,6 +30,7 @@
 @property (nonatomic, copy) NSString *assistantIdentifier;
 @property (nonatomic, copy) NSDictionary *connectionPolicy;
 @property (nonatomic, copy) NSDate *connectionPolicyDate;
+@property (nonatomic, copy) NSDate *connectionPolicyFirstFailureDate;
 @property (nonatomic, copy) NSString *connectionPolicyHostname;
 @property (nonatomic, copy) NSString *group;
 @property (nonatomic, copy) NSString *hostname;
@@ -37,6 +40,7 @@
 @property (nonatomic, copy) NSDictionary *lastSyncDates;
 @property (nonatomic, copy) NSString *localeIdentifier;
 @property (nonatomic, copy) NSString *peerAssistantIdentifier;
+@property (nonatomic, copy) NSString *peerHostname;
 @property (nonatomic, copy) NSString *peerLanguageCode;
 @property (nonatomic) bool peerSiriEnabled;
 @property (nonatomic, copy) NSString *peerSpeechIdentifier;
@@ -51,6 +55,7 @@
 - (id)assistantIdentifier;
 - (id)connectionPolicy;
 - (id)connectionPolicyDate;
+- (id)connectionPolicyFirstFailureDate;
 - (id)connectionPolicyHostname;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -67,6 +72,7 @@
 - (id)localeIdentifier;
 - (id)messageDictionary;
 - (id)peerAssistantIdentifier;
+- (id)peerHostname;
 - (id)peerLanguageCode;
 - (bool)peerSiriEnabled;
 - (id)peerSpeechIdentifier;
@@ -76,6 +82,7 @@
 - (void)setAssistantIdentifier:(id)arg1;
 - (void)setConnectionPolicy:(id)arg1;
 - (void)setConnectionPolicyDate:(id)arg1;
+- (void)setConnectionPolicyFirstFailureDate:(id)arg1;
 - (void)setConnectionPolicyHostname:(id)arg1;
 - (void)setGroup:(id)arg1;
 - (void)setHostname:(id)arg1;
@@ -85,6 +92,7 @@
 - (void)setLastSyncDates:(id)arg1;
 - (void)setLocaleIdentifier:(id)arg1;
 - (void)setPeerAssistantIdentifier:(id)arg1;
+- (void)setPeerHostname:(id)arg1;
 - (void)setPeerLanguageCode:(id)arg1;
 - (void)setPeerSiriEnabled:(bool)arg1;
 - (void)setPeerSpeechIdentifier:(id)arg1;

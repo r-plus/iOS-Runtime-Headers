@@ -20,7 +20,7 @@
 
 - (void).cxx_destruct;
 - (id)URLHandler;
-- (id)activityProviderForHeadline:(id)arg1 reportConcernViewPresenter:(id)arg2;
+- (id)activityProviderForHeadline:(id)arg1 reportConcernViewPresenter:(id)arg2 URLModifier:(id)arg3;
 - (id)initWithReadingHistory:(id)arg1 readingList:(id)arg2 subscriptionList:(id)arg3 URLHandler:(id)arg4;
 - (id)readingHistory;
 - (id)readingList;

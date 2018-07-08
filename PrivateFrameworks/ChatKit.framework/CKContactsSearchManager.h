@@ -32,6 +32,7 @@
 
 - (void).cxx_destruct;
 - (id)_cullOldResults:(id)arg1;
+- (id)_filterGroupResults:(id)arg1;
 - (void)_generateConversationCache;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_rangeForSearchTerm:(id)arg1 inTarget:(id)arg2 tokenizedByCharacterSet:(id)arg3;
 - (id)_sortResultsByDate:(id)arg1;

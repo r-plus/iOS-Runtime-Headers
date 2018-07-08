@@ -48,6 +48,7 @@
 @property (getter=isPluggedIn, readonly) bool pluggedIn;
 @property (readonly) NSString *productType;
 @property (readonly) NSString *productVersion;
+@property (readonly) float screenScale;
 @property (readonly) NSString *serialNumber;
 @property (copy) NSString *softwareLibraryIdentifier;
 @property (readonly) NSString *storeFrontIdentifier;
@@ -131,6 +132,7 @@
 - (id)productType;
 - (id)productVersion;
 - (void)reloadStoreFrontIdentifier;
+- (float)screenScale;
 - (void)sdk_loadStoreFrontIdentifier:(id /* block */)arg1;
 - (void)sdk_loadStorefrontCountryCode:(id /* block */)arg1;
 - (id)serialNumber;

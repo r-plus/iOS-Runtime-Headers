@@ -16,6 +16,7 @@
 - (LPCaptionBarPresentationProperties *)mediaBottomCaptionBar;
 - (NSString *)mediaTopCaption;
 - (LPCaptionBarPresentationProperties *)mediaTopCaptionBar;
+- (NSNumber *)minimumHeight;
 - (NSString *)quotedText;
 - (long long)style;
 - (NSString *)topCaption;

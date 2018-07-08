@@ -8,6 +8,7 @@
     <SKCloudServiceSetupViewControllerDelegate> * _delegate;
     bool  _hasInitializedServiceViewController;
     bool  _isRemoteViewControllerReady;
+    bool  _isUnableToLoadRemoteViewController;
     id /* block */  _loadCompletionHandler;
     _UIResilientRemoteViewContainerViewController * _remoteViewContainerViewController;
     SFSafariViewController * _safariViewController;
@@ -22,7 +23,9 @@
 
 - (void).cxx_destruct;
 - (void)_didReceiveRemoteViewController:(id)arg1;
+- (id)_errorWithCode:(long long)arg1 errorDescriptionLocalizationKey:(id)arg2;
 - (void)_reloadWithActiveCloudServiceSetupReloadContext;
+- (void)_reportErrorForMissingSystemMusicApplication;
 - (void)_requestRemoteViewController;
 - (void)cloudServiceSetupRemoteViewController:(id)arg1 didFinishLoadingWithSuccess:(bool)arg2 error:(id)arg3;
 - (void)cloudServiceSetupRemoteViewController:(id)arg1 requestsDismissalWithAnimation:(bool)arg2 completion:(id /* block */)arg3;

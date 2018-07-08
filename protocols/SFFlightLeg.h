@@ -8,6 +8,7 @@
 - (NSDate *)arrivalActualTime;
 - (SFAirport *)arrivalAirport;
 - (NSString *)arrivalGate;
+- (NSDate *)arrivalGateTime;
 - (NSDate *)arrivalPublishedTime;
 - (NSDate *)arrivalRunwayTime;
 - (NSString *)arrivalTerminal;
@@ -25,6 +26,7 @@
 - (void)setArrivalActualTime:(NSDate *)arg1;
 - (void)setArrivalAirport:(SFAirport *)arg1;
 - (void)setArrivalGate:(NSString *)arg1;
+- (void)setArrivalGateTime:(NSDate *)arg1;
 - (void)setArrivalPublishedTime:(NSDate *)arg1;
 - (void)setArrivalRunwayTime:(NSDate *)arg1;
 - (void)setArrivalTerminal:(NSString *)arg1;

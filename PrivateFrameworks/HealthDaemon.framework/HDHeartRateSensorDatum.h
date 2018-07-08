@@ -9,6 +9,8 @@
 @property (nonatomic, readonly) HKQuantity *heartRate;
 @property (nonatomic, readonly) long long heartRateContext;
 
++ (bool)supportsSecureCoding;
+
 - (void)encodeWithCoder:(id)arg1;
 - (id)heartRate;
 - (long long)heartRateContext;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INSendMessageIntent : INIntent <INSendMessageIntentExport>
+@interface INSendMessageIntent : INIntent <ATXSlotResolver, INSendMessageIntentExport>
 
 @property (nonatomic, readonly, copy) NSString *content;
 @property (nonatomic, readonly, copy) NSString *conversationIdentifier;
@@ -47,6 +47,10 @@
 
 // Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
 
++ (bool)isRequired;
++ (id)resolveIntentFromSlot:(id)arg1;
++ (id)slotFromContext:(id)arg1;
+
 - (void)apr_getArgsInto:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
@@ -54,5 +58,6 @@
 - (long long)cd_interactionMechanism;
 - (id)cd_recipients;
 - (bool)cd_saveToPeopleStore;
+- (id)contextMetadata;
 
 @end

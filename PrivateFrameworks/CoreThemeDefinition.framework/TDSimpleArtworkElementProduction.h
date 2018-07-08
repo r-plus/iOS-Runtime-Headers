@@ -7,6 +7,7 @@
 @property (nonatomic) bool isFlippable;
 @property (nonatomic) bool optOutOfThinning;
 @property (nonatomic) bool preservesVectorRepresentation;
+@property (nonatomic) bool recognitionImage;
 @property (nonatomic, retain) TDTemplateRenderingMode *templateRenderingMode;
 
 - (id)associatedFileModificationDateWithDocument:(id)arg1;

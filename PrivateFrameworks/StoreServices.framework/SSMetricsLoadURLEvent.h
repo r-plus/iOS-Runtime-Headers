@@ -6,6 +6,11 @@
 
 @property (nonatomic, retain) NSString *DNSServers;
 @property (nonatomic, retain) NSString *TIDState;
+@property (nonatomic, retain) NSString *appleTimingApp;
+@property (nonatomic) bool apsRelayAttempted;
+@property (nonatomic) bool apsRelayDidFallback;
+@property (nonatomic) bool apsRelaySucceeded;
+@property (nonatomic) bool cachedResponse;
 @property (nonatomic, retain) NSString *clientCorrelationKey;
 @property (nonatomic, retain) NSString *clientError;
 @property (nonatomic) double connectionEndTime;
@@ -29,6 +34,7 @@
 @property (nonatomic) double requestStartTime;
 @property (nonatomic, retain) NSString *requestURL;
 @property (nonatomic, retain) NSString *resolvedIPAddress;
+@property (nonatomic, retain) NSString *responseDate;
 @property (nonatomic) double responseEndTime;
 @property (nonatomic) unsigned long long responseMessageSize;
 @property (nonatomic) double responseStartTime;
@@ -51,6 +57,11 @@
 
 - (id)DNSServers;
 - (id)TIDState;
+- (id)appleTimingApp;
+- (bool)apsRelayAttempted;
+- (bool)apsRelayDidFallback;
+- (bool)apsRelaySucceeded;
+- (bool)cachedResponse;
 - (id)clientCorrelationKey;
 - (id)clientError;
 - (double)connectionEndTime;
@@ -76,10 +87,16 @@
 - (double)requestStartTime;
 - (id)requestURL;
 - (id)resolvedIPAddress;
+- (id)responseDate;
 - (double)responseEndTime;
 - (unsigned long long)responseMessageSize;
 - (double)responseStartTime;
 - (double)secureConnectionStartTime;
+- (void)setAppleTimingApp:(id)arg1;
+- (void)setApsRelayAttempted:(bool)arg1;
+- (void)setApsRelayDidFallback:(bool)arg1;
+- (void)setApsRelaySucceeded:(bool)arg1;
+- (void)setCachedResponse:(bool)arg1;
 - (void)setClientCorrelationKey:(id)arg1;
 - (void)setClientError:(id)arg1;
 - (void)setConnectionEndTime:(double)arg1;
@@ -104,6 +121,7 @@
 - (void)setRequestStartTime:(double)arg1;
 - (void)setRequestURL:(id)arg1;
 - (void)setResolvedIPAddress:(id)arg1;
+- (void)setResponseDate:(id)arg1;
 - (void)setResponseEndTime:(double)arg1;
 - (void)setResponseMessageSize:(unsigned long long)arg1;
 - (void)setResponseStartTime:(double)arg1;

@@ -2,27 +2,25 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUIClassroomVisibilityArbitrator : NSObject <CRKCourseEnrollmentControllerDelegate> {
-    CRKCourseEnrollmentController * _enrollmentController;
-    bool  _previouslyEnrolled;
+@interface PSUIClassroomVisibilityArbitrator : NSObject {
+    <CRKSettingsUIVisibilityProvider> * _visibilityProvider;
     unsigned long long  _visibilityState;
     id /* block */  _visibilityStateChangeHandler;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
-@property (readonly) Class superclass;
+@property (nonatomic, retain) <CRKSettingsUIVisibilityProvider> *visibilityProvider;
 @property (nonatomic) unsigned long long visibilityState;
 @property (nonatomic, copy) id /* block */ visibilityStateChangeHandler;
 
 - (void).cxx_destruct;
-- (void)enrollmentControllerDidUpdateCourses:(id)arg1;
-- (void)enrollmentControllerDidUpdateInvitations:(id)arg1;
+- (void)connectToDaemon;
 - (id)init;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)reloadVisibilityState;
+- (void)setVisibilityProvider:(id)arg1;
 - (void)setVisibilityState:(unsigned long long)arg1;
 - (void)setVisibilityStateChangeHandler:(id /* block */)arg1;
+- (id)visibilityProvider;
 - (unsigned long long)visibilityState;
 - (id /* block */)visibilityStateChangeHandler;
 

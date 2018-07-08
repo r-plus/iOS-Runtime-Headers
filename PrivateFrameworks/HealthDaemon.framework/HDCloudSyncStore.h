@@ -27,6 +27,7 @@
 @property (nonatomic, readonly) HDSharingPredicate *sharingPredicate;
 @property (nonatomic, readonly, copy) NSUUID *storeIdentifier;
 @property (readonly) Class superclass;
+@property (readonly) long long syncStoreType;
 @property (nonatomic, retain) CKRecordZoneID *zoneID;
 
 + (void)samplesDeletedInProfile:(id)arg1 byUser:(bool)arg2;
@@ -40,6 +41,7 @@
 - (bool)clearAllSyncAnchorsWithError:(id*)arg1;
 - (id)containerIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)databaseIdentifier;
 - (id)description;
 - (bool)enforceSyncEntityOrdering;
 - (long long)expectedSequenceNumberForSyncEntityClass:(Class)arg1;
@@ -68,7 +70,7 @@
 - (id)syncStoreDefaultSourceBundleIdentifier;
 - (id)syncStoreForEpoch:(long long)arg1;
 - (id)syncStoreIdentifier;
-- (id)syncStoreTypeIdentifier;
+- (long long)syncStoreType;
 - (id)zoneID;
 
 @end

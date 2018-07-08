@@ -15,7 +15,7 @@
         struct CGVector {} *__begin_; 
         struct CGVector {} *__end_; 
         struct __compressed_pair<CGVector *, std::__1::allocator<CGVector> > { 
-            struct CGVector {} *__first_; 
+            struct CGVector {} *__value_; 
         } __end_cap_; 
     }  _localStrokeWritingOrientations;
     NSArray * _writingDirectionSortedStrokeIdentifiers;

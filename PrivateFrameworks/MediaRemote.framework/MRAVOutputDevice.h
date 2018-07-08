@@ -6,9 +6,11 @@
     NSData * _MACAddress;
     float  _batteryLevel;
     bool  _canAccessRemoteAssets;
+    bool  _canRelayCommunicationChannel;
+    bool  _deviceGroupable;
     unsigned int  _deviceSubtype;
     unsigned int  _deviceType;
-    void * _endpoint;
+    MRAVEndpoint * _endpoint;
     NSString * _groupID;
     bool  _groupLeader;
     bool  _groupable;
@@ -32,10 +34,12 @@
 @property (nonatomic, readonly) NSData *MACAddress;
 @property (nonatomic, readonly) float batteryLevel;
 @property (nonatomic, readonly) bool canAccessRemoteAssets;
+@property (nonatomic, readonly) bool canRelayCommunicationChannel;
 @property (nonatomic, readonly) _MRAVOutputDeviceDescriptorProtobuf *descriptor;
+@property (getter=isDeviceGroupable, nonatomic, readonly) bool deviceGroupable;
 @property (nonatomic, readonly) unsigned int deviceSubtype;
 @property (nonatomic, readonly) unsigned int deviceType;
-@property (nonatomic) void*endpoint;
+@property (nonatomic) MRAVEndpoint *endpoint;
 @property (nonatomic, readonly) NSString *groupID;
 @property (getter=isGroupLeader, nonatomic, readonly) bool groupLeader;
 @property (getter=isGroupable, nonatomic, readonly) bool groupable;
@@ -57,16 +61,20 @@
 
 + (id)localDeviceUID;
 
+- (void).cxx_destruct;
 - (id)MACAddress;
 - (float)batteryLevel;
 - (bool)canAccessRemoteAssets;
+- (bool)canRelayCommunicationChannel;
 - (id)description;
 - (id)descriptor;
 - (unsigned int)deviceSubtype;
 - (unsigned int)deviceType;
-- (void*)endpoint;
+- (id)endpoint;
 - (id)groupID;
 - (bool)hasBatteryLevel;
+- (unsigned long long)hash;
+- (bool)isDeviceGroupable;
 - (bool)isEqual:(id)arg1;
 - (bool)isGroupLeader;
 - (bool)isGroupable;
@@ -80,7 +88,7 @@
 - (id)name;
 - (id)playingPairedDeviceName;
 - (bool)requiresAuthorization;
-- (void)setEndpoint:(void*)arg1;
+- (void)setEndpoint:(id)arg1;
 - (void)setVolume:(float)arg1;
 - (id)sourceInfo;
 - (bool)supportsExternalScreen;

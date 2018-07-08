@@ -20,6 +20,7 @@
     NSString * _statusText;
     bool  _sticker;
     NSAttributedString * _text;
+    NSDate * _time;
     bool  _update;
     NSURL * _url;
     NSDictionary * _userInfo;
@@ -43,6 +44,7 @@
 @property (nonatomic, retain) NSString *statusText;
 @property (getter=isSticker, nonatomic) bool sticker;
 @property (nonatomic, retain) NSAttributedString *text;
+@property (nonatomic, retain) NSDate *time;
 @property (getter=isUpdate, nonatomic) bool update;
 @property (nonatomic, retain) NSURL *url;
 @property (nonatomic, retain) NSDictionary *userInfo;
@@ -93,6 +95,7 @@
 - (void)setStatusText:(id)arg1;
 - (void)setSticker:(bool)arg1;
 - (void)setText:(id)arg1;
+- (void)setTime:(id)arg1;
 - (void)setUpdate:(bool)arg1;
 - (void)setUrl:(id)arg1;
 - (void)setUserInfo:(id)arg1;
@@ -100,6 +103,7 @@
 - (bool)shouldHideAttachments;
 - (id)statusText;
 - (id)text;
+- (id)time;
 - (id)url;
 - (id)userInfo;
 

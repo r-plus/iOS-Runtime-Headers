@@ -8,7 +8,7 @@
         struct pair<VKBuildingHeightMap, unsigned long long> {} *__begin_; 
         struct pair<VKBuildingHeightMap, unsigned long long> {} *__end_; 
         struct __compressed_pair<std::__1::pair<VKBuildingHeightMap, unsigned long long> *, std::__1::allocator<std::__1::pair<VKBuildingHeightMap, unsigned long long> > > { 
-            struct pair<VKBuildingHeightMap, unsigned long long> {} *__first_; 
+            struct pair<VKBuildingHeightMap, unsigned long long> {} *__value_; 
         } __end_cap_; 
     }  _heights;
     GEOVectorTile * _modelTile;
@@ -16,7 +16,7 @@
         struct shared_ptr<md::ObjectGroup> {} *__begin_; 
         struct shared_ptr<md::ObjectGroup> {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<md::ObjectGroup> *, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > { 
-            struct shared_ptr<md::ObjectGroup> {} *__first_; 
+            struct shared_ptr<md::ObjectGroup> {} *__value_; 
         } __end_cap_; 
     }  _objectGroups;
     VKSharedResources * _sharedResources;

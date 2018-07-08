@@ -25,5 +25,6 @@
 - (void)setText:(NSString *)arg1 subject:(NSString *)arg2 addresses:(NSArray *)arg3;
 - (void)setTextEntryContentsVisible:(bool)arg1;
 - (void)setUICustomizationData:(NSData *)arg1;
+- (void)setUTIs:(NSArray *)arg1;
 
 @end

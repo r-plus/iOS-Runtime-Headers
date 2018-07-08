@@ -7,17 +7,17 @@
     unsigned long long  _name;
     MRTransactionPacketizer * _packetizer;
     NSMutableArray * _packets;
-    void * _playerPath;
+    _MRNowPlayingPlayerPathProtobuf * _playerPath;
 }
 
 @property (nonatomic, readonly) unsigned long long name;
-@property (nonatomic, readonly) void*playerPath;
+@property (nonatomic, readonly) _MRNowPlayingPlayerPathProtobuf *playerPath;
 
+- (void).cxx_destruct;
 - (void)_begin;
 - (void)_processMessage:(id)arg1;
-- (void)dealloc;
-- (id)initWithName:(unsigned long long)arg1 playerPath:(void*)arg2 packets:(id)arg3 delegate:(id)arg4;
+- (id)initWithName:(unsigned long long)arg1 playerPath:(id)arg2 packets:(id)arg3 delegate:(id)arg4;
 - (unsigned long long)name;
-- (void*)playerPath;
+- (id)playerPath;
 
 @end

@@ -10,6 +10,7 @@
     unsigned long long  _nextDeadline;
     NSObject<OS_dispatch_queue> * _queue;
     AWSampleLogger * _sampleLogger;
+    unsigned long long  _samplingSuppressedMask;
     id /* block */  _stateChangedCallback;
 }
 
@@ -18,6 +19,7 @@
 @property (nonatomic) unsigned long long lastPositiveDetectTime;
 @property (nonatomic) unsigned long long lastTriggerTime;
 @property (nonatomic, retain) AWSampleLogger *sampleLogger;
+@property (nonatomic) unsigned long long samplingSuppressedMask;
 @property (copy) id /* block */ stateChangedCallback;
 
 - (void).cxx_destruct;
@@ -29,11 +31,14 @@
 - (unsigned long long)lastPositiveDetectTime;
 - (unsigned long long)lastTriggerTime;
 - (id)sampleLogger;
+- (unsigned long long)samplingSuppressedMask;
 - (void)setCurrentState:(int)arg1;
 - (void)setLastPollTimeoutTime:(unsigned long long)arg1;
 - (void)setLastPositiveDetectTime:(unsigned long long)arg1;
 - (void)setLastTriggerTime:(unsigned long long)arg1;
 - (void)setSampleLogger:(id)arg1;
+- (void)setSamplingSuppressedMask:(unsigned long long)arg1;
+- (void)setSmartCoverClosed:(bool)arg1;
 - (void)setStateChangedCallback:(id /* block */)arg1;
 - (void)setUnitTestMode;
 - (void)shouldSample:(bool)arg1 withDeadline:(unsigned long long)arg2;

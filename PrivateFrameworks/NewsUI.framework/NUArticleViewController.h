@@ -22,7 +22,6 @@
     <NULoadingDelegate> * _loadingDelegate;
     NUMultiDelegate * _multiScrollViewDelegate;
     SXScrollViewController * _scrollViewController;
-    SXVideoPlayerViewControllerManager * _videoPlayerViewControllerManager;
 }
 
 @property (nonatomic, readonly) NUArticleAdManager *adManager;
@@ -43,7 +42,6 @@
 @property (nonatomic, readonly) NUMultiDelegate *multiScrollViewDelegate;
 @property (nonatomic, readonly) SXScrollViewController *scrollViewController;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) SXVideoPlayerViewControllerManager *videoPlayerViewControllerManager;
 
 - (void).cxx_destruct;
 - (id)adManager;
@@ -84,11 +82,9 @@
 - (void)setArticleIsPresentingFullscreen:(bool)arg1;
 - (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setLoadingDelegate:(id)arg1;
-- (void)setVideoPlayerViewControllerManager:(id)arg1;
 - (double)toolBarHeightForScrollViewController:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updatePresentationAttributes;
-- (id)videoPlayerViewControllerManager;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

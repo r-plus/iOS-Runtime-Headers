@@ -8,10 +8,10 @@
     }  _actionSheetAssistant;
     struct unique_ptr<WebKit::ApplicationStateTracker, std::__1::default_delete<WebKit::ApplicationStateTracker> > { 
         struct __compressed_pair<WebKit::ApplicationStateTracker *, std::__1::default_delete<WebKit::ApplicationStateTracker> > { 
-            struct ApplicationStateTracker {} *__first_; 
+            struct ApplicationStateTracker {} *__value_; 
         } __ptr_; 
     }  _applicationStateTracker;
-    struct Vector<WTF::RetainPtr<UIPDFSelection>, 0, WTF::CrashOnOverflow, 16> { 
+    struct Vector<WTF::RetainPtr<UIPDFSelection>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { 
         struct RetainPtr<UIPDFSelection> {} *m_buffer; 
         unsigned int m_capacity; 
         unsigned int m_size; 
@@ -61,7 +61,7 @@
     struct RetainPtr<WKPDFPageNumberIndicator> { 
         void *m_ptr; 
     }  _pageNumberIndicator;
-    struct Vector<PDFPageInfo, 0, WTF::CrashOnOverflow, 16> { 
+    struct Vector<PDFPageInfo, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { 
         struct { /* ? */ } *m_buffer; 
         unsigned int m_capacity; 
         unsigned int m_size; 
@@ -96,7 +96,7 @@
         } adjustedPointForNodeRespondingToClickEvents; 
         struct URL { 
             struct String { 
-                struct RefPtr<WTF::StringImpl> { 
+                struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_string; 
@@ -115,7 +115,7 @@
         } url; 
         struct URL { 
             struct String { 
-                struct RefPtr<WTF::StringImpl> { 
+                struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_string; 
@@ -133,12 +133,12 @@
             unsigned int m_queryEnd; 
         } imageURL; 
         struct String { 
-            struct RefPtr<WTF::StringImpl> { 
+            struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
                 struct StringImpl {} *m_ptr; 
             } m_impl; 
         } title; 
         struct String { 
-            struct RefPtr<WTF::StringImpl> { 
+            struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
                 struct StringImpl {} *m_ptr; 
             } m_impl; 
         } idAttribute; 
@@ -152,16 +152,16 @@
                 int m_height; 
             } m_size; 
         } bounds; 
-        struct RefPtr<WebKit::ShareableBitmap> { 
+        struct RefPtr<WebKit::ShareableBitmap, WTF::DumbPtrTraits<WebKit::ShareableBitmap> > { 
             struct ShareableBitmap {} *m_ptr; 
         } image; 
         struct String { 
-            struct RefPtr<WTF::StringImpl> { 
+            struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
                 struct StringImpl {} *m_ptr; 
             } m_impl; 
         } textBefore; 
         struct String { 
-            struct RefPtr<WTF::StringImpl> { 
+            struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
                 struct StringImpl {} *m_ptr; 
             } m_impl; 
         } textAfter; 
@@ -196,20 +196,20 @@
                     float m_height; 
                 } m_size; 
             } contentImageWithoutSelectionRectInRootViewCoordinates; 
-            struct Vector<WebCore::FloatRect, 0, WTF::CrashOnOverflow, 16> { 
+            struct Vector<WebCore::FloatRect, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { 
                 struct FloatRect {} *m_buffer; 
                 unsigned int m_capacity; 
                 unsigned int m_size; 
                 unsigned int m_mask; 
             } textRectsInBoundingRectCoordinates; 
             float contentImageScaleFactor; 
-            struct RefPtr<WebCore::Image> { 
+            struct RefPtr<WebCore::Image, WTF::DumbPtrTraits<WebCore::Image> > { 
                 struct Image {} *m_ptr; 
             } contentImageWithHighlight; 
-            struct RefPtr<WebCore::Image> { 
+            struct RefPtr<WebCore::Image, WTF::DumbPtrTraits<WebCore::Image> > { 
                 struct Image {} *m_ptr; 
             } contentImageWithoutSelection; 
-            struct RefPtr<WebCore::Image> { 
+            struct RefPtr<WebCore::Image, WTF::DumbPtrTraits<WebCore::Image> > { 
                 struct Image {} *m_ptr; 
             } contentImage; 
             struct Color { 
@@ -222,7 +222,7 @@
             unsigned short options; 
         } linkIndicator; 
         struct String { 
-            struct RefPtr<WTF::StringImpl> { 
+            struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
                 struct StringImpl {} *m_ptr; 
             } m_impl; 
         } dataDetectorIdentifier; 
@@ -283,7 +283,7 @@
 - (void)didMoveToWindow;
 - (bool)isBackground;
 - (struct CGPDFDocument { }*)pdfDocument;
-- (struct optional<WebKit::InteractionInformationAtPosition> { bool x1; union storage_t<WebKit::InteractionInformationAtPosition> { unsigned char x_2_1_1; struct InteractionInformationAtPosition { struct InteractionInformationRequest { struct IntPoint { int x_1_4_1; int x_1_4_2; } x_1_3_1; bool x_1_3_2; bool x_1_3_3; } x_2_2_1; bool x_2_2_2; bool x_2_2_3; bool x_2_2_4; bool x_2_2_5; bool x_2_2_6; bool x_2_2_7; bool x_2_2_8; bool x_2_2_9; bool x_2_2_10; bool x_2_2_11; bool x_2_2_12; struct FloatPoint { float x_13_3_1; float x_13_3_2; } x_2_2_13; struct URL { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_5_1; } x_1_4_1; } x_14_3_1; unsigned int x_14_3_2 : 1; unsigned int x_14_3_3 : 1; unsigned int x_14_3_4 : 1; unsigned int x_14_3_5; unsigned int x_14_3_6; unsigned int x_14_3_7; unsigned int x_14_3_8; unsigned int x_14_3_9; unsigned int x_14_3_10; unsigned int x_14_3_11; unsigned int x_14_3_12; unsigned int x_14_3_13; } x_2_2_14; struct URL { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_5_1; } x_1_4_1; } x_15_3_1; unsigned int x_15_3_2 : 1; unsigned int x_15_3_3 : 1; unsigned int x_15_3_4 : 1; unsigned int x_15_3_5; unsigned int x_15_3_6; unsigned int x_15_3_7; unsigned int x_15_3_8; unsigned int x_15_3_9; unsigned int x_15_3_10; unsigned int x_15_3_11; unsigned int x_15_3_12; unsigned int x_15_3_13; } x_2_2_15; } x_2_1_2; } x2; })positionInformationForActionSheetAssistant:(id)arg1;
+- (struct optional<WebKit::InteractionInformationAtPosition> { bool x1; union storage_t<WebKit::InteractionInformationAtPosition> { unsigned char x_2_1_1; struct InteractionInformationAtPosition { struct InteractionInformationRequest { struct IntPoint { int x_1_4_1; int x_1_4_2; } x_1_3_1; bool x_1_3_2; bool x_1_3_3; } x_2_2_1; bool x_2_2_2; bool x_2_2_3; bool x_2_2_4; bool x_2_2_5; bool x_2_2_6; bool x_2_2_7; bool x_2_2_8; bool x_2_2_9; bool x_2_2_10; bool x_2_2_11; bool x_2_2_12; struct FloatPoint { float x_13_3_1; float x_13_3_2; } x_2_2_13; struct URL { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_5_1; } x_1_4_1; } x_14_3_1; unsigned int x_14_3_2 : 1; unsigned int x_14_3_3 : 1; unsigned int x_14_3_4 : 1; unsigned int x_14_3_5; unsigned int x_14_3_6; unsigned int x_14_3_7; unsigned int x_14_3_8; unsigned int x_14_3_9; unsigned int x_14_3_10; unsigned int x_14_3_11; unsigned int x_14_3_12; unsigned int x_14_3_13; } x_2_2_14; struct URL { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_5_1; } x_1_4_1; } x_15_3_1; unsigned int x_15_3_2 : 1; unsigned int x_15_3_3 : 1; unsigned int x_15_3_4 : 1; unsigned int x_15_3_5; unsigned int x_15_3_6; unsigned int x_15_3_7; unsigned int x_15_3_8; unsigned int x_15_3_9; unsigned int x_15_3_10; unsigned int x_15_3_11; unsigned int x_15_3_12; unsigned int x_15_3_13; } x_2_2_15; } x_2_1_2; } x2; })positionInformationForActionSheetAssistant:(id)arg1;
 - (void)resetZoom:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (id)suggestedFilename;

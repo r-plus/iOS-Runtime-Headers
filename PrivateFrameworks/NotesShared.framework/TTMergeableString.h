@@ -11,7 +11,7 @@
         struct TopoSubstring {} **__begin_; 
         struct TopoSubstring {} **__end_; 
         struct __compressed_pair<TopoSubstring **, std::__1::allocator<TopoSubstring *> > { 
-            struct TopoSubstring {} **__first_; 
+            struct TopoSubstring {} **__value_; 
         } __end_cap_; 
     }  _endNodes;
     bool  _hasLocalChanges;
@@ -20,7 +20,7 @@
         struct TopoSubstring {} **__begin_; 
         struct TopoSubstring {} **__end_; 
         struct __compressed_pair<TopoSubstring **, std::__1::allocator<TopoSubstring *> > { 
-            struct TopoSubstring {} **__first_; 
+            struct TopoSubstring {} **__value_; 
         } __end_cap_; 
     }  _orderedSubstrings;
     unsigned long long  _replicaStyleClock;
@@ -30,7 +30,7 @@
         struct TopoSubstring {} **__begin_; 
         struct TopoSubstring {} **__end_; 
         struct __compressed_pair<TopoSubstring **, std::__1::allocator<TopoSubstring *> > { 
-            struct TopoSubstring {} **__first_; 
+            struct TopoSubstring {} **__value_; 
         } __end_cap_; 
     }  _startNodes;
     TTVectorMultiTimestamp * _timestamp;

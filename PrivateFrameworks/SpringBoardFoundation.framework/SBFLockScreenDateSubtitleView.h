@@ -4,6 +4,8 @@
 
 @interface SBFLockScreenDateSubtitleView : UIView <SBFScreenFadeReplicatable> {
     UIView<SBFScreenFadeReplicatable> * _accessoryView;
+    UIView<SBFScreenFadeReplicatable> * _backgroundView;
+    double  _customInterItemSpacing;
     SBUILegibilityLabel * _label;
     _UILegibilitySettings * _legibilitySettings;
     NSHashTable * _replicatedViews;
@@ -11,8 +13,10 @@
 }
 
 @property (nonatomic, retain) UIView<SBFScreenFadeReplicatable> *accessoryView;
+@property (nonatomic, retain) UIView<SBFScreenFadeReplicatable> *backgroundView;
 @property (nonatomic, readonly) double baselineOffsetFromBottom;
 @property (nonatomic, readonly) double baselineOffsetFromOrigin;
+@property (nonatomic) double customInterItemSpacing;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIFont *font;
@@ -31,8 +35,11 @@
 - (void)_updateForCurrentSizeCategory;
 - (id)accessoryView;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })accessoryViewFrame;
+- (id)backgroundView;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })backgroundViewFrame;
 - (double)baselineOffsetFromBottom;
 - (double)baselineOffsetFromOrigin;
+- (double)customInterItemSpacing;
 - (void)dealloc;
 - (id)font;
 - (id)init;
@@ -42,6 +49,8 @@
 - (id)legibilitySettings;
 - (id)replicate;
 - (void)setAccessoryView:(id)arg1;
+- (void)setBackgroundView:(id)arg1;
+- (void)setCustomInterItemSpacing:(double)arg1;
 - (void)setFont:(id)arg1;
 - (void)setLegibilitySettings:(id)arg1;
 - (void)setStrength:(double)arg1;

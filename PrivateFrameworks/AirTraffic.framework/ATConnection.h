@@ -20,6 +20,7 @@
 - (void).cxx_destruct;
 - (void)_handleDisconnect;
 - (void)_sendStatusRegistration;
+- (void)_sendStatusRegistrationWithCompletion:(id /* block */)arg1;
 - (void)cancelSync;
 - (void)clearSyncData;
 - (void)connection:(id)arg1 updatedAssets:(id)arg2;

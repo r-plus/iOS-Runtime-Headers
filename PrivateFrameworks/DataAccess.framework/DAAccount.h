@@ -12,7 +12,7 @@
     bool  _hasInitted;
     bool  _isFetchingAutomatically;
     bool  _isValidating;
-    unsigned long long  _lastQueryStartedTime;
+    NSDate * _lastQueryStartedTime;
     NSMutableArray * _pendingQueries;
     NSObject<OS_dispatch_queue> * _pendingQueryQueue;
     bool  _shouldFailAllTasks;
@@ -43,7 +43,7 @@
 @property (nonatomic, readonly) bool isChildAccount;
 @property (nonatomic) bool isValidating;
 @property (nonatomic, readonly) int keychainAccessibilityType;
-@property (nonatomic) unsigned long long lastQueryStartedTime;
+@property (nonatomic, retain) NSDate *lastQueryStartedTime;
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, retain) NSMutableArray *pendingQueries;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *pendingQueryQueue;
@@ -175,7 +175,7 @@
 - (bool)isSubscribedCalendarAccount;
 - (bool)isValidating;
 - (int)keychainAccessibilityType;
-- (unsigned long long)lastQueryStartedTime;
+- (id)lastQueryStartedTime;
 - (id)localizedIdenticalAccountFailureMessage;
 - (id)localizedInvalidPasswordMessage;
 - (bool)monitorFolderWithID:(id)arg1;
@@ -241,7 +241,7 @@
 - (void)setHost:(id)arg1;
 - (void)setIdentityCertificatePersistentID:(id)arg1 managedByProfile:(bool)arg2;
 - (void)setIsValidating:(bool)arg1;
-- (void)setLastQueryStartedTime:(unsigned long long)arg1;
+- (void)setLastQueryStartedTime:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)setPassword:(id)arg1;
 - (void)setPendingQueries:(id)arg1;

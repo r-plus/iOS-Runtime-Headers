@@ -15,6 +15,7 @@
 @property (nonatomic) bool verified;
 
 + (id)secureCodedPropertyKeys;
++ (bool)supportsSecureCoding;
 
 - (id)address;
 - (id)addressPrefix;

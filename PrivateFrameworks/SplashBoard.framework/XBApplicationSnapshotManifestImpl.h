@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SplashBoard.framework/SplashBoard
  */
 
-@interface XBApplicationSnapshotManifestImpl : XBApplicationSnapshotManifest <BSDescriptionProviding, NSCoding> {
+@interface XBApplicationSnapshotManifestImpl : XBApplicationSnapshotManifest <BSDescriptionProviding, NSSecureCoding> {
     bool  _archiveSchedulingQueue_dirty;
     bool  _archiveSchedulingQueue_scheduled;
     NSMutableArray * _archiveSchedulingQueue_synchronizeCompletions;
@@ -30,7 +30,10 @@
 + (void)_queue_noteManifestInvalidated:(id)arg1;
 + (id)_snapshotPredicateForRequest:(id)arg1;
 + (id)acquireManifestForContainerIdentity:(id)arg1 store:(id)arg2 creatingIfNecessary:(bool)arg3;
++ (void)initialize;
++ (bool)isUnderMemoryPressure;
 + (void)relinquishManifest:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_allSnapshotGroups;
@@ -40,6 +43,7 @@
 - (id)_generatableSnapshotForGroupID:(id)arg1 generationContext:(id)arg2;
 - (bool)_imageAccessQueue_saveData:(id)arg1 forSnapshot:(id)arg2;
 - (id)_initWithContainerIdentity:(id)arg1;
+- (bool)_invalidate;
 - (void)_noteDirtied;
 - (void)_queue_accessSnapshotsWithBlock:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (void)_queue_checkClientCount;
@@ -48,6 +52,7 @@
 - (void)_queue_deleteSnapshots:(id)arg1;
 - (void)_queue_doArchiveWithCompletions:(id)arg1;
 - (void)_queue_gatherPaths:(id)arg1 forSnapshot:(id)arg2;
+- (void)_queue_handleMemoryPressure;
 - (void)_queue_incrementClientCount;
 - (void)_queue_reallyCheckClientCount;
 - (void)_queue_reapExpiredAndInvalidSnapshots;
@@ -56,6 +61,7 @@
 - (id)_queue_snapshotsMatchingPredicate:(id)arg1;
 - (bool)_queue_validateWithContainerIdentity:(id)arg1;
 - (void)_scheduleArchivingIfNecessaryWithCompletion:(id /* block */)arg1;
+- (id)_snapshotGroupsByID;
 - (void)_synchronizeDataStoreWithCompletion:(id /* block */)arg1;
 - (void)beginSnapshotAccessTransaction:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (id)bundleIdentifier;

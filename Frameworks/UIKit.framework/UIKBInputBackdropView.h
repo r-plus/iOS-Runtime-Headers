@@ -40,8 +40,6 @@
 @property (nonatomic, retain) UIKBBackdropView *inputBackdropRightView;
 @property (readonly) long long style;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 + (bool)_retroactivelyRequiresConstraintBasedLayout;
 
 - (void)_beginSplitTransitionIfNeeded:(double)arg1 gapWidth:(double)arg2;
@@ -53,9 +51,6 @@
 - (void)_setProgress:(double)arg1 withFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (void)_setRenderConfig:(id)arg1;
 - (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 primaryBackdrop:(bool)arg2;
 - (id)inputBackdropFullView;
 - (id)inputBackdropLeftView;

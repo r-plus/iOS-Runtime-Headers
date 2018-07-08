@@ -5,12 +5,12 @@
 @interface _VKPOIIconArtwork : VKIconArtwork {
     struct unique_ptr<md::IconImage::BalloonMetrics, std::__1::default_delete<md::IconImage::BalloonMetrics> > { 
         struct __compressed_pair<md::IconImage::BalloonMetrics *, std::__1::default_delete<md::IconImage::BalloonMetrics> > { 
-            struct BalloonMetrics {} *__first_; 
+            struct BalloonMetrics {} *__value_; 
         } __ptr_; 
     }  _balloonMetrics;
     struct unique_ptr<md::IconImage::CircleMetrics, std::__1::default_delete<md::IconImage::CircleMetrics> > { 
         struct __compressed_pair<md::IconImage::CircleMetrics *, std::__1::default_delete<md::IconImage::CircleMetrics> > { 
-            struct CircleMetrics {} *__first_; 
+            struct CircleMetrics {} *__value_; 
         } __ptr_; 
     }  _circleMetrics;
     struct _retain_ptr<CGImage *, geo::_retain_cf<CGImage *>, geo::_release_cf, geo::_hash_cf, geo::_equal_cf> { 

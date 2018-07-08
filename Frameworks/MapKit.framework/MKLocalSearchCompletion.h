@@ -4,6 +4,8 @@
 
 @interface MKLocalSearchCompletion : NSObject {
     bool  _alreadySentFeedback;
+    MKLocalSearchCompletion * _directionIntentDestination;
+    MKLocalSearchCompletion * _directionIntentOrigin;
     <GEOCompletionItem> * _item;
     NSString * _localizedSectionHeader;
     MKMapItem * _mapItem;
@@ -14,10 +16,17 @@
 @property (getter=_alreadySentFeedback, nonatomic, readonly) bool alreadySentFeedback;
 @property (nonatomic, readonly) GEOSearchCategory *category;
 @property (nonatomic, readonly) GEOResolvedItem *clientResolved;
+@property (nonatomic, readonly) GEODirectionIntent *directionIntent;
+@property (nonatomic, retain) MKLocalSearchCompletion *directionIntentDestination;
+@property (nonatomic, retain) MKLocalSearchCompletion *directionIntentOrigin;
+@property (getter=_disambiguationRadiusMeters, nonatomic, readonly) float disambiguationRadiusMeters;
 @property (nonatomic, readonly) NSArray *displayLines;
 @property (nonatomic, readonly) <GEOCompletionItem> *geoCompletionItem;
+@property (getter=_hasDisambiguationRadiusMeters, nonatomic, readonly) bool hasDisambiguationRadiusMeters;
 @property (nonatomic, copy) NSString *localizedSectionHeader;
 @property (nonatomic, readonly) MKMapItem *mapItem;
+@property (getter=_placeType, nonatomic, readonly) int placeType;
+@property (nonatomic, readonly) GEORetainedSearchMetadata *retainedSearchMetadata;
 @property (nonatomic, copy) NSString *sourceID;
 @property (nonatomic, readonly) NSString *subtitle;
 @property (nonatomic, readonly) NSArray *subtitleHighlightRanges;
@@ -27,12 +36,18 @@
 
 - (void).cxx_destruct;
 - (bool)_alreadySentFeedback;
+- (float)_disambiguationRadiusMeters;
+- (bool)_hasDisambiguationRadiusMeters;
+- (int)_placeType;
 - (long long)_type;
 - (id)calloutTitle;
 - (id)category;
 - (id)clientResolved;
 - (id)copyStorage;
 - (id)description;
+- (id)directionIntent;
+- (id)directionIntentDestination;
+- (id)directionIntentOrigin;
 - (id)displayLines;
 - (id)geoCompletionItem;
 - (bool)getCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; }*)arg1;
@@ -45,7 +60,10 @@
 - (id)localizedSectionHeader;
 - (id)mapItem;
 - (id)queryLine;
+- (id)retainedSearchMetadata;
 - (void)sendFeedback;
+- (void)setDirectionIntentDestination:(id)arg1;
+- (void)setDirectionIntentOrigin:(id)arg1;
 - (void)setLocalizedSectionHeader:(id)arg1;
 - (void)setSourceID:(id)arg1;
 - (id)sourceID;

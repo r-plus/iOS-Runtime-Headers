@@ -6,10 +6,12 @@
     id /* block */  _completion;
     HDCloudSyncOperationConfiguration * _configuration;
     HDCloudSyncFetchOperationResult * _fetchOperationResult;
+    NSUUID * _operationIdentifier;
     NSProgress * _progress;
     HDCloudSyncStoreRecord * _pushStoreRecord;
     NSObject<OS_dispatch_queue> * _queue;
     bool  _queue_hasStarted;
+    NSDate * _startTime;
 }
 
 @property (readonly, copy) NSString *debugDescription;

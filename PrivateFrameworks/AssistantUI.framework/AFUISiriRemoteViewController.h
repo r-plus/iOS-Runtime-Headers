@@ -61,7 +61,7 @@
 - (void)serviceOpenURL:(id)arg1 delaySessionEndForTTS:(bool)arg2 replyHandler:(id /* block */)arg3;
 - (void)servicePresentationDidChangePeekMode:(unsigned long long)arg1;
 - (void)serviceRequestsActivationSourceWithReplyHandler:(id /* block */)arg1;
-- (void)serviceRequestsDismissal:(bool)arg1;
+- (void)serviceRequestsDismissalWithDelayForTTS:(bool)arg1 userInfo:(id)arg2;
 - (void)serviceStartGuidedAccess;
 - (void)serviceStartRequestWithOptions:(id)arg1;
 - (void)serviceUserRelevantEventDidOccur;

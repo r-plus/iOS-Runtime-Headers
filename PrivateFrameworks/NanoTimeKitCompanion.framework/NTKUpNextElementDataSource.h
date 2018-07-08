@@ -3,6 +3,7 @@
  */
 
 @interface NTKUpNextElementDataSource : NSObject {
+    bool  _allowsLocationUse;
     <NTKUpNextElementDataSourceDelegate> * _delegate;
     NSString * _logHeader;
     bool  _running;
@@ -10,6 +11,7 @@
     bool  _unlockedSinceBoot;
 }
 
+@property (nonatomic) bool allowsLocationUse;
 @property (nonatomic) <NTKUpNextElementDataSourceDelegate> *delegate;
 @property (nonatomic, readonly) NSString *logHeader;
 @property (getter=isRunning, nonatomic, readonly) bool running;
@@ -27,6 +29,7 @@
 + (bool)wantsReloadForSignificantTimeChange;
 
 - (void).cxx_destruct;
+- (bool)allowsLocationUse;
 - (id)complicationDescriptor;
 - (id)delegate;
 - (void)elementWithIdentifierDidBecomeHidden:(id)arg1;
@@ -39,6 +42,7 @@
 - (id)logHeader;
 - (void)pause;
 - (void)resume;
+- (void)setAllowsLocationUse:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setRunning:(bool)arg1;
 - (void)setState:(unsigned long long)arg1;

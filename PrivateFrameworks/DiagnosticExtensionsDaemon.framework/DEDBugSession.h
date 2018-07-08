@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/DiagnosticExtensionsDaemon.framework/DiagnosticExtensionsDaemon
  */
 
-@interface DEDBugSession : NSObject <NSSecureCoding> {
-    <DEDFinisher> * __finisher;
+@interface DEDBugSession : NSObject <DEDSecureArchiving, NSSecureCoding> {
+    <DEDFinisher><DEDSecureArchiving> * __finisher;
     NSMutableArray * _adoptFilesCompletions;
     NSDictionary * _cachedExtensions;
     <DEDClientProtocol> * _client;
-    DEDBugSessionConfiguration * _config;
+    DEDBugSessionConfiguration<DEDSecureArchiving> * _config;
     NSMutableDictionary * _deCompletions;
     NSMutableArray * _deListCompletions;
     NSString * _deviceIdentifier;
@@ -23,14 +23,17 @@
     <DEDWorkerProtocol> * _worker;
 }
 
-@property (retain) <DEDFinisher> *_finisher;
+@property (retain) <DEDFinisher><DEDSecureArchiving> *_finisher;
 @property (retain) NSMutableArray *adoptFilesCompletions;
 @property (retain) NSDictionary *cachedExtensions;
 @property (retain) <DEDClientProtocol> *client;
-@property (retain) DEDBugSessionConfiguration *config;
+@property (retain) DEDBugSessionConfiguration<DEDSecureArchiving> *config;
 @property (retain) NSMutableDictionary *deCompletions;
 @property (retain) NSMutableArray *deListCompletions;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (retain) NSString *deviceIdentifier;
+@property (readonly) unsigned long long hash;
 @property (retain) NSString *identifier;
 @property (retain) NSObject<OS_os_log> *log;
 @property (retain) NSMutableDictionary *ongoingCompletionHandlers;
@@ -39,9 +42,11 @@
 @property long long priorClientTransportType;
 @property long long priorWorkerTransportType;
 @property (copy) id /* block */ statusCompletionBlock;
+@property (readonly) Class superclass;
 @property (retain) <DEDUploadStatusDelegate> *uploadDelegate;
 @property (retain) <DEDWorkerProtocol> *worker;
 
++ (id)archivedClasses;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;

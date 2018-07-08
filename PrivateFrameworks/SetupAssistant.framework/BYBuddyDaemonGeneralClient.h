@@ -12,6 +12,7 @@
 - (id)backupMetadata;
 - (id)init;
 - (void)observeFinishSetupTriggers;
+- (void)performSilentICDPUpgrade;
 - (bool)setupAssistantNeedsToRun;
 
 @end

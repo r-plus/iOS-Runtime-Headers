@@ -4,7 +4,7 @@
 
 @interface FCPaidSubscriptionGroupEmittingOperation : FCFeedGroupEmittingOperation
 
-@property (nonatomic, retain) FCPaidSubscriptionCursor *cursor;
+@property (nonatomic, retain) FCPaidSubscriptionCursor *fromCursor;
 @property (nonatomic, retain) FCPaidSubscriptionCursor *resultCursor;
 @property (nonatomic, retain) FCPaidSubscriptionCursor *toCursor;
 

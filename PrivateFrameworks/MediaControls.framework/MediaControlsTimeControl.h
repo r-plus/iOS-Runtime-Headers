@@ -75,7 +75,6 @@
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)createDisplayLinkIfNeeded;
-- (void)didMoveToWindow;
 - (struct { double x1; double x2; double x3; double x4; double x5; float x6; float x7; bool x8; bool x9; })durationSnapshot;
 - (id)elapsedTimeLabel;
 - (id)elapsedTrack;

@@ -2,29 +2,26 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXPlaybackTransitionContext : NSObject {
-    UIView * _containerView;
-    unsigned long long  _direction;
-    SXPlaybackCoordinator * _fromPlaybackCoordinator;
-    SXVideoView * _fromVideoView;
-    SXPlaybackCoordinator * _toPlaybackCoordinator;
-    SXVideoView * _toVideoView;
+@interface SXPlaybackTransitionContext : NSObject <SXPlaybackTransitionContext> {
+    id /* block */  _completionBlock;
+    <SXVideo> * _fromVideo;
+    <SXVideo> * _toVideo;
 }
 
-@property (nonatomic, readonly) UIView *containerView;
-@property (nonatomic, readonly) unsigned long long direction;
-@property (nonatomic, readonly) SXPlaybackCoordinator *fromPlaybackCoordinator;
-@property (nonatomic, readonly) SXVideoView *fromVideoView;
-@property (nonatomic, readonly) SXPlaybackCoordinator *toPlaybackCoordinator;
-@property (nonatomic, readonly) SXVideoView *toVideoView;
+@property (nonatomic, copy) id /* block */ completionBlock;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) <SXVideo> *fromVideo;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) <SXVideo> *toVideo;
 
 - (void).cxx_destruct;
-- (id)containerView;
-- (unsigned long long)direction;
-- (id)fromPlaybackCoordinator;
-- (id)fromVideoView;
-- (id)initWithContainerView:(id)arg1 fromVideoView:(id)arg2 toVideoView:(id)arg3 fromPlaybackCoordinator:(id)arg4 toPlaybackCoordinator:(id)arg5 direction:(unsigned long long)arg6;
-- (id)toPlaybackCoordinator;
-- (id)toVideoView;
+- (void)completeTransition:(bool)arg1;
+- (id /* block */)completionBlock;
+- (id)fromVideo;
+- (id)initWithFromVideo:(id)arg1 toVideo:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)setCompletionBlock:(id /* block */)arg1;
+- (id)toVideo;
 
 @end

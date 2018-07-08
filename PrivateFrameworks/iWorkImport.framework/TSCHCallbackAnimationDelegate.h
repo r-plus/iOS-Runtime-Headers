@@ -14,8 +14,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) id target;
 
+- (void).cxx_destruct;
 - (void)animationDidStop:(id)arg1 finished:(bool)arg2;
-- (void)dealloc;
 - (SEL)selector;
 - (void)setSelector:(SEL)arg1;
 - (void)setTarget:(id)arg1;

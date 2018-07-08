@@ -3,12 +3,14 @@
  */
 
 @interface MPStoreItemMetadataResponse : NSObject <NSCopying> {
+    NSArray * _cacheMissItemIdentifiers;
     bool  _finalResponse;
     NSMutableDictionary * _itemIdentifierToStoreItemMetadata;
     NSArray * _lastBatchItemIdentifiers;
     NSArray * _requestItemIdentifiers;
 }
 
+@property (nonatomic, copy) NSArray *cacheMissItemIdentifiers;
 @property (nonatomic, readonly, copy) NSDate *earliestExpirationDate;
 @property (getter=isExpired, nonatomic, readonly) bool expired;
 @property (getter=isFinalResponse, nonatomic) bool finalResponse;
@@ -17,6 +19,7 @@
 @property (nonatomic, copy) NSArray *requestItemIdentifiers;
 
 - (void).cxx_destruct;
+- (id)cacheMissItemIdentifiers;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)earliestExpirationDate;
 - (bool)isExpired;
@@ -24,6 +27,7 @@
 - (id)itemIdentifiers;
 - (id)lastBatchItemIdentifiers;
 - (id)requestItemIdentifiers;
+- (void)setCacheMissItemIdentifiers:(id)arg1;
 - (void)setFinalResponse:(bool)arg1;
 - (void)setLastBatchItemIdentifiers:(id)arg1;
 - (void)setRequestItemIdentifiers:(id)arg1;

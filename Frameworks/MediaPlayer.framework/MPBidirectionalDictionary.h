@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPBidirectionalDictionary : NSObject <NSCoding, NSCopying, NSMutableCopying> {
+@interface MPBidirectionalDictionary : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     NSMutableDictionary * _keyToObjectDictionary;
     NSMutableDictionary * _objectToKeyDictionary;
 }
 
 + (id)bidirectionalDictionary;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)allKeys;

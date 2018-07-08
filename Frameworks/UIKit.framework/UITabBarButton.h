@@ -131,9 +131,6 @@
 - (void)_updateSelectedIndicatorView;
 - (void)_updateToMatchCurrentState;
 - (void)_updateVibrancyEffectView;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)canBecomeFocused;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)initWithImage:(id)arg1 landscapeImage:(id)arg2 selectedImage:(id)arg3 landscapeSelectedImage:(id)arg4 label:(id)arg5 withInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg6 landscapeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg7 tabBar:(id)arg8;
@@ -141,7 +138,6 @@
 - (bool)isSpringLoaded;
 - (void)layoutSubviews;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
-- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)setEnabled:(bool)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -153,5 +149,11 @@
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)tabBar;
 - (void)traitCollectionDidChange:(id)arg1;
+
+// Image: /System/Library/AccessibilityBundles/GAXClient.bundle/GAXClient
+
++ (Class)safeCategoryBaseClass;
+
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 
 @end

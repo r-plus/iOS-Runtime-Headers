@@ -6,5 +6,6 @@
 @required
 
 - (UIViewController<HUPresentationDelegateHost><HUPreloadableViewController> *)createDetailsViewController;
+- (NSString *)secondaryQuickControlPresentationStyle;
 
 @end

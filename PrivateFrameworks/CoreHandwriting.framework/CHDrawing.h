@@ -8,21 +8,21 @@
             struct vector<double, std::__1::allocator<double> > {} *__begin_; 
             struct vector<double, std::__1::allocator<double> > {} *__end_; 
             struct __compressed_pair<std::__1::vector<double, std::__1::allocator<double> > *, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > > { 
-                struct vector<double, std::__1::allocator<double> > {} *__first_; 
+                struct vector<double, std::__1::allocator<double> > {} *__value_; 
             } __end_cap_; 
         } strokeBounds; 
         struct vector<bool, std::__1::allocator<bool> > { 
             unsigned long long *__begin_; 
             unsigned long long __size_; 
             struct __compressed_pair<unsigned long, std::__1::allocator<unsigned long> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __cap_alloc_; 
         } strokeBoundsValidity; 
         struct vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > > { 
             struct vector<double, std::__1::allocator<double> > {} *__begin_; 
             struct vector<double, std::__1::allocator<double> > {} *__end_; 
             struct __compressed_pair<std::__1::vector<double, std::__1::allocator<double> > *, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > > { 
-                struct vector<double, std::__1::allocator<double> > {} *__first_; 
+                struct vector<double, std::__1::allocator<double> > {} *__value_; 
             } __end_cap_; 
         } strokes; 
         unsigned long long currentStrokeIndex; 
@@ -38,7 +38,7 @@
             int *__begin_; 
             int *__end_; 
             struct __compressed_pair<int *, std::__1::allocator<int> > { 
-                int *__first_; 
+                int *__value_; 
             } __end_cap_; 
         } sparseBitmap; 
     }  _drawing;

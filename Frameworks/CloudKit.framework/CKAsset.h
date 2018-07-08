@@ -13,6 +13,7 @@
     NSData * _authRequest;
     NSString * _authToken;
     NSData * _boundaryKey;
+    NSData * _clearAssetKey;
     NSFileHandle * _clientOpenedFileHandle;
     NSURL * _contentBaseURL;
     NSNumber * _deviceID;
@@ -56,6 +57,7 @@
 @property (nonatomic, copy) NSData *authRequest;
 @property (nonatomic, copy) NSString *authToken;
 @property (nonatomic, copy) NSData *boundaryKey;
+@property (nonatomic, retain) NSData *clearAssetKey;
 @property (nonatomic, retain) NSFileHandle *clientOpenedFileHandle;
 @property (nonatomic, retain) NSURL *contentBaseURL;
 @property (readonly, copy) NSString *debugDescription;
@@ -115,6 +117,7 @@
 - (id)authRequest;
 - (id)authToken;
 - (id)boundaryKey;
+- (id)clearAssetKey;
 - (id)clientOpenedFileHandle;
 - (id)contentBaseURL;
 - (id)description;
@@ -155,6 +158,7 @@
 - (void)setAuthRequest:(id)arg1;
 - (void)setAuthToken:(id)arg1;
 - (void)setBoundaryKey:(id)arg1;
+- (void)setClearAssetKey:(id)arg1;
 - (void)setClientOpenedFileHandle:(id)arg1;
 - (void)setContentBaseURL:(id)arg1;
 - (void)setDownloadBaseURL:(id)arg1;

@@ -9,7 +9,7 @@
         struct LabelNavJunctionInfo {} *__begin_; 
         struct LabelNavJunctionInfo {} *__end_; 
         struct __compressed_pair<LabelNavJunctionInfo *, std::__1::allocator<LabelNavJunctionInfo> > { 
-            struct LabelNavJunctionInfo {} *__first_; 
+            struct LabelNavJunctionInfo {} *__value_; 
         } __end_cap_; 
     }  _junctionInfos;
     NSMutableArray * _oppositeCarriagewayJunctions;

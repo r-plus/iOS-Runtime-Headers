@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXVolumeButton : SXMaterialButton <SXVideoControlItem> {
+@interface SXVolumeButton : SXMaterialButton <SXVideoControlItem, SXVolumeObserving> {
     bool  _muted;
-    double  autoAppearanceTimeInterval;
     bool  hideable;
 }
 
-@property (nonatomic, readonly) double autoAppearanceTimeInterval;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool hideable;
 @property (nonatomic) bool muted;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) bool supportsAutoAppearance;
 
 - (id)accessibilityLabel;
-- (double)autoAppearanceTimeInterval;
 - (void)hide:(bool)arg1 withAnimationCoordinator:(id)arg2;
 - (bool)hideable;
 - (id)imageForMuteState:(bool)arg1;
@@ -25,7 +23,9 @@
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (bool)isAccessibilityElement;
 - (bool)isVisible;
+- (void)muteStateChanged:(id)arg1;
 - (bool)muted;
 - (void)setMuted:(bool)arg1;
+- (bool)supportsAutoAppearance;
 
 @end

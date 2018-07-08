@@ -30,6 +30,8 @@
         double width; 
         double height; 
     }  _viewportSize;
+    CIWarpKernel * _warpKernel;
+    unsigned long long  _warpKernelLensType;
     SCNNode * _worldOriginNode;
 }
 
@@ -54,6 +56,7 @@
 - (void)_commonInit;
 - (void)_forceUpdateCamera;
 - (id)_hitTest:(struct CGPoint { double x1; double x2; })arg1 frame:(id)arg2 types:(unsigned long long)arg3;
+- (void)_loadWarpKernalForLensType:(unsigned long long)arg1;
 - (void)_removeAnchors;
 - (void)_renderCapturedPixelBuffer:(struct __CVBuffer { }*)arg1;
 - (void)_renderer:(id)arg1 updateAtTime:(double)arg2;
@@ -64,6 +67,7 @@
 - (void)_updateLighting:(id)arg1;
 - (void)_updateNode:(id)arg1 forAnchor:(id)arg2;
 - (void)_updatePreferredFramesPerSecond;
+- (struct __CVBuffer { }*)_warpPixelBuffer:(struct __CVBuffer { }*)arg1 withCamera:(id)arg2;
 - (long long)actualPreferredFramesPerSecond;
 - (id)anchorForNode:(id)arg1;
 - (bool)automaticallyUpdatesLighting;
@@ -93,6 +97,7 @@
 - (void)session:(id)arg1 didUpdateAnchors:(id)arg2;
 - (void)session:(id)arg1 didUpdateFrame:(id)arg2;
 - (void)sessionInterruptionEnded:(id)arg1;
+- (void)sessionShouldAttemptRelocalization:(id)arg1 completion:(id /* block */)arg2;
 - (void)sessionWasInterrupted:(id)arg1;
 - (void)setActualPreferredFramesPerSecond:(long long)arg1;
 - (void)setAutomaticallyUpdatesLighting:(bool)arg1;

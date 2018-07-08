@@ -17,7 +17,6 @@
     PKPaymentApplication * _devicePrimaryPaymentApplication;
     long long  _effectivePaymentApplicationState;
     unsigned long long  _expressPassTypesMask;
-    PKFelicaTransitAppletState * _felicaTransitAppletState;
     PKColor * _foregroundColor;
     NSArray * _frontFieldBuckets;
     NSNumber * _groupID;
@@ -43,6 +42,7 @@
     NSDate * _relevantDate;
     unsigned long long  _settings;
     long long  _style;
+    PKTransitAppletState * _transitAppletState;
     NSString * _uniqueID;
 }
 
@@ -61,7 +61,6 @@
 @property (nonatomic, readonly) long long effectiveContactlessPaymentApplicationState;
 @property (nonatomic) long long effectivePaymentApplicationState;
 @property (nonatomic) unsigned long long expressPassTypesMask;
-@property (nonatomic, retain) PKFelicaTransitAppletState *felicaTransitAppletState;
 @property (nonatomic, retain) PKColor *foregroundColor;
 @property (nonatomic, retain) NSArray *frontFieldBuckets;
 @property (nonatomic, retain) NSNumber *groupID;
@@ -87,6 +86,7 @@
 @property (nonatomic, retain) NSDate *relevantDate;
 @property (nonatomic) unsigned long long settings;
 @property (nonatomic) long long style;
+@property (nonatomic, retain) PKTransitAppletState *transitAppletState;
 @property (nonatomic, retain) NSString *uniqueID;
 
 + (bool)isCachingEnabled;
@@ -113,8 +113,6 @@
 - (void)encodeObject:(id)arg1 asDataInCoder:(id)arg2 withKey:(id)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)expressPassTypesMask;
-- (id)felicaProperties;
-- (id)felicaTransitAppletState;
 - (id)fieldForKey:(id)arg1;
 - (id)foregroundColor;
 - (id)frontFieldBuckets;
@@ -162,7 +160,6 @@
 - (void)setDevicePrimaryPaymentApplication:(id)arg1;
 - (void)setEffectivePaymentApplicationState:(long long)arg1;
 - (void)setExpressPassTypesMask:(unsigned long long)arg1;
-- (void)setFelicaTransitAppletState:(id)arg1;
 - (void)setForegroundColor:(id)arg1;
 - (void)setFrontFieldBuckets:(id)arg1;
 - (void)setGroupID:(id)arg1;
@@ -188,12 +185,15 @@
 - (void)setRelevantDate:(id)arg1;
 - (void)setSettings:(unsigned long long)arg1;
 - (void)setStyle:(long long)arg1;
+- (void)setTransitAppletState:(id)arg1;
 - (void)setUniqueID:(id)arg1;
 - (unsigned long long)settings;
 - (long long)style;
 - (bool)supportsExpressPassType:(long long)arg1;
 - (bool)supportsInAppPaymentOnNetworks:(id)arg1 capabilities:(unsigned long long)arg2 issuerCountryCodes:(id)arg3 paymentApplicationStates:(id)arg4;
 - (bool)supportsInAppPaymentOnNetworks:(id)arg1 issuerCountryCodes:(id)arg2;
+- (id)transitAppletState;
+- (id)transitProperties;
 - (id)uniqueID;
 
 @end

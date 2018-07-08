@@ -7,8 +7,10 @@
     id /* block */  _completionHandler;
     NSDictionary * _localizedStrings;
     _SFWebProcessPlugInPageController * _pageController;
+    NSMutableSet * _provisionalURLsNeedingSafeBrowsingCheck;
     <_SFSafeBrowsingWarningResponseObserver> * _responseObserver;
     _WKRemoteObjectInterface * _safeBrowsingControllerInterface;
+    NSMutableSet * _safeURLCache;
     _SFSecurityInfo * _securityInfo;
 }
 
@@ -22,6 +24,7 @@
 - (void)_clearSafeBrowsingControllerInterface;
 - (id)_responseObserverProxy;
 - (void)_setUpSafeBrowsingControllerInterface;
+- (void)cleanUpForNewPageLoad;
 - (void)dealloc;
 - (void)didRespondToSecurityWarning:(long long)arg1;
 - (id)initWithPageController:(id)arg1;
@@ -29,6 +32,7 @@
 - (id)localizedStringForString:(id)arg1;
 - (void)performSafeBrowsingCheckForURL:(id)arg1 completion:(id /* block */)arg2;
 - (void)safeBrowsingCheckFinishedWithSecurityInfo:(id)arg1 canGoBack:(bool)arg2 localizedStrings:(id)arg3;
+- (void)safeBrowsingDatabaseDidUpdate;
 - (void)securityWarningPageLoaded;
 - (void)urlPassedSafeBrowsingCheck:(id)arg1 canCache:(bool)arg2;
 - (bool)urlPassesFastSafeBrowsingCheck:(id)arg1;

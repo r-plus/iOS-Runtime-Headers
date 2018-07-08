@@ -4,10 +4,10 @@
 
 @interface MRRemoveClientMessage : MRProtocolMessage
 
-@property (nonatomic, readonly) void*client;
+@property (nonatomic, readonly) _MRNowPlayingClientProtobuf *client;
 
-- (void*)client;
-- (id)initWithClient:(void*)arg1;
+- (id)client;
+- (id)initWithClient:(id)arg1;
 - (unsigned long long)type;
 
 @end

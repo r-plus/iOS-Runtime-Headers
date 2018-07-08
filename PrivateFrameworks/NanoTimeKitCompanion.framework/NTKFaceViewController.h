@@ -126,7 +126,9 @@
 - (void)_updateInteractivityOfComplicationDisplays;
 - (bool)_wheelChangedWithEvent:(id)arg1;
 - (void)_wrapperViewTapped:(id)arg1;
+- (bool)becomeFirstResponder;
 - (id)blurSourceImage;
+- (bool)canBecomeFirstResponder;
 - (bool)canStopEditing;
 - (void)cleanupAfterOrb:(bool)arg1;
 - (void)cleanupAfterZoom;
@@ -153,6 +155,8 @@
 - (void)faceConfigurationDidChange:(id)arg1;
 - (void)faceResourceDirectoryDidChange:(id)arg1;
 - (id)faceView;
+- (bool)faceView:(id)arg1 wantsToDismissPresentedViewControllerAnimated:(bool)arg2;
+- (id)faceViewComplicationAppIdentifierForSlot:(id)arg1;
 - (bool)faceViewComplicationIsEmptyForSlot:(id)arg1;
 - (void)faceViewDidHideOrShowComplicationSlot;
 - (void)faceViewDidLayoutSubviews;

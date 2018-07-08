@@ -4,8 +4,6 @@
 
 @interface MPNowPlayingContentItem : MPContentItem <NSCopying> {
     <MPNowPlayingContentItemArtworkDataSource> * _artworkDataSource;
-    <MPNowPlayingContentItemDescriptionDataSource> * _descriptionDataSource;
-    <MPNowPlayingContentItemLyricsDataSource> * _lyricsDataSource;
     NSDictionary * _nowPlayingInfo;
 }
 
@@ -24,7 +22,6 @@
 @property (nonatomic, copy) NSString *composerName;
 @property (nonatomic, copy) NSArray *currentLanguageOptions;
 @property (nonatomic) float defaultPlaybackRate;
-@property (nonatomic) <MPNowPlayingContentItemDescriptionDataSource> *descriptionDataSource;
 @property (nonatomic, copy) NSDictionary *deviceSpecificUserInfo;
 @property (nonatomic, copy) NSString *directorName;
 @property (nonatomic) long long discNumber;
@@ -44,7 +41,6 @@
 @property (nonatomic) long long legacyUniqueID;
 @property (nonatomic, copy) NSString *localizedContentRating;
 @property (nonatomic, copy) MPNowPlayingInfoLyricsItem *lyrics;
-@property (nonatomic) <MPNowPlayingContentItemLyricsDataSource> *lyricsDataSource;
 @property (nonatomic) unsigned long long mediaType;
 @property (nonatomic, copy) NSDictionary *nowPlayingInfo;
 @property (nonatomic) long long numberOfChildren;
@@ -90,7 +86,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currentLanguageOptions;
 - (float)defaultPlaybackRate;
-- (id)descriptionDataSource;
 - (id)deviceSpecificUserInfo;
 - (id)directorName;
 - (long long)discNumber;
@@ -117,7 +112,6 @@
 - (long long)legacyUniqueID;
 - (id)localizedContentRating;
 - (id)lyrics;
-- (id)lyricsDataSource;
 - (unsigned long long)mediaType;
 - (id)nowPlayingInfo;
 - (long long)numberOfChildren;
@@ -146,7 +140,6 @@
 - (void)setComposerName:(id)arg1;
 - (void)setCurrentLanguageOptions:(id)arg1;
 - (void)setDefaultPlaybackRate:(float)arg1;
-- (void)setDescriptionDataSource:(id)arg1;
 - (void)setDeviceSpecificUserInfo:(id)arg1;
 - (void)setDirectorName:(id)arg1;
 - (void)setDiscNumber:(long long)arg1;
@@ -166,7 +159,6 @@
 - (void)setLegacyUniqueID:(long long)arg1;
 - (void)setLocalizedContentRating:(id)arg1;
 - (void)setLyrics:(id)arg1;
-- (void)setLyricsDataSource:(id)arg1;
 - (void)setMediaType:(unsigned long long)arg1;
 - (void)setNowPlayingInfo:(id)arg1;
 - (void)setNumberOfChildren:(long long)arg1;

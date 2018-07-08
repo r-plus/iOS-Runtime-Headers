@@ -7,6 +7,7 @@
     unsigned long long  _cutoffCount;
     unsigned long long  _cutoffTimeSecs;
     NSDictionary * _dictionary;
+    FCColorGradient * _groupBackgroundColorGradient;
     NSArray * _groupFonts;
     FCColor * _groupTitleColor;
 }
@@ -19,9 +20,11 @@
 @property (nonatomic, retain) NSDictionary *dictionary;
 @property (nonatomic, readonly) NSString *feedID;
 @property (nonatomic, readonly) NSString *groupActionTitle;
-@property (nonatomic, readonly) NSString *groupActionUrlString;
+@property (nonatomic, readonly) NSString *groupActionURLString;
+@property (nonatomic, retain) FCColorGradient *groupBackgroundColorGradient;
 @property (nonatomic, retain) NSArray *groupFonts;
 @property (nonatomic, readonly) NSString *groupName;
+@property (nonatomic, readonly) NSString *groupSubtitle;
 @property (nonatomic, retain) FCColor *groupTitleColor;
 @property (nonatomic, readonly) NSString *groupTitleFontName;
 @property (nonatomic, readonly) double groupTitleFontSize;
@@ -43,9 +46,11 @@
 - (id)dictionary;
 - (id)feedID;
 - (id)groupActionTitle;
-- (id)groupActionUrlString;
+- (id)groupActionURLString;
+- (id)groupBackgroundColorGradient;
 - (id)groupFonts;
 - (id)groupName;
+- (id)groupSubtitle;
 - (id)groupTitleColor;
 - (id)groupTitleFontName;
 - (double)groupTitleFontSize;
@@ -62,6 +67,7 @@
 - (void)setCutoffCount:(unsigned long long)arg1;
 - (void)setCutoffTimeSecs:(unsigned long long)arg1;
 - (void)setDictionary:(id)arg1;
+- (void)setGroupBackgroundColorGradient:(id)arg1;
 - (void)setGroupFonts:(id)arg1;
 - (void)setGroupTitleColor:(id)arg1;
 

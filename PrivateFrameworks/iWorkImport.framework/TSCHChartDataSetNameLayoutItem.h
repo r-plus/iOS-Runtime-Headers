@@ -9,6 +9,7 @@
 - (struct CGSize { double x1; double x2; })calcMinSize;
 - (bool)isAboveChartBody;
 - (bool)isTitleOn;
+- (bool)shouldPlaceTitleAtCenter;
 - (unsigned long long)titleParagraphStyleIndex;
 - (id)titleSelectionPath;
 - (id)titleTextForModel:(id)arg1;

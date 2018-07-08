@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DiagnosticExtensionsDaemon.framework/DiagnosticExtensionsDaemon
  */
 
-@interface DEDBugSessionConfiguration : NSObject <NSCopying, NSSecureCoding> {
+@interface DEDBugSessionConfiguration : NSObject <DEDSecureArchiving, NSCopying, NSSecureCoding> {
     bool  _allowsCellularUpload;
     long long  _finishingMove;
     NSString * _radarAuthToken;
@@ -15,7 +15,10 @@
 }
 
 @property bool allowsCellularUpload;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property long long finishingMove;
+@property (readonly) unsigned long long hash;
 @property (retain) NSString *radarAuthToken;
 @property (retain) NSNumber *radarProblemID;
 @property (retain) NSString *seedingDeviceToken;
@@ -23,7 +26,10 @@
 @property (retain) NSString *seedingHost;
 @property long long seedingSubmissionID;
 @property long long seedingSubmissionType;
+@property (readonly) Class superclass;
 
++ (id)archivedClasses;
++ (id)secureUnarchiveWithData:(id)arg1;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -32,8 +38,11 @@
 - (void)encodeWithCoder:(id)arg1;
 - (long long)finishingMove;
 - (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToConfiguration:(id)arg1;
 - (id)radarAuthToken;
 - (id)radarProblemID;
+- (id)secureArchive;
 - (id)seedingDeviceToken;
 - (long long)seedingEnvironment;
 - (id)seedingHost;

@@ -4,6 +4,7 @@
 
 @interface OSLogEventProxy : NSObject <OSLogEventProvider> {
     struct os_activity_map_s { } * _aid_map;
+    OSLogEventDecomposedMessage * _decomposedMessage;
     unsigned long long  _efv;
     struct { 
         unsigned long long type; 
@@ -104,6 +105,7 @@
 @property (nonatomic, readonly) unsigned long long creatorActivityIdentifier;
 @property (nonatomic, readonly) unsigned long long creatorProcessUniqueIdentifier;
 @property (nonatomic, readonly) NSDate *date;
+@property (nonatomic, readonly) OSLogEventDecomposedMessage *decomposedMessage;
 @property (nonatomic, readonly) NSString *formatString;
 @property (nonatomic, readonly) unsigned long long logType;
 @property (nonatomic, readonly) unsigned long long machContinuousTimestamp;
@@ -153,6 +155,7 @@
 - (unsigned long long)creatorActivityIdentifier;
 - (unsigned long long)creatorProcessUniqueIdentifier;
 - (id)date;
+- (id)decomposedMessage;
 - (id)description;
 - (id)formatArguments;
 - (id)formatString;

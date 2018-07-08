@@ -6,6 +6,7 @@
     SFDialogContentView * _contentView;
     SFDialogContentView * _contentViewConfiguredForMinimumHeight;
     <_SFDialogViewDelegate> * _delegate;
+    _SFKeyboardLayoutAlignmentView * _keyboardAlignmentView;
     UISwipeGestureRecognizer * _keyboardDismissSwipeGesture;
     UITapGestureRecognizer * _keyboardDismissTapGesture;
     NSLayoutConstraint * _obscuredInsetBottomConstraint;
@@ -31,5 +32,6 @@
 - (void)setPasswordText:(id)arg1 placeholder:(id)arg2;
 - (void)setTitleText:(id)arg1;
 - (void)setUsesOpaqueAppearance:(bool)arg1;
+- (void)willDisappear;
 
 @end

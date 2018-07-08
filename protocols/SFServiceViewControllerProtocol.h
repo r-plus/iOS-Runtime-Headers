@@ -15,7 +15,6 @@
 - (void)setConfiguration:(SFSafariViewControllerConfiguration *)arg1;
 - (void)setDismissButtonStyle:(long long)arg1;
 - (void)setDisplayMode:(long long)arg1;
-- (void)setIsBeingUsedForLinkPreview:(bool)arg1;
 - (void)setIsRunningTransitionAnimation:(bool)arg1;
 - (void)setPreferredBarTintColor:(UIColor *)arg1;
 - (void)setPreferredControlTintColor:(UIColor *)arg1;

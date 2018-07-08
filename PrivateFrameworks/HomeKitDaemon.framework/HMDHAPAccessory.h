@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDHAPAccessory : HMDAccessory <HAPRelayAccessoryDelegate, HMDTimeInformationMonitorDelegate, HMFTimerDelegate> {
+@interface HMDHAPAccessory : HMDAccessory <HAPRelayAccessoryDelegate, HMDAccessoryIdentify, HMDTimeInformationMonitorDelegate, HMFTimerDelegate> {
     HMFTimer * _accessoryDiscoveryBackoffTimer;
     NSNumber * _accessoryFlags;
     HMFTimer * _accessoryKeyRefreshTimer;
@@ -72,6 +72,7 @@
 @property (nonatomic, readonly, copy) NSArray *services;
 @property (nonatomic, copy) NSData *setupHash;
 @property (readonly) Class superclass;
+@property (readonly) bool supportsIdentify;
 @property (nonatomic) bool supportsRelay;
 @property (nonatomic, retain) HMFTimer *systemTimeInformationTimer;
 @property (nonatomic) bool systemTimeNeedsUpdate;
@@ -104,7 +105,6 @@
 - (void)_handleCharacteristicWrite:(id)arg1;
 - (void)_handleCharacteristicsChangedNotification:(id)arg1;
 - (void)_handleDiscoveryBackoffTimerFired;
-- (void)_handleIdentify:(id)arg1;
 - (void)_handleKeyRefreshTimerFired;
 - (void)_handleMultipleCharacteristicsUpdated:(id)arg1 message:(id)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_handleRenameService:(id)arg1;
@@ -126,7 +126,6 @@
 - (void)_reenableNotificationsOnWatch;
 - (void)_registerForMessages;
 - (void)_registerForTimeMonitor;
-- (void)_relayIdentifyAccessorytoResidentForMessage:(id)arg1;
 - (void)_relayReadFromCharacteristic:(id)arg1 toResidentForMessage:(id)arg2 viaDevice:(id)arg3;
 - (void)_relayWriteToCharacteristic:(id)arg1 toResidentForMessage:(id)arg2 viaDevice:(id)arg3;
 - (void)_removeBackedoffAccessoryForStateNumber:(id)arg1;
@@ -174,6 +173,7 @@
 - (void)addRelayUser:(id)arg1 accessToken:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)addTransportInformationInstance:(id)arg1;
 - (void)addTransportInformationInstances:(id)arg1;
+- (void)autoUpdateCachedCountDownCharacteristics:(id)arg1;
 - (void)backOffAccessoryForStateNumber:(id)arg1;
 - (id)backedOffStateNumber;
 - (id)backingStoreObjects:(long long)arg1;
@@ -218,6 +218,7 @@
 - (id)hmdCharacteristicForInstanceId:(id)arg1;
 - (id)hmdCharacteristicFromHapCharacteristic:(id)arg1;
 - (id)identifiersForBridgedAccessories;
+- (void)identifyAccessory:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTransaction:(id)arg1 home:(id)arg2;
@@ -318,6 +319,7 @@
 - (bool)shouldEnableDaemonRelaunch;
 - (void)startRelayActivationWithActivationClient:(id)arg1;
 - (void)startRelayPairingWithPairingClient:(id)arg1;
+- (bool)supportsIdentify;
 - (bool)supportsRelay;
 - (bool)supportsUserManagement;
 - (id)systemTimeInformationTimer;

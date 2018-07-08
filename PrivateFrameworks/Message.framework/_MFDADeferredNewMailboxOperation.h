@@ -8,6 +8,8 @@
     NSString * _temporaryFolderID;
 }
 
++ (bool)supportsSecureCoding;
+
 - (void)applyToFolderMap:(id)arg1;
 - (void)dealloc;
 - (id)description;

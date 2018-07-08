@@ -6,7 +6,7 @@
     NSString * _originalStationName;
     _MPCModelRadioPlaybackQueueAVItemSection * _placeholderItemSection;
     ICRadioPlaybackHistoryStore * _playbackHistoryStore;
-    _MPCModelRadioPlaybackQueueAVItemSection * _prefixItemSection;
+    _MPCModelRadioPlaybackQueueExternalFeederSection * _prefixItemSection;
     MPModelRadioStation * _radioStation;
     NSMutableArray * _sections;
     _MPCModelRadioPlaybackQueueStationTracksSection * _stationTracksSection;

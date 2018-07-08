@@ -5,6 +5,8 @@
 
 @required
 
+- (bool)faceView:(NTKFaceView *)arg1 wantsToDismissPresentedViewControllerAnimated:(bool)arg2;
+- (NSString *)faceViewComplicationAppIdentifierForSlot:(NSString *)arg1;
 - (bool)faceViewComplicationIsEmptyForSlot:(NSString *)arg1;
 - (void)faceViewDidHideOrShowComplicationSlot;
 - (void)faceViewDidLayoutSubviews;

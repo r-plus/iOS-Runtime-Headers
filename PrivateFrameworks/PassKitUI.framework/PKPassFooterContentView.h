@@ -7,6 +7,7 @@
     UIView * _bottomRule;
     <PKPassFooterContentViewDelegate> * _delegate;
     UIButton * _infoButton;
+    bool  _invalidated;
     PKPass * _pass;
     long long  _style;
     bool  _userIntentRequired;
@@ -16,6 +17,7 @@
 @property (nonatomic, readonly) UIView *bottomRule;
 @property (nonatomic) <PKPassFooterContentViewDelegate> *delegate;
 @property (nonatomic, readonly) UIButton *infoButton;
+@property (nonatomic, readonly) bool invalidated;
 @property (nonatomic, readonly) PKPass *pass;
 @property (getter=isPassAuthorized, nonatomic, readonly) bool passAuthorized;
 @property (nonatomic, readonly) PKPaymentPass *paymentPass;
@@ -35,6 +37,7 @@
 - (id)infoButton;
 - (id)initWithStyle:(long long)arg1 pass:(id)arg2;
 - (void)invalidate;
+- (bool)invalidated;
 - (bool)isPassAuthorized;
 - (bool)isUserIntentRequired;
 - (void)layoutSubviews;

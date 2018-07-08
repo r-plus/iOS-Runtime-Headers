@@ -7,6 +7,7 @@
 
 - (double)absoluteCurrentTime;
 - (double)absoluteDuration;
+- (void)addObservationToken:(id <NSObject>)arg1;
 - (id)addPeriodicTimeObserverForInterval:(void *)arg1 block:(void *)arg2; // needs 2 arg types, found 6: double, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)beginScrubbing;
 - (bool)canFastForward;
@@ -22,9 +23,9 @@
 - (bool)isFastReversing;
 - (bool)isPlaying;
 - (bool)isScrubbing;
-- (CALayer *)newLayer;
 - (float)rate;
 - (double)remainingTime;
+- (void)removeObservationToken:(id <NSObject>)arg1;
 - (void)removePeriodicTimeObserver:(id)arg1;
 - (long long)repeatMode;
 - (void)scrubToTime:(double)arg1 withTolerance:(double)arg2;

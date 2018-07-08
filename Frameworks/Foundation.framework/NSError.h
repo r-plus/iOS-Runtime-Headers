@@ -10,6 +10,7 @@
 }
 
 @property (nonatomic, readonly) NSString *CPSafeDescription;
+@property (nonatomic, readonly, copy) NSString *_bcs_privacyPreservingDescription;
 @property (nonatomic, readonly) bool _geo_isXPCInterruptedError;
 @property (getter=_mapkit_isCLDenied, nonatomic, readonly) bool _mapkit_CLDenied;
 @property (getter=_mapkit_isCLErrorNetwork, nonatomic, readonly) bool _mapkit_CLErrorNetwork;
@@ -37,6 +38,7 @@
 @property (nonatomic, readonly) NSDictionary *hd_persistentUserInfo;
 @property (readonly, copy) NSString *helpAnchor;
 @property (nonatomic, readonly) bool hf_isHomeKitNamingError;
+@property (nonatomic, readonly) bool hf_isHomeKitUnreachableError;
 @property (getter=isHMError, nonatomic, readonly) bool hmError;
 @property (getter=isHMFError, nonatomic, readonly) bool hmfError;
 @property (nonatomic, readonly) NSString *idsIdentifier;
@@ -54,11 +56,13 @@
 @property (readonly) id recoveryAttempter;
 @property (nonatomic, readonly) bool safari_isSQLiteCorruptionError;
 @property (nonatomic, readonly) bool safari_isSQLiteError;
+@property (nonatomic, readonly, copy) NSString *safari_privacyPreservingDescription;
 @property (nonatomic, readonly) NSString *ssb_privacyPreservingDescription;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) bool tsp_isCorruptZipOfPackageError;
 @property (nonatomic, readonly) bool tsp_isCorruptedError;
 @property (nonatomic, readonly) bool tsp_isDocumentTooNewError;
+@property (nonatomic, readonly) bool tsp_isPasswordInputError;
 @property (nonatomic, readonly) bool tsp_isReadError;
 @property (nonatomic, readonly) bool tsp_isRecoverable;
 @property (nonatomic, readonly) bool tsp_isTSPError;
@@ -142,6 +146,25 @@
 + (id)cx_incomingCallErrorWithCode:(long long)arg1;
 + (id)cx_requestTransactionErrorWithCode:(long long)arg1;
 
+// Image: /System/Library/Frameworks/ClassKit.framework/ClassKit
+
++ (bool)cls_assignError:(id*)arg1 code:(long long)arg2 description:(id)arg3;
++ (bool)cls_assignError:(id*)arg1 code:(long long)arg2 errorObject:(id)arg3 description:(id)arg4;
++ (bool)cls_assignError:(id*)arg1 code:(long long)arg2 errorObject:(id)arg3 format:(id)arg4;
++ (bool)cls_assignError:(id*)arg1 code:(long long)arg2 format:(id)arg3;
++ (bool)cls_assignError:(id*)arg1 fromError:(id)arg2;
++ (id)cls_createErrorWithCode:(long long)arg1 description:(id)arg2;
++ (id)cls_createErrorWithCode:(long long)arg1 errorObject:(id)arg2 description:(id)arg3;
++ (id)cls_createErrorWithCode:(long long)arg1 errorObject:(id)arg2 format:(id)arg3;
++ (id)cls_createErrorWithCode:(long long)arg1 format:(id)arg2;
+
+- (void)cls_debug:(id)arg1;
+- (void)cls_info:(id)arg1;
+- (bool)cls_isClassKitError;
+- (void)cls_log:(id)arg1;
+- (id)cls_underlyingErrorWithDomain:(id)arg1;
+- (void)cls_warn:(id)arg1;
+
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
 + (id)CKErrorFromErrno;
@@ -210,9 +233,15 @@
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (id)_hk_OAuth2_defaultDescriptionForErrorCode:(long long)arg1;
++ (id)_hk_OAuth2_error:(long long)arg1 userInfo:(id)arg2 underlyingError:(id)arg3;
++ (id)_hk_OAuth2_errorForBadRequestStatusWithResponse:(id)arg1 data:(id)arg2;
++ (id)_hk_OAuth2_errorForUnauthorizedStatusWithRequest:(id)arg1 response:(id)arg2;
++ (id)_hk_OAuth2_errorFromResponseData:(id)arg1 defaultError:(id)arg2 parseError:(out id*)arg3;
++ (id)_hk_OAuth2_rawErrorForRequest:(id)arg1 response:(id)arg2 data:(id)arg3;
 + (id)hk_OAuth2_error:(long long)arg1;
 + (id)hk_OAuth2_error:(long long)arg1 underlyingError:(id)arg2;
-+ (id)hk_OAuth2_errorFromResponse:(id)arg1;
++ (id)hk_OAuth2_errorForRequest:(id)arg1 response:(id)arg2 data:(id)arg3;
++ (id)hk_OAuth2_errorFromErrorValue:(id)arg1;
 + (bool)hk_assignError:(id*)arg1 code:(long long)arg2 description:(id)arg3;
 + (bool)hk_assignError:(id*)arg1 code:(long long)arg2 description:(id)arg3 underlyingError:(id)arg4;
 + (bool)hk_assignError:(id*)arg1 code:(long long)arg2 format:(id)arg3;
@@ -223,7 +252,11 @@
 + (id)hk_invalidProfileError;
 + (id)hk_protectedDataInaccessibilityError;
 
+- (id)_hk_OAuth2_errorByAddingItemsToUserInfo:(id)arg1;
+- (bool)hk_OAuth2_isAccessDeniedError;
+- (bool)hk_OAuth2_isBearerAuthenticationError;
 - (bool)hk_OAuth2_isOAuth2Error;
+- (bool)hk_OAuth2_isOAuth2ErrorWithCode:(long long)arg1;
 - (bool)hk_isAuthorizationDeniedError;
 - (bool)hk_isAuthorizationNotDeterminedError;
 - (bool)hk_isCocoaNoSuchFileError;
@@ -235,6 +268,7 @@
 - (bool)hk_isServiceDeviceNotFoundError;
 - (bool)hk_isStreamFailureError;
 - (bool)hk_isTimeoutError;
+- (bool)hk_isUserCanceledError;
 - (id)hk_sanitizedError;
 - (id)hk_underlyingErrorWithDomain:(id)arg1;
 
@@ -354,6 +388,12 @@
 + (id)aida_errorWithCode:(long long)arg1;
 + (id)aida_errorWithCode:(long long)arg1 userInfo:(id)arg2;
 
+// Image: /System/Library/PrivateFrameworks/AskPermission.framework/AskPermission
+
++ (id)pr_errorWithCode:(long long)arg1;
++ (id)pr_errorWithCode:(long long)arg1 underlyingError:(id)arg2;
++ (id)pr_errorWithCode:(long long)arg1 userInfo:(id)arg2;
+
 // Image: /System/Library/PrivateFrameworks/AuthKit.framework/AuthKit
 
 + (id)ak_errorWithCode:(long long)arg1;
@@ -361,9 +401,14 @@
 + (id)ak_errorWithCode:(long long)arg1 userInfo:(id)arg2;
 + (id)ak_wrappedAnisetteError:(int)arg1;
 
+- (id)ak_errorByAppendingUserInfo:(id)arg1;
 - (bool)ak_isUserCancelError;
 - (bool)ak_isUserSkippedError;
 - (bool)ak_isUserTryAgainError;
+
+// Image: /System/Library/PrivateFrameworks/BarcodeSupport.framework/BarcodeSupport
+
+- (id)_bcs_privacyPreservingDescription;
 
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
@@ -392,6 +437,16 @@
 + (id)_techFromBundle;
 + (id)_techStandardName;
 + (id)_titleAndMessageDictForError:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
+
++ (id)crk_EDUProfileErrorWithCode:(long long)arg1 errorDictionary:(id)arg2;
++ (id)crk_EDUProfileErrorWithCode:(long long)arg1 errorField:(id)arg2 andValue:(id)arg3;
++ (id)crk_badFieldTypeErrorWithField:(id)arg1;
++ (id)crk_malformedProfileErrorWithField:(id)arg1 value:(id)arg2;
++ (id)crk_missingFieldErrorWithField:(id)arg1;
++ (id)crk_unsupportedValueErrorWithField:(id)arg1 value:(id)arg2;
++ (id)crk_valueNotUniqueErrorWithField:(id)arg1 value:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
 
@@ -548,6 +603,7 @@
 
 - (bool)isHAPError;
 - (bool)isHMError;
+- (bool)isHMError;
 
 // Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
 
@@ -644,6 +700,10 @@
 - (bool)isHMFError;
 - (id)shortDescription;
 
+// Image: /System/Library/PrivateFrameworks/HardwareDiagnostics.framework/Diagnostics/D22_D221.bundle/D22_D221
+
+- (id)dictionaryRepresentation;
+
 // Image: /System/Library/PrivateFrameworks/HardwareDiagnostics.framework/HardwareDiagnostics
 
 - (id)dictionaryRepresentation;
@@ -670,10 +730,12 @@
 + (id)hf_errorWithCode:(long long)arg1;
 + (id)hf_errorWithCode:(long long)arg1 descriptionFormat:(id)arg2;
 + (id)hf_errorWithCode:(long long)arg1 operation:(id)arg2 options:(id)arg3;
++ (id)hf_synthesizedUnreachableHomeKitAccessoryErrorWithUserInfo:(id)arg1;
 
 - (id)hf_errorWithOperationType:(id)arg1 failedItemName:(id)arg2;
 - (id)hf_errorWithOperationType:(id)arg1 options:(id)arg2;
 - (bool)hf_isHomeKitNamingError;
+- (bool)hf_isHomeKitUnreachableError;
 - (bool)hf_isUnreachableError;
 
 // Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
@@ -714,6 +776,14 @@
 
 - (bool)xcui_isUITestingError:(long long)arg1;
 
+// Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/IMSharedUtilities
+
++ (id)errorArrayFromSerializedErrorArray_im:(id)arg1;
++ (id)serializedErrorArrayFromErrorArray_im:(id)arg1;
+
+- (id)initWithSerializedError_im:(struct NSDictionary { Class x1; }*)arg1;
+- (struct NSDictionary { Class x1; }*)serializedError_im;
+
 // Image: /System/Library/PrivateFrameworks/KeychainCircle.framework/KeychainCircle
 
 + (id)errorWithCoreCryptoStatus:(int)arg1 description:(id)arg2 args:(char *)arg3;
@@ -728,6 +798,11 @@
 - (id)initWithJoiningError:(int)arg1 userInfo:(id)arg2;
 - (id)initWithOSStatus:(int)arg1 description:(id)arg2 args:(char *)arg3;
 - (id)initWithOSStatus:(int)arg1 userInfo:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/MFAAuthentication.framework/MFAAuthentication
+
++ (id)MFAA_errorWithDomain:(id)arg1 code:(long long)arg2;
++ (id)MFAA_errorWithDomain:(id)arg1 code:(long long)arg2 description:(id)arg3;
 
 // Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
 
@@ -1083,7 +1158,15 @@
 
 // Image: /System/Library/PrivateFrameworks/WelcomeKitCore.framework/WelcomeKitCore
 
++ (id)_wl_encodableArrayFromArray:(id)arg1;
++ (id)_wl_encodableDictionaryFromDictionary:(id)arg1;
++ (id)_wl_encodableObjectFromObject:(id)arg1;
++ (id)_wl_encodableSetFromSet:(id)arg1;
++ (bool)_wl_objectIsKindOfNonCollectionPlistClass:(id)arg1;
++ (id)wl_encodableErrorSupportedClasses;
+
 - (bool)wk_representsTransientConnectivityIssueForAttempt:(unsigned long long)arg1;
+- (id)wl_encodableError;
 
 // Image: /System/Library/PrivateFrameworks/WiFiKit.framework/WiFiKit
 
@@ -1142,12 +1225,14 @@
 - (bool)tsp_isCorruptZipOfPackageError;
 - (bool)tsp_isCorruptedError;
 - (bool)tsp_isDocumentTooNewError;
+- (bool)tsp_isPasswordInputError;
 - (bool)tsp_isReadError;
 - (bool)tsp_isRecoverable;
 - (bool)tsp_isTSPError;
 - (bool)tsp_isUnsupportedVersionError;
 - (bool)tsp_isWriteError;
 - (id)tsu_errorPreservingAlertTitle;
+- (id)tsu_errorPreservingCancel;
 - (bool)tsu_isCancelError;
 - (bool)tsu_isCorruptedError;
 - (bool)tsu_isErrorPassingTest:(id /* block */)arg1;

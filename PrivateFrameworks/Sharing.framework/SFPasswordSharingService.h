@@ -8,7 +8,7 @@
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     bool  _invalidateCalled;
     NSString * _networkName;
-    SFUserNotification * _notification;
+    SFUserAlert * _notification;
     NSUUID * _peer;
     SFPasswordSharingInfo * _promptedInfo;
     SFService * _service;

@@ -122,6 +122,7 @@
 @property (nonatomic, retain) NSData *systemAppPlaybackQueueData;
 @property (nonatomic) unsigned long long trackID;
 
+- (void).cxx_destruct;
 - (int)StringAsRepeatMode:(id)arg1;
 - (int)StringAsReplaceIntent:(id)arg1;
 - (int)StringAsShuffleMode:(id)arg1;
@@ -130,7 +131,6 @@
 - (id)contextID;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)destinationAppDisplayID;
 - (id)dictionaryRepresentation;

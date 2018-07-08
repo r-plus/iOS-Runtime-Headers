@@ -11,7 +11,6 @@
 - (id)initWithUsageBundleApp:(id)arg1;
 - (id)name;
 - (long long)purgeableSize;
-- (long long)specialSize;
 - (long long)staticSize;
 - (long long)totalSize;
 

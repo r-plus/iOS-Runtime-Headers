@@ -3,7 +3,7 @@
  */
 
 @interface WebUndoStep : NSObject {
-    struct RefPtr<WebCore::UndoStep> { 
+    struct RefPtr<WebCore::UndoStep, WTF::DumbPtrTraits<WebCore::UndoStep> > { 
         struct UndoStep {} *m_ptr; 
     }  m_step;
 }

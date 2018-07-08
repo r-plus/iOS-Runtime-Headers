@@ -91,6 +91,7 @@
         bool forceOmitTitle; 
         bool forceOmitAxisTitle; 
         bool forceOmitLabelPlacement; 
+        bool forceTitleAtTop; 
         bool enable3DTightBounds; 
         bool enable3DScaledDepthBounds; 
         long long maxDepthRatioType; 

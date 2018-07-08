@@ -102,7 +102,7 @@
 
 - (id)_frame;
 - (id)_webView;
-- (void)_web_addDescendantWebHTMLViewsToArray:(id)arg1;
+- (void)_web_addDescendentWebHTMLViewsToArray:(id)arg1;
 - (bool)_web_firstResponderIsSelfOrDescendantView;
 - (id)_web_parentWebFrameView;
 - (id)_web_superviewOfClass:(Class)arg1;

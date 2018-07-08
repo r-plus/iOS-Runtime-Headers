@@ -27,6 +27,7 @@
 + (id)sharedInstance;
 + (id)stringForKey:(id)arg1;
 
+- (void)dealloc;
 - (struct __CFString { }*)defaultsBundleID;
 - (id)factoryDefaults;
 - (id)init;

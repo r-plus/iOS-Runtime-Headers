@@ -10,6 +10,7 @@
 @property (nonatomic, readonly) unsigned long long IDMSEnvironment;
 @property (nonatomic, readonly) NSURL *absintheCertURL;
 @property (nonatomic, readonly) NSURL *absintheSessionURL;
+@property (nonatomic, readonly) NSURL *acsURL;
 @property (nonatomic, retain) <AKURLBagDictionaryProvider> *bagProvider;
 @property (nonatomic, readonly) NSURL *basicAuthURL;
 @property (nonatomic, readonly) NSURL *changePasswordURL;
@@ -20,6 +21,7 @@
 @property (nonatomic, readonly) NSURL *deviceListURL;
 @property (nonatomic, readonly) NSURL *endProvisioningURL;
 @property (nonatomic, readonly) NSURL *escapeHatchURL;
+@property (nonatomic, readonly) NSURL *fetchAuthenticationModeURL;
 @property (nonatomic, readonly) NSURL *fetchConfigDataURL;
 @property (nonatomic, readonly) NSURL *fetchFollowUps;
 @property (nonatomic, readonly) NSURL *fetchUserInfoURL;
@@ -58,6 +60,7 @@
 - (id)_urlBag:(id*)arg1;
 - (id)absintheCertURL;
 - (id)absintheSessionURL;
+- (id)acsURL;
 - (id)bagProvider;
 - (id)basicAuthURL;
 - (id)changePasswordURL;
@@ -69,6 +72,7 @@
 - (id)deviceListURL;
 - (id)endProvisioningURL;
 - (id)escapeHatchURL;
+- (id)fetchAuthenticationModeURL;
 - (id)fetchConfigDataURL;
 - (id)fetchFollowUps;
 - (id)fetchUserInfoURL;

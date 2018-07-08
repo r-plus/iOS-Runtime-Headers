@@ -12,11 +12,13 @@
 @property (nonatomic) bool disableGroupMerging;
 @property (nonatomic) bool enableSingletonGroups;
 
++ (id)descriptorWithContext:(id)arg1;
++ (id)descriptorWithContext:(id)arg1 tag:(id)arg2;
+
 - (bool)disableFiltering;
 - (bool)disableGroupMerging;
 - (bool)enableSingletonGroups;
-- (id)feedGroupEmittersWithAppConfiguration:(id)arg1;
-- (id)initWithContext:(id)arg1 identifier:(id)arg2 tag:(id)arg3;
+- (id)feedGroupEmittersWithCoreConfiguration:(id)arg1;
 - (void)setDisableFiltering:(bool)arg1;
 - (void)setDisableGroupMerging:(bool)arg1;
 - (void)setEnableSingletonGroups:(bool)arg1;

@@ -51,9 +51,11 @@
     NSMutableArray * _mapLayers;
     struct GEOMapLayersMetadata { 
         double _lastUpdatedTimestamp; 
+        unsigned int _formatVersion; 
         bool _stale; 
         struct { 
             unsigned int lastUpdatedTimestamp : 1; 
+            unsigned int formatVersion : 1; 
             unsigned int stale : 1; 
         } _has; 
     }  _mapLayersMetadata;
@@ -87,6 +89,7 @@
     NSString * _uniqueIdentifier;
     PBUnknownFields * _unknownFields;
     GEOVersionManifest * _versionManifest;
+    NSString * _wifiConnectionQualityProbeURL;
     NSMutableArray * _xmlChecksums;
     NSMutableArray * _xmls;
 }
@@ -151,6 +154,7 @@
 @property (nonatomic, readonly) bool hasSpatialLookupURL;
 @property (nonatomic, readonly) bool hasUniqueIdentifier;
 @property (nonatomic, readonly) bool hasVersionManifest;
+@property (nonatomic, readonly) bool hasWifiConnectionQualityProbeURL;
 @property (nonatomic, readonly) struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*hybridUnavailableRegions;
 @property (nonatomic, readonly) unsigned long long hybridUnavailableRegionsCount;
 @property (nonatomic, retain) NSMutableArray *iconChecksums;
@@ -161,7 +165,7 @@
 @property (nonatomic, retain) NSString *logMessageUsageURL;
 @property (nonatomic, retain) NSString *logMessageUsageV3URL;
 @property (nonatomic, retain) NSMutableArray *mapLayers;
-@property (nonatomic) struct GEOMapLayersMetadata { double x1; bool x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } mapLayersMetadata;
+@property (nonatomic) struct GEOMapLayersMetadata { double x1; unsigned int x2; bool x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; } mapLayersMetadata;
 @property (nonatomic) unsigned int modelVersion;
 @property (nonatomic) int operationMode;
 @property (nonatomic, retain) NSString *polyLocationShiftURL;
@@ -192,6 +196,7 @@
 @property (nonatomic, retain) NSString *uniqueIdentifier;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) GEOVersionManifest *versionManifest;
+@property (nonatomic, retain) NSString *wifiConnectionQualityProbeURL;
 @property (nonatomic, retain) NSMutableArray *xmlChecksums;
 @property (nonatomic, retain) NSMutableArray *xmls;
 
@@ -355,6 +360,7 @@
 - (bool)hasSpatialLookupURL;
 - (bool)hasUniqueIdentifier;
 - (bool)hasVersionManifest;
+- (bool)hasWifiConnectionQualityProbeURL;
 - (unsigned long long)hash;
 - (struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })hybridUnavailableRegionAtIndex:(unsigned long long)arg1;
 - (struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)hybridUnavailableRegions;
@@ -383,7 +389,7 @@
 - (id)mapLayerAtIndex:(unsigned long long)arg1;
 - (id)mapLayers;
 - (unsigned long long)mapLayersCount;
-- (struct GEOMapLayersMetadata { double x1; bool x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })mapLayersMetadata;
+- (struct GEOMapLayersMetadata { double x1; unsigned int x2; bool x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; })mapLayersMetadata;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)modelVersion;
 - (int)operationMode;
@@ -453,7 +459,7 @@
 - (void)setLogMessageUsageURL:(id)arg1;
 - (void)setLogMessageUsageV3URL:(id)arg1;
 - (void)setMapLayers:(id)arg1;
-- (void)setMapLayersMetadata:(struct GEOMapLayersMetadata { double x1; bool x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
+- (void)setMapLayersMetadata:(struct GEOMapLayersMetadata { double x1; unsigned int x2; bool x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; })arg1;
 - (void)setModelVersion:(unsigned int)arg1;
 - (void)setOperationMode:(int)arg1;
 - (void)setPolyLocationShiftURL:(id)arg1;
@@ -483,6 +489,7 @@
 - (void)setTileSets:(id)arg1;
 - (void)setUniqueIdentifier:(id)arg1;
 - (void)setVersionManifest:(id)arg1;
+- (void)setWifiConnectionQualityProbeURL:(id)arg1;
 - (void)setXmlChecksums:(id)arg1;
 - (void)setXmls:(id)arg1;
 - (id)simpleETAURL;
@@ -511,6 +518,7 @@
 - (id)unknownFields;
 - (unsigned int)versionForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (id)versionManifest;
+- (id)wifiConnectionQualityProbeURL;
 - (void)writeTo:(id)arg1;
 - (id)xmlAtIndex:(unsigned long long)arg1;
 - (id)xmlChecksumAtIndex:(unsigned long long)arg1;

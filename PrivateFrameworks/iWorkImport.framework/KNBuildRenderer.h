@@ -3,29 +3,30 @@
  */
 
 @interface KNBuildRenderer : KNAnimationRenderer <CAAnimationDelegate> {
+    TSDFPSCounter * _FPSCounter;
+    KNAnimatedBuild * _animatedBuild;
+    NSMutableArray * _animatedBuildsToStartAtEnd;
     NSMapTable * _animatedLayers;
-    KNAnimatedBuild * mAnimatedBuild;
-    NSMutableArray * mAnimatedBuildsToStartAtEnd;
-    KNAnimationInfo * mAnimationInfo;
-    bool  mAreAnimationsPrepared;
-    SEL  mBuildEndCallbackSelector;
-    id  mBuildEndCallbackTarget;
-    KNBuildChunk * mBuildStage;
-    TSDTextureSet * mEndOfBuildTextureSet;
-    TSDFPSCounter * mFPSCounter;
-    TSDTextureSet * mFinalAttributesTextureSet;
-    TSDDrawableInfo * mInfo;
-    bool  mInterrupted;
-    bool  mIsAnimationForPlayback;
-    bool  mIsNonCachedTextureValid;
-    bool  mIsPreview;
-    bool  mIsTextureCachedAtEndOfBuild;
-    long long  mNumberOfAnimationsStarted;
-    CALayer * mParentLayer;
-    bool  mShouldUseMagicMoveTextures;
-    TSDTextureDescription * mTextureDescription;
-    TSDTextureSet * mTextureSet;
-    bool  mUsingFinalTexture;
+    KNAnimationInfo * _animationInfo;
+    bool  _animationWillBeginPerformed;
+    bool  _areAnimationsPrepared;
+    SEL  _buildEndCallbackSelector;
+    id  _buildEndCallbackTarget;
+    KNBuildChunk * _buildStage;
+    TSDTextureSet * _endOfBuildTextureSet;
+    TSDTextureSet * _finalAttributesTextureSet;
+    TSDDrawableInfo * _info;
+    bool  _interrupted;
+    bool  _isAnimationForPlayback;
+    bool  _isNonCachedTextureValid;
+    bool  _isPreview;
+    bool  _isTextureCachedAtEndOfBuild;
+    long long  _numberOfAnimationsStarted;
+    CALayer * _parentLayer;
+    bool  _shouldUseMagicMoveTextures;
+    TSDTextureDescription * _textureDescription;
+    TSDTextureSet * _textureSet;
+    bool  _usingFinalTexture;
 }
 
 @property (nonatomic, readonly) KNAnimatedBuild *animatedBuild;
@@ -41,6 +42,7 @@
 @property (nonatomic, readonly) unsigned long long textureDeliveryStyle;
 @property (nonatomic, retain) TSDTextureDescription *textureDescription;
 @property (nonatomic, readonly) TSDTextureSet *textureSet;
+@property (nonatomic, readonly) long long textureStageIndex;
 
 - (bool)addAnimationsAtLayerTime:(double)arg1;
 - (void)addBuildToStartAtEnd:(id)arg1;
@@ -67,30 +69,35 @@
 - (void)p_removeAnimations;
 - (void)p_resetAnimations;
 - (id)p_textureSetForStage:(long long)arg1 description:(id)arg2 isAtEndOfBuild:(bool)arg3 shouldForceRebuild:(bool)arg4 shouldRender:(bool)arg5;
+- (void)p_updateTextureDescription:(id)arg1 forStage:(long long)arg2 isAtEndOfBuild:(bool)arg3;
 - (id)parentLayer;
 - (void)pauseAnimationsAtTime:(double)arg1;
 - (id)prepareAnimations;
 - (void)registerForBuildEndCallback:(SEL)arg1 target:(id)arg2;
 - (void)removeAnimationsAndFinish:(bool)arg1;
+- (void)removeBuildToStartAtEnd:(id)arg1;
 - (void)renderTextures;
 - (id)rep;
 - (void)resetHighlightsBeforeAnimationOnTextureSet:(id)arg1;
 - (void)resetPreviousStageToUnhighlightOnTextureSet:(id)arg1;
 - (void)resumeAnimationsIfPausedAtTime:(double)arg1;
+- (void)setEndOfBuildTextureSet:(id)arg1;
 - (void)setGeometryAndActionAttributesOnTextureSet:(id)arg1 isAtEndOfBuild:(bool)arg2 isAtEndOfSlide:(bool)arg3 isRenderingToContext:(bool)arg4;
 - (void)setLayerVisibility:(id)arg1 isAtEndOfBuild:(bool)arg2;
 - (void)setParentLayer:(id)arg1;
 - (void)setTextureDescription:(id)arg1;
 - (id)setupFinalTextureGivenCurrentTextureSet:(id)arg1 isRenderingToContext:(bool)arg2;
 - (void)setupPluginContext;
-- (unsigned long long)stageIndex;
+- (bool)shouldPreGenerateTextures;
 - (void)stopAnimations;
 - (void)teardown;
 - (unsigned long long)textureDeliveryStyle;
 - (id)textureDescription;
+- (id)textureDescriptionForStage:(long long)arg1 isAtEndOfBuild:(bool)arg2;
 - (id)textureSet;
 - (id)textureSetForStage:(long long)arg1 description:(id)arg2 isAtEndOfBuild:(bool)arg3 shouldForceRebuild:(bool)arg4 shouldRender:(bool)arg5;
 - (id)textureSetWithoutRenderedContents;
+- (long long)textureStageIndex;
 - (void)updateAnimationTestingLog;
 - (void)updateAnimationsForLayerTime:(double)arg1;
 - (void)waitUntilAsyncRenderingIsCompleteShouldCancel:(bool)arg1;

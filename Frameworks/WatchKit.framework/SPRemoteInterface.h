@@ -184,7 +184,6 @@
 - (id)rootViewControllerID;
 - (id)runLoopObserver;
 - (void)sendCacheRequestMessage:(id)arg1;
-- (void)sendComplicationObject:(id)arg1;
 - (void)sendData:(id)arg1 clientIdentifiers:(id)arg2;
 - (void)sendData:(id)arg1 clientIdentifiers:(id)arg2 reply:(id /* block */)arg3;
 - (void)sendPlist:(id)arg1 clientIdentifiers:(id)arg2;

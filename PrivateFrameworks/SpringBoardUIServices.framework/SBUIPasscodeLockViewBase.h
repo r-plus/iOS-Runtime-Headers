@@ -95,6 +95,7 @@
 
 - (void).cxx_destruct;
 - (void)_advanceToPasscode;
+- (void)_advanceToPasscodeTimerFired;
 - (void)_armAdvanceToPasscodeTimer;
 - (bool)_canRecognizeBiometricAuthentication;
 - (void)_cancelButtonHit;
@@ -126,6 +127,7 @@
 - (void)_resetForFailedPasscode:(bool)arg1;
 - (void)_resetProudLockAndTitleTextForFailedBiometricAttempt;
 - (void)_resetStatusText;
+- (void)_resumeBiometricMatchingAdvisory:(bool)arg1;
 - (void)_screenBrightnessReallyDidChange;
 - (void)_sendDelegateKeypadKeyDown;
 - (void)_sendDelegateKeypadKeyUp;

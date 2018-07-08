@@ -5,10 +5,12 @@
 @interface EARKeywordFinder : NSObject {
     struct unique_ptr<quasar::KeywordFinder, std::__1::default_delete<quasar::KeywordFinder> > { 
         struct __compressed_pair<quasar::KeywordFinder *, std::__1::default_delete<quasar::KeywordFinder> > { 
-            struct KeywordFinder {} *__first_; 
+            struct KeywordFinder {} *__value_; 
         } __ptr_; 
     }  _kwf;
 }
+
++ (void)initialize;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

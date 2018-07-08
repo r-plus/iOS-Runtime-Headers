@@ -3,11 +3,13 @@
  */
 
 @interface _KSCloudKitManager : NSObject {
+    _KSRequestThrottle * _accountChangeThrottle;
     NSObject<OS_dispatch_queue> * _ckWorkQueue;
     CKContainer * _cloudKitContainer;
     CKDatabase * _cloudKitDatabase;
     NSObject<OS_dispatch_queue> * _dataQueue;
     <_KSCloudKitManagerDelegate> * _delegate;
+    _KSRequestThrottle * _fetchZoneThrottle;
     NSString * _lastKnownUserKey;
     CKDatabase * _publicDatabase;
     CKRecordZone * _recordZone;
@@ -27,6 +29,8 @@
 @property (nonatomic) bool recordZoneOperationInProgress;
 @property (nonatomic, readonly) NSString *subscriptionKey;
 @property (nonatomic) bool subscriptionOperationInProgress;
+
++ (id)prepareContainerForID:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_checkAccountStatusWithCompletionHandler:(id /* block */)arg1 withRetryCount:(unsigned long long)arg2;

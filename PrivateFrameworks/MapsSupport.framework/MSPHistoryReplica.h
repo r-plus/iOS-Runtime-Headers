@@ -16,6 +16,7 @@
 + (bool)supportsSecureCoding;
 + (void)switchForEdit:(id)arg1 caseIsInsertRecord:(id /* block */)arg2 caseIsEditContents:(id /* block */)arg3 caseIsEditModificationDate:(id /* block */)arg4 caseIsDeleteTombstone:(id /* block */)arg5;
 
+- (id)_additionalEditsToUpdateContentsOfRecord:(id)arg1 identifier:(id)arg2;
 - (void)_mergeSelfRecord:(id)arg1 withRecordFromOtherReplica:(id)arg2 identifier:(id)arg3 options:(id)arg4 edits:(id)arg5;
 - (id)_sortedHistoryEntriesByApplyingEdits:(id)arg1 invalidEntryIdentifiers:(out id*)arg2;
 - (id)contents;

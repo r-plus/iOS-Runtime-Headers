@@ -5,7 +5,6 @@
 @interface HMAccessorySetting : NSObject <HMFLogging, _HMAccesorySettingDelegate> {
     HMAccessorySettingGroup * _group;
     _HMAccessorySetting * _internal;
-    bool  _reflected;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -30,7 +29,9 @@
 + (id)settingForInternal:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)_settingDidUpdateReflected:(id)arg1;
 - (void)_settingDidUpdateValue:(id)arg1;
+- (void)_settingWillUpdateReflected:(id)arg1;
 - (void)_settingWillUpdateValue:(id)arg1;
 - (id)description;
 - (id)group;

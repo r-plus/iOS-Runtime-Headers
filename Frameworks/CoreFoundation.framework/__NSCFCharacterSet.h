@@ -2,9 +2,10 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface __NSCFCharacterSet : NSMutableCharacterSet
+@interface __NSCFCharacterSet : NSMutableCharacterSet <NSSecureCoding>
 
 + (bool)automaticallyNotifiesObserversForKey:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (bool)_isDeallocating;
 - (bool)_tryRetain;
@@ -19,6 +20,7 @@
 - (void)formUnionWithCharacterSet:(id)arg1;
 - (bool)hasMemberInPlane:(unsigned char)arg1;
 - (unsigned long long)hash;
+- (id)initWithCoder:(id)arg1;
 - (void)invert;
 - (id)invertedSet;
 - (bool)isEqual:(id)arg1;

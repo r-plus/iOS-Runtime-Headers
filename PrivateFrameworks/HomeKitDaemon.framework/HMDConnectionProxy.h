@@ -8,7 +8,6 @@
     NSString * _clientName;
     bool  _entitledForAPIAccess;
     bool  _entitledForBackgroundMode;
-    bool  _entitledForSPIAccess;
     unsigned long long  _entitlements;
     NSDictionary * _privateAccessEntitlement;
     HMDProcessInfo * _processInfo;
@@ -33,7 +32,7 @@
 @property (nonatomic, readonly) NSString *effectiveLocationBundleIdentifier;
 @property (getter=isEntitledForAPIAccess, nonatomic, readonly) bool entitledForAPIAccess;
 @property (getter=isEntitledForBackgroundMode, nonatomic, readonly) bool entitledForBackgroundMode;
-@property (getter=isEntitledForSPIAccess, nonatomic, readonly) bool entitledForSPIAccess;
+@property (getter=isEntitledForSPIAccess, readonly) bool entitledForSPIAccess;
 @property (readonly) unsigned long long entitlements;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *name;

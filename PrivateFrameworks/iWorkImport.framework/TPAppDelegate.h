@@ -15,6 +15,7 @@
 
 - (bool)URLIsValidForImportedHyperlink:(id)arg1 targetDocumentRoot:(id)arg2;
 - (id)appChartPropertyOverrides;
+- (id)applicationDisplayName;
 - (id)applicationName;
 - (id)applicationTemplateVariantsForLocale:(struct __CFLocale { }*)arg1;
 - (unsigned long long)applicationType;
@@ -27,6 +28,7 @@
 - (id)documentTypeDisplayName;
 - (id)documentTypeDisplayNameForSharingInvitation;
 - (Class)drawableInfoSubclassForClass:(Class)arg1 unarchiver:(id)arg2;
+- (bool)imageGalleryCaptionsUsePlaceholderText;
 - (id)importableDocumentTypes;
 - (id)init;
 - (id)nativeDocumentType;
@@ -36,13 +38,12 @@
 - (void)p_localeChanged:(id)arg1;
 - (id)previewImageNameForEncryptedNativeDocument;
 - (id)previewImageNameForNativeDocument;
+- (void)registerSOSClassTypeMappings;
 - (id)rtfDocumentTypes;
 - (id)sharedAlertMessageWithUserName:(id)arg1;
 - (id)sharedReadOnlyAlertMessageWithUserName:(id)arg1;
 - (id)stringForApplicationUpdateError;
-- (id)stringForBoxCollaborationOptInLearnMoreURL;
 - (id)stringForBoxCollaborationOptInMessage;
-- (id)stringForBoxCollaborationOptInTermsOfServiceURL;
 - (id)stringForCloseDocument;
 - (id)stringForCloseDocumentConfirmationAlertMessage;
 - (id)stringForCloseDocumentConfirmationWillContinueToUpdateInformativeText;
@@ -60,6 +61,9 @@
 - (id)stringForDocumentUpdatedByOwnerDetails;
 - (id)stringForDocumentUpdatedByOwnerWithKeepDetails;
 - (id)stringForDocumentUpdatedTitle;
+- (id)stringForDocumentViewOnly;
+- (id)stringForDocumentViewOnlyMessage;
+- (id)stringForDocumentViewOnlyTitle;
 - (id)stringForGenericServerUnreachable;
 - (id)stringForICloudUnreachable;
 - (id)stringForLearnMoreSharingURL;
@@ -74,9 +78,11 @@
 - (id)stringForRemoveSelfAlertConfirmationTitle;
 - (id)stringForStopSharingAlertConfirmationMessage;
 - (id)stringForStopSharingAlertConfirmationTitle;
-- (id)stringForUpdatingDocument;
+- (id)stringForUpdatingDocumentWithoutServiceType;
 - (bool)supportsAutosizingTextboxes;
-- (bool)supportsNativeEquations;
+- (bool)supportsCanvasNativeEquationObjects;
+- (bool)supportsInlineNativeEquationObjects;
+- (bool)supportsLinkedTextBoxes;
 - (bool)supportsRTL;
 - (bool)tableHeaderInspectorShowsRepeatHeaderRowsSwitch;
 - (id)tangierEditingFormatDocumentType;

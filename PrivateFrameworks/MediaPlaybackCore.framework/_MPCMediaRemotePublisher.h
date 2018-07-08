@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
  */
 
-@interface _MPCMediaRemotePublisher : NSObject <MPCPlaybackEngineEventObserving, MPNowPlayingInfoLyricsDelegate, MPNowPlayingPlaybackQueueDataSourcePrivate> {
+@interface _MPCMediaRemotePublisher : NSObject <MPCPlaybackEngineEventObserving, MPNowPlayingPlaybackQueueDataSourcePrivate> {
     MPRemoteCommandCenter * _commandCenter;
     bool  _engineRestoringState;
     MPNowPlayingInfoCenter * _infoCenter;
@@ -20,11 +20,13 @@
 @property (nonatomic, readonly) MPNowPlayingInfoCenter *infoCenter;
 @property (getter=hasInitializedSupportedCommands, nonatomic) bool initializedSupportedCommands;
 @property (nonatomic, readonly) MPCPlaybackEngine *playbackEngine;
+@property (nonatomic, readonly) MPCPlayerPath *playerPath;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_disableQueueModificationsChangedNotification:(id)arg1;
 - (void)_durationAvailableNotification:(id)arg1;
+- (void)_enqueueFallbackIntentIfNeededForCommandEvent:(id)arg1 completion:(id /* block */)arg2;
 - (void)_likedStateChangedNotification:(id)arg1;
 - (void)_performCommandEvent:(id)arg1 completion:(id /* block */)arg2;
 - (void)_updateSupportedCommands;
@@ -51,6 +53,8 @@
 - (void)nowPlayingInfoCenter:(id)arg1 didEndLyricsEvent:(id)arg2;
 - (id)nowPlayingInfoCenter:(id)arg1 lyricsForContentItem:(id)arg2 completion:(id /* block */)arg3;
 - (id)playbackEngine;
+- (id)playbackQueueIdentifierForNowPlayingInfoCenter:(id)arg1;
+- (id)playerPath;
 - (void)publishIfNeeded;
 - (void)removeSupportedSpecializedQueueIdentifier:(id)arg1;
 - (void)setEngineRestoringState:(bool)arg1;

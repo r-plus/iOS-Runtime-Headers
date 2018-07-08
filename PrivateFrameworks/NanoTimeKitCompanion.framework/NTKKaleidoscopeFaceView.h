@@ -17,11 +17,13 @@
     NTKFaceLayoutContentProvider * _layoutContentProvider;
     NTKKaleidoscopePathfinder * _pathfinder;
     CLKUIQuadView * _quadView;
+    CLKUIResourceProviderKey * _resourceProviderKey;
     UIImage * _userImage;
     NTKKaleidoscopePathfinder * _userPathfinder;
     NTKPhoto * _userPhoto;
     UIImage * _userSwatch;
     CLKUITexture * _userTexture;
+    NSString * _userUuid;
 }
 
 @property (nonatomic) unsigned long long currentAsset;
@@ -51,7 +53,6 @@
 - (float)_crownTurnsForStyle:(unsigned long long)arg1;
 - (void)_disableCrown;
 - (double)_handAlphaForEditMode:(long long)arg1;
-- (double)_idealizedOffsetPercentageForAsset:(unsigned long long)arg1;
 - (id)_imageForAsset:(unsigned long long)arg1;
 - (double)_kaleidoscopeTimeForAsset:(unsigned long long)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_keylineFrameForCustomEditMode:(long long)arg1 slot:(id)arg2;
@@ -84,13 +85,13 @@
 - (void)_updateUserContent;
 - (void)_updateWithAsset:(unsigned long long)arg1;
 - (double)_verticalPaddingForStatusBar;
-- (void)addResourceUuidsToKeep:(id)arg1;
 - (unsigned long long)currentAsset;
 - (unsigned long long)currentStyle;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)provideTextureBacking:(id)arg1;
+- (id)provideAtlasBacking:(id)arg1;
 - (void)quadViewWillDisplay:(id)arg1 forTime:(double)arg2;
+- (id)resourceProviderKey;
 - (void)setCurrentAsset:(unsigned long long)arg1;
 - (void)setCurrentStyle:(unsigned long long)arg1;
 

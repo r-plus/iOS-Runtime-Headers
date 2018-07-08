@@ -9,24 +9,24 @@
         struct __hash_table<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, __gnu_cxx::__hash_map_hasher<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, TSP::DataDigestHash, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, TSP::DataDigestEqualTo, true>, std::__1::allocator<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak> > > { 
             struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> *> *> > > { 
                 struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> *> *> > > { 
-                    struct __hash_node_base<std::__1::__hash_node<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> *> {} **__first_; 
+                    struct __hash_node_base<std::__1::__hash_node<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> *> {} **__value_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> *> *> > { 
-                            unsigned long long __first_; 
+                            unsigned long long __value_; 
                         } __data_; 
-                    } __second_; 
+                    } __value_; 
                 } __ptr_; 
             } __bucket_list_; 
             struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> > > { 
                 struct __hash_node_base<std::__1::__hash_node<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> *> { 
                     struct __hash_node_base<std::__1::__hash_node<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> *> {} *__next_; 
-                } __first_; 
+                } __value_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, __gnu_cxx::__hash_map_hasher<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, TSP::DataDigestHash, true> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __p2_; 
             struct __compressed_pair<float, __gnu_cxx::__hash_map_equal<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>, TSP::DataDigestEqualTo, true> > { 
-                float __first_; 
+                float __value_; 
             } __p3_; 
         } __table_; 
     }  _digestToDataMap;
@@ -36,24 +36,24 @@
         struct __hash_table<std::__1::pair<const long long, TSPData *__weak>, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, TSPData *__weak>, TSP::ObjectIdentifierHash, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, TSPData *__weak>, std::__1::equal_to<const long long>, true>, std::__1::allocator<std::__1::pair<const long long, TSPData *__weak> > > { 
             struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *> *> > > { 
                 struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *> *> > > { 
-                    struct __hash_node_base<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *> {} **__first_; 
+                    struct __hash_node_base<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *> {} **__value_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *> *> > { 
-                            unsigned long long __first_; 
+                            unsigned long long __value_; 
                         } __data_; 
-                    } __second_; 
+                    } __value_; 
                 } __ptr_; 
             } __bucket_list_; 
             struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> > > { 
                 struct __hash_node_base<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *> { 
                     struct __hash_node_base<std::__1::__hash_node<std::__1::pair<const long long, TSPData *__weak>, void *> *> {} *__next_; 
-                } __first_; 
+                } __value_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, TSPData *__weak>, TSP::ObjectIdentifierHash, true> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __p2_; 
             struct __compressed_pair<float, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, TSPData *__weak>, std::__1::equal_to<const long long>, true> > { 
-                float __first_; 
+                float __value_; 
             } __p3_; 
         } __table_; 
     }  _identifierToDataMap;

@@ -5,7 +5,9 @@
 
 @required
 
+- (void)_settingDidUpdateReflected:(_HMAccessorySetting *)arg1;
 - (void)_settingDidUpdateValue:(_HMAccessorySetting *)arg1;
+- (void)_settingWillUpdateReflected:(_HMAccessorySetting *)arg1;
 - (void)_settingWillUpdateValue:(_HMAccessorySetting *)arg1;
 
 @optional

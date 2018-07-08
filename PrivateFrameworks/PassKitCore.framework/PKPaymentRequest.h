@@ -3,6 +3,7 @@
  */
 
 @interface PKPaymentRequest : NSObject <NSSecureCoding> {
+    unsigned long long  _APIType;
     NSString * _CTDataConnectionServiceType;
     struct __SecAccessControl { } * _accesssControlRef;
     AKAppleIDAuthenticationContext * _appleIDAuthenticationContext;
@@ -15,8 +16,11 @@
     NSString * _currencyCode;
     bool  _expectsMerchantSession;
     NSData * _externalizedContext;
+    NSString * _localizedBiometricConfirmationTitle;
     NSString * _localizedConfirmationTitle;
     NSString * _localizedNavigationTitle;
+    NSString * _localizedPasswordButtonTitle;
+    NSString * _localizedSummaryItemsTitle;
     unsigned long long  _merchantCapabilities;
     NSString * _merchantIdentifier;
     PKPaymentMerchantSession * _merchantSession;
@@ -42,6 +46,7 @@
     NSArray * _thumbnailURLs;
 }
 
+@property (nonatomic) unsigned long long APIType;
 @property (nonatomic, retain) NSString *CTDataConnectionServiceType;
 @property (nonatomic) struct __SecAccessControl { }*accesssControlRef;
 @property (nonatomic, retain) AKAppleIDAuthenticationContext *appleIDAuthenticationContext;
@@ -54,8 +59,11 @@
 @property (nonatomic, copy) NSString *currencyCode;
 @property (nonatomic) bool expectsMerchantSession;
 @property (nonatomic, copy) NSData *externalizedContext;
+@property (nonatomic, copy) NSString *localizedBiometricConfirmationTitle;
 @property (nonatomic, copy) NSString *localizedConfirmationTitle;
 @property (nonatomic, copy) NSString *localizedNavigationTitle;
+@property (nonatomic, copy) NSString *localizedPasswordButtonTitle;
+@property (nonatomic, copy) NSString *localizedSummaryItemsTitle;
 @property (nonatomic) unsigned long long merchantCapabilities;
 @property (nonatomic, copy) NSString *merchantIdentifier;
 @property (nonatomic, retain) PKPaymentMerchantSession *merchantSession;
@@ -92,6 +100,7 @@
 + (long long)version;
 
 - (void).cxx_destruct;
+- (unsigned long long)APIType;
 - (id)CTDataConnectionServiceType;
 - (id)_addressFieldsToContactFields:(unsigned long long)arg1;
 - (unsigned long long)_contactFieldsToAddressFields:(id)arg1;
@@ -116,8 +125,11 @@
 - (bool)isPeerPaymentRequest;
 - (bool)isServiceProviderPaymentRequest;
 - (bool)isShippingEditable;
+- (id)localizedBiometricConfirmationTitle;
 - (id)localizedConfirmationTitle;
 - (id)localizedNavigationTitle;
+- (id)localizedPasswordButtonTitle;
+- (id)localizedSummaryItemsTitle;
 - (unsigned long long)merchantCapabilities;
 - (id)merchantIdentifier;
 - (id)merchantSession;
@@ -134,6 +146,7 @@
 - (id)requiredShippingContactFields;
 - (bool)requiresAddressPrecision;
 - (id)serviceProviderPaymentRequest;
+- (void)setAPIType:(unsigned long long)arg1;
 - (void)setAccesssControlRef:(struct __SecAccessControl { }*)arg1;
 - (void)setAppleIDAuthenticationContext:(id)arg1;
 - (void)setApplicationData:(id)arg1;
@@ -146,8 +159,11 @@
 - (void)setCurrencyCode:(id)arg1;
 - (void)setExpectsMerchantSession:(bool)arg1;
 - (void)setExternalizedContext:(id)arg1;
+- (void)setLocalizedBiometricConfirmationTitle:(id)arg1;
 - (void)setLocalizedConfirmationTitle:(id)arg1;
 - (void)setLocalizedNavigationTitle:(id)arg1;
+- (void)setLocalizedPasswordButtonTitle:(id)arg1;
+- (void)setLocalizedSummaryItemsTitle:(id)arg1;
 - (void)setMerchantCapabilities:(unsigned long long)arg1;
 - (void)setMerchantIdentifier:(id)arg1;
 - (void)setMerchantSession:(id)arg1;

@@ -32,7 +32,6 @@
 - (void)hideController:(id)arg1 animated:(bool)arg2 withCompletion:(id /* block */)arg3;
 - (id)init;
 - (id)modalRootViewController;
-- (unsigned long long)navigationControllerSupportedInterfaceOrientations:(id)arg1;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
 - (id)presentedViewController;

@@ -44,6 +44,7 @@
 - (void)clearVertexs;
 - (bool)containsCoordinate:(struct { double x1; double x2; })arg1;
 - (bool)containsMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)containsRegion:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

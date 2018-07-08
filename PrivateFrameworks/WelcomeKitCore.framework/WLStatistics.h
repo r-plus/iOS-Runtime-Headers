@@ -26,9 +26,9 @@
 @property (nonatomic) unsigned long long importStartBytesFree;
 @property (nonatomic, retain) NSDate *importStartDate;
 
++ (id)_statisticsWithContentType:(id)arg1;
 + (id)aggregateContentType;
 + (id)fetchContentType;
-+ (id)statisticsWithContentType:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)addToFetchByteCount:(unsigned long long)arg1;

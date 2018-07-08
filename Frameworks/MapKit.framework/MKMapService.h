@@ -83,13 +83,13 @@
 - (id)ticketForMUIDs:(id)arg1 resultProviderID:(int)arg2 contentProvider:(id)arg3 traits:(id)arg4;
 - (id)ticketForMUIDs:(id)arg1 traits:(id)arg2;
 - (id)ticketForMapItemToRefine:(id)arg1 traits:(id)arg2;
-- (id)ticketForMerchantCode:(id)arg1 rawMerchantCode:(id)arg2 paymentNetwork:(id)arg3 transactionDate:(id)arg4 transactionLocation:(id)arg5 traits:(id)arg6;
+- (id)ticketForMerchantCode:(id)arg1 rawMerchantCode:(id)arg2 industryCategory:(id)arg3 industryCode:(id)arg4 paymentNetwork:(id)arg5 transactionDate:(id)arg6 transactionLocation:(id)arg7 traits:(id)arg8;
 - (id)ticketForNearestTransitStation:(id)arg1 coordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg2 traits:(id)arg3;
 - (id)ticketForNonExpiredIdentifier:(id)arg1 resultProviderID:(int)arg2 contentProvider:(id)arg3 traits:(id)arg4;
 - (id)ticketForPhoneNumbers:(id)arg1 allowCellularDataForLookup:(bool)arg2 traits:(id)arg3;
 - (id)ticketForPlaceRefinementRequestWithCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; }*)arg1 addressLine:(id)arg2 placeName:(id)arg3 traits:(id)arg4;
 - (id)ticketForPopularNearbyForSearchCategory:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
-- (id)ticketForProblem:(id)arg1 mapItemForProblemContext:(id)arg2 pushToken:(id)arg3 allowContactBackAtEmailAddress:(id)arg4 traits:(id)arg5;
+- (id)ticketForProblem:(id)arg1 mapItemForProblemContext:(id)arg2 userCredentials:(id)arg3 pushToken:(id)arg4 allowContactBackAtEmailAddress:(id)arg5 traits:(id)arg6;
 - (id)ticketForProblemResubmission:(id)arg1 traits:(id)arg2;
 - (id)ticketForReverseGeocodeCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 traits:(id)arg2;
 - (id)ticketForReverseGeocodeDroppedPinCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 floorOrdinal:(int)arg2 traits:(id)arg3;
@@ -101,6 +101,7 @@
 - (id)ticketForSearchPoisForBrandMUID:(unsigned long long)arg1 traits:(id)arg2;
 - (id)ticketForSearchQuery:(id)arg1 completionItem:(id)arg2 maxResults:(unsigned int)arg3 traits:(id)arg4;
 - (id)ticketForSearchQuery:(id)arg1 completionItem:(id)arg2 relatedSearchSuggestion:(id)arg3 maxResults:(unsigned int)arg4 traits:(id)arg5;
+- (id)ticketForSearchQuery:(id)arg1 completionItem:(id)arg2 retainedSearch:(id)arg3 maxResults:(unsigned int)arg4 traits:(id)arg5;
 - (id)ticketForTransitLines:(id)arg1 traits:(id)arg2;
 - (id)ticketForURLQuery:(id)arg1 identifier:(id)arg2 resultProviderId:(int)arg3 contentProvider:(id)arg4 maxResults:(unsigned int)arg5 traits:(id)arg6;
 

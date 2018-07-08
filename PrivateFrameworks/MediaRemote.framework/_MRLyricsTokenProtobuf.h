@@ -12,9 +12,9 @@
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSData *userData;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasIdentifier;

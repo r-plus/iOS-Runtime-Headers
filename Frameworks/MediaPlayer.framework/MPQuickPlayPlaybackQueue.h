@@ -4,4 +4,6 @@
 
 @interface MPQuickPlayPlaybackQueue : MPRemotePlaybackQueue
 
++ (bool)supportsSecureCoding;
+
 @end

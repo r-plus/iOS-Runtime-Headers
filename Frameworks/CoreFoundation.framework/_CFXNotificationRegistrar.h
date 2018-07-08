@@ -13,6 +13,7 @@
         struct { /* ? */ } *callbacks; 
     }  _doubleWildcards;
     unsigned long long  _options;
+    struct __CFDictionary { } * _tokenRegistrations;
     struct { 
         union { 
             struct __CFNull {} *empty; 

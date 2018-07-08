@@ -4,7 +4,6 @@
 
 @interface MKPlaceMessageViewController : MKPlaceSectionViewController <MKModuleViewControllerProtocol, _MKInfoCardChildViewControllerAnalyticsDelegate> {
     <_MKInfoCardAnalyticsDelegate> * _analyticsDelegate;
-    bool  _canUseMessageID;
     <_MKPlaceItem> * _placeItem;
 }
 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/KeyboardServices.framework/KeyboardServices
  */
 
-@interface _KSFileEntry : NSObject {
+@interface _KSFileEntry : NSObject <NSSecureCoding> {
     NSMutableDictionary * _extendedAttributes;
     NSMutableArray * _fileArray;
     NSData * _fileBlob;
@@ -14,6 +14,7 @@
 @property (nonatomic, readonly, retain) NSString *name;
 
 + (id)entryWithSerialisedDataAtURL:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (unsigned long long)addBlobToFile:(id)arg1;

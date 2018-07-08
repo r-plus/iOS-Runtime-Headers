@@ -20,8 +20,7 @@
     UILabel * _primaryLabel;
     MPUMarqueeView * _primaryMarqueeView;
     NSString * _primaryString;
-    UILabel * _routeLabel;
-    NSString * _routeName;
+    MediaControlsRouteLabel * _routeLabel;
     MPButton * _routingButton;
     UILabel * _secondaryLabel;
     MPUMarqueeView * _secondaryMarqueeView;
@@ -29,7 +28,6 @@
     UIView * _shadow;
     bool  _shouldUseOverrideSize;
     long long  _style;
-    MPUMarqueeView * _titleMarqueeView;
     bool  _transitioning;
 }
 
@@ -47,8 +45,7 @@
 @property (nonatomic, retain) UILabel *primaryLabel;
 @property (nonatomic, retain) MPUMarqueeView *primaryMarqueeView;
 @property (nonatomic, copy) NSString *primaryString;
-@property (nonatomic, retain) UILabel *routeLabel;
-@property (nonatomic, copy) NSString *routeName;
+@property (nonatomic, retain) MediaControlsRouteLabel *routeLabel;
 @property (nonatomic, retain) MPButton *routingButton;
 @property (nonatomic, retain) UILabel *secondaryLabel;
 @property (nonatomic, retain) MPUMarqueeView *secondaryMarqueeView;
@@ -56,7 +53,6 @@
 @property (nonatomic, retain) UIView *shadow;
 @property (nonatomic) bool shouldUseOverrideSize;
 @property (nonatomic) long long style;
-@property (nonatomic, retain) MPUMarqueeView *titleMarqueeView;
 @property (getter=isTransitioning, nonatomic) bool transitioning;
 
 - (void).cxx_destruct;
@@ -85,7 +81,6 @@
 - (id)primaryMarqueeView;
 - (id)primaryString;
 - (id)routeLabel;
-- (id)routeName;
 - (id)routingButton;
 - (id)secondaryLabel;
 - (id)secondaryMarqueeView;
@@ -105,7 +100,6 @@
 - (void)setPrimaryMarqueeView:(id)arg1;
 - (void)setPrimaryString:(id)arg1;
 - (void)setRouteLabel:(id)arg1;
-- (void)setRouteName:(id)arg1;
 - (void)setRoutingButton:(id)arg1;
 - (void)setSecondaryLabel:(id)arg1;
 - (void)setSecondaryMarqueeView:(id)arg1;
@@ -113,13 +107,12 @@
 - (void)setShadow:(id)arg1;
 - (void)setShouldUseOverrideSize:(bool)arg1;
 - (void)setStyle:(long long)arg1;
-- (void)setTitleMarqueeView:(id)arg1;
 - (void)setTransitioning:(bool)arg1;
 - (id)shadow;
 - (bool)shouldUseOverrideSize;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (long long)style;
-- (id)titleMarqueeView;
+- (void)tintColorDidChange;
 - (void)updateArtworkStyle;
 
 @end

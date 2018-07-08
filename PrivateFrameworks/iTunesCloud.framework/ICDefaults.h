@@ -17,6 +17,8 @@
 @property (nonatomic, readonly, copy) NSNumber *fairPlayDeviceTypeOverride;
 @property (nonatomic, readonly, copy) NSString *hardwarePlatformOverride;
 @property (nonatomic) bool ignoreExtendedCertificateValidation;
+@property (nonatomic, copy) NSNumber *lastActiveAccountDSID;
+@property (nonatomic, copy) NSDictionary *lastCookieHeadersForRevokingMusicUserTokens;
 @property (nonatomic, copy) NSDictionary *mediaLibraryAccessApplicationIdentifiersWithTCCAcceptanceDates;
 @property (nonatomic, readonly, copy) NSString *productPlatformOverride;
 @property (nonatomic, readonly, copy) NSString *productVersionOverride;
@@ -40,6 +42,8 @@
 - (id)hardwarePlatformOverride;
 - (bool)ignoreExtendedCertificateValidation;
 - (id)init;
+- (id)lastActiveAccountDSID;
+- (id)lastCookieHeadersForRevokingMusicUserTokens;
 - (id)mediaLibraryAccessApplicationIdentifiersWithTCCAcceptanceDates;
 - (id)productPlatformOverride;
 - (id)productVersionOverride;
@@ -51,6 +55,8 @@
 - (void)setCloudMediaLibraryUID:(id)arg1;
 - (void)setDefaultStoreFront:(id)arg1;
 - (void)setIgnoreExtendedCertificateValidation:(bool)arg1;
+- (void)setLastActiveAccountDSID:(id)arg1;
+- (void)setLastCookieHeadersForRevokingMusicUserTokens:(id)arg1;
 - (void)setMediaLibraryAccessApplicationIdentifiersWithTCCAcceptanceDates:(id)arg1;
 - (void)setPushNotificationState:(id)arg1;
 - (bool)shouldForceiPhoneBehaviors;

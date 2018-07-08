@@ -24,6 +24,7 @@
 @property (getter=isInMemoryBookmarkChangeTrackingAvailable, nonatomic, readonly) bool inMemoryBookmarkChangeTrackingAvailable;
 @property (getter=isOfflineReadingListAvailable, nonatomic, readonly) bool offlineReadingListAvailable;
 @property (getter=isParsecITunesResultsAvailable, nonatomic, readonly) bool parsecITunesResultsAvailable;
+@property (getter=isPrivateBrowsingAvailable, nonatomic, readonly) bool privateBrowsingAvailable;
 @property (getter=isReadingListAvailable, nonatomic, readonly) bool readingListAvailable;
 
 + (long long)accessLevel;
@@ -47,6 +48,7 @@
 - (bool)isInMemoryBookmarkChangeTrackingAvailable;
 - (bool)isOfflineReadingListAvailable;
 - (bool)isParsecITunesResultsAvailable;
+- (bool)isPrivateBrowsingAvailable;
 - (bool)isReadingListAvailable;
 
 @end

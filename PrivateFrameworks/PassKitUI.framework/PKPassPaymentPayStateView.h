@@ -5,6 +5,7 @@
 @interface PKPassPaymentPayStateView : UIView <PKGlyphViewDelegate> {
     bool  _accessPass;
     bool  _biometricsUnavailableHint;
+    UILabel * _debugLabel;
     <PKPassPaymentPayStateViewDelegate> * _delegate;
     PKGlyphView * _glyph;
     double  _glyphViewPadding;
@@ -20,6 +21,7 @@
 @property (nonatomic) bool accessPass;
 @property (nonatomic) bool biometricsUnavailableHint;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) UILabel *debugLabel;
 @property (nonatomic) <PKPassPaymentPayStateViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) PKGlyphView *glyph;
@@ -43,6 +45,7 @@
 - (bool)accessPass;
 - (bool)biometricsUnavailableHint;
 - (void)dealloc;
+- (id)debugLabel;
 - (id)delegate;
 - (void)emphasizeStateIfPossible:(long long)arg1 withTextOverride:(id)arg2;
 - (id)glyph;
@@ -62,5 +65,6 @@
 - (void)setTouchRecognizingHint:(bool)arg1;
 - (long long)state;
 - (bool)touchRecognizingHint;
+- (void)updateDebugLabel:(id)arg1 isErrorState:(bool)arg2;
 
 @end

@@ -29,6 +29,7 @@
     int  _coverArticleDisplayRank;
     int  _coverArticleFeatureType;
     NSString * _creativeId;
+    int  _curatedContentType;
     bool  _didBounce;
     bool  _didOpenInSafari;
     int  _displayRank;
@@ -74,6 +75,7 @@
         unsigned int characterCount : 1; 
         unsigned int coverArticleDisplayRank : 1; 
         unsigned int coverArticleFeatureType : 1; 
+        unsigned int curatedContentType : 1; 
         unsigned int displayRank : 1; 
         unsigned int feedAutoSubscribeType : 1; 
         unsigned int feedCellHostType : 1; 
@@ -226,6 +228,7 @@
 @property (nonatomic) int coverArticleDisplayRank;
 @property (nonatomic) int coverArticleFeatureType;
 @property (nonatomic, retain) NSString *creativeId;
+@property (nonatomic) int curatedContentType;
 @property (nonatomic) bool didBounce;
 @property (nonatomic) bool didOpenInSafari;
 @property (nonatomic) int displayRank;
@@ -271,6 +274,7 @@
 @property (nonatomic) bool hasCoverArticleDisplayRank;
 @property (nonatomic) bool hasCoverArticleFeatureType;
 @property (nonatomic, readonly) bool hasCreativeId;
+@property (nonatomic) bool hasCuratedContentType;
 @property (nonatomic) bool hasDidBounce;
 @property (nonatomic) bool hasDidOpenInSafari;
 @property (nonatomic) bool hasDisplayRank;
@@ -439,6 +443,7 @@
 - (int)StringAsArticleType:(id)arg1;
 - (int)StringAsArticleViewPresentationReason:(id)arg1;
 - (int)StringAsCoverArticleFeatureType:(id)arg1;
+- (int)StringAsCuratedContentType:(id)arg1;
 - (int)StringAsFeedAutoSubscribeType:(id)arg1;
 - (int)StringAsFeedCellHostType:(id)arg1;
 - (int)StringAsFeedPresentationReason:(id)arg1;
@@ -494,6 +499,8 @@
 - (int)coverArticleFeatureType;
 - (id)coverArticleFeatureTypeAsString:(int)arg1;
 - (id)creativeId;
+- (int)curatedContentType;
+- (id)curatedContentTypeAsString:(int)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)didBounce;
@@ -550,6 +557,7 @@
 - (bool)hasCoverArticleDisplayRank;
 - (bool)hasCoverArticleFeatureType;
 - (bool)hasCreativeId;
+- (bool)hasCuratedContentType;
 - (bool)hasDidBounce;
 - (bool)hasDidOpenInSafari;
 - (bool)hasDisplayRank;
@@ -729,6 +737,7 @@
 - (void)setCoverArticleDisplayRank:(int)arg1;
 - (void)setCoverArticleFeatureType:(int)arg1;
 - (void)setCreativeId:(id)arg1;
+- (void)setCuratedContentType:(int)arg1;
 - (void)setDidBounce:(bool)arg1;
 - (void)setDidOpenInSafari:(bool)arg1;
 - (void)setDisplayRank:(int)arg1;
@@ -767,6 +776,7 @@
 - (void)setHasComputedGlobalScoreCoefficient:(bool)arg1;
 - (void)setHasCoverArticleDisplayRank:(bool)arg1;
 - (void)setHasCoverArticleFeatureType:(bool)arg1;
+- (void)setHasCuratedContentType:(bool)arg1;
 - (void)setHasDidBounce:(bool)arg1;
 - (void)setHasDidOpenInSafari:(bool)arg1;
 - (void)setHasDisplayRank:(bool)arg1;

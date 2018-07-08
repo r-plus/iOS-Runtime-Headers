@@ -20,6 +20,7 @@
 - (unsigned char)appliedConditionKey;
 - (id)applyConditionalValue:(double)arg1;
 - (id)asCustomFormatWrapper;
+- (id)currencyCodeForValue:(double)arg1;
 - (id)customFormat;
 - (id)customFormatData;
 - (id)customFormatKey;

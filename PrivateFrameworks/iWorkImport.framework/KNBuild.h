@@ -80,6 +80,7 @@
 @property (nonatomic, readonly) NSSet *inspectableAttributes;
 @property (nonatomic, readonly) bool isActionBuild;
 @property (nonatomic, readonly) bool isActionMotionBuild;
+@property (nonatomic, readonly) bool isContentBuild;
 @property (nonatomic, readonly) bool isEmphasisBuild;
 @property (nonatomic, readonly) bool isOnSlide;
 @property (nonatomic, readonly) unsigned long long lastActiveChunkIndexInBuild;
@@ -170,7 +171,6 @@
 - (id)firstChunk;
 - (unsigned long long)firstChunkIndexOnSlide;
 - (bool)hasComplement;
-- (bool)hasComplementInBuilds:(id)arg1;
 - (bool)hasInactiveChunks;
 - (id)i_buildChunkForChunkIdentifier:(id)arg1;
 - (int)i_chunkIDSeed;
@@ -190,6 +190,7 @@
 - (bool)isActionBuild;
 - (bool)isActionMotionBuild;
 - (bool)isComplementOfBuild:(id)arg1;
+- (bool)isContentBuild;
 - (bool)isEmphasisBuild;
 - (bool)isOnSlide;
 - (unsigned long long)lastActiveChunkIndexInBuild;
@@ -201,6 +202,7 @@
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })p_calculateActiveChunkRange;
 - (id)p_chunkAtIndex:(unsigned long long)arg1;
 - (id)p_chunkTitleByTruncatingTitle:(id)arg1 toLength:(unsigned long long)arg2;
+- (bool)p_hasComplementInBuilds:(id)arg1;
 - (bool)p_isDeliveryLocalized:(id)arg1 forNonNilDrawable:(id)arg2;
 - (bool)p_supportsCustomEffectTimingCurveForLayoutStyles:(id)arg1;
 - (bool)p_supportsCustomTextDeliveryOptionsForAttributes:(id)arg1;

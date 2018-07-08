@@ -57,6 +57,7 @@
     int  __lastConfigurationRequestID;
     unsigned long long  __lastShutterButtonTouchDownTime;
     NSDate * __lastTimerIndicatorFaceUpdateDate;
+    long long  __lastZoomInteractionType;
     long long  __layoutStyle;
     CAMLevelIndicatorView * __levelView;
     CAMLevelViewModel * __levelViewModel;
@@ -214,6 +215,7 @@
 @property (setter=_setLastConfigurationRequestID:, nonatomic) int _lastConfigurationRequestID;
 @property (setter=_setLastShutterButtonTouchDownTime:, nonatomic) unsigned long long _lastShutterButtonTouchDownTime;
 @property (setter=_setLastTimerIndicatorFaceUpdateDate:, nonatomic, retain) NSDate *_lastTimerIndicatorFaceUpdateDate;
+@property (setter=_setLastZoomInteractionType:, nonatomic) long long _lastZoomInteractionType;
 @property (setter=_setLayoutStyle:, nonatomic) long long _layoutStyle;
 @property (nonatomic, readonly) CAMLevelIndicatorView *_levelView;
 @property (nonatomic, readonly) CAMLevelViewModel *_levelViewModel;
@@ -331,6 +333,7 @@
 - (void).cxx_destruct;
 - (id)_HDRBadge;
 - (id)_HDRButton;
+- (void)_aggregateLowDiskEventWithIdentifier:(id)arg1;
 - (bool)_allowsPhysicalCaptureInteraction;
 - (void)_applyAutorotationCorrectingTransformForOrientation:(long long)arg1;
 - (void)_applyTransformsForAutorotationStyle:(long long)arg1;
@@ -589,6 +592,7 @@
 - (int)_lastConfigurationRequestID;
 - (unsigned long long)_lastShutterButtonTouchDownTime;
 - (id)_lastTimerIndicatorFaceUpdateDate;
+- (long long)_lastZoomInteractionType;
 - (long long)_layoutStyle;
 - (id)_levelView;
 - (id)_levelViewModel;
@@ -650,6 +654,7 @@
 - (id)_remoteShutterController;
 - (void)_resetAggregateInfoForPhotoFilters;
 - (bool)_resetTimerDurationAfterDelayedCapture;
+- (void)_resetZoom;
 - (void)_resolveAndUpdatePotentiallyConflictingControls:(bool)arg1;
 - (void)_resolvePotentiallyConflictingControlsForGraphConfiguration:(id)arg1 resolvedFlashMode:(long long*)arg2 resolvedHDRMode:(long long*)arg3 resolvedLivePhotoMode:(long long*)arg4;
 - (long long)_resolvedFlashMode;
@@ -686,6 +691,7 @@
 - (void)_setLastConfigurationRequestID:(int)arg1;
 - (void)_setLastShutterButtonTouchDownTime:(unsigned long long)arg1;
 - (void)_setLastTimerIndicatorFaceUpdateDate:(id)arg1;
+- (void)_setLastZoomInteractionType:(long long)arg1;
 - (void)_setLayoutStyle:(long long)arg1;
 - (void)_setLightingType:(long long)arg1 forMode:(long long)arg2;
 - (void)_setModeDisabledForMultitasking:(bool)arg1;
@@ -908,7 +914,7 @@
 - (void)_updateUserInitiationTimeForRequest:(id)arg1;
 - (void)_updateUserPreferencesForFilterUsage;
 - (void)_updateVideoConfigurationAggregateDictionaryForRequest:(id)arg1;
-- (void)_updateZoomAggregateDictionaryForMode:(long long)arg1 device:(long long)arg2 videoConfiguration:(long long)arg3 zoomFactor:(double)arg4;
+- (void)_updateZoomAggregateDictionaryForMode:(long long)arg1 device:(long long)arg2 videoConfiguration:(long long)arg3 zoomFactor:(double)arg4 zoomInteractionType:(long long)arg5;
 - (void)_updateZoomAggregateDictionaryForRequest:(id)arg1 response:(id)arg2;
 - (void)_updateZoomButtonTelephotoToggleForDevice:(long long)arg1;
 - (void)_updateZoomControlWithZoomFactor:(double)arg1 forGraphConfiguration:(id)arg2;

@@ -5,7 +5,7 @@
 @interface SFChargingUIEffects : NSObject
 
 + (id)backdropViewWithM11:(double)arg1 blurRadius:(double)arg2;
-+ (id)bodyShortFontAddingSymbolicTraits:(unsigned int)arg1;
++ (id)bodyShortFontAddingSymbolicTraits:(unsigned int)arg1 withContentSizeCategory:(id)arg2;
 + (id)visualEffectViewWithColor0:(id)arg1 color1:(id)arg2;
 
 @end

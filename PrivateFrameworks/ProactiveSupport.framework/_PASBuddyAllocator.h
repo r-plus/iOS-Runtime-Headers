@@ -3,7 +3,7 @@
  */
 
 @interface _PASBuddyAllocator : NSObject {
-    struct unique_ptr<(anonymous namespace)::BuddyAllocator, std::__1::default_delete<(anonymous namespace)::BuddyAllocator> >="__ptr_"{__compressed_pair<(anonymous namespace)::BuddyAllocator *, std::__1::default_delete<(anonymous namespace)::BuddyAllocator> >="__first_"^{BuddyAllocator {}  _allocator;
+    struct unique_ptr<(anonymous namespace)::BuddyAllocator, std::__1::default_delete<(anonymous namespace)::BuddyAllocator> >="__ptr_"{__compressed_pair<(anonymous namespace)::BuddyAllocator *, std::__1::default_delete<(anonymous namespace)::BuddyAllocator> >="__value_"^{BuddyAllocator {}  _allocator;
     void * _buffer;
     id /* block */  _freeBuffer;
 }

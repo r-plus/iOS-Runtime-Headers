@@ -4,6 +4,7 @@
 
 @interface SXAdRequest : NSObject {
     unsigned long long  _adType;
+    double  _aspectRatioOfVideoPlayer;
     NSDictionary * _campaignData;
     NSString * _componentIdentifier;
     NSDictionary * _componentMetadata;
@@ -23,6 +24,7 @@
 }
 
 @property (nonatomic) unsigned long long adType;
+@property (nonatomic) double aspectRatioOfVideoPlayer;
 @property (nonatomic, retain) NSDictionary *campaignData;
 @property (nonatomic, retain) NSString *componentIdentifier;
 @property (nonatomic, retain) NSDictionary *componentMetadata;
@@ -33,6 +35,7 @@
 
 - (void).cxx_destruct;
 - (unsigned long long)adType;
+- (double)aspectRatioOfVideoPlayer;
 - (id)campaignData;
 - (id)componentIdentifier;
 - (id)componentMetadata;
@@ -40,6 +43,7 @@
 - (bool)dynamicPlacement;
 - (struct CGPoint { double x1; double x2; })positionInArticle;
 - (void)setAdType:(unsigned long long)arg1;
+- (void)setAspectRatioOfVideoPlayer:(double)arg1;
 - (void)setCampaignData:(id)arg1;
 - (void)setComponentIdentifier:(id)arg1;
 - (void)setComponentMetadata:(id)arg1;

@@ -8,6 +8,7 @@
 
 + (bool)canFilterByProperty:(id)arg1;
 + (id)defaultPropertyValues;
++ (bool)supportsSecureCoding;
 
 - (bool)didSkipWithPlayedToTime:(double)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -38,6 +38,7 @@
 // Image: /System/Library/PrivateFrameworks/StreamingZip.framework/StreamingZip
 
 + (void)enableDebugLogging;
++ (id)knownSZExtractorImplementations;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;

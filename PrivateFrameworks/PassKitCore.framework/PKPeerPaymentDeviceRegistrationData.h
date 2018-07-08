@@ -7,12 +7,14 @@
     bool  _devSigned;
     NSDictionary * _enrollmentData;
     NSString * _signedAuthToken;
+    NSData * _signedEnrollmentDataSignature;
 }
 
 @property (nonatomic, copy) NSString *companionSerialNumber;
 @property (nonatomic) bool devSigned;
 @property (nonatomic, copy) NSDictionary *enrollmentData;
 @property (nonatomic, copy) NSString *signedAuthToken;
+@property (nonatomic, copy) NSData *signedEnrollmentDataSignature;
 
 + (bool)supportsSecureCoding;
 
@@ -30,6 +32,8 @@
 - (void)setDevSigned:(bool)arg1;
 - (void)setEnrollmentData:(id)arg1;
 - (void)setSignedAuthToken:(id)arg1;
+- (void)setSignedEnrollmentDataSignature:(id)arg1;
 - (id)signedAuthToken;
+- (id)signedEnrollmentDataSignature;
 
 @end

@@ -68,20 +68,15 @@
 @property (nonatomic) unsigned int slotID;
 @property (nonatomic) int state;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 + (double)fontSizeForSingleLineLayout;
 + (id)newKeyViewWithSize:(struct CGSize { double x1; double x2; })arg1 state:(int)arg2 needsBackground:(bool)arg3;
-
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
 
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })activeFrame;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })baseFrame;
 - (long long)candidateType;
 - (void)clearKeyViewForState:(int)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })collapsedFrame;
+- (void)dealloc;
 - (void)dimKeys:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)isAutocorrection;

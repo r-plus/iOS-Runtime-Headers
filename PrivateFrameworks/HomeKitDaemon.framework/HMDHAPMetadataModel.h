@@ -10,6 +10,7 @@
 @property (nonatomic, retain) NSDictionary *rawPlist;
 @property (nonatomic, retain) NSNumber *schemaVersion;
 
++ (id)allowedTypes;
 + (id)metadataModelObjectUUID;
 + (id)modelWithDictionary:(id)arg1;
 + (id)properties;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MapsSupport.framework/MapsSupport
  */
 
-@interface MSPCloudKitAccountAccess : NSObject <MSPCloudAccess, MSPJournaling> {
+@interface MSPCloudKitAccountAccess : NSObject <MSPCloudAccess> {
     id /* block */  _availabilityDidChangeHandler;
     NSUUID * _clientRegistrationIdentifier;
     MSPCloudCoalescedOperationExecutor * _coalescedExecutor;
@@ -12,6 +12,7 @@
     CKDatabase * _database;
     MSPJournal * _journal;
     NSString * _latestAccountIdentity;
+    MSPLongLivedCKOpScopedCache * _longLivedOpCache;
     NSDate * _minimumRetryAfter;
     NSObject<OS_dispatch_queue> * _reachabilityQueue;
     CKRecordZoneID * _zoneID;
@@ -22,13 +23,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) MSPLongLivedCKOpScopedCache *longLivedOpCache;
 @property (readonly) Class superclass;
 
-+ (void)_didCompleteLongLivedOperation:(id)arg1;
-+ (id)_snapshotLongLivedIDs;
-+ (id)_trackedLongLivedIDsSet;
-+ (void)_willEmitLongLivedOperation:(id)arg1;
 + (id)containerForEnvironment:(long long)arg1 usesZoneWidePCS:(bool)arg2;
++ (bool)useLongLivedOperations;
 
 - (void).cxx_destruct;
 - (void)_accountChanged:(id)arg1;
@@ -41,6 +40,7 @@
 - (id)eventForState:(id)arg1 affectedObject:(id)arg2;
 - (id)initWithEnvironment:(long long)arg1 zoneID:(id)arg2 usesZoneWidePCS:(bool)arg3;
 - (id)initWithZoneID:(id)arg1;
+- (id)longLivedOpCache;
 - (id)minimumStartDate;
 - (void)networkReachabilityChanged:(bool)arg1;
 - (id)newCombinedCachingFetchRequestWithGroup:(id)arg1 forTask:(id)arg2 successHandler:(id /* block */)arg3;
@@ -60,6 +60,7 @@
 - (void)setAvailabilityDidChangeHandler:(id /* block */)arg1;
 - (void)setClientRegistrationIdentifier:(id)arg1;
 - (void)setContentsDidChangeHandler:(id /* block */)arg1;
+- (void)setLongLivedOpCache:(id)arg1;
 - (bool)shouldReportState:(id)arg1;
 - (bool)shouldRetryAfterError:(id)arg1 isCancelation:(bool*)arg2 afterDelay:(out id*)arg3 withResolvingTask:(out id*)arg4;
 - (id)statesToReport;

@@ -11,6 +11,7 @@
     NSString * _identityToken;
     NSArray * _loggedInServices;
     NSString * _passwordResetToken;
+    NSString * _phoneNumberCertificate;
     AKDevice * _proxiedDevice;
     AKAnisetteData * _proxiedDeviceAnisetteData;
     NSString * _proxyAppName;
@@ -21,6 +22,7 @@
     bool  _shouldSendEphemeralAuthHeader;
     bool  _shouldSendICSCIntentHeader;
     bool  _shouldSendLocalUserHasAppleIDLoginHeader;
+    bool  _shouldSendPhoneNumber;
 }
 
 @property (nonatomic, copy) NSString *altDSID;
@@ -31,6 +33,7 @@
 @property (nonatomic, copy) NSString *identityToken;
 @property (nonatomic, copy) NSArray *loggedInServices;
 @property (nonatomic, copy) NSString *passwordResetToken;
+@property (nonatomic, copy) NSString *phoneNumberCertificate;
 @property (nonatomic, retain) AKDevice *proxiedDevice;
 @property (nonatomic, retain) AKAnisetteData *proxiedDeviceAnisetteData;
 @property (nonatomic, copy) NSString *proxyAppName;
@@ -41,6 +44,7 @@
 @property (nonatomic) bool shouldSendEphemeralAuthHeader;
 @property (nonatomic) bool shouldSendICSCIntentHeader;
 @property (nonatomic) bool shouldSendLocalUserHasAppleIDLoginHeader;
+@property (nonatomic) bool shouldSendPhoneNumber;
 
 + (id)sharedController;
 + (unsigned long long)signalFromServerResponse:(id)arg1;
@@ -63,6 +67,7 @@
 - (bool)isResponseFinalForHSA2ServerFlow:(id)arg1;
 - (id)loggedInServices;
 - (id)passwordResetToken;
+- (id)phoneNumberCertificate;
 - (id)proxiedDevice;
 - (id)proxiedDeviceAnisetteData;
 - (id)proxyAppName;
@@ -77,6 +82,7 @@
 - (void)setIdentityToken:(id)arg1;
 - (void)setLoggedInServices:(id)arg1;
 - (void)setPasswordResetToken:(id)arg1;
+- (void)setPhoneNumberCertificate:(id)arg1;
 - (void)setProxiedDevice:(id)arg1;
 - (void)setProxiedDeviceAnisetteData:(id)arg1;
 - (void)setProxyAppName:(id)arg1;
@@ -87,10 +93,12 @@
 - (void)setShouldSendEphemeralAuthHeader:(bool)arg1;
 - (void)setShouldSendICSCIntentHeader:(bool)arg1;
 - (void)setShouldSendLocalUserHasAppleIDLoginHeader:(bool)arg1;
+- (void)setShouldSendPhoneNumber:(bool)arg1;
 - (bool)shouldSendAbsintheHeader;
 - (bool)shouldSendEphemeralAuthHeader;
 - (bool)shouldSendICSCIntentHeader;
 - (bool)shouldSendLocalUserHasAppleIDLoginHeader;
+- (bool)shouldSendPhoneNumber;
 - (void)signRequest:(id)arg1;
 - (void)signRequestWithCommonHeaders:(id)arg1;
 

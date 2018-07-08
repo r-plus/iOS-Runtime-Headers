@@ -53,6 +53,7 @@
 - (bool)createInstallationKeybag:(id)arg1 forUnattendedInstall:(bool)arg2;
 - (void)currentAutoInstallOperation:(bool)arg1 withResult:(id /* block */)arg2;
 - (void)dealloc;
+- (void)delayEndDate:(id /* block */)arg1;
 - (id)delegate;
 - (void)deviceHasSufficientSpaceForDownload:(id /* block */)arg1;
 - (void)download:(id /* block */)arg1;
@@ -64,6 +65,7 @@
 - (void)downloadProgressDidChange:(id)arg1;
 - (void)downloadWasInvalidatedForNewUpdateAvailable:(id)arg1;
 - (void)extraSpaceNeededForDownloadWithoutAppPurging:(id /* block */)arg1;
+- (void)getMandatorySoftwareUpdateDictionary:(id /* block */)arg1;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
 - (id)initWithDelegate:(id)arg1 clientType:(int)arg2;
@@ -77,6 +79,7 @@
 - (void)installationConstraintMonitor:(id)arg1 constraintsDidChange:(unsigned long long)arg2;
 - (void)installationConstraintObserverDidRemoveAllObserverBlocks:(id)arg1;
 - (void)invalidate;
+- (void)isDelayingUpdates:(id /* block */)arg1;
 - (void)isDownloading:(id /* block */)arg1;
 - (bool)isInstallationKeybagRequired;
 - (void)isScanning:(id /* block */)arg1;
@@ -95,6 +98,7 @@
 - (void)setClientType:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInstallDescriptor:(id)arg1;
+- (void)setMandatorySoftwareUpdateDictionary:(id)arg1;
 - (void)setScanDescriptor:(id)arg1;
 - (void)slaVersion:(id /* block */)arg1;
 - (void)startDownload:(id /* block */)arg1;

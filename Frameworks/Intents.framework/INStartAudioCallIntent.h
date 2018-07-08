@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INStartAudioCallIntent : INIntent <INStartAudioCallIntentExport>
+@interface INStartAudioCallIntent : INIntent <ATXSlotResolver, INStartAudioCallIntentExport>
 
 @property (nonatomic) long long audioRoute;
 @property (nonatomic, readonly, copy) NSArray *contacts;
@@ -44,6 +44,10 @@
 
 // Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
 
++ (bool)isRequired;
++ (id)resolveIntentFromSlot:(id)arg1;
++ (id)slotFromContext:(id)arg1;
+
 - (void)apr_getArgsInto:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
@@ -51,5 +55,6 @@
 - (long long)cd_interactionMechanism;
 - (id)cd_recipients;
 - (bool)cd_saveToPeopleStore;
+- (id)contextMetadata;
 
 @end

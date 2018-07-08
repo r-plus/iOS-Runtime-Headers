@@ -9,12 +9,12 @@
             struct TransitEdgePiece {} **__begin_; 
             struct TransitEdgePiece {} **__end_; 
             struct __compressed_pair<geo::TransitEdgePiece **, std::__1::allocator<geo::TransitEdgePiece *> > { 
-                struct TransitEdgePiece {} **__first_; 
+                struct TransitEdgePiece {} **__value_; 
             } __end_cap_; 
         } __map_; 
         unsigned long long __start_; 
         struct __compressed_pair<unsigned long, std::__1::allocator<geo::TransitEdgePiece> > { 
-            unsigned long long __first_; 
+            unsigned long long __value_; 
         } __size_; 
     }  _pieces;
 }

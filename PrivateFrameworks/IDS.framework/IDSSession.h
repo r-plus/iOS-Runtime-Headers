@@ -44,6 +44,7 @@
 - (void)sendInvitationWithData:(id)arg1 declineOnError:(bool)arg2;
 - (void)sendInvitationWithOptions:(id)arg1;
 - (void)sendSessionMessage:(id)arg1;
+- (void)sendSessionMessage:(id)arg1 toDestinations:(id)arg2;
 - (unsigned int)sessionEndedReason;
 - (id)sessionID;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;

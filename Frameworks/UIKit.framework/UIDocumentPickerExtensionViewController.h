@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIDocumentPickerExtensionViewController : UIViewController <DebugHierarchyObject, _UIDocumentPickerExtensionViewController> {
+@interface UIDocumentPickerExtensionViewController : UIViewController <_UIDocumentPickerExtensionViewController> {
     unsigned long long  _documentPickerMode;
     NSURL * _documentStorageURL;
     NSURL * _originalURL;
@@ -19,8 +19,6 @@
 @property (setter=_setProviderIdentifier:, nonatomic, copy) NSString *providerIdentifier;
 @property (readonly) Class superclass;
 @property (setter=_setPickableTypes:, nonatomic, copy) NSArray *validTypes;
-
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
@@ -43,9 +41,5 @@
 - (void)prepareForPresentationInMode:(unsigned long long)arg1;
 - (id)providerIdentifier;
 - (id)validTypes;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
 
 @end

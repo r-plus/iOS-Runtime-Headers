@@ -63,7 +63,6 @@
 - (void)_setNeedsTextSizeComputation;
 - (id)backgroundView;
 - (bool)canBecomeFocused;
-- (void)dealloc;
 - (id)descriptionText;
 - (id)descriptionTextColor;
 - (id)descriptionTextHighlightColor;
@@ -113,6 +112,5 @@
 - (void)setTrackHorizontal:(bool)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (bool)trackHorizontal;
-- (void)updateForAccessibilityChanges;
 
 @end

@@ -14,7 +14,7 @@
 - (void)dealloc;
 - (void)disableWiFiTimeout;
 - (void)enableWiFiTimeout;
-- (bool)hasAssociatedNetworkWithRSSI:(int*)arg1 andSNR:(int*)arg2 andPhyMode:(id*)arg3 andChannelInfo:(id*)arg4;
+- (bool)hasAssociatedNetworkWithRSSI:(int*)arg1 andSNR:(int*)arg2 andPhyMode:(id*)arg3 andChannelInfo:(id*)arg4 isCaptive:(bool*)arg5;
 - (id)init;
 - (bool)isWifiEnabled;
 - (void)registerOneShotEnabledHandler:(id /* block */)arg1;

@@ -4,8 +4,6 @@
 
 @interface FLFollowUpController : NSObject <NSXPCListenerDelegate> {
     NSString * _clientIdentifier;
-    NSXPCConnection * _conn;
-    NSLock * _connLock;
     <FLFollowUpControllerDelegate> * _delegate;
     NSXPCListener * _listener;
     NSString * _machServiceName;

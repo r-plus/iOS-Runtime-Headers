@@ -16,5 +16,6 @@
 - (id)initWithEndpoint:(id)arg1;
 - (id)routingController;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
+- (void)setAutomaticResponseLoading:(bool)arg1;
 
 @end

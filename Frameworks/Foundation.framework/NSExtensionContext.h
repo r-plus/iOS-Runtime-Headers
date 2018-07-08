@@ -10,6 +10,7 @@
     <_NSExtensionContextHosting> * __extensionHostProxy;
     <_NSExtensionContextVending> * __extensionVendorProxy;
     id  __principalObject;
+    id  __processAssertion;
     id /* block */  __requestCleanUpBlock;
     NSObject<OS_os_transaction> * __transaction;
     NSArray * _inputItems;
@@ -22,6 +23,7 @@
 @property (setter=_setExtensionHostProxy:, retain) <_NSExtensionContextHosting> *_extensionHostProxy;
 @property (setter=_setExtensionVendorProxy:, nonatomic, retain) <_NSExtensionContextVending> *_extensionVendorProxy;
 @property (setter=_setPrincipalObject:, nonatomic) id _principalObject;
+@property (setter=_setProcessAssertion:, retain) id _processAssertion;
 @property (setter=_setRequestCleanUpBlock:, nonatomic, copy) id /* block */ _requestCleanUpBlock;
 @property (getter=_transaction, setter=_setTransaction:, retain) NSObject<OS_os_transaction> *_transaction;
 @property (readonly, copy) NSString *debugDescription;
@@ -60,6 +62,7 @@
 - (void)_loadPreviewImageForPayload:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_openURL:(id)arg1 completion:(id /* block */)arg2;
 - (id)_principalObject;
+- (id)_processAssertion;
 - (id /* block */)_requestCleanUpBlock;
 - (void)_setAuxiliaryConnection:(id)arg1;
 - (void)_setAuxiliaryListener:(id)arg1;
@@ -68,6 +71,7 @@
 - (void)_setExtensionVendorProxy:(id)arg1;
 - (void)_setInputItems:(id)arg1;
 - (void)_setPrincipalObject:(id)arg1;
+- (void)_setProcessAssertion:(id)arg1;
 - (void)_setRequestCleanUpBlock:(id /* block */)arg1;
 - (void)_setTransaction:(id)arg1;
 - (id)_transaction;

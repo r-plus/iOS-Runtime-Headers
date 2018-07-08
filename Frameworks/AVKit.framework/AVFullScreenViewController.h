@@ -20,7 +20,6 @@
 - (id)contentView;
 - (void)dealloc;
 - (id)delegate;
-- (void)fullScreenPresentationDidEnd:(bool)arg1;
 - (void)fullScreenPresentationWillBegin;
 - (id)initWithDelegate:(id)arg1 presentingViewController:(id)arg2 sourceView:(id)arg3;
 - (id)keyCommands;

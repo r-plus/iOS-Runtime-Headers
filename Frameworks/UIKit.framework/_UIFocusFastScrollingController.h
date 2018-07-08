@@ -3,6 +3,10 @@
  */
 
 @interface _UIFocusFastScrollingController : NSObject {
+    double  _accelerationLastSwipeTime;
+    double  _accelerationMultiplier;
+    double  _accelerationStartMultiplier;
+    unsigned long long  _accelerationSwipeCount;
     unsigned long long  _allowedHeadings;
     _UIDynamicAnimationGroup * _animationGroup;
     _UIDynamicValueAnimation * _animationX;
@@ -43,6 +47,10 @@
         double dy; 
     }  _pressForce;
     NSArray * _pressGestures;
+    struct { 
+        double _x; 
+        double _y; 
+    }  _previousPanVelocity;
     double  _scrollHighlight;
     UIScrollView * _scrollView;
     long long  _style;
@@ -92,6 +100,7 @@
 - (void)_interpretDigitzerLocation:(struct CGPoint { double x1; double x2; })arg1 toFindEntryIndex:(long long*)arg2 deflection:(double*)arg3;
 - (void)_pressAnimationHeartbeat:(id)arg1;
 - (void)_resetAllPressGestures;
+- (void)_resetSwipeAcceleration;
 - (void)_setContentOffset:(struct CGPoint { double x1; double x2; })arg1 withVelocity:(struct { double x1; double x2; })arg2;
 - (bool)_shouldShowEntriesInIndexBar;
 - (void)_showDestinationIndicators;

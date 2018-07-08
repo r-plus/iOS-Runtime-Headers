@@ -14,10 +14,11 @@
         int *__begin_; 
         int *__end_; 
         struct __compressed_pair<int *, std::__1::allocator<int> > { 
-            int *__first_; 
+            int *__value_; 
         } __end_cap_; 
     }  _notifyTokens;
     bool  _soundCheckEnabled;
+    bool  _speakerRouteEnabled;
     NSObject<OS_dispatch_queue> * _userDefaultsMutationQueue;
 }
 
@@ -30,6 +31,7 @@
 @property (getter=isPrivateListeningEnabled, nonatomic, copy) NSNumber *privateListeningEnabled;
 @property (nonatomic, readonly) bool shouldUseNewQueueManagement;
 @property (nonatomic, readonly) bool soundCheckEnabled;
+@property (nonatomic, readonly) bool speakerRouteEnabled;
 
 + (id)standardUserDefaults;
 
@@ -57,5 +59,6 @@
 - (void)setPrivateListeningEnabled:(id)arg1;
 - (bool)shouldUseNewQueueManagement;
 - (bool)soundCheckEnabled;
+- (bool)speakerRouteEnabled;
 
 @end

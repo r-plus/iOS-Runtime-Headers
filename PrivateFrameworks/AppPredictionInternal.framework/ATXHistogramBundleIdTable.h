@@ -21,6 +21,8 @@
 + (void)useTemporarySharedInstance:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)allKeys;
+- (id)allKeysFilteredBy:(id /* block */)arg1;
 - (void)clear;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

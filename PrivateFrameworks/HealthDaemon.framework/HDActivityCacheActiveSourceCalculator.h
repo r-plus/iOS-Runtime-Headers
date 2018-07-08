@@ -7,14 +7,14 @@
         struct HDActivityCacheActiveSource {} *__begin_; 
         struct HDActivityCacheActiveSource {} *__end_; 
         struct __compressed_pair<HDActivityCacheActiveSource *, std::__1::allocator<HDActivityCacheActiveSource> > { 
-            struct HDActivityCacheActiveSource {} *__first_; 
+            struct HDActivityCacheActiveSource {} *__value_; 
         } __end_cap_; 
     }  _activationLogEntries;
     struct vector<HDActivityCacheStatisticsBuilderWorkoutSample, std::__1::allocator<HDActivityCacheStatisticsBuilderWorkoutSample> > { 
         struct HDActivityCacheStatisticsBuilderWorkoutSample {} *__begin_; 
         struct HDActivityCacheStatisticsBuilderWorkoutSample {} *__end_; 
         struct __compressed_pair<HDActivityCacheStatisticsBuilderWorkoutSample *, std::__1::allocator<HDActivityCacheStatisticsBuilderWorkoutSample> > { 
-            struct HDActivityCacheStatisticsBuilderWorkoutSample {} *__first_; 
+            struct HDActivityCacheStatisticsBuilderWorkoutSample {} *__value_; 
         } __end_cap_; 
     }  _workouts;
 }

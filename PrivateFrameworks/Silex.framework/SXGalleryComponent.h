@@ -10,4 +10,6 @@
 + (id)typeString;
 + (id /* block */)valueClassBlockForPropertyWithName:(id)arg1;
 
+- (unsigned long long)traits;
+
 @end

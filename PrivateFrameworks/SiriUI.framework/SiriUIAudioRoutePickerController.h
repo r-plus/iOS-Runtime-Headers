@@ -4,6 +4,7 @@
 
 @interface SiriUIAudioRoutePickerController : NSObject {
     NSString * _audioCategory;
+    NSString * _audioMode;
     bool  _bluetoothIsPicked;
     <SiriUIAudioRoutePickerControllerDelegate> * _delegate;
     bool  _hasRoutesToPick;
@@ -18,7 +19,7 @@
 
 - (void).cxx_destruct;
 - (void)_dismissAlertController:(bool)arg1;
-- (void)_fetchPickableRoutesForCategory:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)_fetchPickableRoutesWithCompletion:(id /* block */)arg1;
 - (void)_pickableRoutesChanged:(id)arg1;
 - (void)_removeWindow;
 - (void)_routeChanged:(id)arg1;
@@ -29,7 +30,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (bool)hasRoutesToPick;
-- (id)initWithCategory:(id)arg1 delegate:(id)arg2;
+- (id)initWithCategory:(id)arg1 mode:(id)arg2 delegate:(id)arg3;
 - (bool)isShowingPicker;
 - (id)pickerAlertController;
 - (void)refreshRoutes;

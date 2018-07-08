@@ -17,6 +17,7 @@
     NSArray * _orderedChannels;
     NSDictionary * _requiredRequestKeyValuePairsDictionary;
     WLKServerConfigurationResponse * _response;
+    long long  _vppaStatus;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *channels;
@@ -28,6 +29,7 @@
 @property (nonatomic, readonly, copy) NSArray *orderedChannels;
 @property (nonatomic, retain) NSDictionary *requiredRequestKeyValuePairsDictionary;
 @property (nonatomic, readonly, copy) NSDictionary *serverRoutesDictionary;
+@property (nonatomic, readonly) long long vppaStatus;
 
 + (id)sharedInstance;
 
@@ -75,5 +77,7 @@
 - (void)setFetchCompletionHandler:(id /* block */)arg1;
 - (void)setIsFetching:(bool)arg1;
 - (void)setRequiredRequestKeyValuePairsDictionary:(id)arg1;
+- (id)utsc;
+- (long long)vppaStatus;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@interface ICSDateTimeValue : ICSDateValue <NSCoding> {
+@interface ICSDateTimeValue : ICSDateValue <NSSecureCoding> {
     long long  _hour;
     long long  _minute;
     long long  _second;
@@ -11,6 +11,8 @@
 @property (readonly) long long hour;
 @property (readonly) long long minute;
 @property (readonly) long long second;
+
++ (bool)supportsSecureCoding;
 
 - (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
 - (id)components;

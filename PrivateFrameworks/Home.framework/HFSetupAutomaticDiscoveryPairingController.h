@@ -5,6 +5,7 @@
 @interface HFSetupAutomaticDiscoveryPairingController : NSObject <HFSetupPairingController> {
     NSTimer * _accessoryNotFoundFatalTimeoutTimer;
     NSTimer * _accessoryNotFoundSoftTimeoutTimer;
+    HMAccessorySetupCompletedInfo * _completedInfo;
     HFDiscoveredAccessory * _discoveredAccessoryToPair;
     HMHome * _home;
     NSSet * _pairedAccessories;
@@ -21,6 +22,7 @@
 
 @property (nonatomic, retain) NSTimer *accessoryNotFoundFatalTimeoutTimer;
 @property (nonatomic, retain) NSTimer *accessoryNotFoundSoftTimeoutTimer;
+@property (nonatomic, retain) HMAccessorySetupCompletedInfo *completedInfo;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) HFDiscoveredAccessory *discoveredAccessoryToPair;
@@ -43,13 +45,14 @@
 - (void).cxx_destruct;
 - (void)_assertValidTransitionFromPhase:(unsigned long long)arg1 toPhase:(unsigned long long)arg2;
 - (void)_failPairingWithError:(id)arg1;
-- (void)_finishPairingWithAccessories:(id)arg1;
+- (void)_finishPairingWithAccessories:(id)arg1 completedInfo:(id)arg2;
 - (id)_sendCancellationRequestToHomeKit;
 - (void)_updateStatusTextAndNotifyDelegate:(bool)arg1;
 - (id)accessoryNotFoundFatalTimeoutTimer;
 - (id)accessoryNotFoundSoftTimeoutTimer;
 - (void)addPairingObserver:(id)arg1;
 - (id)cancel;
+- (id)completedInfo;
 - (void)dealloc;
 - (id)description;
 - (id)discoveredAccessoryToPair;
@@ -63,6 +66,7 @@
 - (void)removePairingObserver:(id)arg1;
 - (void)setAccessoryNotFoundFatalTimeoutTimer:(id)arg1;
 - (void)setAccessoryNotFoundSoftTimeoutTimer:(id)arg1;
+- (void)setCompletedInfo:(id)arg1;
 - (void)setDiscoveredAccessoryToPair:(id)arg1;
 - (void)setHome:(id)arg1;
 - (void)setPairedAccessories:(id)arg1;

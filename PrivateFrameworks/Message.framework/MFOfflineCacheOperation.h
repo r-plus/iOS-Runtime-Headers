@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFOfflineCacheOperation : NSObject <NSCoding> {
+@interface MFOfflineCacheOperation : NSObject <NSSecureCoding> {
     long long  _rowid;
 }
 
 @property (nonatomic) long long rowid;
+
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (bool)hasRowid;

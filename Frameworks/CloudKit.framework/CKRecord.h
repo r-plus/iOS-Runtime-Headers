@@ -385,10 +385,8 @@
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
-+ (id)fc_recordWithEncodedSystemFields:(id)arg1;
 + (id)secureSentinelRecordWithEncryptionKey:(id)arg1;
 
-- (id)fc_encodeSystemFields;
 - (bool)fc_isDifferentFromRecord:(id)arg1 forKey:(id)arg2;
 - (id)fc_secureSentinel_encryptionKey;
 - (unsigned long long)fc_secureSentinel_version;
@@ -396,8 +394,6 @@
 - (bool)fc_sentinel_finishedDeletion;
 - (bool)fc_sentinel_finishedMigration;
 - (unsigned long long)fc_sentinel_version;
-- (void)fc_setRecordName:(id)arg1;
-- (void)fc_setZoneName:(id)arg1;
 - (void)setFc_secureSentinel_encryptionKey:(id)arg1;
 - (void)setFc_secureSentinel_version:(unsigned long long)arg1;
 - (void)setFc_sentinel_encryptionKey:(id)arg1;

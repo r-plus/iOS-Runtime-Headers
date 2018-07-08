@@ -4,10 +4,10 @@
 
 @interface MRVolumeControlAvailabilityMessage : MRProtocolMessage
 
-@property (nonatomic, readonly) int capabilities;
+@property (nonatomic, readonly) unsigned int capabilities;
 
-- (int)capabilities;
-- (id)initWithCapabilities:(int)arg1;
+- (unsigned int)capabilities;
+- (id)initWithCapabilities:(unsigned int)arg1;
 - (unsigned long long)type;
 
 @end

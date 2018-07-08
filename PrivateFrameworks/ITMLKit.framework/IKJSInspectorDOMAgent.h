@@ -4,6 +4,9 @@
 
 @interface IKJSInspectorDOMAgent : NSObject <RWIProtocolDOMDomainHandler> {
     IKJSInspectorController * _controller;
+    int  _eventListenerIdSequence;
+    NSMapTable * _eventListenersMap;
+    bool  _inspectElementModeEnabled;
     RWIProtocolDOMNode * _rootNode;
     NSMutableDictionary * _searches;
 }
@@ -12,19 +15,17 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (getter=isInspectElementModeEnabled, nonatomic, readonly) bool inspectElementModeEnabled;
 @property (readonly) Class superclass;
 
-+ (void)_buildNodePath:(id)arg1 rootProtocolNode:(id)arg2 rootDOMNode:(id)arg3 withDispatcher:(id)arg4;
-+ (id)_buildNodeTreeForNode:(id)arg1 depth:(int)arg2;
-+ (id)_findNodeWithNodeId:(int)arg1 node:(id)arg2;
 + (id)_nodeIDsFromNodePaths:(id)arg1;
 + (id)_parseAttributeString:(id)arg1;
-+ (id)_procotolNodeForDOMNode:(id)arg1;
-+ (id)_searchNode:(id)arg1 query:(id)arg2 currentPath:(id)arg3;
-+ (void)_updateProtocolNode:(id)arg1 withDOMNode:(id)arg2 dispatcher:(id)arg3;
 
 - (void).cxx_destruct;
+- (int)_eventListenerIDForListener:(id)arg1;
+- (void)_fullfillNodePath:(id)arg1;
 - (id)controller;
+- (void)didAddEventListenerForNodeID:(int)arg1;
 - (void)discardSearchResultsWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 searchId:(id)arg3;
 - (void)documentDidChange;
 - (void)documentDidUpdate;
@@ -44,6 +45,9 @@
 - (void)highlightRectWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 x:(int)arg3 y:(int)arg4 width:(int)arg5 height:(int)arg6 color:(id*)arg7 outlineColor:(id*)arg8 usePageCoordinates:(bool*)arg9;
 - (void)highlightSelectorWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 highlightConfig:(id)arg3 selectorString:(id)arg4 frameId:(id*)arg5;
 - (id)initWithInspectorController:(id)arg1;
+- (void)insertAdjacentHTMLWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3 position:(id)arg4 html:(id)arg5;
+- (void)inspectNodeWithID:(long long)arg1;
+- (bool)isInspectElementModeEnabled;
 - (void)markUndoableStateWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2;
 - (void)moveToWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3 targetNodeId:(int)arg4 insertBeforeNodeId:(int*)arg5;
 - (void)performSearchWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 query:(id)arg3 nodeIds:(id*)arg4;
@@ -60,10 +64,13 @@
 - (void)resolveNodeWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3 objectGroup:(id*)arg4;
 - (void)setAttributeValueWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3 name:(id)arg4 value:(id)arg5;
 - (void)setAttributesAsTextWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3 text:(id)arg4 name:(id*)arg5;
+- (void)setEventListenerDisabledWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 eventListenerId:(int)arg3 disabled:(bool)arg4;
 - (void)setInspectModeEnabledWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 enabled:(bool)arg3 highlightConfig:(id*)arg4;
+- (void)setInspectedNodeWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3;
 - (void)setNodeNameWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3 name:(id)arg4;
 - (void)setNodeValueWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3 value:(id)arg4;
 - (void)setOuterHTMLWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3 outerHTML:(id)arg4;
 - (void)undoWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2;
+- (void)willRemoveEventListenerForNodeID:(int)arg1;
 
 @end

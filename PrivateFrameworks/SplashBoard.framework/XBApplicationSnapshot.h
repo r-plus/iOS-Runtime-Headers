@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SplashBoard.framework/SplashBoard
  */
 
-@interface XBApplicationSnapshot : NSObject <BSDescriptionProviding, NSCoding> {
+@interface XBApplicationSnapshot : NSObject <BSDescriptionProviding, NSSecureCoding> {
     long long  _backgroundStyle;
     UIImage * _cachedImage;
     long long  _classicMode;
@@ -28,6 +28,7 @@
     bool  _fullScreen;
     XBApplicationSnapshotGenerationContext * _generationContext;
     NSString * _groupID;
+    bool  _hasProtectedContent;
     NSString * _identifier;
     unsigned long long  _imageAccessCount;
     id /* block */  _imageGenerator;
@@ -85,11 +86,12 @@
 @property (nonatomic, readonly) bool fileExists;
 @property (nonatomic, readonly) long long fileFormat;
 @property (nonatomic) long long fileLocation;
-@property (nonatomic, readonly, copy) NSString *filename;
+@property (getter=filename, setter=_setFilename:, nonatomic, copy) NSString *filename;
 @property (getter=isFullScreen, nonatomic) bool fullScreen;
 @property (nonatomic, readonly) XBApplicationSnapshotGenerationContext *generationContext;
 @property (nonatomic, readonly, copy) NSString *groupID;
 @property (nonatomic, readonly) bool hasFullSizedContent;
+@property (nonatomic, readonly) bool hasProtectedContent;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, copy) id /* block */ imageGenerator;
@@ -103,8 +105,9 @@
 @property (nonatomic, readonly) NSString *logIdentifier;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } naturalSize;
-@property (nonatomic, readonly, copy) NSString *path;
+@property (setter=_setPath:, nonatomic, copy) NSString *path;
 @property (nonatomic) struct CGSize { double x1; double x2; } referenceSize;
+@property (getter=_relativePath, setter=_setRelativePath:, nonatomic, copy) NSString *relativePath;
 @property (nonatomic, copy) NSString *requiredOSVersion;
 @property (nonatomic, copy) NSString *scheme;
 @property (nonatomic, copy) XBStatusBarSettings *statusBarSettings;
@@ -114,6 +117,7 @@
 
 + (id)dataForImage:(id)arg1 withFormat:(long long)arg2;
 + (id)normalizeSnapshotName:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_cacheImage:(id)arg1;
@@ -125,6 +129,7 @@
 - (id)_createVariantWithIdentifier:(id)arg1;
 - (id)_descriptionBuilderWithMultilinePrefix:(id)arg1 includeVariants:(bool)arg2;
 - (id)_determineRelativePathForPath:(id)arg1 location:(long long*)arg2;
+- (long long)_fileLocation;
 - (bool)_hasGenerationContext;
 - (id)_initWithContainerIdentity:(id)arg1 store:(id)arg2 groupID:(id)arg3 generationContext:(id)arg4;
 - (unsigned long long)_interfaceOrientationMask;
@@ -134,6 +139,12 @@
 - (bool)_path:(id)arg1 isRelativeToPath:(id)arg2 outRelativePath:(id*)arg3;
 - (void)_purgeCachedImageIfAppropriate:(bool)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_referenceBounds;
+- (id)_relativePath;
+- (void)_setFileLocation:(long long)arg1;
+- (void)_setFilename:(id)arg1;
+- (void)_setHasProtectedContent:(bool)arg1;
+- (void)_setPath:(id)arg1;
+- (void)_setRelativePath:(id)arg1;
 - (bool)_shouldDeleteFileOnPurge;
 - (void)_snynchronized_evaluateImageAccessUntilExpirationEnablingIfNecessary:(bool)arg1;
 - (id)_sortableLaunchInterfaceIdentifier;
@@ -171,6 +182,7 @@
 - (id)groupID;
 - (bool)hasCachedImage;
 - (bool)hasFullSizedContent;
+- (bool)hasProtectedContent;
 - (unsigned long long)hash;
 - (id)identifier;
 - (id)imageForInterfaceOrientation:(long long)arg1;

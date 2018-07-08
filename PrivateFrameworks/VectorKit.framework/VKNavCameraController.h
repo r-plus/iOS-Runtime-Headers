@@ -49,7 +49,7 @@
         struct Coordinate3D<Radians, double> {} *__begin_; 
         struct Coordinate3D<Radians, double> {} *__end_; 
         struct __compressed_pair<geo::Coordinate3D<Radians, double> *, std::__1::allocator<geo::Coordinate3D<Radians, double> > > { 
-            struct Coordinate3D<Radians, double> {} *__first_; 
+            struct Coordinate3D<Radians, double> {} *__value_; 
         } __end_cap_; 
     }  _coordinatesToFrame;
     struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { 
@@ -71,7 +71,7 @@
                         unsigned long long __words[3]; 
                     } __r; 
                 } ; 
-            } __first_; 
+            } __value_; 
         } __r_; 
     }  _currentStyleName;
     double  _depthNear;

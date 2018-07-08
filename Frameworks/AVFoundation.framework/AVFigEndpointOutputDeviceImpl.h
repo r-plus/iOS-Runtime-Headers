@@ -15,6 +15,7 @@
 @property (nonatomic, readonly) bool canAccessRemoteAssets;
 @property (nonatomic, readonly) bool canBeGroupLeader;
 @property (nonatomic, readonly) bool canBeGrouped;
+@property (nonatomic, readonly) bool canRelayCommunicationChannel;
 @property (readonly) bool canSetVolume;
 @property (nonatomic, readonly) NSNumber *caseBatteryLevel;
 @property (nonatomic, readonly, copy) NSArray *connectedPairedDevices;
@@ -36,6 +37,7 @@
 @property (nonatomic, readonly, copy) NSString *modelID;
 @property (nonatomic, readonly, copy) NSString *name;
 @property AVOutputDevice *parentOutputDevice;
+@property (nonatomic, readonly) bool participatesInGroupPlayback;
 @property (nonatomic, readonly) bool requiresAuthorization;
 @property (nonatomic, readonly) NSNumber *rightBatteryLevel;
 @property (nonatomic, readonly) NSString *serialNumber;
@@ -53,6 +55,7 @@
 - (bool)canAccessRemoteAssets;
 - (bool)canBeGroupLeader;
 - (bool)canBeGrouped;
+- (bool)canRelayCommunicationChannel;
 - (bool)canSetVolume;
 - (id)caseBatteryLevel;
 - (void)configureUsingBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
@@ -78,6 +81,7 @@
 - (id)modelID;
 - (id)name;
 - (id)parentOutputDevice;
+- (bool)participatesInGroupPlayback;
 - (bool)requiresAuthorization;
 - (id)rightBatteryLevel;
 - (id)serialNumber;

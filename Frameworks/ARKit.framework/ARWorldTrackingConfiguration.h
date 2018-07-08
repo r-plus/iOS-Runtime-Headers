@@ -3,22 +3,29 @@
  */
 
 @interface ARWorldTrackingConfiguration : ARConfiguration {
+    NSSet * _detectionImages;
     unsigned long long  _planeDetection;
     bool  _relocalizationEnabled;
 }
 
+@property (getter=isAutoFocusEnabled, nonatomic) bool autoFocusEnabled;
+@property (nonatomic, copy) NSSet *detectionImages;
 @property (nonatomic) unsigned long long planeDetection;
 @property (nonatomic) bool relocalizationEnabled;
 
 + (bool)isSupported;
 + (id)new;
++ (id)supportedVideoFormats;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (id)detectionImages;
 - (id)init;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)planeDetection;
 - (bool)relocalizationEnabled;
+- (void)setDetectionImages:(id)arg1;
 - (void)setPlaneDetection:(unsigned long long)arg1;
 - (void)setRelocalizationEnabled:(bool)arg1;
 - (id)techniques;

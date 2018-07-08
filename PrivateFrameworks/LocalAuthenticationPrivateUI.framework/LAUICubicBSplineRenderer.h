@@ -7,21 +7,21 @@
         struct global_state {} *__begin_; 
         struct global_state {} *__end_; 
         struct __compressed_pair<LAUI_uniform_cubic_b_spline_renderer::global_state *, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer::global_state> > { 
-            struct global_state {} *__first_; 
+            struct global_state {} *__value_; 
         } __end_cap_; 
     }  _animation_targets;
     struct vector<unsigned short, std::__1::allocator<unsigned short> > { 
         unsigned short *__begin_; 
         unsigned short *__end_; 
         struct __compressed_pair<unsigned short *, std::__1::allocator<unsigned short> > { 
-            unsigned short *__first_; 
+            unsigned short *__value_; 
         } __end_cap_; 
     }  _cap_control_point_indices;
     struct vector<LAUI_uniform_cubic_b_spline_renderer_private::control_point, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer_private::control_point> > { 
         struct control_point {} *__begin_; 
         struct control_point {} *__end_; 
         struct __compressed_pair<LAUI_uniform_cubic_b_spline_renderer_private::control_point *, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer_private::control_point> > { 
-            struct control_point {} *__first_; 
+            struct control_point {} *__value_; 
         } __end_cap_; 
     }  _cap_control_points;
     bool  _caps_dirty;
@@ -32,18 +32,17 @@
         unsigned short *__begin_; 
         unsigned short *__end_; 
         struct __compressed_pair<unsigned short *, std::__1::allocator<unsigned short> > { 
-            unsigned short *__first_; 
+            unsigned short *__value_; 
         } __end_cap_; 
     }  _control_point_indices;
     struct vector<LAUI_uniform_cubic_b_spline_renderer_private::control_point, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer_private::control_point> > { 
         struct control_point {} *__begin_; 
         struct control_point {} *__end_; 
         struct __compressed_pair<LAUI_uniform_cubic_b_spline_renderer_private::control_point *, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer_private::control_point> > { 
-            struct control_point {} *__first_; 
+            struct control_point {} *__value_; 
         } __end_cap_; 
     }  _control_points;
     unsigned long long  _current_animation_target_index;
-    MTLRenderPassDescriptor * _dummy_render_pass_descriptor;
     struct global_state_animator { 
         struct animator<float, 0> { 
             float _target; 
@@ -101,7 +100,7 @@
         struct vector<LAUI_uniform_cubic_b_spline_renderer::spline_instance, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer::spline_instance> > {} *__begin_; 
         struct vector<LAUI_uniform_cubic_b_spline_renderer::spline_instance, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer::spline_instance> > {} *__end_; 
         struct __compressed_pair<std::__1::vector<LAUI_uniform_cubic_b_spline_renderer::spline_instance, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer::spline_instance> > *, std::__1::allocator<std::__1::vector<LAUI_uniform_cubic_b_spline_renderer::spline_instance, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer::spline_instance> > > > { 
-            struct vector<LAUI_uniform_cubic_b_spline_renderer::spline_instance, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer::spline_instance> > {} *__first_; 
+            struct vector<LAUI_uniform_cubic_b_spline_renderer::spline_instance, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer::spline_instance> > {} *__value_; 
         } __end_cap_; 
     }  _instance_state;
     double  _last_render_time;
@@ -141,14 +140,14 @@
         struct instance_uniform {} *__begin_; 
         struct instance_uniform {} *__end_; 
         struct __compressed_pair<LAUI_uniform_cubic_b_spline_renderer_private::instance_uniform *, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer_private::instance_uniform> > { 
-            struct instance_uniform {} *__first_; 
+            struct instance_uniform {} *__value_; 
         } __end_cap_; 
     }  _spline_instance_uniforms;
     struct vector<LAUI_uniform_cubic_b_spline_renderer::spline, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer::spline> > { 
         struct spline {} *__begin_; 
         struct spline {} *__end_; 
         struct __compressed_pair<LAUI_uniform_cubic_b_spline_renderer::spline *, std::__1::allocator<LAUI_uniform_cubic_b_spline_renderer::spline> > { 
-            struct spline {} *__first_; 
+            struct spline {} *__value_; 
         } __end_cap_; 
     }  _spline_state;
     <MTLBuffer> * _tesselation_factors;

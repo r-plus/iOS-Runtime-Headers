@@ -133,6 +133,8 @@
 - (void)_applySlow;
 - (void)_applyTransitionFraction:(double)arg1 fromOption:(id)arg2 toOption:(id)arg3 forCustomEditMode:(long long)arg4 slot:(id)arg5;
 - (id)_baseTimeTravelCaptionImageNameForEnglishOnly;
+- (void)_becameActiveFace;
+- (void)_becameInactiveFace;
 - (id)_blurSourceImage;
 - (void)_bringForegroundViewsToFront;
 - (bool)_canStartTimeScrubbing;
@@ -291,6 +293,7 @@
 - (void)prepareForStatusChange:(bool)arg1;
 - (void)prepareToZoomWithIconView:(id)arg1 minDiameter:(double)arg2 maxDiameter:(double)arg3;
 - (void)prepareWristRaiseAnimation;
+- (bool)presentedViewControllerShouldBecomeFirstResponder:(id)arg1;
 - (void)reloadSnapshotContentViews;
 - (void)renderIfNeeded;
 - (id)resourceDirectory;

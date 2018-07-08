@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSLayoutConstraint : NSObject <DebugHierarchyObject, NSISConstraint> {
+@interface NSLayoutConstraint : NSObject <NSISConstraint> {
     float  _coefficient;
     double  _constant;
     id  _container;
@@ -171,10 +171,6 @@
 - (id)sourceRuleHierarchy;
 - (id)symbolicConstant;
 - (double)unsatisfaction;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
 
 // Image: /System/Library/Frameworks/AVKit.framework/AVKit
 

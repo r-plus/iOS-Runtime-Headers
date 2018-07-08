@@ -30,6 +30,7 @@
 - (id)_initWithAction:(id)arg1;
 - (id)_orderAppLinkActionsByRecency:(id)arg1;
 - (void)_performActionAfterUnlock:(id /* block */)arg1;
+- (void)_performActionAfterUnlock:(bool)arg1 actionBlock:(id /* block */)arg2;
 - (id)_pickerLabelForURLActionPickerItem:(id)arg1;
 - (id)_previewableData;
 - (bool)_shouldHandleActionPickerItemLocally:(id)arg1;

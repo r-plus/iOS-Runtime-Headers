@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIImageView : UIView <DebugHierarchyObject, NUCrossFadeViewAnimatable, UIAccessibilityContentSizeCategoryImageAdjusting> {
+@interface UIImageView : UIView <NUCrossFadeViewAnimatable, UIAccessibilityContentSizeCategoryImageAdjusting> {
     bool  __animatesContents;
     bool  _adjustsImageWhenAncestorFocused;
     struct UIEdgeInsets { 
@@ -29,6 +29,8 @@
 @property (setter=_setMasksTemplateImages:, nonatomic) bool _masksTemplateImages;
 @property (setter=_setTemplateImageRenderingEffects:, nonatomic) unsigned long long _templateImageRenderingEffects;
 @property (nonatomic, readonly) bool _templateSettingsAreInvalid;
+@property (nonatomic) bool activatorListenerImageIsThreaded;
+@property (nonatomic, copy) NSString *activatorListenerName;
 @property (nonatomic) bool adjustsImageSizeForAccessibilityContentSizeCategory;
 @property (nonatomic) bool adjustsImageWhenAncestorFocused;
 @property (getter=isAnimating, nonatomic, readonly) bool animating;
@@ -118,21 +120,13 @@
 - (void)_updatePretiledImageCacheForImage:(id)arg1;
 - (void)_updateState;
 - (void)_updateTemplateProperties;
-- (void)dealloc;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
-- (id)debugHierarchyValueForPropertyWithName:(id)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)adjustsImageSizeForAccessibilityContentSizeCategory;
 - (bool)adjustsImageWhenAncestorFocused;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
 - (double)animationDuration;
 - (id)animationImages;
 - (long long)animationRepeatCount;
+- (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (unsigned long long)defaultAccessibilityTraits;
 - (int)drawMode;
@@ -180,6 +174,17 @@
 - (void)tintColorDidChange;
 - (void)traitCollectionDidChange:(id)arg1;
 - (bool)useBlockyMagnificationInClassic;
+
+// Image: /Library/TweakInject/Activator.dylib
+
++ (id)dequeueActivatorIconToLoad;
++ (void)fetchActivatorIconsInBackground;
++ (void)finishedFetchingActivatorIconWithArray:(id)arg1;
+
+- (bool)activatorListenerImageIsThreaded;
+- (id)activatorListenerName;
+- (void)setActivatorListenerImageIsThreaded:(bool)arg1;
+- (void)setActivatorListenerName:(id)arg1;
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 

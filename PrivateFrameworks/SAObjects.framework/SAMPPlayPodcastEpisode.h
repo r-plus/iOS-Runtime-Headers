@@ -9,6 +9,8 @@
 @property (nonatomic, retain) SAMPPodcast *podcastEpisode;
 @property (nonatomic) bool startPlaying;
 
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+
 + (id)playPodcastEpisode;
 + (id)playPodcastEpisodeWithDictionary:(id)arg1 context:(id)arg2;
 
@@ -24,5 +26,9 @@
 - (void)setPodcastEpisode:(id)arg1;
 - (void)setStartPlaying:(bool)arg1;
 - (bool)startPlaying;
+
+// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+
+- (void)af_addEntriesToAnalyticsContext:(id)arg1;
 
 @end

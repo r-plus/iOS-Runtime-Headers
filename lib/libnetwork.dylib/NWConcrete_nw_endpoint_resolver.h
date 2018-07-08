@@ -15,6 +15,7 @@
     NSObject<OS_nw_resolver> * resolver;
     unsigned int  started_desperate_ivan;
     void * trigger_agent_timer;
+    unsigned int  waiting_for_desperate_ivan;
 }
 
 @property (readonly, copy) NSString *debugDescription;

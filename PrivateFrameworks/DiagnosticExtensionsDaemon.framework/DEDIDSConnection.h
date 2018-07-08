@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DiagnosticExtensionsDaemon.framework/DiagnosticExtensionsDaemon
  */
 
-@interface DEDIDSConnection : NSObject <IDSServiceDelegate> {
+@interface DEDIDSConnection : NSObject <DEDSecureArchiving, IDSServiceDelegate> {
     NSMutableArray * _availableDevices;
     id /* block */  _deviceStatusCallback;
     <IDSServiceDelegate> * _incomingDelegate;
@@ -26,6 +26,7 @@
 @property (retain) IDSService *service;
 @property (readonly) Class superclass;
 
++ (id)archivedClasses;
 + (id)packPayload:(id)arg1;
 + (id)unpackProtobuf:(id)arg1;
 

@@ -3,18 +3,19 @@
  */
 
 @interface TSKCOOperationTransformer : NSObject <NSCopying> {
-    TSPObject * mDelegate;
-    NSObject<TSKCOIntermediateOperationEnumerator> * mEnumerator;
-    bool  mIsHigherPriority;
+    TSPObject * _delegate;
+    NSObject<TSKCOIntermediateOperationEnumerator> * _enumerator;
+    TSKCOOperationTransformHistory * _history;
+    bool  _isHigherPriority;
 }
 
 @property (nonatomic) TSPObject *delegate;
 @property (nonatomic, readonly) NSObject<TSKCOIntermediateOperationEnumerator> *enumerator;
 @property (nonatomic, readonly) bool hasOperations;
 
+- (void).cxx_destruct;
 - (void)appendOperation:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)delegate;
 - (id)description;
 - (id)enumerator;

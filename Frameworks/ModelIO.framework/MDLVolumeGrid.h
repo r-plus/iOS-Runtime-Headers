@@ -5,7 +5,7 @@
 @interface MDLVolumeGrid : NSObject {
     struct unique_ptr<ModelIO::SCNOctree, std::__1::default_delete<ModelIO::SCNOctree> > { 
         struct __compressed_pair<ModelIO::SCNOctree *, std::__1::default_delete<ModelIO::SCNOctree> > { 
-            struct SCNOctree {} *__first_; 
+            struct SCNOctree {} *__value_; 
         } __ptr_; 
     }  _octree;
 }

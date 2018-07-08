@@ -25,6 +25,7 @@
 
 + (Class)characteristicsType;
 
+- (void).cxx_destruct;
 - (void)addCharacteristics:(id)arg1;
 - (id)characteristics;
 - (id)characteristicsAtIndex:(unsigned long long)arg1;
@@ -32,7 +33,6 @@
 - (void)clearCharacteristics;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayName;

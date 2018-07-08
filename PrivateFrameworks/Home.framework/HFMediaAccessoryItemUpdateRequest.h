@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) <HFCharacteristicValueSource> *valueSource;
 
 - (void).cxx_destruct;
-- (id)_disambiguateMultipleAccessoryResponses:(id)arg1;
+- (id)_disambiguateMultipleAccessoryResponses:(id)arg1 forMediaSystem:(id)arg2;
 - (id)accessories;
 - (id)home;
 - (id)init;

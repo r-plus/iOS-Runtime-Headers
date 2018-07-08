@@ -14,6 +14,7 @@
 @property (nonatomic, readonly, copy) NSString *mimeSubtype;
 @property (nonatomic, readonly, copy) NSString *mimeType;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) MFMimePart *topLevelPart;
 @property (nonatomic, readonly) unsigned long long totalTextSize;
 
 + (id)copyNewMimeBoundary;

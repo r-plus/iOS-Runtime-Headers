@@ -5,7 +5,7 @@
 @interface CSAudioZeroFilter : NSObject {
     struct unique_ptr<CSAudioZeroFilterImpl<unsigned short>, std::__1::default_delete<CSAudioZeroFilterImpl<unsigned short> > > { 
         struct __compressed_pair<CSAudioZeroFilterImpl<unsigned short> *, std::__1::default_delete<CSAudioZeroFilterImpl<unsigned short> > > { 
-            struct CSAudioZeroFilterImpl<unsigned short> {} *__first_; 
+            struct CSAudioZeroFilterImpl<unsigned short> {} *__value_; 
         } __ptr_; 
     }  _audioZeroFilterImpl;
 }

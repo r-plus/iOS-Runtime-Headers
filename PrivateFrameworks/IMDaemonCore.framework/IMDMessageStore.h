@@ -20,6 +20,7 @@
 - (id)_chatsForMessageGUID:(id)arg1 enableVerboseLogging:(bool)arg2;
 - (void)_deleteMessagesWithGUIDs:(id)arg1 chatIdentifiers:(id)arg2 style:(unsigned char)arg3 onServices:(id)arg4 batchNumber:(unsigned long long)arg5 completion:(id /* block */)arg6;
 - (bool)_hasMessagesWithGUIDs:(id)arg1;
+- (bool)_isUsingStingRay;
 - (bool)_itemClassShouldUpdateTransferForItem:(id)arg1;
 - (id)_itemsWithAssociatedGUID:(id)arg1;
 - (id)_itemsWithGUIDs:(id)arg1;

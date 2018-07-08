@@ -30,6 +30,8 @@
 @property (nonatomic, retain) NSURL *sourceURL;
 @property (nonatomic, copy) NSString *uti;
 
++ (bool)_hasSuitableApplicationForOpeningDocument:(id)arg1;
+
 - (void).cxx_destruct;
 - (void)_deleteSavedPathIfNecessary;
 - (void)_deleteSavedPathWithProperExtensionIfNecessary;

@@ -19,7 +19,6 @@
 @property (nonatomic, retain) GKLabel *textLabel;
 
 - (double)bottomMargin;
-- (void)dealloc;
 - (double)headerHeightForWidth:(double)arg1 inTableView:(id)arg2;
 - (double)height;
 - (id)initWithAttributes:(id)arg1;

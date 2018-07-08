@@ -24,7 +24,7 @@
 - (id)actionSerializer;
 - (id)analyticsReportingProvider;
 - (void)commitViewController:(id)arg1;
-- (void)handleInteractionType:(unsigned long long)arg1;
+- (void)handleInteractionType:(unsigned long long)arg1 sourceView:(id)arg2 sourceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (void)handledAction:(id)arg1 state:(unsigned long long)arg2;
 - (id)initWithAction:(id)arg1 actionManager:(id)arg2 actionSerializer:(id)arg3 analyticsReportingProvider:(id)arg4;
 - (id)previewViewController;

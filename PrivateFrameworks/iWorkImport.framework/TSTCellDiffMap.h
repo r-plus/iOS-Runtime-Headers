@@ -7,7 +7,7 @@
         struct TSUCellCoord {} *__begin_; 
         struct TSUCellCoord {} *__end_; 
         struct __compressed_pair<TSUCellCoord *, std::__1::allocator<TSUCellCoord> > { 
-            struct TSUCellCoord {} *__first_; 
+            struct TSUCellCoord {} *__value_; 
         } __end_cap_; 
     }  _cellIDs;
     TSTCellUIDList * _cellUIDList;

@@ -3,9 +3,13 @@
  */
 
 @interface NWConcrete_nw_endpoint : NSObject <OS_nw_endpoint> {
+    unsigned short  alternate_port;
     char * description;
     NSObject<OS_nw_interface> * interface;
     bool  is_local_domain;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  lock;
     char * parent_endpoint_domain;
     NWConcrete_nw_endpoint * proxy_original_endpoint;
 }

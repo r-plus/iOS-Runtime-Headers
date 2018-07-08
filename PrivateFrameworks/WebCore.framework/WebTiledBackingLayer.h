@@ -5,7 +5,7 @@
 @interface WebTiledBackingLayer : CALayer {
     struct unique_ptr<WebCore::TileController, std::__1::default_delete<WebCore::TileController> > { 
         struct __compressed_pair<WebCore::TileController *, std::__1::default_delete<WebCore::TileController> > { 
-            struct TileController {} *__first_; 
+            struct TileController {} *__value_; 
         } __ptr_; 
     }  _tileController;
 }

@@ -4,6 +4,7 @@
 
 @interface SSMetricsMutableEvent : SSMetricsEvent <NSMutableCopying> {
     NSMutableDictionary * _mutableBody;
+    bool  _shouldSuppressDSIDHeader;
     bool  _shouldSuppressUserInfo;
 }
 
@@ -58,9 +59,11 @@
 - (void)setOriginalTimeUsingDate:(id)arg1;
 - (void)setPreviousClientVersion:(id)arg1;
 - (void)setProperty:(id)arg1 forBodyKey:(id)arg2;
+- (void)setShouldSuppressDSIDHeader:(bool)arg1;
 - (void)setShouldSuppressUserInfo:(bool)arg1;
 - (void)setTopic:(id)arg1;
 - (void)setUserAgent:(id)arg1;
+- (bool)shouldSuppressDSIDHeader;
 - (bool)shouldSuppressUserInfo;
 - (id)topic;
 - (id)userAgent;

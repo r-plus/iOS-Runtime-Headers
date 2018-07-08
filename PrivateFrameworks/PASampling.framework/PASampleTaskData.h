@@ -51,6 +51,10 @@
 @property (readonly) Class superclass;
 @property (readonly) int suspendCount;
 @property (readonly) long long taskSizeInBytes;
+@property (readonly) unsigned long long terminatedThreadsCycles;
+@property (readonly) unsigned long long terminatedThreadsInstructions;
+@property (readonly) unsigned long long terminatedThreadsSystemTimeInNs;
+@property (readonly) unsigned long long terminatedThreadsUserTimeInNs;
 @property (readonly) double timeOfLastResponse;
 @property (readonly) unsigned int uid;
 @property (readonly) unsigned long long uniquePid;
@@ -72,9 +76,9 @@
 - (id)debugDescription;
 - (id)donatingUniqueIds;
 - (id)imageInfos;
-- (id)initWithKCDataStackshotDeltaTask:(const struct task_delta_snapshot_v2 { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; }*)arg1 andTimeInsensitiveTaskData:(id)arg2;
-- (id)initWithKCDataStackshotTask:(const struct task_snapshot_v2 { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; int x15; BOOL x16[32]; }*)arg1 andTimeInsensitiveTaskData:(id)arg2;
-- (id)initWithStackshotTask:(id)arg1 andTimeInsensitiveTaskData:(id)arg2;
+- (id)initWithKCDataStackshotDeltaTask:(const struct task_delta_snapshot_v2 { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; }*)arg1 andTimeInsensitiveTaskData:(id)arg2 andTerminatedThreadsInstructionCycles:(const struct instrs_cycles_snapshot { unsigned long long x1; unsigned long long x2; }*)arg3 machTimebase:(struct mach_timebase_info { unsigned int x1; unsigned int x2; })arg4;
+- (id)initWithKCDataStackshotTask:(const struct task_snapshot_v2 { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; int x15; BOOL x16[32]; }*)arg1 andTimeInsensitiveTaskData:(id)arg2 andTerminatedThreadsInstructionCycles:(const struct instrs_cycles_snapshot { unsigned long long x1; unsigned long long x2; }*)arg3 machTimebase:(struct mach_timebase_info { unsigned int x1; unsigned int x2; })arg4;
+- (id)initWithStackshotTask:(id)arg1 andTimeInsensitiveTaskData:(id)arg2 machTimebase:(struct mach_timebase_info { unsigned int x1; unsigned int x2; })arg3;
 - (id)initWithTimeInsensitiveTaskData:(id)arg1;
 - (bool)isBoosted;
 - (bool)isDarwinBG;
@@ -118,6 +122,10 @@
 - (unsigned long long)ss_flags;
 - (int)suspendCount;
 - (long long)taskSizeInBytes;
+- (unsigned long long)terminatedThreadsCycles;
+- (unsigned long long)terminatedThreadsInstructions;
+- (unsigned long long)terminatedThreadsSystemTimeInNs;
+- (unsigned long long)terminatedThreadsUserTimeInNs;
 - (id)timeInsensitiveTaskData;
 - (double)timeOfLastResponse;
 - (unsigned int)uid;

@@ -10,6 +10,7 @@
     FCAssetManager * _assetManager;
     long long  _backendArticleVersion;
     NSArray * _blockedStorefrontIDs;
+    bool  _boundToContext;
     NSString * _changeEtag;
     NSString * _clusterID;
     unsigned long long  _contentType;
@@ -22,6 +23,7 @@
     NSString * _flintDocumentUrlString;
     NSArray * _flintFontResourceIDs;
     bool  _hasThumbnail;
+    bool  _hiddenFromFeeds;
     NSArray * _iAdCategories;
     NSArray * _iAdKeywords;
     NSArray * _iAdSectionIDs;
@@ -101,9 +103,11 @@
 - (id)iAdSectionIDs;
 - (id)identifier;
 - (id)initWithArticlePayload:(id)arg1 sourceChannel:(id)arg2 assetManager:(id)arg3 rapidUpdatesTimeout:(long long)arg4;
+- (bool)isBoundToContext;
 - (bool)isDeleted;
 - (bool)isDraft;
 - (bool)isFeatureCandidate;
+- (bool)isHiddenFromFeeds;
 - (bool)isPaid;
 - (bool)isSponsored;
 - (bool)isValid;

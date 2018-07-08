@@ -52,6 +52,7 @@
     int  pendingPrerollID;
     AVPixelBufferAttributeMediator * pixelBufferAttributeMediator;
     NSString * playerRole;
+    unsigned long long  preferredVideoDecoderGPURegistryID;
     bool  preparesItemsForPlaybackAsynchronously;
     id /* block */  prerollCompletionHandler;
     struct OpaqueFigSimpleMutex { } * prerollIDMutex;

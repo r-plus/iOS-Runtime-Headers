@@ -8,7 +8,7 @@
             struct Database {} *__begin_; 
             struct Database {} *__end_; 
             struct __compressed_pair<SafeBrowsing::DatabaseStatus::Database *, std::__1::allocator<SafeBrowsing::DatabaseStatus::Database> > { 
-                struct Database {} *__first_; 
+                struct Database {} *__value_; 
             } __end_cap_; 
         } m_databases; 
     }  _databaseStatus;

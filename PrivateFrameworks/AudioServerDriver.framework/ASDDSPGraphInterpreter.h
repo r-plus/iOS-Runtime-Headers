@@ -5,7 +5,7 @@
 @interface ASDDSPGraphInterpreter : NSObject {
     struct unique_ptr<DSPGraph::Interpreter, std::__1::default_delete<DSPGraph::Interpreter> > { 
         struct __compressed_pair<DSPGraph::Interpreter *, std::__1::default_delete<DSPGraph::Interpreter> > { 
-            struct Interpreter {} *__first_; 
+            struct Interpreter {} *__value_; 
         } __ptr_; 
     }  _interpreter;
 }

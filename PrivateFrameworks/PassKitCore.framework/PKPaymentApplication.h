@@ -10,7 +10,6 @@
     NSString * _displayName;
     NSString * _dpanIdentifier;
     NSString * _dpanSuffix;
-    PKFelicaPassProperties * _felicaProperties;
     bool  _inAppPINRequired;
     NSDecimalNumber * _inAppPINRequiredAmount;
     NSString * _inAppPINRequiredCurrency;
@@ -26,6 +25,7 @@
     bool  _supportsInAppPayment;
     bool  _supportsOptionalAuthentication;
     NSString * _suspendedReason;
+    PKTransitPassProperties * _transitProperties;
 }
 
 @property (nonatomic, copy) NSString *appletCurrencyCode;
@@ -39,6 +39,7 @@
 @property (nonatomic) bool inAppPINRequired;
 @property (nonatomic, copy) NSDecimalNumber *inAppPINRequiredAmount;
 @property (nonatomic, copy) NSString *inAppPINRequiredCurrency;
+@property (getter=isParsedTransitApplication, nonatomic, readonly) bool parsedTransitApplication;
 @property (nonatomic) long long paymentNetworkIdentifier;
 @property (nonatomic) unsigned long long paymentType;
 @property (nonatomic) bool requiresDeferredAuthorization;
@@ -46,18 +47,24 @@
 @property (nonatomic, copy) NSString *secureElementIdentifier;
 @property (nonatomic) long long state;
 @property (nonatomic, readonly) NSString *stateAsString;
+@property (nonatomic, readonly) NSString *stationCodeProvider;
 @property (nonatomic, copy) NSArray *supportedExpressModes;
 @property (nonatomic) bool supportsContactlessPayment;
 @property (nonatomic, copy) NSArray *supportsExpressModes;
 @property (nonatomic, readonly) bool supportsExpressSuica;
+@property (nonatomic, readonly) bool supportsExpressTransit;
 @property (nonatomic) bool supportsInAppPayment;
 @property (nonatomic) bool supportsOptionalAuthentication;
+@property (nonatomic, readonly) bool supportsSuica;
+@property (nonatomic, readonly) bool supportsTransit;
 @property (nonatomic, copy) NSString *suspendedReason;
+@property (nonatomic, copy) PKTransitPassProperties *transitProperties;
 
 + (id)applicationWithProtobuf:(id)arg1;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (bool)_expressModesIncludeTransit:(id)arg1;
 - (bool)acceptedForNonWebPaymentWithSupportedNetworkIdentifiers:(id)arg1 merchantCapabilities:(unsigned long long)arg2 paymentMode:(long long)arg3;
 - (bool)acceptedForNonWebPaymentWithSupportedNetworkIdentifiers:(id)arg1 merchantCapabilities:(unsigned long long)arg2 paymentMode:(long long)arg3 paymentApplicationStates:(id)arg4;
 - (bool)acceptedForWebPaymentWithSupportedNetworkIdentifiers:(id)arg1 merchantCapabilities:(unsigned long long)arg2 paymentMode:(long long)arg3 webService:(id)arg4;
@@ -81,6 +88,7 @@
 - (bool)isAuxiliary;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToPaymentApplication:(id)arg1;
+- (bool)isParsedTransitApplication;
 - (long long)paymentNetworkIdentifier;
 - (unsigned long long)paymentType;
 - (id)protobuf;
@@ -110,17 +118,23 @@
 - (void)setSupportsInAppPayment:(bool)arg1;
 - (void)setSupportsOptionalAuthentication:(bool)arg1;
 - (void)setSuspendedReason:(id)arg1;
+- (void)setTransitProperties:(id)arg1;
 - (long long)state;
 - (id)stateAsString;
+- (id)stationCodeProvider;
 - (id)supportedExpressModes;
 - (bool)supportsContactlessPayment;
 - (bool)supportsExpressMode:(id)arg1;
 - (id)supportsExpressModes;
 - (bool)supportsExpressSuica;
+- (bool)supportsExpressTransit;
 - (bool)supportsInAppPayment;
 - (bool)supportsOptionalAuthentication;
+- (bool)supportsSuica;
+- (bool)supportsTransit;
 - (bool)supportsWebPaymentMode:(long long)arg1 withExclusionList:(id)arg2;
 - (bool)supportsWebPaymentMode:(long long)arg1 withExclusionList:(id)arg2 clientOSVersion:(id)arg3;
 - (id)suspendedReason;
+- (id)transitProperties;
 
 @end

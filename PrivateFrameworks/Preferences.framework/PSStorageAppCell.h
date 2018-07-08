@@ -19,7 +19,9 @@
 
 - (void).cxx_destruct;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (id)lastSizeStringForAppID:(id)arg1;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
+- (void)setLastSizeString:(id)arg1 forAppID:(id)arg2;
 - (void)updateConstraints;
 
 @end

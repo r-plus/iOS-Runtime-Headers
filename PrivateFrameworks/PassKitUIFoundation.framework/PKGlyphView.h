@@ -19,6 +19,8 @@
     struct { 
         unsigned int showingPhone : 1; 
         unsigned int phoneRotated : 1; 
+        unsigned int showingUserIntentPhone : 1; 
+        unsigned int showingUserIntentArrow : 1; 
     }  _layoutFlags;
     LAUIPearlGlyphView * _pearlView;
     double  _phoneAspectRatio;
@@ -33,6 +35,8 @@
     NSMutableArray * _transitionCompletionHandlers;
     unsigned long long  _transitionIndex;
     bool  _transitioning;
+    PKMicaLayer * _userIntentArrowLayer;
+    PKMicaLayer * _userIntentPhoneLayer;
 }
 
 @property (nonatomic, readonly) long long colorMode;
@@ -72,6 +76,7 @@
 - (void)_updateLastAnimationTimeWithAnimationOfDuration:(double)arg1;
 - (void)_updatePhoneLayoutWithTransitionIndex:(unsigned long long)arg1 animated:(bool)arg2;
 - (void)_updatePhoneWiggleIfNecessary;
+- (void)_updateUserIntentLayoutAnimated:(bool)arg1;
 - (long long)colorMode;
 - (id)createCustomImageLayer;
 - (struct CGImage { }*)customImage;

@@ -31,6 +31,7 @@
 // Image: /System/Library/Frameworks/ARKit.framework/ARKit
 
 + (id)ar_UUIDWithIntegerValue:(unsigned long long)arg1;
++ (id)ar_zeroUUID;
 
 - (unsigned long long)ar_integerValue;
 

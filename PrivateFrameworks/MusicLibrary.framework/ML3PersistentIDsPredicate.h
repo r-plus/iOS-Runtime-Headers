@@ -11,6 +11,7 @@
 
 + (id)predicateWithPersistentIDs:(const long long*)arg1 count:(unsigned long long)arg2 shouldContain:(bool)arg3;
 + (id)predicateWithPersistentIDs:(id)arg1 shouldContain:(bool)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;

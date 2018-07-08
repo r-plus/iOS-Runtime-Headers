@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITableViewController : UIViewController <DebugHierarchyObject, UITableViewDataSource, UITableViewDelegate, UITableViewFocusDelegateLegacy, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Deprecated, _UIKeyboardAutoRespondingScrollViewController> {
+@interface UITableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITableViewFocusDelegateLegacy, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Deprecated, _UIKeyboardAutoRespondingScrollViewController> {
     _UIFilteredDataSource * _filteredDataSource;
     long long  _filteredDataType;
     UIAutoRespondingScrollViewControllerKeyboardSupport * _keyboardSupport;
@@ -78,10 +78,6 @@
 - (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3;
 - (void)willPresentPreviewViewController:(id)arg1 forPosition:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3;
 - (void)willPresentPreviewViewController:(id)arg1 forRowAtIndexPath:(id)arg2;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
 
 // Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
 

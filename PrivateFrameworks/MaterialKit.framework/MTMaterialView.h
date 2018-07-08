@@ -3,8 +3,10 @@
  */
 
 @interface MTMaterialView : UIView <MTMaterialSettingsObserving> {
+    UIViewFloatAnimatableProperty * _backdropFloatAnimatableProperty;
     id /* block */  _backdropScaleAdjustment;
     UIView * _backdropView;
+    UIView * _baseOverlayView;
     bool  _cornerRadiusIsContinuous;
     bool  _forceCrossfadeIfNecessary;
     NSString * _groupName;
@@ -16,10 +18,12 @@
     UIView * _secondaryOverlayView;
     <MTMaterialSettings> * _settings;
     bool  _shouldCrossfadeIfNecessary;
+    bool  _useBuiltInAlphaTransformerAndBackdropScaleAdjustment;
     double  _weighting;
 }
 
 @property (nonatomic) bool allowsInPlaceFiltering;
+@property (nonatomic, retain) UIViewFloatAnimatableProperty *backdropFloatAnimatableProperty;
 @property (nonatomic, copy) id /* block */ backdropScaleAdjustment;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -30,6 +34,7 @@
 @property (nonatomic, readonly) <MTMaterialSettings><MTMaterialSettingsObservable> *materialSettings;
 @property (nonatomic) bool shouldCrossfadeIfNecessary;
 @property (readonly) Class superclass;
+@property (nonatomic) bool useBuiltInAlphaTransformerAndBackdropScaleAdjustment;
 @property (nonatomic, readonly) MTVibrantStylingProvider *vibrantStylingProvider;
 @property (nonatomic) double weighting;
 
@@ -46,6 +51,7 @@
 - (id)_backdropViewSettingsForMaterialSettings:(id)arg1 options:(unsigned long long)arg2;
 - (id)_basicOverlaySettings;
 - (void)_configureBackdropViewIfNecessaryWithWeighting:(double)arg1;
+- (void)_configureBaseOverlayViewIfNecessaryWithWeighting:(double)arg1;
 - (void)_configureIfNecessaryWithWeighting:(double)arg1;
 - (void)_configureMTBackdropView:(id)arg1 withWeighting:(double)arg2;
 - (id)_configureOverlayView:(id*)arg1 ofClass:(Class)arg2 withOptions:(unsigned long long)arg3 color:(id)arg4 alpha:(double)arg5 weighting:(double)arg6;
@@ -54,16 +60,20 @@
 - (void)_configurePrimaryOverlayViewIfNecessaryWithWeighting:(double)arg1;
 - (void)_configureSecondaryOverlayViewIfNecessaryWithWeighting:(double)arg1;
 - (double)_continuousCornerRadius;
+- (bool)_isBackdropRequiredForOverlay;
 - (bool)_isCrossfadeNecessary;
 - (id)_luminanceOverlaySettings;
 - (id)_mtBackdropView;
 - (id)_observableSettings;
+- (void)_reduceMotionStatusDidChange;
 - (void)_reduceTransparencyStatusDidChange;
 - (void)_setContinuousCornerRadius:(double)arg1;
 - (void)_setCornerRadius:(double)arg1;
+- (void)_setupOrInvalidateTransformer;
 - (bool)_supportsVariableWeighting;
 - (void)_transitionToSettings:(id)arg1 options:(unsigned long long)arg2;
 - (bool)allowsInPlaceFiltering;
+- (id)backdropFloatAnimatableProperty;
 - (id /* block */)backdropScaleAdjustment;
 - (double)cornerRadius;
 - (void)dealloc;
@@ -73,14 +83,17 @@
 - (bool)isHighlighted;
 - (id)materialSettings;
 - (void)setAllowsInPlaceFiltering:(bool)arg1;
+- (void)setBackdropFloatAnimatableProperty:(id)arg1;
 - (void)setBackdropScaleAdjustment:(id /* block */)arg1;
 - (void)setForceCrossfadeIfNecessary:(bool)arg1;
 - (void)setGroupName:(id)arg1;
 - (void)setHighlighted:(bool)arg1;
 - (void)setShouldCrossfadeIfNecessary:(bool)arg1;
+- (void)setUseBuiltInAlphaTransformerAndBackdropScaleAdjustment:(bool)arg1;
 - (void)setWeighting:(double)arg1;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (bool)shouldCrossfadeIfNecessary;
+- (bool)useBuiltInAlphaTransformerAndBackdropScaleAdjustment;
 - (id)vibrantStylingProvider;
 - (double)weighting;
 

@@ -20,6 +20,7 @@
 - (id)description;
 - (id)descriptionWithItem:(bool)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)filteredCloudRecordArrayWithPredicate:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 

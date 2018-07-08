@@ -23,6 +23,7 @@
 
 + (id)_newSampleWithType:(id)arg1 startDate:(double)arg2 endDate:(double)arg3 device:(id)arg4 metadata:(id)arg5 config:(id /* block */)arg6;
 + (id)_sampleWithUUID:(id)arg1 metadata:(id)arg2 sourceBundleIdentifier:(id)arg3 creationDate:(double)arg4 sampleType:(id)arg5 startDate:(double)arg6 endDate:(double)arg7;
++ (bool)supportsEquivalence;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -40,6 +41,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
 - (id)initWithCoder:(id)arg1;
+- (bool)isEquivalent:(id)arg1;
 - (id)sampleType;
 - (id)startDate;
 

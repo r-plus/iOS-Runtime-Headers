@@ -30,10 +30,12 @@
 @property (nonatomic) struct CGSize { double x1; double x2; } targetSize;
 @property (nonatomic) struct CGSize { double x1; double x2; } unscaledSize;
 
++ (void)asynchronouslyPrepareMicaPackageWithName:(id)arg1 layoutDirection:(long long)arg2 completion:(id /* block */)arg3;
 + (id)classSubstitions;
 
 - (void).cxx_destruct;
 - (Class)CAMLParser:(id)arg1 didFailToFindClassWithName:(id)arg2;
+- (void)_loadRootLayerIfNeeded;
 - (id)_recursivelyFindSublayerWithName:(id)arg1 rootLayer:(id)arg2;
 - (void)_recursivelySetFillColor:(struct CGColor { }*)arg1 rootLayer:(id)arg2;
 - (void)_setState:(id)arg1;

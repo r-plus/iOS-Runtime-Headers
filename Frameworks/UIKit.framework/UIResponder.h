@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIResponder : NSObject <DebugHierarchyObject, UIResponderStandardEditActions, UITextInputAdditions, UITextInput_Internal, _UIStateRestorationContinuation, _UITouchable> {
+@interface UIResponder : NSObject <UIResponderStandardEditActions, UITextInputAdditions, UITextInput_Internal, _UIStateRestorationContinuation, _UITouchable> {
     unsigned int  _hasInputAssistantItem;
     unsigned int  _hasOverrideClient;
     unsigned int  _hasOverrideHost;
@@ -54,7 +54,6 @@
 - (void)_becomeFirstResponderAndMakeVisible;
 - (bool)_becomeFirstResponderWhenPossible;
 - (void)_beginPinningInputViews;
-- (bool)_canBecomeFirstResponder;
 - (bool)_canBecomeFirstResponderWhenPossible;
 - (bool)_canChangeFirstResponder:(id)arg1 toResponder:(id)arg2;
 - (bool)_canResignIfContainsFirstResponder;
@@ -287,9 +286,11 @@
 - (void)updateUserActivityState:(id)arg1;
 - (id)userActivity;
 
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
+// Image: /System/Library/AccessibilityBundles/GAXClient.bundle/GAXClient
 
-- (id)debugHierarchyPropertyDescriptions;
++ (Class)safeCategoryBaseClass;
+
+- (bool)_canBecomeFirstResponder;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 

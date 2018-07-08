@@ -3,6 +3,7 @@
  */
 
 @interface UIFeedbackGenerator : NSObject {
+    bool  _activated;
     long long  _activationCount;
     NSObject<OS_dispatch_source> * _autoDeactivateTimer;
     long long  _autoDeactivationCount;
@@ -86,6 +87,7 @@
 - (void)_stats_playedFeedback;
 - (void)_stats_prepared;
 - (void)_stopAutoDeactivateTimer;
+- (void)_stopFeedback:(id)arg1;
 - (void)_stopFeedbackWarming;
 - (void)_stopPreparationForAllStyles;
 - (void)_stopPreparationForStyle:(long long)arg1;

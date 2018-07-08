@@ -5,6 +5,7 @@
 @interface Foundation.JSONDecoder : SwiftObject {
     void dataDecodingStrategy;
     void dateDecodingStrategy;
+    void keyDecodingStrategy;
     void nonConformingFloatDecodingStrategy;
     void userInfo;
 }

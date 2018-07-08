@@ -9,6 +9,7 @@
     _UIAsyncInvocation * _cancelViewServiceRequest;
     SFSafariViewControllerConfiguration * _configuration;
     NSArray * _customActivities;
+    bool  _defersAddingRemoteViewController;
     <SFSafariViewControllerDelegate> * _delegate;
     long long  _dismissButtonStyle;
     long long  _displayMode;
@@ -43,6 +44,7 @@
 @property (setter=_setShowingLinkPreviewWithMinimalUI:, nonatomic) bool _showingLinkPreviewWithMinimalUI;
 @property (nonatomic, readonly, copy) SFSafariViewControllerConfiguration *configuration;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) bool defersAddingRemoteViewController;
 @property (nonatomic) <SFSafariViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) long long dismissButtonStyle;
@@ -65,6 +67,7 @@
 - (void)_forwardNotificationToViewService:(id)arg1;
 - (id)_previewActions;
 - (void)_removeRemoteView;
+- (void)_restartServiceViewController;
 - (void)_setActivatedElementInfo:(id)arg1;
 - (void)_setEdgeSwipeDismissalEnabled:(bool)arg1;
 - (void)_setPreviewActions:(id)arg1;
@@ -74,9 +77,11 @@
 - (bool)_showingLinkPreview;
 - (bool)_showingLinkPreviewWithMinimalUI;
 - (void)_updateScrollViewIndicatorInsets;
+- (id)childViewControllerForHomeIndicatorAutoHidden;
 - (id)childViewControllerForStatusBarStyle;
 - (id)configuration;
 - (void)dealloc;
+- (bool)defersAddingRemoteViewController;
 - (id)delegate;
 - (long long)dismissButtonStyle;
 - (id)initWithCoder:(id)arg1;
@@ -103,6 +108,7 @@
 - (void)remoteViewControllerWillDismiss:(id)arg1;
 - (id)serviceProxy;
 - (void)serviceProxyWillQueueInvocation:(id)arg1;
+- (void)setDefersAddingRemoteViewController:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDismissButtonStyle:(long long)arg1;
 - (void)setModalPresentationStyle:(long long)arg1;

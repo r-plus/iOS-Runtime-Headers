@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@interface DOMHTMLInputElement : DOMHTMLElement
+@interface DOMHTMLInputElement : DOMHTMLElement <UITextInputTraits>
 
 @property (readonly, copy) NSURL *absoluteImageURL;
 @property (copy) NSString *accept;
@@ -10,22 +10,38 @@
 @property (copy) NSString *align;
 @property (copy) NSString *alt;
 @property (readonly, copy) NSString *altDisplayString;
+@property (nonatomic) long long autocapitalizationType;
+@property (nonatomic) long long autocorrectionType;
 @property bool autofocus;
 @property bool checked;
+@property (readonly, copy) NSString *debugDescription;
 @property bool defaultChecked;
 @property (copy) NSString *defaultValue;
+@property (readonly, copy) NSString *description;
 @property bool disabled;
+@property (nonatomic) bool enablesReturnKeyAutomatically;
 @property (retain) DOMFileList *files;
 @property (readonly) DOMHTMLFormElement *form;
+@property (readonly) unsigned long long hash;
 @property bool indeterminate;
+@property (nonatomic) long long keyboardAppearance;
+@property (nonatomic) long long keyboardType;
 @property int maxLength;
 @property bool multiple;
 @property (copy) NSString *name;
 @property bool readOnly;
+@property (nonatomic) long long returnKeyType;
+@property (getter=isSecureTextEntry, nonatomic) bool secureTextEntry;
 @property int selectionEnd;
 @property int selectionStart;
 @property (copy) NSString *size;
+@property (nonatomic) long long smartDashesType;
+@property (nonatomic) long long smartInsertDeleteType;
+@property (nonatomic) long long smartQuotesType;
+@property (nonatomic) long long spellCheckingType;
 @property (copy) NSString *src;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *textContentType;
 @property (copy) NSString *type;
 @property (copy) NSString *useMap;
 @property (copy) NSString *value;
@@ -34,6 +50,7 @@
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 
 - (int)_autocapitalizeType;
+- (id)_autofillContext;
 - (bool)_isAutofilled;
 - (bool)_isEdited;
 - (bool)_isTextField;
@@ -65,6 +82,7 @@
 - (unsigned int)height;
 - (bool)incremental;
 - (bool)indeterminate;
+- (void)insertTextSuggestion:(id)arg1;
 - (id)labels;
 - (id)max;
 - (int)maxLength;

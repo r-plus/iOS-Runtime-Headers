@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIInputViewController : UIViewController <DebugHierarchyObject, UITextInputDelegate, _UITextDocumentInterfaceDelegate> {
+@interface UIInputViewController : UIViewController <UITextInputDelegate, _UITextDocumentInterfaceDelegate> {
     bool  _alignsToContentViewController;
     bool  _autosizeToCurrentKeyboard;
     bool  _commitInputModeOnTouchEnd;
@@ -28,8 +28,6 @@
 @property (nonatomic, copy) NSString *primaryLanguage;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <UITextDocumentProxy> *textDocumentProxy;
-
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (bool)_requiresProxyInterface;
 + (void)presentDialogForAddingKeyboard;
@@ -81,9 +79,5 @@
 - (void)textWillChange:(id)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
 
 @end

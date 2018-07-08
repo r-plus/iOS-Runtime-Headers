@@ -11,6 +11,7 @@
     AVOutputContext * _parentContext;
     struct OpaqueFigRoutingContext { } * _routingContext;
     id /* block */  _routingContextCreator;
+    bool  _usesRouteConfigUpdatedNotification;
     struct OpaqueFigVolumeControllerState { } * _volumeController;
     AVWeakReference * _weakObserver;
 }
@@ -29,6 +30,7 @@
 @property AVOutputContext *parentOutputContext;
 @property (readonly) bool providesControlForAllVolumeFeatures;
 @property (readonly) Class superclass;
+@property (readonly) bool supportsMultipleOutputDevices;
 @property (readonly) float volume;
 
 + (id)auxiliaryOutputContext;
@@ -57,6 +59,9 @@
 - (void)_remoteControlChannelAvailabilityChanged;
 - (void)_routeChangeEndedWithID:(id)arg1 reason:(struct __CFString { }*)arg2;
 - (void)_routeChangeStartedWithID:(id)arg1;
+- (void)_routeConfigUpdateEndedWithID:(struct __CFString { }*)arg1 reason:(struct __CFString { }*)arg2;
+- (void)_routeConfigUpdateStartedWithID:(struct __CFString { }*)arg1;
+- (void)_routeConfigUpdatedWithID:(struct __CFString { }*)arg1 reason:(struct __CFString { }*)arg2;
 - (void)_sendCommand:(struct __CFString { }*)arg1 completionHandler:(id /* block */)arg2;
 - (void)_serverConnectionDied;
 - (void)_systemPickerVideoRouteChanged;
@@ -92,6 +97,7 @@
 - (void)setOutputDevices:(id)arg1;
 - (void)setParentOutputContext:(id)arg1;
 - (void)setVolume:(float)arg1;
+- (bool)supportsMultipleOutputDevices;
 - (float)volume;
 
 @end

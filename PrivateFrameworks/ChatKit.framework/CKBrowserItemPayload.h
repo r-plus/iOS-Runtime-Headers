@@ -22,6 +22,7 @@
 
 + (id)browserItemFromSticker:(id)arg1;
 + (id)browserItemPayloadFromIMPluginPayload:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)__ck_urlFromTextBodyForRichLink;

@@ -9,7 +9,8 @@
 @property (nonatomic, readonly) SKPaymentQueueClient *paymentQueueClient;
 @property (nonatomic, readonly) NSArray *transactions;
 
-+ (bool)canMakePayments;
+// Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
+
 + (id)defaultQueue;
 
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
@@ -56,5 +57,10 @@
 - (void)resumeDownloads:(id)arg1;
 - (void)startDownloads:(id)arg1;
 - (id)transactions;
+
+// Image: /System/Library/AccessibilityBundles/GAXClient.bundle/GAXClient
+
++ (bool)canMakePayments;
++ (Class)safeCategoryBaseClass;
 
 @end

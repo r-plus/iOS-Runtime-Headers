@@ -13,7 +13,6 @@
     Class  _objectsClass;
     SEL  _objectsClassInitializer;
     id /* block */  _objectsConstructor;
-    bool  _requiresSecureCoding;
     unsigned long long  _rowNumber;
     PQLStatement * _stmt;
 }
@@ -22,7 +21,6 @@
 @property (nonatomic, readonly) PQLConnection *db;
 @property (nonatomic, retain) NSSet *defaultUnarchivingAllowedClasses;
 @property (nonatomic, readonly) NSError *error;
-@property (nonatomic) bool requiresSecureCoding;
 @property (nonatomic, readonly) unsigned long long rowNumber;
 @property (nonatomic, readonly) struct sqlite3_stmt { }*stmt;
 
@@ -45,9 +43,9 @@
 - (id)defaultUnarchivingAllowedClasses;
 - (id)description;
 - (double)doubleAtIndex:(int)arg1;
-- (/* Warning: unhandled struct encoding: '{PQLResultSet=#@#:B@?@BB@@QQ@}' */ struct PQLResultSet { Class x1; id x2; SEL x3; bool x4; id /* block */ x5; id x6; bool x7; id x8; unsigned long long x9; unsigned long long x10; id x11; }*)enumerateObjects:(id /* block */)arg1;
-- (/* Warning: unhandled struct encoding: '{PQLResultSet=#@#:B@?@BB@@QQ@}' */ struct PQLResultSet { Class x1; id x2; SEL x3; bool x4; id /* block */ x5; id x6; bool x7; id x8; unsigned long long x9; unsigned long long x10; id x11; }*)enumerateObjectsOfClass:(Class)arg1;
-- (/* Warning: unhandled struct encoding: '{PQLResultSet=#@#:B@?@BB@@QQ@}' */ struct PQLResultSet { Class x1; id x2; SEL x3; bool x4; id /* block */ x5; id x6; bool x7; id x8; unsigned long long x9; unsigned long long x10; id x11; }*)enumerateObjectsOfClass:(Class)arg1 initializer:(SEL)arg2;
+- (/* Warning: unhandled struct encoding: '{PQLResultSet=#@#:B@?@B@@QQ@}' */ struct PQLResultSet { Class x1; id x2; SEL x3; bool x4; id /* block */ x5; id x6; id x7; unsigned long long x8; unsigned long long x9; id x10; }*)enumerateObjects:(id /* block */)arg1;
+- (/* Warning: unhandled struct encoding: '{PQLResultSet=#@#:B@?@B@@QQ@}' */ struct PQLResultSet { Class x1; id x2; SEL x3; bool x4; id /* block */ x5; id x6; id x7; unsigned long long x8; unsigned long long x9; id x10; }*)enumerateObjectsOfClass:(Class)arg1;
+- (/* Warning: unhandled struct encoding: '{PQLResultSet=#@#:B@?@B@@QQ@}' */ struct PQLResultSet { Class x1; id x2; SEL x3; bool x4; id /* block */ x5; id x6; id x7; unsigned long long x8; unsigned long long x9; id x10; }*)enumerateObjectsOfClass:(Class)arg1 initializer:(SEL)arg2;
 - (id)error;
 - (float)floatAtIndex:(int)arg1;
 - (id)initWithStatement:(id)arg1 usingDatabase:(id)arg2;
@@ -69,10 +67,8 @@
 - (id)onlyObjectOfClass:(Class)arg1;
 - (id)onlyObjectOfClass:(Class)arg1 initializer:(SEL)arg2;
 - (id)plistAtIndex:(int)arg1;
-- (bool)requiresSecureCoding;
 - (unsigned long long)rowNumber;
 - (void)setDefaultUnarchivingAllowedClasses:(id)arg1;
-- (void)setRequiresSecureCoding:(bool)arg1;
 - (short)shortAtIndex:(int)arg1;
 - (struct sqlite3_value { }*)sqliteValueAtIndex:(int)arg1;
 - (struct sqlite3_stmt { }*)stmt;

@@ -48,6 +48,10 @@
 - (void)setScanLocation:(unsigned long long)arg1;
 - (id)string;
 
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
+- (bool)hk_scanCharactersFromSet:(id)arg1 length:(unsigned long long)arg2 intoString:(id*)arg3;
+
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_rangeOfFirstMatchWithRegularExpression:(id)arg1;

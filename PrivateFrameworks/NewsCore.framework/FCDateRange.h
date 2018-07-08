@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCDateRange : NSObject <NSCoding, NSCopying> {
+@interface FCDateRange : NSObject <NSCopying, NSSecureCoding> {
     NSDate * _endDate;
     NSDate * _startDate;
 }
@@ -21,6 +21,7 @@
 
 + (id)dateRangeWithEarlierDate:(id)arg1 laterDate:(id)arg2;
 + (id)dateRangeWithStartDate:(id)arg1 endDate:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (double)absoluteTimeInterval;

@@ -11,6 +11,7 @@
     double  _articleDiversitySimilarityExpectationEnd;
     double  _articleDiversitySimilarityExpectationStart;
     long long  _articleRapidUpdatesTimeout;
+    NSString * _articleRecirculationConfig;
     bool  _articleSearchEnabled;
     long long  _autoRefreshMinimumInterval;
     long long  _autoScrollToTopFeedTimeout;
@@ -26,10 +27,12 @@
     double  _endOfArticleMinPaidHeadlineRatio;
     NSMutableArray * _endpointConfigs;
     NSString * _experimentalizableFieldPostfix;
+    long long  _expirePinnedArticlesAfter;
     long long  _expiredPaidSubscriptionGroupCutoffTime;
     NSMutableArray * _externalAnalyticsConfigs;
     NSString * _fallbackLanguageTag;
     NSString * _forYouNonPersonalizedGroupsOrder;
+    NTPBVideoGroupsConfig * _forYouVideoGroupsConfig;
     struct { 
         unsigned int analyticsEndpointMaxPayloadSize : 1; 
         unsigned int appConfigRefreshRate : 1; 
@@ -43,6 +46,7 @@
         unsigned int corryBarMaxArticleCountForSingleArticle : 1; 
         unsigned int endOfArticleMaxInaccessiblePaidArticles : 1; 
         unsigned int endOfArticleMinPaidHeadlineRatio : 1; 
+        unsigned int expirePinnedArticlesAfter : 1; 
         unsigned int expiredPaidSubscriptionGroupCutoffTime : 1; 
         unsigned int initialArticlesFromNewFavorite : 1; 
         unsigned int interstitialAdLoadDelay : 1; 
@@ -65,6 +69,7 @@
         unsigned int notificationArticleWithRapidUpdatesCacheTimeout : 1; 
         unsigned int notificationEnabledChannelsRefreshFrequency : 1; 
         unsigned int numberOfScreenfulsScrolledToBypassWidgetTimeLimit : 1; 
+        unsigned int optionalTopStoriesRefreshRate : 1; 
         unsigned int prerollLoadingTimeout : 1; 
         unsigned int publisherDiversitySlope : 1; 
         unsigned int publisherDiversityYIntercept : 1; 
@@ -84,9 +89,12 @@
         unsigned int timeBetweenWidgetInsertions : 1; 
         unsigned int treatmentId : 1; 
         unsigned int trendingTopicsRefreshRate : 1; 
+        unsigned int userSegmentationApiModMax : 1; 
+        unsigned int userSegmentationApiModThreshold : 1; 
         unsigned int enabledPrivateDataEncryptionLevel : 1; 
         unsigned int orderFeedEnabledLevel : 1; 
         unsigned int orderFeedEnabledLevelDeprecated : 1; 
+        unsigned int privateDataMigrationCleanupLevel : 1; 
         unsigned int trendingStyle : 1; 
         unsigned int alternativeButlerWidgetConfigEnabled : 1; 
         unsigned int articleSearchEnabled : 1; 
@@ -123,6 +131,7 @@
     long long  _notificationArticleWithRapidUpdatesCacheTimeout;
     long long  _notificationEnabledChannelsRefreshFrequency;
     long long  _numberOfScreenfulsScrolledToBypassWidgetTimeLimit;
+    long long  _optionalTopStoriesRefreshRate;
     unsigned int  _orderFeedEnabledLevel;
     int  _orderFeedEnabledLevelDeprecated;
     bool  _orderFeedEndpointEnabled;
@@ -137,6 +146,7 @@
     NSString * _personalizationWidgetSectionMappingResourceId;
     NTPBPrefetchConfig * _prefetchConfig;
     double  _prerollLoadingTimeout;
+    int  _privateDataMigrationCleanupLevel;
     double  _publisherDiversitySlope;
     double  _publisherDiversityYIntercept;
     long long  _savedArticlesCutoffTime;
@@ -165,6 +175,8 @@
     bool  _universalLinksEnabled;
     bool  _usUkUseAuWhatsNewFeatures;
     bool  _useSecureConnectionForAssets;
+    long long  _userSegmentationApiModMax;
+    long long  _userSegmentationApiModThreshold;
     NTPBWidgetConfig * _widgetConfig;
     NTPBWidgetConfig * _widgetConfig2;
 }
@@ -177,6 +189,7 @@
 @property (nonatomic) double articleDiversitySimilarityExpectationEnd;
 @property (nonatomic) double articleDiversitySimilarityExpectationStart;
 @property (nonatomic) long long articleRapidUpdatesTimeout;
+@property (nonatomic, retain) NSString *articleRecirculationConfig;
 @property (nonatomic) bool articleSearchEnabled;
 @property (nonatomic) long long autoRefreshMinimumInterval;
 @property (nonatomic) long long autoScrollToTopFeedTimeout;
@@ -192,10 +205,12 @@
 @property (nonatomic) double endOfArticleMinPaidHeadlineRatio;
 @property (nonatomic, retain) NSMutableArray *endpointConfigs;
 @property (nonatomic, retain) NSString *experimentalizableFieldPostfix;
+@property (nonatomic) long long expirePinnedArticlesAfter;
 @property (nonatomic) long long expiredPaidSubscriptionGroupCutoffTime;
 @property (nonatomic, retain) NSMutableArray *externalAnalyticsConfigs;
 @property (nonatomic, retain) NSString *fallbackLanguageTag;
 @property (nonatomic, retain) NSString *forYouNonPersonalizedGroupsOrder;
+@property (nonatomic, retain) NTPBVideoGroupsConfig *forYouVideoGroupsConfig;
 @property (nonatomic, readonly) bool hasAlternativeButlerWidgetConfig;
 @property (nonatomic) bool hasAlternativeButlerWidgetConfigEnabled;
 @property (nonatomic) bool hasAnalyticsEndpointMaxPayloadSize;
@@ -204,6 +219,7 @@
 @property (nonatomic) bool hasArticleDiversitySimilarityExpectationEnd;
 @property (nonatomic) bool hasArticleDiversitySimilarityExpectationStart;
 @property (nonatomic) bool hasArticleRapidUpdatesTimeout;
+@property (nonatomic, readonly) bool hasArticleRecirculationConfig;
 @property (nonatomic) bool hasArticleSearchEnabled;
 @property (nonatomic) bool hasAutoRefreshMinimumInterval;
 @property (nonatomic) bool hasAutoScrollToTopFeedTimeout;
@@ -218,9 +234,11 @@
 @property (nonatomic) bool hasEndOfArticleMaxInaccessiblePaidArticles;
 @property (nonatomic) bool hasEndOfArticleMinPaidHeadlineRatio;
 @property (nonatomic, readonly) bool hasExperimentalizableFieldPostfix;
+@property (nonatomic) bool hasExpirePinnedArticlesAfter;
 @property (nonatomic) bool hasExpiredPaidSubscriptionGroupCutoffTime;
 @property (nonatomic, readonly) bool hasFallbackLanguageTag;
 @property (nonatomic, readonly) bool hasForYouNonPersonalizedGroupsOrder;
+@property (nonatomic, readonly) bool hasForYouVideoGroupsConfig;
 @property (nonatomic, readonly) bool hasIadConfig;
 @property (nonatomic) bool hasInitialArticlesFromNewFavorite;
 @property (nonatomic) bool hasInterstitialAdLoadDelay;
@@ -244,6 +262,7 @@
 @property (nonatomic) bool hasNotificationArticleWithRapidUpdatesCacheTimeout;
 @property (nonatomic) bool hasNotificationEnabledChannelsRefreshFrequency;
 @property (nonatomic) bool hasNumberOfScreenfulsScrolledToBypassWidgetTimeLimit;
+@property (nonatomic) bool hasOptionalTopStoriesRefreshRate;
 @property (nonatomic) bool hasOrderFeedEnabledLevel;
 @property (nonatomic) bool hasOrderFeedEnabledLevelDeprecated;
 @property (nonatomic) bool hasOrderFeedEndpointEnabled;
@@ -258,6 +277,7 @@
 @property (nonatomic, readonly) bool hasPersonalizationWidgetSectionMappingResourceId;
 @property (nonatomic, readonly) bool hasPrefetchConfig;
 @property (nonatomic) bool hasPrerollLoadingTimeout;
+@property (nonatomic) bool hasPrivateDataMigrationCleanupLevel;
 @property (nonatomic) bool hasPublisherDiversitySlope;
 @property (nonatomic) bool hasPublisherDiversityYIntercept;
 @property (nonatomic) bool hasSavedArticlesCutoffTime;
@@ -281,6 +301,8 @@
 @property (nonatomic) bool hasUniversalLinksEnabled;
 @property (nonatomic) bool hasUsUkUseAuWhatsNewFeatures;
 @property (nonatomic) bool hasUseSecureConnectionForAssets;
+@property (nonatomic) bool hasUserSegmentationApiModMax;
+@property (nonatomic) bool hasUserSegmentationApiModThreshold;
 @property (nonatomic, readonly) bool hasWidgetConfig;
 @property (nonatomic, readonly) bool hasWidgetConfig2;
 @property (nonatomic, retain) NTPBIAdConfig *iadConfig;
@@ -307,6 +329,7 @@
 @property (nonatomic) long long notificationArticleWithRapidUpdatesCacheTimeout;
 @property (nonatomic) long long notificationEnabledChannelsRefreshFrequency;
 @property (nonatomic) long long numberOfScreenfulsScrolledToBypassWidgetTimeLimit;
+@property (nonatomic) long long optionalTopStoriesRefreshRate;
 @property (nonatomic) unsigned int orderFeedEnabledLevel;
 @property (nonatomic) int orderFeedEnabledLevelDeprecated;
 @property (nonatomic) bool orderFeedEndpointEnabled;
@@ -321,6 +344,7 @@
 @property (nonatomic, retain) NSString *personalizationWidgetSectionMappingResourceId;
 @property (nonatomic, retain) NTPBPrefetchConfig *prefetchConfig;
 @property (nonatomic) double prerollLoadingTimeout;
+@property (nonatomic) int privateDataMigrationCleanupLevel;
 @property (nonatomic) double publisherDiversitySlope;
 @property (nonatomic) double publisherDiversityYIntercept;
 @property (nonatomic) long long savedArticlesCutoffTime;
@@ -346,6 +370,8 @@
 @property (nonatomic) bool universalLinksEnabled;
 @property (nonatomic) bool usUkUseAuWhatsNewFeatures;
 @property (nonatomic) bool useSecureConnectionForAssets;
+@property (nonatomic) long long userSegmentationApiModMax;
+@property (nonatomic) long long userSegmentationApiModThreshold;
 @property (nonatomic, retain) NTPBWidgetConfig *widgetConfig;
 @property (nonatomic, retain) NTPBWidgetConfig *widgetConfig2;
 
@@ -366,6 +392,7 @@
 - (double)articleDiversitySimilarityExpectationEnd;
 - (double)articleDiversitySimilarityExpectationStart;
 - (long long)articleRapidUpdatesTimeout;
+- (id)articleRecirculationConfig;
 - (bool)articleSearchEnabled;
 - (long long)autoRefreshMinimumInterval;
 - (long long)autoScrollToTopFeedTimeout;
@@ -391,12 +418,14 @@
 - (id)endpointConfigsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)endpointConfigsCount;
 - (id)experimentalizableFieldPostfix;
+- (long long)expirePinnedArticlesAfter;
 - (long long)expiredPaidSubscriptionGroupCutoffTime;
 - (id)externalAnalyticsConfigAtIndex:(unsigned long long)arg1;
 - (id)externalAnalyticsConfigs;
 - (unsigned long long)externalAnalyticsConfigsCount;
 - (id)fallbackLanguageTag;
 - (id)forYouNonPersonalizedGroupsOrder;
+- (id)forYouVideoGroupsConfig;
 - (bool)hasAlternativeButlerWidgetConfig;
 - (bool)hasAlternativeButlerWidgetConfigEnabled;
 - (bool)hasAnalyticsEndpointMaxPayloadSize;
@@ -405,6 +434,7 @@
 - (bool)hasArticleDiversitySimilarityExpectationEnd;
 - (bool)hasArticleDiversitySimilarityExpectationStart;
 - (bool)hasArticleRapidUpdatesTimeout;
+- (bool)hasArticleRecirculationConfig;
 - (bool)hasArticleSearchEnabled;
 - (bool)hasAutoRefreshMinimumInterval;
 - (bool)hasAutoScrollToTopFeedTimeout;
@@ -419,9 +449,11 @@
 - (bool)hasEndOfArticleMaxInaccessiblePaidArticles;
 - (bool)hasEndOfArticleMinPaidHeadlineRatio;
 - (bool)hasExperimentalizableFieldPostfix;
+- (bool)hasExpirePinnedArticlesAfter;
 - (bool)hasExpiredPaidSubscriptionGroupCutoffTime;
 - (bool)hasFallbackLanguageTag;
 - (bool)hasForYouNonPersonalizedGroupsOrder;
+- (bool)hasForYouVideoGroupsConfig;
 - (bool)hasIadConfig;
 - (bool)hasInitialArticlesFromNewFavorite;
 - (bool)hasInterstitialAdLoadDelay;
@@ -445,6 +477,7 @@
 - (bool)hasNotificationArticleWithRapidUpdatesCacheTimeout;
 - (bool)hasNotificationEnabledChannelsRefreshFrequency;
 - (bool)hasNumberOfScreenfulsScrolledToBypassWidgetTimeLimit;
+- (bool)hasOptionalTopStoriesRefreshRate;
 - (bool)hasOrderFeedEnabledLevel;
 - (bool)hasOrderFeedEnabledLevelDeprecated;
 - (bool)hasOrderFeedEndpointEnabled;
@@ -459,6 +492,7 @@
 - (bool)hasPersonalizationWidgetSectionMappingResourceId;
 - (bool)hasPrefetchConfig;
 - (bool)hasPrerollLoadingTimeout;
+- (bool)hasPrivateDataMigrationCleanupLevel;
 - (bool)hasPublisherDiversitySlope;
 - (bool)hasPublisherDiversityYIntercept;
 - (bool)hasSavedArticlesCutoffTime;
@@ -482,6 +516,8 @@
 - (bool)hasUniversalLinksEnabled;
 - (bool)hasUsUkUseAuWhatsNewFeatures;
 - (bool)hasUseSecureConnectionForAssets;
+- (bool)hasUserSegmentationApiModMax;
+- (bool)hasUserSegmentationApiModThreshold;
 - (bool)hasWidgetConfig;
 - (bool)hasWidgetConfig2;
 - (unsigned long long)hash;
@@ -513,6 +549,7 @@
 - (long long)notificationArticleWithRapidUpdatesCacheTimeout;
 - (long long)notificationEnabledChannelsRefreshFrequency;
 - (long long)numberOfScreenfulsScrolledToBypassWidgetTimeLimit;
+- (long long)optionalTopStoriesRefreshRate;
 - (unsigned int)orderFeedEnabledLevel;
 - (int)orderFeedEnabledLevelDeprecated;
 - (bool)orderFeedEndpointEnabled;
@@ -527,6 +564,7 @@
 - (id)personalizationWidgetSectionMappingResourceId;
 - (id)prefetchConfig;
 - (double)prerollLoadingTimeout;
+- (int)privateDataMigrationCleanupLevel;
 - (double)publisherDiversitySlope;
 - (double)publisherDiversityYIntercept;
 - (bool)readFrom:(id)arg1;
@@ -542,6 +580,7 @@
 - (void)setArticleDiversitySimilarityExpectationEnd:(double)arg1;
 - (void)setArticleDiversitySimilarityExpectationStart:(double)arg1;
 - (void)setArticleRapidUpdatesTimeout:(long long)arg1;
+- (void)setArticleRecirculationConfig:(id)arg1;
 - (void)setArticleSearchEnabled:(bool)arg1;
 - (void)setAutoRefreshMinimumInterval:(long long)arg1;
 - (void)setAutoScrollToTopFeedTimeout:(long long)arg1;
@@ -557,10 +596,12 @@
 - (void)setEndOfArticleMinPaidHeadlineRatio:(double)arg1;
 - (void)setEndpointConfigs:(id)arg1;
 - (void)setExperimentalizableFieldPostfix:(id)arg1;
+- (void)setExpirePinnedArticlesAfter:(long long)arg1;
 - (void)setExpiredPaidSubscriptionGroupCutoffTime:(long long)arg1;
 - (void)setExternalAnalyticsConfigs:(id)arg1;
 - (void)setFallbackLanguageTag:(id)arg1;
 - (void)setForYouNonPersonalizedGroupsOrder:(id)arg1;
+- (void)setForYouVideoGroupsConfig:(id)arg1;
 - (void)setHasAlternativeButlerWidgetConfigEnabled:(bool)arg1;
 - (void)setHasAnalyticsEndpointMaxPayloadSize:(bool)arg1;
 - (void)setHasAppConfigRefreshRate:(bool)arg1;
@@ -578,6 +619,7 @@
 - (void)setHasEnabledPrivateDataEncryptionLevel:(bool)arg1;
 - (void)setHasEndOfArticleMaxInaccessiblePaidArticles:(bool)arg1;
 - (void)setHasEndOfArticleMinPaidHeadlineRatio:(bool)arg1;
+- (void)setHasExpirePinnedArticlesAfter:(bool)arg1;
 - (void)setHasExpiredPaidSubscriptionGroupCutoffTime:(bool)arg1;
 - (void)setHasInitialArticlesFromNewFavorite:(bool)arg1;
 - (void)setHasInterstitialAdLoadDelay:(bool)arg1;
@@ -601,10 +643,12 @@
 - (void)setHasNotificationArticleWithRapidUpdatesCacheTimeout:(bool)arg1;
 - (void)setHasNotificationEnabledChannelsRefreshFrequency:(bool)arg1;
 - (void)setHasNumberOfScreenfulsScrolledToBypassWidgetTimeLimit:(bool)arg1;
+- (void)setHasOptionalTopStoriesRefreshRate:(bool)arg1;
 - (void)setHasOrderFeedEnabledLevel:(bool)arg1;
 - (void)setHasOrderFeedEnabledLevelDeprecated:(bool)arg1;
 - (void)setHasOrderFeedEndpointEnabled:(bool)arg1;
 - (void)setHasPrerollLoadingTimeout:(bool)arg1;
+- (void)setHasPrivateDataMigrationCleanupLevel:(bool)arg1;
 - (void)setHasPublisherDiversitySlope:(bool)arg1;
 - (void)setHasPublisherDiversityYIntercept:(bool)arg1;
 - (void)setHasSavedArticlesCutoffTime:(bool)arg1;
@@ -628,6 +672,8 @@
 - (void)setHasUniversalLinksEnabled:(bool)arg1;
 - (void)setHasUsUkUseAuWhatsNewFeatures:(bool)arg1;
 - (void)setHasUseSecureConnectionForAssets:(bool)arg1;
+- (void)setHasUserSegmentationApiModMax:(bool)arg1;
+- (void)setHasUserSegmentationApiModThreshold:(bool)arg1;
 - (void)setIadConfig:(id)arg1;
 - (void)setInitialArticlesFromNewFavorite:(long long)arg1;
 - (void)setInterstitialAdLoadDelay:(double)arg1;
@@ -652,6 +698,7 @@
 - (void)setNotificationArticleWithRapidUpdatesCacheTimeout:(long long)arg1;
 - (void)setNotificationEnabledChannelsRefreshFrequency:(long long)arg1;
 - (void)setNumberOfScreenfulsScrolledToBypassWidgetTimeLimit:(long long)arg1;
+- (void)setOptionalTopStoriesRefreshRate:(long long)arg1;
 - (void)setOrderFeedEnabledLevel:(unsigned int)arg1;
 - (void)setOrderFeedEnabledLevelDeprecated:(int)arg1;
 - (void)setOrderFeedEndpointEnabled:(bool)arg1;
@@ -666,6 +713,7 @@
 - (void)setPersonalizationWidgetSectionMappingResourceId:(id)arg1;
 - (void)setPrefetchConfig:(id)arg1;
 - (void)setPrerollLoadingTimeout:(double)arg1;
+- (void)setPrivateDataMigrationCleanupLevel:(int)arg1;
 - (void)setPublisherDiversitySlope:(double)arg1;
 - (void)setPublisherDiversityYIntercept:(double)arg1;
 - (void)setSavedArticlesCutoffTime:(long long)arg1;
@@ -690,6 +738,8 @@
 - (void)setUniversalLinksEnabled:(bool)arg1;
 - (void)setUsUkUseAuWhatsNewFeatures:(bool)arg1;
 - (void)setUseSecureConnectionForAssets:(bool)arg1;
+- (void)setUserSegmentationApiModMax:(long long)arg1;
+- (void)setUserSegmentationApiModThreshold:(long long)arg1;
 - (void)setWidgetConfig2:(id)arg1;
 - (void)setWidgetConfig:(id)arg1;
 - (long long)shortReminderTime;
@@ -712,6 +762,8 @@
 - (bool)universalLinksEnabled;
 - (bool)usUkUseAuWhatsNewFeatures;
 - (bool)useSecureConnectionForAssets;
+- (long long)userSegmentationApiModMax;
+- (long long)userSegmentationApiModThreshold;
 - (id)widgetConfig;
 - (id)widgetConfig2;
 - (void)writeTo:(id)arg1;

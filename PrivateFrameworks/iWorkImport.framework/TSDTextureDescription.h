@@ -5,6 +5,7 @@
 @interface TSDTextureDescription : NSObject <NSCopying> {
     int  _byGlyphStyle;
     unsigned long long  _deliveryStyle;
+    unsigned int  _includesActionBuilds;
     unsigned int  _isMagicMove;
     <TSDAnimationSession> * _session;
     unsigned int  _shouldAddFinal;
@@ -28,6 +29,7 @@
 
 @property (nonatomic) int byGlyphStyle;
 @property (nonatomic) unsigned long long deliveryStyle;
+@property (nonatomic) bool includesActionBuilds;
 @property (nonatomic) bool isMagicMove;
 @property (nonatomic) <TSDAnimationSession> *session;
 @property (nonatomic) bool shouldAddFinal;
@@ -56,12 +58,14 @@
 - (unsigned long long)deliveryStyle;
 - (id)description;
 - (unsigned long long)hash;
+- (bool)includesActionBuilds;
 - (bool)isEqual:(id)arg1;
 - (bool)isMagicMove;
 - (void)reset;
 - (id)session;
 - (void)setByGlyphStyle:(int)arg1;
 - (void)setDeliveryStyle:(unsigned long long)arg1;
+- (void)setIncludesActionBuilds:(bool)arg1;
 - (void)setIsMagicMove:(bool)arg1;
 - (void)setSession:(id)arg1;
 - (void)setShouldAddFinal:(bool)arg1;

@@ -7,6 +7,7 @@
     bool  _loadedNameInfo;
 }
 
+@property (nonatomic, readonly, retain) NSArray *batchedMoments;
 @property (nonatomic, readonly) unsigned long long containersCount;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -45,6 +46,7 @@
 + (id)findOrCreateMegaMomentListForLeftoverMomentsInMonth:(long long)arg1 inYear:(long long)arg2 withDay:(long long)arg3 inManagedObjectContext:(id)arg4;
 + (id)findOrCreateYearMomentListForYear:(long long)arg1 inManagedObjectContext:(id)arg2;
 
+- (id)_batchedMomentsPredicate;
 - (id)_typeDescription;
 - (void)_updateCachedNameInfoIfNeeded;
 - (bool)_validateForInsertOrUpdate:(id*)arg1;
@@ -58,6 +60,7 @@
 - (void)addMomentsForYear:(id)arg1;
 - (void)addMomentsForYearObject:(id)arg1;
 - (void)awakeFromInsert;
+- (id)batchedMoments;
 - (bool)canEditContainers;
 - (id)containers;
 - (unsigned long long)containersCount;

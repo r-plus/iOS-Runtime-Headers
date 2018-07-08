@@ -7,7 +7,7 @@
         struct AdditionalRouteInfo {} *__begin_; 
         struct AdditionalRouteInfo {} *__end_; 
         struct __compressed_pair<AdditionalRouteInfo *, std::__1::allocator<AdditionalRouteInfo> > { 
-            struct AdditionalRouteInfo {} *__first_; 
+            struct AdditionalRouteInfo {} *__value_; 
         } __end_cap_; 
     }  _additionalRoutesToFrame;
     unsigned long long  _currentStepIndex;
@@ -19,7 +19,7 @@
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<GEOLocationCoordinate2D *, std::__1::allocator<GEOLocationCoordinate2D> > { 
-            struct { /* ? */ } *__first_; 
+            struct { /* ? */ } *__value_; 
         } __end_cap_; 
     }  _pointsToFrame;
     GEOComposedRoute * _route;

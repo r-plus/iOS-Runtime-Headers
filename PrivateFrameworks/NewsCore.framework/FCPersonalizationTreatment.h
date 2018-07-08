@@ -36,7 +36,9 @@
     double  _baselineImpressionPrior;
     double  _baselineImpressionsByAction;
     double  _baselineRatePrior;
+    double  _channelTopicDiversificationInitialPenalty;
     double  _channelTopicDiversificationPenalty;
+    double  _channelTopicDiversificationPenaltyHalfLife;
     double  _cohortMembershipCtrCeiling;
     double  _cohortMembershipCurvature;
     double  _cohortMembershipFavoritedBoost;
@@ -55,10 +57,11 @@
     double  _dislikeBaselineImpressionValue;
     double  _dislikeClickValue;
     double  _dislikeImpressionValue;
+    double  _diversificationInitialPenalty;
     double  _diversificationPenalty;
+    double  _diversificationPenaltyHalfLife;
     bool  _enableOptimizedLayoutIPad;
     bool  _enableOptimizedLayoutIPhone;
-    bool  _enablePreTigrisArticleScoring;
     double  _existingSubscriptionBaselineClickValue;
     double  _existingSubscriptionBaselineImpressionValue;
     double  _existingSubscriptionClickValue;
@@ -133,6 +136,8 @@
     long long  _minIdealClusterSizeIPadAutoFavorite;
     long long  _minIdealClusterSizeIPhone;
     long long  _minIdealClusterSizeIPhoneAutoFavorite;
+    double  _minimumGlobalScoreThreshold;
+    double  _minimumGlobalScoreThresholdForSubscribedChannel;
     double  _muteBaselineClickValue;
     double  _muteBaselineImpressionValue;
     double  _muteClickValue;
@@ -173,7 +178,10 @@
     double  _presentationBaselineImpressionValue;
     double  _presentationClickValue;
     double  _presentationImpressionValue;
+    double  _publisherAggregateWeight;
+    double  _publisherDiversificationInitialPenalty;
     double  _publisherDiversificationPenalty;
+    double  _publisherDiversificationPenaltyHalfLife;
     double  _publisherDiversityMaxArticleFilter;
     unsigned long long  _publisherDiversityMaxPublisherCount;
     unsigned long long  _publisherDiversityMinPublisherCount;
@@ -199,8 +207,6 @@
     double  _safariSignalWeight;
     double  _safariTagFavorabilityExponent;
     double  _safariTimeDecayMultiplier;
-    double  _saturatedMutedCountFactor;
-    double  _saturatedSubscriptionCountFactor;
     double  _savedBaselineClickValue;
     double  _savedBaselineImpressionValue;
     double  _savedClickValue;
@@ -318,7 +324,9 @@
 @property (nonatomic, readonly) double baselineImpressionPrior;
 @property (nonatomic, readonly) double*baselineImpressionsByAction;
 @property (nonatomic, readonly) double baselineRatePrior;
+@property (nonatomic, readonly) double channelTopicDiversificationInitialPenalty;
 @property (nonatomic, readonly) double channelTopicDiversificationPenalty;
+@property (nonatomic, readonly) double channelTopicDiversificationPenaltyHalfLife;
 @property (nonatomic, readonly) double cohortMembershipCtrCeiling;
 @property (nonatomic, readonly) double cohortMembershipCurvature;
 @property (nonatomic, readonly) double cohortMembershipFavoritedBoost;
@@ -337,10 +345,11 @@
 @property (nonatomic, readonly) double dislikeBaselineImpressionValue;
 @property (nonatomic, readonly) double dislikeClickValue;
 @property (nonatomic, readonly) double dislikeImpressionValue;
+@property (nonatomic, readonly) double diversificationInitialPenalty;
 @property (nonatomic, readonly) double diversificationPenalty;
+@property (nonatomic, readonly) double diversificationPenaltyHalfLife;
 @property (nonatomic, readonly) bool enableOptimizedLayoutIPad;
 @property (nonatomic, readonly) bool enableOptimizedLayoutIPhone;
-@property (nonatomic, readonly) bool enablePreTigrisArticleScoring;
 @property (nonatomic, readonly) double existingSubscriptionBaselineClickValue;
 @property (nonatomic, readonly) double existingSubscriptionBaselineImpressionValue;
 @property (nonatomic, readonly) double existingSubscriptionClickValue;
@@ -415,6 +424,8 @@
 @property (nonatomic, readonly) long long minIdealClusterSizeIPadAutoFavorite;
 @property (nonatomic, readonly) long long minIdealClusterSizeIPhone;
 @property (nonatomic, readonly) long long minIdealClusterSizeIPhoneAutoFavorite;
+@property (nonatomic, readonly) double minimumGlobalScoreThreshold;
+@property (nonatomic, readonly) double minimumGlobalScoreThresholdForSubscribedChannel;
 @property (nonatomic, readonly) double muteBaselineClickValue;
 @property (nonatomic, readonly) double muteBaselineImpressionValue;
 @property (nonatomic, readonly) double muteClickValue;
@@ -454,7 +465,10 @@
 @property (nonatomic, readonly) double presentationBaselineImpressionValue;
 @property (nonatomic, readonly) double presentationClickValue;
 @property (nonatomic, readonly) double presentationImpressionValue;
+@property (nonatomic, readonly) double publisherAggregateWeight;
+@property (nonatomic, readonly) double publisherDiversificationInitialPenalty;
 @property (nonatomic, readonly) double publisherDiversificationPenalty;
+@property (nonatomic, readonly) double publisherDiversificationPenaltyHalfLife;
 @property (nonatomic, readonly) double publisherDiversityMaxArticleFilter;
 @property (nonatomic, readonly) unsigned long long publisherDiversityMaxPublisherCount;
 @property (nonatomic, readonly) unsigned long long publisherDiversityMinPublisherCount;
@@ -480,8 +494,6 @@
 @property (nonatomic, readonly) double safariSignalWeight;
 @property (nonatomic, readonly) double safariTagFavorabilityExponent;
 @property (nonatomic, readonly) double safariTimeDecayMultiplier;
-@property (nonatomic, readonly) double saturatedMutedCountFactor;
-@property (nonatomic, readonly) double saturatedSubscriptionCountFactor;
 @property (nonatomic, readonly) double savedBaselineClickValue;
 @property (nonatomic, readonly) double savedBaselineImpressionValue;
 @property (nonatomic, readonly) double savedClickValue;
@@ -601,7 +613,9 @@
 - (double)baselineImpressionPrior;
 - (double*)baselineImpressionsByAction;
 - (double)baselineRatePrior;
+- (double)channelTopicDiversificationInitialPenalty;
 - (double)channelTopicDiversificationPenalty;
+- (double)channelTopicDiversificationPenaltyHalfLife;
 - (double)cohortMembershipCtrCeiling;
 - (double)cohortMembershipCurvature;
 - (double)cohortMembershipFavoritedBoost;
@@ -621,10 +635,11 @@
 - (double)dislikeBaselineImpressionValue;
 - (double)dislikeClickValue;
 - (double)dislikeImpressionValue;
+- (double)diversificationInitialPenalty;
 - (double)diversificationPenalty;
+- (double)diversificationPenaltyHalfLife;
 - (bool)enableOptimizedLayoutIPad;
 - (bool)enableOptimizedLayoutIPhone;
-- (bool)enablePreTigrisArticleScoring;
 - (void)encodeWithCoder:(id)arg1;
 - (double)existingSubscriptionBaselineClickValue;
 - (double)existingSubscriptionBaselineImpressionValue;
@@ -703,6 +718,8 @@
 - (long long)minIdealClusterSizeIPadAutoFavorite;
 - (long long)minIdealClusterSizeIPhone;
 - (long long)minIdealClusterSizeIPhoneAutoFavorite;
+- (double)minimumGlobalScoreThreshold;
+- (double)minimumGlobalScoreThresholdForSubscribedChannel;
 - (double)muteBaselineClickValue;
 - (double)muteBaselineImpressionValue;
 - (double)muteClickValue;
@@ -742,7 +759,10 @@
 - (double)presentationBaselineImpressionValue;
 - (double)presentationClickValue;
 - (double)presentationImpressionValue;
+- (double)publisherAggregateWeight;
+- (double)publisherDiversificationInitialPenalty;
 - (double)publisherDiversificationPenalty;
+- (double)publisherDiversificationPenaltyHalfLife;
 - (double)publisherDiversityMaxArticleFilter;
 - (unsigned long long)publisherDiversityMaxPublisherCount;
 - (unsigned long long)publisherDiversityMinPublisherCount;
@@ -768,8 +788,6 @@
 - (double)safariSignalWeight;
 - (double)safariTagFavorabilityExponent;
 - (double)safariTimeDecayMultiplier;
-- (double)saturatedMutedCountFactor;
-- (double)saturatedSubscriptionCountFactor;
 - (double)savedBaselineClickValue;
 - (double)savedBaselineImpressionValue;
 - (double)savedClickValue;

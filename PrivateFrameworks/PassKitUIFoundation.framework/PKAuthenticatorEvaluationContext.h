@@ -28,10 +28,12 @@
     bool  _usingExternalContext;
 }
 
+@property (nonatomic, readonly) bool biometricMatch;
 @property (nonatomic) <PKAuthenticatorDelegate> *delegate;
 @property (nonatomic, readonly) bool fingerPresent;
 @property (nonatomic, readonly) bool fingerPresentTimeoutExpired;
 @property (nonatomic, readonly) bool fingerPresentTimeoutRequired;
+@property (getter=isInvalidated, nonatomic, readonly) bool invalidated;
 @property (nonatomic, readonly) bool passcodeActive;
 @property (nonatomic, readonly) bool passphraseActive;
 @property (nonatomic, readonly) long long pearlState;
@@ -57,6 +59,7 @@
 - (void)_setPearlState:(long long)arg1;
 - (void)_updatePearlState;
 - (void)accessLAContext:(id /* block */)arg1;
+- (bool)biometricMatch;
 - (void)dealloc;
 - (id)delegate;
 - (void)event:(long long)arg1 params:(id)arg2 reply:(id /* block */)arg3;
@@ -74,6 +77,7 @@
 - (id)initWithRequest:(id)arg1 completionHandler:(id /* block */)arg2 forAuthenticator:(id)arg3;
 - (void)invalidate;
 - (void)invalidateWithIntent:(long long)arg1;
+- (bool)isInvalidated;
 - (bool)passcodeActive;
 - (bool)passphraseActive;
 - (long long)pearlState;

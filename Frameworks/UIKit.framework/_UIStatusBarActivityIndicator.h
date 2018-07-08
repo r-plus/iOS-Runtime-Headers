@@ -23,5 +23,6 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
 - (void)applyStyleAttributes:(id)arg1;
 - (void)setAlignmentRectInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (bool)wantsCrossfade;
 
 @end

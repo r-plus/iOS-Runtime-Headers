@@ -14,6 +14,7 @@
     bool  _deviceAvailabilityOverrideState;
     long long  _discoveryMode;
     long long  _externalScreenType;
+    bool  _fetchAvailableRoutesSynchronously;
     bool  _hasExternalScreenType;
     MPAVRoute * _legacyCachedRoute;
     NSString * _name;
@@ -30,6 +31,7 @@
 @property (nonatomic) <MPAVRoutingControllerDelegate> *delegate;
 @property (nonatomic) long long discoveryMode;
 @property (nonatomic, readonly) long long externalScreenType;
+@property (nonatomic) bool fetchAvailableRoutesSynchronously;
 @property (nonatomic, readonly) bool hasPendingPickedRoutes;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) MPAVRoute *pendingPickedRoute;
@@ -88,7 +90,9 @@
 - (id)description;
 - (long long)discoveryMode;
 - (long long)externalScreenType;
+- (bool)fetchAvailableRoutesSynchronously;
 - (void)fetchAvailableRoutesWithCompletionHandler:(id /* block */)arg1;
+- (void)fetchAvailableRoutesWithCompletionQueue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)getActiveRouteWithTimeout:(double)arg1 completion:(id /* block */)arg2;
 - (bool)handsetRouteIsPicked;
 - (bool)hasPendingPickedRoutes;
@@ -118,6 +122,7 @@
 - (void)setCategory:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDiscoveryMode:(long long)arg1;
+- (void)setFetchAvailableRoutesSynchronously:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setRouteTypes:(long long)arg1;
 - (bool)speakerRouteIsPicked;

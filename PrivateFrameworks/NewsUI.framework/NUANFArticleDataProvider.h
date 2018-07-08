@@ -11,7 +11,7 @@
     <NUEmbedDataManager> * _embedDataManger;
     NUANFFontLoader * _fontLoader;
     <NUFontRegistration> * _fontRegistration;
-    SXHost * _host;
+    <SXHost> * _host;
 }
 
 @property (nonatomic, readonly) FCArticle *article;
@@ -25,7 +25,7 @@
 @property (nonatomic, retain) NUANFFontLoader *fontLoader;
 @property (nonatomic, readonly) <NUFontRegistration> *fontRegistration;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) SXHost *host;
+@property (nonatomic, readonly) <SXHost> *host;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

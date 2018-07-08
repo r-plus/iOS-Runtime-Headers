@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@interface WKPreferences : NSObject <NSCoding, WKObject> {
+@interface WKPreferences : NSObject <NSCopying, NSSecureCoding, WKObject> {
     struct ObjectStorage<WebKit::WebPreferences> { 
         struct type { 
             unsigned char __lx[112]; 
@@ -24,12 +24,14 @@
 @property (setter=_setDiagnosticLoggingEnabled:, nonatomic) bool _diagnosticLoggingEnabled;
 @property (setter=_setDisplayListDrawingEnabled:, nonatomic) bool _displayListDrawingEnabled;
 @property (setter=_setDOMPasteAllowed:, nonatomic) bool _domPasteAllowed;
+@property (setter=_setEditableLinkBehavior:, nonatomic) long long _editableLinkBehavior;
 @property (setter=_setEnumeratingAllNetworkInterfacesEnabled:, nonatomic) bool _enumeratingAllNetworkInterfacesEnabled;
 @property (setter=_setFixedPitchFontFamily:, nonatomic, copy) NSString *_fixedPitchFontFamily;
 @property (setter=_setFullScreenEnabled:, nonatomic) bool _fullScreenEnabled;
 @property (setter=_setHiddenPageDOMTimerThrottlingAutoIncreases:, nonatomic) bool _hiddenPageDOMTimerThrottlingAutoIncreases;
 @property (setter=_setHiddenPageDOMTimerThrottlingEnabled:, nonatomic) bool _hiddenPageDOMTimerThrottlingEnabled;
-@property (setter=_setICECandidateFilteringEnabled:, nonatomic) bool _iceCandidateFiltertingEnabled;
+@property (setter=_setICECandidateFilteringEnabled:, nonatomic) bool _iceCandidateFilteringEnabled;
+@property (setter=_setInactiveMediaCaptureSteamRepromptIntervalInMinutes:, nonatomic) double _inactiveMediaCaptureSteamRepromptIntervalInMinutes;
 @property (setter=_setJavaScriptCanAccessClipboard:, nonatomic) bool _javaScriptCanAccessClipboard;
 @property (setter=_setJavaScriptRuntimeFlags:, nonatomic) unsigned long long _javaScriptRuntimeFlags;
 @property (setter=_setLargeImageAsyncDecodingEnabled:, nonatomic) bool _largeImageAsyncDecodingEnabled;
@@ -37,11 +39,14 @@
 @property (setter=_setLogsPageMessagesToSystemConsoleEnabled:, nonatomic) bool _logsPageMessagesToSystemConsoleEnabled;
 @property (setter=_setMediaCaptureRequiresSecureConnection:, nonatomic) bool _mediaCaptureRequiresSecureConnection;
 @property (setter=_setMediaDevicesEnabled:, nonatomic) bool _mediaDevicesEnabled;
-@property (setter=_setMediaDocumentEntersFullscreenAutomatically:, nonatomic) bool _mediaDocumentEntersFullscreenAutomatically;
 @property (setter=_setMockCaptureDevicesEnabled:, nonatomic) bool _mockCaptureDevicesEnabled;
+@property (setter=_setMockCaptureDevicesPromptEnabled:, nonatomic) bool _mockCaptureDevicesPromptEnabled;
 @property (setter=_setOfflineApplicationCacheIsEnabled:, nonatomic) bool _offlineApplicationCacheIsEnabled;
 @property (setter=_setPageVisibilityBasedProcessSuppressionEnabled:, nonatomic) bool _pageVisibilityBasedProcessSuppressionEnabled;
+@property (setter=_setPeerConnectionEnabled:, nonatomic) bool _peerConnectionEnabled;
 @property (setter=_setResourceUsageOverlayVisible:, nonatomic) bool _resourceUsageOverlayVisible;
+@property (setter=_setScreenCaptureEnabled:, nonatomic) bool _screenCaptureEnabled;
+@property (setter=_setShouldAllowUserInstalledFonts:, nonatomic) bool _shouldAllowUserInstalledFonts;
 @property (setter=_setShouldSuppressKeyboardInputDuringProvisionalNavigation:, nonatomic) bool _shouldSuppressKeyboardInputDuringProvisionalNavigation;
 @property (setter=_setSimpleLineLayoutDebugBordersEnabled:, nonatomic) bool _simpleLineLayoutDebugBordersEnabled;
 @property (setter=_setSimpleLineLayoutEnabled:, nonatomic) bool _simpleLineLayoutEnabled;
@@ -63,6 +68,7 @@
 @property (readonly) Class superclass;
 
 + (id)_experimentalFeatures;
++ (bool)supportsSecureCoding;
 
 - (bool)_acceleratedDrawingEnabled;
 - (bool)_allowFileAccessFromFileURLs;
@@ -78,12 +84,14 @@
 - (bool)_diagnosticLoggingEnabled;
 - (bool)_displayListDrawingEnabled;
 - (bool)_domPasteAllowed;
+- (long long)_editableLinkBehavior;
 - (bool)_enumeratingAllNetworkInterfacesEnabled;
 - (id)_fixedPitchFontFamily;
 - (bool)_fullScreenEnabled;
 - (bool)_hiddenPageDOMTimerThrottlingAutoIncreases;
 - (bool)_hiddenPageDOMTimerThrottlingEnabled;
-- (bool)_iceCandidateFiltertingEnabled;
+- (bool)_iceCandidateFilteringEnabled;
+- (double)_inactiveMediaCaptureSteamRepromptIntervalInMinutes;
 - (bool)_isEnabledForFeature:(id)arg1;
 - (bool)_isStandalone;
 - (bool)_javaScriptCanAccessClipboard;
@@ -93,11 +101,13 @@
 - (bool)_logsPageMessagesToSystemConsoleEnabled;
 - (bool)_mediaCaptureRequiresSecureConnection;
 - (bool)_mediaDevicesEnabled;
-- (bool)_mediaDocumentEntersFullscreenAutomatically;
 - (bool)_mockCaptureDevicesEnabled;
+- (bool)_mockCaptureDevicesPromptEnabled;
 - (bool)_offlineApplicationCacheIsEnabled;
 - (bool)_pageVisibilityBasedProcessSuppressionEnabled;
+- (bool)_peerConnectionEnabled;
 - (bool)_resourceUsageOverlayVisible;
+- (bool)_screenCaptureEnabled;
 - (void)_setAcceleratedDrawingEnabled:(bool)arg1;
 - (void)_setAllowFileAccessFromFileURLs:(bool)arg1;
 - (void)_setAllowsPictureInPictureMediaPlayback:(bool)arg1;
@@ -111,6 +121,7 @@
 - (void)_setDeveloperExtrasEnabled:(bool)arg1;
 - (void)_setDiagnosticLoggingEnabled:(bool)arg1;
 - (void)_setDisplayListDrawingEnabled:(bool)arg1;
+- (void)_setEditableLinkBehavior:(long long)arg1;
 - (void)_setEnabled:(bool)arg1 forFeature:(id)arg2;
 - (void)_setEnumeratingAllNetworkInterfacesEnabled:(bool)arg1;
 - (void)_setFixedPitchFontFamily:(id)arg1;
@@ -118,6 +129,7 @@
 - (void)_setHiddenPageDOMTimerThrottlingAutoIncreases:(bool)arg1;
 - (void)_setHiddenPageDOMTimerThrottlingEnabled:(bool)arg1;
 - (void)_setICECandidateFilteringEnabled:(bool)arg1;
+- (void)_setInactiveMediaCaptureSteamRepromptIntervalInMinutes:(double)arg1;
 - (void)_setJavaScriptCanAccessClipboard:(bool)arg1;
 - (void)_setJavaScriptRuntimeFlags:(unsigned long long)arg1;
 - (void)_setLargeImageAsyncDecodingEnabled:(bool)arg1;
@@ -125,11 +137,14 @@
 - (void)_setLogsPageMessagesToSystemConsoleEnabled:(bool)arg1;
 - (void)_setMediaCaptureRequiresSecureConnection:(bool)arg1;
 - (void)_setMediaDevicesEnabled:(bool)arg1;
-- (void)_setMediaDocumentEntersFullscreenAutomatically:(bool)arg1;
 - (void)_setMockCaptureDevicesEnabled:(bool)arg1;
+- (void)_setMockCaptureDevicesPromptEnabled:(bool)arg1;
 - (void)_setOfflineApplicationCacheIsEnabled:(bool)arg1;
 - (void)_setPageVisibilityBasedProcessSuppressionEnabled:(bool)arg1;
+- (void)_setPeerConnectionEnabled:(bool)arg1;
 - (void)_setResourceUsageOverlayVisible:(bool)arg1;
+- (void)_setScreenCaptureEnabled:(bool)arg1;
+- (void)_setShouldAllowUserInstalledFonts:(bool)arg1;
 - (void)_setShouldSuppressKeyboardInputDuringProvisionalNavigation:(bool)arg1;
 - (void)_setSimpleLineLayoutDebugBordersEnabled:(bool)arg1;
 - (void)_setSimpleLineLayoutEnabled:(bool)arg1;
@@ -142,6 +157,7 @@
 - (void)_setVisibleDebugOverlayRegions:(unsigned long long)arg1;
 - (void)_setVisualViewportEnabled:(bool)arg1;
 - (void)_setWebRTCLegacyAPIEnabled:(bool)arg1;
+- (bool)_shouldAllowUserInstalledFonts;
 - (bool)_shouldSuppressKeyboardInputDuringProvisionalNavigation;
 - (bool)_simpleLineLayoutDebugBordersEnabled;
 - (bool)_simpleLineLayoutEnabled;
@@ -153,6 +169,7 @@
 - (unsigned long long)_visibleDebugOverlayRegions;
 - (bool)_visualViewportEnabled;
 - (bool)_webRTCLegacyAPIEnabled;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

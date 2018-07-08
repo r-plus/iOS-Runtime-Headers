@@ -4,7 +4,10 @@
 
 @interface SASStartSpeechRequest : SASStartSpeech
 
+@property (nonatomic, copy) NSArray *bargeInModes;
 @property (nonatomic, copy) NSString *clientModelVersion;
+@property (nonatomic, copy) NSNumber *durationSincePreviousTTSFinish;
+@property (nonatomic, copy) NSNumber *durationSincePreviousTTSStart;
 @property (nonatomic) bool eyesFree;
 @property (nonatomic) bool handsFree;
 @property (nonatomic) bool talkOnly;
@@ -15,13 +18,19 @@
 + (id)startSpeechRequest;
 + (id)startSpeechRequestWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)bargeInModes;
 - (id)clientModelVersion;
+- (id)durationSincePreviousTTSFinish;
+- (id)durationSincePreviousTTSStart;
 - (id)encodedClassName;
 - (bool)eyesFree;
 - (id)groupIdentifier;
 - (bool)handsFree;
 - (bool)requiresResponse;
+- (void)setBargeInModes:(id)arg1;
 - (void)setClientModelVersion:(id)arg1;
+- (void)setDurationSincePreviousTTSFinish:(id)arg1;
+- (void)setDurationSincePreviousTTSStart:(id)arg1;
 - (void)setEyesFree:(bool)arg1;
 - (void)setHandsFree:(bool)arg1;
 - (void)setTalkOnly:(bool)arg1;

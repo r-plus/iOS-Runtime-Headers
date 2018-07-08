@@ -7,7 +7,7 @@
         struct ResourceAttributeState {} *__begin_; 
         struct ResourceAttributeState {} *__end_; 
         struct __compressed_pair<TSCH3D::ResourceAttributeState *, std::__1::allocator<TSCH3D::ResourceAttributeState> > { 
-            struct ResourceAttributeState {} *__first_; 
+            struct ResourceAttributeState {} *__value_; 
         } __end_cap_; 
     }  mAttributes;
     NSIndexSet * mEnabledArrays;

@@ -9,5 +9,6 @@
 - (id)init;
 - (bool)supportsErrorBarsScatterX;
 - (id)userInterfaceName;
+- (long long)userInterfaceTag;
 
 @end

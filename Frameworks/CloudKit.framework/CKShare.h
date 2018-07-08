@@ -65,7 +65,7 @@
 - (bool)_participantArray:(id)arg1 isEquivalentToArray:(id)arg2;
 - (void)_removeAllParticipants;
 - (void)_removeParticipantBypassingChecks:(id)arg1;
-- (void)_removePendingPrivateParticipants;
+- (void)_removePendingPrivateAndAdminParticipants;
 - (void)_setPublicPermissionNoSideEffects:(long long)arg1;
 - (void)_stripPersonalInfo;
 - (void)addParticipant:(id)arg1;

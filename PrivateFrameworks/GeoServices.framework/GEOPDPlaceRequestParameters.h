@@ -97,6 +97,7 @@
 - (id)browseCategorySuggestionParameters;
 - (id)canonicalLocationSearchParameters;
 - (id)categorySearchParameters;
+- (void)clearLocations;
 - (id)clusterGeocodingParameters;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -142,12 +143,12 @@
 - (id)initWithIdentifiers:(id)arg1 resultProviderID:(int)arg2;
 - (id)initWithMapItemToRefine:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 traits:(id)arg3;
 - (id)initWithMapItemToRefine:(id)arg1 traits:(id)arg2;
-- (id)initWithMerchantCode:(id)arg1 rawMerchantCode:(id)arg2 paymentNetwork:(id)arg3 transactionDate:(id)arg4 transactionLocation:(id)arg5;
+- (id)initWithMerchantCode:(id)arg1 rawMerchantCode:(id)arg2 industryCategory:(id)arg3 industryCode:(id)arg4 paymentNetwork:(id)arg5 transactionDate:(id)arg6 transactionLocation:(id)arg7;
 - (id)initWithPlaceRefinementParameters:(id)arg1 traits:(id)arg2;
 - (id)initWithReverseGeocodeCoordinate:(struct { double x1; double x2; })arg1;
 - (id)initWithReverseGeocodeCoordinate:(struct { double x1; double x2; })arg1 preserveOriginalLocation:(bool)arg2;
 - (id)initWithReverseGeocodeCoordinate:(struct { double x1; double x2; })arg1 preserveOriginalLocation:(bool)arg2 floorOrdinal:(int)arg3;
-- (id)initWithSearchQuery:(id)arg1 entryMetadata:(id)arg2 metadata:(id)arg3 autocompleteEntry:(id)arg4 maxResults:(unsigned int)arg5 traits:(id)arg6;
+- (id)initWithSearchQuery:(id)arg1 entryMetadata:(id)arg2 metadata:(id)arg3 autocompleteEntry:(id)arg4 retainedSearch:(id)arg5 maxResults:(unsigned int)arg6 traits:(id)arg7;
 - (id)initWithSearchURLQuery:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 maxResults:(unsigned int)arg3 traits:(id)arg4;
 - (id)initWithSearchURLQuery:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 muid:(unsigned long long)arg3 resultProviderId:(int)arg4;
 - (id)initWithSearchURLQuery:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 muid:(unsigned long long)arg3 resultProviderId:(int)arg4 contentProvider:(id)arg5;

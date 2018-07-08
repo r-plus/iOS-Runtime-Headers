@@ -5,7 +5,7 @@
 @interface PKContinuityPaymentService : NSObject <PKContinuityPaymentServiceExportedInterface> {
     <PKContinuityPaymentServiceDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
-    NSObject<OS_dispatch_queue> * _internalQueue;
+    NSLock * _remoteDeviceLock;
     NSArray * _remoteDevices;
     PKXPCService * _remoteService;
 }

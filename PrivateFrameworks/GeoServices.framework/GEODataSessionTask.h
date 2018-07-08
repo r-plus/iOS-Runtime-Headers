@@ -17,6 +17,7 @@
     unsigned long long  _stateCaptureHandle;
     unsigned int  _taskIdentifier;
     GEODataURLSessionTask * _urlTask;
+    bool  _willSendRequestDelegateCalled;
     GEODataXPCSessionTask * _xpcTask;
 }
 
@@ -35,10 +36,12 @@
 @property (nonatomic, readonly) unsigned long long incomingPayloadSize;
 @property (nonatomic, readonly) NSURL *originalRequestURL;
 @property (nonatomic, readonly) unsigned long long outgoingPayloadSize;
+@property (nonatomic, readonly) <NSObject> *parsedResponse;
 @property float priority;
 @property (nonatomic, readonly) bool protocolBufferHasPreamble;
 @property (nonatomic, readonly) NSData *receivedData;
 @property (nonatomic, readonly) NSString *remoteAddressAndPort;
+@property (nonatomic, readonly) <GEORequestCounterTicket> *requestCounterTicket;
 @property (nonatomic, readonly) int requestKind;
 @property (nonatomic, readonly) long long responseSource;
 @property (nonatomic) GEODataSession *session;
@@ -67,13 +70,15 @@
 - (bool)failedDueToCancel;
 - (bool)getHeaderValue:(id*)arg1 forField:(id)arg2;
 - (unsigned long long)incomingPayloadSize;
-- (id)initWithSession:(id)arg1 rules:(id)arg2 delegate:(id)arg3 delegateQueue:(id)arg4 requestKind:(int)arg5;
+- (id)initWithSession:(id)arg1 rules:(id)arg2 delegate:(id)arg3 delegateQueue:(id)arg4 requestKind:(int)arg5 requestCounterTicket:(id)arg6;
 - (id)originalRequestURL;
 - (unsigned long long)outgoingPayloadSize;
+- (id)parsedResponse;
 - (float)priority;
 - (bool)protocolBufferHasPreamble;
 - (id)receivedData;
 - (id)remoteAddressAndPort;
+- (id)requestCounterTicket;
 - (int)requestKind;
 - (long long)responseSource;
 - (void)rulesDidChooseCompletedSubtask:(id)arg1;

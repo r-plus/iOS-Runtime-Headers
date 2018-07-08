@@ -177,6 +177,7 @@
 - (bool)isDaemonIdle;
 - (bool)isDeviceCollectionDiffRequested;
 - (bool)isInitialized;
+- (bool)isKeychainEnabled;
 - (bool)isPaired;
 - (bool)isWatchSetupPushActive;
 - (void)keepPhoneUnlockedInternalTestSPI:(id /* block */)arg1;

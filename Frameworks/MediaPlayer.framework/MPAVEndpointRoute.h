@@ -19,6 +19,7 @@
 - (id)connection;
 - (void)dealloc;
 - (id)description;
+- (id)designatedGroupLeaderName;
 - (void)encodeWithCoder:(id)arg1;
 - (void*)endpoint;
 - (id)groupUID;
@@ -29,11 +30,15 @@
 - (bool)isDeviceRoute;
 - (bool)isDeviceSpeakerRoute;
 - (bool)isHomePodRoute;
+- (bool)isProxyGroupPlayer;
 - (bool)isRoutingToWirelessDevice;
 - (bool)isStereoPair;
 - (id)routeName;
+- (id)routeNames;
 - (long long)routeSubtype;
 - (long long)routeType;
 - (id)routeUID;
+- (bool)supportsGrouping;
+- (bool)supportsRemoteControl;
 
 @end

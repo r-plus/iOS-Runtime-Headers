@@ -16,6 +16,6 @@
 - (id)init;
 - (id)responsePayload;
 - (void)setInformation:(id)arg1;
-- (void)setResponseFromDictionary:(id)arg1;
+- (void)setResponseFromData:(id)arg1;
 
 @end

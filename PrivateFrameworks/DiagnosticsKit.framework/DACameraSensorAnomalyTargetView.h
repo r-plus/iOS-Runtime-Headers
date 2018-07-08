@@ -5,7 +5,7 @@
 @interface DACameraSensorAnomalyTargetView : UIView {
     UIButton * _cancelButton;
     <DACameraSensorAnomalyTargetViewDelegate> * _delegate;
-    CMKShutterButton * _shutterButton;
+    CUShutterButton * _shutterButton;
     struct CGSize { 
         double width; 
         double height; 
@@ -17,7 +17,7 @@
 
 @property (nonatomic, retain) UIButton *cancelButton;
 @property (nonatomic) <DACameraSensorAnomalyTargetViewDelegate> *delegate;
-@property (nonatomic, retain) CMKShutterButton *shutterButton;
+@property (nonatomic, retain) CUShutterButton *shutterButton;
 @property (nonatomic) struct CGSize { double x1; double x2; } shutterButtonIntrinsicContentSize;
 @property (nonatomic, retain) UILabel *viewfinderInstruction;
 @property (nonatomic, retain) UIView *viewfinderOutsideRegionBottom;

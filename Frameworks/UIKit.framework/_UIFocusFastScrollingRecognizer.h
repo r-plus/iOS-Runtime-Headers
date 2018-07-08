@@ -9,6 +9,7 @@
     _UIFocusEnginePanGestureRecognizer * _panGesture;
     UIScrollView * _previewingScrollView;
     NSTimer * _previewingTouchTimer;
+    unsigned long long  _spatialFocusUpdateCount;
     NSTimer * _swipeIntervalTimer;
     NSMapTable * _swipeSequences;
 }

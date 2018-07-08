@@ -24,6 +24,7 @@
 
 - (void).cxx_destruct;
 - (void)_performBlock:(id /* block */)arg1 andWait:(bool)arg2;
+- (void)_removePersistentStore;
 - (bool)_setupPersistenceIfNeeded:(id*)arg1;
 - (bool)didSetupPersistence;
 - (id)init;

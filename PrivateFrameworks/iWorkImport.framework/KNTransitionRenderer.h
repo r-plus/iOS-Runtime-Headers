@@ -3,18 +3,18 @@
  */
 
 @interface KNTransitionRenderer : KNAnimationRenderer <CAAnimationDelegate> {
+    TSDFPSCounter * _FPSCounter;
     NSMapTable * _animatedLayers;
-    bool  mAnimationsRanToCompletion;
-    NSDictionary * mAttributes;
-    CALayer * mBackgroundLayer;
-    TSDFPSCounter * mFPSCounter;
-    long long  mNumberOfAnimationsStarted;
-    bool  mShouldAnimateTransition;
-    NSMutableArray * mTextures;
-    SEL  mTransitionEndCallbackSelector;
-    id  mTransitionEndCallbackTarget;
-    SEL  mTransitionImmediateEndCallbackSelector;
-    id  mTransitionImmediateEndCallbackTarget;
+    bool  _animationsRanToCompletion;
+    NSDictionary * _attributes;
+    CALayer * _backgroundLayer;
+    bool  _hasBeenTornDown;
+    long long  _numberOfAnimationsStarted;
+    bool  _shouldAnimateTransition;
+    bool  _shouldTearDownIncomingTexture;
+    NSMutableArray * _textures;
+    SEL  _transitionEndCallbackSelector;
+    id  _transitionEndCallbackTarget;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -36,10 +36,10 @@
 - (void)pauseAnimationsAtTime:(double)arg1;
 - (id)plugin;
 - (void)registerForTransitionEndCallback:(SEL)arg1 target:(id)arg2;
-- (void)registerForTransitionImmediateEndCallback:(SEL)arg1 target:(id)arg2;
 - (void)removeAnimationsAndFinish:(bool)arg1;
 - (void)renderSlideIndex:(unsigned long long)arg1;
 - (void)renderTextures;
+- (void)renderTexturesSynchronously;
 - (void)resumeAnimationsIfPausedAtTime:(double)arg1;
 - (void)setupLayerTreeForTransition;
 - (void)setupPluginContext;

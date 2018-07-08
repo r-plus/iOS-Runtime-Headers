@@ -26,6 +26,7 @@
         unsigned int shortEditorNotes : 1; 
         unsigned int volumeNormalization : 1; 
         unsigned int songPopularity : 1; 
+        unsigned int representativeSong : 1; 
         struct { 
             unsigned int identifiers : 1; 
             unsigned int name : 1; 

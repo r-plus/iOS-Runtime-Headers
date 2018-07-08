@@ -13,6 +13,8 @@
     _EARSpeechRecognizer * _speechRecognizer;
 }
 
++ (void)initialize;
+
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_detachFromRecognizer;

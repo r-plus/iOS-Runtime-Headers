@@ -28,7 +28,7 @@
 + (unsigned long long)currentProtocolVersion;
 + (id)protocolMessageWithProtobufData:(id)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)encryptionType;
 - (id)error;

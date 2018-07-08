@@ -2,9 +2,20 @@
    Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
  */
 
-@interface MRWeakProxy : MRWeakRef
+@interface MRWeakProxy : NSObject {
+    id  _object;
+}
 
+@property (nonatomic) id object;
+
++ (id)weakProxyWithObject:(id)arg1;
+
+- (void).cxx_destruct;
 - (void)forwardInvocation:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
+- (id)object;
+- (void)setObject:(id)arg1;
 
 @end

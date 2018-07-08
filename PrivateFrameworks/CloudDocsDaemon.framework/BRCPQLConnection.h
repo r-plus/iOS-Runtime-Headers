@@ -6,6 +6,7 @@
     bool  _autovacuumInProgress;
     br_pacer * _batchingPacer;
     int  _changeCount;
+    long long  _changesOverride;
     bool  _flushImmediately;
     double  _flushInterval;
     unsigned long long  _vmStepsExecuted;
@@ -22,6 +23,7 @@
 - (bool)attachDBAtPath:(id)arg1 as:(id)arg2 error:(id*)arg3;
 - (void)autovacuumIfNeeded;
 - (void)brc_close;
+- (long long)changes;
 - (void)disableProfilingForQueriesInBlock:(id /* block */)arg1;
 - (bool)executeWithErrorHandler:(id /* block */)arg1 sql:(id)arg2;
 - (bool)executeWithExpectedIndex:(id)arg1 sql:(id)arg2;

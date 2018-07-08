@@ -37,12 +37,13 @@
 - (id)documentRoot;
 - (id)fileURL;
 - (id)initWithURL:(id)arg1 registry:(id)arg2 error:(id*)arg3 passphrase:(id)arg4;
+- (id)logContext;
 - (id)name;
 - (void)presentPersistenceError:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setFileURL:(id)arg1;
 - (bool)skipDocumentUpgrade;
 - (id)supportDirectoryURL;
-- (id)tskCachedDocumentInfo;
+- (id)tskDocumentInfo;
 
 @end

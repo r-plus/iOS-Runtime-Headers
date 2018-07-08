@@ -21,6 +21,7 @@
 + (float)inputRecordingSampleRate;
 + (id)inputRecordingSampleRateConverterAlgorithm;
 + (float)inputRecordingSampleRateNarrowBand;
++ (unsigned long long)maxNumLoggingFiles;
 + (unsigned short)zeroFilterApproxAbsSpeechThreshold;
 + (unsigned long long)zeroFilterWindowSizeInMs;
 

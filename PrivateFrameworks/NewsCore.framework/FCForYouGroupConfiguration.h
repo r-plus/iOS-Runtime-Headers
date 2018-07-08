@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCForYouGroupConfiguration : NSObject {
+@interface FCForYouGroupConfiguration : NSObject <NSCopying> {
     bool  _allowsNativeAds;
     unsigned long long  _groupPosition;
     long long  _groupType;
@@ -18,6 +18,7 @@
 
 - (void).cxx_destruct;
 - (bool)allowsNativeAds;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long long)groupPosition;
 - (long long)groupType;
 - (id)identifier;

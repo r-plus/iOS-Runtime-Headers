@@ -3,11 +3,11 @@
  */
 
 @interface PDScheduledActivityRegistration : NSObject <NSSecureCoding> {
-    <NSCoding> * _activityContext;
+    <NSObject><NSSecureCoding> * _activityContext;
     PDScheduledActivityCriteria * _activityCriteria;
 }
 
-@property (nonatomic, readonly) <NSCoding> *activityContext;
+@property (nonatomic, readonly) <NSObject><NSSecureCoding> *activityContext;
 @property (nonatomic, readonly) PDScheduledActivityCriteria *activityCriteria;
 
 + (bool)supportsSecureCoding;

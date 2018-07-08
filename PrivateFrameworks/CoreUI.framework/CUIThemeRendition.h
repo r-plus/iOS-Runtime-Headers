@@ -10,6 +10,10 @@
     struct _renditionkeytoken { unsigned short x1; unsigned short x2; } * _key;
     NSString * _name;
     double  _opacity;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _physicalSizeInMeters;
     struct { 
         unsigned int isHeaderFlaggedFPO : 1; 
         unsigned int isExcludedFromContrastFilter : 1; 
@@ -58,6 +62,7 @@
 - (int)bitmapEncoding;
 - (int)blendMode;
 - (unsigned long long)colorSpaceID;
+- (id)contentNames;
 - (struct CGImage { }*)createImageFromPDFRenditionWithScale:(double)arg1;
 - (const struct _csicolor { unsigned int x1; unsigned int x2; unsigned int x3 : 8; unsigned int x4 : 24; unsigned int x5; double x6[0]; }*)csiColor;
 - (id)data;
@@ -92,8 +97,8 @@
 - (double)opacity;
 - (bool)optOutOfThinning;
 - (struct CGSize { double x1; double x2; })originalUncroppedSize;
-- (id)packedContents;
 - (struct CGPDFDocument { }*)pdfDocument;
+- (struct CGSize { double x1; double x2; })physicalSizeInMeters;
 - (int)pixelFormat;
 - (bool)preservedVectorRepresentation;
 - (id)provideTextureInfo;

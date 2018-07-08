@@ -39,7 +39,6 @@
 - (void)_incrementErrorForStep:(id)arg1;
 - (bool)_loadStep:(id)arg1 requireWiFi:(bool)arg2;
 - (void)_performNextRequests;
-- (void)_performSubscriptionRequestsPreemptedStepIndex:(long long)arg1 currentRoutePositionStepIndex:(long long)arg2 firstErrorStepIndex:(long long)arg3 firstLoadStepIndex:(long long)arg4 loadStepsAhead:(long long)arg5 loadStepsAheadIfNoWiFi:(long long)arg6;
 - (void)_performTileRequestsPreemptedStepIndex:(long long)arg1 currentRoutePositionStepIndex:(long long)arg2 firstErrorStepIndex:(long long)arg3 firstLoadStepIndex:(long long)arg4 loadStepsAhead:(long long)arg5 loadStepsAheadIfNoWiFi:(long long)arg6;
 - (void)_resetErrCounts;
 - (void)_retryFailuresWithErrorsReset:(bool)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface SSGzipOutputStream : NSOutputStream {
-    NSOutputStream * _actualOutputStream;
+    NSOutputStream * _backingStream;
     struct z_stream_s { 
         char *next_in; 
         unsigned int avail_in; 
@@ -26,12 +26,13 @@
     unsigned long long  _streamOutBufferSize;
 }
 
+- (void).cxx_destruct;
 - (long long)_consumeStreamOutput:(bool)arg1;
+- (bool)_initializeOutputStream;
 - (void)_setStreamError:(int)arg1 context:(id)arg2;
 - (void)close;
 - (void)dealloc;
 - (bool)hasSpaceAvailable;
-- (id)init;
 - (id)initToFileAtPath:(id)arg1 append:(bool)arg2;
 - (id)initToMemory;
 - (void)open;

@@ -3,9 +3,11 @@
  */
 
 @interface HLPHelpViewController : UIViewController <HLPHelpLoadingViewDelegate, HLPHelpTableOfContentViewControllerDelegate, HLPHelpTopicViewControllerDelegate, HLPReachabilityManagerDelegate> {
+    bool  __fullBookView;
     <HLPHelpViewControllerDelegate> * _delegate;
     bool  _displayHelpTopicsOnly;
     UIBarButtonItem * _doneBarButtonItem;
+    UIView * _fullBookViewSeparator;
     NSString * _helpBookBasePath;
     HLPHelpBookController * _helpBookController;
     NSURL * _helpBookURL;
@@ -31,6 +33,7 @@
     NSString * _version;
 }
 
+@property (getter=_fullBookView, setter=_setFullBookView:, nonatomic) bool _fullBookView;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HLPHelpViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -58,6 +61,8 @@
 + (id)helpViewControllerWithTitle:(id)arg1 identifier:(id)arg2 version:(id)arg3 subpath:(id)arg4;
 
 - (void).cxx_destruct;
+- (bool)_fullBookView;
+- (void)_setFullBookView:(bool)arg1;
 - (id)currentHelpTopicItemForTableOfContentViewController:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
@@ -75,6 +80,7 @@
 - (id)init;
 - (void)loadFromStaticServer;
 - (void)loadHelpBook;
+- (void)loadHelpTopicID:(id)arg1;
 - (id)loadingView;
 - (id)localHelpBookFileURL;
 - (void)popWelcomeTopicView;
@@ -98,7 +104,9 @@
 - (void)setSubpath:(id)arg1;
 - (void)setTableOfContentViewController:(id)arg1;
 - (void)setVersion:(id)arg1;
+- (void)setupFullBookView;
 - (void)setupTableContentViewController;
+- (void)setupTopicViewController;
 - (void)showHelpBookInfo:(id)arg1;
 - (void)showHelpTopicItem:(id)arg1 anchor:(id)arg2 animate:(bool)arg3;
 - (void)showMessageForError:(id)arg1;
@@ -110,6 +118,7 @@
 - (void)tableOfContentViewController:(id)arg1 showHelpTopicItem:(id)arg2;
 - (void)tableOfContentViewControllerShowHelpBookInfo:(id)arg1;
 - (id)topicIDForTopicName:(id)arg1 locale:(id)arg2;
+- (void)updateChildViewConstraints;
 - (void)updateDoneButton;
 - (void)updateTOCButton;
 - (id)version;

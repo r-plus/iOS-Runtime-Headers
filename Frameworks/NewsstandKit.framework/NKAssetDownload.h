@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/NewsstandKit.framework/NewsstandKit
  */
 
-@interface NKAssetDownload : NSObject {
+@interface NKAssetDownload : NSObject <NSSecureCoding> {
     bool  _attemptedConnection;
     NSURLConnection * _connection;
     NSString * _identifier;
@@ -19,6 +19,8 @@
 @property (readonly) NKIssue *issue;
 @property (copy) NSDictionary *userInfo;
 @property (retain) NSData *userInfoData;
+
++ (bool)supportsSecureCoding;
 
 - (id)URLRequest;
 - (bool)_attemptedConnection;

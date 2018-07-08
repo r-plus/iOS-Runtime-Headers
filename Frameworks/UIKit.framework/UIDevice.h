@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIDevice : NSObject <DebugHierarchyEntryPoint, DebugHierarchyObject> {
+@interface UIDevice : NSObject {
     float  _batteryLevel;
     struct { 
         unsigned int batteryMonitoringEnabled : 1; 
@@ -18,26 +18,23 @@
 }
 
 @property (setter=_setBacklightLevel:, nonatomic) float _backlightLevel;
+@property (nonatomic, readonly) bool _supportsPencil;
 @property (nonatomic, readonly) float batteryLevel;
 @property (getter=isBatteryMonitoringEnabled, nonatomic) bool batteryMonitoringEnabled;
 @property (nonatomic, readonly) long long batteryState;
 @property (nonatomic, readonly, retain) NSString *buildVersion;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (getter=_feedbackSupportLevel, nonatomic, readonly) long long feedbackSupportLevel;
 @property (getter=isGeneratingDeviceOrientationNotifications, nonatomic, readonly) bool generatesDeviceOrientationNotifications;
-@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSUUID *identifierForVendor;
 @property (nonatomic, readonly) NSString *localizedModel;
 @property (nonatomic, readonly) MFObservable *mf_batteryLevelObservable;
 @property (nonatomic, readonly) NSString *model;
 @property (getter=isMultitaskingSupported, nonatomic, readonly) bool multitaskingSupported;
 @property (nonatomic, readonly) NSString *name;
-@property (nonatomic) long long orientation;
 @property (nonatomic, readonly) long long orientation;
+@property (nonatomic) long long orientation;
 @property (getter=isProximityMonitoringEnabled, nonatomic) bool proximityMonitoringEnabled;
 @property (nonatomic, readonly) bool proximityState;
-@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *systemName;
 @property (nonatomic, readonly) NSString *systemVersion;
 @property (nonatomic, readonly) long long userInterfaceIdiom;
@@ -78,6 +75,7 @@
 - (float)_softwareDimmingAlpha;
 - (bool)_supportsDeepColor;
 - (bool)_supportsForceTouch;
+- (bool)_supportsPencil;
 - (id)_tapticEngine;
 - (void)_unregisterForSystemSounds:(id)arg1;
 - (void)_updateSystemSoundActiveStatus:(id)arg1;
@@ -99,18 +97,16 @@
 - (bool)proximityState;
 - (void)setBatteryMonitoringEnabled:(bool)arg1;
 - (void)setOrientation:(long long)arg1;
-- (void)setOrientation:(long long)arg1 animated:(bool)arg2;
 - (void)setProximityMonitoringEnabled:(bool)arg1;
 - (id)systemName;
 - (id)systemVersion;
 - (long long)userInterfaceIdiom;
 
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
+// Image: /System/Library/AccessibilityBundles/GAXClient.bundle/GAXClient
 
-+ (id)debugHierarchyGroupingIDs;
-+ (id)debugHierarchyObjectsInGroupWithID:(id)arg1 outOptions:(id*)arg2;
++ (Class)safeCategoryBaseClass;
 
-- (id)debugHierarchyPropertyDescriptions;
+- (void)setOrientation:(long long)arg1 animated:(bool)arg2;
 
 // Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
 
@@ -142,9 +138,11 @@
 
 // Image: /System/Library/PrivateFrameworks/MaterialKit.framework/MaterialKit
 
++ (id)mt_lowQualityDevicesForBaseLuminanceOverlay;
 + (id)mt_lowQualityDevicesForDynamicBlurRadius;
 + (id)mt_mediumQualityDevicesForDynamicBlurRadius;
 
+- (long long)mt_baseLuminanceOverlayGraphicsQuality;
 - (id)mt_currentProduct;
 - (long long)mt_dynamicBlurRadiusGraphicsQuality;
 
@@ -192,14 +190,17 @@
 - (id)_deviceInfoForKey:(struct __CFString { }*)arg1;
 - (long long)_graphicsQualityIncludingMediumN41:(bool)arg1;
 - (id)_highQualityDevicesForHomeFolders;
+- (id)_lowQualityDevicesForCoverSheetBlur;
 - (id)_lowQualityDevicesForDashBoardPresentation;
 - (id)_lowQualityDevicesForHomeScreenBlur;
 - (id)_lowQualityDevicesForHomescreenFolders;
 - (id)_lowQualityDevicesForSearchTransitions;
+- (id)_mediumQualityDevicesForCoverSheetBlur;
 - (id)_mediumQualityDevicesForHomeScreenBlur;
 - (id)_mediumQualityProductsIncludingN41:(bool)arg1;
 - (long long)sbf_bannerGraphicsQuality;
 - (long long)sbf_controlCenterGraphicsQuality;
+- (long long)sbf_coverSheetBlurGraphicsQuality;
 - (long long)sbf_dashBoardPresentationGraphicsQuality;
 - (long long)sbf_homeScreenBlurGraphicsQuality;
 - (long long)sbf_homeScreenFolderGraphicsQuality;

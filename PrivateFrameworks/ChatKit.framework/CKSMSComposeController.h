@@ -55,6 +55,7 @@
 - (void)setText:(id)arg1 subject:(id)arg2 addresses:(id)arg3;
 - (void)setTextEntryContentsVisible:(bool)arg1;
 - (void)setUICustomizationData:(id)arg1;
+- (void)setUTIs:(id)arg1;
 - (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)smsComposeControllerAppeared;
 - (void)smsComposeControllerCancelled;

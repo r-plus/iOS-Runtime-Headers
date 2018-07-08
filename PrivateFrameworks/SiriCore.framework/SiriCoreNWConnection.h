@@ -18,6 +18,7 @@
     bool  _isReady;
     id /* block */  _openCompletion;
     NSObject<OS_dispatch_source> * _openTimer;
+    SAConnectionPolicy * _policy;
     bool  _prefersWWAN;
     NSObject<OS_dispatch_queue> * _queue;
     unsigned long long  _readWriteCounter;
@@ -57,7 +58,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (bool)hasActiveConnection;
-- (id)headerData;
+- (id)headerDataWithForceReconnect:(bool)arg1;
 - (id)initWithQueue:(id)arg1;
 - (bool)isCanceled;
 - (bool)isEstablishing;
@@ -75,6 +76,7 @@
 - (void)setEnforceExtendedValidation:(bool)arg1;
 - (void)setPolicyRoute:(id)arg1;
 - (void)setPrefersWWAN:(bool)arg1;
+- (void)setProviderConnectionPolicy:(id)arg1;
 - (bool)shouldFallbackFromError:(id)arg1;
 - (bool)shouldFallbackQuickly;
 - (bool)supportsInitialPayload;

@@ -6,6 +6,7 @@
     <SBUIBiometricAuthenticationPolicy> * _authPolicy;
     <SBUIBiometricAuthenticationPolicy> * _authenticationPolicy;
     _SBUIBiometricKitInterface * _biometricInterface;
+    Class  _bkMatchPearlOperationClass;
     NSMutableOrderedSet * _fingerDetectAssertions;
     bool  _hasMesaHardware;
     bool  _hasPearlHardware;
@@ -61,6 +62,7 @@
 - (void)_notifyObserversOfEvent:(unsigned long long)arg1;
 - (id)_profileConnection;
 - (void)_profileSettingsChanged:(id)arg1;
+- (void)_reallyResumeMatchingForAssertion:(id)arg1 advisory:(bool)arg2;
 - (void)_reallySetAuthenticated:(bool)arg1 keybagState:(id)arg2;
 - (void)_reevaluateFingerDetection;
 - (void)_reevaluateMatching;
@@ -98,7 +100,8 @@
 - (void)noteScreenWillTurnOn;
 - (void)refreshMatchMode;
 - (void)removeObserver:(id)arg1;
-- (void)restartMatchingIfNeededForAssertion:(id)arg1;
+- (void)resumeMatchingAdvisory:(bool)arg1;
+- (void)resumeMatchingForAssertion:(id)arg1 advisory:(bool)arg2;
 - (void)setAuthenticationPolicy:(id)arg1;
 - (void)setUnlockCredentialSet:(id)arg1;
 - (id)succinctDescription;

@@ -31,6 +31,8 @@
 + (id)scanInfoBSSIDStr:(id)arg1;
 + (bool)scanInfoCanJoin2_4GHzNetworks:(id)arg1;
 + (bool)scanInfoCanJoin5GHzNetworks:(id)arg1;
++ (id)scanInfoDataFromAppleDeviceIE:(id)arg1 forType:(long long)arg2;
++ (id)scanInfoDeviceID:(id)arg1;
 + (int)scanInfoDeviceKind:(id)arg1;
 + (id)scanInfoFriendlyName:(id)arg1;
 + (bool)scanInfoIs5GHz:(id)arg1;
@@ -38,6 +40,7 @@
 + (bool)scanInfoIsAudioDevice:(id)arg1;
 + (bool)scanInfoIsDWDSCapable:(id)arg1 isDWDSEnabled:(bool*)arg2;
 + (bool)scanInfoIsGuestNetwork:(id)arg1;
++ (bool)scanInfoIsHomeKitSecureWAC:(id)arg1;
 + (bool)scanInfoIsIBSS:(id)arg1;
 + (bool)scanInfoIsInSoftReset:(id)arg1;
 + (bool)scanInfoIsMFIAirPlayDevice:(id)arg1;
@@ -51,6 +54,8 @@
 + (unsigned int)scanInfoSubAppleProductID:(id)arg1;
 + (bool)scanInfoSupportsACPConfigV1:(id)arg1;
 + (bool)scanInfoSupportsMFIConfigV1:(id)arg1;
++ (bool)scanInfoSupportsSecureWAC:(id)arg1;
++ (bool)scanInfoSupportsSoftwareTokenAuth:(id)arg1;
 + (bool)scanInfoSupportsSpruce:(id)arg1;
 + (bool)scanInfoTestBitFromAppleDeviceIE:(id)arg1 forType:(long long)arg2;
 + (id)sharedInstance;

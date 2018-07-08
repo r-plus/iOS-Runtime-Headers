@@ -26,6 +26,7 @@
     unsigned char  _headerBuffer;
     bool  _headerBufferFound;
     unsigned char  _md5;
+    NSObject<OS_dispatch_queue> * _ptpTransportIOQ;
     PTPOperationResponsePacket * _response;
     bool  _responseReceived;
     int  _role;

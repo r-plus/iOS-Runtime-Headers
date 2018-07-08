@@ -39,12 +39,6 @@
     bool  inhibitAutoScroll;
     bool  isUsingPageViewController;
     unsigned long long  lastHorizontalScrollDirection;
-    struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
-    }  lastSafeAreaInsets;
     unsigned long long  lastVerticalScrollDirection;
     unsigned long long  lastVisiblePage;
     UILongPressGestureRecognizer * longPressGestureRecognizer;

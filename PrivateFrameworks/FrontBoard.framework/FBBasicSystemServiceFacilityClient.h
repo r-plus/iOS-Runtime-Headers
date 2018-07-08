@@ -14,6 +14,7 @@
 
 + (id)facilityClientWithSystemServiceClient:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)initWithSystemServiceClient:(id)arg1;
 - (id)systemServiceClient;
 

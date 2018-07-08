@@ -11,6 +11,7 @@
     NSString * _instanceIdentifier;
     bool  _isLocalEndpoint;
     NSString * _localizedName;
+    bool  _proxyGroupPlayer;
     NSString * _uniqueIdentifier;
 }
 
@@ -18,10 +19,11 @@
 @property (nonatomic, copy) NSArray *distantOutputDevices;
 @property (nonatomic, retain) NSXPCListenerEndpoint *externalDeviceListenerEndpoint;
 @property (nonatomic, copy) NSString *localizedName;
+@property (getter=isProxyGroupPlayer, nonatomic) bool proxyGroupPlayer;
 
 + (bool)supportsSecureCoding;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)designatedGroupLeader;
 - (id)distantGroupLeader;
 - (id)distantOutputDevices;
@@ -34,12 +36,14 @@
 - (id)instanceIdentifier;
 - (bool)isEqual:(id)arg1;
 - (bool)isLocalEndpoint;
+- (bool)isProxyGroupPlayer;
 - (id)localizedName;
 - (id)outputDevices;
 - (void)setDistantGroupLeader:(id)arg1;
 - (void)setDistantOutputDevices:(id)arg1;
 - (void)setExternalDeviceListenerEndpoint:(id)arg1;
 - (void)setLocalizedName:(id)arg1;
+- (void)setProxyGroupPlayer:(bool)arg1;
 - (id)uniqueIdentifier;
 
 @end

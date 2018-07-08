@@ -28,6 +28,7 @@
 - (void)_unsafe_completeTask:(id)arg1 withError:(id)arg2;
 - (bool)_unsafe_retryTaskIfPossible:(id)arg1;
 - (bool)_usesAppleIDContext;
+- (id)beginAuthenticationDataTaskWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)beginDataTaskWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)cancelDataTask:(id)arg1;
 - (id)init;

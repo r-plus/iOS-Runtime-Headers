@@ -5,7 +5,8 @@
 @interface TPTextFlowLayoutController : NSObject <TSKChangeSourceObserver, TSWPLayoutOwner> {
     NSMapTable * _flows;
     NSMapTable * _layoutMgrs;
-    TPPaginatedPageController * _pageController;
+    TPPageController * _pageController;
+    NSObject<TSWPTopicNumberHints> * _startTargetTopicNumberHints;
     bool  _tornDown;
 }
 

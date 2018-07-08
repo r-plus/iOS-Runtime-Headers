@@ -4,13 +4,13 @@
 
 @interface SXContext : NSObject {
     SXDocumentController * _documentController;
-    SXHost * _host;
+    <SXHost> * _host;
     <SXResourceDataSource> * _resourceDataSource;
     <SXTextContentProvider> * _textContentProvider;
 }
 
 @property (nonatomic, readonly) SXDocumentController *documentController;
-@property (nonatomic, readonly) SXHost *host;
+@property (nonatomic, readonly) <SXHost> *host;
 @property (nonatomic, readonly) <SXResourceDataSource> *resourceDataSource;
 @property (nonatomic, readonly) <SXTextContentProvider> *textContentProvider;
 

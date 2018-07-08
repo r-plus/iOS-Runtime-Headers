@@ -53,6 +53,7 @@
 - (void)getESimServerURL:(id /* block */)arg1;
 - (void)getIMEIPrefix:(id /* block */)arg1;
 - (void)getRemoteInfo:(id /* block */)arg1;
+- (void)getRoamingSignupOverrideWithCompletion:(id /* block */)arg1;
 - (void)getSelectedEnv:(id /* block */)arg1;
 - (void)getSelectedProxy:(id /* block */)arg1;
 - (id)init;
@@ -68,6 +69,7 @@
 - (void)manageAccountForRemotePlan:(id)arg1 completion:(id /* block */)arg2;
 - (void)mccMncOverride:(id /* block */)arg1;
 - (void)openInternalUrlId:(long long)arg1;
+- (void)pendingReleaseRemotePlan;
 - (void)ping;
 - (void)planInfoDidUpdate;
 - (void)planItemsWithCompletion:(id /* block */)arg1;
@@ -92,6 +94,7 @@
 - (void)setIMEIPrefix:(id)arg1;
 - (void)setLatitude:(id)arg1 andLongitude:(id)arg2;
 - (void)setMcc:(long long)arg1 andMnc:(long long)arg2;
+- (void)setRoamingSignupOverride:(bool)arg1;
 - (void)setSelectedEnv:(long long)arg1;
 - (void)setSelectedProxy:(long long)arg1;
 - (void)setUserInPurchaseFlow:(bool)arg1;

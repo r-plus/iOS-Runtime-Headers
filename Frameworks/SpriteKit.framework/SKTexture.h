@@ -159,6 +159,7 @@
 - (void)setCropOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setCropScale:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setFilteringMode:(long long)arg1;
+- (void)setIsData:(bool)arg1;
 - (void)setIsFlipped:(bool)arg1;
 - (void)setIsRotated:(bool)arg1;
 - (void)setNeedsExtrusionWorkaround:(bool)arg1;

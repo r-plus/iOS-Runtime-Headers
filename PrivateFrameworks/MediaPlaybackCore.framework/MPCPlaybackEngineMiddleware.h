@@ -39,5 +39,6 @@
 - (id)playerVideoView:(id)arg1 chain:(id)arg2;
 - (void)setInvalidationObservers:(id)arg1;
 - (void)setPlaybackEngine:(id)arg1;
+- (id)tracklistUniqueIdentifier:(id)arg1 chain:(id)arg2;
 
 @end

@@ -49,7 +49,7 @@
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<ICDrawingOutputPoint *, std::__1::allocator<ICDrawingOutputPoint> > { 
-            struct { /* ? */ } *__first_; 
+            struct { /* ? */ } *__value_; 
         } __end_cap_; 
     }  _points;
     unsigned int  _type;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSString : NSObject <AFSecurityDigestibleChunksProviding, ASParsingLeafNode, CKLParsedObject, CKRecordValue, CKShortDescription, CNKeyDescriptor_Private, CNUIURLDestinationID, CRCoding, CRDataType, CREquatable, CSCoderEncoder, FCKeyValueStoreCoding, HFPropertyListConvertible, HFStringGenerator, NSCopying, NSItemProviderReading, NSItemProviderWriting, NSMutableCopying, NSSecureCoding, PASerializable, PQLValuable, SBFFileCacheFileIdentifier, SiriCoreSQLiteValue, UIItemProviderReading, UIItemProviderWriting>
+@interface NSString : NSObject <AFSecurityDigestibleChunksProviding, ASParsingLeafNode, ATXScoreLogSerializable, CKLParsedObject, CKRecordValue, CKShortDescription, CLSGraphVertex, CLSMetaPropertyValue, CNKeyDescriptor_Private, CNUIURLDestinationID, CRCoding, CRDataType, CREquatable, CSCoderEncoder, FCKeyValueStoreCoding, HFPropertyListConvertible, HFStringGenerator, NSCopying, NSItemProviderReading, NSItemProviderWriting, NSMutableCopying, NSSecureCoding, PASerializable, PQLValuable, SBFFileCacheFileIdentifier, SiriCoreSQLiteValue, UIItemProviderReading, UIItemProviderWriting>
 
 @property (nonatomic, retain) NSString *IPASpeechPhonemes;
 @property (nonatomic, readonly) NSData *_FTDataFromBase64String;
@@ -31,6 +31,7 @@
 @property (nonatomic, readonly) bool safari_isSpecialFolderRecordName;
 @property (nonatomic, readonly, copy) NSString *safari_stringByNormalizingVersionString;
 @property (nonatomic, readonly, copy) NSString *safari_stringByRemovingExcessWhitespace;
+@property (nonatomic, readonly, copy) NSString *safari_stringByReplacingHomoglyphForSpaceWithSpace;
 @property (nonatomic, readonly, copy) NSString *safari_userVisibleSafariBundleVersionFromFullVersion;
 @property (nonatomic, readonly) NSString *sf_URLScheme;
 @property (nonatomic, readonly) bool sf_isFeedScheme;
@@ -45,6 +46,7 @@
 @property (nonatomic, readonly, copy) NSArray *un_localizedStringArguments;
 @property (nonatomic, readonly, copy) NSString *un_localizedStringKey;
 @property (nonatomic, readonly, copy) NSString *un_localizedStringValue;
+@property (nonatomic, readonly) id vertexID;
 @property (nonatomic, readonly, copy) NSArray *writableTypeIdentifiersForItemProvider;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
@@ -305,20 +307,9 @@
 
 - (bool)xr_getLongLong:(long long*)arg1;
 
-// Image: /Developer/Library/PrivateFrameworks/DebugHierarchyFoundation.framework/DebugHierarchyFoundation
+// Image: /System/Library/Frameworks/ClassKit.framework/ClassKit
 
-- (bool)dbgBoolValue;
-- (double)dbgCGFloatValue;
-- (id)dbgDataValue;
-- (double)dbgDoubleValue;
-- (float)dbgFloatValue;
-- (int)dbgIntValue;
-- (long long)dbgIntegerValue;
-- (long long)dbgLongValue;
-- (id)dbgStringValue;
-- (unsigned int)dbgUnsignedIntValue;
-- (unsigned long long)dbgUnsignedIntegerValue;
-- (unsigned long long)dbgUnsignedLongValue;
+- (id)vertexID;
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
@@ -408,9 +399,21 @@
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
++ (id)hk_randomStringOfLength:(long long)arg1;
+
+- (id)hk_MD2Hash;
+- (id)hk_MD4Hash;
+- (id)hk_MD5Hash;
+- (id)hk_SHA1Hash;
+- (id)hk_SHA224Hash;
+- (id)hk_SHA256Hash;
+- (id)hk_SHA384Hash;
+- (id)hk_SHA512Hash;
 - (long long)hk_compareBuildVersionWithString:(id)arg1;
 - (id)hk_copyNonEmptyString;
 - (bool)hk_isBase64;
+- (id)hk_stringByAppendingKeyPathComponent:(id)arg1;
+- (id)hk_stringByRemovingCharactersInSet:(id)arg1;
 - (id)hk_stripLeadingTrailingWhitespace;
 - (id)hk_trimWhitespaceAndNewlines;
 
@@ -454,7 +457,10 @@
 // Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
 
 + (id)NSStringFromLSInstallPhase:(unsigned long long)arg1;
++ (id)NSStringFromLSInstallPhase:(unsigned long long)arg1;
 + (id)NSStringFromLSInstallState:(unsigned long long)arg1;
++ (id)NSStringFromLSInstallState:(unsigned long long)arg1;
++ (id)NSStringFromLSInstallType:(unsigned long long)arg1;
 + (id)NSStringFromLSInstallType:(unsigned long long)arg1;
 
 - (id)clean;
@@ -652,6 +658,10 @@
 - (id)stringByTrimmingTrailingWhitespaceAndNewline;
 - (id)stringByTrimmingTrailingWhitespaceFromEachLine;
 
+// Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
+
+- (void)atx_writeToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
+
 // Image: /System/Library/PrivateFrameworks/AppPredictionWidget.framework/AppPredictionWidget
 
 - (id)_apw_adjustedFontForScripts:(long long)arg1 forFont:(id)arg2;
@@ -687,6 +697,7 @@
 
 - (id)ak_SHA256;
 - (id)ak_SHA256String;
+- (id)ak_urlEncoded;
 
 // Image: /System/Library/PrivateFrameworks/BarcodeSupport.framework/BarcodeSupport
 
@@ -1020,6 +1031,8 @@
 // Image: /System/Library/PrivateFrameworks/CoreSpeech.framework/CoreSpeech
 
 - (bool)_caseInsensitiveHasMatchInEnumeration:(id)arg1;
+- (id)_cs_initWithXPCObject:(id)arg1;
+- (id)_cs_xpcObject;
 - (id)_firstMatchesForRegularExpression:(id)arg1;
 - (id)_firstMatchesForRegularExpressions:(id)arg1;
 - (bool)_hasSubstring:(id)arg1;
@@ -1028,8 +1041,6 @@
 - (id)_stringByStrippingLeadingNoise:(id)arg1;
 - (id)_stringByStrippingNoiseLeadingNoise:(id)arg1 TrailingNoise:(id)arg2;
 - (id)_stringByStrippingTrailingNoise:(id)arg1;
-- (id)initWithXPCObject:(id)arg1;
-- (id)xpcObject;
 
 // Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
 
@@ -1181,6 +1192,7 @@
 - (id)_gkMD5HashString;
 - (id)_gkSHA1HashData;
 - (id)_gkSHA1HashString;
+- (bool)_gkSearchMatchesItem:(id)arg1 withSearchTerms:(id)arg2;
 - (id)_gkStringByAddingBidiEmbeddingMarkers;
 - (id)_gkStringByEscapingHTMLEntities;
 - (id)_gkStringByQuotingWithFormat:(id)arg1;
@@ -1200,7 +1212,7 @@
 
 - (void)chmod:(unsigned short)arg1;
 - (id)gs_issueExtension:(const char *)arg1 error:(id*)arg2;
-- (id)gs_issueReadExtensionIfNeededForPid:(int)arg1;
+- (id)gs_issueReadExtensionIfNeededForAuditToken:(struct { unsigned int x1[8]; })arg1;
 - (id)gs_stringByUpdatingPathExtensionWithPathOrURL:(id)arg1;
 - (bool)validateGSName:(out id*)arg1;
 - (bool)validateGSNameAllowingDot:(bool)arg1 error:(id*)arg2;
@@ -1218,9 +1230,18 @@
 - (bool)hmf_isInteger;
 - (bool)hmf_isNumeric;
 
+// Image: /System/Library/PrivateFrameworks/HardwareDiagnostics.framework/Diagnostics/D22_D221.bundle/D22_D221
+
+- (bool)isAlphaNumeric;
+
 // Image: /System/Library/PrivateFrameworks/HardwareDiagnostics.framework/HardwareDiagnostics
 
 - (bool)isAlphaNumeric;
+
+// Image: /System/Library/PrivateFrameworks/HealthRecordServices.framework/HealthRecordServices
+
+- (id)hk_base64PaddedString;
+- (id)hrs_stringByUnescapingJSONCharactersForDisplay;
 
 // Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
@@ -1334,12 +1355,14 @@
 // Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/Frameworks/XCTest.framework/XCTest
 
 - (id)xct_quotedSwiftStringRepresentation;
+- (id)xct_realPath;
 
 // Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/IMSharedUtilities
 
 - (id)__im_apfsCompatibleFilename;
 - (id)__im_engramDataRepresentation;
 - (id)__im_filePathWithVariant:(id)arg1;
+- (bool)isArchivable_im;
 
 // Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
 
@@ -1347,6 +1370,7 @@
 
 - (bool)ik_attributeBoolValue;
 - (id)ik_stringByTrimmingControlChars;
+- (id)ikrwi_camelCase;
 
 // Image: /System/Library/PrivateFrameworks/InputContext.framework/InputContext
 
@@ -1453,6 +1477,10 @@
 - (id)MCRemoveAppExternalVersionIDParameter;
 - (id)MCSHA256DigestWithPasscodeSalt;
 - (id)MCSHA256DigestWithSalt:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
+
+- (id)MPC_storeFrontIdentifierKey;
 
 // Image: /System/Library/PrivateFrameworks/MediaStream.framework/MediaStream
 
@@ -1751,6 +1779,7 @@
 
 - (void)enumerateContentLineRangesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 usingBlock:(id /* block */)arg2;
 - (void)enumerateParagraphsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 usingBlock:(id /* block */)arg2;
+- (id)ic_md5;
 - (id)ic_sanitizedFilenameString;
 - (id)ic_stringByReplacingCharactersInSet:(id)arg1 withString:(id)arg2;
 - (id)ic_stringByReplacingNewlineCharactersWithWhiteSpace;
@@ -1760,7 +1789,6 @@
 - (id)ic_trimmedString;
 - (id)ic_whitespaceAndNewlineCoalescedString;
 - (unsigned long long)lengthOfLongestLine;
-- (id)md5;
 - (unsigned long long)numberOfLines;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })paragraphRangeForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 contentEnd:(unsigned long long*)arg2;
 
@@ -2065,6 +2093,8 @@
 
 + (void)safari_reverseEnumerateComponents:(id)arg1 usingBlock:(id /* block */)arg2;
 
+- (bool)safari_anyComponentSeparatedByString:(id)arg1 hasLocalizedCaseInsensitivePrefix:(id)arg2;
+- (id)safari_base64DecodedData;
 - (bool)safari_containsInteriorWhitespace;
 - (bool)safari_containsPeriodOrHomoglyphForPeriod;
 - (bool)safari_hasCaseInsensitivePrefix:(id)arg1;
@@ -2078,6 +2108,8 @@
 - (id)safari_simplifiedUserVisibleURLString;
 - (id)safari_simplifiedUserVisibleURLStringWithSimplifications:(unsigned long long)arg1 forDisplayOnly:(bool)arg2 simplifiedStringOffset:(unsigned long long*)arg3;
 - (id)safari_stringByNormalizingVersionString;
+- (id)safari_stringByRedactingBookmarkDAVServerID;
+- (id)safari_stringByReplacingHomoglyphForSpaceWithSpace;
 - (id)safari_stringByTrimmingWhitespace;
 - (id)safari_topLevelDomainUsingCFFromComponents:(id)arg1;
 - (id)safari_userVisibleSafariBundleVersionFromFullVersion;
@@ -2092,26 +2124,31 @@
 + (id)safari_stringWithJSValue:(struct OpaqueJSValue { }*)arg1 context:(struct OpaqueJSContext { }*)arg2 nullStringPolicy:(long long)arg3;
 + (id)safari_stringWithUTF8Bytes:(const void*)arg1 length:(unsigned long long)arg2;
 
-- (id)safari_base64DecodedData;
+- (id)_safari_variantsOfURLStringInFaviconFormat:(bool)arg1;
 - (id)safari_bestLanguageTag;
 - (id)safari_bestURLForUserTypedString;
 - (id)safari_bestURLStringForUserTypedString;
 - (id)safari_canonicalURLStringForFrequentlyVisitedSites;
 - (id)safari_containedURLs;
 - (unsigned long long)safari_countOfString:(id)arg1;
+- (id)safari_domainFaviconURLStringVariantsForFaviconDatabase;
 - (id)safari_domainFromHost;
+- (id)safari_domainURLStringPrefixVariantsForFaviconDatabase;
 - (void)safari_enumerateSubdomainRangesInHostUsingBlock:(id /* block */)arg1;
 - (id)safari_fixedStringByExpandingTildeInPath;
 - (bool)safari_hasDirectionalPrefix;
 - (bool)safari_isJavaScriptURLString;
 - (bool)safari_isPathExtensionAllowedForAnalytics;
 - (bool)safari_isVisualDuplicateOfURLString:(id)arg1;
+- (bool)safari_looksLikeObscuredPassword;
 - (id)safari_md5Hash;
 - (id)safari_normalizedParsecInputString;
 - (id)safari_possibleTopLevelDomainCorrectionForUserTypedString;
 - (id)safari_scriptIfJavaScriptURLString;
 - (id)safari_sha256Hash;
 - (id)safari_stringByFoldingWideCharactersAndNormalizing;
+- (id)safari_stringByFormattingForFaviconDatabase;
+- (id)safari_stringByFormattingForIconControllerDatabase;
 - (id)safari_stringByRemovingCharactersInSet:(id)arg1;
 - (id)safari_stringByRemovingDirectionalPrefix;
 - (id)safari_stringByRemovingExcessWhitespace;
@@ -2123,6 +2160,8 @@
 - (id)safari_stringBySubstitutingHTMLEntitiesForAmpersandAndAngleBrackets;
 - (id)safari_stringEncodedAsURLQueryParameter;
 - (id)safari_stringWithFont:(id)arg1 forWidth:(double)arg2 lineBreakMode:(long long)arg3;
+- (id)safari_urlStringVariantsForFaviconDatabase;
+- (id)safari_urlStringVariantsForIconControllerDatabase;
 - (id)safari_userVisibleURL;
 
 // Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
@@ -2465,6 +2504,7 @@
 - (bool)_containsJapaneseOnly;
 - (bool)_containsKatakanaOrKanji;
 - (bool)_containsSubstring:(id)arg1;
+- (bool)_containsSymbolsAndPunctuationOnly;
 - (bool)_contentsExclusivelyInCharacterSet:(struct USet { }*)arg1;
 - (unsigned long long)_editDistanceFrom:(id)arg1;
 - (bool)_endsSentence;
@@ -2591,6 +2631,7 @@
 
 + (id)rc_stringWithPersistentID:(long long)arg1;
 
+- (id)rc_intentionallyNonLocalizedString;
 - (long long)rc_persistentIDValue;
 - (id)rc_stringByReplacingBreakingWithNonBreakingSpaces;
 
@@ -2627,6 +2668,7 @@
 - (id)_wb_stringByDeletingTrailingSlash;
 - (id)_wb_stringByStandardizingDAVServerID;
 - (bool)_webBookmarks_hasCaseInsensitivePrefix:(id)arg1;
+- (id)wb_stringByRedactingBookmarkDAVServerID;
 
 // Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
 
@@ -2649,9 +2691,7 @@
 
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 
-+ (id)_web_stringWithData:(id)arg1 textEncodingName:(id)arg2;
 + (id)_webkit_localCacheDirectoryWithBundleIdentifier:(id)arg1;
-+ (id)_webkit_localStorageDirectoryWithBundleIdentifier:(id)arg1;
 
 - (id)_web_bestURLForUserTypedString;
 - (id)_web_capitalizeRFC822HeaderFieldName;
@@ -2662,12 +2702,10 @@
 - (id)_web_possibleURLsForForUserTypedString:(bool)arg1;
 - (id)_web_possibleURLsForUserTypedString;
 - (id)_web_stringByAbbreviatingWithTildeInPath;
-- (id)_web_stringByStrippingReturnCharacters;
 - (id)_webkit_decodeHostName;
 - (id)_webkit_encodeHostName;
 - (id)_webkit_filenameByFixingIllegalCharacters;
 - (bool)_webkit_hasCaseInsensitivePrefix:(id)arg1;
-- (bool)_webkit_hasCaseInsensitiveSubstring:(id)arg1;
 - (bool)_webkit_hasCaseInsensitiveSuffix:(id)arg1;
 - (bool)_webkit_isCaseInsensitiveEqualToString:(id)arg1;
 - (bool)_webkit_isFileURL;
@@ -2675,8 +2713,6 @@
 - (bool)_webkit_looksLikeAbsoluteURL;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_webkit_rangeOfURLScheme;
 - (id)_webkit_scriptIfJavaScriptURL;
-- (id)_webkit_stringByCollapsingNonPrintingCharacters;
-- (id)_webkit_stringByCollapsingWhitespaceCharacters;
 - (id)_webkit_stringByReplacingValidPercentEscapes;
 - (id)_webkit_stringByTrimmingWhitespace;
 
@@ -2905,6 +2941,9 @@
 - (id)tsu_stringByUniquingPathInsideDirectory:(id)arg1;
 - (id)tsu_stringByUniquingPathInsideDirectory:(id)arg1 withFormat:(id)arg2;
 - (id)tsu_stringQuotedIfContainsCharacterSet:(id)arg1;
+- (id)tsu_stringWithNormalizedHyphens;
+- (id)tsu_stringWithNormalizedHyphensAndQuotationMarks;
+- (id)tsu_stringWithNormalizedQuotationMarks;
 - (id)tsu_stringWithPathRelativeTo:(id)arg1;
 - (id)tsu_stringWithPathRelativeTo:(id)arg1 allowBacktracking:(bool)arg2;
 - (id)tsu_stringWithRealpath;

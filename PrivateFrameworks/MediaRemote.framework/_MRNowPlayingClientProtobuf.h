@@ -10,7 +10,9 @@
         unsigned int nowPlayingVisibility : 1; 
         unsigned int processIdentifier : 1; 
         unsigned int processUserIdentifier : 1; 
+        unsigned int isEmptyDeprecated : 1; 
     }  _has;
+    bool  _isEmptyDeprecated;
     int  _nowPlayingVisibility;
     NSString * _parentApplicationBundleIdentifier;
     int  _processIdentifier;
@@ -23,11 +25,13 @@
 @property (nonatomic, retain) NSString *displayName;
 @property (nonatomic, readonly) bool hasBundleIdentifier;
 @property (nonatomic, readonly) bool hasDisplayName;
+@property (nonatomic) bool hasIsEmptyDeprecated;
 @property (nonatomic) bool hasNowPlayingVisibility;
 @property (nonatomic, readonly) bool hasParentApplicationBundleIdentifier;
 @property (nonatomic) bool hasProcessIdentifier;
 @property (nonatomic) bool hasProcessUserIdentifier;
 @property (nonatomic, readonly) bool hasTintColor;
+@property (nonatomic) bool isEmptyDeprecated;
 @property (nonatomic) int nowPlayingVisibility;
 @property (nonatomic, retain) NSString *parentApplicationBundleIdentifier;
 @property (nonatomic) int processIdentifier;
@@ -36,6 +40,7 @@
 
 + (Class)bundleIdentifierHierarchyType;
 
+- (void).cxx_destruct;
 - (int)StringAsNowPlayingVisibility:(id)arg1;
 - (void)addBundleIdentifierHierarchy:(id)arg1;
 - (id)bundleIdentifier;
@@ -45,18 +50,19 @@
 - (void)clearBundleIdentifierHierarchys;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayName;
 - (bool)hasBundleIdentifier;
 - (bool)hasDisplayName;
+- (bool)hasIsEmptyDeprecated;
 - (bool)hasNowPlayingVisibility;
 - (bool)hasParentApplicationBundleIdentifier;
 - (bool)hasProcessIdentifier;
 - (bool)hasProcessUserIdentifier;
 - (bool)hasTintColor;
 - (unsigned long long)hash;
+- (bool)isEmptyDeprecated;
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)nowPlayingVisibility;
@@ -68,9 +74,11 @@
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setBundleIdentifierHierarchys:(id)arg1;
 - (void)setDisplayName:(id)arg1;
+- (void)setHasIsEmptyDeprecated:(bool)arg1;
 - (void)setHasNowPlayingVisibility:(bool)arg1;
 - (void)setHasProcessIdentifier:(bool)arg1;
 - (void)setHasProcessUserIdentifier:(bool)arg1;
+- (void)setIsEmptyDeprecated:(bool)arg1;
 - (void)setNowPlayingVisibility:(int)arg1;
 - (void)setParentApplicationBundleIdentifier:(id)arg1;
 - (void)setProcessIdentifier:(int)arg1;

@@ -5,6 +5,7 @@
 @interface _CDInteractionRecord : NSManagedObject
 
 @property (nonatomic, retain) NSString *account;
+@property (nonatomic, retain) NSSet *attachments;
 @property (nonatomic, retain) NSString *bundleId;
 @property (nonatomic, retain) NSString *contentURL;
 @property (nonatomic) double creationDate;
@@ -19,6 +20,7 @@
 @property (nonatomic, retain) NSSet *recipients;
 @property (nonatomic, retain) _CDContactRecord *sender;
 @property (nonatomic) double startDate;
+@property (nonatomic, retain) NSString *targetBundleId;
 @property (nonatomic, retain) NSString *uuid;
 
 @end

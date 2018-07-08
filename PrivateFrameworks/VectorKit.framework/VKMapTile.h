@@ -49,6 +49,7 @@
 - (void)setNeedsRasterization:(bool)arg1;
 - (void)setRasterized:(id)arg1;
 - (void)setTile:(id)arg1 state:(unsigned long long)arg2 metadata:(id)arg3 forLayer:(unsigned char)arg4;
+- (void)tileCountForOnline:(unsigned int*)arg1 offline:(unsigned int*)arg2;
 - (id)tileForLayer:(unsigned char)arg1;
 - (unsigned long long)tileStateForLayer:(unsigned char)arg1;
 - (double)timeTileEnteredStateForLayer:(unsigned char)arg1;

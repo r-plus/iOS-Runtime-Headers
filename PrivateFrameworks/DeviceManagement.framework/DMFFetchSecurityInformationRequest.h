@@ -2,8 +2,25 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFFetchSecurityInformationRequest : CATTaskRequest
+@interface DMFFetchSecurityInformationRequest : CATTaskRequest {
+    NSArray * _infoKeys;
+}
 
+@property (nonatomic, copy) NSArray *infoKeys;
+
++ (id)allPlatformSecurityInfoKeys;
++ (id)currentPlatformSecurityInfoKeys;
++ (id)iOSSecurityInfoKeys;
++ (id)macOSSecurityInfoKeys;
++ (bool)supportsSecureCoding;
++ (id)tvOSSecurityInfoKeys;
++ (id)watchOSSecurityInfoKeys;
 + (Class)whitelistedClassForResultObject;
+
+- (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)infoKeys;
+- (id)initWithCoder:(id)arg1;
+- (void)setInfoKeys:(id)arg1;
 
 @end

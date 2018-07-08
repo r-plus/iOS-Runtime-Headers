@@ -45,6 +45,7 @@
 - (void)_updateRouteLabelForRoute:(id)arg1;
 - (float)_volumeApplyingEUVolumePolicyToVolume:(float)arg1;
 - (void)_volumeControlAvailablityNotification:(id)arg1;
+- (void)adjustVolumeValue:(float)arg1;
 - (bool)applicationShouldOverrideHardwareVolumeBehavior;
 - (void)dealloc;
 - (id)delegate;

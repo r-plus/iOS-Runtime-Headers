@@ -5,6 +5,7 @@
 @interface AVRoutePickerView : UIView {
     UIColor * _activeTintColor;
     bool  _airPlayActive;
+    UIViewPropertyAnimator * _buttonHighlightAnimator;
     UIButton * _customButton;
     <AVRoutePickerViewDelegate> * _delegate;
     struct CGSize { 
@@ -27,6 +28,10 @@
 - (void)_outputContextDevicesDidChange:(id)arg1;
 - (void)_registerNotifications;
 - (void)_routePickerButtonTapped:(id)arg1;
+- (void)_routePickerButtonTouchDown:(id)arg1;
+- (void)_routePickerButtonTouchDragEnter:(id)arg1;
+- (void)_routePickerButtonTouchUp:(id)arg1;
+- (void)_setRoutePickerButtonAlpha:(double)arg1 animated:(bool)arg2;
 - (void)_unregisterNotifications;
 - (void)_updateAirPlayActive;
 - (id)activeTintColor;

@@ -3,17 +3,17 @@
  */
 
 @interface KNSlideBackgroundRep : TSDRep <TSDMagicMoveMatching> {
-    CALayer * mBlackBackgroundLayer;
-    bool  mFillCanApplyToCALayer;
-    bool  mLayerNeedsUpdate;
+    CALayer * _blackBackgroundLayer;
+    bool  _fillCanApplyToCALayer;
+    bool  _layerNeedsUpdate;
 }
 
 @property (readonly) KNSlideBackgroundInfo *slideBackgroundInfo;
 
 + (id)magicMoveMatchesBetweenOutgoingObjects:(id)arg1 andIncomingObjects:(id)arg2 textureDescription:(id)arg3;
 
+- (void).cxx_destruct;
 - (id)additionalLayersUnderLayer;
-- (void)dealloc;
 - (void)didUpdateLayer:(id)arg1;
 - (bool)directlyManagesLayerContent;
 - (void)drawInContext:(struct CGContext { }*)arg1;

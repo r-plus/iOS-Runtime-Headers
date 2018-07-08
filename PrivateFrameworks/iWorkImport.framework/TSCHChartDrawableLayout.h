@@ -30,7 +30,7 @@
 @property (nonatomic, copy) TSDLayoutGeometry *legendGeometry;
 @property (nonatomic, copy) TSDLayoutGeometry *legendModelGeometry;
 @property (nonatomic, readonly) TSCHChartModel *model;
-@property (nonatomic, readonly, retain) TSCHChartLayout *p_chartLayout;
+@property (nonatomic, readonly) TSCHChartLayout *p_chartLayout;
 @property (nonatomic, retain) TSCHChartLayout *p_chartLayoutNoCreate;
 @property (nonatomic, copy) TSDLayoutGeometry *p_lastChartAreaGeometry;
 @property (nonatomic, copy) TSDLayoutGeometry *p_lastPureGeometry;
@@ -41,6 +41,7 @@
 @property (nonatomic, readonly, copy) NSDictionary *seriesIndexedPieNormalizedLabelDistancesFromWedgeTips;
 @property (nonatomic, copy) NSDictionary *seriesIndexedPieWedgeExplosions;
 
+- (void).cxx_destruct;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alignmentFrame;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alignmentFrameForProvidingGuidesInRoot;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsForStandardKnobs;
@@ -51,7 +52,6 @@
 - (id)chartDrawableInfo;
 - (id)chartInfo;
 - (id)chartLayout;
-- (id)childSearchTargets;
 - (id)computeInfoGeometryDuringResize;
 - (id)computeInfoGeometryFromPureLayoutGeometry:(id)arg1;
 - (id)computeLayoutGeometry;
@@ -74,6 +74,7 @@
 - (struct CGSize { double x1; double x2; })minimumSize;
 - (id)model;
 - (void)offsetGeometryBy:(struct CGPoint { double x1; double x2; })arg1;
+- (id)optimizedLabelRectsToPreventOverlapWithCheckTitle:(bool)arg1;
 - (void)p_addEdgeAlignmentGuidesForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 array:(id)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })p_addMultiDataControlToInlineWrapBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (double)p_approximateMultiDataControlUnscaledHeight;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSNumber : NSValue <AFSecurityDigestibleChunksProviding, ASParsingLeafNode, CKLParsedObject, CKRecordValue, CRCoding, CRDataType, CREquatable, HFPropertyListConvertible, LPCSSText, NSFetchRequestResult, PQLValuable, SiriCoreSQLiteValue, TSCHChartGridValue, TSDMixing>
+@interface NSNumber : NSValue <AFSecurityDigestibleChunksProviding, ASParsingLeafNode, ATXScoreLogSerializable, CKLParsedObject, CKRecordValue, CLSMetaPropertyValue, CRCoding, CRDataType, CREquatable, HFPropertyListConvertible, LPCSSText, NSFetchRequestResult, PQLValuable, SiriCoreSQLiteValue, TSCHChartGridValue, TSDMixing>
 
 @property (nonatomic, readonly) double CGFloatValue;
 @property (nonatomic, readonly) long long PHAssetExportRequestVariantValue;
@@ -104,10 +104,6 @@
 - (unsigned long long)unsignedLongValue;
 - (unsigned short)unsignedShortValue;
 
-// Image: /Developer/Library/PrivateFrameworks/DebugHierarchyFoundation.framework/DebugHierarchyFoundation
-
-- (id)dbgStringForType:(id)arg1 error:(id*)arg2;
-
 // Image: /System/Library/Frameworks/Contacts.framework/Contacts
 
 - (long long)_cn_reputationScoreValue;
@@ -157,6 +153,10 @@
 - (unsigned int)MIDIEntity;
 - (unsigned int)MIDIObject;
 
+// Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
+
+- (void)atx_writeToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
+
 // Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
 
 - (void)af_enumerateDigestibleChunksWithOptions:(unsigned long long)arg1 usingBlock:(id /* block */)arg2;
@@ -205,8 +205,8 @@
 
 // Image: /System/Library/PrivateFrameworks/CoreSpeech.framework/CoreSpeech
 
-- (id)initWithXPCObject:(id)arg1;
-- (id)xpcObject;
+- (id)_cs_initWithXPCObject:(id)arg1;
+- (id)_cs_xpcObject;
 
 // Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DAEAS.framework/DAEAS
 
@@ -247,6 +247,10 @@
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
 - (id)localizedString;
+
+// Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/IMSharedUtilities
+
+- (bool)isArchivable_im;
 
 // Image: /System/Library/PrivateFrameworks/LinkPresentation.framework/LinkPresentation
 

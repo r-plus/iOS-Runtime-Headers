@@ -6,10 +6,12 @@
     <PDCloudStoreDataSource> * _cloudStoreDataSource;
     PDCloudStoreManager * _cloudStoreManager;
     CKServerChangeToken * _currentServerChangeToken;
+    bool  _isProcessingCloudStorePushNotification;
     NSHashTable * _observers;
     NSObject<OS_dispatch_queue> * _proactiveFetchQueue;
     PDPushNotificationManager * _pushNotificationManager;
     NSSet * _pushTopics;
+    bool  _shouldProcessCloudStoreNotification;
     PKPaymentTransactionProcessor * _transactionProcessor;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
@@ -27,6 +29,7 @@
 - (void)_cloudStoreInitializationWithCompletion:(id /* block */)arg1;
 - (double)_nextTimeIntervalForBackgroundInterval:(unsigned long long)arg1;
 - (void)_performCloudStoreContainerInitalizationBackgroundActivityWithCurrentInterval:(unsigned long long)arg1 nextBackgroundInterval:(unsigned long long)arg2;
+- (void)_processCloudStorePushNotification;
 - (void)_recordAggdCloudStoreBackgroundContainerSetupResult:(bool)arg1 forCurrentBackgroundInterval:(unsigned long long)arg2;
 - (void)_registerForPushNotifications;
 - (void)_scheduleCloudStoreContainerSetupBackgroundActivityWithNextInterval:(unsigned long long)arg1;
@@ -53,7 +56,7 @@
 - (void)initalizeCloudStoreIfNecessaryWithCompletion:(id /* block */)arg1;
 - (void)initalizeCloudStoreIfNecessaryWithHandler:(id /* block */)arg1;
 - (void)invalidateCloudStore;
-- (void)performScheduledActivityWithIdentifier:(id)arg1 activityCriteria:(id)arg2 activityContext:(id)arg3;
+- (void)performScheduledActivityWithIdentifier:(id)arg1 activityCriteria:(id)arg2;
 - (id)pushNotificationTopics;
 - (void)registerObserver:(id)arg1;
 - (void)removeItemsWithRecordNames:(id)arg1 itemClass:(Class)arg2 completion:(id /* block */)arg3;

@@ -9,19 +9,21 @@
             struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<CGSize, CGSize>, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
-                } __first_; 
+                } __value_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<CGSize, std::__1::__value_type<CGSize, CGSize>, std::__1::less<CGSize>, true> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __pair3_; 
         } __tree_; 
     }  _sizeCache;
+    bool  _threadSafe;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (bool)getSize:(struct CGSize { double x1; double x2; }*)arg1 forItem:(id)arg2 targetSize:(struct CGSize { double x1; double x2; })arg3;
+- (id)initForAsynchroniousAccess:(bool)arg1;
 - (void)insertSize:(struct CGSize { double x1; double x2; })arg1 forTargetSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)invalidateCache;
 

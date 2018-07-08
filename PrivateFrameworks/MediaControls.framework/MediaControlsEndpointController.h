@@ -10,11 +10,12 @@
     <MediaControlsEndpointControllerDelegate> * _delegate;
     bool  _hasEverReceivedResponse;
     MPRequestResponseController * _requestController;
-    NSString * _routeName;
+    NSArray * _routeNames;
     MPAVRoutingController * _routingController;
     long long  _state;
 }
 
+@property (getter=isAirPlaying, nonatomic, readonly) bool airplaying;
 @property (nonatomic) bool allowsAutomaticResponseLoading;
 @property (getter=isAttemptingConnection, nonatomic) bool attemptingConnection;
 @property (getter=isAutomaticResponseLoading, nonatomic) bool automaticResponseLoading;
@@ -32,7 +33,7 @@
 @property (nonatomic, readonly) MPRequestResponseController *requestController;
 @property (nonatomic, readonly) MPCPlayerResponse *response;
 @property (nonatomic, retain) MPAVEndpointRoute *route;
-@property (nonatomic, readonly, copy) NSString *routeName;
+@property (nonatomic, readonly, copy) NSArray *routeNames;
 @property (nonatomic, retain) MPAVRoutingController *routingController;
 @property (getter=isRoutingToWireless, nonatomic, readonly) bool routingToWireless;
 @property (nonatomic) long long state;
@@ -40,6 +41,7 @@
 
 - (void).cxx_destruct;
 - (void)_connectIfNeeded;
+- (void)_connectionDidConnect:(id)arg1;
 - (void)_connectionDidInvalidate:(id)arg1;
 - (void)_connectionHasBecomeInvalid;
 - (void)_createRequestController;
@@ -66,10 +68,11 @@
 - (id)label;
 - (void)launchNowPlayingApp;
 - (id)playerPath;
+- (id)representedBundleID;
 - (id)requestController;
 - (id)response;
 - (id)route;
-- (id)routeName;
+- (id)routeNames;
 - (id)routingController;
 - (void)routingController:(id)arg1 pickedRouteDidChange:(id)arg2;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;

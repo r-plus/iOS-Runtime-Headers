@@ -40,6 +40,7 @@
     bool  _isMobile;
     NSString * _lastName;
     MKMapItem * _mapItem;
+    NSData * _mapItemBannerImageData;
     NSData * _mapItemImageData;
     NSString * _nickname;
     NSString * _normalizedFormOfID;
@@ -114,6 +115,7 @@
 @property (nonatomic, readonly) bool isVisiblyBlocked;
 @property (nonatomic, readonly, retain) NSString *lastName;
 @property (nonatomic, retain) MKMapItem *mapItem;
+@property (nonatomic, retain) NSData *mapItemBannerImageData;
 @property (nonatomic, retain) NSData *mapItemImageData;
 @property (nonatomic, readonly, retain) NSString *mobileDeviceName;
 @property (nonatomic, readonly, retain) NSString *name;
@@ -177,6 +179,8 @@
 - (void)_createPhoneNumberRefIfNeeded;
 - (id)_displayNameWithAbbreviation;
 - (void)_fetchBusinessInfo;
+- (void)_fetchMapItemBannerImageDataForMapItem:(id)arg1;
+- (void)_fetchMapItemImageDataForMapItem:(id)arg1;
 - (void)_filterStatusMessage;
 - (id)_formattedPhoneNumber;
 - (id)_handleInfo;
@@ -185,6 +189,9 @@
 - (void)_imPersonPictureChanged:(id)arg1;
 - (bool)_isChatSiblingOf:(id)arg1;
 - (bool)_isMyIDInList:(id)arg1;
+- (void)_mapItemBannerImageDataFetchedWithResponse:(id)arg1 statusCode:(long long)arg2 resultData:(id)arg3 remoteURLConnectionError:(id)arg4;
+- (void)_mapItemFetchedWithMapItems:(id)arg1 error:(id)arg2;
+- (void)_mapItemImageDataFetchedWithResponse:(id)arg1 statusCode:(long long)arg2 resultData:(id)arg3 remoteURLConnectionError:(id)arg4;
 - (id)_nameForComparisonPreferFirst:(bool)arg1;
 - (void)_postNotification:(id)arg1;
 - (void)_postNotificationName:(id)arg1 userInfo:(id)arg2;
@@ -292,6 +299,7 @@
 - (bool)isVisiblyBlocked;
 - (id)lastName;
 - (id)mapItem;
+- (id)mapItemBannerImageData;
 - (id)mapItemImageData;
 - (bool)matchesIMHandle:(id)arg1;
 - (id)mobileDeviceName;
@@ -345,6 +353,7 @@
 - (void)setIsMobile:(bool)arg1;
 - (void)setLocalNickname:(id)arg1;
 - (void)setMapItem:(id)arg1;
+- (void)setMapItemBannerImageData:(id)arg1;
 - (void)setMapItemImageData:(id)arg1;
 - (void)setOtherServiceIDs:(id)arg1;
 - (void)setPersonStatus:(unsigned long long)arg1;

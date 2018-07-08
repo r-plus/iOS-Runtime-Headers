@@ -17,7 +17,5 @@
 - (id)pageInfo;
 - (id)pageLayout;
 - (void)setHideKnobs:(bool)arg1;
-- (bool)shouldIgnoreSingleTapAtPoint:(struct CGPoint { double x1; double x2; })arg1 withRecognizer:(id)arg2;
-- (bool)shouldShowHyperlinkUI;
 
 @end

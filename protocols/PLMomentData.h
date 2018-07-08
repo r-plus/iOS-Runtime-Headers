@@ -7,6 +7,7 @@
 
 - (CLLocation *)approximateLocation;
 - (NSOrderedSet *)assets;
+- (NSArray *)batchedAssets;
 - (int)cachedCount;
 - (void)delete;
 - (NSDate *)endDate;

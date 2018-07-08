@@ -19,6 +19,7 @@
 + (id)sharedManager;
 
 - (void).cxx_destruct;
+- (void)_handleDeviceInfoDidChangeNotification:(id)arg1;
 - (id)_originWithMROriginRef:(void*)arg1;
 - (void)_updateActiveOrigin;
 - (void)_updateAvailableOrigins;
@@ -30,5 +31,6 @@
 - (id)deltaFromOrigins:(id)arg1;
 - (id)init;
 - (id)localOrigin;
+- (id)originWithUniqueIdentifier:(id)arg1;
 
 @end

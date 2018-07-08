@@ -27,13 +27,13 @@
 - (void)addDelegate:(id)arg1;
 - (void)dealloc;
 - (id)defaultExpressFelicaTransitPassIdentifier;
+- (id)defaultExpressTransitPassIdentifier;
 - (id)defaultPaymentApplicationForPassUniqueIdentifier:(id)arg1;
 - (id)defaultPaymentPassIdentifier;
 - (id)delegate;
 - (void)deletePaymentTransactionWithIdentifier:(id)arg1 forPassWithUniqueIdentifier:(id)arg2;
 - (id)expressPassInformationForMode:(id)arg1;
 - (id)expressPassesInformation;
-- (void)felicaStateWithPassUniqueIdentifier:(id)arg1 paymentApplication:(id)arg2 completion:(id /* block */)arg3;
 - (id)init;
 - (bool)isDeviceInRestrictedMode;
 - (bool)isPaymentHandoffDisabled;
@@ -41,7 +41,7 @@
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableTransactionService:(bool)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didRemoveTransactionWithIdentifier:(id)arg2;
-- (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithFelicaPassProperties:(id)arg2;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithTransitPassProperties:(id)arg2;
 - (void)removeDelegate:(id)arg1;
 - (id)secureElementIdentifier;
 - (bool)secureElementIsProductionSigned;
@@ -50,6 +50,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setExpressWithPassInformation:(id)arg1 credential:(id)arg2 completion:(id /* block */)arg3;
 - (void)setPaymentHandoffDisabled:(bool)arg1;
+- (bool)supportsExpressMode:(id)arg1;
 - (bool)supportsExpressModeForExpressPassType:(long long)arg1;
 - (bool)supportsInAppPaymentsForPass:(id)arg1;
 - (bool)supportsMessagesForPass:(id)arg1;
@@ -59,5 +60,6 @@
 - (id)transactionsAppLaunchTokenForPassWithUniqueIdentifier:(id)arg1;
 - (void)transactionsForPaymentPassWithUniqueIdentifier:(id)arg1 withTransactionSource:(unsigned long long)arg2 withBackingData:(unsigned long long)arg3 limit:(long long)arg4 completion:(id /* block */)arg5;
 - (void)transactionsForPaymentPassWithUniqueIdentifier:(id)arg1 withTransactionSource:(unsigned long long)arg2 withBackingData:(unsigned long long)arg3 startDate:(id)arg4 endDate:(id)arg5 limit:(long long)arg6 completion:(id /* block */)arg7;
+- (void)transitStateWithPassUniqueIdentifier:(id)arg1 paymentApplication:(id)arg2 completion:(id /* block */)arg3;
 
 @end

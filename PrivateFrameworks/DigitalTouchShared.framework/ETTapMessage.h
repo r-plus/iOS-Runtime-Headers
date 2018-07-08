@@ -10,7 +10,7 @@
         struct CGPoint {} *__begin_; 
         struct CGPoint {} *__end_; 
         struct __compressed_pair<CGPoint *, std::__1::allocator<CGPoint> > { 
-            struct CGPoint {} *__first_; 
+            struct CGPoint {} *__value_; 
         } __end_cap_; 
     }  _points;
     SKScene * _preVisualizeScene;
@@ -20,7 +20,7 @@
         double *__begin_; 
         double *__end_; 
         struct __compressed_pair<double *, std::__1::allocator<double> > { 
-            double *__first_; 
+            double *__value_; 
         } __end_cap_; 
     }  _times;
 }

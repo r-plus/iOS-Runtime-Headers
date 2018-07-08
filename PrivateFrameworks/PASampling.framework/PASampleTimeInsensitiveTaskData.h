@@ -89,6 +89,7 @@
 - (bool)correspondsToUniquePid:(unsigned long long)arg1 withName:(const char *)arg2 withLoadInfos:(const struct dyld_uuid_info_64 { unsigned long long x1; unsigned char x2[16]; }*)arg3 numLoadInfos:(unsigned int)arg4;
 - (id)debugDescription;
 - (bool)didExec;
+- (bool)gatherLoadInfoWithSampleTimeSeriesDataStore:(id)arg1;
 - (void)guessArchitectureGivenMachineArchitecture:(struct _CSArchitecture { int x1; int x2; })arg1;
 - (id)imageInfos;
 - (id)initWithKCDataStackshotDeltaTask:(const struct task_delta_snapshot_v2 { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; }*)arg1 withLoadInfos:(const struct dyld_uuid_info_64 { unsigned long long x1; unsigned char x2[16]; }*)arg2 numLoadInfos:(unsigned int)arg3 pid:(int)arg4 andMachineArchitecture:(struct _CSArchitecture { int x1; int x2; })arg5;

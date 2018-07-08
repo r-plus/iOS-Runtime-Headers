@@ -9,6 +9,5 @@
 - (bool)isOpaque;
 - (Class)layerClass;
 - (bool)masksToBounds;
-- (void)updateLayerGeometryFromLayout:(id)arg1;
 
 @end

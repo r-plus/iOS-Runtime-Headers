@@ -11,6 +11,12 @@
     IKJSArrayBufferStore * _arrayBufferStore;
     bool  _canAccessPendingQueue;
     <IKAppContextDelegate> * _delegate;
+    struct { 
+        bool respondsToHighlightViewForOneElement; 
+        bool respondsToHighlightViewsForManyElements; 
+        bool respondsToCancelHighlightForAppContext; 
+        bool respondsToDidInspectElementModeChanged; 
+    }  _delegateFlags;
     bool  _isValid;
     JSContext * _jsContext;
     IKJSFoundation * _jsFoundation;
@@ -116,6 +122,9 @@
 - (bool)highlightViewsForElementsWithIDs:(id)arg1 contentColor:(id)arg2 paddingColor:(id)arg3 borderColor:(id)arg4 marginColor:(id)arg5;
 - (id)initWithApplication:(id)arg1 mode:(unsigned long long)arg2 cache:(bool)arg3 delegate:(id)arg4;
 - (id)initWithApplication:(id)arg1 mode:(unsigned long long)arg2 delegate:(id)arg3;
+- (void)inspectElement:(id)arg1;
+- (void)inspectElementModeChanged:(bool)arg1;
+- (bool)isInspectElementModeEnabled;
 - (bool)isPrivileged;
 - (bool)isTrusted;
 - (bool)isValid;
@@ -131,6 +140,7 @@
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (id)pendingQueue;
 - (id)postEvaluationBlocks;
+- (id)registerLoaderWithIdentifier:(id)arg1;
 - (void)reload;
 - (id)reloadData;
 - (bool)remoteInspectionEnabled;
@@ -158,6 +168,7 @@
 - (void)start;
 - (void)stop;
 - (void)suspendWithOptions:(id)arg1;
+- (void)unregisterLoaderWithIdentifier:(id)arg1;
 - (bool)validateDOMDocument:(id)arg1 error:(id*)arg2;
 - (id)viewElementRegistry;
 - (id)webInspectorController;

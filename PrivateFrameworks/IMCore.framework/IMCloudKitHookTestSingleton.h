@@ -6,28 +6,29 @@
     long long  _isChangingEnabledState;
     bool  _isDisablingDevices;
     bool  _isStartingSync;
-    NSArray * _lastSyncErrors;
+    bool  _rampedIntoTruthZone;
+    unsigned long long  _syncControllerSyncState;
     NSDictionary * _syncStats;
+    long long  _syncType;
     IMCloudKitMockSyncState * _testState;
 }
 
-@property (nonatomic) unsigned long long controllerSyncState;
-@property (nonatomic) unsigned long long controllerSyncType;
+@property (nonatomic, retain) NSArray *IMCloudKitSyncErrors;
 @property (nonatomic) bool eligibleForTruthZone;
 @property (getter=isEnabled, nonatomic) bool enabled;
 @property (nonatomic) long long isChangingEnabledState;
 @property (nonatomic) bool isDisablingDevices;
 @property (nonatomic) bool isStartingSync;
 @property (nonatomic, retain) NSDate *lastSyncDate;
-@property (nonatomic, retain) NSArray *lastSyncErrors;
 @property (nonatomic) bool rampedIntoTruthZone;
+@property (nonatomic) unsigned long long syncControllerSyncState;
 @property (nonatomic, retain) NSDictionary *syncStats;
+@property (nonatomic) long long syncType;
 @property (getter=isSyncing, nonatomic) bool syncing;
 @property (nonatomic, retain) IMCloudKitMockSyncState *testState;
 
 - (void).cxx_destruct;
-- (unsigned long long)controllerSyncState;
-- (unsigned long long)controllerSyncType;
+- (id)IMCloudKitSyncErrors;
 - (bool)eligibleForTruthZone;
 - (void)fetchSyncStateStatistics;
 - (id)init;
@@ -39,25 +40,29 @@
 - (bool)isStartingSync;
 - (bool)isSyncing;
 - (id)lastSyncDate;
-- (id)lastSyncErrors;
 - (bool)rampedIntoTruthZone;
 - (void)sendSyncChangedEvent;
 - (void)setControllerSyncState:(unsigned long long)arg1;
-- (void)setControllerSyncType:(unsigned long long)arg1;
+- (void)setControllerSyncType:(long long)arg1;
 - (void)setEligibleForTruthZone:(bool)arg1;
 - (void)setEnabled:(bool)arg1;
+- (void)setIMCloudKitSyncErrors:(id)arg1;
 - (void)setIsChangingEnabledState:(long long)arg1;
 - (void)setIsDisablingDevices:(bool)arg1;
 - (void)setIsInExitState:(bool)arg1;
 - (void)setIsStartingSync:(bool)arg1;
 - (void)setLastSyncDate:(id)arg1;
-- (void)setLastSyncErrors:(id)arg1;
 - (void)setRampedIntoTruthZone:(bool)arg1;
+- (void)setSyncControllerSyncState:(unsigned long long)arg1;
 - (void)setSyncStats:(id)arg1;
+- (void)setSyncType:(long long)arg1;
 - (void)setSyncing:(bool)arg1;
 - (void)setTestState:(id)arg1;
+- (unsigned long long)syncControllerSyncState;
 - (id)syncStateDictionary;
 - (id)syncStats;
+- (long long)syncType;
 - (id)testState;
+- (void)updateCloudKitSyncingState;
 
 @end

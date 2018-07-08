@@ -24,9 +24,9 @@
 
 - (void).cxx_destruct;
 - (id)INIntentClassNames;
+- (bool)addClientConnectionIfAllowedForConnection:(id)arg1;
 - (int)addInteraction:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
 - (int)addUserActions:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
-- (bool)allowClientConnection:(id)arg1;
 - (id)bundleIDs;
 - (id)contentTypes;
 - (int)deleteAllInteractionsWithBundleID:(id)arg1 protectionClass:(id)arg2;

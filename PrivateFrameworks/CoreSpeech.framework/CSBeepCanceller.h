@@ -5,14 +5,14 @@
 @interface CSBeepCanceller : NSObject {
     struct unique_ptr<BatchBeepCanceller, std::__1::default_delete<BatchBeepCanceller> > { 
         struct __compressed_pair<BatchBeepCanceller *, std::__1::default_delete<BatchBeepCanceller> > { 
-            struct BatchBeepCanceller {} *__first_; 
+            struct BatchBeepCanceller {} *__value_; 
         } __ptr_; 
     }  _beepCanceller;
     struct vector<float, std::__1::allocator<float> > { 
         float *__begin_; 
         float *__end_; 
         struct __compressed_pair<float *, std::__1::allocator<float> > { 
-            float *__first_; 
+            float *__value_; 
         } __end_cap_; 
     }  _beepFloatVec;
     <CSBeepCancellerDelegate> * _delegate;
@@ -20,7 +20,7 @@
         float *__begin_; 
         float *__end_; 
         struct __compressed_pair<float *, std::__1::allocator<float> > { 
-            float *__first_; 
+            float *__value_; 
         } __end_cap_; 
     }  _floatBuffer;
     unsigned long long  _numTotalInputSamples;
@@ -30,7 +30,7 @@
         short *__begin_; 
         short *__end_; 
         struct __compressed_pair<short *, std::__1::allocator<short> > { 
-            short *__first_; 
+            short *__value_; 
         } __end_cap_; 
     }  _shortBuffer;
 }

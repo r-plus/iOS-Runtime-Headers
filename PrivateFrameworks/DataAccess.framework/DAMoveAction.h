@@ -12,6 +12,8 @@
 @property (nonatomic, retain) NSString *sourceContainerId;
 @property (nonatomic, retain) NSString *sourceServerId;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)destinationContainerId;
 - (void)encodeWithCoder:(id)arg1;

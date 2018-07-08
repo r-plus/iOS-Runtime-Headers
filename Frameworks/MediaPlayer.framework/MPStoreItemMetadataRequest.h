@@ -13,6 +13,7 @@
     unsigned long long  _reason;
     double  _retryDelay;
     bool  _shouldIgnoreCache;
+    bool  _shouldRequireCachedResults;
     NSNumber * _timeoutInterval;
     ICUserIdentity * _userIdentity;
     ICUserIdentityStore * _userIdentityStore;
@@ -31,6 +32,7 @@
 @property (nonatomic, copy) NSString *requestingBundleVersion;
 @property (nonatomic) double retryDelay;
 @property (nonatomic) bool shouldIgnoreCache;
+@property (nonatomic) bool shouldRequireCachedResults;
 @property (nonatomic, readonly, copy) ICStorePlatformRequest *storePlatformRequest;
 @property (nonatomic, copy) NSNumber *timeoutInterval;
 @property (nonatomic, copy) ICUserIdentity *userIdentity;
@@ -64,10 +66,12 @@
 - (void)setRequestingBundleVersion:(id)arg1;
 - (void)setRetryDelay:(double)arg1;
 - (void)setShouldIgnoreCache:(bool)arg1;
+- (void)setShouldRequireCachedResults:(bool)arg1;
 - (void)setTimeoutInterval:(id)arg1;
 - (void)setUserIdentity:(id)arg1;
 - (void)setUserIdentityStore:(id)arg1;
 - (bool)shouldIgnoreCache;
+- (bool)shouldRequireCachedResults;
 - (id)storePlatformRequest;
 - (id)timeoutInterval;
 - (id)userIdentity;

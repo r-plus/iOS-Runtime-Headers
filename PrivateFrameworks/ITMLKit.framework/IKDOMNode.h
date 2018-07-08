@@ -43,6 +43,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *textContent;
 
++ (long long)ITMLIDForITMLIDString:(id)arg1;
 + (id)ITMLIDStringforITMLID:(unsigned long long)arg1;
 + (id)_eventListenerMapKeyForType:(id)arg1 useCapture:(bool)arg2;
 + (void)handleNodeParentDidChange:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1;
@@ -87,6 +88,10 @@
 - (id)getFeature:(id)arg1 :(id)arg2;
 - (bool)hasChildNodes;
 - (id)identifier;
+- (id)ik_nodePath;
+- (id)ik_nodeWithId:(long long)arg1;
+- (id)ik_nodesWithIds:(id)arg1;
+- (id)ik_pathsForSearchQuery:(id)arg1 currentPath:(id)arg2;
 - (id)initWithAppContext:(id)arg1 xmlNode:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg2;
 - (id)insertBefore:(id)arg1 :(id)arg2;
 - (bool)isEqualNode:(id)arg1;

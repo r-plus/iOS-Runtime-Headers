@@ -4,10 +4,7 @@
 
 @interface VMUVMRegionTracker : NSObject <NSSecureCoding> {
     NSMutableArray * _regionInfoArray;
-    struct _CSTypeRef { 
-        unsigned long long _opaque_1; 
-        unsigned long long _opaque_2; 
-    }  _symbolicator;
+    <VMUStackLogReader> * _stackLogReader;
     unsigned int  _task;
 }
 
@@ -20,7 +17,6 @@
 - (void).cxx_destruct;
 - (unsigned long long)_regionIndexForAddress:(unsigned long long)arg1;
 - (void)convertStackIDs:(id /* block */)arg1;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)handleStackLogType:(unsigned int)arg1 address:(unsigned long long)arg2 size:(unsigned long long)arg3 stackID:(unsigned long long)arg4;
 - (id)initWithCoder:(id)arg1;

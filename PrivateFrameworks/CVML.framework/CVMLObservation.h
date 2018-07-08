@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CVML.framework/CVML
  */
 
-@interface CVMLObservation : NSObject <NSCoding> {
+@interface CVMLObservation : NSObject <NSSecureCoding> {
     float  _confidence;
 }
 
 @property float confidence;
+
++ (bool)supportsSecureCoding;
 
 - (float)confidence;
 - (void)encodeWithCoder:(id)arg1;

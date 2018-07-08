@@ -7,8 +7,10 @@
     bool  _bypassPCSEncryption;
     bool  _captureResponseHTTPHeaders;
     unsigned int  _clientSDKVersion;
+    NSString * _containerEncryptionServiceName;
     CKContainerID * _containerID;
     NSDictionary * _fakeEntitlements;
+    bool  _forceEnableReadOnlyManatee;
     bool  _holdAllOperations;
     bool  _masqueradeAsThirdPartyApp;
     bool  _returnPCSMetadata;
@@ -22,8 +24,10 @@
 @property (nonatomic) bool bypassPCSEncryption;
 @property (nonatomic) bool captureResponseHTTPHeaders;
 @property (nonatomic) unsigned int clientSDKVersion;
+@property (nonatomic, retain) NSString *containerEncryptionServiceName;
 @property (nonatomic, retain) CKContainerID *containerID;
 @property (nonatomic, retain) NSDictionary *fakeEntitlements;
+@property (nonatomic) bool forceEnableReadOnlyManatee;
 @property (nonatomic) bool holdAllOperations;
 @property (nonatomic) bool masqueradeAsThirdPartyApp;
 @property (nonatomic) bool returnPCSMetadata;
@@ -39,9 +43,11 @@
 - (bool)bypassPCSEncryption;
 - (bool)captureResponseHTTPHeaders;
 - (unsigned int)clientSDKVersion;
+- (id)containerEncryptionServiceName;
 - (id)containerID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fakeEntitlements;
+- (bool)forceEnableReadOnlyManatee;
 - (bool)holdAllOperations;
 - (id)initWithCoder:(id)arg1;
 - (bool)masqueradeAsThirdPartyApp;
@@ -50,8 +56,10 @@
 - (void)setBypassPCSEncryption:(bool)arg1;
 - (void)setCaptureResponseHTTPHeaders:(bool)arg1;
 - (void)setClientSDKVersion:(unsigned int)arg1;
+- (void)setContainerEncryptionServiceName:(id)arg1;
 - (void)setContainerID:(id)arg1;
 - (void)setFakeEntitlements:(id)arg1;
+- (void)setForceEnableReadOnlyManatee:(bool)arg1;
 - (void)setHoldAllOperations:(bool)arg1;
 - (void)setMasqueradeAsThirdPartyApp:(bool)arg1;
 - (void)setReturnPCSMetadata:(bool)arg1;

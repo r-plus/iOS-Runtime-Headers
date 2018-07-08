@@ -23,7 +23,7 @@
 - (float)p_interSetDepthGapProperty;
 - (float)p_sageInterSetDepthGapProperty;
 - (void)reset;
-- (void)resetWithEnumerator:(id)arg1 layoutSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; long long x7; unsigned long long x8; })arg2;
+- (void)resetWithEnumerator:(id)arg1 layoutSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; long long x8; unsigned long long x9; })arg2;
 - (long long)seriesCount;
 - (struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; })seriesSize;
 - (float)shadowCameraDepthLimitAdjustmentFactor;

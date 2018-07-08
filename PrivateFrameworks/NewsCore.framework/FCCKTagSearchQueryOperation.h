@@ -17,7 +17,7 @@
     NSString * _tagTypeString;
 }
 
-@property (nonatomic) CKQueryCursor *cursor;
+@property (nonatomic, retain) CKQueryCursor *cursor;
 @property (nonatomic, retain) FCCKContentDatabase *database;
 @property (nonatomic, copy) NSArray *desiredKeys;
 @property (nonatomic, copy) NSString *locale;
@@ -26,7 +26,7 @@
 @property (nonatomic, retain) NSError *resultError;
 @property (nonatomic, retain) NSArray *resultRecords;
 @property (nonatomic) unsigned long long resultsLimit;
-@property (nonatomic) NSString *searchString;
+@property (nonatomic, copy) NSString *searchString;
 @property (nonatomic) long long tagType;
 @property (nonatomic, retain) NSString *tagTypeString;
 

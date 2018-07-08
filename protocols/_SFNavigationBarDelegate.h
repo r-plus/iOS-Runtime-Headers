@@ -6,7 +6,6 @@
 @required
 
 - (void)compressedNavigationBarWasTapped:(_SFNavigationBar *)arg1;
-- (bool)navigationBar:(_SFNavigationBar *)arg1 shouldPermitShareOperation:(long long)arg2;
 - (void)navigationBarBackdropDidApplySettings:(_SFNavigationBar *)arg1;
 - (void)navigationBarCancelButtonWasTapped:(_SFNavigationBar *)arg1;
 - (void)navigationBarReaderAppearanceButtonWasTapped:(_SFNavigationBar *)arg1;

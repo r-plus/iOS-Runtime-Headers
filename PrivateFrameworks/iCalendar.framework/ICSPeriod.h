@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@interface ICSPeriod : NSObject <NSCoding> {
+@interface ICSPeriod : NSObject <NSSecureCoding> {
     ICSDuration * _duration;
     ICSDateValue * _end;
     ICSDateValue * _start;
 }
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;

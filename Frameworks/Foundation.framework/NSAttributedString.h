@@ -249,10 +249,10 @@
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_scrcRangeOfFormatSpecifierWithIndex:(unsigned long long)arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_scrcRangeOfVanillaFormatSpecifier;
 - (bool)scrcContainsPause;
+- (id)scrcSplitBasedOnAttribute:(id)arg1 limit:(long long)arg2;
 - (id)scrcStringByAddingAttribute:(id)arg1 value:(id)arg2;
 - (id)scrcStringByAppendingAttributedString:(id)arg1;
 - (id)scrcStringByReplacingOccurrencesOfString:(id)arg1 withString:(id)arg2;
-- (id)splitBasedOnAttribute:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/ScreenReaderOutput.framework/ScreenReaderOutput
 

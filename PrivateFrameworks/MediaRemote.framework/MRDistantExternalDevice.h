@@ -9,12 +9,14 @@
     NSObject<OS_dispatch_queue> * _connectionStateCallbackQueue;
     id /* block */  _customDataCallback;
     NSObject<OS_dispatch_queue> * _customDataCallbackQueue;
-    void * _customOrigin;
+    _MROriginProtobuf * _customOrigin;
     unsigned long long  _deviceNotifications;
     MRAVDistantExternalDeviceMetadata * _externalDeviceMetadata;
     NSXPCConnection * _hostedExternalDeviceConnection;
     id /* block */  _nameCallback;
     NSObject<OS_dispatch_queue> * _nameCallbackQueue;
+    id /* block */  _outputContextCallback;
+    NSObject<OS_dispatch_queue> * _outputContextCallbackQueue;
     NSObject<OS_dispatch_queue> * _serialQueue;
     id /* block */  _volumeCallback;
     NSObject<OS_dispatch_queue> * _volumeCallbackQueue;
@@ -29,6 +31,8 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) id /* block */ nameCallback;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *nameCallbackQueue;
+@property (nonatomic, copy) id /* block */ outputContextCallback;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *outputContextCallbackQueue;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) id /* block */ volumeCallback;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *volumeCallbackQueue;
@@ -37,6 +41,8 @@
 + (id)clientInterface;
 + (id)serviceInterface;
 
+- (void).cxx_destruct;
+- (void)_handleDeviceInfoDidChange:(id)arg1;
 - (id)_hostedExternalDeviceConnection;
 - (id)_remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (void)_synchronousLoadExternalDeviceMetadataIfNecessary;
@@ -48,14 +54,15 @@
 - (id)connectionStateCallbackQueue;
 - (id /* block */)customDataCallback;
 - (id)customDataCallbackQueue;
-- (void*)customOrigin;
+- (id)customOrigin;
 - (void)dealloc;
-- (void*)deviceInfo;
+- (id)deviceInfo;
 - (void)disconnect:(id)arg1;
 - (id)hostName;
 - (void)hostedExternalDeviceConnectionStateDidChange:(unsigned int)arg1 withError:(id)arg2;
 - (void)hostedExternalDeviceDidReceiveCustomData:(id)arg1 withName:(id)arg2;
 - (void)hostedExternalDeviceNameDidChange:(id)arg1;
+- (void)hostedExternalDeviceOutputContextDidChangeWithInfo:(struct { unsigned int x1; bool x2; unsigned int x3[2]; })arg1;
 - (void)hostedExternalDeviceVolumeDidChange:(float)arg1 forEndpointWithIdentifier:(id)arg2 forOutputDeviceWithIdentifier:(id)arg3;
 - (id)initWithExternalDeviceListenerEndpoint:(id)arg1;
 - (bool)isPaired;
@@ -65,6 +72,8 @@
 - (id)name;
 - (id /* block */)nameCallback;
 - (id)nameCallbackQueue;
+- (id /* block */)outputContextCallback;
+- (id)outputContextCallbackQueue;
 - (void)outputDeviceVolume:(id)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
 - (void)ping:(double)arg1 callback:(id /* block */)arg2 withQueue:(id)arg3;
 - (long long)port;
@@ -78,6 +87,9 @@
 - (void)setNameCallback:(id /* block */)arg1;
 - (void)setNameCallback:(id /* block */)arg1 withQueue:(id)arg2;
 - (void)setNameCallbackQueue:(id)arg1;
+- (void)setOutputContextCallback:(id /* block */)arg1;
+- (void)setOutputContextCallback:(id /* block */)arg1 withQueue:(id)arg2;
+- (void)setOutputContextCallbackQueue:(id)arg1;
 - (void)setOutputDeviceVolume:(float)arg1 outputDevice:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
 - (void)setPairingAllowedCallback:(id /* block */)arg1 withQueue:(id)arg2;
 - (void)setPairingCallback:(id /* block */)arg1 withQueue:(id)arg2;
@@ -90,6 +102,7 @@
 - (void)setWantsNowPlayingNotifications:(bool)arg1;
 - (void)setWantsVolumeNotifications:(bool)arg1;
 - (id)supportedMessages;
+- (struct { unsigned int x1; bool x2; unsigned int x3[2]; })systemMusicContextInfo;
 - (void)unpair;
 - (id /* block */)volumeCallback;
 - (id)volumeCallbackQueue;

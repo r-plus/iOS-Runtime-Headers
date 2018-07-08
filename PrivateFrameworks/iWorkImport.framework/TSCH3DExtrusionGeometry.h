@@ -10,7 +10,7 @@
         struct tvec2<float> {} *__begin_; 
         struct tvec2<float> {} *__end_; 
         struct __compressed_pair<glm::detail::tvec2<float> *, std::__1::allocator<glm::detail::tvec2<float> > > { 
-            struct tvec2<float> {} *__first_; 
+            struct tvec2<float> {} *__value_; 
         } __end_cap_; 
     }  mCrossSection;
     float  mCrossSectionCreaseAngle;
@@ -38,14 +38,14 @@
         struct tvec2<float> {} *__begin_; 
         struct tvec2<float> {} *__end_; 
         struct __compressed_pair<glm::detail::tvec2<float> *, std::__1::allocator<glm::detail::tvec2<float> > > { 
-            struct tvec2<float> {} *__first_; 
+            struct tvec2<float> {} *__value_; 
         } __end_cap_; 
     }  mScale;
     struct vector<glm::detail::tvec3<float>, std::__1::allocator<glm::detail::tvec3<float> > > { 
         struct tvec3<float> {} *__begin_; 
         struct tvec3<float> {} *__end_; 
         struct __compressed_pair<glm::detail::tvec3<float> *, std::__1::allocator<glm::detail::tvec3<float> > > { 
-            struct tvec3<float> {} *__first_; 
+            struct tvec3<float> {} *__value_; 
         } __end_cap_; 
     }  mSpine;
     float  mSpineCreaseAngle;

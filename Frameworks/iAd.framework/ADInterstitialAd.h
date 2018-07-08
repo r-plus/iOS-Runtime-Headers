@@ -20,6 +20,7 @@
     long long  _options;
     ADInterstitialAdPresentationViewController * _presentationViewController;
     bool  _reUsed;
+    bool  _requestCalledbackError;
     int  _screenfuls;
     int  _slotPosition;
 }
@@ -47,6 +48,7 @@
 @property (nonatomic, retain) ADInterstitialAdPresentationViewController *presentationViewController;
 @property (nonatomic, readonly) UIViewController *presentingViewController;
 @property (nonatomic) bool reUsed;
+@property (nonatomic) bool requestCalledbackError;
 @property (nonatomic, readonly) bool requiresMRAID;
 @property (nonatomic) int screenfuls;
 @property (nonatomic) int slotPosition;
@@ -60,6 +62,13 @@
 - (id)adResponseId;
 - (id)adSpace;
 - (id)adSpaceView;
+- (void)adlibManagedVideoAdDidCompletePlay:(int)arg1;
+- (void)adlibManagedVideoAdDidImpress;
+- (void)adlibManagedVideoAdDidPausePlay;
+- (void)adlibManagedVideoAdDidResumePlay;
+- (void)adlibManagedVideoAdDidTapForMoreInfo;
+- (void)adlibManagedVideoAdDidTapVideo;
+- (void)adlibManagedVideoAdDidToggleToMute:(bool)arg1;
 - (void)bannerTappedAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)bannerTappedAtPoint:(struct CGPoint { double x1; double x2; })arg1 withMRAIDAction:(id)arg2;
 - (bool)canLoadMoreThanOnce;
@@ -68,6 +77,7 @@
 - (id)context;
 - (void)creativeControllerViewWasTappedAtPoint:(struct CGPoint { double x1; double x2; })arg1 withMRAIDAction:(id)arg2;
 - (int)creativeType;
+- (id)currentAdIdentifier;
 - (void)dealloc;
 - (id)delegate;
 - (bool)dimmingEnabled;
@@ -84,6 +94,7 @@
 - (bool)isActionInProgress;
 - (bool)isLoaded;
 - (long long)lastErrorCode;
+- (void)missedOpportunityToFill;
 - (long long)options;
 - (void)pauseBannerMedia;
 - (void)presentFromViewController:(id)arg1;
@@ -92,6 +103,7 @@
 - (id)presentingViewController;
 - (void)privacyButtonWasTapped;
 - (bool)reUsed;
+- (bool)requestCalledbackError;
 - (bool)requiresMRAID;
 - (void)resumeBannerMedia;
 - (int)screenfuls;
@@ -118,6 +130,7 @@
 - (void)setLoaded:(bool)arg1;
 - (void)setPresentationViewController:(id)arg1;
 - (void)setReUsed:(bool)arg1;
+- (void)setRequestCalledbackError:(bool)arg1;
 - (void)setScreenfuls:(int)arg1;
 - (void)setSection:(id)arg1;
 - (void)setServerURL:(id)arg1;

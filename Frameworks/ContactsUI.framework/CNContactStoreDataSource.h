@@ -8,8 +8,19 @@
     CNContactStoreFilter * _filter;
     NSArray * _keysToFetch;
     bool  _loadingSnapshot;
+    CNManagedConfiguration * _managedConfiguration;
     CNContact * _meContact;
     NSObject<OS_dispatch_queue> * _queue;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _screenFrame;
     NSDictionary * _sectionHeadersDictionary;
     CNContactStore * _store;
     CNContactFormatter * contactFormatter;
@@ -36,7 +47,9 @@
 @property (nonatomic, retain) NSArray *keysToFetch;
 @property (nonatomic, readonly) NSDictionary *localizedSectionHeaders;
 @property (nonatomic, readonly) NSDictionary *localizedSectionIndices;
+@property (nonatomic, retain) CNManagedConfiguration *managedConfiguration;
 @property (nonatomic, copy) CNContact *meContact;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } screenFrame;
 @property (nonatomic, readonly) NSDictionary *sectionHeadersDictionary;
 @property (nonatomic, readonly) NSArray *sections;
 @property (nonatomic, readonly) bool shouldReturnToAccountsAndGroupsViewAfterSearchIsCanceled;
@@ -75,6 +88,7 @@
 - (id)keysToFetch;
 - (id)localizedSectionHeaders;
 - (id)localizedSectionIndices;
+- (id)managedConfiguration;
 - (id)meContact;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)preferredForNameMeContactIdentifier;
@@ -83,6 +97,7 @@
 - (void)reloadAsynchronously;
 - (void)reset;
 - (void)resetPreferredForNameMeContact;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })screenFrame;
 - (id)sectionHeadersDictionary;
 - (id)sections;
 - (void)setContactFormatter:(id)arg1;
@@ -91,6 +106,7 @@
 - (void)setFetchUnified:(bool)arg1;
 - (void)setFilter:(id)arg1;
 - (void)setKeysToFetch:(id)arg1;
+- (void)setManagedConfiguration:(id)arg1;
 - (void)setMeContact:(id)arg1;
 - (bool)setMeContact:(id)arg1 error:(id*)arg2;
 - (void)setStore:(id)arg1;

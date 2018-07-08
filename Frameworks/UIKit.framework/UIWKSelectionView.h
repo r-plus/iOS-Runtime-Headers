@@ -14,8 +14,6 @@
     bool  _usingGesture;
 }
 
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)blockSelectionChangedWithTouch:(long long)arg1 withFlags:(long long)arg2 growThreshold:(double)arg3 shrinkThreshold:(double)arg4;
 - (void)clearSelection;
 - (void)endSelectionCreationWithPoint:(struct CGPoint { double x1; double x2; })arg1;

@@ -15,7 +15,7 @@
     long long  _networkType;
     NSMutableSet * _networksOfInterest;
     NWNetworkOfInterestManager * _noiManager;
-    NSHashTable * _observers;
+    NSMapTable * _observers;
     unsigned int  _powerNotificationRef;
     void * _symptomPresentationFeedDyLibHandle;
     NSString * _telephonyOperatorName;
@@ -42,9 +42,9 @@
 - (void)_handleApplicationDidEnterForegroundNotification:(id)arg1;
 - (void)_handleCTServerConnectionNotification:(id)arg1 userInfo:(id)arg2;
 - (long long)_networkTypeFromTelephonyStatusIndicator:(id)arg1;
-- (void)_updateNetworkReachabilityAndNotifyObservers:(bool)arg1;
+- (void)_onQueue_updateNetworkReachabilityAndNotifyObservers:(bool)arg1;
+- (void)_onQueue_updateTelephonyStateAndNotifyObservers:(bool)arg1;
 - (void)_updatePowerStateWithService:(unsigned int)arg1 shouldNotifyObservers:(bool)arg2;
-- (void)_updateTelephonyStateAndNotifyObservers:(bool)arg1;
 - (void)addObserver:(id)arg1;
 - (void)dealloc;
 - (void)didStartTrackingNOI:(id)arg1;

@@ -4,10 +4,13 @@
 
 @interface CKShareSheetChatController : CKComposeChatController {
     bool  _alreadySetUp;
+    unsigned long long  _interactionSignPost;
 }
 
 @property (nonatomic) bool alreadySetUp;
 
+- (void)_beginInteractionSignPost;
+- (void)_endInteractionSignPost;
 - (bool)alreadySetUp;
 - (void)keyboardDidChangeFrame:(id)arg1;
 - (void)sendComposition:(id)arg1;

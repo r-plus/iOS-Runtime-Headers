@@ -6,6 +6,10 @@
     NSString * _appWakeUUID;
     bool  _appWasLaunchedForBackgroundSessionSeen;
     NSURL * _assetDownloadDirectory;
+    struct SmartBlockWithArgs<bool> { 
+        struct BlockHolderVar<bool> {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    }  _backgroundSessionDidFinishAppWakeBlock;
     bool  _companionAvailable;
     NSURL * _downloadDirectory;
     unsigned long long  _identSeed;
@@ -16,6 +20,7 @@
     bool  _isPrivileged;
     int  _notifyToken;
     <NDBackgroundSessionProtocol> * _remoteSession;
+    NSMutableSet * _taskIDsGettingAuthHeaders;
     NSMutableArray * _taskIDsToFailOnReconnection;
     NSMutableDictionary * _tasks;
     bool  _tryToReconnect;
@@ -30,6 +35,8 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (id)AVAggregateAssetDownloadTaskForURLAsset:(id)arg1 mediaSelections:(id)arg2 assetTitle:(id)arg3 assetArtworkData:(id)arg4 options:(id)arg5;
 - (id)AVAssetDownloadTaskForURLAsset:(id)arg1 assetTitle:(id)arg2 assetArtworkData:(id)arg3 options:(id)arg4;
 - (id)AVAssetDownloadTaskForURLAsset:(id)arg1 destinationURL:(id)arg2 options:(id)arg3;

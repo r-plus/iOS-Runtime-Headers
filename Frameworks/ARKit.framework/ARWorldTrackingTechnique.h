@@ -3,16 +3,45 @@
  */
 
 @interface ARWorldTrackingTechnique : ARTechnique {
-    ARPointCloud * _cachedFeaturePointCloud;
-    ARWorldTrackingData * _cachedTrackingData;
+    bool  _allowPoseGraphUpdates;
+    ARWorldTrackingReferenceAnchorData * _anchorData;
+    ARWorldTrackingPoseData * _cachedTrackingData;
+    struct { 
+        /* Warning: Unrecognized filer type: ']' using 'void*' */ void*columns[3]; 
+    }  _customIntrinsics;
+    unsigned long long  _customLensType;
     NSString * _deviceModel;
-    ARTrackingErrorData * _errorData;
-    double  _lastErrorLogTimestamp;
-    ARWorldTrackingData * _lastPointCloudTrackingData;
+    bool  _didClearMap;
+    bool  _didRelocalize;
+    ARWorldTrackingErrorData * _errorData;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _imageResolution;
+    struct map<CV3DVIOError, double, std::__1::less<CV3DVIOError>, std::__1::allocator<std::__1::pair<const CV3DVIOError, double> > > { 
+        struct __tree<std::__1::__value_type<CV3DVIOError, double>, std::__1::__map_value_compare<CV3DVIOError, std::__1::__value_type<CV3DVIOError, double>, std::__1::less<CV3DVIOError>, true>, std::__1::allocator<std::__1::__value_type<CV3DVIOError, double> > > { 
+            struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *__begin_node_; 
+            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<CV3DVIOError, double>, void *> > > { 
+                struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
+                    struct __tree_node_base<void *> {} *__left_; 
+                } __value_; 
+            } __pair1_; 
+            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<CV3DVIOError, std::__1::__value_type<CV3DVIOError, double>, std::__1::less<CV3DVIOError>, true> > { 
+                unsigned long long __value_; 
+            } __pair3_; 
+        } __tree_; 
+    }  _lastErrorLogTimestamp;
+    double  _lastRelocalizationTimestamp;
     long long  _latencyFrameCount;
     NSMutableArray * _latestVisionFeaturePointDatas;
+    double  _minVergenceAngleCosine;
+    void _radialDistortion;
+    long long  _reinitializationAttempts;
+    long long  _reinitializationAttemptsAtInitialization;
     bool  _relocalizationEnabled;
+    bool  _relocalizingAfterSensorDataDrop;
     NSObject<OS_dispatch_semaphore> * _resultSemaphore;
+    void _tangentialDistortion;
     bool  _useFixedIntrinsics;
     struct CV3DVIOContext { } * _vioHandle;
     unsigned long long  _vioState;
@@ -20,33 +49,44 @@
 }
 
 @property (nonatomic, readonly) NSString *deviceModel;
+@property (nonatomic) struct CGSize { double x1; double x2; } imageResolution;
 @property (nonatomic, readonly) long long latencyFrameCount;
 @property (nonatomic) bool relocalizationEnabled;
 
 + (bool)isSupported;
++ (bool)supports1080p;
 
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_addIntrinsicsToDictionary:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[3]; })arg1 dictionary:(struct __CFDictionary { }*)arg2;
 - (void)_didFailWithError:(id)arg1;
+- (id)_featurePointsForTrackingData:(id)arg1 timestamp:(double)arg2;
 - (unsigned long long)_initializeVIO;
 - (int)_parseAndAddCalibrationParameters:(id)arg1 options:(id)arg2;
 - (void)_pushPointCloud:(id)arg1 forTimestamp:(double)arg2;
 - (void)_pushWorldTrackingData:(id)arg1;
 - (void)_reportError:(double)arg1 error:(int)arg2;
-- (double)_syncPointCloudToTrackingData:(id)arg1 timestamp:(double)arg2;
-- (void)_updatePointCloud:(double)arg1 pointCloud:(struct CV3DPoint { double x1; double x2; double x3; unsigned long long x4; }*)arg2 size:(long long)arg3;
+- (void)_reportSignificantEvent:(int)arg1 data:(id)arg2;
+- (void)_updatePointCloud:(double)arg1 pointCloud:(struct CV3DPoint { double x1; double x2; double x3; unsigned long long x4; double x5; }*)arg2 size:(long long)arg3;
 - (void)_updatePose:(double)arg1 frame:(struct __CVBuffer { }*)arg2 rotationMatrix:(const double*)arg3 translationVector:(const double*)arg4 trackingState:(int)arg5 stateDetails:(id)arg6;
+- (void)addReferenceAnchors:(id)arg1;
 - (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })cameraTransformAtTimestamp:(double)arg1;
+- (void)clearMap;
 - (void)dealloc;
 - (id)deviceModel;
+- (struct CGSize { double x1; double x2; })imageResolution;
 - (id)init;
 - (id)initWithDeviceModel:(id)arg1 latencyFrameCount:(long long)arg2;
 - (bool)isEqual:(id)arg1;
 - (long long)latencyFrameCount;
+- (id)predictedResultDataAtTimestamp:(double)arg1 context:(id)arg2;
 - (id)processData:(id)arg1;
 - (id)processResultData:(id)arg1 timestamp:(double)arg2 context:(id)arg3;
 - (bool)relocalizationEnabled;
+- (void)removeReferenceAnchors:(id)arg1;
 - (unsigned long long)requiredSensorDataTypes;
+- (id)resultDataClasses;
+- (void)setImageResolution:(struct CGSize { double x1; double x2; })arg1;
 - (void)setRelocalizationEnabled:(bool)arg1;
 
 @end

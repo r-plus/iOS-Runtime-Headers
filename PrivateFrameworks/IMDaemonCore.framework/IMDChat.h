@@ -3,10 +3,10 @@
  */
 
 @interface IMDChat : NSObject {
-    NSData * _CKRecordSystemPropertiesBlob;
     NSString * _accountID;
     NSString * _chatIdentifier;
     NSMutableDictionary * _chatInfo;
+    NSString * _cloudKitRecordID;
     long long  _cloudKitSyncState;
     bool  _createEngramGroupOnMessageSend;
     NSString * _displayName;
@@ -30,16 +30,19 @@
     long long  _rowID;
     NSString * _serverChangeToken;
     NSString * _serviceName;
+    NSString * _srCloudKitRecordID;
+    long long  _srCloudKitSyncState;
+    NSString * _srServerChangeToken;
     long long  _state;
     unsigned char  _style;
     unsigned long long  _unreadCount;
 }
 
-@property (nonatomic, copy) NSData *CKRecordSystemPropertiesBlob;
 @property (readonly, retain) IMDAccount *account;
 @property (copy) NSString *accountID;
 @property (copy) NSString *chatIdentifier;
 @property (readonly, retain) NSDictionary *chatProperties;
+@property (copy) NSString *cloudKitRecordID;
 @property long long cloudKitSyncState;
 @property bool createEngramGroupOnMessageSend;
 @property (readonly, retain) NSDictionary *dictionaryRepresentation;
@@ -67,17 +70,22 @@
 @property (readonly, retain) IMDService *service;
 @property (copy) NSString *serviceName;
 @property (readonly, retain) IMDServiceSession *serviceSession;
+@property (copy) NSString *srCloudKitRecordID;
+@property long long srCloudKitSyncState;
+@property (copy) NSString *srServerChangeToken;
 @property long long state;
 @property unsigned char style;
 @property (setter=_setUnreadCount:) unsigned long long unreadCount;
 
 + (id)_recordType;
 
-- (id)CKRecordSystemPropertiesBlob;
 - (id)_ckUniqueID;
-- (id)_copyCKRecordFromExistingCKMetadata;
+- (id)_copyCKRecordFromExistingCKMetadataIsUsingStringRay:(bool)arg1 zoneID:(id)arg2 salt:(id)arg3;
 - (id)_personIdentity;
+- (id)_recordIDUsingName:(id)arg1 zoneID:(id)arg2;
 - (id)_recordIDUsingSalt:(id)arg1 zoneID:(id)arg2;
+- (id)_recordNameForRecordChangeTag:(id)arg1 ckRecordID:(id)arg2 salt:(id)arg3;
+- (id)_recordNameUsingSalt:(id)arg1;
 - (void)_setRowID:(long long)arg1;
 - (void)_setUnreadCount:(unsigned long long)arg1;
 - (void)_updateCachedParticipants;
@@ -86,14 +94,15 @@
 - (id)accountID;
 - (void)addParticipant:(id)arg1;
 - (void)addParticipants:(id)arg1;
-- (bool)applyChangesUsingCKRecord:(id)arg1;
+- (bool)applyChangesUsingCKRecord:(id)arg1 isUsingStingRay:(bool)arg2;
 - (id)chatIdentifier;
 - (id)chatProperties;
 - (id)cloudKitChatID;
 - (id)cloudKitDebugDescription;
+- (id)cloudKitRecordID;
 - (long long)cloudKitSyncState;
 - (long long)compareBySequenceNumberAndDateDescending:(id)arg1;
-- (id)copyCKRecordRepresentationWithZoneID:(id)arg1 salt:(id)arg2;
+- (id)copyCKRecordRepresentationWithZoneID:(id)arg1 salt:(id)arg2 isUsingStingRay:(bool)arg3;
 - (id)copyDictionaryRepresentation:(bool)arg1;
 - (bool)createEngramGroupOnMessageSend;
 - (void)dealloc;
@@ -108,8 +117,8 @@
 - (id)groupID;
 - (id)guid;
 - (bool)hasHadSuccessfulQuery;
-- (id)initWithAccountID:(id)arg1 service:(id)arg2 guid:(id)arg3 groupID:(id)arg4 chatIdentifier:(id)arg5 participants:(id)arg6 roomName:(id)arg7 displayName:(id)arg8 lastAddressedLocalHandle:(id)arg9 properties:(id)arg10 state:(long long)arg11 style:(unsigned char)arg12 isFiltered:(bool)arg13 hasHadSuccessfulQuery:(bool)arg14 engramID:(id)arg15 serverChangeToken:(id)arg16 cloudKitSyncState:(long long)arg17 originalGroupID:(id)arg18 lastReadMessageTimeStamp:(long long)arg19 CKRecordSystemPropertiesBlob:(id)arg20 lastMessageTimeStampOnLoad:(long long)arg21;
-- (id)initWithCKRecord:(id)arg1;
+- (id)initWithAccountID:(id)arg1 service:(id)arg2 guid:(id)arg3 groupID:(id)arg4 chatIdentifier:(id)arg5 participants:(id)arg6 roomName:(id)arg7 displayName:(id)arg8 lastAddressedLocalHandle:(id)arg9 properties:(id)arg10 state:(long long)arg11 style:(unsigned char)arg12 isFiltered:(bool)arg13 hasHadSuccessfulQuery:(bool)arg14 engramID:(id)arg15 serverChangeToken:(id)arg16 cloudKitSyncState:(long long)arg17 originalGroupID:(id)arg18 lastReadMessageTimeStamp:(long long)arg19 lastMessageTimeStampOnLoad:(long long)arg20 srServerChangeToken:(id)arg21 srCloudKitSyncState:(long long)arg22 cloudKitRecordID:(id)arg23 srCloudKitRecordID:(id)arg24;
+- (id)initWithCKRecord:(id)arg1 isUsingStingRay:(bool)arg2;
 - (bool)isArchived;
 - (bool)isBusinessChat;
 - (bool)isFiltered;
@@ -138,8 +147,8 @@
 - (id)serviceName;
 - (id)serviceSession;
 - (void)setAccountID:(id)arg1;
-- (void)setCKRecordSystemPropertiesBlob:(id)arg1;
 - (void)setChatIdentifier:(id)arg1;
+- (void)setCloudKitRecordID:(id)arg1;
 - (void)setCloudKitSyncState:(long long)arg1;
 - (void)setCreateEngramGroupOnMessageSend:(bool)arg1;
 - (void)setDisplayName:(id)arg1;
@@ -160,14 +169,20 @@
 - (void)setRoomName:(id)arg1;
 - (void)setServerChangeToken:(id)arg1;
 - (void)setServiceName:(id)arg1;
+- (void)setSrCloudKitRecordID:(id)arg1;
+- (void)setSrCloudKitSyncState:(long long)arg1;
+- (void)setSrServerChangeToken:(id)arg1;
 - (void)setState:(long long)arg1;
 - (void)setStyle:(unsigned char)arg1;
+- (id)srCloudKitRecordID;
+- (long long)srCloudKitSyncState;
+- (id)srServerChangeToken;
 - (long long)state;
 - (void)storeAndBroadcastChatChanges;
 - (unsigned char)style;
 - (void)tearDownToneNotificationSessionIfNeeded;
 - (unsigned long long)unreadCount;
-- (void)updateCKRecordSystemPropertiesBlob:(id)arg1;
+- (void)updateCloudKitRecordID:(id)arg1;
 - (void)updateCloudKitSyncState:(long long)arg1;
 - (void)updateDisplayName:(id)arg1;
 - (void)updateEngramID:(id)arg1;
@@ -182,6 +197,9 @@
 - (void)updateOriginalGroupID:(id)arg1;
 - (void)updateProperties:(id)arg1;
 - (void)updateSMSSpamExtensionNameChatProperty:(id)arg1;
+- (void)updateSRCloudKitSyncState:(long long)arg1;
+- (void)updateSRServerChangeToken:(id)arg1;
 - (void)updateServerChangeToken:(id)arg1;
+- (void)updateSrCloudKitRecordID:(id)arg1;
 
 @end

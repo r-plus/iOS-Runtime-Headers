@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIToolbar : UIView <DebugHierarchyObject, UIAccessibilityHUDGestureHosting, UIBarPositioning, UIGestureRecognizerDelegatePrivate, _UIBarPositioningInternal> {
+@interface UIToolbar : UIView <UIAccessibilityHUDGestureHosting, UIBarPositioning, UIGestureRecognizerDelegatePrivate, _UIBarPositioningInternal> {
     id  __appearanceStorage;
     bool  __wantsLetterpressContent;
     UIAccessibilityHUDGestureManager * _axHUDGestureManager;
@@ -104,14 +104,6 @@
 - (void)_updateBackgroundView;
 - (void)_updateBarForStyle;
 - (bool)_wantsLetterpressContent;
-- (void)dealloc;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)addConstraint:(id)arg1;
 - (void)backdropView:(id)arg1 didChangeToGraphicsQuality:(long long)arg2;
 - (id)backgroundEffects;
@@ -120,6 +112,7 @@
 - (long long)barStyle;
 - (id)barTintColor;
 - (bool)centerTextButtons;
+- (void)dealloc;
 - (struct CGSize { double x1; double x2; })defaultSizeForOrientation:(long long)arg1;
 - (id)delegate;
 - (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

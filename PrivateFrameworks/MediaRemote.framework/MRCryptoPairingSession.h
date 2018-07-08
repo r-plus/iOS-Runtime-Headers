@@ -4,12 +4,12 @@
 
 @interface MRCryptoPairingSession : NSObject {
     <MRCryptoPairingSessionDelegate> * _delegate;
-    void * _device;
+    _MRDeviceInfoMessageProtobuf * _device;
     unsigned long long  _role;
 }
 
 @property (nonatomic) <MRCryptoPairingSessionDelegate> *delegate;
-@property (nonatomic, readonly) void*device;
+@property (nonatomic, readonly) _MRDeviceInfoMessageProtobuf *device;
 @property (getter=isPaired, nonatomic, readonly) bool paired;
 @property (nonatomic, readonly) NSArray *pairedDevices;
 @property (nonatomic, readonly) unsigned long long role;
@@ -17,17 +17,17 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
+- (void).cxx_destruct;
 - (void)close;
-- (void)dealloc;
 - (id)decryptData:(id)arg1 withError:(id*)arg2;
 - (id)delegate;
 - (bool)deleteIdentityWithError:(id*)arg1;
-- (void*)device;
+- (id)device;
 - (id)encryptData:(id)arg1 withError:(id*)arg2;
 - (void)handlePairingExchangeData:(id)arg1 completion:(id /* block */)arg2;
 - (void)handlePairingFailureWithStatus:(int)arg1;
 - (id)init;
-- (id)initWithRole:(unsigned long long)arg1 device:(void*)arg2;
+- (id)initWithRole:(unsigned long long)arg1 device:(id)arg2;
 - (bool)isPaired;
 - (bool)isValid;
 - (void)open;

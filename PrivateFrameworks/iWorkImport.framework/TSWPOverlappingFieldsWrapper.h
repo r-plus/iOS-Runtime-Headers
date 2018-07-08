@@ -22,6 +22,7 @@
 - (bool)isEquivalentToObject:(id)arg1;
 - (id)parentStorage;
 - (void)removeField:(id)arg1;
+- (void)resetTextAttributeUUIDString;
 - (void)setParentStorage:(id)arg1;
 - (void)sortWithContext:(void*)arg1;
 - (unsigned long long)sortedSearchForIndexOfField:(id)arg1;

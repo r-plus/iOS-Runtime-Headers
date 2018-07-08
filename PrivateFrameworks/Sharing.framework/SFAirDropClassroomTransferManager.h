@@ -14,8 +14,10 @@
 
 - (void).cxx_destruct;
 - (void)_getRemoteObjectProxyOnQueue:(id /* block */)arg1;
+- (void)activate;
 - (id)delegate;
 - (id)exportedInterface;
+- (void)invalidate;
 - (id)machServiceName;
 - (id)remoteObjectInterface;
 - (void)setDelegate:(id)arg1;

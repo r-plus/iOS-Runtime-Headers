@@ -20,6 +20,7 @@
     MPPlaceholderAVItem * _placeholderAVItem;
     MPPlaybackPlaceholderMediaItem * _placeholderMediaItem;
     MPCPlaybackRequestEnvironment * _playbackRequestEnvironment;
+    ICUserIdentity * _proactiveCacheIdentity;
     MPModelRequest * _request;
     bool  _requireFinalTracklist;
     MPModelResponse * _response;
@@ -29,10 +30,10 @@
             struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned long, MPIdentifierSet *>, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
-                } __first_; 
+                } __value_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, MPIdentifierSet *>, std::__1::less<unsigned long>, true> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __pair3_; 
         } __tree_; 
     }  _retrievedIndexToIdentifiers;
@@ -56,6 +57,7 @@
 @property (nonatomic, readonly) bool userCanChangeShuffleAndRepeatType;
 
 + (id)requiredPropertiesForStaticMediaClips;
++ (bool)supportsSecureCoding;
 + (bool)supportsStateRestoration;
 
 - (id).cxx_construct;
@@ -83,6 +85,7 @@
 - (bool)_shouldRecordReturnedItemIDs;
 - (unsigned long long)_songShuffledIndexForIndex:(unsigned long long)arg1;
 - (void)_unregisterNotificationsForResponse:(id)arg1;
+- (void)_updateProactiveCaching;
 - (void)applyVolumeNormalizationForItem:(id)arg1;
 - (id)audioSessionModeForItemAtIndex:(unsigned long long)arg1;
 - (id)copyRawItemAtIndex:(unsigned long long)arg1;

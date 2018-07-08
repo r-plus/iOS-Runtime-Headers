@@ -160,9 +160,9 @@
 
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
 
-+ (void)_geo_sendAsynchronousRequest:(id)arg1 connectionProperties:(id)arg2 completionHandler:(id /* block */)arg3;
-+ (void)_geo_sendAsynchronousRequest:(id)arg1 queue:(id)arg2 connectionProperties:(id)arg3 completionHandler:(id /* block */)arg4;
-+ (id)_geo_sendSynchronousRequest:(id)arg1 connectionProperties:(id)arg2 returningResponse:(id*)arg3 error:(id*)arg4;
++ (void)_geo_sendAsynchronousRequest:(id)arg1 requestCounterTicket:(id)arg2 connectionProperties:(id)arg3 completionHandler:(id /* block */)arg4;
++ (void)_geo_sendAsynchronousRequest:(id)arg1 requestCounterTicket:(id)arg2 queue:(id)arg3 connectionProperties:(id)arg4 completionHandler:(id /* block */)arg5;
++ (id)_geo_sendSynchronousRequest:(id)arg1 requestCounterTicket:(id)arg2 connectionProperties:(id)arg3 returningResponse:(id*)arg4 error:(id*)arg5;
 
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 

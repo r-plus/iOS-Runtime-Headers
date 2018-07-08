@@ -6,9 +6,11 @@
     id /* block */  _completion;
     HDCloudSyncOperationConfiguration * _configuration;
     HDCloudSyncFetchOperationResult * _fetchResult;
+    NSUUID * _operationIdentifier;
     NSProgress * _progress;
     NSObject<OS_dispatch_queue> * _queue;
     bool  _queue_hasStarted;
+    NSDate * _startTime;
 }
 
 @property (readonly, copy) NSString *debugDescription;

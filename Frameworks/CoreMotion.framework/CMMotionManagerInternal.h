@@ -27,7 +27,7 @@
     id /* block */  fDeviceMotionHandler;
     struct unique_ptr<CLDeviceMotionLiteService, std::__1::default_delete<CLDeviceMotionLiteService> > { 
         struct __compressed_pair<CLDeviceMotionLiteService *, std::__1::default_delete<CLDeviceMotionLiteService> > { 
-            struct CLDeviceMotionLiteService {} *__first_; 
+            struct CLDeviceMotionLiteService {} *__value_; 
         } __ptr_; 
     }  fDeviceMotionLiteService;
     int  fDeviceMotionMode;
@@ -46,7 +46,7 @@
     }  fGeomagneticModel;
     struct unique_ptr<CLGeomagneticModelProvider_Type::Client, std::__1::default_delete<CLGeomagneticModelProvider_Type::Client> > { 
         struct __compressed_pair<CLGeomagneticModelProvider_Type::Client *, std::__1::default_delete<CLGeomagneticModelProvider_Type::Client> > { 
-            struct Client {} *__first_; 
+            struct Client {} *__value_; 
         } __ptr_; 
     }  fGeomagneticModelProviderClient;
     /* Warning: unhandled struct encoding: '{Dispatcher=^^?@}' */ struct Dispatcher { int (**x1)(); id x2; } * fGyroDispatcher;
@@ -135,7 +135,7 @@
     bool  fSidebandSensorFusionSnoop;
     struct unique_ptr<CLIspDataVisitor, std::__1::default_delete<CLIspDataVisitor> > { 
         struct __compressed_pair<CLIspDataVisitor *, std::__1::default_delete<CLIspDataVisitor> > { 
-            struct CLIspDataVisitor {} *__first_; 
+            struct CLIspDataVisitor {} *__value_; 
         } __ptr_; 
     }  fSidebandVisitor;
     struct __CFRunLoopTimer { } * fWatchdogTimer;

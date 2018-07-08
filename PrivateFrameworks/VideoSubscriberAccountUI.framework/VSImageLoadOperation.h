@@ -10,12 +10,14 @@
         double height; 
     }  _preferredImageSize;
     VSOptional * _result;
+    NSURLSessionTask * _task;
 }
 
 @property (nonatomic, copy) VSAuditToken *auditToken;
 @property (nonatomic, readonly) NSItemProvider *itemProvider;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } preferredImageSize;
 @property (nonatomic, retain) VSOptional *result;
+@property (nonatomic, retain) NSURLSessionTask *task;
 
 - (void).cxx_destruct;
 - (void)_beginFetchingDataFromURL:(id)arg1;
@@ -30,5 +32,7 @@
 - (id)result;
 - (void)setAuditToken:(id)arg1;
 - (void)setResult:(id)arg1;
+- (void)setTask:(id)arg1;
+- (id)task;
 
 @end

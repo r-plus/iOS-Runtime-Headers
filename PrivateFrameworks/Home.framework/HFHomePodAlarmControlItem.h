@@ -3,21 +3,22 @@
  */
 
 @interface HFHomePodAlarmControlItem : HFControlItem {
-    HFMediaProfileContainerSettingsValueManager * _valueManager;
+    <HFMediaProfileContainer> * _mediaProfileContainer;
 }
 
-@property (nonatomic, retain) HFMediaProfileContainerSettingsValueManager *valueManager;
+@property (nonatomic, readonly) <HFMediaProfileContainer> *mediaProfileContainer;
+@property (nonatomic, readonly) HFMediaProfileContainerSettingsValueManager *valueManager;
 
 + (Class)valueClass;
 
 - (void).cxx_destruct;
 - (id)characteristicValuesForValue:(id)arg1;
 - (id)copyWithCharacteristicOptions:(id)arg1 valueSource:(id)arg2;
-- (id)initWithValueManager:(id)arg1 displayResults:(id)arg2;
+- (id)initWithMediaProfileContainer:(id)arg1 displayResults:(id)arg2;
 - (id)initWithValueSource:(id)arg1 characteristicOptions:(id)arg2 displayResults:(id)arg3;
+- (id)mediaProfileContainer;
 - (id)normalizedValueForValue:(id)arg1;
 - (id)readValueAndPopulateStandardResults;
-- (void)setValueManager:(id)arg1;
 - (id)valueForCharacteristicValues:(id)arg1;
 - (id)valueManager;
 

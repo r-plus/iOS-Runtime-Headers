@@ -15,6 +15,7 @@
 @property (nonatomic, readonly, copy) NSArray *timedMetadataGroups;
 
 + (id)metadataIdentifiers;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

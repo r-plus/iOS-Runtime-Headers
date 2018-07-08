@@ -20,6 +20,7 @@
 
 - (void).cxx_destruct;
 - (bool)_clientIsWebApp;
+- (void)_hostApplicationDidEnterBackground;
 - (void)_initialLoadFinishedWithSuccess:(bool)arg1;
 - (bool)_isURLOutOfScope:(id)arg1;
 - (void)_loadNextFallbackURL;
@@ -27,7 +28,6 @@
 - (unsigned long long)_persona;
 - (bool)_privateBrowsingInitiallyEnabled;
 - (bool)_usesScrollToTopView;
-- (bool)canInstallProfiles;
 - (bool)canPrint;
 - (void)loadWebAppWithIdentifier:(id)arg1;
 - (long long)preferredStatusBarStyle;

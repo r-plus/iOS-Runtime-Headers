@@ -9,6 +9,7 @@
     NSArray * _keys;
     double  _lastUsedTimestamp;
     unsigned int  _timestamp;
+    NSData * _updateHash;
 }
 
 @property unsigned int error;
@@ -17,6 +18,7 @@
 @property (retain) NSArray *keys;
 @property double lastUsedTimestamp;
 @property unsigned int timestamp;
+@property (retain) NSData *updateHash;
 
 - (void).cxx_destruct;
 - (id)data;
@@ -32,6 +34,8 @@
 - (void)setKeys:(id)arg1;
 - (void)setLastUsedTimestamp:(double)arg1;
 - (void)setTimestamp:(unsigned int)arg1;
+- (void)setUpdateHash:(id)arg1;
 - (unsigned int)timestamp;
+- (id)updateHash;
 
 @end

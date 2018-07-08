@@ -40,6 +40,7 @@
 @property (readonly) double symbolGap;
 @property (readonly) double verticalCellSpacing;
 
+- (void).cxx_destruct;
 - (unsigned long long)cellCount;
 - (id)cellForSeriesIndex:(unsigned long long)arg1 cellType:(int)arg2;
 - (id)cells;

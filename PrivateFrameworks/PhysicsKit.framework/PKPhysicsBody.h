@@ -67,7 +67,7 @@
         struct PKPhysicsShape {} **__begin_; 
         struct PKPhysicsShape {} **__end_; 
         struct __compressed_pair<PKPhysicsShape **, std::__1::allocator<PKPhysicsShape *> > { 
-            struct PKPhysicsShape {} **__first_; 
+            struct PKPhysicsShape {} **__value_; 
         } __end_cap_; 
     }  _shapes;
     struct CGSize { 

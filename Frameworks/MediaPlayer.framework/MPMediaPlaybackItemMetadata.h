@@ -22,6 +22,7 @@
     double  _expectedDuration;
     NSString * _genreTitle;
     NSDictionary * _hlsOfflinePlaybackKeys;
+    NSString * _hlsPlaylistURLString;
     NSNumber * _iTunesStoreContentDSID;
     NSNumber * _iTunesStoreContentID;
     bool  _isExplicitTrack;
@@ -67,6 +68,7 @@
 @property (nonatomic, readonly) double expectedDuration;
 @property (nonatomic, readonly, copy) NSString *genreTitle;
 @property (nonatomic, readonly) NSDictionary *hlsOfflinePlaybackKeys;
+@property (nonatomic, readonly, copy) NSString *hlsPlaylistURLString;
 @property (nonatomic, readonly, copy) NSNumber *iTunesStoreContentDSID;
 @property (nonatomic, readonly, copy) NSString *iTunesStoreContentDownloadParameters;
 @property (nonatomic, readonly, copy) NSNumber *iTunesStoreContentID;
@@ -134,6 +136,7 @@
 - (id)genreTitle;
 - (void)getNetworkConstraintsForDownloadKind:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)hlsOfflinePlaybackKeys;
+- (id)hlsPlaylistURLString;
 - (id)iTunesStoreContentDSID;
 - (id)iTunesStoreContentDownloadParameters;
 - (id)iTunesStoreContentID;

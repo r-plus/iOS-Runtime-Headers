@@ -63,6 +63,8 @@
 @property (nonatomic, readonly) bool hasExpiredComponents;
 @property (getter=_hasFeatureLink, nonatomic, readonly) bool hasFeatureLink;
 @property (getter=_hasFlyover, nonatomic, readonly) bool hasFlyover;
+@property (getter=_hasGenderNeutralRestroom, nonatomic, readonly) bool hasGenderNeutralRestroom;
+@property (getter=_hasGenderNeutralRestroomAmenity, nonatomic, readonly) bool hasGenderNeutralRestroomAmenity;
 @property (getter=_hasGoodForKidsAmenity, nonatomic, readonly) bool hasGoodForKidsAmenity;
 @property (getter=_hasMUID, nonatomic, readonly) bool hasMUID;
 @property (getter=_hasOperatingHours, nonatomic, readonly) bool hasOperatingHours;

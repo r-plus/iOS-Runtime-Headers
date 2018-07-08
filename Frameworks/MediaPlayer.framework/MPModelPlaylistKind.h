@@ -13,6 +13,7 @@
 @property (nonatomic, readonly) unsigned long long variants;
 
 + (id)kindWithVariants:(unsigned long long)arg1 playlistEntryKind:(id)arg2 options:(unsigned long long)arg3;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)applyToView:(struct shared_ptr<mlcore::LibraryView> { struct LibraryView {} *x1; struct __shared_weak_count {} *x2; })arg1 withContext:(id)arg2;

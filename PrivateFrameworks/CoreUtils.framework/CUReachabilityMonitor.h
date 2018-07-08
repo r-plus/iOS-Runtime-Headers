@@ -6,6 +6,7 @@
     id /* block */  _completionHandler;
     NSURL * _destinationURL;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
+    int  _downloadStatus;
     double  _timeout;
     NSObject<OS_dispatch_source> * _timeoutTimer;
     NSURLSession * _urlSession;

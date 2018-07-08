@@ -14,7 +14,6 @@
         unsigned int cachingPolicy : 1; 
         unsigned int length : 1; 
         unsigned int location : 1; 
-        unsigned int includeArtworkURLTemplate : 1; 
         unsigned int includeInfo : 1; 
         unsigned int includeLanguageOptions : 1; 
         unsigned int includeLyrics : 1; 
@@ -23,7 +22,6 @@
         unsigned int isLegacyNowPlayingInfoRequest : 1; 
         unsigned int returnContentItemAssetsInUserCompletion : 1; 
     }  _has;
-    bool  _includeArtworkURLTemplate;
     bool  _includeInfo;
     bool  _includeLanguageOptions;
     bool  _includeLyrics;
@@ -47,7 +45,6 @@
 @property (nonatomic) bool hasArtworkWidth;
 @property (nonatomic) bool hasCachingPolicy;
 @property (nonatomic, readonly) bool hasContext;
-@property (nonatomic) bool hasIncludeArtworkURLTemplate;
 @property (nonatomic) bool hasIncludeInfo;
 @property (nonatomic) bool hasIncludeLanguageOptions;
 @property (nonatomic) bool hasIncludeLyrics;
@@ -60,7 +57,6 @@
 @property (nonatomic, readonly) bool hasPlayerPath;
 @property (nonatomic, readonly) bool hasRequestID;
 @property (nonatomic) bool hasReturnContentItemAssetsInUserCompletion;
-@property (nonatomic) bool includeArtworkURLTemplate;
 @property (nonatomic) bool includeInfo;
 @property (nonatomic) bool includeLanguageOptions;
 @property (nonatomic) bool includeLyrics;
@@ -77,6 +73,7 @@
 + (Class)contentItemIdentifiersType;
 + (void)initialize;
 
+- (void).cxx_destruct;
 - (void)addContentItemIdentifiers:(id)arg1;
 - (double)artworkHeight;
 - (double)artworkWidth;
@@ -90,14 +87,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)customDescription;
 - (id)customDictionaryRepresentation;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasArtworkHeight;
 - (bool)hasArtworkWidth;
 - (bool)hasCachingPolicy;
 - (bool)hasContext;
-- (bool)hasIncludeArtworkURLTemplate;
 - (bool)hasIncludeInfo;
 - (bool)hasIncludeLanguageOptions;
 - (bool)hasIncludeLyrics;
@@ -111,7 +106,6 @@
 - (bool)hasRequestID;
 - (bool)hasReturnContentItemAssetsInUserCompletion;
 - (unsigned long long)hash;
-- (bool)includeArtworkURLTemplate;
 - (bool)includeInfo;
 - (bool)includeLanguageOptions;
 - (bool)includeLyrics;
@@ -135,7 +129,6 @@
 - (void)setHasArtworkHeight:(bool)arg1;
 - (void)setHasArtworkWidth:(bool)arg1;
 - (void)setHasCachingPolicy:(bool)arg1;
-- (void)setHasIncludeArtworkURLTemplate:(bool)arg1;
 - (void)setHasIncludeInfo:(bool)arg1;
 - (void)setHasIncludeLanguageOptions:(bool)arg1;
 - (void)setHasIncludeLyrics:(bool)arg1;
@@ -145,7 +138,6 @@
 - (void)setHasLength:(bool)arg1;
 - (void)setHasLocation:(bool)arg1;
 - (void)setHasReturnContentItemAssetsInUserCompletion:(bool)arg1;
-- (void)setIncludeArtworkURLTemplate:(bool)arg1;
 - (void)setIncludeInfo:(bool)arg1;
 - (void)setIncludeLanguageOptions:(bool)arg1;
 - (void)setIncludeLyrics:(bool)arg1;

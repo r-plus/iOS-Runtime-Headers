@@ -3,11 +3,13 @@
  */
 
 @interface MPMusicPlayerStoreQueueDescriptor : MPMusicPlayerQueueDescriptor {
+    NSDictionary * _assetStoreFronts;
     NSString * _startItemID;
     NSMutableDictionary * _storeFronts;
     NSArray * _storeIDs;
 }
 
+@property (nonatomic, copy) NSDictionary *assetStoreFronts;
 @property (nonatomic, copy) NSString *startItemID;
 @property (nonatomic, copy) NSArray *storeIDs;
 
@@ -21,6 +23,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStoreIDs:(id)arg1;
+- (void)setAssetStoreFronts:(id)arg1;
 - (void)setEndTime:(double)arg1 forItemWithStoreID:(id)arg2;
 - (void)setSourceStorefront:(id)arg1 forItemWithStoreID:(id)arg2;
 - (void)setStartItemID:(id)arg1;

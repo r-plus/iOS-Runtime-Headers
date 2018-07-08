@@ -6,6 +6,8 @@
     NSString * _folderID;
 }
 
++ (bool)supportsSecureCoding;
+
 - (void)applyToFolderMap:(id)arg1;
 - (void)dealloc;
 - (id)description;

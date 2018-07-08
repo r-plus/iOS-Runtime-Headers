@@ -5,7 +5,7 @@
 @interface WKWebProcessPlugInFrame : NSObject <WKObject> {
     struct ObjectStorage<WebKit::WebFrame> { 
         struct type { 
-            unsigned char __lx[88]; 
+            unsigned char __lx[112]; 
         } data; 
     }  _frame;
 }

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIImage : NSObject <DOCThumbnail, DebugHierarchyValue, MKArtworkImageSource, NSItemProviderReading, NSItemProviderWriting, NSSecureCoding, UIItemProviderPresentationSizeProviding, UIItemProviderReading, UIItemProviderWriting> {
+@interface UIImage : NSObject <DOCThumbnail, MKArtworkImageSource, NSItemProviderReading, NSItemProviderWriting, NSSecureCoding, UIItemProviderPresentationSizeProviding, UIItemProviderReading, UIItemProviderWriting> {
     struct UIEdgeInsets { 
         double top; 
         double left; 
@@ -41,6 +41,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) double duration;
 @property (nonatomic, readonly) bool flipsForRightToLeftLayoutDirection;
+@property (readonly) bool hasFinishedTryingToFetchCorrectThumbnail;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIImageAsset *imageAsset;
 @property (nonatomic, readonly) long long imageOrientation;
@@ -68,7 +69,6 @@
 + (id)_animatedImageNamed:(id)arg1 inBundle:(id)arg2 compatibleWithTraitCollection:(id)arg3 duration:(double)arg4;
 + (id)_animatedResizableImageNamed:(id)arg1 inBundle:(id)arg2 compatibleWithTraitCollection:(id)arg3 capInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg4 resizingMode:(long long)arg5 duration:(double)arg6;
 + (id)_applicationIconImageForBundleIdentifier:(id)arg1 format:(int)arg2;
-+ (id)_applicationIconImageForBundleIdentifier:(id)arg1 format:(int)arg2 scale:(double)arg3;
 + (id)_backgroundGradientWithStartColor:(id)arg1 andEndColor:(id)arg2;
 + (id)_cachedImageForKey:(id)arg1 fromBlock:(id /* block */)arg2;
 + (void)_clearAssetCaches;
@@ -294,15 +294,13 @@
 - (id)vectorImageSupport;
 - (bool)writeToCPBitmapFile:(id)arg1 flags:(int)arg2;
 
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
+// Image: /Library/TweakInject/Activator.dylib
 
-- (id)debugHierarchyValue;
++ (id)_applicationIconImageForBundleIdentifier:(id)arg1 format:(int)arg2 scale:(double)arg3;
 
 // Image: /System/Library/Frameworks/AVKit.framework/AVKit
 
-- (id)imageWithEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (id)imageWithEtchedBorderOfColor:(id)arg1 radius:(double)arg2;
-- (id)imageWithShadow:(id)arg1;
++ (id)avkit_flatWhiteResizableTemplateImage;
 
 // Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
 
@@ -356,6 +354,8 @@
 
 // Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
 
++ (id)_sf_fallbackFavicon;
++ (id)_sf_favoritesFaviconWithLightStyle:(bool)arg1;
 + (id)ss_imageNamed:(id)arg1;
 
 - (id)_sf_imageByResizingWithAccessibilityScale:(double)arg1;
@@ -385,6 +385,12 @@
 // Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
 
 + (id)aaui_imageFromColor:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AvatarKit.framework/AvatarKit
+
++ (id)animatedImageWithAPNGRepresentation:(id)arg1;
+
+- (id)APNGRepresentation;
 
 // Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
 
@@ -433,10 +439,12 @@
 // Image: /System/Library/PrivateFrameworks/DocumentManagerUICore.framework/DocumentManagerUICore
 
 - (void)addListener:(id)arg1;
+- (bool)hasFinishedTryingToFetchCorrectThumbnail;
 - (bool)isLoading;
 - (bool)isRepresentativeIcon;
 - (id)operation;
 - (void)removeListener:(id)arg1;
+- (void)scheduleUpdateIfNeeded;
 - (id)thumbnail;
 
 // Image: /System/Library/PrivateFrameworks/FMCoreUI.framework/FMCoreUI
@@ -463,6 +471,10 @@
 - (id)imageByCroppingToUniformCenter;
 - (id)imageWithCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
+// Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
+
++ (id)_gkHostImageWithBundleIdentifier:(id)arg1 imageName:(id)arg2;
+
 // Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
 
 + (id)_gkImageWithCGImage:(struct CGImage { }*)arg1 scale:(double)arg2 orientation:(long long)arg3;
@@ -482,8 +494,12 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
++ (id)hk_disclosureChevronImage;
++ (id)hk_transparentInterfaceImageWithSize:(struct CGSize { double x1; double x2; })arg1;
+
 - (id)hk_croppedImageWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)hk_resizedImageWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)hk_resizedInterfaceImageWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (double)hk_scaledImageViewHeightWithScaledWidth:(double)arg1;
 - (id)hk_watchIconImage;
 
@@ -756,6 +772,10 @@
 // Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
 
 - (id)rms_jpegDataScaledToSize:(struct CGSize { double x1; double x2; })arg1 compressionQuality:(float)arg2;
+
+// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
+
++ (id)safari_imageWithSize:(struct CGSize { double x1; double x2; })arg1 actions:(id /* block */)arg2;
 
 // Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
 

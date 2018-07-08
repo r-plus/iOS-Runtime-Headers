@@ -63,13 +63,14 @@
 - (void)didStopSharingMyLocationWithHandle:(id)arg1;
 - (void)didUpdateActiveDeviceList:(id)arg1;
 - (void)didUpdateHidingStatus:(bool)arg1;
-- (void)displayGenericErrorAlert;
+- (void)displayAlertController:(id)arg1;
 - (id)dsidToFamilyPhoto;
 - (id)familyMembers;
 - (id)familySpecifiers;
 - (id)followersHandles;
 - (id)followersSpecifiers;
 - (id)formatStringForHours:(long long)arg1 minutes:(long long)arg2;
+- (id)genericAlertController;
 - (id)genericErrorAlert;
 - (id)hashedFamilyDsids;
 - (bool)isMyLocationEnabled;
@@ -103,6 +104,7 @@
 - (bool)useFamilyCirclePhotos;
 - (bool)useFamilyCirclePhotosLoaded;
 - (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;

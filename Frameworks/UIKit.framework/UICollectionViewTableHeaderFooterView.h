@@ -17,15 +17,10 @@
 @property (nonatomic, readonly) UILabel *textLabel;
 @property (nonatomic, retain) UIColor *tintColor;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 - (void).cxx_destruct;
 - (void)_commonInit;
 - (id)_tableAttributes;
 - (id)_tableLayout;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)applyLayoutAttributes:(id)arg1;
 - (id)backgroundView;
 - (id)contentView;

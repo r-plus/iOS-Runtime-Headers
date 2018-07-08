@@ -22,6 +22,7 @@
 + (Class)removingOutputDeviceUIDType;
 + (Class)settingOutputDeviceUIDType;
 
+- (void).cxx_destruct;
 - (int)StringAsOutputContextType:(id)arg1;
 - (void)addAddingOutputDeviceUID:(id)arg1;
 - (void)addRemovingOutputDeviceUID:(id)arg1;
@@ -34,7 +35,6 @@
 - (void)clearSettingOutputDeviceUIDs;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasOutputContextType;

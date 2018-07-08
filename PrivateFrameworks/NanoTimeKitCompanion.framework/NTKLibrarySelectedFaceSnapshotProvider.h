@@ -5,8 +5,10 @@
 @interface NTKLibrarySelectedFaceSnapshotProvider : NSObject <NTKFaceCollectionObserver, NTKFaceObserver> {
     <NTKLibrarySelectedFaceSnapshotProviderDelegate> * _delegate;
     NTKFaceCollection * _libraryCollection;
+    bool  _resumedQueue;
     NTKFace * _selectedFace;
     NSString * _snapshotKey;
+    NSObject<OS_dispatch_queue> * _snapshotRequestsQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -29,5 +31,6 @@
 - (id)initWithDeviceUUID:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)snapshotImage;
+- (void)snapshotSelectedFaceWithOptions:(id)arg1 completion:(id /* block */)arg2;
 
 @end

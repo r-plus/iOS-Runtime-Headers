@@ -24,6 +24,8 @@
 }
 
 @property (readonly) int auditSessionIdentifier;
+@property (nonatomic, readonly) bool cls_isAppExtension;
+@property (nonatomic, readonly, copy) NSString *cls_signingIdentifier;
 @property (nonatomic, readonly, copy) NSString *cx_applicationIdentifier;
 @property (nonatomic, readonly) NSBundle *cx_bundle;
 @property (nonatomic, readonly, copy) NSSet *cx_capabilities;
@@ -142,6 +144,11 @@
 - (bool)cx_hasVoIPBackgroundMode;
 - (id)cx_processName;
 
+// Image: /System/Library/Frameworks/ClassKit.framework/ClassKit
+
+- (bool)cls_isAppExtension;
+- (id)cls_signingIdentifier;
+
 // Image: /System/Library/Frameworks/FileProvider.framework/FileProvider
 
 - (id)fp_bundleIdentifier;
@@ -199,5 +206,9 @@
 - (id)uns_clientBundleProxy;
 - (id)uns_clientRemoteNotificationEnvironment;
 - (bool)uns_isAllowedToRequestUserNotificationsForBundleIdentifier:(id)arg1;
+
+// Image: /usr/lib/libnfshared.dylib
+
+- (id)NF_userInfo;
 
 @end

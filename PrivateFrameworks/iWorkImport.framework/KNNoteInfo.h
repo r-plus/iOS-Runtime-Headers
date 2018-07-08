@@ -3,7 +3,7 @@
  */
 
 @interface KNNoteInfo : TSPObject <TSDContainerInfo, TSKDocumentObject, TSKTransformableObject, TSWPStorageParent> {
-    TSWPStorage * mContainedStorage;
+    TSWPStorage * _containedStorage;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -13,13 +13,17 @@
             double width; 
             double height; 
         } size; 
-    }  mFrameForPrinting;
-    NSObject<TSDContainerInfo> * mParentInfo;
-    bool  mShrinkTextForPrinting;
+    }  _frameForPrinting;
+    NSObject<TSDContainerInfo> * _parentInfo;
+    bool  _shrinkTextForPrinting;
+    NSObject<TSDContainerInfo> * parentInfo;
 }
 
 @property (getter=isAnchoredToText, nonatomic, readonly) bool anchoredToText;
 @property (getter=isAttachedToBodyText, nonatomic, readonly) bool attachedToBodyText;
+@property (nonatomic, readonly) bool autoListRecognition;
+@property (nonatomic, readonly) bool autoListTermination;
+@property (nonatomic, readonly) NSArray *childInfos;
 @property (nonatomic, retain) TSWPStorage *containedStorage;
 @property (nonatomic, readonly) long long contentWritingDirection;
 @property (readonly, copy) NSString *debugDescription;
@@ -33,12 +37,17 @@
 @property (nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment;
 @property (nonatomic, readonly) TSPObject<TSDOwningAttachment> *owningAttachmentNoRecurse;
 @property (nonatomic) NSObject<TSDContainerInfo> *parentInfo;
+@property (nonatomic, readonly) bool preventsComments;
 @property (nonatomic) bool shrinkTextForPrinting;
+@property (nonatomic, readonly) bool storageChangesInvalidateWrap;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) bool textIsLinked;
+@property (nonatomic, readonly) bool textIsVertical;
 @property (nonatomic, readonly) int verticalAlignment;
 
 + (bool)needsObjectUUID;
 
+- (void).cxx_destruct;
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 - (bool)autoListRecognition;
 - (bool)autoListTermination;
@@ -67,6 +76,7 @@
 - (id)owningAttachment;
 - (id)owningAttachmentNoRecurse;
 - (id)parentInfo;
+- (bool)preventsComments;
 - (Class)repClass;
 - (void)saveToArchive:(struct NoteArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;

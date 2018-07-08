@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDHomeManager : HMFObject <HAPFragmentationStreamDelegate, HMDAccessoryBrowserDelegate, HMDAccountDelegate, HMDAccountRegistryDelegate, HMDBackingStoreObjectProtocol, HMDCompanionManagerDelegate, HMDDeviceSetupSessionDelegate, HMDPairedSyncDelegate, HMDUserManagementOperationDelegate, HMDWatchManagerDelegate, HMFMessageReceiver, HMFTimerDelegate, IDSServiceDelegate> {
+@interface HMDHomeManager : HMFObject <HAPFragmentationStreamDelegate, HMDAccessoryBrowserManagerDelegate, HMDAccountDelegate, HMDAccountRegistryDelegate, HMDBackingStoreObjectProtocol, HMDCompanionManagerDelegate, HMDDeviceSetupSessionDelegate, HMDPairedSyncDelegate, HMDUserManagementOperationDelegate, HMDWatchManagerDelegate, HMFMessageReceiver, HMFTimerDelegate, IDSServiceDelegate> {
     bool  _accessAllowedWhenLocked;
-    HMDAccessoryBrowser * _accessoryBrowser;
+    HMDAccessoryBrowser * _accessoryBrowserInternal;
     NSObject<OS_dispatch_source> * _accessoryFinderTimer;
     bool  _accountActive;
     HMDAccountRegistry * _accountRegistry;
@@ -102,7 +102,8 @@
 }
 
 @property (getter=isAccessAllowedWhenLocked, nonatomic) bool accessAllowedWhenLocked;
-@property (nonatomic, retain) HMDAccessoryBrowser *accessoryBrowser;
+@property (nonatomic, readonly) <HMDAccessoryBrowserProtocol> *accessoryBrowser;
+@property (nonatomic, retain) HMDAccessoryBrowser *accessoryBrowserInternal;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *accessoryFinderTimer;
 @property (nonatomic) bool accountActive;
 @property (nonatomic, readonly) HMDAccountRegistry *accountRegistry;
@@ -282,6 +283,7 @@
 - (id)_getAssistantTeamIdentifierForKey;
 - (id)_getHomeConfigurationLogEvent;
 - (id)_getRequestedState:(id)arg1;
+- (void)_getRuntimeStateUpdateForMediaAccessories:(bool)arg1 includeHAPAccessoryState:(bool)arg2 completion:(id /* block */)arg3;
 - (void)_handleAccessAllowedWhenLockedRequest:(id)arg1;
 - (void)_handleAccessHomeInvite:(id)arg1;
 - (void)_handleAccountAvailabilityChanged:(id /* block */)arg1;
@@ -468,7 +470,8 @@
 - (bool)_zonesFetched;
 - (void)accessoriesAreLocallyReachableOnTransientDevice:(bool)arg1 forHome:(id)arg2;
 - (id)accessoryBrowser;
-- (void)accessoryBrowserDidFindNewAccessory:(id)arg1;
+- (void)accessoryBrowserDidFindNewAccessory;
+- (id)accessoryBrowserInternal;
 - (id)accessoryFinderTimer;
 - (void)account:(id)arg1 didAddDevice:(id)arg2;
 - (void)account:(id)arg1 didRemoveDevice:(id)arg2;
@@ -661,7 +664,7 @@
 - (void)sendUserAdded:(id)arg1 destination:(id)arg2 toHome:(id)arg3;
 - (void)sendUserRemoved:(id)arg1 fromHome:(id)arg2 pairingUsername:(id)arg3 pushToCloud:(bool)arg4 completionHandler:(id /* block */)arg5;
 - (void)setAccessAllowedWhenLocked:(bool)arg1;
-- (void)setAccessoryBrowser:(id)arg1;
+- (void)setAccessoryBrowserInternal:(id)arg1;
 - (void)setAccessoryFinderTimer:(id)arg1;
 - (void)setAccountActive:(bool)arg1;
 - (void)setAccountStatusFailedDueToNetworkFailure:(bool)arg1;

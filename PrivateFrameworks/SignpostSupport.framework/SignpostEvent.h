@@ -9,6 +9,7 @@
     unsigned long long  _eventType;
     bool  _isAnimationStart;
     NSString * _metadata;
+    NSArray * _metadataSegments;
     unsigned long long  _overridingBeginMachContinuousTime;
     unsigned long long  _overridingEmitMachContinuousTime;
     unsigned long long  _overridingEndMachContinuousTime;
@@ -30,6 +31,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool isAnimationStart;
 @property (nonatomic, retain) NSString *metadata;
+@property (nonatomic, retain) NSArray *metadataSegments;
 @property (nonatomic, readonly) bool overridesBeginTime;
 @property (nonatomic, readonly) bool overridesEmitTime;
 @property (nonatomic, readonly) bool overridesEndTime;
@@ -59,12 +61,14 @@
 - (unsigned long long)_totalFrameCount;
 - (id)debugDescription;
 - (unsigned long long)durationMachContinuousTime;
+- (float)durationSeconds;
 - (unsigned long long)endMachContinuousTime;
 - (unsigned long long)eventType;
 - (id)initWithDictionary:(id)arg1;
 - (bool)isAnimationStart;
 - (bool)isEqual:(id)arg1;
 - (id)metadata;
+- (id)metadataSegments;
 - (bool)overridesBeginTime;
 - (bool)overridesEmitTime;
 - (bool)overridesEndTime;
@@ -81,6 +85,7 @@
 - (void)setEventType:(unsigned long long)arg1;
 - (void)setIsAnimationStart:(bool)arg1;
 - (void)setMetadata:(id)arg1;
+- (void)setMetadataSegments:(id)arg1;
 - (void)setOverridingBeginMachContinuousTime:(unsigned long long)arg1;
 - (void)setOverridingEmitMachContinuousTime:(unsigned long long)arg1;
 - (void)setOverridingEndMachContinuousTime:(unsigned long long)arg1;

@@ -12,6 +12,8 @@
     bool  _enabled;
     NSArray * _headerSpecifiers;
     NSArray * _managedBundleIDs;
+    NSCache * _perAppCellStateCache;
+    NSCache * _perAppSwitchStateCache;
     NSNumber * _roamingUsedLastCycle;
     NSNumber * _roamingUsedThisCycle;
     int  _selectedBillingCycle;
@@ -35,6 +37,8 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSArray *headerSpecifiers;
 @property (nonatomic, retain) NSArray *managedBundleIDs;
+@property (nonatomic, retain) NSCache *perAppCellStateCache;
+@property (nonatomic, retain) NSCache *perAppSwitchStateCache;
 @property (nonatomic, retain) NSNumber *roamingUsedLastCycle;
 @property (nonatomic, retain) NSNumber *roamingUsedThisCycle;
 @property (nonatomic) int selectedBillingCycle;
@@ -73,6 +77,9 @@
 - (id)isReliableNetworkFallbackEnabled:(id)arg1;
 - (id)managedBundleIDs;
 - (id)managedCellularDataBundleIdentifiers;
+- (id)perAppCellStateCache;
+- (id)perAppSwitchStateCache;
+- (void)prefetchResourcesFor:(id)arg1;
 - (id)roamingUsedLastCycle;
 - (id)roamingUsedThisCycle;
 - (int)selectedBillingCycle;
@@ -86,6 +93,8 @@
 - (void)setEnabled:(bool)arg1;
 - (void)setHeaderSpecifiers:(id)arg1;
 - (void)setManagedBundleIDs:(id)arg1;
+- (void)setPerAppCellStateCache:(id)arg1;
+- (void)setPerAppSwitchStateCache:(id)arg1;
 - (void)setReliableNetworkFallbackIsEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setRoamingUsedLastCycle:(id)arg1;
 - (void)setRoamingUsedThisCycle:(id)arg1;

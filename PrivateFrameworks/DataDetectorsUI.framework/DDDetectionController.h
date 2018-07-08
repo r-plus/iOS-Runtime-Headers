@@ -27,6 +27,7 @@
 + (id)tapAndHoldSchemes;
 
 - (void).cxx_destruct;
+- (id)_URLForLinkAttributeValue:(id)arg1;
 - (id)_applyBlock:(id /* block */)arg1 withResultsAtIndex:(unsigned long long)arg2 ofStorage:(id)arg3 context:(id)arg4;
 - (void)_commonResetResultsForContainer:(id)arg1;
 - (void)_doURLification:(id)arg1;

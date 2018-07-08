@@ -18,7 +18,7 @@
 - (void)setCurrentPreviewItemIndex:(long long)arg1 animated:(bool)arg2;
 - (void)setLoadingString:(NSString *)arg1;
 - (void)setSourceIsManaged:(bool)arg1;
-- (void)startTransitionWithSourceViewProvider:(void *)arg1 transitionController:(void *)arg2 presenting:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 8: QLTransitionContext *, <QLTransitionControllerProtocol> *, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)startTransitionWithSourceViewProvider:(void *)arg1 transitionController:(void *)arg2 presenting:(void *)arg3 useInteractiveTransition:(void *)arg4 completionHandler:(void *)arg5; // needs 5 arg types, found 9: QLTransitionContext *, <QLTransitionControllerProtocol> *, bool, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)tearDownTransition:(bool)arg1;
 - (void)toolbarButtonPressedWithIdentifier:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 6: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)toolbarButtonsForTraitCollection:(void *)arg1 withCompletionHandler:(void *)arg2; // needs 2 arg types, found 8: UITraitCollection *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSArray *, void*

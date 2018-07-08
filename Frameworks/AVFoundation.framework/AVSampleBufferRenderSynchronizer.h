@@ -19,6 +19,7 @@
 - (id)_getTimebaseObserverForRenderer:(id)arg1;
 - (int)_initializeTimebase;
 - (bool)_multipleAudioRenderersDisallowed;
+- (void)_performRendererRemoval:(id)arg1;
 - (void)_removeTimebaseObserverForRenderer:(id)arg1;
 - (bool)_rendererConfigurationIsValid:(id*)arg1;
 - (bool)_scheduleTimedRendererRemovalAtTime:(id)arg1 atTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 withClientCompletionHandler:(id /* block */)arg3;

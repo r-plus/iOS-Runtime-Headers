@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@interface MCAggregateLogCountProfileKey : MCAggregateLogCountKey {
+@interface MCAggregateLogCountProfileKey : MCAggregateLogKey {
     unsigned long long  _type;
 }
 
@@ -11,6 +11,7 @@
 + (id)_type:(unsigned long long)arg1;
 + (id)all;
 + (id)carrier;
++ (id)encrypted;
 + (id)signed;
 + (id)signedByApple;
 + (void)updateProfileCounts;

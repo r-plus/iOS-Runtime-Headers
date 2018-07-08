@@ -11,7 +11,7 @@
         struct TSCH3DShaderVariableScopeType {} *__begin_; 
         struct TSCH3DShaderVariableScopeType {} *__end_; 
         struct __compressed_pair<TSCH3DShaderVariableScopeType *, std::__1::allocator<TSCH3DShaderVariableScopeType> > { 
-            struct TSCH3DShaderVariableScopeType {} *__first_; 
+            struct TSCH3DShaderVariableScopeType {} *__value_; 
         } __end_cap_; 
     }  mDependeeScopes;
     NSArray * mDependees;

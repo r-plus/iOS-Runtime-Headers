@@ -6,6 +6,8 @@
     NSString * _folderID;
 }
 
++ (bool)supportsSecureCoding;
+
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

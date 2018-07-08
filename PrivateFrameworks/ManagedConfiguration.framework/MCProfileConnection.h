@@ -27,6 +27,7 @@
 
 // Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
 
++ (id)features;
 + (id)profileInstallationErrorWithUnderlyingError:(id)arg1;
 + (id)sharedConnection;
 
@@ -60,7 +61,7 @@
 - (id)acceptedMIMETypes;
 - (id)activationLockBypassHash;
 - (id)activationLockBypassKey;
-- (id)activationLockBypassKeyCreateNewIfNeeded:(bool)arg1;
+- (id)activationLockBypassKeyCreateNewIfNeeded:(bool)arg1 outError:(id*)arg2;
 - (bool)activationRecordIndicatesCloudConfigurationIsAvailable;
 - (id)activeClassroomRoles;
 - (void)addActiveClassroomRole:(id)arg1;
@@ -161,13 +162,16 @@
 - (void)effectiveWhitelistedAppBundleIDsIncludingWatchBundleIDs:(bool)arg1 completion:(id /* block */)arg2;
 - (void)effectiveWhitelistedAppBundleIDsWithCompletion:(id /* block */)arg1;
 - (id)effectiveWhitelistedAppsAndOptions;
+- (unsigned long long)enforcedSoftwareUpdateDelayInDays;
 - (void)enrollProvisionallyWithNonce:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)filteredMailSheetAccountsForBundleID:(id)arg1 sourceAccountManagement:(int)arg2;
 - (id)filteredOpenInAccounts:(id)arg1 originatingAppBundleID:(id)arg2 sourceAccountManagement:(int)arg3;
+- (id)filteredOpenInOriginatingAccounts:(id)arg1 targetAppBundleID:(id)arg2 targetAccountManagement:(int)arg3;
 - (void)flush;
 - (void)getPasscodeComplianceWarningLastLockDate:(id)arg1 completionBlock:(id /* block */)arg2;
 - (int)getPasscodeComplianceWarningLastLockDate:(id)arg1 outLocalizedTitle:(id*)arg2 outLocalizedMessage:(id*)arg3;
 - (unsigned long long)gracePeriod;
+- (bool)hasAnyMailAccountIgnoringFiltering;
 - (bool)hasAppAnalyticsAllowedBeenSet;
 - (bool)hasDiagnosticSubmissionAllowedBeenSet;
 - (bool)hasHealthDataSubmission2BeenSet;
@@ -232,6 +236,7 @@
 - (bool)isClassroomAutomaticClassJoiningForced;
 - (bool)isClassroomEnabled;
 - (bool)isClassroomInstructorRoleEnabled;
+- (bool)isClassroomRequestPermissionToLeaveClassesForced;
 - (bool)isClassroomStudentRoleEnabled;
 - (bool)isClassroomUnpromptedAppAndDeviceLockForced;
 - (bool)isClassroomUnpromptedScreenObservationForced;
@@ -317,6 +322,7 @@
 - (bool)isTodayViewModificationAllowed;
 - (bool)isUIAppInstallationAllowed;
 - (bool)isURLManaged:(id)arg1;
+- (bool)isUSBRestrictedModeAllowed;
 - (bool)isUninstalledAppNearMeSuggestionsAllowed;
 - (bool)isUnionSettingLockedDownByRestrictions:(id)arg1;
 - (bool)isVPNCreationAllowed;
@@ -355,6 +361,7 @@
 - (bool)mayShareToMessagesForOriginatingAppBundleID:(id)arg1 originatingAccountIsManaged:(bool)arg2;
 - (bool)mayShareToMessagesOriginatingAccountIsManaged:(bool)arg1;
 - (bool)mayShowLocalAccountsForBundleID:(id)arg1 sourceAccountManagement:(int)arg2;
+- (bool)mayShowLocalAccountsForTargetBundleID:(id)arg1 targetAccountManagement:(int)arg2;
 - (void)migratePostDataMigrator;
 - (void)migratePostMDMDataMigratorWithContext:(int)arg1 completion:(id /* block */)arg2;
 - (void)migrateWithContext:(int)arg1 passcodeWasSetInBackup:(bool)arg2 completion:(id /* block */)arg3;
@@ -528,6 +535,7 @@
 - (void)setWheelchairDataSubmissionAllowed:(bool)arg1;
 - (void)setupAssistantDidFinish;
 - (bool)shouldApplyFilterForBundleID:(id)arg1 sourceAccountManagement:(int)arg2 outAllowManagedAccounts:(bool*)arg3 outAllowUnmanagedAccounts:(bool*)arg4;
+- (bool)shouldApplyFilterForTargetBundleID:(id)arg1 targetAccountManagement:(int)arg2 outAllowManagedAccounts:(bool*)arg3 outAllowUnmanagedAccounts:(bool*)arg4;
 - (bool)shouldDestroyOldKeybag;
 - (bool)shouldInstallStoredProfileForPurpose:(int)arg1;
 - (bool)shouldShowCloudConfigurationUI;
@@ -543,6 +551,7 @@
 - (void)storeCloudConfigurationDetails:(id)arg1 completion:(id /* block */)arg2;
 - (void)storeCloudConfigurationDetails:(id)arg1 waitUntilCompleted:(bool)arg2 completion:(id /* block */)arg3;
 - (void)storeProfileData:(id)arg1 configurationSource:(int)arg2 purpose:(int)arg3;
+- (void)storeProfileData:(id)arg1 configurationSource:(int)arg2 purpose:(int)arg3 completionBlock:(id /* block */)arg4;
 - (void)submitUserInputResponses:(id)arg1;
 - (id)trustedCodeSigningIdentities;
 - (void)unenrollWithCompletionBlock:(id /* block */)arg1;

@@ -38,6 +38,7 @@
 @property (retain) IKViewElement *navigationBarElement;
 @property (nonatomic, readonly) IKJSNavigationDocument *navigationDocument;
 @property (nonatomic, readonly) IKJSObject *owner;
+@property (nonatomic, readonly) <IKNetworkRequestLoader> *requestLoader;
 @property (nonatomic, retain) IKViewElementStyleFactory *styleFactory;
 @property (getter=isSubtreeUpdated) bool subtreeUpdated;
 @property (readonly) Class superclass;
@@ -83,6 +84,7 @@
 - (void)recordImpressionsForViewElements:(id)arg1;
 - (id)recordedImpressions;
 - (id)recordedImpressions:(bool)arg1;
+- (id)requestLoader;
 - (id)retrieveJSElementForViewElement:(id)arg1 jsContext:(id)arg2;
 - (void)runTestWithName:(id)arg1 options:(id)arg2;
 - (void)scrollToTop;

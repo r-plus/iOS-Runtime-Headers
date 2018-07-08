@@ -13,9 +13,6 @@
             double height; 
         } size; 
     }  _alignmentRect;
-    bool  _allowsCompactCompression;
-    bool  _allowsMultiPassEncoding;
-    bool  _allowsOptimalRowbytesPacking;
 }
 
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } alignmentRect;
@@ -28,6 +25,8 @@
 @property (nonatomic) bool isTintable;
 @property (nonatomic, retain) NSString *nonAlphaImageAreaString;
 @property (nonatomic, retain) NSString *originalImageSizeString;
+@property (nonatomic) struct CGSize { double x1; double x2; } physicalSizeInMeters;
+@property (nonatomic, retain) NSString *physicalSizeInMetersString;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } primitiveAlignmentRect;
 @property (nonatomic, retain) NSOrderedSet *slices;
 
@@ -39,24 +38,20 @@
 - (void)_logExtra:(id)arg1;
 - (void)_logWarning:(id)arg1;
 - (int)_rawPixelFormatOfCGImage:(struct CGImage { }*)arg1;
+- (struct CGSize { double x1; double x2; })_scaleRecognitionImageFromSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)_sliceRectanglesForRenditionSize:(struct { int x1; int x2; })arg1 unadjustedSliceRectangles:(id*)arg2 imageSlicesNeedAdjustment:(bool*)arg3 newRenditionSize:(struct { int x1; int x2; }*)arg4;
 - (id)_slicesToUseForCSI;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alignmentRect;
-- (bool)allowsCompactCompression;
-- (bool)allowsMultiPassEncoding;
-- (bool)allowsOptimalRowbytesPacking;
 - (id)associatedFileModificationDateWithDocument:(id)arg1;
 - (void)awakeFromFetch;
 - (bool)canBePackedWithDocument:(id)arg1;
 - (void)copyAttributesInto:(id)arg1;
 - (id)createCSIRepresentationWithCompression:(bool)arg1 colorSpaceID:(unsigned long long)arg2 document:(id)arg3;
 - (void)drawPackableRenditionInContext:(struct CGContext { }*)arg1 withDocument:(id)arg2;
-- (id)initWithEntity:(id)arg1 insertIntoManagedObjectContext:(id)arg2;
+- (struct CGSize { double x1; double x2; })physicalSizeInMeters;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })primitiveAlignmentRect;
 - (void)setAlignmentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setAllowsCompactCompression:(bool)arg1;
-- (void)setAllowsMultiPassEncoding:(bool)arg1;
-- (void)setAllowsOptimalRowbytesPacking:(bool)arg1;
+- (void)setPhysicalSizeInMeters:(struct CGSize { double x1; double x2; })arg1;
 - (void)setPrimitiveAlignmentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)updatePackingPropertiesWithDocument:(id)arg1;
 

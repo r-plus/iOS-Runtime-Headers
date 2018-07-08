@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DiagnosticExtensionsDaemon.framework/DiagnosticExtensionsDaemon
  */
 
-@interface DEDIDSInbound : NSObject <IDSServiceDelegate> {
+@interface DEDIDSInbound : NSObject <DEDSecureArchiving, IDSServiceDelegate> {
     DEDIDSConnection * _connection;
     DEDController * _delegate;
     NSObject<OS_os_log> * _log;
@@ -15,6 +15,8 @@
 @property (readonly) unsigned long long hash;
 @property (retain) NSObject<OS_os_log> *log;
 @property (readonly) Class superclass;
+
++ (id)archivedClasses;
 
 - (void).cxx_destruct;
 - (void)adopt_files:(id)arg1 service:(id)arg2 account:(id)arg3 fromID:(id)arg4 context:(id)arg5;

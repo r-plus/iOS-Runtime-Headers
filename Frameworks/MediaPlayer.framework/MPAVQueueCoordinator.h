@@ -15,14 +15,13 @@
     NSArray * _items;
     NSHashTable * _itemsPendingAssetLoading;
     MPAVItem * _lastItemAnchor;
-    NSDate * _lastPausedDate;
     unsigned long long  _lastPreferredQueueDepth;
     bool  _needsCurrentItemUpdateAfterPlayerItemSync;
     MPQueuePlayer * _player;
     bool  _preventLoadingItems;
-    double  _rateQueueDepthAdjustmentDelay;
     NSMutableSet * _reusableItems;
     bool  _shouldDeferItemLoading;
+    bool  _shouldExpectEmptyQueue;
 }
 
 @property (nonatomic, readonly) MPAVItem *currentItem;
@@ -31,6 +30,7 @@
 @property (nonatomic, readonly) NSArray *items;
 @property (nonatomic, readonly) MPQueuePlayer *player;
 @property (nonatomic) bool shouldDeferItemLoading;
+@property (nonatomic) bool shouldExpectEmptyQueue;
 
 - (void).cxx_destruct;
 - (void)_beginBackgroundTaskAssertion;
@@ -59,6 +59,8 @@
 - (void)reloadItemsKeepingCurrentItem:(bool)arg1;
 - (void)setEquilibriumAchievedHandler:(id /* block */)arg1;
 - (void)setShouldDeferItemLoading:(bool)arg1;
+- (void)setShouldExpectEmptyQueue:(bool)arg1;
 - (bool)shouldDeferItemLoading;
+- (bool)shouldExpectEmptyQueue;
 
 @end

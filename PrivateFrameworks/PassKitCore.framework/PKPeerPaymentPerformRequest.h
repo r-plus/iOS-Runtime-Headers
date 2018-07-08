@@ -8,6 +8,7 @@
     NSString * _pushToken;
     NSString * _quoteIdentifier;
     NSString * _recipientPhoneOrEmail;
+    NSData * _signedEnrollmentDataSignature;
 }
 
 @property (nonatomic, copy) NSDictionary *certificates;
@@ -15,6 +16,7 @@
 @property (nonatomic, copy) NSString *pushToken;
 @property (nonatomic, copy) NSString *quoteIdentifier;
 @property (nonatomic, copy) NSString *recipientPhoneOrEmail;
+@property (nonatomic, copy) NSData *signedEnrollmentDataSignature;
 
 + (id)requestWithAuthorizedPeerPaymentQuote:(id)arg1;
 
@@ -30,5 +32,7 @@
 - (void)setPushToken:(id)arg1;
 - (void)setQuoteIdentifier:(id)arg1;
 - (void)setRecipientPhoneOrEmail:(id)arg1;
+- (void)setSignedEnrollmentDataSignature:(id)arg1;
+- (id)signedEnrollmentDataSignature;
 
 @end

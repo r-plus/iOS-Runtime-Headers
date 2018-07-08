@@ -4,6 +4,7 @@
 
 @interface VSSubscription : NSObject <NSCopying, NSSecureCoding> {
     long long  _accessLevel;
+    NSString * _billingIdentifier;
     NSDate * _creationDate;
     NSString * _derivedSubscriptionInfo;
     NSDate * _expirationDate;
@@ -15,6 +16,7 @@
 }
 
 @property (nonatomic) long long accessLevel;
+@property (nonatomic, copy) NSString *billingIdentifier;
 @property (nonatomic, copy) NSDate *creationDate;
 @property (nonatomic, copy) NSString *derivedSubscriptionInfo;
 @property (nonatomic, copy) NSDate *expirationDate;
@@ -33,6 +35,7 @@
 - (void).cxx_destruct;
 - (void)_updateHash:(id)arg1 withValueForProperty:(id)arg2;
 - (long long)accessLevel;
+- (id)billingIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)creationDate;
 - (id)derivedSubscriptionInfo;
@@ -46,6 +49,7 @@
 - (id)modificationDate;
 - (id)providedSubscriptionInfo;
 - (void)setAccessLevel:(long long)arg1;
+- (void)setBillingIdentifier:(id)arg1;
 - (void)setCreationDate:(id)arg1;
 - (void)setDerivedSubscriptionInfo:(id)arg1;
 - (void)setExpirationDate:(id)arg1;

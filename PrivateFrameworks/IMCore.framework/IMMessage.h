@@ -28,6 +28,7 @@
     NSData * _payloadData;
     NSString * _plainBody;
     IMHandle * _sender;
+    unsigned long long  _sortID;
     IMHandle * _subject;
     NSAttributedString * _text;
     NSDate * _time;
@@ -84,6 +85,7 @@
 @property (nonatomic, readonly) NSString *plainBody;
 @property (setter=_updateSender:, nonatomic, retain) IMHandle *sender;
 @property (nonatomic, readonly) NSString *senderName;
+@property (nonatomic) unsigned long long sortID;
 @property (nonatomic, readonly) IMHandle *subject;
 @property (nonatomic, readonly) NSString *summaryString;
 @property (setter=_updateText:, nonatomic, retain) NSAttributedString *text;
@@ -201,7 +203,9 @@
 - (void)setIsSOS:(bool)arg1;
 - (void)setNotificationIDSTokenURI:(id)arg1;
 - (void)setPayloadData:(id)arg1;
+- (void)setSortID:(unsigned long long)arg1;
 - (void)setTimeExpressiveSendPlayed:(id)arg1;
+- (unsigned long long)sortID;
 - (id)subject;
 - (id)summaryString;
 - (id)text;

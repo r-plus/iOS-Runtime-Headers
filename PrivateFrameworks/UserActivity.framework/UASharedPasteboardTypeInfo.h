@@ -4,6 +4,7 @@
 
 @interface UASharedPasteboardTypeInfo : NSObject <NSCopying, NSSecureCoding> {
     NSFileHandle * _dataFile;
+    NSNumber * _index;
     NSNumber * _offset;
     long long  _size;
     NSString * _type;
@@ -11,6 +12,7 @@
 }
 
 @property (retain) NSFileHandle *dataFile;
+@property (copy) NSNumber *index;
 @property (copy) NSNumber *offset;
 @property long long size;
 @property (copy) NSString *type;
@@ -23,10 +25,12 @@
 - (id)dataFile;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)index;
 - (id)initWithCoder:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (id)offset;
 - (void)setDataFile:(id)arg1;
+- (void)setIndex:(id)arg1;
 - (void)setOffset:(id)arg1;
 - (void)setSize:(long long)arg1;
 - (void)setType:(id)arg1;

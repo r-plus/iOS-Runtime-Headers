@@ -12,7 +12,6 @@
 }
 
 @property (nonatomic, readonly) double URLFieldHorizontalMargin;
-@property (nonatomic) bool backdropComputesColorSettings;
 @property (nonatomic, copy) NSString *backdropGroupName;
 @property (nonatomic, readonly) long long placement;
 @property (nonatomic) unsigned long long tintStyle;
@@ -24,12 +23,10 @@
 - (double)URLFieldHorizontalMargin;
 - (id)_backdropInputSettings;
 - (bool)_tintUsesDarkTheme;
-- (bool)backdropComputesColorSettings;
 - (id)backdropGroupName;
 - (id)initWithPlacement:(long long)arg1;
 - (void)layoutSubviews;
 - (long long)placement;
-- (void)setBackdropComputesColorSettings:(bool)arg1;
 - (void)setBackdropGroupName:(id)arg1;
 - (void)setTintStyle:(unsigned long long)arg1;
 - (unsigned long long)tintStyle;

@@ -7,7 +7,7 @@
         long long *__begin_; 
         long long *__end_; 
         struct __compressed_pair<long *, std::__1::allocator<long> > { 
-            long long *__first_; 
+            long long *__value_; 
         } __end_cap_; 
     }  _cachedNumberOfItemsInSections;
     long long  _cachedNumberOfSections;
@@ -18,6 +18,8 @@
 }
 
 @property (nonatomic, retain) <MPLazySectionedCollectionDataSource> *dataSource;
+
++ (bool)supportsSecureCoding;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

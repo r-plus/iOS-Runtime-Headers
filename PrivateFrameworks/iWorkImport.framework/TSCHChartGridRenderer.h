@@ -4,7 +4,6 @@
 
 @interface TSCHChartGridRenderer : TSCHRenderer
 
-- (void)dealloc;
 - (id)init;
 - (void)p_renderBackground:(struct CGContext { }*)arg1;
 - (void)p_renderBackground:(struct CGContext { }*)arg1 style:(id)arg2;

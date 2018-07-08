@@ -3,9 +3,10 @@
  */
 
 @interface QLTFileThumbnailRequest : QLTThumbnailRequest {
-    NSURL * _url;
+    FPSandboxingURLWrapper * _sandboxWrapper;
 }
 
+@property (nonatomic, readonly) FPSandboxingURLWrapper *sandboxWrapper;
 @property (readonly) NSURL *url;
 
 + (bool)supportsSecureCoding;
@@ -17,6 +18,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFileAtURL:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 minimumSize:(double)arg3 scale:(double)arg4 iconMode:(bool)arg5;
 - (id)initWithFileAtURL:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 scale:(double)arg3 iconMode:(bool)arg4;
+- (id)sandboxWrapper;
 - (id)url;
 
 @end

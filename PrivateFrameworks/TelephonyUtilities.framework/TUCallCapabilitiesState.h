@@ -9,6 +9,7 @@
     bool  _csCallingCurrentlyAvailable;
     bool  _ctCapabilitiesValid;
     bool  _emergencyCallbackModeEnabled;
+    bool  _emergencyCallbackPossible;
     bool  _faceTimeAudioAvailable;
     bool  _faceTimeVideoAvailable;
     NSString * _outgoingRelayCallerID;
@@ -52,6 +53,7 @@
 @property (nonatomic, readonly) TUCloudCallingDevice *defaultPairedDevice;
 @property (readonly, copy) NSString *description;
 @property (getter=isEmergencyCallbackModeEnabled, nonatomic) bool emergencyCallbackModeEnabled;
+@property (getter=isEmergencyCallbackPossible, nonatomic) bool emergencyCallbackPossible;
 @property (getter=isFaceTimeAudioAvailable, nonatomic) bool faceTimeAudioAvailable;
 @property (getter=isFaceTimeVideoAvailable, nonatomic) bool faceTimeVideoAvailable;
 @property (readonly) unsigned long long hash;
@@ -104,6 +106,7 @@
 - (id)initWithCoder:(id)arg1;
 - (bool)isCSCallingCurrentlyAvailable;
 - (bool)isEmergencyCallbackModeEnabled;
+- (bool)isEmergencyCallbackPossible;
 - (bool)isFaceTimeAudioAvailable;
 - (bool)isFaceTimeVideoAvailable;
 - (bool)isRelayCallingEnabled;
@@ -125,6 +128,7 @@
 - (void)setCsCallingCurrentlyAvailable:(bool)arg1;
 - (void)setCtCapabilitiesValid:(bool)arg1;
 - (void)setEmergencyCallbackModeEnabled:(bool)arg1;
+- (void)setEmergencyCallbackPossible:(bool)arg1;
 - (void)setFaceTimeAudioAvailable:(bool)arg1;
 - (void)setFaceTimeVideoAvailable:(bool)arg1;
 - (void)setOutgoingRelayCallerID:(id)arg1;

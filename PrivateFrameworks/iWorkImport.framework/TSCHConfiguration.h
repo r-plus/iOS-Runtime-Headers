@@ -3,6 +3,7 @@
  */
 
 @interface TSCHConfiguration : NSObject {
+    long long  _analyticsAppType;
     bool  mDisableHighQualityRenderingIfNecessary;
     bool  mExportsUsingSageKeynoteChartNonStyleDefaultsOverride;
     Class  mMultiDataChartOptionsControllerBuildSupportClass;
@@ -18,10 +19,11 @@
     bool  mUse3DFillFor3DChartFallback;
 }
 
+@property (nonatomic) long long analyticsAppType;
 @property (readonly) TSSPropertyMap *appSpecificPropertyOverrides;
 @property (nonatomic) bool disableHighQualityRenderingIfNecessary;
 @property (nonatomic) bool exportsUsingSageKeynoteChartNonStyleDefaultsOverride;
-@property (nonatomic) Class multiDataChartOptionsControllerBuildSupportClass;
+@property (nonatomic, retain) Class multiDataChartOptionsControllerBuildSupportClass;
 @property (nonatomic, copy) NSString *saveChartStyleHelpKey;
 @property (nonatomic) bool shouldForceDiscreteGraphicsFor3D;
 @property (nonatomic) bool showMessageOnSelection;
@@ -38,18 +40,16 @@
 + (void)resetSharedChartConfiguration;
 + (id)sharedChartConfiguration;
 
+- (void).cxx_destruct;
+- (long long)analyticsAppType;
 - (id)appSpecificPropertyOverrides;
-- (id)autorelease;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (bool)disableHighQualityRenderingIfNecessary;
 - (bool)exportsUsingSageKeynoteChartNonStyleDefaultsOverride;
 - (id)init;
 - (Class)multiDataChartOptionsControllerBuildSupportClass;
-- (oneway void)release;
-- (id)retain;
-- (unsigned long long)retainCount;
 - (id)saveChartStyleHelpKey;
+- (void)setAnalyticsAppType:(long long)arg1;
 - (void)setDisableHighQualityRenderingIfNecessary:(bool)arg1;
 - (void)setExportsUsingSageKeynoteChartNonStyleDefaultsOverride:(bool)arg1;
 - (void)setMultiDataChartOptionsControllerBuildSupportClass:(Class)arg1;

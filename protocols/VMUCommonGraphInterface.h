@@ -18,6 +18,8 @@
 - (unsigned int)nodeCount;
 - (struct { unsigned long long x1; unsigned int x2 : 60; unsigned int x3 : 4; id x4; /* Warning: Unrecognized filer type: '2' using 'void*' */ void*x5; void*x6; id x7; SEL x8; void*x9; unsigned int x10; void*x11; void*x12; })nodeDetails;
 - (unsigned int)nodeNamespaceSize;
+- (unsigned long long)physicalFootprint;
+- (unsigned long long)physicalFootprintPeak;
 - (int)pid;
 - (NSString *)processDescriptionString;
 - (NSString *)processName;

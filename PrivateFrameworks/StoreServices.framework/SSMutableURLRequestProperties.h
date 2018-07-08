@@ -15,6 +15,7 @@
 @property long long URLBagType;
 @property (copy) id /* block */ URLBagURLBlock;
 @property (copy) NSArray *URLs;
+@property (copy) NSDictionary *additionalMetrics;
 @property long long allowedRetryCount;
 @property bool allowsBootstrapCellularData;
 @property unsigned long long cachePolicy;
@@ -34,6 +35,7 @@
 @property bool shouldDecodeResponse;
 @property bool shouldDisableCellular;
 @property bool shouldDisableCellularFallback;
+@property bool shouldDisableReversePush;
 @property bool shouldProcessProtocol;
 @property bool shouldSendSecureToken;
 @property bool shouldSetCookies;
@@ -43,6 +45,7 @@
 // Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)setAdditionalMetrics:(id)arg1;
 - (void)setAllowedRetryCount:(long long)arg1;
 - (void)setAllowsBootstrapCellularData:(bool)arg1;
 - (void)setCachePolicy:(unsigned long long)arg1;
@@ -69,6 +72,7 @@
 - (void)setShouldDecodeResponse:(bool)arg1;
 - (void)setShouldDisableCellular:(bool)arg1;
 - (void)setShouldDisableCellularFallback:(bool)arg1;
+- (void)setShouldDisableReversePush:(bool)arg1;
 - (void)setShouldProcessProtocol:(bool)arg1;
 - (void)setShouldSendSecureToken:(bool)arg1;
 - (void)setShouldSetCookies:(bool)arg1;

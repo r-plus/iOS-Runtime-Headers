@@ -31,6 +31,7 @@
 + (id)jobNameFormatForFile;
 
 - (void).cxx_destruct;
+- (bool)_appIsDocumentTypeOwner;
 - (id)_bundleIdentifierForActivityImageCreation;
 - (void)_cleanup;
 - (long long)_defaultSortGroup;

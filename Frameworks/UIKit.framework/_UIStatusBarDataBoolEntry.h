@@ -9,6 +9,7 @@
 @property (nonatomic) bool boolValue;
 
 + (id)entryWithBoolValue:(bool)arg1;
++ (bool)supportsSecureCoding;
 
 - (id)_ui_descriptionBuilder;
 - (bool)boolValue;

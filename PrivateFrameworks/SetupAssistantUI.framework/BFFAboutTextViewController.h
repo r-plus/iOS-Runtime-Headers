@@ -7,6 +7,7 @@
     bool  _disableLinkNavigation;
     bool  _includesAdditionalFormatting;
     NSString * _linkString;
+    id /* block */  _linkTappedBlock;
     UIViewController * _linkedController;
     NSString * _titleString;
 }
@@ -18,6 +19,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool includesAdditionalFormatting;
 @property (nonatomic, retain) NSString *linkString;
+@property (nonatomic, copy) id /* block */ linkTappedBlock;
 @property (nonatomic, retain) UIViewController *linkedController;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *titleString;
@@ -27,12 +29,14 @@
 - (bool)disableLinkNavigation;
 - (bool)includesAdditionalFormatting;
 - (id)linkString;
+- (id /* block */)linkTappedBlock;
 - (id)linkedController;
 - (void)loadView;
 - (void)setDisableLinkNavigation:(bool)arg1;
 - (void)setHTMLString:(id)arg1;
 - (void)setIncludesAdditionalFormatting:(bool)arg1;
 - (void)setLinkString:(id)arg1;
+- (void)setLinkTappedBlock:(id /* block */)arg1;
 - (void)setLinkedController:(id)arg1;
 - (void)setTitleString:(id)arg1;
 - (unsigned long long)supportedInterfaceOrientations;

@@ -4,6 +4,7 @@
 
 @interface HMDAccessory : HMFObject <HMDBackingStoreObjectProtocol, HMDBulletinIdentifiers, HMDHomeMessageReceiver, HMFDumpState, HMFLogging, NSSecureCoding> {
     NSMutableSet * _accessoryProfiles;
+    unsigned long long  _accessoryReprovisionState;
     HMDApplicationData * _appData;
     HMDApplicationRegistry * _appRegistry;
     bool  _blocked;
@@ -33,6 +34,7 @@
 }
 
 @property (readonly, copy) NSArray *accessoryProfiles;
+@property (nonatomic) unsigned long long accessoryReprovisionState;
 @property (nonatomic, retain) HMDApplicationData *appData;
 @property (nonatomic, retain) HMDApplicationRegistry *appRegistry;
 @property (getter=isBlocked, nonatomic) bool blocked;
@@ -82,17 +84,20 @@
 - (void).cxx_destruct;
 - (void)_createCameraProfiles:(id)arg1;
 - (void)_handleGetAccessoryAdvertisingParams:(id)arg1;
+- (void)_handleIdentify:(id)arg1;
 - (void)_handleListPairings:(id)arg1;
 - (void)_handleRename:(id)arg1;
 - (void)_handleSetAppData:(id)arg1;
 - (void)_handleUpdateRoom:(id)arg1;
 - (void)_notifyConnectivityChangedWithReachabilityState:(bool)arg1 remoteAccessChanged:(bool)arg2;
 - (void)_registerForMessages;
+- (void)_relayIdentifyAccessorytoResidentForMessage:(id)arg1;
 - (void)_remoteAccessEnabled:(bool)arg1;
 - (void)_sendBlockedNotification:(bool)arg1 withError:(id)arg2 withIdentifier:(id)arg3 withCompletion:(id /* block */)arg4;
 - (id)_updateCategory:(id)arg1 notifyClients:(bool)arg2;
 - (id)_updateRoom:(id)arg1 message:(id*)arg2;
 - (id)accessoryProfiles;
+- (unsigned long long)accessoryReprovisionState;
 - (void)addAccessoryProfile:(id)arg1;
 - (void)addAdvertisement:(id)arg1;
 - (id)appData;
@@ -122,6 +127,7 @@
 - (void)handleReachabilityChange:(bool)arg1;
 - (void)handleRemoteReachabilityChange:(bool)arg1;
 - (void)handleUpdatedName:(id)arg1;
+- (id)hashRouteID;
 - (id)home;
 - (id)identifier;
 - (id)init;
@@ -149,6 +155,7 @@
 - (void)populateModelObject:(id)arg1 version:(long long)arg2;
 - (id)propertyQueue;
 - (id)providedName;
+- (bool)providesHashRouteID;
 - (long long)reachableTransports;
 - (void)registerForMessagesWithNewUUID:(id)arg1;
 - (void)remoteAccessEnabled:(bool)arg1;
@@ -158,6 +165,7 @@
 - (id)room;
 - (id)serialNumber;
 - (void)setAccessoryProfiles:(id)arg1;
+- (void)setAccessoryReprovisionState:(unsigned long long)arg1;
 - (void)setAppData:(id)arg1;
 - (void)setAppRegistry:(id)arg1;
 - (void)setBlocked:(bool)arg1;
@@ -183,6 +191,7 @@
 - (void)setUnblockPending:(bool)arg1;
 - (void)setUuid:(id)arg1;
 - (bool)shouldEnableDaemonRelaunch;
+- (bool)supportsMinimumUserPrivilege;
 - (bool)supportsUserManagement;
 - (void)takeOwnershipOfAppData:(id)arg1;
 - (id)transaction;

@@ -9,6 +9,8 @@
 
 @property (nonatomic) bool showsDecimalPointButton;
 
++ (struct CGSize { double x1; double x2; })defaultSize;
+
 - (void).cxx_destruct;
 - (void)_numericKeyPressed:(id)arg1;
 - (void)_performDelete;

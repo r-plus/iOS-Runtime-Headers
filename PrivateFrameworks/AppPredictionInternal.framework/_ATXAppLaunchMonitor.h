@@ -30,6 +30,7 @@
 - (id)appLaunchHistogramManager;
 - (id)appLaunchSequenceManager;
 - (void)clearHistory;
+- (void)clearIntentHistogramHistory;
 - (id)dailyDose;
 - (void)dealloc;
 - (id)getLastAppsFromDuetWithStartDate:(id)arg1 endDate:(id)arg2;

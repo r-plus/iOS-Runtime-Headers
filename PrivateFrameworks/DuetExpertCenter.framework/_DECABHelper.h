@@ -17,7 +17,6 @@
 + (unsigned char)indexForDevice;
 + (void)initialize;
 + (unsigned long long)randomSaltedIndex:(unsigned long long)arg1;
-+ (id)readDeviceIdFromDefaults:(id)arg1;
 + (unsigned long long)saltedIndex:(unsigned long long)arg1;
 + (void)setDefaultDeviceIndexPolicy;
 + (void)setIndexForDevice:(id /* block */)arg1;

@@ -6,10 +6,8 @@
     NSData * _appIdentifier;
     NSHashTable * _contentKeyRecipients;
     NSMutableArray * _cryptorsList;
-    NSMutableDictionary * _decryptorsByInitData;
     AVWeakReferencingDelegateStorage * _delegateStorage;
     struct OpaqueFigContentKeySession { } * _figContentKeySession;
-    NSString * _hlsMethod;
     bool  _internal;
     bool  _isExpired;
     NSString * _keySystem;
@@ -17,6 +15,7 @@
     NSURL * _storageURL;
     NSObject<OS_dispatch_queue> * _threadSafetyQ;
     AVWeakReference * _weakReference;
+    NSMutableDictionary * keyRequestsByRequestID;
 }
 
 @end

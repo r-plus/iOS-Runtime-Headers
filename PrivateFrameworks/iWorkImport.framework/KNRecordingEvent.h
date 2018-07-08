@@ -3,7 +3,7 @@
  */
 
 @interface KNRecordingEvent : NSObject <NSCopying> {
-    double  mStartTime;
+    double  _startTime;
 }
 
 @property (nonatomic, readonly) bool canPrecedeDiscontinuity;

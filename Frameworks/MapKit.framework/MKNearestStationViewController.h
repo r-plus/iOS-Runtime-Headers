@@ -21,6 +21,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (bool)_stateHasContentToDisplay;
 - (id)delegate;
 - (id)errorMessage;
 - (id)initWithLineName:(id)arg1;

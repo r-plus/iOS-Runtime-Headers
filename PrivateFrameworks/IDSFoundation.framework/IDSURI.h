@@ -20,6 +20,7 @@
 - (id)initWithPrefixedURI:(id)arg1;
 - (id)initWithUnprefixedURI:(id)arg1;
 - (bool)isEqual:(id)arg1;
+- (bool)isEqualToURI:(id)arg1;
 - (id)prefixedURI;
 - (void)setPrefixedURI:(id)arg1;
 - (id)unprefixedURI;

@@ -19,7 +19,10 @@
 @property (nonatomic, retain) NSString *sourceUrl;
 
 - (void).cxx_destruct;
-- (void)clearSessionIdFromPlaceRequest;
+- (void)_clearLocationsFromPlaceRequest;
+- (void)_clearLocationsFromPlaceResponse;
+- (void)clearLocations;
+- (void)clearSessionId;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

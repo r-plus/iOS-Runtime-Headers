@@ -31,7 +31,6 @@
     NSString * _currentSunriseKey;
     NSString * _currentSunsetKey;
     struct __CFTimeZone { } * _currentTimeZone;
-    struct __Display { } * _display;
     bool  _displayOff;
     double  _displayOffTimestamp;
     struct __CFUserNotification { } * _enableNotification;
@@ -85,6 +84,7 @@
     SunriseSunsetProvider * _sunriseSunsetProvider;
     double  _sunsetAbsolute;
     double  _sunsetPreviousAbsolute;
+    <NightShiftSupportProtocol> * _supportObj;
     float  _transitionLength;
     float  _transitionLengthActual;
     float  _transitionRate;
@@ -107,7 +107,7 @@
 - (void)displayAlertInteractive:(bool)arg1;
 - (void)enableBlueLightReduction:(bool)arg1 withOption:(int)arg2;
 - (id)getPropertyForKey:(id)arg1;
-- (id)initWithDisplay:(struct __Display { }*)arg1 queue:(id)arg2 callback:(id /* block */)arg3;
+- (id)initWithSupportObject:(id)arg1 queue:(id)arg2 callback:(id /* block */)arg3;
 - (void)initiateFullMaxTransition;
 - (void)initiateFullMinTransition;
 - (void)initiateRestrictedMaxTransition;

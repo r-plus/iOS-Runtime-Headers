@@ -30,7 +30,6 @@
 @property (nonatomic, copy) NSString *actionTitle;
 @property (nonatomic, copy) NSString *actionUrlString;
 @property (nonatomic, copy) FCColorGradient *backgroundColorGradient;
-@property (nonatomic, readonly) NSArray *breakingNewsHeadlines;
 @property (nonatomic, copy) NSString *fontName;
 @property (nonatomic) double fontSize;
 @property (nonatomic, readonly) double fontSizeiPad;
@@ -55,7 +54,6 @@
 - (id)actionTitle;
 - (id)actionUrlString;
 - (id)backgroundColorGradient;
-- (id)breakingNewsHeadlines;
 - (id)fontName;
 - (double)fontSize;
 - (double)fontSizeiPad;

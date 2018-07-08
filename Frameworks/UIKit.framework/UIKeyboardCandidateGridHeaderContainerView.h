@@ -4,12 +4,8 @@
 
 @interface UIKeyboardCandidateGridHeaderContainerView : UICollectionReusableView
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 + (id)collectionViewKind;
 + (id)reuseIdentifier;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
 
 - (void)setHeaderView:(id)arg1;
 

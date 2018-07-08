@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@interface FigCaptureSourceFormat : NSObject <FigXPCCoding> {
+@interface FigCaptureSourceFormat : NSObject <FigXPCCoding, NSSecureCoding> {
     struct opaqueCMFormatDescription { } * _formatDescription;
     NSDictionary * _formatDictionary;
 }
@@ -17,11 +17,15 @@
 @property (readonly) unsigned int mediaType;
 @property (readonly) Class superclass;
 
++ (bool)supportsSecureCoding;
+
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (unsigned int)format;
 - (struct opaqueCMFormatDescription { }*)formatDescription;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithFigCaptureStreamFormatDictionary:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (bool)isDefaultActiveFormat;

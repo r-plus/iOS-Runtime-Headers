@@ -4,6 +4,7 @@
 
 @interface HMDAccessorySettingMetadata : HMFObject <HMFObject> {
     NSArray * _constraints;
+    HMDAccessorySettingMergeStrategy * _mergeStrategy;
     NSString * _name;
     unsigned long long  _properties;
     long long  _type;
@@ -14,6 +15,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (readonly) HMDAccessorySettingMergeStrategy *mergeStrategy;
 @property (readonly, copy) NSString *name;
 @property (readonly) unsigned long long properties;
 @property (readonly, copy) NSString *propertyDescription;
@@ -27,7 +29,8 @@
 
 - (void).cxx_destruct;
 - (id)constraints;
-- (id)initWithName:(id)arg1 type:(long long)arg2 properties:(unsigned long long)arg3 constraints:(id)arg4 value:(id)arg5;
+- (id)initWithName:(id)arg1 type:(long long)arg2 properties:(unsigned long long)arg3 constraints:(id)arg4 mergeStrategy:(id)arg5 value:(id)arg6;
+- (id)mergeStrategy;
 - (id)modelWithParentIdentifier:(id)arg1;
 - (id)modelsWithParentIdentifier:(id)arg1;
 - (id)name;

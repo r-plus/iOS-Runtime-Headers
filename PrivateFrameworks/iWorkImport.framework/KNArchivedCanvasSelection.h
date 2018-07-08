@@ -3,7 +3,7 @@
  */
 
 @interface KNArchivedCanvasSelection : TSPObject <TSKArchivedSelection> {
-    TSKSelection<TSDCanvasSelection> * mSelection;
+    TSKSelection<TSDCanvasSelection> * _selection;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,7 +12,7 @@
 @property (nonatomic, retain) TSKSelection *selection;
 @property (readonly) Class superclass;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithContext:(id)arg1;
 - (void)loadFromUnarchiver:(id)arg1;
 - (void)saveToArchiver:(id)arg1;

@@ -28,6 +28,7 @@
 - (id)init;
 - (id)initWithDimensionality:(unsigned long long)arg1 epsilon:(double)arg2;
 - (unsigned long long)m;
+- (id)randomizeBitValues:(id)arg1 forKey:(id)arg2;
 - (id)randomizeStrings:(id)arg1 forKey:(id)arg2;
 - (id)randomizeWords:(id)arg1 fragmentWidth:(unsigned long long)arg2 forKey:(id)arg3;
 - (id)randomizedBitForString:(id)arg1;

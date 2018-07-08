@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@interface ML3OrderingTerm : NSObject <NSCoding, NSCopying> {
+@interface ML3OrderingTerm : NSObject <NSCopying, NSSecureCoding> {
     NSString * _collation;
     int  _direction;
     NSString * _property;
@@ -15,6 +15,7 @@
 + (id)orderingTermWithProperty:(id)arg1;
 + (id)orderingTermWithProperty:(id)arg1 direction:(int)arg2;
 + (id)reversedTerms:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;

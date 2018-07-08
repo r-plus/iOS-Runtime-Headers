@@ -69,6 +69,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) MPRemoteCommand *disableLanguageOptionCommand;
+@property (nonatomic, readonly) MPRemoteCommand *disableQueueModificationsCommand;
 @property (nonatomic, readonly) MPFeedbackCommand *dislikeCommand;
 @property (nonatomic, readonly) MPRemoteCommand *enableLanguageOptionCommand;
 @property (readonly) unsigned long long hash;
@@ -163,6 +164,7 @@
 
 // Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
 
+- (id)disableQueueModificationsCommand;
 - (id)startPictureInPictureCommand;
 
 // Image: /System/Library/PrivateFrameworks/NanoMediaRemote.framework/NanoMediaRemote

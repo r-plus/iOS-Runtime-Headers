@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UISegmentedControl : UIControl <DebugHierarchyObject, NSCoding, UIPopoverPresentationControllerDelegate, _UIBasicAnimationFactory, _UIHostedFocusSystemDelegate> {
+@interface UISegmentedControl : UIControl <NSCoding, UIPopoverPresentationControllerDelegate, _UIBasicAnimationFactory, _UIHostedFocusSystemDelegate> {
     bool  __hasTranslucentOptionsBackground;
     id  _appearanceStorage;
     UILongPressGestureRecognizer * _axLongPressGestureRecognizer;
@@ -138,20 +138,6 @@
 - (void)_updateOptionsBackground;
 - (void)_updateTitleTextAttributes;
 - (bool)_usesNewAnimations;
-- (void)dealloc;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (struct CGSize { double x1; double x2; })__dbg_contentOffsetForSelectedSegment;
-- (bool)__dbg_hasValidSelectedSegmentIndex;
-- (bool)__dbg_isEnabledForSelectedSegment;
-- (id)__dbg_titleForSelectedSegment;
-- (double)__dbg_widthForSelectedSegment;
-- (id)debugHierarchyPropertyDescriptions;
-- (id)debugHierarchyValueForPropertyWithName:(id)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (void)addSegmentWithTitle:(id)arg1;
@@ -166,6 +152,7 @@
 - (struct CGSize { double x1; double x2; })contentOffsetForSegmentAtIndex:(unsigned long long)arg1;
 - (struct UIOffset { double x1; double x2; })contentPositionAdjustmentForSegmentType:(long long)arg1 barMetrics:(long long)arg2;
 - (int)controlSize;
+- (void)dealloc;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)dividerImageForLeftSegmentState:(unsigned long long)arg1 rightSegmentState:(unsigned long long)arg2 barMetrics:(long long)arg3;
 - (void)encodeWithCoder:(id)arg1;

@@ -23,6 +23,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *hsaToken;
 @property (nonatomic, copy) NSString *mapsToken;
+@property (nonatomic, copy) NSString *mdmServerToken;
 @property (nonatomic, copy) NSString *oauthRefreshToken;
 @property (nonatomic, copy) NSString *oauthToken;
 @property (nonatomic, copy) NSString *oauthTokenNoSync;
@@ -70,6 +71,7 @@
 - (bool)isEqual:(id)arg1;
 - (id)keysForCredentialItems;
 - (id)mapsToken;
+- (id)mdmServerToken;
 - (id)oauthRefreshToken;
 - (id)oauthToken;
 - (id)oauthTokenNoSync;
@@ -84,6 +86,7 @@
 - (void)setFindMyiPhoneToken:(id)arg1;
 - (void)setHsaToken:(id)arg1;
 - (void)setMapsToken:(id)arg1;
+- (void)setMdmServerToken:(id)arg1;
 - (void)setOauthRefreshToken:(id)arg1;
 - (void)setOauthToken:(id)arg1;
 - (void)setOauthTokenNoSync:(id)arg1;

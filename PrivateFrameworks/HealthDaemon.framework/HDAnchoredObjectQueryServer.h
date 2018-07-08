@@ -15,7 +15,6 @@
     bool  _objectsDeleted;
     bool  _shouldResetAnchor;
     HKQueryAnchor * _startAnchor;
-    bool  _suspended;
 }
 
 @property (nonatomic, readonly) HKQueryAnchor *anchor;
@@ -23,6 +22,8 @@
 
 - (void).cxx_destruct;
 - (id)_maxRowIDInDatabaseWithError:(id*)arg1;
+- (void)_queue_deliverSamples:(id)arg1 deletedObjects:(id)arg2 anchor:(id)arg3 clearPendingSamples:(bool)arg4 deliverResults:(bool)arg5 description:(id)arg6;
+- (void)_queue_handleBatchedQueryResult:(long long)arg1 error:(id)arg2;
 - (void)_queue_samplesWereRemovedWithAnchor:(id)arg1;
 - (bool)_queue_shouldAcceptUpdates;
 - (bool)_queue_shouldAccumulateUpdates;

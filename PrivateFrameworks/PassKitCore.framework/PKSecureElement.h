@@ -42,8 +42,11 @@
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
++ (bool)hardwareSupportsExpressMode:(id)arg1;
 + (id)primarySecureElementIdentifier;
 + (id)secureElementIdentifiers;
++ (bool)supportsExpressMode:(id)arg1;
++ (bool)supportsExpressMode:(id)arg1 byHardware:(bool*)arg2;
 
 - (void).cxx_destruct;
 - (void)SEPPairingInfoWithCompletion:(id /* block */)arg1;

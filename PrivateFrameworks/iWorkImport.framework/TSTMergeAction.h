@@ -7,14 +7,14 @@
         unsigned long long *__begin_; 
         unsigned long long *__end_; 
         struct __compressed_pair<unsigned long *, std::__1::allocator<unsigned long> > { 
-            unsigned long long *__first_; 
+            unsigned long long *__value_; 
         } __end_cap_; 
     }  _mergeFormulaIndexes;
     struct vector<TSCEFormula, std::__1::allocator<TSCEFormula> > { 
         struct TSCEFormula {} *__begin_; 
         struct TSCEFormula {} *__end_; 
         struct __compressed_pair<TSCEFormula *, std::__1::allocator<TSCEFormula> > { 
-            struct TSCEFormula {} *__first_; 
+            struct TSCEFormula {} *__value_; 
         } __end_cap_; 
     }  _mergeFormulas;
     int  _type;
@@ -22,7 +22,7 @@
         struct TSTCellUIDRange {} *__begin_; 
         struct TSTCellUIDRange {} *__end_; 
         struct __compressed_pair<TSTCellUIDRange *, std::__1::allocator<TSTCellUIDRange> > { 
-            struct TSTCellUIDRange {} *__first_; 
+            struct TSTCellUIDRange {} *__value_; 
         } __end_cap_; 
     }  _uidRanges;
 }

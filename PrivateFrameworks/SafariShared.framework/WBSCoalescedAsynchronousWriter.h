@@ -13,7 +13,7 @@
     NSString * _name;
     struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
         struct __compressed_pair<SafariShared::SuddenTerminationDisabler *, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
-            struct SuddenTerminationDisabler {} *__first_; 
+            struct SuddenTerminationDisabler {} *__value_; 
         } __ptr_; 
     }  _suddenTerminationDisabler;
     NSObject<OS_dispatch_source> * _timer;
@@ -34,7 +34,7 @@
 - (void)_timerFired;
 - (void)_waitForWriteCompletion;
 - (void)_writeData:(id)arg1;
-- (void)_writeDataAsynchronously:(id)arg1;
+- (void)_writeDataAsynchronously:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)cancelPendingWriteSynchronously;
 - (void)completePendingWriteSynchronously;
 - (void)dealloc;
@@ -47,5 +47,6 @@
 - (void)scheduleWrite;
 - (void)setDelegate:(id)arg1;
 - (void)startScheduledWriteNow;
+- (void)startScheduledWriteNowWithCompletionHandler:(id /* block */)arg1;
 
 @end

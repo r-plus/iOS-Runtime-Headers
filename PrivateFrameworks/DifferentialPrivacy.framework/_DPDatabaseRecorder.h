@@ -20,6 +20,7 @@
 - (id)initWithKey:(id)arg1 storage:(id)arg2;
 - (id)initWithKey:(id)arg1 storage:(id)arg2 systemBlacklistPath:(id)arg3 runtimeBlacklistPath:(id)arg4;
 - (unsigned long long)puzzlePieceCount;
+- (void)recordBitValues:(id)arg1;
 - (void)recordNumbers:(id)arg1;
 - (void)recordStrings:(id)arg1;
 - (void)recordWords:(id)arg1;

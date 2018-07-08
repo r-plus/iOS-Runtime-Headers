@@ -7,6 +7,7 @@
 
 - (NSUUID *)baseObjectUUID;
 - (bool)canRetainObjectReferencedByWeakLazyReference;
+- (TSPCancellationState *)cancellationStateForReader:(TSPReader *)arg1;
 - (TSPObjectContext *)contextForReader:(TSPReader *)arg1;
 - (unsigned long long)fileFormatVersion;
 - (bool)hasDocumentVersionUUID;

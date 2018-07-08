@@ -42,6 +42,7 @@
 @property (nonatomic, readonly) MPAVRouteConnection *connection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSString *designatedGroupLeaderName;
 @property (getter=isDeviceSpeakerRoute, nonatomic, readonly) bool deviceSpeakerRoute;
 @property (getter=isDisplayedAsPicked, nonatomic, readonly) bool displayAsPicked;
 @property (nonatomic) long long displayRouteType;
@@ -58,8 +59,10 @@
 @property (nonatomic, readonly) NSString *playingPairedDeviceName;
 @property (getter=isPowerbeatsRoute, nonatomic, readonly) bool powerbeatsRoute;
 @property (nonatomic, readonly) NSString *productIdentifier;
+@property (getter=isProxyGroupPlayer, nonatomic, readonly) bool proxyGroupPlayer;
 @property (nonatomic, readonly) bool requiresPassword;
 @property (nonatomic, copy) NSString *routeName;
+@property (nonatomic, readonly) NSArray *routeNames;
 @property (nonatomic, readonly) long long routeSubtype;
 @property (nonatomic, readonly) long long routeType;
 @property (nonatomic, readonly) NSString *routeUID;
@@ -67,6 +70,8 @@
 @property (getter=isSmartAudio, nonatomic, readonly) bool smartAudio;
 @property (getter=isStereoPair, nonatomic, readonly) bool stereoPair;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) bool supportsGrouping;
+@property (nonatomic, readonly) bool supportsRemoteControl;
 @property (nonatomic, readonly) bool supportsWirelessDisplay;
 @property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
 @property (getter=isVolumeControlAvailable, nonatomic, readonly) bool volumeControlAvailable;
@@ -86,6 +91,7 @@
 - (id)connection;
 - (id)debugDescription;
 - (id)description;
+- (id)designatedGroupLeaderName;
 - (long long)displayRouteType;
 - (void)encodeWithCoder:(id)arg1;
 - (id)groupUID;
@@ -108,6 +114,7 @@
 - (bool)isPickedOnPairedDevice;
 - (bool)isPlayingOnPairedDevice;
 - (bool)isPowerbeatsRoute;
+- (bool)isProxyGroupPlayer;
 - (bool)isRoutingToWirelessDevice;
 - (bool)isSmartAudio;
 - (bool)isStereoPair;
@@ -119,6 +126,7 @@
 - (id)productIdentifier;
 - (bool)requiresPassword;
 - (id)routeName;
+- (id)routeNames;
 - (long long)routeSubtype;
 - (long long)routeType;
 - (id)routeUID;
@@ -127,6 +135,8 @@
 - (void)setPicked:(bool)arg1;
 - (void)setRouteName:(id)arg1;
 - (void)setWirelessDisplayRoute:(id)arg1;
+- (bool)supportsGrouping;
+- (bool)supportsRemoteControl;
 - (bool)supportsWirelessDisplay;
 - (id)wirelessDisplayRoute;
 

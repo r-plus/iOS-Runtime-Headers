@@ -4,6 +4,7 @@
 
 @interface VKAnimation : NSObject {
     id /* block */  _completionHandler;
+    float  _frequency;
     NSString * _name;
     long long  _priority;
     <VKAnimationRunner> * _runner;
@@ -13,6 +14,8 @@
 
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (nonatomic) double duration;
+@property (nonatomic) float frequency;
+@property (nonatomic, readonly) bool hasFrequency;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) long long priority;
 @property (nonatomic, readonly) bool running;
@@ -24,6 +27,8 @@
 - (void)dealloc;
 - (id)description;
 - (double)duration;
+- (float)frequency;
+- (bool)hasFrequency;
 - (id)initWithName:(id)arg1;
 - (id)initWithPriority:(long long)arg1;
 - (id)initWithPriority:(long long)arg1 name:(id)arg2;
@@ -36,6 +41,7 @@
 - (bool)runsForever;
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setDuration:(double)arg1;
+- (void)setFrequency:(float)arg1;
 - (void)setRunsForever:(bool)arg1;
 - (void)startWithRunner:(id)arg1;
 - (long long)state;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIAlertController : UIViewController <DebugHierarchyObject, HUPreloadableViewController, UIAlertControllerContaining, UIAlertControllerVisualStyleProviding, UIPreviewInteractionControllerDelegate, _UIAlertControllerTextFieldViewControllerContaining> {
+@interface UIAlertController : UIViewController <HUPreloadableViewController, UIAlertControllerContaining, UIAlertControllerVisualStyleProviding, UIPreviewInteractionControllerDelegate, _UIAlertControllerTextFieldViewControllerContaining> {
     NSMutableArray * __actionDelimiterIndices;
     UIPopoverController * __compatibilityPopoverController;
     UIView * __presentationSourceRepresentationView;
@@ -294,10 +294,6 @@
 - (id)visualStyleForAlertControllerStyle:(long long)arg1 traitCollection:(id)arg2 descriptor:(id)arg3;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
-
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
 + (id)mf_actionSheetWithTitle:(id)arg1 cancellationHandler:(id /* block */)arg2;
@@ -340,6 +336,7 @@
 + (id)alertControllerForAddingServiceGroupWithProceed:(id /* block */)arg1;
 + (id)alertControllerForAddingZoneWithProceed:(id /* block */)arg1;
 + (id)hu_alertControllerForUnimplementedFeature:(id)arg1;
++ (id)hu_alertControllerWithActivityIndicatorAndTitle:(id)arg1;
 
 - (id)hu_preloadContent;
 

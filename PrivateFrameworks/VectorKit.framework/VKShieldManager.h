@@ -16,31 +16,31 @@
                 struct __list_node_base<geo::detail::_CacheItem<md::ShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> {} *__next_; 
             } __end_; 
             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<geo::detail::_CacheItem<md::ShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> > > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __size_alloc_; 
         } _list; 
         struct unordered_map<md::ShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::ShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *>, std::__1::hash<md::ShieldCacheKey>, std::__1::equal_to<md::ShieldCacheKey>, std::__1::allocator<std::__1::pair<const md::ShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::ShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> > > > { 
             struct __hash_table<std::__1::__hash_value_type<md::ShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::ShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, std::__1::__unordered_map_hasher<md::ShieldCacheKey, std::__1::__hash_value_type<md::ShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::ShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, std::__1::hash<md::ShieldCacheKey>, true>, std::__1::__unordered_map_equal<md::ShieldCacheKey, std::__1::__hash_value_type<md::ShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::ShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, std::__1::equal_to<md::ShieldCacheKey>, true>, std::__1::allocator<std::__1::__hash_value_type<md::ShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::ShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> > > > { 
                 struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::ShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::ShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::ShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::ShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, void *> *> *> > > { 
                     struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::ShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::ShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::ShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::ShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, void *> *> *> > > { 
-                        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::ShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::ShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, void *> *> {} **__first_; 
+                        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::ShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::ShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, void *> *> {} **__value_; 
                         struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::ShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::ShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, void *> *> *> > { 
                             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::ShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::ShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, void *> *> *> > { 
-                                unsigned long long __first_; 
+                                unsigned long long __value_; 
                             } __data_; 
-                        } __second_; 
+                        } __value_; 
                     } __ptr_; 
                 } __bucket_list_; 
                 struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::ShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::ShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<md::ShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::ShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, void *> > > { 
                     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::ShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::ShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, void *> *> { 
                         struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::ShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::ShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, void *> *> {} *__next_; 
-                    } __first_; 
+                    } __value_; 
                 } __p1_; 
                 struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<md::ShieldCacheKey, std::__1::__hash_value_type<md::ShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::ShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, std::__1::hash<md::ShieldCacheKey>, true> > { 
-                    unsigned long long __first_; 
+                    unsigned long long __value_; 
                 } __p2_; 
                 struct __compressed_pair<float, std::__1::__unordered_map_equal<md::ShieldCacheKey, std::__1::__hash_value_type<md::ShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::ShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, std::__1::equal_to<md::ShieldCacheKey>, true> > { 
-                    float __first_; 
+                    float __value_; 
                 } __p3_; 
             } __table_; 
         } _map; 
@@ -64,31 +64,31 @@
                 struct __list_node_base<geo::detail::_CacheItem<md::GenericShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> {} *__next_; 
             } __end_; 
             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<geo::detail::_CacheItem<md::GenericShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> > > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __size_alloc_; 
         } _list; 
         struct unordered_map<md::GenericShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::GenericShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *>, std::__1::hash<md::GenericShieldCacheKey>, std::__1::equal_to<md::GenericShieldCacheKey>, std::__1::allocator<std::__1::pair<const md::GenericShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::GenericShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> > > > { 
             struct __hash_table<std::__1::__hash_value_type<md::GenericShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::GenericShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, std::__1::__unordered_map_hasher<md::GenericShieldCacheKey, std::__1::__hash_value_type<md::GenericShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::GenericShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, std::__1::hash<md::GenericShieldCacheKey>, true>, std::__1::__unordered_map_equal<md::GenericShieldCacheKey, std::__1::__hash_value_type<md::GenericShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::GenericShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, std::__1::equal_to<md::GenericShieldCacheKey>, true>, std::__1::allocator<std::__1::__hash_value_type<md::GenericShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::GenericShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> > > > { 
                 struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::GenericShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::GenericShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::GenericShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::GenericShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, void *> *> *> > > { 
                     struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::GenericShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::GenericShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::GenericShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::GenericShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, void *> *> *> > > { 
-                        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::GenericShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::GenericShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, void *> *> {} **__first_; 
+                        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::GenericShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::GenericShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, void *> *> {} **__value_; 
                         struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::GenericShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::GenericShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, void *> *> *> > { 
                             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::GenericShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::GenericShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, void *> *> *> > { 
-                                unsigned long long __first_; 
+                                unsigned long long __value_; 
                             } __data_; 
-                        } __second_; 
+                        } __value_; 
                     } __ptr_; 
                 } __bucket_list_; 
                 struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::GenericShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::GenericShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<md::GenericShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::GenericShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, void *> > > { 
                     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::GenericShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::GenericShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, void *> *> { 
                         struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<md::GenericShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::GenericShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, void *> *> {} *__next_; 
-                    } __first_; 
+                    } __value_; 
                 } __p1_; 
                 struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<md::GenericShieldCacheKey, std::__1::__hash_value_type<md::GenericShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::GenericShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, std::__1::hash<md::GenericShieldCacheKey>, true> > { 
-                    unsigned long long __first_; 
+                    unsigned long long __value_; 
                 } __p2_; 
                 struct __compressed_pair<float, std::__1::__unordered_map_equal<md::GenericShieldCacheKey, std::__1::__hash_value_type<md::GenericShieldCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::GenericShieldCacheKey, VKShieldArtwork *, _value_ptr>, void *> >, std::__1::equal_to<md::GenericShieldCacheKey>, true> > { 
-                    float __first_; 
+                    float __value_; 
                 } __p3_; 
             } __table_; 
         } _map; 

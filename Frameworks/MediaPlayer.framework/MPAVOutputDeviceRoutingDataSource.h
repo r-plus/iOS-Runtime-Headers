@@ -7,6 +7,7 @@
     NSError * _applicationOutputContextCreationError;
     bool  _attemptedToInitializeAppOutputContext;
     void * _callbackToken;
+    bool  _devicePresenceDetected;
     void * _discoverySession;
     MPAVEndpointRoute * _endpointRoute;
     NSArray * _outputDeviceRoutes;
@@ -24,7 +25,6 @@
 - (void*)_createDefaultApplicationOutputContext:(id*)arg1 outAudioSessionID:(unsigned int*)arg2;
 - (void)_endpointsDidChangeNotification:(id)arg1;
 - (id)_outputDeviceRouteWithUID:(id)arg1;
-- (void)_outputDeviceVolumeDidChangeNotification:(id)arg1;
 - (void)_outputDevicesDidChange:(id)arg1;
 - (void)_outputDevicesDidChangeNotification:(id)arg1;
 - (void)_registerNotifications;

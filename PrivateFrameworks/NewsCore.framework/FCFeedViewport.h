@@ -12,6 +12,7 @@
 @property (nonatomic, readonly) double ageOfTopmostGroup;
 @property (nonatomic, readonly, copy) NSArray *externalElements;
 @property (nonatomic, readonly, copy) NSArray *groupElements;
+@property (nonatomic, readonly, copy) NSArray *headlines;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, copy) NSArray *internalElements;
 
@@ -32,6 +33,7 @@
 - (id)externalElements;
 - (id)externalIndexPathForBookmark:(id)arg1;
 - (id)groupElements;
+- (id)headlines;
 - (id)identifier;
 - (id)indexPathForHeadlineReferencedByBookmark:(id)arg1 error:(id*)arg2;
 - (id)init;

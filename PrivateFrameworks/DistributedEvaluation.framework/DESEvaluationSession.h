@@ -37,6 +37,7 @@
 - (id)initWithBaseURL:(id)arg1 records:(id)arg2 recordType:(id)arg3 localeIdentifier:(id)arg4 evaluator:(id)arg5 dataFetchBlock:(id /* block */)arg6;
 - (id)initWithBaseURL:(id)arg1 records:(id)arg2 recordType:(id)arg3 localeIdentifier:(id)arg4 evaluator:(id)arg5 protocolClass:(Class)arg6 dataFetchBlock:(id /* block */)arg7;
 - (void)invalidate;
+- (void)postRecipeResponseJSONObject:(id)arg1 recipeId:(id)arg2 completion:(id /* block */)arg3;
 - (void)runWithCompletion:(id /* block */)arg1;
 - (id)session;
 

@@ -10,6 +10,7 @@
 @property (nonatomic, retain) NSArray *predicates;
 
 + (id)predicateMatchingPredicates:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)SQLJoinClausesForClass:(Class)arg1;

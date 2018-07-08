@@ -11,7 +11,6 @@
     bool  _doingLayout;
     unsigned long long  _footnoteIndex;
     unsigned long long  _lastLaidOutSectionIndex;
-    bool  _onLastSection;
     TPPageIndexPath * _pageIndexPath;
 }
 
@@ -35,7 +34,7 @@
 - (void)advancePageIndex;
 - (void)advanceSectionIndex;
 - (bool)allowParagraphMetrics;
-- (void)backUpToPage:(id)arg1 pageIndex:(unsigned long long)arg2;
+- (void)backUpToPageIndexPath:(id)arg1 documentPageIndex:(unsigned long long)arg2;
 - (unsigned long long)bodyCharIndex;
 - (void*)bodyLayoutState;
 - (unsigned long long)documentPageIndex;

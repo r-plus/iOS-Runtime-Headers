@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UINavigationController : UIViewController <DebugHierarchyObject, GKContentRefresh, GKURLHandling, HUPreloadableViewController, UIGestureRecognizerDelegatePrivate, UILayoutContainerViewDelegate, _UINavigationBarDelegatePrivate, _UIScrollViewScrollObserver> {
+@interface UINavigationController : UIViewController <GKContentRefresh, GKURLHandling, HUPreloadableViewController, UIGestureRecognizerDelegatePrivate, UILayoutContainerViewDelegate, _UINavigationBarDelegatePrivate, _UIScrollViewScrollObserver> {
     NSString * __backdropGroupName;
     _UIAnimationCoordinator * __barInteractiveAnimationCoordinator;
     _UIBarPanGestureRecognizer * __barSwipeHideGesture;
@@ -249,6 +249,7 @@
 - (void)_didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (bool)_doesTopViewControllerSupportInterfaceOrientation:(long long)arg1;
 - (void)_eagerlyUpdateSafeAreaInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsDeferringToCommandeeringTableHeaderViewStyleSearchControllerWithPresentingViewController:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(bool*)arg2;
 - (void)_executeNavigationHandler:(id /* block */)arg1 deferred:(bool)arg2;
 - (id)_existingNavigationBar;
@@ -282,6 +283,7 @@
 - (void)_hideShowNavigationBarDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_hideShowToolbarDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_incomingNavigationBarFrame;
+- (id)_independentContainedScrollViewIntermediateToDescendantViewController:(id)arg1;
 - (void)_initializeHeightOfTopPalette:(id)arg1;
 - (void)_initializeNavigationDeferredTransitionContextIfNecessary;
 - (void)_installPaletteIntoViewHierarchy:(id)arg1;
@@ -699,12 +701,9 @@
 - (void)willShowViewController:(id)arg1 animated:(bool)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
-
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
+- (id)mf_classesForUICustomization;
 - (id)mf_findViewControllerOfClass:(Class)arg1 startAtTopOfStack:(bool)arg2;
 - (id)mf_keyPathsMapForUICustomization;
 

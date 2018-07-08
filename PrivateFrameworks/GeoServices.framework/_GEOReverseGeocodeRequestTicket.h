@@ -23,6 +23,7 @@
 @property (nonatomic, readonly) GEOMapRegion *resultBoundingRegion;
 @property (nonatomic, readonly) NSString *resultDisplayHeader;
 @property (nonatomic, readonly) NSString *resultSectionHeader;
+@property (nonatomic, readonly) NSArray *retainedSearchMetadata;
 @property (nonatomic, readonly) NSString *searchQuery;
 @property (nonatomic, readonly) int searchResultType;
 @property (nonatomic, readonly) bool shouldEnableRedoSearch;

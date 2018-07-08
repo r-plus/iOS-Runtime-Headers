@@ -10,6 +10,8 @@
 @property (nonatomic) bool isLandscape;
 @property (nonatomic) bool isLeftToRightSwipe;
 
++ (bool)supportsSecureCoding;
+
 - (bool)arePointsDeviceRelative;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fingerIdentifiersAtEventIndex:(unsigned long long)arg1;

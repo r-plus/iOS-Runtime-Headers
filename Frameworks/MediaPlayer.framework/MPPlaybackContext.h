@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPPlaybackContext : NSObject <NSCoding> {
+@interface MPPlaybackContext : NSObject <NSSecureCoding> {
     NSString * _playActivityFeatureName;
     NSData * _playActivityRecommendationData;
     MPAVItem * _playerCurrentItem;
@@ -32,6 +32,7 @@
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 + (Class)queueFeederClass;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

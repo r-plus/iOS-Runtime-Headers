@@ -24,6 +24,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) <DOCThumbnail> *fallback;
+@property (readonly) bool hasFinishedTryingToFetchCorrectThumbnail;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool isRepresentativeIcon;
 @property (nonatomic, readonly) NSHashTable *listeners;
@@ -46,6 +47,7 @@
 - (id)createOperationWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2 style:(unsigned long long)arg3;
 - (void)dealloc;
 - (id)fallback;
+- (bool)hasFinishedTryingToFetchCorrectThumbnail;
 - (id)initWithCache:(id)arg1 queueLabel:(const char *)arg2 size:(struct CGSize { double x1; double x2; })arg3 scale:(double)arg4 fallback:(id)arg5 style:(unsigned long long)arg6 qos:(unsigned int)arg7;
 - (bool)isLoading;
 - (bool)isRepresentativeIcon;

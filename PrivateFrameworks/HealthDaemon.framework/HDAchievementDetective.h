@@ -135,9 +135,9 @@
 - (void)currentActivitySummaryHelper:(id)arg1 didUpdateTodayActivitySummary:(id)arg2 changedFields:(unsigned long long)arg3;
 - (void)currentActivitySummaryHelper:(id)arg1 didUpdateYesterdayActivitySummary:(id)arg2 changedFields:(unsigned long long)arg3;
 - (id)currentDateForEngine:(id)arg1;
+- (id)currentDateForMonthlyAggregatesEnvironment;
 - (void)currentDynamicAchievementsWithCompletion:(id /* block */)arg1;
 - (id)dailyGoalDetectionDelegate;
-- (id)dayEnvironmentsInDateInterval:(id)arg1;
 - (void)dealloc;
 - (bool)didDetectNewWorkouts;
 - (long long)endingActivitySummaryIndex;

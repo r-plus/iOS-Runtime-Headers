@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface _SFFormAutoFillController : NSObject <SFFormMetadataObserver> {
+@interface _SFFormAutoFillController : NSObject <SFFormMetadataObserver, _SFAuthenticationClient> {
     <SFFormAutoFiller> * _autoFiller;
     <SFFormAutoFillControllerDelegate> * _delegate;
     bool  _isCurrentlyAuthenticating;
@@ -10,10 +10,13 @@
     NSTimer * _prefillTimer;
     _WKRemoteObjectInterface * _remoteObjectInterface;
     SFFormAutocompleteState * _state;
+    NSMutableSet * _uniqueIDsOfControlsThatWereAutoFilled;
     NSMutableIndexSet * _uniqueIDsOfFormsThatWereAutoFilled;
     WKWebView<WBUFormAutoFillWebView> * _webView;
 }
 
+@property (nonatomic, readonly) _SFAutoFillAuthenticationCache *authenticationCache;
+@property (nonatomic, readonly) _SFAuthenticationContext *authenticationContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -22,12 +25,19 @@
 @property (nonatomic, readonly) UIView<WBUFormAutoFillWebView> *webView;
 
 - (void).cxx_destruct;
+- (void)_addUniqueIDsOfAutoFilledForm:(id)arg1;
+- (void)_authenticateForAutoFillForHighLevelDomain:(id)arg1 onPageLoad:(bool)arg2 withCompletion:(id /* block */)arg3;
 - (void)_autoFillLoginFormSynchronouslyAndClearMetadata:(id)arg1 inFrame:(id)arg2;
 - (void)_didCollectURLsForPreFilling:(id)arg1 atURL:(id)arg2;
 - (void)_fieldFocused:(id)arg1 inForm:(id)arg2 inFrame:(id)arg3 inputSession:(id)arg4;
 - (void)_prefillTimerFired:(id)arg1;
+- (void)_removeUniqueIDsOfAutoFilledForm:(id)arg1;
 - (void)annotateForm:(long long)arg1 inFrame:(id)arg2 withValues:(id)arg3;
 - (void)authenticateForAutoFillOnPageLoad:(bool)arg1 withCompletion:(id /* block */)arg2;
+- (id)authenticationCache;
+- (id)authenticationContext;
+- (id)authenticationCustomUIProgressObserverForContext:(id)arg1;
+- (id)authenticationMessageForContext:(id)arg1;
 - (void)autoFill;
 - (void)autoFillDidFinishWithUpdatedFormMetadata:(id)arg1;
 - (void)autoFillForm:(long long)arg1 inFrame:(id)arg2 withGeneratedPassword:(id)arg3;

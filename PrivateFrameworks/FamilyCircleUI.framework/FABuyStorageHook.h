@@ -5,6 +5,7 @@
 @interface FABuyStorageHook : NSObject <AAUIServerHook, PSCloudStorageOffersManagerDelegate> {
     id /* block */  _completion;
     <AAUIServerHookDelegate> * _delegate;
+    bool  _loadingStorage;
     PSCloudStorageOffersManager * _storageOffersManager;
 }
 
@@ -16,6 +17,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_completionWithSuccess:(bool)arg1 error:(id)arg2;
 - (void)_invokeBuyStorageWithServerAttributes:(id)arg1 completion:(id /* block */)arg2;
 - (id)delegate;
 - (void)manager:(id)arg1 didCompleteWithError:(id)arg2;

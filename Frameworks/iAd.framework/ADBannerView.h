@@ -129,6 +129,13 @@
 - (id)adSpace;
 - (id)adSpaceView;
 - (long long)adType;
+- (void)adlibManagedVideoAdDidCompletePlay:(int)arg1;
+- (void)adlibManagedVideoAdDidImpress;
+- (void)adlibManagedVideoAdDidPausePlay;
+- (void)adlibManagedVideoAdDidResumePlay;
+- (void)adlibManagedVideoAdDidTapForMoreInfo;
+- (void)adlibManagedVideoAdDidTapVideo;
+- (void)adlibManagedVideoAdDidToggleToMute:(bool)arg1;
 - (id)advertisingSection;
 - (id)audioURL;
 - (id)authenticationUserName;
@@ -145,6 +152,7 @@
 - (id)context;
 - (bool)createdForIBInternal;
 - (void)creativeControllerViewWasTappedAtPoint:(struct CGPoint { double x1; double x2; })arg1 withMRAIDAction:(id)arg2;
+- (id)currentAdIdentifier;
 - (id)currentContentSizeIdentifier;
 - (void)cycleImpressionImmediately;
 - (void)dealloc;
@@ -191,8 +199,19 @@
 - (long long)options;
 - (id)originID;
 - (void)pauseBannerMedia;
+- (void)playbackAudioWasMuted:(id)arg1;
+- (void)playbackAudioWasUnmuted:(id)arg1;
+- (void)playbackDidEnterFullscreen:(id)arg1;
+- (void)playbackDidExitFullscreen:(id)arg1;
+- (void)playbackDidFinish:(id)arg1;
+- (void)playbackDidPause:(id)arg1;
+- (void)playbackDidReachProgressEvent:(id)arg1;
+- (void)playbackDidResume:(id)arg1;
+- (void)playbackDidStart:(id)arg1;
 - (void)playbackFailed:(id)arg1;
+- (void)playbackFailed:(id)arg1 forURL:(id)arg2;
 - (void)playbackFinished:(id)arg1;
+- (void)playbackMediaWasSkipped:(id)arg1;
 - (void)playbackPaused;
 - (void)playbackResumed;
 - (void)playbackStarted;
@@ -205,6 +224,7 @@
 - (void)privacyButtonWasTapped;
 - (id)publicImpressionAttributes;
 - (bool)reUsed;
+- (void)registerVideoPlayerForAdAnalytics:(id)arg1;
 - (void)removeCreativeView;
 - (void)reportNativeClickEvent;
 - (bool)requestCalledbackError;
@@ -279,9 +299,14 @@
 - (void)suspendImpressionCycling;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)uniqueIdentifier;
+- (void)unregisterVideoPlayerForAdAnalytics:(id)arg1;
 - (void)updateConstraints;
 - (void)userDidSkipPreroll;
 - (id)videoAssets;
+- (void)videoBannerDidLoad:(id)arg1;
+- (void)videoBannerDidUnload:(id)arg1;
+- (void)videoBannerTouched:(id)arg1;
+- (void)videoBannerVisibilityDidChange:(id)arg1;
 - (id)webLoadStartTime;
 
 @end

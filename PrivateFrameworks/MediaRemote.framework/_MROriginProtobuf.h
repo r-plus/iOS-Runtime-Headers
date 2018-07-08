@@ -3,7 +3,7 @@
  */
 
 @interface _MROriginProtobuf : PBCodable <NSCopying> {
-    _MRDeviceInfoMessageProtobuf * _deviceInfo;
+    _MRDeviceInfoMessageProtobuf * _deviceInfoDeprecated;
     NSString * _displayName;
     struct { 
         unsigned int identifier : 1; 
@@ -13,24 +13,24 @@
     int  _type;
 }
 
-@property (nonatomic, retain) _MRDeviceInfoMessageProtobuf *deviceInfo;
+@property (nonatomic, retain) _MRDeviceInfoMessageProtobuf *deviceInfoDeprecated;
 @property (nonatomic, retain) NSString *displayName;
-@property (nonatomic, readonly) bool hasDeviceInfo;
+@property (nonatomic, readonly) bool hasDeviceInfoDeprecated;
 @property (nonatomic, readonly) bool hasDisplayName;
 @property (nonatomic) bool hasIdentifier;
 @property (nonatomic) bool hasType;
 @property (nonatomic) int identifier;
 @property (nonatomic) int type;
 
+- (void).cxx_destruct;
 - (int)StringAsType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
-- (id)deviceInfo;
+- (id)deviceInfoDeprecated;
 - (id)dictionaryRepresentation;
 - (id)displayName;
-- (bool)hasDeviceInfo;
+- (bool)hasDeviceInfoDeprecated;
 - (bool)hasDisplayName;
 - (bool)hasIdentifier;
 - (bool)hasType;
@@ -39,7 +39,7 @@
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
-- (void)setDeviceInfo:(id)arg1;
+- (void)setDeviceInfoDeprecated:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setHasIdentifier:(bool)arg1;
 - (void)setHasType:(bool)arg1;

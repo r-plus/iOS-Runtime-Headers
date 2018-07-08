@@ -52,8 +52,10 @@
         unsigned int isAPICall : 1; 
         unsigned int isRedoSearch : 1; 
         unsigned int navigating : 1; 
+        unsigned int supportDirectionIntentAutocomplete : 1; 
         unsigned int supportDirectionIntentSearch : 1; 
         unsigned int supportDymSuggestion : 1; 
+        unsigned int supportUnresolvedDirectionIntent : 1; 
         unsigned int useBackgroundUrl : 1; 
         unsigned int wantsBrandIcon : 1; 
     }  _has;
@@ -83,8 +85,10 @@
     }  _sessionId;
     double  _sessionRelativeTimestamp;
     int  _source;
+    bool  _supportDirectionIntentAutocomplete;
     bool  _supportDirectionIntentSearch;
     bool  _supportDymSuggestion;
+    bool  _supportUnresolvedDirectionIntent;
     unsigned int  _timeSinceMapEnteredForeground;
     unsigned int  _timeSinceMapViewportChanged;
     GEOTransitOptions * _transitOptions;
@@ -157,8 +161,10 @@
 @property (nonatomic) bool hasSessionId;
 @property (nonatomic) bool hasSessionRelativeTimestamp;
 @property (nonatomic) bool hasSource;
+@property (nonatomic) bool hasSupportDirectionIntentAutocomplete;
 @property (nonatomic) bool hasSupportDirectionIntentSearch;
 @property (nonatomic) bool hasSupportDymSuggestion;
+@property (nonatomic) bool hasSupportUnresolvedDirectionIntent;
 @property (nonatomic) bool hasTimeSinceMapEnteredForeground;
 @property (nonatomic) bool hasTimeSinceMapViewportChanged;
 @property (nonatomic, readonly) bool hasTransitOptions;
@@ -187,8 +193,10 @@
 @property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } sessionId;
 @property (nonatomic) double sessionRelativeTimestamp;
 @property (nonatomic) int source;
+@property (nonatomic) bool supportDirectionIntentAutocomplete;
 @property (nonatomic) bool supportDirectionIntentSearch;
 @property (nonatomic) bool supportDymSuggestion;
+@property (nonatomic) bool supportUnresolvedDirectionIntent;
 @property (nonatomic) unsigned int timeSinceMapEnteredForeground;
 @property (nonatomic) unsigned int timeSinceMapViewportChanged;
 @property (nonatomic, retain) GEOTransitOptions *transitOptions;
@@ -244,8 +252,10 @@
 - (void)clearEngineTypes;
 - (void)clearHistoricalLocations;
 - (void)clearKnownClientResolvedTypes;
+- (void)clearLocations;
 - (void)clearPhotoSizes;
 - (void)clearReviewUserPhotoSizes;
+- (void)clearSessionId;
 - (void)clearTransportTypes;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -302,8 +312,10 @@
 - (bool)hasSessionId;
 - (bool)hasSessionRelativeTimestamp;
 - (bool)hasSource;
+- (bool)hasSupportDirectionIntentAutocomplete;
 - (bool)hasSupportDirectionIntentSearch;
 - (bool)hasSupportDymSuggestion;
+- (bool)hasSupportUnresolvedDirectionIntent;
 - (bool)hasTimeSinceMapEnteredForeground;
 - (bool)hasTimeSinceMapViewportChanged;
 - (bool)hasTransitOptions;
@@ -387,8 +399,10 @@
 - (void)setHasSessionId:(bool)arg1;
 - (void)setHasSessionRelativeTimestamp:(bool)arg1;
 - (void)setHasSource:(bool)arg1;
+- (void)setHasSupportDirectionIntentAutocomplete:(bool)arg1;
 - (void)setHasSupportDirectionIntentSearch:(bool)arg1;
 - (void)setHasSupportDymSuggestion:(bool)arg1;
+- (void)setHasSupportUnresolvedDirectionIntent:(bool)arg1;
 - (void)setHasTimeSinceMapEnteredForeground:(bool)arg1;
 - (void)setHasTimeSinceMapViewportChanged:(bool)arg1;
 - (void)setHasUseBackgroundUrl:(bool)arg1;
@@ -412,8 +426,10 @@
 - (void)setSessionId:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setSessionRelativeTimestamp:(double)arg1;
 - (void)setSource:(int)arg1;
+- (void)setSupportDirectionIntentAutocomplete:(bool)arg1;
 - (void)setSupportDirectionIntentSearch:(bool)arg1;
 - (void)setSupportDymSuggestion:(bool)arg1;
+- (void)setSupportUnresolvedDirectionIntent:(bool)arg1;
 - (void)setTimeSinceMapEnteredForeground:(unsigned int)arg1;
 - (void)setTimeSinceMapViewportChanged:(unsigned int)arg1;
 - (void)setTransitOptions:(id)arg1;
@@ -425,8 +441,10 @@
 - (void)setWantsBrandIcon:(bool)arg1;
 - (int)source;
 - (id)sourceAsString:(int)arg1;
+- (bool)supportDirectionIntentAutocomplete;
 - (bool)supportDirectionIntentSearch;
 - (bool)supportDymSuggestion;
+- (bool)supportUnresolvedDirectionIntent;
 - (unsigned int)timeSinceMapEnteredForeground;
 - (unsigned int)timeSinceMapViewportChanged;
 - (id)transitOptions;

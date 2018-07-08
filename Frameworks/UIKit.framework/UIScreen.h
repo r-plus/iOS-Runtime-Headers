@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIScreen : NSObject <DebugHierarchyObject, UICoordinateSpace, UITraitEnvironment, _CRKImageLoaderDelegate, _UIFocusEnvironmentInternal, _UIFocusEnvironmentPrivate, _UIFocusRegionContainer, _UITraitEnvironmentInternal> {
+@interface UIScreen : NSObject <UICoordinateSpace, UITraitEnvironment, _CRKImageLoaderDelegate, _UIFocusEnvironmentInternal, _UIFocusEnvironmentPrivate, _UIFocusRegionContainer, _UITraitEnvironmentInternal> {
     bool  __UIIBAlwaysProvidePeripheryInsets;
     FBSDisplayConfiguration * __displayConfiguration;
     UIWindow<UIFocusEnvironment> * __focusedWindow;
@@ -82,6 +82,7 @@
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
 @property (nonatomic) double brightness;
 @property (getter=isCaptured, setter=_setCaptured:, nonatomic) bool captured;
+@property (nonatomic, readonly) unsigned long long ck_screenSizeCategory;
 @property (readonly) <UICoordinateSpace> *coordinateSpace;
 @property (nonatomic, retain) UIScreenMode *currentMode;
 @property (readonly, copy) NSString *debugDescription;
@@ -137,6 +138,7 @@
 + (id)__displayConfigurationsIncludingMain:(bool)arg1;
 + (id)_carScreen;
 + (void)_enumerateScreensWithBlock:(id /* block */)arg1;
++ (bool)_isProbablyBeingRecorded;
 + (void)_prepareCarScreensForResume;
 + (void)_prepareScreensForAppResume;
 + (id)_screenForScene:(id)arg1;
@@ -342,11 +344,6 @@
 - (void)updateFocusIfNeeded;
 - (bool)wantsSoftwareDimming;
 
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (double)__dbg_traitCollectionDisplayCornerRadius;
-- (id)debugHierarchyPropertyDescriptions;
-
 // Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
 
 + (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })cn_mainScreenPeripheryInsets;
@@ -362,6 +359,7 @@
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
 - (bool)__ck_isFullscreen;
+- (unsigned long long)ck_screenSizeCategory;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
 
@@ -401,10 +399,12 @@
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
 + (bool)tsk_appCanUseSidebar;
++ (double)tsk_appFrameScreenWidthFraction;
 + (bool)tsk_appIsInDarkMode;
 + (bool)tsk_appIsInSplitViewMode;
 + (bool)tsk_deviceCanUseSidebar;
 + (double)tsk_expectedScreenScale;
++ (bool)tsk_pad1112H;
 + (bool)tsk_pad1366H;
 + (bool)tsk_phoneUI568H;
 + (bool)tsk_phoneUI568HOrSmaller;

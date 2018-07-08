@@ -13,17 +13,17 @@
 @property (nonatomic, readonly) unsigned long long state;
 @property (getter=isUsingSystemPairing, nonatomic, readonly) bool usingSystemPairing;
 
+- (void).cxx_destruct;
 - (void)_openSecuritySessionInState:(unsigned long long)arg1 useSystemPairing:(bool)arg2 completion:(id /* block */)arg3;
 - (bool)_useSystemPairing;
 - (void)close;
-- (void)dealloc;
 - (id)decryptData:(id)arg1 withError:(id*)arg2;
 - (bool)deleteIdentityWithError:(id*)arg1;
 - (id)encryptData:(id)arg1 withError:(id*)arg2;
 - (void)handlePairingExchangeData:(id)arg1 completion:(id /* block */)arg2;
 - (void)handlePairingFailureWithStatus:(int)arg1;
 - (bool)hasExchangedMessage;
-- (id)initWithDevice:(void*)arg1;
+- (id)initWithDevice:(id)arg1;
 - (bool)isPaired;
 - (bool)isUsingSystemPairing;
 - (bool)isValid;

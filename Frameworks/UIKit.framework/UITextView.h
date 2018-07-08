@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITextView : UIScrollView <ABText, DebugHierarchyObject, MPUAutoupdatingTextContainer, UIContentSizeCategoryAdjusting, UIKeyboardInput, UIPreviewItemDelegate, UITextAutoscrolling, UITextDragSupporting, UITextDraggable, UITextDropSupporting, UITextDroppable, UITextInput, UITextInputControllerDelegate, UITextInputTraits_Private, UITextLinkInteraction, UITextPasteConfigurationSupporting, UITextPasteConfigurationSupporting_Internal, UIViewGhostedRangeSupporting, _UILayoutBaselineUpdating, _UIMultilineTextContentSizing, _UITextContainerViewDelegate, _UITextViewContentPaddingDelegate, _UIViewBaselineSpacing> {
+@interface UITextView : UIScrollView <ABText, MPUAutoupdatingTextContainer, UIContentSizeCategoryAdjusting, UIKeyboardInput, UIPreviewItemDelegate, UITextAutoscrolling, UITextDragSupporting, UITextDraggable, UITextDropSupporting, UITextDroppable, UITextInput, UITextInputControllerDelegate, UITextInputTraits_Private, UITextLinkInteraction, UITextPasteConfigurationSupporting, UITextPasteConfigurationSupporting_Internal, UIViewGhostedRangeSupporting, _UILayoutBaselineUpdating, _UIMultilineTextContentSizing, _UITextContainerViewDelegate, _UITextViewContentPaddingDelegate, _UIViewBaselineSpacing> {
     bool  _adjustsFontForContentSizeCategory;
     bool  _animatingPaste;
     UIAutoscroll * _autoscroll;
@@ -367,14 +367,6 @@
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_visibleRangeWithLayout:(bool)arg1;
 - (bool)_wantsBaselineUpdatingFollowingConstraintsPass;
 - (id)_whitelistedTypingAttributes;
-- (void)dealloc;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)addGhostedRange:(id)arg1;
 - (void)addSnapshotSeparation:(double)arg1 withAffinity:(long long)arg2;
 - (void)addTextAlternativesDisplayStyleToRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
@@ -412,6 +404,7 @@
 - (void)copy:(id)arg1;
 - (void)cut:(id)arg1;
 - (unsigned long long)dataDetectorTypes;
+- (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)decreaseSize:(id)arg1;
 - (void)deleteBackward;

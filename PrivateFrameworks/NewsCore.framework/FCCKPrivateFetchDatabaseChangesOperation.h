@@ -4,22 +4,21 @@
 
 @interface FCCKPrivateFetchDatabaseChangesOperation : FCCKPrivateDatabaseOperation {
     id /* block */  _fetchDatabaseChangesCompletionBlock;
-    <NSCoding> * _previousServerChangeToken;
+    FCCKPrivateDatabaseServerChangeToken * _previousServerChangeToken;
     NSArray * _resultChangedZoneIDs;
     NSArray * _resultDeletedZoneIDs;
     bool  _resultMoreComing;
-    <NSCoding> * _resultServerChangeToken;
+    FCCKPrivateDatabaseServerChangeToken * _resultServerChangeToken;
 }
 
 @property (nonatomic, copy) id /* block */ fetchDatabaseChangesCompletionBlock;
-@property (nonatomic, copy) <NSCoding> *previousServerChangeToken;
+@property (nonatomic, copy) FCCKPrivateDatabaseServerChangeToken *previousServerChangeToken;
 @property (nonatomic, retain) NSArray *resultChangedZoneIDs;
 @property (nonatomic, retain) NSArray *resultDeletedZoneIDs;
 @property (nonatomic) bool resultMoreComing;
-@property (nonatomic, retain) <NSCoding> *resultServerChangeToken;
+@property (nonatomic, retain) FCCKPrivateDatabaseServerChangeToken *resultServerChangeToken;
 
 - (void).cxx_destruct;
-- (id)_changeTokenKeyForDestination:(long long)arg1;
 - (id /* block */)fetchDatabaseChangesCompletionBlock;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;

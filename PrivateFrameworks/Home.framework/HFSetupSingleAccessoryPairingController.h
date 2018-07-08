@@ -3,6 +3,8 @@
  */
 
 @interface HFSetupSingleAccessoryPairingController : NSObject <HFHomeObserver, HFSetupPairingController> {
+    bool  _accessoryRequiresCode;
+    HMAccessorySetupCompletedInfo * _completedInfo;
     HFDiscoveredAccessory * _discoveredAccessoryToPair;
     HMHome * _home;
     NSSet * _pairedAccessories;
@@ -17,6 +19,8 @@
     NSString * _statusTitle;
 }
 
+@property (nonatomic) bool accessoryRequiresCode;
+@property (nonatomic, readonly) HMAccessorySetupCompletedInfo *completedInfo;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) HFDiscoveredAccessory *discoveredAccessoryToPair;
@@ -42,8 +46,10 @@
 - (void)_finishPairingWithDiscoveredAccessory:(id)arg1;
 - (void)_tryPairing;
 - (void)_updateStatusTextAndNotifyDelegate:(bool)arg1;
+- (bool)accessoryRequiresCode;
 - (void)addPairingObserver:(id)arg1;
 - (id)cancel;
+- (id)completedInfo;
 - (id)discoveredAccessoryToPair;
 - (id)home;
 - (void)home:(id)arg1 didAddAccessory:(id)arg2;
@@ -54,6 +60,7 @@
 - (unsigned long long)phase;
 - (id)phaseStartDate;
 - (void)removePairingObserver:(id)arg1;
+- (void)setAccessoryRequiresCode:(bool)arg1;
 - (void)setHome:(id)arg1;
 - (void)setPairedAccessories:(id)arg1;
 - (void)setPairingFuture:(id)arg1;

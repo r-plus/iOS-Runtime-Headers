@@ -10,9 +10,9 @@
 @property (nonatomic, retain) TSCHChartGridAdapter *adapter;
 @property (nonatomic, retain) TSCHChartAxisID *axisID;
 
+- (void).cxx_destruct;
 - (id)adapter;
 - (id)axisID;
-- (void)dealloc;
 - (unsigned long long)numberOfValues;
 - (void)setAdapter:(id)arg1;
 - (void)setAxisID:(id)arg1;

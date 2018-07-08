@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSPropertyTransform : NSObject {
+@interface NSPropertyTransform : NSObject <NSSecureCoding> {
     NSPropertyTransform * _prerequisiteTransform;
     NSString * _propertyName;
     bool  _replaceMissingValueOnly;
@@ -13,6 +13,8 @@
 @property (nonatomic, retain) NSString *propertyName;
 @property bool replaceMissingValueOnly;
 @property (nonatomic, retain) NSExpression *valueExpression;
+
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

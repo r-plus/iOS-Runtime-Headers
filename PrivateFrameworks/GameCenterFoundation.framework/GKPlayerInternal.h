@@ -15,6 +15,7 @@
         } ; 
         unsigned int _value; 
     }  _flags;
+    NSString * _friendLevel;
     NSString * _messagesID;
     unsigned int  _numberOfAchievementPoints;
     unsigned int  _numberOfAchievements;
@@ -34,6 +35,7 @@
 @property (getter=isFindable, nonatomic) bool findable;
 @property (nonatomic, retain) NSString *firstName;
 @property (nonatomic) unsigned int flags;
+@property (nonatomic, retain) NSString *friendLevel;
 @property (nonatomic, retain) NSArray *friends;
 @property (nonatomic, retain) NSString *guestIdentifier;
 @property (nonatomic, retain) NSNumber *iCloudUserID;
@@ -68,7 +70,9 @@
 + (id)compositeNameForFirstName:(id)arg1 lastName:(id)arg2;
 + (id)displayNameWithOptions:(unsigned char)arg1 alias:(id)arg2 composite:(id)arg3;
 + (id)secureCodedPropertyKeys;
++ (bool)supportsSecureCoding;
 
+- (bool)_gkIsSameAsPlayer:(id)arg1;
 - (id)accountName;
 - (id)alias;
 - (bool)allowNearbyMultiplayer;
@@ -82,6 +86,7 @@
 - (id)facebookUserID;
 - (id)firstName;
 - (unsigned int)flags;
+- (id)friendLevel;
 - (id)friends;
 - (id)guestIdentifier;
 - (unsigned long long)hash;
@@ -124,6 +129,7 @@
 - (void)setFindable:(bool)arg1;
 - (void)setFirstName:(id)arg1;
 - (void)setFlags:(unsigned int)arg1;
+- (void)setFriendLevel:(id)arg1;
 - (void)setFriends:(id)arg1;
 - (void)setICloudUserID:(id)arg1;
 - (void)setLastName:(id)arg1;

@@ -19,12 +19,12 @@
 
 + (Class)languageOptionsType;
 
+- (void).cxx_destruct;
 - (void)addLanguageOptions:(id)arg1;
 - (bool)allowEmptySelection;
 - (void)clearLanguageOptions;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)defaultLanguageOption;
 - (id)description;
 - (id)dictionaryRepresentation;

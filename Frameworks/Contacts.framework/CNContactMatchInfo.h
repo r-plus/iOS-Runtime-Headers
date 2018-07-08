@@ -3,13 +3,13 @@
  */
 
 @interface CNContactMatchInfo : NSObject <NSSecureCoding> {
-    NSAttributedString * _excerpt;
+    CNPromise * _excerpt;
     bool  _matchedNameProperty;
     NSDictionary * _matchedProperties;
     NSNumber * _relevanceScore;
 }
 
-@property (nonatomic, retain) NSAttributedString *excerpt;
+@property (nonatomic, retain) CNPromise *excerpt;
 @property (nonatomic) bool matchedNameProperty;
 @property (nonatomic, copy) NSDictionary *matchedProperties;
 @property (nonatomic, copy) NSNumber *relevanceScore;

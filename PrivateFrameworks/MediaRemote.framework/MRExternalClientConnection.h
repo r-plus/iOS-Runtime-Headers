@@ -18,9 +18,9 @@
 @property (nonatomic) bool registeredVolumeControlAvailabilityUpdates;
 @property (nonatomic) unsigned int voiceRecordingState;
 
+- (void).cxx_destruct;
 - (bool)cryptoEnabled;
 - (id)cryptoSession;
-- (void)dealloc;
 - (id)decryptData:(id)arg1 error:(id*)arg2;
 - (id)encryptDataForMessage:(id)arg1;
 - (id)initWithInputStream:(id)arg1 outputStream:(id)arg2 runLoop:(id)arg3;

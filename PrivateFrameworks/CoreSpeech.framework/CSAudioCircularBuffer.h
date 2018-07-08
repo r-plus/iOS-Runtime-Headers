@@ -8,7 +8,7 @@
     unsigned long long  _bufferLength;
     struct unique_ptr<corespeech::CSAudioCircularBufferImpl<unsigned short>, std::__1::default_delete<corespeech::CSAudioCircularBufferImpl<unsigned short> > > { 
         struct __compressed_pair<corespeech::CSAudioCircularBufferImpl<unsigned short> *, std::__1::default_delete<corespeech::CSAudioCircularBufferImpl<unsigned short> > > { 
-            struct CSAudioCircularBufferImpl<unsigned short> {} *__first_; 
+            struct CSAudioCircularBufferImpl<unsigned short> {} *__value_; 
         } __ptr_; 
     }  _csAudioCircularBufferImpl;
 }

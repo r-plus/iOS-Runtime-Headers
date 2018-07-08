@@ -4,6 +4,7 @@
 
 @interface CKDPAsset : PBCodable <NSCopying> {
     NSData * _assetCopyMetadata;
+    NSData * _clearAssetKey;
     NSString * _contentBaseURL;
     NSString * _derivedContentType;
     NSString * _downloadBaseURL;
@@ -28,6 +29,7 @@
 }
 
 @property (nonatomic, retain) NSData *assetCopyMetadata;
+@property (nonatomic, retain) NSData *clearAssetKey;
 @property (nonatomic, retain) NSString *contentBaseURL;
 @property (nonatomic, retain) NSString *derivedContentType;
 @property (nonatomic, retain) NSString *downloadBaseURL;
@@ -36,6 +38,7 @@
 @property (nonatomic) long long downloadTokenExpiration;
 @property (nonatomic) long long downloadURLExpiration;
 @property (nonatomic, readonly) bool hasAssetCopyMetadata;
+@property (nonatomic, readonly) bool hasClearAssetKey;
 @property (nonatomic, readonly) bool hasContentBaseURL;
 @property (nonatomic, readonly) bool hasDerivedContentType;
 @property (nonatomic, readonly) bool hasDownloadBaseURL;
@@ -64,6 +67,7 @@
 
 - (void).cxx_destruct;
 - (id)assetCopyMetadata;
+- (id)clearAssetKey;
 - (id)contentBaseURL;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -76,6 +80,7 @@
 - (long long)downloadTokenExpiration;
 - (long long)downloadURLExpiration;
 - (bool)hasAssetCopyMetadata;
+- (bool)hasClearAssetKey;
 - (bool)hasContentBaseURL;
 - (bool)hasDerivedContentType;
 - (bool)hasDownloadBaseURL;
@@ -103,6 +108,7 @@
 - (id)referenceSignature;
 - (id)requestor;
 - (void)setAssetCopyMetadata:(id)arg1;
+- (void)setClearAssetKey:(id)arg1;
 - (void)setContentBaseURL:(id)arg1;
 - (void)setDerivedContentType:(id)arg1;
 - (void)setDownloadBaseURL:(id)arg1;

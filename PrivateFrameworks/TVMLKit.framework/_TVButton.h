@@ -12,6 +12,7 @@
     UIColor * _highlightColor;
     bool  _imageTrailsTextContent;
     _TVImageView * _imageView;
+    bool  _isFocused;
     UILabel * _textContentView;
     IKViewElement * _viewElement;
 }
@@ -34,6 +35,7 @@
 - (void)_selectButtonAction:(id)arg1;
 - (void)_setFocused:(bool)arg1 animationCoordinator:(id)arg2;
 - (void)_updateBackgroundColorForState:(unsigned long long)arg1;
+- (void)_updateFocusStateWithCoordinator:(id)arg1;
 - (id)accessoryView;
 - (long long)backdropStyle;
 - (id)backgroundColor;

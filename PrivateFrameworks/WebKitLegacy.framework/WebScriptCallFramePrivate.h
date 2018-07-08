@@ -14,7 +14,7 @@
         } u; 
     }  exceptionValue;
     struct String { 
-        struct RefPtr<WTF::StringImpl> { 
+        struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
             struct StringImpl {} *m_ptr; 
         } m_impl; 
     }  functionName;

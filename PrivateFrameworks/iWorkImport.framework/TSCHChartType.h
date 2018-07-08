@@ -6,6 +6,7 @@
     TSCHChartFeature * mFeature;
 }
 
+@property (nonatomic, readonly) TSCHChartFeature *feature;
 @property (nonatomic, readonly) bool is3D;
 
 + (id)allChartTypes;
@@ -14,10 +15,13 @@
 + (id)barChart;
 + (id)barChart3D;
 + (id)bubbleChart;
++ (id)chartTypeForUserInterfaceTag:(long long)arg1;
 + (id)chartTypePlaceholderForDefault3DScaleProperty;
 + (id)columnChart;
 + (id)columnChart3D;
 + (id)constantDepthInfoChartScaleForInfoChartScale:(id)arg1 chartType:(id)arg2 barShape:(int)arg3;
++ (id)donutChart;
++ (id)donutChart3D;
 + (struct CGSize { double x1; double x2; })fallbackMinimumChartBodySize;
 + (id)lineChart;
 + (id)lineChart3D;
@@ -38,7 +42,9 @@
 + (id)stackedColumnChart3D;
 + (id)twoYAxisChart;
 
+- (void).cxx_destruct;
 - (id)allCDESectionLabels;
+- (id)alternateArchiveChartTypeAndReturnWriterVersion:(unsigned long long*)arg1 readerVersion:(unsigned long long*)arg2 featureID:(id*)arg3;
 - (id)animationDeliveryStylesForFilter:(id)arg1;
 - (id)animationFiltersWithDefaultFilters:(id)arg1;
 - (bool)approximatesTitleAccommodationUsingLegendSize;
@@ -50,16 +56,21 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)defaultDataFileName;
+- (float)defaultLabelExplosionPercentage;
+- (double)defaultLabelExplosionValue;
 - (id)defaultSeriesType:(unsigned long long)arg1;
 - (int)deprecated3DBevelEdgesSpecificProperty;
 - (int)deprecated3DShadowSpecificProperty;
 - (bool)drawValueLabelsForZero;
+- (bool)editableFormatForValueStrings;
 - (bool)explosionAffectsChartBodyBounds;
+- (id)feature;
 - (id)filteredStyleOwnersFromStyleOwners:(id)arg1;
 - (id)g_genericToSpecificPropertyMapArea;
 - (id)g_genericToSpecificPropertyMapBar;
 - (id)g_genericToSpecificPropertyMapBubble;
 - (id)g_genericToSpecificPropertyMapColumn;
+- (id)g_genericToSpecificPropertyMapDonut;
 - (id)g_genericToSpecificPropertyMapLine;
 - (id)g_genericToSpecificPropertyMapMixed;
 - (id)g_genericToSpecificPropertyMapPie;
@@ -70,16 +81,24 @@
 - (id)g_genericToSpecificPropertyMapTwoAxis;
 - (id)genericToSpecificPropertyMap;
 - (unsigned long long)gridOffsetToSeriesForScatterFormat:(int)arg1;
+- (bool)hasExplodableSeriesElements;
+- (bool)hasFixedFrameRatio;
 - (id)imageWithPreset:(id)arg1 target:(int)arg2 imageSize:(struct CGSize { double x1; double x2; })arg3 imageScale:(double)arg4 swatchFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5 documentRoot:(id)arg6 shouldCache:(bool*)arg7;
+- (bool)includeValueLabelPositionOff;
 - (id)init;
 - (id)initWithFeatureClass:(Class)arg1;
 - (bool)is3D;
 - (bool)isHorizontal;
 - (bool)isMultiData;
-- (bool)isPie;
 - (Class)layoutClass;
 - (bool)layoutFrameShouldEncloseInfoGeometry;
+- (id)localizedActionStringForWedgeExplosion;
+- (id)localizedDeliveryTypeForWedge;
+- (id)localizedTitleForDeliveryTypeWedge;
+- (id)localizedWedgeDragLabelWithPercent:(unsigned long long)arg1;
 - (unsigned long long)maxCellsToCheckForGridValueType;
+- (double)maxInnerRadiusPercentage;
+- (double)minInnerRadiusPercentage;
 - (struct CGSize { double x1; double x2; })minimumChartBodySize;
 - (struct CGSize { double x1; double x2; })minimumChartBodySizeForTransformingGeometry;
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
@@ -89,6 +108,8 @@
 - (id)p_debugDescription;
 - (unsigned long long)presentationDimension;
 - (Class)presetImagerClass;
+- (bool)rendersBackgroundAxis;
+- (bool)rendersUsingRadialGeometry;
 - (Class)repClass;
 - (int)representativeGridValueAxisType;
 - (bool)requiresSeparateLabelsRenderPass;
@@ -101,6 +122,7 @@
 - (float)rotation3DMinX;
 - (float)rotation3DMinY;
 - (Class)sageGeometeryHelperClass;
+- (bool)shouldChangeExplosionWithPreviousChartType:(id)arg1 seriesList:(id)arg2;
 - (int)stackingSignRule;
 - (unsigned long long)styleIndexForAxisID:(id)arg1;
 - (bool)suppliesFinalTextures;
@@ -111,6 +133,7 @@
 - (bool)supportsBackgroundFill;
 - (bool)supportsBorderFrame;
 - (bool)supportsBubbleOptions;
+- (bool)supportsCalloutLines;
 - (bool)supportsCategoryAxisLabels;
 - (bool)supportsCategoryAxisMinorTickmarks;
 - (bool)supportsCategoryAxisPlotToEdgesOption;
@@ -126,12 +149,14 @@
 - (bool)supportsGroupedShadows;
 - (bool)supportsIncrementalResize;
 - (bool)supportsIndividualShadowRendering;
+- (bool)supportsInnerRadius;
 - (bool)supportsLabelExplosion;
 - (bool)supportsMinorGridlines;
-- (bool)supportsMoreThanOneLiveCategory;
 - (bool)supportsMultipleSeriesTypes;
 - (bool)supportsMultipleValueScales;
+- (bool)supportsMultipleValuesPerSeries;
 - (bool)supportsPercentNumberFormatting;
+- (bool)supportsPlaceTitleAtCenter;
 - (bool)supportsReferenceLines;
 - (bool)supportsSeriesFill;
 - (bool)supportsSeriesLabels;
@@ -140,6 +165,7 @@
 - (bool)supportsShadowOffset;
 - (bool)supportsSharedAndSeparateX;
 - (bool)supportsShowLabelsInFrontOption;
+- (bool)supportsStartAngleRotation;
 - (bool)supportsSymbolOverhang;
 - (bool)supportsTickmarks;
 - (bool)supportsTrendLines;
@@ -147,8 +173,11 @@
 - (bool)supportsValueLabels;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })swatchImageEdgeInsetsForSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)titlePositionerWithInfo:(id)arg1 scene:(id)arg2;
+- (id)unlocalizedDeliveryTypeForWedge;
 - (void)updateTitlesForExportingModel:(id)arg1 info:(id)arg2;
 - (id)userInterfaceName;
+- (id)userInterfaceNameForPlaceTitleAtCenter:(bool)arg1;
+- (long long)userInterfaceTag;
 - (Class)valueAxisClassForID:(id)arg1 scale:(int)arg2;
 - (id)valueAxisIDs;
 - (double)valueAxisTitleRotation;

@@ -17,10 +17,13 @@
 + (void)attemptToDownloadPeerPaymentPassAtURL:(id)arg1 withWebService:(id)arg2 completion:(id /* block */)arg3;
 
 - (void).cxx_destruct;
+- (void)_handleAccountChanged:(id)arg1;
 - (id)account;
 - (id)bridgedClientInfo;
 - (void)checkTLKsMissingWithCompletion:(id /* block */)arg1;
 - (void)cloudStoreStatusWithCompletion:(id /* block */)arg1;
+- (void)dealloc;
+- (id)deviceRegion;
 - (void)downloadPassIfNecessaryWithCompletion:(id /* block */)arg1;
 - (id)globalDomainAccessor;
 - (id)init;
@@ -30,6 +33,7 @@
 - (id)preferencesSyncManager;
 - (void)provisionPeerPaymentPassWithProvisioningController:(id)arg1 credential:(id)arg2 completion:(id /* block */)arg3;
 - (void)resetApplePayManateeViewWithCompletion:(id /* block */)arg1;
+- (id)secureElementIdentifiers;
 - (void)setGlobalDomainAccessor:(id)arg1;
 - (void)setPreferencesSyncManager:(id)arg1;
 - (void)setUserHasDisabledPeerPayment:(bool)arg1;

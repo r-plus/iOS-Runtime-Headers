@@ -38,13 +38,13 @@
 @property (nonatomic, retain) NSString *remoteControlInterfaceID;
 @property (nonatomic, retain) NSString *senderAppDisplayID;
 
+- (void).cxx_destruct;
 - (int)StringAsCommand:(id)arg1;
 - (id)appOptions;
 - (int)command;
 - (id)commandAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)destinationAppDisplayID;
 - (long long)destinationAppProcessID;

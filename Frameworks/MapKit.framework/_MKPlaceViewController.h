@@ -12,7 +12,6 @@
         double y; 
     }  _beginAnalyticsScrollingPoint;
     MKPlaceHeaderButtonsViewController * _buttonsHeaderController;
-    bool  _canUseMessageId;
     CNContact * _contact;
     CNContactStore * _contactStore;
     CNContactNavigationController<CNContactViewControllerPrivateDelegate> * _contactsNavigationController;
@@ -58,7 +57,6 @@
 }
 
 @property (nonatomic, retain) GEOAutomobileOptions *automobileOptions;
-@property (nonatomic, readonly) bool canUseMessageId;
 @property (nonatomic, readonly) CNContact *contact;
 @property (nonatomic) CNContactNavigationController<CNContactViewControllerPrivateDelegate> *contactsNavigationController;
 @property (nonatomic) double contentAlpha;
@@ -133,6 +131,7 @@
 - (bool)_showReportAProblem;
 - (void)_showShareSheet:(id)arg1;
 - (void)_showShareSheetNoDeviceLockCheck:(id)arg1;
+- (id)_traits;
 - (void)_updateViewControllerStatesForOffline;
 - (void)_updateViewControllers;
 - (void)addAdditionalViewController:(id)arg1 atPosition:(long long)arg2;
@@ -142,7 +141,6 @@
 - (id)attributionsVC;
 - (id)automobileOptions;
 - (id)businessInfosVC;
-- (bool)canUseMessageId;
 - (id)contact;
 - (void)contactPicker:(id)arg1 didSelectContact:(id)arg2;
 - (void)contactPickerDidCancel:(id)arg1;
@@ -305,6 +303,7 @@
 - (void)transitDeparturesViewController:(id)arg1 didSelectConnectionInformation:(id)arg2;
 - (void)transitDeparturesViewController:(id)arg1 didSelectTransitLine:(id)arg2 fromCell:(id)arg3;
 - (void)transitDeparturesViewController:(id)arg1 showIncidents:(id)arg2;
+- (id)transitDeparturesViewControllerTraits:(id)arg1;
 - (id)transitOptions;
 - (id)transitVC;
 - (void)updateAirplaneModeNetworkUnreachable;

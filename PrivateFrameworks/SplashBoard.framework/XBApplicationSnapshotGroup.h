@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SplashBoard.framework/SplashBoard
  */
 
-@interface XBApplicationSnapshotGroup : NSObject <BSDescriptionProviding, NSCoding> {
+@interface XBApplicationSnapshotGroup : NSObject <BSDescriptionProviding, NSSecureCoding> {
     XBSnapshotContainerIdentity * _containerIdentity;
     NSString * _identifier;
     NSMutableSet * _snapshots;
@@ -16,6 +16,8 @@
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, copy) NSSet *snapshots;
 @property (readonly) Class superclass;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_commonInit;

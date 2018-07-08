@@ -15,6 +15,7 @@
     bool  _isLoading;
     bool  _loadSynchronouslyIfCached;
     id  _object;
+    <IKNetworkRequestLoader> * _requestLoader;
     id  _requestToken;
     id /* block */  _writeCompletionHandler;
     bool  _writeToAssetLibrary;
@@ -33,6 +34,7 @@
 @property (nonatomic) bool isLoading;
 @property (nonatomic) bool loadSynchronouslyIfCached;
 @property (nonatomic, readonly) id object;
+@property (nonatomic) <IKNetworkRequestLoader> *requestLoader;
 @property (nonatomic, retain) id requestToken;
 @property (copy) id /* block */ writeCompletionHandler;
 @property (nonatomic) bool writeToAssetLibrary;
@@ -43,8 +45,8 @@
 - (id)_assetKeyWithImageLoaderKey:(id)arg1 decoratorIdentifier:(id)arg2;
 - (void)_callCompletionHandlerWithImage:(id)arg1 error:(id)arg2 finished:(bool)arg3;
 - (void)_callWriteCompletionHandlerWithPath:(id)arg1 error:(id)arg2 finished:(bool)arg3;
-- (void)_completeImageLoadWithImage:(id)arg1 imagePath:(id)arg2 error:(id)arg3 assetKey:(id)arg4 expiryDate:(id)arg5;
-- (void)_decorateAndWriteImage:(id)arg1 imagePath:(id)arg2 scaleToSize:(struct CGSize { double x1; double x2; })arg3 cropToFit:(bool)arg4 scalingResult:(unsigned long long)arg5 assetKey:(id)arg6 expiryDate:(id)arg7;
+- (void)_completeImageLoadWithImage:(id)arg1 imagePath:(id)arg2 error:(id)arg3 assetKey:(id)arg4 expiryDate:(id)arg5 requestRecord:(id)arg6;
+- (void)_decorateAndWriteImage:(id)arg1 imagePath:(id)arg2 scaleToSize:(struct CGSize { double x1; double x2; })arg3 cropToFit:(bool)arg4 scalingResult:(unsigned long long)arg5 assetKey:(id)arg6 expiryDate:(id)arg7 requestRecord:(id)arg8;
 - (id)_decoratedImageAssetKey;
 - (id)_decoratedImageAssetPath;
 - (id)_decoratorIdentifier;
@@ -75,6 +77,7 @@
 - (bool)loadSynchronouslyIfCached;
 - (void)loadWithWeakObject:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)object;
+- (id)requestLoader;
 - (id)requestToken;
 - (void)setCacheOnLoad:(bool)arg1;
 - (void)setCompletionHandler:(id /* block */)arg1;
@@ -87,6 +90,7 @@
 - (void)setImageLoader:(id)arg1;
 - (void)setIsLoading:(bool)arg1;
 - (void)setLoadSynchronouslyIfCached:(bool)arg1;
+- (void)setRequestLoader:(id)arg1;
 - (void)setRequestToken:(id)arg1;
 - (void)setWriteCompletionHandler:(id /* block */)arg1;
 - (void)setWriteToAssetLibrary:(bool)arg1;

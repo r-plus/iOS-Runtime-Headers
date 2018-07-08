@@ -24,6 +24,7 @@
     HMMediaSystem * _selfAccessoryMediaSystem;
     HMAccessory * _selfAccessoryMediaSystemCounterpart;
     bool  _selfAccessoryMediaSystemEnabled;
+    NSString * _selfAccessoryMediaSystemName;
     HMMediaSystemRole * _selfAccessoryMediaSystemRole;
     id /* block */  _selfAccessoryMediaSystemUpdatedHandler;
     NSUUID * _selfAccessoryRoomID;
@@ -54,6 +55,7 @@
 @property (nonatomic, copy) id /* block */ selfAccessoryMediaAccessUpdatedHandler;
 @property (nonatomic, readonly) HMMediaSystem *selfAccessoryMediaSystem;
 @property (nonatomic, readonly) HMAccessory *selfAccessoryMediaSystemCounterpart;
+@property (nonatomic, copy) NSString *selfAccessoryMediaSystemName;
 @property (nonatomic, readonly) HMMediaSystemRole *selfAccessoryMediaSystemRole;
 @property (nonatomic, copy) id /* block */ selfAccessoryMediaSystemUpdatedHandler;
 @property (nonatomic, copy) id /* block */ selfAccessorySiriAccessUpdatedHandler;
@@ -118,6 +120,7 @@
 - (id /* block */)selfAccessoryMediaAccessUpdatedHandler;
 - (id)selfAccessoryMediaSystem;
 - (id)selfAccessoryMediaSystemCounterpart;
+- (id)selfAccessoryMediaSystemName;
 - (id)selfAccessoryMediaSystemRole;
 - (id /* block */)selfAccessoryMediaSystemUpdatedHandler;
 - (id /* block */)selfAccessorySiriAccessUpdatedHandler;
@@ -130,6 +133,7 @@
 - (void)setLabel:(id)arg1;
 - (void)setSelfAccessoryAppDataChangedHandler:(id /* block */)arg1;
 - (void)setSelfAccessoryMediaAccessUpdatedHandler:(id /* block */)arg1;
+- (void)setSelfAccessoryMediaSystemName:(id)arg1;
 - (void)setSelfAccessoryMediaSystemUpdatedHandler:(id /* block */)arg1;
 - (void)setSelfAccessorySiriAccessUpdatedHandler:(id /* block */)arg1;
 - (void)setSelfAccessoryUpdatedHandler:(id /* block */)arg1;

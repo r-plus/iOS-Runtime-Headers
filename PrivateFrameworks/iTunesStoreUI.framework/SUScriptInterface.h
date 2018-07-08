@@ -85,6 +85,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) SUScriptTelephony *telephony;
 @property (readonly) <SUScriptInterfaceDelegate> *threadSafeDelegate;
+@property (readonly) SUScriptDictionary *tidHeaders;
+@property (readonly) NSString *userAgent;
 @property (readonly) SUScriptViewController *viewController;
 @property (retain) WebFrame *webFrame;
 @property (readonly) SUScriptWindow *window;
@@ -113,6 +115,7 @@
 - (id)accountForDSID:(id)arg1;
 - (id)accountName;
 - (id)accounts;
+- (void)acknowledgePrivacyLinkWithIdentifier:(id)arg1;
 - (id)actionTypeDismissSheet;
 - (id)actionTypeDismissWindows;
 - (id)actionTypeReturnToLibrary;
@@ -228,7 +231,6 @@
 - (id)makeStoreSheetViewController;
 - (id)makeSubscriptionStatusRequest;
 - (id)makeTextFieldWithStyle:(id)arg1 placeholder:(id)arg2 value:(id)arg3 width:(id)arg4;
-- (id)makeTweetComposeViewController;
 - (id)makeURLRequestWithURLs:(id)arg1 timeoutInterval:(id)arg2;
 - (id)makeVolumeViewController;
 - (id)makeWindow;
@@ -246,6 +248,8 @@
 - (void)perfLog:(id)arg1;
 - (void)performPurchaseAnimationForIdentifier:(id)arg1 style:(id)arg2;
 - (void)pingURL:(id)arg1;
+- (id)presentPrivacySplashWithIdentifier:(id)arg1;
+- (id)presentPrivacyViewControllerWithIdentifier:(id)arg1;
 - (id)presentingViewControllerForScriptModalDialog:(id)arg1;
 - (id)previewOverlay;
 - (id)primaryAccount;
@@ -304,8 +308,11 @@
 - (void)setScriptWindowContext:(id)arg1;
 - (void)setStoreFrontIdentifier:(id)arg1;
 - (void)setSubscriptionStatusCoordinator:(id)arg1;
+- (void)setTidHeaders:(id)arg1;
+- (void)setUserAgent:(id)arg1;
 - (void)setWebFrame:(id)arg1;
 - (void)setWindow:(id)arg1;
+- (id)shouldDisplayPrivacyLinkWithIdentifier:(id)arg1;
 - (bool)shouldRestrictContentOfSystem:(id)arg1 level:(id)arg2;
 - (bool)shouldShowAddToWalletLink:(id)arg1;
 - (void)showAlertWithMessage:(id)arg1 title:(id)arg2 buttonTitle:(id)arg3;
@@ -351,6 +358,8 @@
 - (id)systemVersion;
 - (id)telephony;
 - (id)threadSafeDelegate;
+- (id)tidHeaders;
+- (id)userAgent;
 - (id)viewController;
 - (id)webFrame;
 - (id)window;

@@ -60,8 +60,8 @@
 @property (readonly) NSString *valueLabelString;
 @property (readonly) float wedgeExplosion;
 
+- (void).cxx_destruct;
 - (id)axis;
-- (void)dealloc;
 - (float)effectiveLabelExplosion;
 - (float)effectiveWedgeExplosion;
 - (double)endAngle;

@@ -4,6 +4,7 @@
 
 @interface HAPAccessoryServer : HMFObject {
     NSArray * _accessories;
+    unsigned long long  _authMethod;
     NSNumber * _category;
     NSObject<OS_dispatch_queue> * _clientQueue;
     unsigned long long  _configNumber;
@@ -17,6 +18,7 @@
     <HAPKeyStore> * _keyStore;
     long long  _linkType;
     NSString * _name;
+    unsigned long long  _pairSetupType;
     HAPAccessory * _primaryAccessory;
     NSObject<OS_dispatch_queue> * _propertyQueue;
     bool  _reachable;
@@ -27,6 +29,7 @@
 }
 
 @property (nonatomic, copy) NSArray *accessories;
+@property (nonatomic) unsigned long long authMethod;
 @property (nonatomic, copy) NSNumber *category;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property (nonatomic) unsigned long long configNumber;
@@ -41,6 +44,7 @@
 @property (nonatomic, readonly) <HAPKeyStore> *keyStore;
 @property (nonatomic, readonly) long long linkType;
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic) unsigned long long pairSetupType;
 @property (getter=isPaired, nonatomic, readonly) bool paired;
 @property (nonatomic, retain) HAPAccessory *primaryAccessory;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
@@ -56,6 +60,7 @@
 - (id)accessories;
 - (void)addInternalDelegate:(id)arg1;
 - (void)addPairing:(id)arg1 completionQueue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (unsigned long long)authMethod;
 - (id)category;
 - (id)clientQueue;
 - (unsigned long long)configNumber;
@@ -86,6 +91,7 @@
 - (void)notifyDelegateUpdatedCategory:(id)arg1;
 - (void)notifyDelegateUpdatedHasPairings:(bool)arg1;
 - (void)notifyDelegateUpdatedName:(id)arg1;
+- (unsigned long long)pairSetupType;
 - (id)primaryAccessory;
 - (id)propertyQueue;
 - (void)readCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
@@ -95,6 +101,7 @@
 - (bool)removePairingForCurrentControllerOnQueue:(id)arg1 completion:(id /* block */)arg2;
 - (bool)requiresTimedWrite:(id)arg1;
 - (void)setAccessories:(id)arg1;
+- (void)setAuthMethod:(unsigned long long)arg1;
 - (void)setCategory:(id)arg1;
 - (void)setConfigNumber:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
@@ -102,6 +109,7 @@
 - (void)setIdentifier:(id)arg1;
 - (void)setIncompatibleUpdate:(bool)arg1;
 - (void)setName:(id)arg1;
+- (void)setPairSetupType:(unsigned long long)arg1;
 - (void)setPrimaryAccessory:(id)arg1;
 - (void)setReachable:(bool)arg1;
 - (void)setSecuritySessionOpen:(bool)arg1;
@@ -109,7 +117,7 @@
 - (void)setSupportsTimedWrite:(bool)arg1;
 - (void)setVersion:(id)arg1;
 - (id)setupHash;
-- (void)startPairing;
+- (void)startPairingWithConsentRequired:(bool)arg1;
 - (bool)stopPairingWithError:(id*)arg1;
 - (bool)supportsTimedWrite;
 - (bool)tryPairingPassword:(id)arg1 error:(id*)arg2;

@@ -31,6 +31,7 @@
     bool  _captureResponseHTTPHeaders;
     unsigned int  _clientSDKVersion;
     CKDServerConfiguration * _config;
+    NSString * _containerEncryptionServiceName;
     NSString * _containerHardwareIDHash;
     CKContainerID * _containerID;
     NSString * _containerScopedUserID;
@@ -42,12 +43,14 @@
     bool  _finishedAppProxySetup;
     bool  _finishedProxySetup;
     CKDFlowControlManager * _flowControlManager;
+    bool  _forceEnableReadOnlyManatee;
     CKDPublicIdentityLookupService * _foregroundPublicIdentityLookupService;
     CKDZoneGatekeeper * _foregroundZoneGatekeeper;
     bool  _hasDataContainer;
     bool  _isForClouddInternalUse;
     bool  _isSiloedContext;
     CKDMescalSession * _mescalSession;
+    NSString * _orgAdminUserID;
     CKDPCSCache * _pcsCache;
     CKDPCSManager * _pcsManager;
     NSHashTable * _proxies;
@@ -108,11 +111,13 @@
 @property (nonatomic, retain) NSString *clientPrefixEntitlement;
 @property (nonatomic) unsigned int clientSDKVersion;
 @property (nonatomic, retain) CKDServerConfiguration *config;
+@property (nonatomic, retain) NSString *containerEncryptionServiceName;
 @property (nonatomic, readonly) NSString *containerHardwareIDHash;
 @property (nonatomic, readonly) CKContainerID *containerID;
-@property (nonatomic, retain) NSString *containerScopedUserID;
+@property (copy) NSString *containerScopedUserID;
 @property (nonatomic, readonly) NSString *contextID;
 @property (nonatomic) long long darkWakeEnabled;
+@property (nonatomic, readonly) NSString *encryptionServiceName;
 @property (nonatomic, retain) NSString *entitlementSpecifiedPCSServiceName;
 @property (nonatomic, retain) NSMutableDictionary *fakeErrorsByClassName;
 @property (nonatomic, retain) NSMutableDictionary *fakeResponseOperationLifetimeByClassName;
@@ -120,6 +125,7 @@
 @property (nonatomic) bool finishedAppProxySetup;
 @property (nonatomic) bool finishedProxySetup;
 @property (nonatomic, retain) CKDFlowControlManager *flowControlManager;
+@property (nonatomic) bool forceEnableReadOnlyManatee;
 @property (nonatomic, retain) CKDPublicIdentityLookupService *foregroundPublicIdentityLookupService;
 @property (nonatomic, retain) CKDZoneGatekeeper *foregroundZoneGatekeeper;
 @property (nonatomic) bool hasAllowAccessDuringBuddyEntitlement;
@@ -136,16 +142,17 @@
 @property (nonatomic) bool isForClouddInternalUse;
 @property (nonatomic) bool isSiloedContext;
 @property (nonatomic, retain) CKDMescalSession *mescalSession;
+@property (copy) NSString *orgAdminUserID;
 @property (nonatomic, readonly) CKDPCSCache *pcsCache;
 @property (nonatomic, retain) CKDPCSManager *pcsManager;
 @property (nonatomic, retain) NSHashTable *proxies;
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *proxyPreparationGroup;
-@property (nonatomic, retain) NSURL *publicCloudDBURL;
-@property (nonatomic, retain) NSURL *publicCodeServiceURL;
-@property (nonatomic, retain) NSURL *publicDeviceServiceURL;
+@property (copy) NSURL *publicCloudDBURL;
+@property (copy) NSURL *publicCodeServiceURL;
+@property (copy) NSURL *publicDeviceServiceURL;
 @property (nonatomic, retain) CKDKeyValueDiskCache *publicIdentitiesDiskCache;
-@property (nonatomic, retain) NSURL *publicMetricsServiceURL;
-@property (nonatomic, retain) NSURL *publicShareServiceURL;
+@property (copy) NSURL *publicMetricsServiceURL;
+@property (copy) NSURL *publicShareServiceURL;
 @property (nonatomic) bool returnPCSMetadata;
 @property (getter=isSandboxed, nonatomic) bool sandboxed;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *setupQueue;
@@ -224,6 +231,7 @@
 - (id)clientPrefixEntitlement;
 - (unsigned int)clientSDKVersion;
 - (id)config;
+- (id)containerEncryptionServiceName;
 - (id)containerHardwareIDHash;
 - (id)containerID;
 - (id)containerScopedUserID;
@@ -233,6 +241,7 @@
 - (void)dealloc;
 - (id)description;
 - (void)dropMMCS;
+- (id)encryptionServiceName;
 - (id)entitlementSpecifiedPCSServiceName;
 - (id)fakeErrorsByClassName;
 - (id)fakeResponseOperationLifetimeByClassName;
@@ -241,6 +250,7 @@
 - (bool)finishedAppProxySetup;
 - (bool)finishedProxySetup;
 - (id)flowControlManager;
+- (bool)forceEnableReadOnlyManatee;
 - (id)foregroundPublicIdentityLookupService;
 - (id)foregroundZoneGatekeeper;
 - (bool)hasAllowAccessDuringBuddyEntitlement;
@@ -259,6 +269,7 @@
 - (bool)isSandboxed;
 - (bool)isSiloedContext;
 - (id)mescalSession;
+- (id)orgAdminUserID;
 - (id)pcsCache;
 - (id)pcsManager;
 - (void)performRequest:(id)arg1;
@@ -301,6 +312,7 @@
 - (void)setClientPrefixEntitlement:(id)arg1;
 - (void)setClientSDKVersion:(unsigned int)arg1;
 - (void)setConfig:(id)arg1;
+- (void)setContainerEncryptionServiceName:(id)arg1;
 - (void)setContainerScopedUserID:(id)arg1;
 - (void)setDarkWakeEnabled:(long long)arg1;
 - (void)setEntitlementSpecifiedPCSServiceName:(id)arg1;
@@ -312,6 +324,7 @@
 - (void)setFinishedAppProxySetup:(bool)arg1;
 - (void)setFinishedProxySetup:(bool)arg1;
 - (void)setFlowControlManager:(id)arg1;
+- (void)setForceEnableReadOnlyManatee:(bool)arg1;
 - (void)setForegroundPublicIdentityLookupService:(id)arg1;
 - (void)setForegroundZoneGatekeeper:(id)arg1;
 - (void)setHasAllowAccessDuringBuddyEntitlement:(bool)arg1;
@@ -329,6 +342,7 @@
 - (void)setIsSiloedContext:(bool)arg1;
 - (void)setMMCS:(id)arg1;
 - (void)setMescalSession:(id)arg1;
+- (void)setOrgAdminUserID:(id)arg1;
 - (void)setPcsManager:(id)arg1;
 - (void)setProxies:(id)arg1;
 - (void)setProxyPreparationGroup:(id)arg1;

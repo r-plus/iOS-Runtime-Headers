@@ -29,6 +29,9 @@
     _MRAVModifyOutputContextRequestProtobuf * _modifyOutputContextRequestMessage;
     _MRNotificationMessageProtobuf * _notificationMessage;
     _MRPlaybackQueueRequestProtobuf * _playbackQueueRequest;
+    _MRPresentRouteAuthorizationStatusMessageProtobuf * _presentRouteAuthorizationStatusMessage;
+    _MRPromptForRouteAuthorizationMessageProtobuf * _promptForRouteAuthorizationMessage;
+    _MRPromptForRouteAuthorizationResponseMessageProtobuf * _promptForRouteAuthorizationResponseMessage;
     _MRSetReadyStateMessageProtobuf * _readyStateMessage;
     _MRRegisterForGameControllerEventsMessageProtobuf * _registerForGameControllerEvents;
     _MRRegisterGameControllerMessageProtobuf * _registerGameController;
@@ -63,6 +66,7 @@
     _MRUpdateClientMessageProtobuf * _updateClientMessage;
     _MRUpdateContentItemArtworkMessageProtobuf * _updateContentItemArtworkMessage;
     _MRUpdateContentItemMessageProtobuf * _updateContentItemMessage;
+    _MRUpdatePlayerMessageProtobuf * _updatePlayerMessage;
     _MRVolumeControlAvailabilityProtobuf * _volumeControlAvailabilityMessage;
     _MRVolumeDidChangeMessageProtobuf * _volumeDidChangeMessage;
     _MRWakeDeviceMessageProtobuf * _wakeDeviceMessage;
@@ -105,6 +109,9 @@
 @property (nonatomic, readonly) bool hasModifyOutputContextRequestMessage;
 @property (nonatomic, readonly) bool hasNotificationMessage;
 @property (nonatomic, readonly) bool hasPlaybackQueueRequest;
+@property (nonatomic, readonly) bool hasPresentRouteAuthorizationStatusMessage;
+@property (nonatomic, readonly) bool hasPromptForRouteAuthorizationMessage;
+@property (nonatomic, readonly) bool hasPromptForRouteAuthorizationResponseMessage;
 @property (nonatomic, readonly) bool hasReadyStateMessage;
 @property (nonatomic, readonly) bool hasRegisterForGameControllerEvents;
 @property (nonatomic, readonly) bool hasRegisterGameController;
@@ -139,6 +146,7 @@
 @property (nonatomic, readonly) bool hasUpdateClientMessage;
 @property (nonatomic, readonly) bool hasUpdateContentItemArtworkMessage;
 @property (nonatomic, readonly) bool hasUpdateContentItemMessage;
+@property (nonatomic, readonly) bool hasUpdatePlayerMessage;
 @property (nonatomic, readonly) bool hasVolumeControlAvailabilityMessage;
 @property (nonatomic, readonly) bool hasVolumeDidChangeMessage;
 @property (nonatomic, readonly) bool hasWakeDeviceMessage;
@@ -147,6 +155,9 @@
 @property (nonatomic, retain) _MRAVModifyOutputContextRequestProtobuf *modifyOutputContextRequestMessage;
 @property (nonatomic, retain) _MRNotificationMessageProtobuf *notificationMessage;
 @property (nonatomic, retain) _MRPlaybackQueueRequestProtobuf *playbackQueueRequest;
+@property (nonatomic, retain) _MRPresentRouteAuthorizationStatusMessageProtobuf *presentRouteAuthorizationStatusMessage;
+@property (nonatomic, retain) _MRPromptForRouteAuthorizationMessageProtobuf *promptForRouteAuthorizationMessage;
+@property (nonatomic, retain) _MRPromptForRouteAuthorizationResponseMessageProtobuf *promptForRouteAuthorizationResponseMessage;
 @property (nonatomic, retain) _MRSetReadyStateMessageProtobuf *readyStateMessage;
 @property (nonatomic, retain) _MRRegisterForGameControllerEventsMessageProtobuf *registerForGameControllerEvents;
 @property (nonatomic, retain) _MRRegisterGameControllerMessageProtobuf *registerGameController;
@@ -181,10 +192,12 @@
 @property (nonatomic, retain) _MRUpdateClientMessageProtobuf *updateClientMessage;
 @property (nonatomic, retain) _MRUpdateContentItemArtworkMessageProtobuf *updateContentItemArtworkMessage;
 @property (nonatomic, retain) _MRUpdateContentItemMessageProtobuf *updateContentItemMessage;
+@property (nonatomic, retain) _MRUpdatePlayerMessageProtobuf *updatePlayerMessage;
 @property (nonatomic, retain) _MRVolumeControlAvailabilityProtobuf *volumeControlAvailabilityMessage;
 @property (nonatomic, retain) _MRVolumeDidChangeMessageProtobuf *volumeDidChangeMessage;
 @property (nonatomic, retain) _MRWakeDeviceMessageProtobuf *wakeDeviceMessage;
 
+- (void).cxx_destruct;
 - (int)StringAsType:(id)arg1;
 - (id)authenticationToken;
 - (id)clientUpdatesConfigMessage;
@@ -193,7 +206,6 @@
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)cryptoPairingMessage;
-- (void)dealloc;
 - (id)description;
 - (id)deviceInfoMessage;
 - (id)dictionaryRepresentation;
@@ -228,6 +240,9 @@
 - (bool)hasModifyOutputContextRequestMessage;
 - (bool)hasNotificationMessage;
 - (bool)hasPlaybackQueueRequest;
+- (bool)hasPresentRouteAuthorizationStatusMessage;
+- (bool)hasPromptForRouteAuthorizationMessage;
+- (bool)hasPromptForRouteAuthorizationResponseMessage;
 - (bool)hasReadyStateMessage;
 - (bool)hasRegisterForGameControllerEvents;
 - (bool)hasRegisterGameController;
@@ -262,6 +277,7 @@
 - (bool)hasUpdateClientMessage;
 - (bool)hasUpdateContentItemArtworkMessage;
 - (bool)hasUpdateContentItemMessage;
+- (bool)hasUpdatePlayerMessage;
 - (bool)hasVolumeControlAvailabilityMessage;
 - (bool)hasVolumeDidChangeMessage;
 - (bool)hasWakeDeviceMessage;
@@ -273,6 +289,9 @@
 - (id)modifyOutputContextRequestMessage;
 - (id)notificationMessage;
 - (id)playbackQueueRequest;
+- (id)presentRouteAuthorizationStatusMessage;
+- (id)promptForRouteAuthorizationMessage;
+- (id)promptForRouteAuthorizationResponseMessage;
 - (bool)readFrom:(id)arg1;
 - (id)readyStateMessage;
 - (id)registerForGameControllerEvents;
@@ -321,6 +340,9 @@
 - (id)setNowPlayingClientMessage;
 - (id)setNowPlayingPlayerMessage;
 - (void)setPlaybackQueueRequest:(id)arg1;
+- (void)setPresentRouteAuthorizationStatusMessage:(id)arg1;
+- (void)setPromptForRouteAuthorizationMessage:(id)arg1;
+- (void)setPromptForRouteAuthorizationResponseMessage:(id)arg1;
 - (void)setReadyStateMessage:(id)arg1;
 - (id)setRecordingStateMessage;
 - (void)setRegisterForGameControllerEvents:(id)arg1;
@@ -357,6 +379,7 @@
 - (void)setUpdateClientMessage:(id)arg1;
 - (void)setUpdateContentItemArtworkMessage:(id)arg1;
 - (void)setUpdateContentItemMessage:(id)arg1;
+- (void)setUpdatePlayerMessage:(id)arg1;
 - (void)setVolumeControlAvailabilityMessage:(id)arg1;
 - (void)setVolumeDidChangeMessage:(id)arg1;
 - (id)setVolumeMessage;
@@ -370,6 +393,7 @@
 - (id)updateClientMessage;
 - (id)updateContentItemArtworkMessage;
 - (id)updateContentItemMessage;
+- (id)updatePlayerMessage;
 - (id)volumeControlAvailabilityMessage;
 - (id)volumeDidChangeMessage;
 - (id)wakeDeviceMessage;

@@ -26,11 +26,14 @@
     SSItem * _item;
     SSItemOffer * _itemOffer;
     SSNetworkConstraints * _networkConstraints;
+    NSNumber * _ownerAccountDSID;
     long long  _placeholderDownloadIdentifier;
     bool  _playbackRequest;
     bool  _preauthenticated;
     SSURLRequestProperties * _requestProperties;
     id  _requiredDeviceCapabilities;
+    bool  _skipSoftwareAccountPreflight;
+    NSDictionary * _tidHeaders;
     long long  _uniqueIdentifier;
     bool  _usesLocalRedownloadParametersIfPossible;
 }
@@ -57,12 +60,15 @@
 @property (readonly) unsigned long long hash;
 @property bool ignoresForcedPasswordRestriction;
 @property (copy) SSNetworkConstraints *networkConstraints;
+@property (retain) NSNumber *ownerAccountDSID;
 @property long long placeholderDownloadIdentifier;
 @property (getter=isPlaybackRequest) bool playbackRequest;
 @property (getter=isPreauthenticated) bool preauthenticated;
 @property (copy) SSURLRequestProperties *requestProperties;
 @property (copy) id requiredDeviceCapabilities;
+@property (nonatomic) bool skipSoftwareAccountPreflight;
 @property (readonly) Class superclass;
+@property (copy) NSDictionary *tidHeaders;
 @property long long uniqueIdentifier;
 @property bool usesLocalRedownloadParametersIfPossible;
 
@@ -114,6 +120,7 @@
 - (id)item;
 - (id)itemOffer;
 - (id)networkConstraints;
+- (id)ownerAccountDSID;
 - (long long)placeholderDownloadIdentifier;
 - (id)requestProperties;
 - (id)requiredDeviceCapabilities;
@@ -136,14 +143,19 @@
 - (void)setGratisIdentifiers:(id)arg1;
 - (void)setIgnoresForcedPasswordRestriction:(bool)arg1;
 - (void)setNetworkConstraints:(id)arg1;
+- (void)setOwnerAccountDSID:(id)arg1;
 - (void)setPlaceholderDownloadIdentifier:(long long)arg1;
 - (void)setPlaybackRequest:(bool)arg1;
 - (void)setPreauthenticated:(bool)arg1;
 - (void)setRequestProperties:(id)arg1;
 - (void)setRequiredDeviceCapabilities:(id)arg1;
+- (void)setSkipSoftwareAccountPreflight:(bool)arg1;
+- (void)setTidHeaders:(id)arg1;
 - (void)setUniqueIdentifier:(long long)arg1;
 - (void)setUsesLocalRedownloadParametersIfPossible:(bool)arg1;
 - (void)setValue:(id)arg1 forDownloadProperty:(id)arg2;
+- (bool)skipSoftwareAccountPreflight;
+- (id)tidHeaders;
 - (long long)uniqueIdentifier;
 - (bool)usesLocalRedownloadParametersIfPossible;
 - (id)valueForDownloadProperty:(id)arg1;

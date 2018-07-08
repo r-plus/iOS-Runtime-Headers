@@ -84,6 +84,7 @@
 - (void)setSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setSlideTree:(id)arg1;
 - (void)setSoundtrack:(id)arg1;
+- (void)setStylesheetForThemePreview:(id)arg1;
 - (void)setStylesheetForUpgradeToSingleStylesheet:(id)arg1;
 - (void)setTheme:(id)arg1;
 - (void)setUiState:(id)arg1;

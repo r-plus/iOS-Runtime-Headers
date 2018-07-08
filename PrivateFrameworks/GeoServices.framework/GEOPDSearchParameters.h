@@ -9,9 +9,11 @@
         unsigned int sortOrder : 1; 
         unsigned int supportDirectionIntentSearch : 1; 
         unsigned int supportDymSuggestion : 1; 
+        unsigned int supportUnresolvedDirectionIntent : 1; 
     }  _has;
     unsigned int  _maxResults;
     GEOPDRecentRouteInfo * _recentRouteInfo;
+    GEOPDRetainedSearchMetadata * _retainedSearch;
     GEOPDSearchFilter * _searchFilter;
     GEOPDSearchLocationParameters * _searchLocationParameters;
     NSString * _searchString;
@@ -23,12 +25,14 @@
     NSData * _suggestionMetadata;
     bool  _supportDirectionIntentSearch;
     bool  _supportDymSuggestion;
+    bool  _supportUnresolvedDirectionIntent;
     PBUnknownFields * _unknownFields;
     GEOPDViewportInfo * _viewportInfo;
 }
 
 @property (nonatomic) bool hasMaxResults;
 @property (nonatomic, readonly) bool hasRecentRouteInfo;
+@property (nonatomic, readonly) bool hasRetainedSearch;
 @property (nonatomic, readonly) bool hasSearchFilter;
 @property (nonatomic, readonly) bool hasSearchLocationParameters;
 @property (nonatomic, readonly) bool hasSearchString;
@@ -40,9 +44,11 @@
 @property (nonatomic, readonly) bool hasSuggestionMetadata;
 @property (nonatomic) bool hasSupportDirectionIntentSearch;
 @property (nonatomic) bool hasSupportDymSuggestion;
+@property (nonatomic) bool hasSupportUnresolvedDirectionIntent;
 @property (nonatomic, readonly) bool hasViewportInfo;
 @property (nonatomic) unsigned int maxResults;
 @property (nonatomic, retain) GEOPDRecentRouteInfo *recentRouteInfo;
+@property (nonatomic, retain) GEOPDRetainedSearchMetadata *retainedSearch;
 @property (nonatomic, retain) GEOPDSearchFilter *searchFilter;
 @property (nonatomic, retain) GEOPDSearchLocationParameters *searchLocationParameters;
 @property (nonatomic, retain) NSString *searchString;
@@ -54,6 +60,7 @@
 @property (nonatomic, retain) NSData *suggestionMetadata;
 @property (nonatomic) bool supportDirectionIntentSearch;
 @property (nonatomic) bool supportDymSuggestion;
+@property (nonatomic) bool supportUnresolvedDirectionIntent;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
 
@@ -66,6 +73,7 @@
 - (id)dictionaryRepresentation;
 - (bool)hasMaxResults;
 - (bool)hasRecentRouteInfo;
+- (bool)hasRetainedSearch;
 - (bool)hasSearchFilter;
 - (bool)hasSearchLocationParameters;
 - (bool)hasSearchString;
@@ -77,14 +85,16 @@
 - (bool)hasSuggestionMetadata;
 - (bool)hasSupportDirectionIntentSearch;
 - (bool)hasSupportDymSuggestion;
+- (bool)hasSupportUnresolvedDirectionIntent;
 - (bool)hasViewportInfo;
 - (unsigned long long)hash;
-- (id)initWithSearchQuery:(id)arg1 entryMetadata:(id)arg2 metadata:(id)arg3 autocompleteEntry:(id)arg4 maxResults:(unsigned int)arg5 traits:(id)arg6;
+- (id)initWithSearchQuery:(id)arg1 entryMetadata:(id)arg2 metadata:(id)arg3 autocompleteEntry:(id)arg4 retainedSearch:(id)arg5 maxResults:(unsigned int)arg6 traits:(id)arg7;
 - (bool)isEqual:(id)arg1;
 - (unsigned int)maxResults;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (id)recentRouteInfo;
+- (id)retainedSearch;
 - (id)searchFilter;
 - (id)searchLocationParameters;
 - (id)searchString;
@@ -96,8 +106,10 @@
 - (void)setHasSortOrder:(bool)arg1;
 - (void)setHasSupportDirectionIntentSearch:(bool)arg1;
 - (void)setHasSupportDymSuggestion:(bool)arg1;
+- (void)setHasSupportUnresolvedDirectionIntent:(bool)arg1;
 - (void)setMaxResults:(unsigned int)arg1;
 - (void)setRecentRouteInfo:(id)arg1;
+- (void)setRetainedSearch:(id)arg1;
 - (void)setSearchFilter:(id)arg1;
 - (void)setSearchLocationParameters:(id)arg1;
 - (void)setSearchString:(id)arg1;
@@ -109,6 +121,7 @@
 - (void)setSuggestionMetadata:(id)arg1;
 - (void)setSupportDirectionIntentSearch:(bool)arg1;
 - (void)setSupportDymSuggestion:(bool)arg1;
+- (void)setSupportUnresolvedDirectionIntent:(bool)arg1;
 - (void)setViewportInfo:(id)arg1;
 - (int)sortOrder;
 - (id)sortOrderAsString:(int)arg1;
@@ -117,6 +130,7 @@
 - (id)suggestionMetadata;
 - (bool)supportDirectionIntentSearch;
 - (bool)supportDymSuggestion;
+- (bool)supportUnresolvedDirectionIntent;
 - (id)unknownFields;
 - (id)viewportInfo;
 - (void)writeTo:(id)arg1;

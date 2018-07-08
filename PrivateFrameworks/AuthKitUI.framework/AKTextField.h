@@ -8,6 +8,7 @@
     NSMutableArray * _constraints;
     UILabel * _entryDescription;
     UITextField * _entryField;
+    UIColor * _fieldBackgroundColor;
     long long  _rowIdentifier;
     long long  _textFieldStyle;
     bool  _usesVibrancy;
@@ -20,19 +21,22 @@
 @property (getter=isEnabled, nonatomic) bool enabled;
 @property (nonatomic, readonly) UILabel *entryDescription;
 @property (nonatomic, readonly) UITextField *entryField;
+@property (nonatomic, retain) UIColor *fieldBackgroundColor;
 @property (nonatomic) long long rowIdentifier;
 @property (nonatomic) long long textFieldStyle;
 @property (nonatomic) bool usesVibrancy;
 @property (nonatomic, retain) UIVisualEffectView *visualEffectView;
 
-+ (id)_backgroundImageForRowIdentifier:(long long)arg1 blurEffectStyle:(long long)arg2;
-+ (id)_cachedImageForRowIdentifier:(long long)arg1 blurEffectStyle:(long long)arg2 usingBlock:(id /* block */)arg3;
++ (id)_backgroundImageForRowIdentifier:(long long)arg1 blurEffectStyle:(long long)arg2 backgroundColor:(id)arg3;
++ (id)_cachedImageForRowIdentifier:(long long)arg1 blurEffectStyle:(long long)arg2 backgroundColor:(id)arg3 usingBlock:(id /* block */)arg4;
++ (void)drawFillForStyle:(long long)arg1 pathRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 roundedCorners:(int)arg3 cornerRadius:(double)arg4 backgroundColor:(id)arg5;
++ (void)drawStrokeForStyle:(long long)arg1 pathRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 roundedCorners:(int)arg3 cornerRadius:(double)arg4 pathSegments:(int)arg5;
 
 - (void).cxx_destruct;
 - (void)_commonInit;
 - (id)_fieldTextColor;
 - (void)_setupAlertStyleViews;
-- (void)_setupBackgroundView;
+- (id)_setupBackgroundViewConstriants;
 - (void)_setupInlineEntryStyleViews;
 - (void)_setupLabelAndFieldStyles;
 - (void)_updateFonts:(id)arg1;
@@ -42,6 +46,7 @@
 - (void)dealloc;
 - (id)entryDescription;
 - (id)entryField;
+- (id)fieldBackgroundColor;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)isEnabled;
@@ -50,6 +55,7 @@
 - (void)setBlurEffectStyle:(long long)arg1;
 - (void)setConstraints:(id)arg1;
 - (void)setEnabled:(bool)arg1;
+- (void)setFieldBackgroundColor:(id)arg1;
 - (void)setRowIdentifier:(long long)arg1;
 - (void)setTextFieldStyle:(long long)arg1;
 - (void)setUsesVibrancy:(bool)arg1;

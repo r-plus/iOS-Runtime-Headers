@@ -4,6 +4,7 @@
 
 @interface MRContentItemMetadata : _MRContentItemMetadataProtobuf {
     NSDictionary * _appMetrics;
+    NSArray * _artworkURLTemplates;
     NSURL * _assetURL;
     NSDictionary * _collectionInfo;
     NSDate * _currentPlaybackDate;
@@ -14,6 +15,7 @@
 }
 
 @property (nonatomic, copy) NSDictionary *appMetrics;
+@property (nonatomic, copy) NSArray *artworkURLTemplates;
 @property (nonatomic, copy) NSURL *assetURL;
 @property (nonatomic, copy) NSDictionary *collectionInfo;
 @property (nonatomic, copy) NSDate *currentPlaybackDate;
@@ -23,19 +25,21 @@
 
 + (void)initialize;
 
+- (void).cxx_destruct;
 - (id)appMetrics;
+- (id)artworkURLTemplates;
 - (id)assetURL;
 - (id)collectionInfo;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currentPlaybackDate;
 - (id)customDictionaryRepresentation;
-- (void)dealloc;
 - (id)deviceSpecificUserInfo;
 - (id)init;
 - (id)initWithData:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)nowPlayingInfo;
 - (void)setAppMetrics:(id)arg1;
+- (void)setArtworkURLTemplates:(id)arg1;
 - (void)setAssetURL:(id)arg1;
 - (void)setCollectionInfo:(id)arg1;
 - (void)setCurrentPlaybackDate:(id)arg1;

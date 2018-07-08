@@ -69,6 +69,7 @@
 @property (nonatomic, readonly) NSDictionary *wrappedUserContext;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)unarchiveMetadata:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)CPSafeDescription;

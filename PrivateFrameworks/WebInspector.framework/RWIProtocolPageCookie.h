@@ -14,6 +14,8 @@
 @property (nonatomic) int size;
 @property (nonatomic, copy) NSString *value;
 
+// Image: /System/Library/PrivateFrameworks/WebInspector.framework/WebInspector
+
 - (id)domain;
 - (double)expires;
 - (bool)httpOnly;
@@ -33,5 +35,9 @@
 - (void)setValue:(id)arg1;
 - (int)size;
 - (id)value;
+
+// Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
+
++ (id)safe_initWithName:(id)arg1 value:(id)arg2 domain:(id)arg3 path:(id)arg4 expires:(double)arg5 size:(int)arg6 httpOnly:(bool)arg7 secure:(bool)arg8 session:(bool)arg9;
 
 @end

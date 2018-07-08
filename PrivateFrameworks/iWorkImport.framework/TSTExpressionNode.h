@@ -44,6 +44,7 @@
 - (id)exportString;
 - (unsigned long long)firstIndex;
 - (unsigned long long)firstIndexOfSubtree;
+- (void)fixStorageLanguage:(id)arg1;
 - (bool)forceReferenceInterpretationOfChildren;
 - (id)formulaPlainText;
 - (bool)hasMenu;

@@ -3,16 +3,21 @@
  */
 
 @interface SFProximityEstimator : NSObject {
-    long long  _estimatedRSSI;
-    long long  _rssiThreshold;
+    int  _estimatedRSSI;
+    int  _rssiEnter;
+    int  _rssiExit;
+    int  _rssiFar;
+    int  _rssiImmediate;
+    int  _rssiNear;
 }
 
-@property (nonatomic, readonly) long long estimatedRSSI;
+@property (nonatomic, readonly) int estimatedRSSI;
 
 + (id)proximityEstimatorWithProximityInfo:(id)arg1;
 
-- (long long)estimatedRSSI;
+- (int)_estimateRSSIForSFBLEDevice:(id)arg1;
+- (int)estimatedRSSI;
 - (id)initWithProximityInfo:(id)arg1;
-- (bool)updateWithSFBLEDevice:(id)arg1;
+- (unsigned int)updateWithSFBLEDevice:(id)arg1;
 
 @end

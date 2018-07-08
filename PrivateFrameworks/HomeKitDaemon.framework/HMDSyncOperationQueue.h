@@ -5,6 +5,7 @@
 @interface HMDSyncOperationQueue : HMFObject {
     HMFExponentialBackoffTimer * _backoffTimer;
     bool  _hasExponentialBackoff;
+    double  _initialBackoff;
     double  _initialDelay;
     HMDSyncOperationManager * _manager;
     NSString * _name;
@@ -16,6 +17,7 @@
 @property (nonatomic, readonly) long long count;
 @property (nonatomic, readonly) long long countTotal;
 @property (nonatomic) bool hasExponentialBackoff;
+@property (nonatomic) double initialBackoff;
 @property (nonatomic) double initialDelay;
 @property (nonatomic) HMDSyncOperationManager *manager;
 @property (nonatomic, readonly) NSString *name;
@@ -34,7 +36,8 @@
 - (void)dropAllOperations;
 - (void)dropOperation:(id)arg1;
 - (bool)hasExponentialBackoff;
-- (id)initName:(id)arg1 syncManager:(id)arg2 initialDelay:(double)arg3 hasBackoff:(bool)arg4;
+- (id)initName:(id)arg1 syncManager:(id)arg2 initialDelay:(double)arg3 initialBackoff:(double)arg4 hasBackoff:(bool)arg5;
+- (double)initialBackoff;
 - (double)initialDelay;
 - (bool)isInMaximumTimeInterval;
 - (id)manager;
@@ -45,6 +48,7 @@
 - (void)resetBackoffTimer;
 - (void)setBackoffTimer:(id)arg1;
 - (void)setHasExponentialBackoff:(bool)arg1;
+- (void)setInitialBackoff:(double)arg1;
 - (void)setInitialDelay:(double)arg1;
 - (void)setManager:(id)arg1;
 - (void)setStagedOperations:(id)arg1;

@@ -19,6 +19,7 @@
 - (id)newsDataSourceProxy;
 - (void)pause;
 - (void)resume;
+- (void)setAllowsLocationUse:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setNewsDataSourceProxy:(id)arg1;
 - (void)setRunning:(bool)arg1;

@@ -2,10 +2,8 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface SFWebViewController : UIViewController <SFFormAutoFillControllerDelegate, WKNavigationDelegatePrivate, WKUIDelegatePrivate, _SFAuthenticationClient, _SFAuthenticationContextDelegate, _SFDialogControllerDelegate, _SFDialogPresenting, _SFDialogViewControllerPresenting, _SFWebViewDelegate, _WKInputDelegate> {
-    _SFAutoFillAuthenticationCache * _autoFillAuthenticationCache;
+@interface SFWebViewController : UIViewController <SFFormAutoFillControllerDelegate, WKNavigationDelegatePrivate, WKUIDelegatePrivate, _SFDialogControllerDelegate, _SFDialogPresenting, _SFDialogViewControllerPresenting, _SFWebViewDelegate, _WKInputDelegate> {
     _SFFormAutoFillController * _autoFillController;
-    _SFAuthenticationContext * _autoFillPearlAuthenticationContext;
     <SFWebViewControllerDelegate> * _delegate;
     _SFDialogController * _dialogController;
     bool  _didFinishDocumentLoad;
@@ -16,7 +14,7 @@
     WKWebViewConfiguration * _webViewConfiguration;
 }
 
-@property (nonatomic, readonly) _SFAuthenticationContext *autoFillPearlAuthenticationContext;
+@property (nonatomic, readonly) _SFAuthenticationContext *autoFillAuthenticationContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SFWebViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -31,12 +29,13 @@
 - (void).cxx_destruct;
 - (id)_actionsForElement:(id)arg1 defaultActions:(id)arg2 isPreviewing:(bool)arg3;
 - (int)_analyticsClient;
-- (void)_authenticationContextInvalidated:(id)arg1;
 - (id)_presentingViewControllerForWebView:(id)arg1;
 - (void)_webView:(id)arg1 accessoryViewCustomButtonTappedInFormInputSession:(id)arg2;
 - (id)_webView:(id)arg1 actionsForElement:(id)arg2 defaultActions:(id)arg3;
 - (void)_webView:(id)arg1 commitPreviewedViewController:(id)arg2;
 - (void)_webView:(id)arg1 createWebViewWithConfiguration:(id)arg2 forNavigationAction:(id)arg3 windowFeatures:(id)arg4 completionHandler:(id /* block */)arg5;
+- (long long)_webView:(id)arg1 dataOwnerForDragSession:(id)arg2;
+- (long long)_webView:(id)arg1 dataOwnerForDropSession:(id)arg2;
 - (void)_webView:(id)arg1 didChangeSafeAreaShouldAffectObscuredInsets:(bool)arg2;
 - (void)_webView:(id)arg1 didStartInputSession:(id)arg2;
 - (void)_webView:(id)arg1 insertTextSuggestion:(id)arg2 inInputSession:(id)arg3;
@@ -52,13 +51,7 @@
 - (void)_webViewDidCancelClientRedirect:(id)arg1;
 - (void)_webViewDidEndNavigationGesture:(id)arg1 withNavigationToBackForwardListItem:(id)arg2;
 - (void)_webViewWebProcessDidCrash:(id)arg1;
-- (id)authenticationCustomUIProgressObserverForContext:(id)arg1;
-- (bool)authenticationEnabledForContext:(id)arg1;
-- (id)authenticationMessageForContext:(id)arg1;
-- (id)autoFillPearlAuthenticationContext;
-- (bool)contextRequiresSessionBasedAuthentication:(id)arg1;
-- (bool)contextShouldAllowMultipleBiometricFailures:(id)arg1;
-- (bool)contextShouldAllowPasscodeFallback:(id)arg1;
+- (id)autoFillAuthenticationContext;
 - (void)dealloc;
 - (id)delegate;
 - (id)dialogController;

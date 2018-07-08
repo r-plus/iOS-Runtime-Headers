@@ -22,6 +22,7 @@
 - (void)dealloc;
 - (void)deleteDeDupeRecordZone;
 - (void)fetchLatestRecordKeyFromCKAndCreateIfKeyDoesNotExistWithCompletion:(id /* block */)arg1;
+- (void)fetchLatestRecordKeyFromCKAndCreateIfKeyDoesNotExistWithCompletion:(id /* block */)arg1 forceFetch:(bool)arg2;
 - (id)init;
 - (void)setCachedSalt:(id)arg1;
 

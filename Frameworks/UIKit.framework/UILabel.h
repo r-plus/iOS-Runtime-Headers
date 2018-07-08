@@ -264,14 +264,6 @@
 - (id)_visualStyle;
 - (bool)_wantsDeepDrawing;
 - (bool)_wantsUnderlineForAccessibilityButtonShapesEnabled;
-- (void)dealloc;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)adjustsFontForContentSizeCategory;
 - (bool)adjustsFontSizeToFitWidth;
 - (bool)adjustsLetterSpacingToFitWidth;
@@ -282,6 +274,7 @@
 - (bool)centersHorizontally;
 - (id)color;
 - (id)currentTextColor;
+- (void)dealloc;
 - (unsigned long long)defaultAccessibilityTraits;
 - (void)drawContentsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -378,6 +371,10 @@
 // Image: /System/Library/PrivateFrameworks/CloudDocsUI.framework/CloudDocsUI
 
 - (id)br_contentDescription;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
+
+- (void)_gkUpdateShadowForFocusChange:(bool)arg1;
 
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 

@@ -47,13 +47,15 @@
 
 - (void).cxx_destruct;
 - (void)_cleanupState;
-- (bool)_generateIntervalFromEnd:(id)arg1;
+- (bool)_generateIntervalFromEnd:(id)arg1 shouldReport:(bool)arg2;
 - (bool)_hasSignpostProcessingBlock;
 - (bool)_isTrackingIntervals;
 - (unsigned long long)_notificationTimeout;
-- (bool)_processSignpostEvent:(id)arg1;
+- (bool)_processSignpostEvent:(id)arg1 shouldReport:(bool)arg2;
 - (bool)_processSignpostSupportLogMessage:(id)arg1;
 - (void)_processingCompleted:(id)arg1;
+- (bool)_shouldBuildEvent:(id)arg1 category:(id)arg2 shouldReport:(bool*)arg3;
+- (bool)_shouldProcessEvent:(id)arg1 shouldReport:(bool*)arg2;
 - (bool)_shouldStopProcessing;
 - (id /* block */)animationIntervalCompletionProcessingBlock;
 - (id /* block */)beginEventProcessingBlock;
@@ -71,6 +73,7 @@
 - (id)notificationProcessingQueue;
 - (id)objectFilter;
 - (bool)processSerializedObjectsFromData:(id)arg1 errorOut:(id*)arg2;
+- (bool)processSerializedObjectsFromSignpostFile:(id)arg1 errorOut:(id*)arg2;
 - (unsigned long long)processedEventCount;
 - (id /* block */)processingCompletionBlock;
 - (void)setAnimationIntervalCompletionProcessingBlock:(id /* block */)arg1;

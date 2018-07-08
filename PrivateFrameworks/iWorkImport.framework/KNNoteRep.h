@@ -3,9 +3,10 @@
  */
 
 @interface KNNoteRep : TSDRep <TSDContainerRep, TSWPStorageObserver> {
-    TSWPRep * mContainedRep;
+    TSWPRep * _containedRep;
 }
 
+@property (nonatomic, readonly) NSArray *childReps;
 @property (nonatomic, readonly) TSWPRep *containedRep;
 @property (nonatomic, readonly) NSObject<TSDContainerInfo> *containerInfo;
 @property (readonly, copy) NSString *debugDescription;
@@ -13,6 +14,7 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)addAdditionalChildLayersToArray:(id)arg1;
 - (bool)canBeginEditingChildRepOnDoubleTap:(id)arg1;
 - (bool)canSelectChildRep:(id)arg1;
@@ -22,7 +24,6 @@
 - (id)containerInfo;
 - (void)dealloc;
 - (id)editingRep;
-- (id)hitRep:(struct CGPoint { double x1; double x2; })arg1;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
 - (void)recursivelyPerformSelector:(SEL)arg1;
 - (void)recursivelyPerformSelector:(SEL)arg1 withObject:(id)arg2;

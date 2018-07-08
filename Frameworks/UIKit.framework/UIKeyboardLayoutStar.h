@@ -173,10 +173,6 @@
 - (void)_setReturnKeyEnabled:(bool)arg1 withDisplayName:(id)arg2 withType:(int)arg3;
 - (bool)_stringContainsCurrencyCharacters:(id)arg1;
 - (id)_variantsByAppendingDualStringKey:(id)arg1 toVariants:(id)arg2;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)accessibilitySensitivityChanged;
 - (id)activationIndicatorView;
 - (id)activeKey;
@@ -227,6 +223,7 @@
 - (void)deactivateActiveKey;
 - (void)deactivateActiveKeys;
 - (void)deactivateActiveKeysClearingTouchInfo:(bool)arg1 clearingDimming:(bool)arg2;
+- (void)dealloc;
 - (id)defaultKeyplaneForKeyplane:(id)arg1;
 - (id)defaultNameForKeyplaneName:(id)arg1;
 - (long long)defaultSelectedVariantIndexForKey:(id)arg1 withActions:(unsigned long long)arg2;
@@ -523,5 +520,10 @@
 - (void)willBeginIndirectSelectionGesture:(bool)arg1;
 - (void)willMoveToWindow:(id)arg1;
 - (void)willRotate;
+
+// Image: /Library/TweakInject/SlideCut.dylib
+
+- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 
 @end

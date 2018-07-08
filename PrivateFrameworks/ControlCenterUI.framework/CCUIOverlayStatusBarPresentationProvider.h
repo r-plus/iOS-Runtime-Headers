@@ -56,6 +56,7 @@
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_transformForTransitionState:(id)arg1 rubberBandingHeight:(double)arg2;
 - (bool)allowHotPocketDuringTransition;
 - (id)animationBatchForTransitionState:(id)arg1 previousTransitionState:(id)arg2;
+- (bool)backdropViewShouldUseAlphaTransformer;
 - (unsigned long long)backgroundMaterialOptions;
 - (id)cleanupForDismissal;
 - (unsigned long long)dismissalFlickAllowedDirections;

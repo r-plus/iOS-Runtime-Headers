@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UISlider : UIControl <DebugHierarchyObject, NSCoding> {
+@interface UISlider : UIControl <NSCoding> {
     double  _alpha;
     struct __CFDictionary { } * _contentLookup;
     _UIEdgeFeedbackGenerator * _edgeFeedbackGenerator;
@@ -46,11 +46,8 @@
 @property (nonatomic, readonly) UIImage *currentMaximumTrackImage;
 @property (nonatomic, readonly) UIImage *currentMinimumTrackImage;
 @property (nonatomic, readonly) UIImage *currentThumbImage;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (getter=_edgeFeedbackBehavior, setter=_setEdgeFeedbackBehavior:, nonatomic, retain) _UIEdgeFeedbackGenerator *edgeFeedbackBehavior;
 @property (getter=_edgeFeedbackGenerator, setter=_setEdgeFeedbackGenerator:, nonatomic, retain) _UIEdgeFeedbackGenerator *edgeFeedbackGenerator;
-@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIColor *maximumTrackTintColor;
 @property (nonatomic) float maximumValue;
 @property (nonatomic, retain) UIImage *maximumValueImage;
@@ -58,7 +55,6 @@
 @property (nonatomic) float minimumValue;
 @property (nonatomic, retain) UIImage *minimumValueImage;
 @property (getter=_modulationFeedbackGenerator, setter=_setModulationFeedbackGenerator:, nonatomic, retain) _UIModulationFeedbackGenerator *modulationFeedbackGenerator;
-@property (readonly) Class superclass;
 @property (nonatomic, retain) UIColor *thumbTintColor;
 @property (nonatomic) float value;
 
@@ -116,16 +112,6 @@
 - (bool)_trackEnabled;
 - (void)_updateAppearanceForEnabled:(bool)arg1;
 - (void)_updateMaxTrackColorForInitialization:(bool)arg1;
-- (void)dealloc;
-- (id)description;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
-- (id)debugHierarchyValueForPropertyWithName:(id)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
 - (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (bool)cancelMouseTracking;
@@ -136,6 +122,8 @@
 - (id)currentMaximumTrackImage;
 - (id)currentMinimumTrackImage;
 - (id)currentThumbImage;
+- (void)dealloc;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;

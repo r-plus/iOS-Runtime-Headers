@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEODataSession : NSObject <GEODataSession> {
+@interface GEODataSession : NSObject <GEODataSession, GEODataSessionRulesProvider> {
     NSObject<OS_dispatch_queue> * _sessionIsolation;
     <GEODataSession> * _urlSession;
     <GEODataSession> * _xpcSession;

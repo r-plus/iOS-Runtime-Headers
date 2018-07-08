@@ -6,9 +6,7 @@
     NSString * _actionTitle;
     NSString * _actionURLString;
     NSString * _backgroundGradientColor;
-    NSString * _discoverMoreVideosSubtitle;
-    NSString * _discoverMoreVideosTitle;
-    NSString * _discoverMoreVideosURLString;
+    NSData * _discoverMoreVideosInfoData;
     bool  _displaysAsVideoPlaylist;
     struct { 
         unsigned int displaysAsVideoPlaylist : 1; 
@@ -25,17 +23,13 @@
 @property (nonatomic, copy) NSURL *actionURL;
 @property (nonatomic, retain) NSString *actionURLString;
 @property (nonatomic, retain) NSString *backgroundGradientColor;
-@property (nonatomic, retain) NSString *discoverMoreVideosSubtitle;
-@property (nonatomic, retain) NSString *discoverMoreVideosTitle;
-@property (nonatomic, copy) NSURL *discoverMoreVideosURL;
-@property (nonatomic, retain) NSString *discoverMoreVideosURLString;
+@property (nonatomic, copy) NTPBDiscoverMoreVideosInfo *discoverMoreVideosInfo;
+@property (nonatomic, retain) NSData *discoverMoreVideosInfoData;
 @property (nonatomic) bool displaysAsVideoPlaylist;
 @property (nonatomic, readonly) bool hasActionTitle;
 @property (nonatomic, readonly) bool hasActionURLString;
 @property (nonatomic, readonly) bool hasBackgroundGradientColor;
-@property (nonatomic, readonly) bool hasDiscoverMoreVideosSubtitle;
-@property (nonatomic, readonly) bool hasDiscoverMoreVideosTitle;
-@property (nonatomic, readonly) bool hasDiscoverMoreVideosURLString;
+@property (nonatomic, readonly) bool hasDiscoverMoreVideosInfoData;
 @property (nonatomic) bool hasDisplaysAsVideoPlaylist;
 @property (nonatomic, readonly) bool hasName;
 @property (nonatomic, readonly) bool hasNameColor;
@@ -55,16 +49,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)discoverMoreVideosSubtitle;
-- (id)discoverMoreVideosTitle;
-- (id)discoverMoreVideosURLString;
+- (id)discoverMoreVideosInfoData;
 - (bool)displaysAsVideoPlaylist;
 - (bool)hasActionTitle;
 - (bool)hasActionURLString;
 - (bool)hasBackgroundGradientColor;
-- (bool)hasDiscoverMoreVideosSubtitle;
-- (bool)hasDiscoverMoreVideosTitle;
-- (bool)hasDiscoverMoreVideosURLString;
+- (bool)hasDiscoverMoreVideosInfoData;
 - (bool)hasDisplaysAsVideoPlaylist;
 - (bool)hasName;
 - (bool)hasNameColor;
@@ -79,9 +69,7 @@
 - (void)setActionTitle:(id)arg1;
 - (void)setActionURLString:(id)arg1;
 - (void)setBackgroundGradientColor:(id)arg1;
-- (void)setDiscoverMoreVideosSubtitle:(id)arg1;
-- (void)setDiscoverMoreVideosTitle:(id)arg1;
-- (void)setDiscoverMoreVideosURLString:(id)arg1;
+- (void)setDiscoverMoreVideosInfoData:(id)arg1;
 - (void)setDisplaysAsVideoPlaylist:(bool)arg1;
 - (void)setHasDisplaysAsVideoPlaylist:(bool)arg1;
 - (void)setHasUseNameColorInWidget:(bool)arg1;
@@ -97,8 +85,8 @@
 // Image: /System/Library/PrivateFrameworks/NewsToday.framework/NewsToday
 
 - (id)actionURL;
-- (id)discoverMoreVideosURL;
+- (id)discoverMoreVideosInfo;
 - (void)setActionURL:(id)arg1;
-- (void)setDiscoverMoreVideosURL:(id)arg1;
+- (void)setDiscoverMoreVideosInfo:(id)arg1;
 
 @end

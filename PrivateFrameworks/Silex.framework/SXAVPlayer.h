@@ -56,6 +56,7 @@
 - (id)durationObserver;
 - (double)elapsedTime;
 - (double)frameRate;
+- (id)initWithPlayerItem:(id)arg1 audioMode:(int)arg2;
 - (id)initWithURL:(id)arg1;
 - (id)initWithURL:(id)arg1 audioMode:(int)arg2;
 - (void)loadFrameRate;
@@ -91,5 +92,6 @@
 - (id)timeControlStatusObserver;
 - (id)timeObserver;
 - (double)totalTimePlayed;
+- (void)updateTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 
 @end

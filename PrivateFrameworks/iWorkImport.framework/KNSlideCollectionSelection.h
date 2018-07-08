@@ -3,8 +3,8 @@
  */
 
 @interface KNSlideCollectionSelection : TSKSelection {
-    KNSlideNode * mSlideNodeToEdit;
-    NSOrderedSet * mSlideNodes;
+    KNSlideNode * _slideNodeToEdit;
+    NSOrderedSet * _slideNodes;
 }
 
 @property (getter=isEmpty, nonatomic, readonly) bool empty;
@@ -13,8 +13,8 @@
 
 + (Class)archivedSelectionClass;
 
+- (void).cxx_destruct;
 - (id)UUIDDescription;
-- (void)dealloc;
 - (id)description;
 - (unsigned long long)hash;
 - (id)init;

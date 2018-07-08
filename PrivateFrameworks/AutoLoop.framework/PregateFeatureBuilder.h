@@ -8,21 +8,21 @@
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<FloatPoint *, std::__1::allocator<FloatPoint> > { 
-            struct { /* ? */ } *__first_; 
+            struct { /* ? */ } *__value_; 
         } __end_cap_; 
     }  _frameBlurVectors;
     struct vector<FloatPoint, std::__1::allocator<FloatPoint> > { 
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<FloatPoint *, std::__1::allocator<FloatPoint> > { 
-            struct { /* ? */ } *__first_; 
+            struct { /* ? */ } *__value_; 
         } __end_cap_; 
     }  _frameOffsets;
     struct vector<CMTime, std::__1::allocator<CMTime> > { 
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<CMTime *, std::__1::allocator<CMTime> > { 
-            struct { /* ? */ } *__first_; 
+            struct { /* ? */ } *__value_; 
         } __end_cap_; 
     }  _frameTimes;
     NSArray * _movieMetadata;

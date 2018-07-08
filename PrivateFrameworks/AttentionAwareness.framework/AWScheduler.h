@@ -31,5 +31,6 @@
 - (void)removeInvalidClients;
 - (void)removeInvalidClientsWithConnection:(id)arg1;
 - (void)setDebugPreference:(id)arg1 reply:(id /* block */)arg2;
+- (void)setSmartCoverClosed:(bool)arg1;
 
 @end

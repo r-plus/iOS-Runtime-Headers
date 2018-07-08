@@ -30,7 +30,7 @@
 - (id)cachedPickedInputRoutePortDescription;
 - (id)cachedPickedOutputRoute;
 - (void)dealloc;
-- (void)fetchAvailableRoutesWithCompletionHandler:(id /* block */)arg1;
+- (void)fetchAvailableRoutesWithCompletionQueue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (bool)hasCategoryEverBeenActive;
 - (id)initWithName:(id)arg1;
 - (bool)isAudioSessionAppropriateForQueryingRoutes;

@@ -14,6 +14,7 @@
 - (void)_accessibilitySetValue:(id)arg1;
 - (bool)_accessibilitySupportsActivateAction;
 - (bool)_accessibilitySupportsHandwriting;
+- (id)_accessibilityUserTestingVisibleAncestor;
 - (bool)_accessibilityViewHierarchyHasNativeFocus;
 - (bool)accessibilityActivate;
 - (struct CGPoint { double x1; double x2; })accessibilityActivationPoint;

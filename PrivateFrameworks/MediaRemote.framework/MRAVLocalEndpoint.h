@@ -13,6 +13,8 @@
 
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
+- (id)_localizeOutputDevices:(id)arg1;
 - (void)_outputContextDevicesDidChangeNotification:(id)arg1;
 - (void)_reloadOutputDevicesFromContext;
 - (void)addOutputDevices:(id)arg1 withReplyQueue:(id)arg2 completion:(id /* block */)arg3;

@@ -11,6 +11,7 @@
     NSString * _identifier;
     bool  _isCurrentlyVisible;
     double  _lastAppearTime;
+    NSObject<OS_dispatch_queue> * _loggingQueue;
     PETScalarEventTracker * _resizeTracker;
     PETDistributionEventTracker * _screenLingerTracker;
     PETScalarEventTracker * _updateTracker;

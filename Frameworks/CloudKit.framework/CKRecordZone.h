@@ -19,6 +19,7 @@
     bool  _serializeProtectionData;
     CKRecordZoneID * _zoneID;
     bool  _zoneKeyRollAllowed;
+    NSString * _zonePCSLastModifierDevice;
     NSDate * _zonePCSModificationDate;
     NSData * _zoneishKeyID;
     NSData * _zoneishProtectionData;
@@ -42,6 +43,7 @@
 @property (nonatomic, retain) CKRecordZoneID *zoneID;
 @property (nonatomic) bool zoneKeyRollAllowed;
 @property (nonatomic) struct _OpaquePCSShareProtection { }*zonePCS;
+@property (nonatomic, retain) NSString *zonePCSLastModifierDevice;
 @property (nonatomic, retain) NSDate *zonePCSModificationDate;
 @property (nonatomic, retain) NSData *zoneishKeyID;
 @property (nonatomic) struct _OpaquePCSShareProtection { }*zoneishPCS;
@@ -94,11 +96,13 @@
 - (void)setSerializeProtectionData:(bool)arg1;
 - (void)setZoneID:(id)arg1;
 - (void)setZoneKeyRollAllowed:(bool)arg1;
+- (void)setZonePCSLastModifierDevice:(id)arg1;
 - (void)setZonePCSModificationDate:(id)arg1;
 - (void)setZoneishKeyID:(id)arg1;
 - (void)setZoneishProtectionData:(id)arg1;
 - (id)zoneID;
 - (bool)zoneKeyRollAllowed;
+- (id)zonePCSLastModifierDevice;
 - (id)zonePCSModificationDate;
 - (id)zoneishKeyID;
 - (id)zoneishProtectionData;

@@ -9,10 +9,12 @@
     HDCloudSyncFetchOperationResult * _fetchOperationResult;
     bool  _isNewStoreRecord;
     bool  _isSecondaryContainer;
+    NSUUID * _operationIdentifier;
     NSProgress * _progress;
     NSObject<OS_dispatch_queue> * _queue;
     bool  _queue_hasStarted;
     HDCloudSyncSequenceRecord * _sequenceRecordForPush;
+    NSDate * _startTime;
     HDCloudSyncStoreRecord * _storeRecordForPush;
     NSObject<OS_dispatch_queue> * _syncQueue;
     _HDCloudSyncSessionContext * _syncSessionContext;

@@ -3,7 +3,7 @@
  */
 
 @interface SGParsedName : NSObject {
-    NSMutableSet * _components;
+    NSSet * _components;
     SGIdentityName * _identity;
     NSString * _name;
     NSSet * _nicknames;

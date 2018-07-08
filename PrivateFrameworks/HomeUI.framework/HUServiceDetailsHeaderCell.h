@@ -2,7 +2,9 @@
    Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
  */
 
-@interface HUServiceDetailsHeaderCell : UITableViewCell <HUCellProtocol, UITextViewDelegate> {
+@interface HUServiceDetailsHeaderCell : UITableViewCell <HUCellProtocol> {
+    NSLayoutConstraint * _actionBottomConstraint;
+    UIButton * _actionButton;
     UIActivityIndicatorView * _checkingForUpdateSpinner;
     NSArray * _hiddenMessageTextViewConstraints;
     HFItem * _item;
@@ -16,6 +18,8 @@
     NSArray * _visibleMessageTextViewConstraints;
 }
 
+@property (nonatomic, retain) NSLayoutConstraint *actionBottomConstraint;
+@property (nonatomic, retain) UIButton *actionButton;
 @property (nonatomic, retain) UIActivityIndicatorView *checkingForUpdateSpinner;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -41,6 +45,8 @@
 - (void)_updateErrorLabelConstraints;
 - (void)_updateRequiredHeightIfNeeded;
 - (id)_visibleMessageTextViewConstraints;
+- (id)actionBottomConstraint;
+- (id)actionButton;
 - (id)checkingForUpdateSpinner;
 - (id)hiddenMessageTextViewConstraints;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
@@ -50,6 +56,8 @@
 - (id)messageTextView;
 - (id)resizingDelegate;
 - (id)serviceCell;
+- (void)setActionBottomConstraint:(id)arg1;
+- (void)setActionButton:(id)arg1;
 - (void)setCheckingForUpdateSpinner:(id)arg1;
 - (void)setHiddenMessageTextViewConstraints:(id)arg1;
 - (void)setItem:(id)arg1;
@@ -62,7 +70,6 @@
 - (void)setTitleSpinnerStackView:(id)arg1;
 - (void)setVisibleMessageTextViewConstraints:(id)arg1;
 - (id)spinnerBottomConstraint;
-- (bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 interaction:(long long)arg4;
 - (id)titleLabel;
 - (id)titleSpinnerStackView;
 - (void)updateUIWithAnimation:(bool)arg1;

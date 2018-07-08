@@ -12,6 +12,7 @@
 - (bool)supportsBevels;
 - (id)titlePositionerWithInfo:(id)arg1 scene:(id)arg2;
 - (id)userInterfaceName;
+- (long long)userInterfaceTag;
 - (double)valueAxisTitleRotation;
 
 @end

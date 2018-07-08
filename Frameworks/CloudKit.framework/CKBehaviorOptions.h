@@ -111,7 +111,6 @@
 - (bool)sandboxCloudD;
 - (unsigned long long)savedErrorCount;
 - (bool)sendDebugHeader;
-- (bool)sendKeyIDsOnAllRequests;
 - (void)setAutomatedDeviceGroup:(id)arg1;
 - (void)setAutomatedDeviceGroupDefaults:(id)arg1;
 - (void)setBuildVersion:(id)arg1;

@@ -47,7 +47,7 @@
 - (bool)iCloudAccountSubscribed;
 - (id)init;
 - (bool)isLoggedIntoiTunes;
-- (bool)isRestrictedAccount;
+- (bool)isRestrictedByApple;
 - (bool)isTest;
 - (bool)limitAdTrackingEnabled;
 - (id)operationQueueLog;

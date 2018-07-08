@@ -127,6 +127,7 @@
 - (void)setTestLatencyMapIndex:(unsigned long long)arg1;
 - (void)setTunnelConnectedHandler:(id /* block */)arg1;
 - (void)setTunnels:(id)arg1;
+- (bool)shouldSetConfigurationToAppRule:(id)arg1 edgeSet:(id)arg2;
 - (id)signingIdentifier;
 - (void)start;
 - (void)startWithConfiguration:(id)arg1 appRules:(id)arg2 delegate:(id)arg3;

@@ -20,6 +20,7 @@
 
 + (id)acceptedLogMsgEvents;
 + (id)acceptedLogMsgEventsForLogMessageType:(int)arg1;
++ (bool)allowApplicationStatesForLogMsgEvent:(id)arg1;
 + (id)allowedSessionTypes;
 + (bool)disallowedStateWithStateType:(int)arg1 logMsgEvent:(id)arg2 logMessage:(id)arg3;
 + (id)disallowedStatesForLogMsgEvent:(id)arg1 logMessage:(id)arg2;

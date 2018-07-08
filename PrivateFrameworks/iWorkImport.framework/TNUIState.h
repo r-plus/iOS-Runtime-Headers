@@ -21,6 +21,7 @@
     }  _desktopWindowFrame;
     long long  _documentMode;
     NSMutableDictionary * _editModeSheetUIStates;
+    TSDFreehandDrawingToolkitUIState * _freehandDrawingToolkitUIState;
     bool  _inspectorPaneIsAutoHidden;
     bool  _inspectorPaneIsVisible;
     int  _inspectorPaneViewMode;
@@ -39,6 +40,7 @@
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } desktopWindowFrame;
 @property (nonatomic) long long documentMode;
 @property (nonatomic, readonly) NSMutableDictionary *editModeSheetUIStates;
+@property (nonatomic, retain) TSDFreehandDrawingToolkitUIState *freehandDrawingToolkitUIState;
 @property (nonatomic, readonly) bool hasPreviousVisibleRect;
 @property (nonatomic, readonly) bool hasVisibleRect;
 @property (nonatomic) long long inspectorPaneHiddenState;
@@ -77,6 +79,7 @@
 - (id)editModeSheetUIStates;
 - (void)enumerateSheetUIStatesWithBlock:(id /* block */)arg1;
 - (void)fixupSelectionPathsForRestorationForcingUnpagination:(bool)arg1;
+- (id)freehandDrawingToolkitUIState;
 - (bool)hasPreviousVisibleRect;
 - (bool)hasVisibleRect;
 - (unsigned long long)hash;
@@ -106,6 +109,7 @@
 - (void)setDesktopScreenSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setDesktopWindowFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDocumentMode:(long long)arg1;
+- (void)setFreehandDrawingToolkitUIState:(id)arg1;
 - (void)setInspectorPaneHiddenState:(long long)arg1;
 - (void)setInspectorPaneIsAutoHidden:(bool)arg1;
 - (void)setInspectorPaneIsVisible:(bool)arg1;

@@ -14,6 +14,8 @@
 @property (nonatomic, retain) MPQueueFeeder *queueFeeder;
 @property (readonly) Class superclass;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugDescription;

@@ -8,7 +8,7 @@
         struct TSTStrokeLayerRun {} *__begin_; 
         struct TSTStrokeLayerRun {} *__end_; 
         struct __compressed_pair<TSTStrokeLayerRun *, std::__1::allocator<TSTStrokeLayerRun> > { 
-            struct TSTStrokeLayerRun {} *__first_; 
+            struct TSTStrokeLayerRun {} *__value_; 
         } __end_cap_; 
     }  mStrokeRuns;
 }

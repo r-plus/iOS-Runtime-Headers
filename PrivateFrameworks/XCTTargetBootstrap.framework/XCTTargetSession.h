@@ -18,6 +18,7 @@
 @property (retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_XCT_requestEndpointWithAutomationSupportLibraryPath:(id)arg1 protocolVersion:(unsigned long long)arg2 reply:(id /* block */)arg3;
 - (void)_on_queue_connect;
 - (id)_on_queue_getListenerEndpoint;
@@ -27,7 +28,6 @@
 - (void)connect;
 - (id)connectionHandler;
 - (id)daemonConnection;
-- (void)dealloc;
 - (id)init;
 - (id)initWithDaemonConnection:(id)arg1;
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

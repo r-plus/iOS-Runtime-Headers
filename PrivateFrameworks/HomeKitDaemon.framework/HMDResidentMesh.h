@@ -75,6 +75,7 @@
 - (id)homeManager;
 - (id)initWithHomeManager:(id)arg1 residentEnabled:(bool)arg2;
 - (id)logIdentifier;
+- (id)messageDestination;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
 - (id)primaryResidentForHomes;

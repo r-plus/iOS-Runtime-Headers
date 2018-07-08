@@ -4,6 +4,7 @@
 
 @interface MRProtocolClientConnection : NSObject <MRProtocolMessageQueueDataSource, MRProtocolMessageQueueDelegate, MSVMessageParserDelegate, NSStreamDelegate> {
     <MRProtocolClientConnectionDelegate> * _delegate;
+    _MRDeviceInfoMessageProtobuf * _deviceInfo;
     bool  _disconnected;
     unsigned long long  _firstClientNanoseconds;
     unsigned long long  _firstDeviceTicks;
@@ -17,12 +18,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MRProtocolClientConnectionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) _MRDeviceInfoMessageProtobuf *deviceInfo;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSInputStream *inputStream;
 @property (nonatomic, readonly) NSOutputStream *outputStream;
 @property (nonatomic, readonly) bool streamsAreValid;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_adjustTimestamp:(id)arg1;
 - (void)_closeStream:(id)arg1;
 - (void)_disconnectClient;
@@ -39,6 +42,7 @@
 - (void)dealloc;
 - (id)decryptData:(id)arg1 error:(id*)arg2;
 - (id)delegate;
+- (id)deviceInfo;
 - (id)encryptDataForMessage:(id)arg1;
 - (id)initWithInputStream:(id)arg1 outputStream:(id)arg2 runLoop:(id)arg3;
 - (id)inputStream;
@@ -50,6 +54,7 @@
 - (void)sendMessage:(id)arg1 queue:(id)arg2 reply:(id /* block */)arg3;
 - (void)sendMessage:(id)arg1 timeout:(double)arg2 queue:(id)arg3 reply:(id /* block */)arg4;
 - (void)setDelegate:(id)arg1;
+- (void)setDeviceInfo:(id)arg1;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (bool)streamsAreValid;
 

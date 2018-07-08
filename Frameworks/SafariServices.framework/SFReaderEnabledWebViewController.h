@@ -14,6 +14,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)createReaderWebViewForReaderController:(id)arg1;
 - (void)dealloc;
 - (void)loadView;
 - (id)readerController;

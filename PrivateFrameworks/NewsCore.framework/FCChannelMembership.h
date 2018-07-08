@@ -11,7 +11,7 @@
 }
 
 @property (nonatomic, retain) NSString *channelID;
-@property (nonatomic) NSString *draftListID;
+@property (nonatomic, retain) NSString *draftListID;
 @property (nonatomic, retain) FCInterestToken *interestToken;
 @property (nonatomic) bool isAllowedToSeeDrafts;
 @property (nonatomic, retain) NTPBChannelMembershipRecord *record;

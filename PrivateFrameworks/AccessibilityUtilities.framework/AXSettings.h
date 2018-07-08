@@ -84,6 +84,7 @@
 @property double audioLeftRightBalance;
 @property bool automationEnabled;
 @property bool automationFauxCollectionViewCellsEnabled;
+@property bool automationFauxTableViewCellsEnabled;
 @property bool automationHitpointWarpingEnabled;
 @property bool automationLocalizedStringLookupInfoEnabled;
 @property (readonly) NSString *automationPreferredLocalization;
@@ -110,7 +111,7 @@
 @property (nonatomic, readonly) bool extantVoicesExist;
 @property (nonatomic, copy) NSString *gaxInternalSettingsActiveAppID;
 @property (nonatomic, copy) NSNumber *gaxInternalSettingsActiveAppOrientation;
-@property (nonatomic, copy) NSString *gaxInternalSettingsDeviceID;
+@property (nonatomic, copy) NSNumber *gaxInternalSettingsECID;
 @property (nonatomic) bool gaxInternalSettingsIsActiveAppSelfLocked;
 @property (nonatomic, retain) NSDate *gaxInternalSettingsLastActivationDate;
 @property (nonatomic, retain) NSDate *gaxInternalSettingsLastPasscodeSetDate;
@@ -223,6 +224,7 @@
 @property (nonatomic, retain) NSArray *switchControlSettingsMenuItems;
 @property (nonatomic, retain) NSArray *switchControlSettingsTopLevelMenuItems;
 @property (nonatomic) bool switchControlShouldAlwaysActivateKeyboardKeys;
+@property (nonatomic) bool switchControlShouldDisallowUSBRestrictedMode;
 @property (nonatomic) bool switchControlShouldUseExtendedKeyboardPredictions;
 @property (nonatomic) bool switchControlShouldUseShortFirstPage;
 @property (nonatomic) long long switchControlTapBehavior;
@@ -287,6 +289,7 @@
 @property (nonatomic) long long voiceOverPunctuationLevel;
 @property (nonatomic, copy) NSArray *voiceOverRotorItems;
 @property bool voiceOverScreenCurtainEnabled;
+@property (nonatomic) bool voiceOverShouldDisallowUSBRestrictedMode;
 @property (nonatomic) bool voiceOverShouldOutputToHearingAid;
 @property (nonatomic) bool voiceOverShouldSpeakDiscoveredText;
 @property (nonatomic) bool voiceOverShowSoftwareKeyboardWithBraille;
@@ -469,6 +472,7 @@
 - (double)audioLeftRightBalance;
 - (bool)automationEnabled;
 - (bool)automationFauxCollectionViewCellsEnabled;
+- (bool)automationFauxTableViewCellsEnabled;
 - (bool)automationHitpointWarpingEnabled;
 - (bool)automationLocalizedStringLookupInfoEnabled;
 - (id)automationPreferredLocalization;
@@ -502,7 +506,7 @@
 - (bool)extantVoicesExist;
 - (id)gaxInternalSettingsActiveAppID;
 - (id)gaxInternalSettingsActiveAppOrientation;
-- (id)gaxInternalSettingsDeviceID;
+- (id)gaxInternalSettingsECID;
 - (bool)gaxInternalSettingsIsActiveAppSelfLocked;
 - (id)gaxInternalSettingsLastActivationDate;
 - (id)gaxInternalSettingsLastPasscodeSetDate;
@@ -656,6 +660,7 @@
 - (void)setAudioLeftRightBalance:(double)arg1;
 - (void)setAutomationEnabled:(bool)arg1;
 - (void)setAutomationFauxCollectionViewCellsEnabled:(bool)arg1;
+- (void)setAutomationFauxTableViewCellsEnabled:(bool)arg1;
 - (void)setAutomationHitpointWarpingEnabled:(bool)arg1;
 - (void)setAutomationLocalizedStringLookupInfoEnabled:(bool)arg1;
 - (void)setBrokenHomeButtonCount:(long long)arg1;
@@ -679,7 +684,7 @@
 - (void)setExtantVoices:(id)arg1;
 - (void)setGaxInternalSettingsActiveAppID:(id)arg1;
 - (void)setGaxInternalSettingsActiveAppOrientation:(id)arg1;
-- (void)setGaxInternalSettingsDeviceID:(id)arg1;
+- (void)setGaxInternalSettingsECID:(id)arg1;
 - (void)setGaxInternalSettingsIsActiveAppSelfLocked:(bool)arg1;
 - (void)setGaxInternalSettingsLastActivationDate:(id)arg1;
 - (void)setGaxInternalSettingsLastPasscodeSetDate:(id)arg1;
@@ -789,6 +794,7 @@
 - (void)setSwitchControlSettingsMenuItems:(id)arg1;
 - (void)setSwitchControlSettingsTopLevelMenuItems:(id)arg1;
 - (void)setSwitchControlShouldAlwaysActivateKeyboardKeys:(bool)arg1;
+- (void)setSwitchControlShouldDisallowUSBRestrictedMode:(bool)arg1;
 - (void)setSwitchControlShouldUseExtendedKeyboardPredictions:(bool)arg1;
 - (void)setSwitchControlShouldUseShortFirstPage:(bool)arg1;
 - (void)setSwitchControlTapBehavior:(long long)arg1;
@@ -851,6 +857,7 @@
 - (void)setVoiceOverPunctuationLevel:(long long)arg1;
 - (void)setVoiceOverRotorItems:(id)arg1;
 - (void)setVoiceOverScreenCurtainEnabled:(bool)arg1;
+- (void)setVoiceOverShouldDisallowUSBRestrictedMode:(bool)arg1;
 - (void)setVoiceOverShouldOutputToHearingAid:(bool)arg1;
 - (void)setVoiceOverShouldSpeakDiscoveredText:(bool)arg1;
 - (void)setVoiceOverShowSoftwareKeyboardWithBraille:(bool)arg1;
@@ -957,6 +964,7 @@
 - (id)switchControlSettingsMenuItems;
 - (id)switchControlSettingsTopLevelMenuItems;
 - (bool)switchControlShouldAlwaysActivateKeyboardKeys;
+- (bool)switchControlShouldDisallowUSBRestrictedMode;
 - (bool)switchControlShouldUseExtendedKeyboardPredictions;
 - (bool)switchControlShouldUseShortFirstPage;
 - (long long)switchControlTapBehavior;
@@ -1026,6 +1034,7 @@
 - (long long)voiceOverPunctuationLevel;
 - (id)voiceOverRotorItems;
 - (bool)voiceOverScreenCurtainEnabled;
+- (bool)voiceOverShouldDisallowUSBRestrictedMode;
 - (bool)voiceOverShouldOutputToHearingAid;
 - (bool)voiceOverShouldSpeakDiscoveredText;
 - (bool)voiceOverShowSoftwareKeyboardWithBraille;

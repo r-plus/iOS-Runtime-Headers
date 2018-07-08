@@ -4,8 +4,8 @@
 
 @interface SSAuthorizationMetricsController : NSObject
 
++ (id)_clientIDForAccount:(id)arg1 orUserID:(id)arg2;
 + (id)_clientIdForMetrics;
-+ (id)_clientIdForUserId:(id)arg1;
 + (id)_dialogEventForBiometricAuthorizationWithDialogId:(id)arg1 buyParams:(id)arg2 matchState:(long long)arg3 topicName:(id)arg4 userAgent:(id)arg5;
 + (id)_dialogEventForBiometricOptInWithResult:(bool)arg1 message:(id)arg2 topicName:(id)arg3 userAgent:(id)arg4 error:(id)arg5;
 + (id)_dialogEventForPasswordAuthorizationWithDialogId:(id)arg1 buyParams:(id)arg2 topicName:(id)arg3 userAgent:(id)arg4;

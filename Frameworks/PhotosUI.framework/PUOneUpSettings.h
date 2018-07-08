@@ -75,7 +75,7 @@
     bool  _simulateAssetContentDownloadFailure;
     bool  _simulateWorstCaseFigPhotoBackgroundSize;
     long long  _simulatedAssetVariationSuggestion;
-    long long  _suggestionMinimumAssetAgeInDays;
+    long long  _suggestionMaximumAssetAgeInDays;
     long long  _suggestionsStyle;
     long long  _titleTapAction;
     bool  _useDebuggingColors;
@@ -164,7 +164,7 @@
 @property (nonatomic) bool simulateAssetContentDownloadFailure;
 @property (nonatomic) bool simulateWorstCaseFigPhotoBackgroundSize;
 @property (nonatomic) long long simulatedAssetVariationSuggestion;
-@property (nonatomic) long long suggestionMinimumAssetAgeInDays;
+@property (nonatomic) long long suggestionMaximumAssetAgeInDays;
 @property (nonatomic) long long suggestionsStyle;
 @property (nonatomic) long long titleTapAction;
 @property (nonatomic) bool useDebuggingColors;
@@ -323,7 +323,7 @@
 - (void)setSimulateAssetContentDownloadFailure:(bool)arg1;
 - (void)setSimulateWorstCaseFigPhotoBackgroundSize:(bool)arg1;
 - (void)setSimulatedAssetVariationSuggestion:(long long)arg1;
-- (void)setSuggestionMinimumAssetAgeInDays:(long long)arg1;
+- (void)setSuggestionMaximumAssetAgeInDays:(long long)arg1;
 - (void)setSuggestionsStyle:(long long)arg1;
 - (void)setTitleTapAction:(long long)arg1;
 - (void)setUseDebuggingColors:(bool)arg1;
@@ -347,7 +347,7 @@
 - (bool)simulateAssetContentDownloadFailure;
 - (bool)simulateWorstCaseFigPhotoBackgroundSize;
 - (long long)simulatedAssetVariationSuggestion;
-- (long long)suggestionMinimumAssetAgeInDays;
+- (long long)suggestionMaximumAssetAgeInDays;
 - (long long)suggestionsStyle;
 - (long long)titleTapAction;
 - (bool)useDebuggingColors;

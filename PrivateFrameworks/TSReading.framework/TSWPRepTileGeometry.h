@@ -7,7 +7,7 @@
         struct Info {} *__begin_; 
         struct Info {} *__end_; 
         struct __compressed_pair<TSWPRepBoundsAnalyzer::Info *, std::__1::allocator<TSWPRepBoundsAnalyzer::Info> > { 
-            struct Info {} *__first_; 
+            struct Info {} *__value_; 
         } __end_cap_; 
     }  _infos;
     struct CGSize { 

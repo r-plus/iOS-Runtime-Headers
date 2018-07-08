@@ -13,6 +13,7 @@
     UIBarButtonItem * _nextItem;
     UIBarButtonItem * _previousItem;
     UIToolbar * _rightToolbar;
+    UIBarButtonItem * _spacer;
     UISegmentedControl * _tab;
     bool  _usesUCB;
     <UIWebFormAccessoryDelegate> * delegate;
@@ -24,8 +25,6 @@
 @property (nonatomic) <UIWebFormAccessoryDelegate> *delegate;
 @property (getter=isNextEnabled, nonatomic) bool nextEnabled;
 @property (getter=isPreviousEnabled, nonatomic) bool previousEnabled;
-
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)toolbarWithItems:(id)arg1;
 
@@ -41,12 +40,9 @@
 - (id)_tab;
 - (void)_tabSegmentedControlDidChange:(id)arg1;
 - (void)_updateFrame;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)autoFill:(id)arg1;
 - (void)clear:(id)arg1;
+- (void)dealloc;
 - (id)delegate;
 - (void)done:(id)arg1;
 - (void)hideAutoFillButton;

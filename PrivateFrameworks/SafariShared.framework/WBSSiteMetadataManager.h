@@ -11,6 +11,7 @@
     NSMutableDictionary * _requestsToRequestInfos;
     NSMutableSet * _reusableWebViews;
     NSMutableArray * _siteMetadataProviders;
+    NSObject<OS_dispatch_queue> * _siteMetadataProvidersAccessQueue;
     NSMutableSet * _tokens;
     NSMutableSet * _usedWebViews;
 }
@@ -47,7 +48,6 @@
 - (id)injectedBundleURL;
 - (bool)isSuspended;
 - (void)preloadRequest:(id)arg1 withPriority:(long long)arg2;
-- (void)purgeUnneededProviderCacheEntries;
 - (id)registerOneTimeRequest:(id)arg1 priority:(long long)arg2 responseHandler:(id /* block */)arg3;
 - (id)registerRequest:(id)arg1 priority:(long long)arg2 responseHandler:(id /* block */)arg3;
 - (void)registerSiteMetadataProvider:(id)arg1;

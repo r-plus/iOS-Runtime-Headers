@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INSendPaymentIntent : INIntent <INSendPaymentIntentExport>
+@interface INSendPaymentIntent : INIntent <ATXSlotResolver, INSendPaymentIntentExport>
 
 @property (nonatomic, readonly, copy) INCurrencyAmount *currencyAmount;
 @property (readonly, copy) NSString *debugDescription;
@@ -34,6 +34,14 @@
 
 // Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
 
++ (bool)isRequired;
++ (id)resolveIntentFromSlot:(id)arg1;
++ (id)slotFromContext:(id)arg1;
+
 - (void)apr_getArgsInto:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
+
+- (id)contextMetadata;
 
 @end

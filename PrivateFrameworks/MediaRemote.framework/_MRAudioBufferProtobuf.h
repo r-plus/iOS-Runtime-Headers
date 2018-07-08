@@ -30,12 +30,12 @@
 
 + (Class)packetDescriptionsType;
 
+- (void).cxx_destruct;
 - (void)addPacketDescriptions:(id)arg1;
 - (void)clearPacketDescriptions;
 - (id)contents;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)formatSettings;

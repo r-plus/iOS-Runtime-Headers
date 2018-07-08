@@ -110,7 +110,6 @@
 @property (nonatomic, retain) PLFaceCrop *faceCrop;
 @property (nonatomic, retain) NSSet *faceCrops;
 @property (nonatomic, readonly) bool faceDetectionComplete;
-@property (nonatomic, readonly) bool faceProcessed;
 @property (nonatomic, retain) NSData *faceRegions;
 @property (nonatomic) bool favorite;
 @property (nonatomic, readonly, copy) NSString *fileExtension;
@@ -346,7 +345,6 @@
 + (bool)guaranteedFlashOffForAssetAtURL:(id)arg1;
 + (bool)hasRequiredExtendedAttributesForMainFileURL:(id)arg1;
 + (short)highDynamicRangeTypeFromCustomRenderedValue:(short)arg1;
-+ (id)incompleteAssetsInManagedObjectContext:(id)arg1;
 + (id)insertAssetIntoPhotoLibrary:(id)arg1 mainFileURL:(id)arg2 savedAssetType:(short)arg3 replacementUUID:(id)arg4 imageSource:(struct CGImageSource {}**)arg5 imageData:(id*)arg6;
 + (id)insertAssetIntoPhotoLibrary:(id)arg1 mainFileURL:(id)arg2 savedAssetType:(short)arg3 replacementUUID:(id)arg4 imageSource:(struct CGImageSource {}**)arg5 imageData:(id*)arg6 isPlaceholder:(bool)arg7 deleteFileOnFailure:(bool)arg8;
 + (id)insertInManagedObjectContext:(id)arg1;
@@ -370,6 +368,8 @@
 + (id)newImagePropertiesFromImageSource:(struct CGImageSource { }*)arg1;
 + (id)newLocationDataFromLocation:(id)arg1;
 + (id)newLocationFromLocationData:(id)arg1 timestampIfMissing:(id)arg2;
++ (id)originalResourceTypesForAsset;
++ (id)originalResourceTypesForMaster;
 + (id)pathAndDateDictionariesForAllIncompleteAssetsInManagedObjectContext:(id)arg1;
 + (id)pathForAdjustmentDirectoryWithMutationsDirectory:(id)arg1;
 + (id)pathForMutationsDirectoryWithDirectory:(id)arg1 filename:(id)arg2;
@@ -385,6 +385,7 @@
 + (id)predicateForSupportedAssetTypesForUpload;
 + (id)predicateForUploadableAssetsWithCloudLocalState:(short)arg1;
 + (id)predicateForUploadableAssetsWithMasterCloudLocalStateNotEqualTo:(short)arg1;
++ (id)predicateToExcludeAssetsMissingThumbnailsWithThumbnailIndexKeyPath:(id)arg1;
 + (id)predicateToExcludeHiddenAssets;
 + (id)predicateToExcludeHiddenAssetsWithHiddenKeyPath:(id)arg1;
 + (id)predicateToExcludeNonvisibleBurstAssets;
@@ -939,6 +940,7 @@
 - (id)shiftedLocation;
 - (bool)shiftedLocationIsValid;
 - (id)shortenedFilePath;
+- (id)shotType;
 - (bool)shouldUseNonAdjustedVideo;
 - (id)sidecarWithObjectID:(id)arg1;
 - (id)sortedSidecarFiles;

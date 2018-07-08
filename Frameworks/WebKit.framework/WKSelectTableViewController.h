@@ -34,14 +34,14 @@
 @property (nonatomic, copy) NSString *textContentType;
 
 - (void)deleteBackward;
-- (struct OptionItem { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; bool x2; bool x3; bool x4; int x5; }*)findItemAt:(id)arg1;
+- (struct OptionItem { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; bool x2; bool x3; bool x4; int x5; }*)findItemAt:(id)arg1;
 - (long long)findItemIndexAt:(id)arg1;
 - (bool)hasText;
 - (id)initWithView:(id)arg1 hasGroups:(bool)arg2;
 - (void)insertText:(id)arg1;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)popover;
-- (void)populateCell:(id)arg1 withItem:(const struct OptionItem { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; bool x2; bool x3; bool x4; int x5; }*)arg2;
+- (void)populateCell:(id)arg1 withItem:(const struct OptionItem { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; bool x2; bool x3; bool x4; int x5; }*)arg2;
 - (void)setPopover:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

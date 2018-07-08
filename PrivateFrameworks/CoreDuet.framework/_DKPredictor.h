@@ -20,6 +20,7 @@
 
 - (void).cxx_destruct;
 - (id)deviceActivityLikelihood;
+- (id)displayOnLikelihood;
 - (id)expectedInBedPeriod;
 - (id)initWithKnowledgeStore:(id)arg1;
 - (id)knowledgeStore;

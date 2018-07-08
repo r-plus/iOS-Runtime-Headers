@@ -28,7 +28,7 @@
 - (id)cachePathForConsumerSubtype:(unsigned char)arg1;
 - (id)consumerSubTypesToUpdate;
 - (void)dealloc;
-- (void)generateNewAppPredictionsForConsumerSubType:(unsigned char)arg1 intent:(id)arg2 candidateBundleIdentifiers:(id)arg3 reply:(id /* block */)arg4;
+- (void)generateNewAppPredictionsForConsumerSubType:(unsigned char)arg1 intent:(id)arg2 candidateBundleIdentifiers:(id)arg3 candidateIntentTypeIdentifiers:(id)arg4 reply:(id /* block */)arg5;
 - (void)getAppPredictorAssetMappingDescriptionWithReply:(id /* block */)arg1;
 - (id)init;
 - (id)initWithCacheFileBasePath:(id)arg1 machServiceName:(id)arg2;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FamilyCircleUI.framework/FamilyCircleUI
  */
 
-@interface FASettingsSpecifierProvider : NSObject <AAUISpecifierProvider, FAFamilyInvitationsViewControllerDelegate, FAFamilySettingsViewControllerDelegate, FASetupDelegate, RemoteUIControllerDelegate> {
+@interface FASettingsSpecifierProvider : NSObject <AAUISpecifierProvider, FAFamilySettingsViewControllerDelegate, FASetupDelegate, RemoteUIControllerDelegate> {
     AAUIAccountManager * _accountManager;
     FACircleContext * _context;
     <AAUISpecifierProviderDelegate> * _delegate;
@@ -56,7 +56,6 @@
 - (void)_loadFamilyEligibilityWithCompletion:(id /* block */)arg1;
 - (void)_pendingInvitationsSpecifierWasTapped:(id)arg1;
 - (void)_presentPendingInvitesRemoteUI;
-- (void)_pushInvitationsViewControllerWithSpecifier:(id)arg1 invites:(id)arg2 viewingInviteAtIndex:(long long)arg3;
 - (void)_reloadFamily;
 - (void)_reloadFamilySpecifiers;
 - (void)_reloadFamilySpecifiersAnimated:(bool)arg1;
@@ -70,8 +69,6 @@
 - (void)_viewFamilySpecifierWasTapped:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)familyInvitationsViewController:(id)arg1 didProcessInvite:(id)arg2;
-- (void)familyInvitationsViewControllerDidFinish:(id)arg1;
 - (void)familySettingsViewControllerDidDeleteFamily:(id)arg1;
 - (void)familySettingsViewControllerDidUpdateFamily:(id)arg1;
 - (void)familySetupViewController:(id)arg1 didCompleteWithSuccess:(bool)arg2;

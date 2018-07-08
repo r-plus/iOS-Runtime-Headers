@@ -3,27 +3,31 @@
  */
 
 @interface ARPlaneEstimationTechnique : ARTechnique {
+    NSArray * _anchorIdentifierMap;
     ARCamera * _camera;
     NSObject<OS_dispatch_queue> * _detectionQueue;
     NSObject<OS_dispatch_semaphore> * _detectionSemaphore;
     unsigned long long  _detectionTypeMask;
     ARPlaneData * _planeResultData;
     NSObject<OS_dispatch_semaphore> * _semaphoreResult;
-    struct shared_ptr<acv::tracking::detection::IAlignedSurfaceDetector<float> > { 
-        struct IAlignedSurfaceDetector<float> {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    }  _surfaceDetector;
+    struct SurfaceDetectionContext { } * _surfaceDetectionHandle;
 }
 
-+ (id)_detectPlanesWithDetector:(struct shared_ptr<acv::tracking::detection::IAlignedSurfaceDetector<float> > { struct IAlignedSurfaceDetector<float> {} *x1; struct __shared_weak_count {} *x2; })arg1 types:(unsigned long long)arg2 camera:(id)arg3 featurePoints:(id)arg4 inVisionCoordinates:(bool)arg5;
+@property unsigned long long detectionTypeMask;
+
++ (id)_detectPlanesWithDetector:(struct SurfaceDetectionContext { }*)arg1 types:(unsigned long long)arg2 camera:(id)arg3 featurePoints:(id)arg4 inVisionCoordinates:(bool)arg5 singleShot:(bool)arg6;
 + (id)detectPlanes:(unsigned long long)arg1 withFrame:(id)arg2;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)dealloc;
+- (unsigned long long)detectionTypeMask;
+- (id)generateAnchorIdentifiersForCount:(long long)arg1;
 - (id)initWithPlaneDetection:(unsigned long long)arg1;
-- (bool)isEqual:(id)arg1;
 - (id)processData:(id)arg1;
+- (void)reconfigureFrom:(id)arg1;
 - (void)requestResultDataAtTimestamp:(double)arg1 context:(id)arg2;
 - (unsigned long long)requiredSensorDataTypes;
+- (id)resultDataClasses;
+- (void)setDetectionTypeMask:(unsigned long long)arg1;
 
 @end

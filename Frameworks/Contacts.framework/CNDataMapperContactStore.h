@@ -48,6 +48,7 @@
 - (id)init;
 - (id)initWithDataMapper:(id)arg1 environment:(id)arg2;
 - (id)initWithEnvironment:(id)arg1;
+- (id)initWithEnvironment:(id)arg1 managedConfiguration:(id)arg2;
 - (bool)isValidSaveRequest:(id)arg1 error:(id*)arg2;
 - (id)logger;
 - (id)mapper;

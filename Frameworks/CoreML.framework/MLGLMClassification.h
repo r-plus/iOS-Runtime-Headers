@@ -10,7 +10,7 @@
         double *__begin_; 
         double *__end_; 
         struct __compressed_pair<double *, std::__1::allocator<double> > { 
-            double *__first_; 
+            double *__value_; 
         } __end_cap_; 
     }  intercept;
     struct shared_ptr<CoreML::Specification::Model> { 
@@ -22,7 +22,7 @@
         struct vector<double, std::__1::allocator<double> > {} *__begin_; 
         struct vector<double, std::__1::allocator<double> > {} *__end_; 
         struct __compressed_pair<std::__1::vector<double, std::__1::allocator<double> > *, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > > { 
-            struct vector<double, std::__1::allocator<double> > {} *__first_; 
+            struct vector<double, std::__1::allocator<double> > {} *__value_; 
         } __end_cap_; 
     }  weights;
 }

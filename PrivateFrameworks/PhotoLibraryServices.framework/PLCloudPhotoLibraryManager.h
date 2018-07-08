@@ -170,7 +170,7 @@
 - (void)_uploadFullPhotoLibraryToCloud;
 - (void)addLogMark:(id)arg1;
 - (void)batterySaverModeDidChange:(bool)arg1;
-- (void)beginsSignificantWorkWithResourcesSize:(unsigned long long)arg1 initialOrResetSync:(bool)arg2;
+- (void)beginsSignificantWorkWithResourcesSize:(unsigned long long)arg1;
 - (void)cancelResourceTransferTaskWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)cplHasBackgroundDownloadOperationsWithCompletionHandler:(id /* block */)arg1;
 - (id)cplStatus;

@@ -11,7 +11,7 @@
     IKElementChangeSet * _itemsChangeset;
     NSArray * _prototypes;
     NSMutableDictionary * _proxyChildrenByItemID;
-    NSDictionary * _usedPrototypesByType;
+    NSDictionary * _usedPrototypeMappingsByType;
     bool  _visibleIndexRangeIsDirty;
     NSMutableIndexSet * _visibleIndexSet;
 }
@@ -27,10 +27,11 @@
 @property (nonatomic, retain) NSArray *prototypes;
 @property (nonatomic, retain) NSMutableDictionary *proxyChildrenByItemID;
 @property (readonly) Class superclass;
-@property (nonatomic, copy) NSDictionary *usedPrototypesByType;
+@property (nonatomic, copy) NSDictionary *usedPrototypeMappingsByType;
 @property (nonatomic, retain) NSMutableIndexSet *visibleIndexSet;
 
-+ (bool)_isPrototypeDOMElement:(id)arg1 validForReuseWithID:(id)arg2;
++ (id)_prototypeMappingForDataItem:(id)arg1 inDictionary:(id)arg2;
++ (void)_traversePrototypeMappings:(id)arg1 withBlock:(id /* block */)arg2;
 + (bool)areItemsBoundForBinding:(id)arg1;
 
 - (void).cxx_destruct;
@@ -44,7 +45,6 @@
 - (void)_applyVisibleIndexRangeValueWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 domBindingController:(id)arg2;
 - (id)_instantiateItemAtIndex:(long long)arg1 domBindingController:(id)arg2;
 - (id)_itemsPropertyPath;
-- (id)_prototypeForType:(id)arg1;
 - (id)actualElementForProxyElement:(id)arg1;
 - (id)additionalKeysToResolveForDOMBindingController:(id)arg1;
 - (void)applyUpdatesWithImplementation:(id)arg1 usingUpdater:(id /* block */)arg2;
@@ -75,12 +75,12 @@
 - (void)setItemsChangeset:(id)arg1;
 - (void)setPrototypes:(id)arg1;
 - (void)setProxyChildrenByItemID:(id)arg1;
-- (void)setUsedPrototypesByType:(id)arg1;
+- (void)setUsedPrototypeMappingsByType:(id)arg1;
 - (void)setVisibleIndexSet:(id)arg1;
 - (void)teardown;
 - (void)unloadIndex:(long long)arg1;
 - (void)updateStylesUsingUpdater:(id /* block */)arg1;
-- (id)usedPrototypesByType;
+- (id)usedPrototypeMappingsByType;
 - (id)visibleIndexSet;
 
 @end

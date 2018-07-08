@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CoreSpeech.framework/CoreSpeech
  */
 
-@interface CSVoiceTriggerSecondPass : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSKeywordAnalyzerQuasarScoreDelegate, CSSpeakerDetectorNDAPIDelegate, CSSpeechManagerDelegate, CSVoiceTriggerFirstPassDelegate> {
+@interface CSVoiceTriggerSecondPass : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSKeywordAnalyzerQuasarScoreDelegate, CSSpeakerDetectorNDAPIDelegate, CSSpeechManagerDelegate, CSVoiceTriggerEnabledMonitorDelegate, CSVoiceTriggerFirstPassDelegate> {
     unsigned long long  _activeChannel;
     unsigned long long  _analyzerPrependingSamples;
     unsigned long long  _analyzerTrailingSamples;
+    double  _cumulativeDowntime;
+    double  _cumulativeUptime;
     CSAsset * _currentAsset;
     <CSVoiceTriggerDelegate> * _delegate;
     unsigned long long  _earlyDetectFiredMachTime;
@@ -24,6 +26,7 @@
     CSKeywordAnalyzerQuasar * _keywordAnalyzerQuasar;
     float  _keywordLoggingThreshold;
     float  _keywordThreshold;
+    double  _lastAggTime;
     NSDictionary * _lastAnalyzerResult;
     NSDictionary * _lastResult;
     float  _lastScore;
@@ -48,6 +51,8 @@
 @property (nonatomic) unsigned long long activeChannel;
 @property (nonatomic) unsigned long long analyzerPrependingSamples;
 @property (nonatomic) unsigned long long analyzerTrailingSamples;
+@property (nonatomic) double cumulativeDowntime;
+@property (nonatomic) double cumulativeUptime;
 @property (nonatomic, retain) CSAsset *currentAsset;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CSVoiceTriggerDelegate> *delegate;
@@ -69,6 +74,7 @@
 @property (nonatomic, retain) CSKeywordAnalyzerQuasar *keywordAnalyzerQuasar;
 @property (nonatomic) float keywordLoggingThreshold;
 @property (nonatomic) float keywordThreshold;
+@property (nonatomic) double lastAggTime;
 @property (nonatomic, retain) NSDictionary *lastAnalyzerResult;
 @property (nonatomic, retain) NSDictionary *lastResult;
 @property (nonatomic) float lastScore;
@@ -91,15 +97,20 @@
 @property (nonatomic) bool useSAT;
 
 - (void).cxx_destruct;
+- (void)CSVoiceTriggerEnabledMonitor:(id)arg1 didReceiveEnabled:(bool)arg2;
 - (void)_analyzeForKeywordDetection:(id)arg1 result:(id)arg2 forChannel:(unsigned long long)arg3 forceMaximized:(bool)arg4;
+- (void)_logUptimeWithVTSwitchChanged:(bool)arg1 VTEnabled:(bool)arg2;
 - (void)_markSecondPassTriggerMachAbsoluteTime:(unsigned long long)arg1;
 - (void)_notifySecondPassReject;
 - (void)_reset;
+- (void)_resetUpTime;
 - (void)_setAsset:(id)arg1;
 - (unsigned long long)activeChannel;
 - (unsigned long long)analyzerPrependingSamples;
 - (unsigned long long)analyzerTrailingSamples;
 - (void)clearTriggerCandidate;
+- (double)cumulativeDowntime;
+- (double)cumulativeUptime;
 - (id)currentAsset;
 - (id)delegate;
 - (unsigned long long)earlyDetectFiredMachTime;
@@ -121,6 +132,7 @@
 - (void)keywordAnalyzerQuasar:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
 - (float)keywordLoggingThreshold;
 - (float)keywordThreshold;
+- (double)lastAggTime;
 - (id)lastAnalyzerResult;
 - (id)lastResult;
 - (float)lastScore;
@@ -140,6 +152,8 @@
 - (void)setAnalyzerPrependingSamples:(unsigned long long)arg1;
 - (void)setAnalyzerTrailingSamples:(unsigned long long)arg1;
 - (void)setAsset:(id)arg1;
+- (void)setCumulativeDowntime:(double)arg1;
+- (void)setCumulativeUptime:(double)arg1;
 - (void)setCurrentAsset:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEarlyDetectFiredMachTime:(unsigned long long)arg1;
@@ -158,6 +172,7 @@
 - (void)setKeywordAnalyzerQuasar:(id)arg1;
 - (void)setKeywordLoggingThreshold:(float)arg1;
 - (void)setKeywordThreshold:(float)arg1;
+- (void)setLastAggTime:(double)arg1;
 - (void)setLastAnalyzerResult:(id)arg1;
 - (void)setLastResult:(id)arg1;
 - (void)setLastScore:(float)arg1;

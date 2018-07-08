@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKViewElement : NSObject <IKDOMBindingControllerDelegate, IKStyleableElement> {
+@interface IKViewElement : NSObject <IKDOMBindingControllerDelegate, IKJSDataItemObserver, IKStyleableElement> {
     NSString * _accessibilityText;
     NSMutableSet * _activeSingularEvents;
     IKAppDocument * _appDocument;
+    bool  _areChildrenBound;
     NSDictionary * _attributes;
     NSString * _autoHighlightIdentifier;
     IKDOMBindingController * _bindingController;
@@ -23,7 +24,7 @@
     NSMutableDictionary * _metadataDict;
     IKViewElement * _parent;
     <IKStyleableElement> * _parentStyleableElement;
-    NSMapTable * _prototypesByType;
+    NSDictionary * _prototypesByType;
     bool  _prototypesUpdated;
     IKViewElementStyleComposer * _styleComposer;
     NSArray * _unfilteredChildren;
@@ -35,6 +36,7 @@
 @property (nonatomic, readonly, copy) NSString *accessibilityText;
 @property (nonatomic, retain) NSMutableSet *activeSingularEvents;
 @property (nonatomic) IKAppDocument *appDocument;
+@property (nonatomic, readonly) bool areChildrenBound;
 @property (nonatomic, readonly, retain) NSDictionary *attributes;
 @property (nonatomic, copy) NSString *autoHighlightIdentifier;
 @property (nonatomic, readonly) IKDOMBindingController *bindingController;
@@ -58,7 +60,7 @@
 @property (nonatomic, retain) NSMutableDictionary *metadataDict;
 @property (nonatomic) IKViewElement *parent;
 @property (nonatomic, readonly) <IKStyleableElement> *parentStyleableElement;
-@property (nonatomic, readonly) NSMapTable *prototypesByType;
+@property (nonatomic, retain) NSDictionary *prototypesByType;
 @property (nonatomic, readonly) bool prototypesUpdated;
 @property (nonatomic, readonly, retain) IKViewElementStyle *style;
 @property (nonatomic, retain) IKViewElementStyleComposer *styleComposer;
@@ -72,7 +74,8 @@
 // Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
 
 + (id)_prototypesByTypeForDOMElement:(id)arg1 prototypesDOMElement:(id*)arg2;
-+ (unsigned long long)evaluateElementUpdateTypeAndReset:(id)arg1;
++ (unsigned long long)evaluateElementUpdateType:(id)arg1;
++ (id)instantiateDOMElementForItem:(id)arg1 withPrototype:(id)arg2 parentDOMElement:(id)arg3 existingDOMElement:(id)arg4;
 + (bool)shouldParseChildDOMElement:(id)arg1;
 + (bool)shouldParseChildDOMElements;
 + (id)supportedFeatures;
@@ -80,13 +83,17 @@
 + (void)willParseDOMElement:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)_applyChildrenValueWithItems:(id)arg1 domBindingController:(id)arg2;
+- (void)_applyUpdatedIndexesValueWithIndexes:(id)arg1 domBindingController:(id)arg2;
 - (void)_updateSubtreeWithElement:(id)arg1;
 - (id)accessibilityText;
 - (id)activeSingularEvents;
 - (id)actualElementForProxyElement:(id)arg1 jsContext:(id)arg2;
+- (id)additionalKeysToResolveForDOMBindingController:(id)arg1;
 - (id)appDocument;
 - (void)appDocumentDidMarkStylesDirty;
 - (id)applyUpdatesWithElement:(id)arg1;
+- (bool)areChildrenBound;
 - (id)attributes;
 - (id)autoHighlightIdentifier;
 - (id)bindingController;
@@ -96,16 +103,23 @@
 - (id)childTextElementWithStyle:(unsigned long long)arg1;
 - (id)children;
 - (void)configureUpdatesWithElement:(id)arg1;
+- (void)dataItem:(id)arg1 didChangeSubPropertyPathWithString:(id)arg2 forPropertyPathWithString:(id)arg3 subscriptIndex:(long long)arg4;
 - (void)dealloc;
 - (id)debugDescription;
 - (bool)didUpdateAutoHighlightIdentifier;
 - (void)dispatchEvent:(id)arg1 eventAttribute:(id)arg2 canBubble:(bool)arg3 isCancelable:(bool)arg4 extraInfo:(id)arg5 completionBlock:(id /* block */)arg6;
 - (void)dispatchEventOfType:(unsigned long long)arg1 canBubble:(bool)arg2 isCancelable:(bool)arg3 extraInfo:(id)arg4 completionBlock:(id /* block */)arg5;
 - (void)disperseUpdateType:(unsigned long long)arg1;
+- (bool)domBindingController:(id)arg1 applyValue:(id)arg2 forKey:(id)arg3;
+- (void)domBindingController:(id)arg1 didLoadBinding:(id)arg2;
+- (void)domBindingController:(id)arg1 didResolveKeys:(id)arg2;
+- (bool)domBindingController:(id)arg1 doKeysAffectChildren:(id)arg2;
+- (bool)domBindingController:(id)arg1 doKeysAffectSubtree:(id)arg2;
 - (id)elementID;
 - (id)elementName;
 - (unsigned long long)elementType;
 - (id)features;
+- (id)findPrototypeForType:(id)arg1;
 - (id)impressionableAttributes;
 - (id)init;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
@@ -134,6 +148,7 @@
 - (void)setMetadataDict:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)setParent:(id)arg1;
+- (void)setPrototypesByType:(id)arg1;
 - (void)setStyleComposer:(id)arg1;
 - (void)setUpdateType:(unsigned long long)arg1;
 - (bool)shouldResolveDataForDOMBindingController:(id)arg1;
@@ -149,7 +164,11 @@
 
 // Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
 
++ (id)tv_approximateViewElementForView:(id)arg1;
+
 - (id)itemElementsOfType:(unsigned long long)arg1;
+- (void)tv_addViewProxy:(id)arg1;
+- (id)tv_approximateView;
 - (id)tv_associatedViewElement;
 - (id)tv_associatedViewElementWithDefaultClass:(Class)arg1;
 - (unsigned long long)tv_elementType;

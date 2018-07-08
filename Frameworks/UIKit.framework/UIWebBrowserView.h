@@ -27,6 +27,7 @@
     NSMutableArray * _deferredTouchEvents;
     unsigned long long  _dispatchedTouchEvents;
     UIResponder * _editingDelegateForEverythingExceptForms;
+    NSMutableDictionary * _focusPreservingTokens;
     unsigned int  _forceInputView;
     UIWebFormDelegate * _formDelegate;
     unsigned int  _formIsAutoFilling;
@@ -109,6 +110,7 @@
 - (void)_clearAllConsoleMessages;
 - (void)_clearFormAutoFillStateForFrame:(id)arg1;
 - (void)_clearSelectionAndUI;
+- (void)_clearToken:(id)arg1;
 - (id)_collectAdditionalSubviews;
 - (struct CGPoint { double x1; double x2; })_convertWindowPointToViewport:(struct CGPoint { double x1; double x2; })arg1;
 - (id)_currentAssistedNode;
@@ -140,6 +142,7 @@
 - (void)_overflowScrollView:(id)arg1 didEndScrollingForNode:(id)arg2;
 - (void)_overflowScrollView:(id)arg1 scrollOffsetChangedForNode:(id)arg2 whileScrolling:(bool)arg3;
 - (void)_overflowScrollView:(id)arg1 willStartScrollingForNode:(id)arg2;
+- (void)_preserveFocusWithToken:(id)arg1 destructively:(bool)arg2;
 - (void)_prevAccessoryTab:(id)arg1;
 - (void)_promptForReplace:(id)arg1;
 - (void)_reloadInputViewsAfterPotentialFocusRedirect;
@@ -148,6 +151,7 @@
 - (bool)_requiresKeyboardResetOnReload;
 - (bool)_requiresKeyboardWhenFirstResponder;
 - (void)_resetFormDataForFrame:(id)arg1;
+- (bool)_restoreFocusWithToken:(id)arg1;
 - (void)_scrollCaretToVisible:(id)arg1;
 - (void)_setInputViewBoundsForAutomaticKeyboardInfo:(id)arg1 adjustScrollView:(bool)arg2;
 - (void)_setSelectedDOMRangeAndUpdateUI:(id)arg1;
@@ -177,10 +181,6 @@
 - (void)_zoomToRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 ensuringVisibilityOfRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 withScale:(double)arg3 forceScroll:(bool)arg4;
 - (void)_zoomToRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 ensuringVisibilityOfRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 withScale:(double)arg3 forceScroll:(bool)arg4 formAssistantFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5 animationDuration:(double)arg6;
 - (void)_zoomToRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withScale:(double)arg2;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)acceptedAutoFillWord:(id)arg1;
 - (void)accessoryAutoFill;
 - (void)accessoryClear;
@@ -202,6 +202,7 @@
 - (bool)considerHeightOfRectOfInterestForRotation;
 - (struct CGSize { double x1; double x2; })contentSizeForScrollView:(id)arg1;
 - (void)copy:(id)arg1;
+- (void)dealloc;
 - (void)formDelegateTextDidChange;
 - (id)formElement;
 - (bool)hasEditedTextField;

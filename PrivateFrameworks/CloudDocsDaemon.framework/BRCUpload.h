@@ -29,6 +29,7 @@
 @property (nonatomic, readonly) NSNumber *transferID;
 
 - (void).cxx_destruct;
+- (void)dealloc;
 - (id)description;
 - (unsigned long long)doneSize;
 - (id)etag;

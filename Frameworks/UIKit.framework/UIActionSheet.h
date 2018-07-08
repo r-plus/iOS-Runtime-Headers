@@ -33,8 +33,6 @@
 @property (nonatomic, copy) NSString *title;
 @property (getter=isVisible, nonatomic, readonly) bool visible;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 + (bool)_isAlertControllerShimClass;
 + (Class)_popoverControllerClass;
 
@@ -61,10 +59,6 @@
 - (void)_showFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2 direction:(unsigned long long)arg3 animated:(bool)arg4;
 - (id)_titleLabel;
 - (void)_toggleButtonSelectionAtIndex:(unsigned long long)arg1;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (long long)actionSheetStyle;
 - (long long)addButtonWithTitle:(id)arg1;
 - (id)addButtonWithTitle:(id)arg1 label:(id)arg2;
@@ -74,6 +68,7 @@
 - (id)buttonTitleAtIndex:(long long)arg1;
 - (long long)cancelButtonIndex;
 - (id)context;
+- (void)dealloc;
 - (id)delegate;
 - (long long)destructiveButtonIndex;
 - (void)dismissWithClickedButtonIndex:(long long)arg1 animated:(bool)arg2;

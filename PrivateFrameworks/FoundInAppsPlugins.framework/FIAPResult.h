@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FoundInAppsPlugins.framework/FoundInAppsPlugins
  */
 
-@interface FIAPResult : NSObject {
+@interface FIAPResult : NSObject <NSSecureCoding> {
     NSArray * _entities;
     NSError * _error;
     NSArray * _historicalDataRequests;

@@ -51,6 +51,7 @@
 + (id)globalAuthTokenQueue;
 
 - (void).cxx_destruct;
+- (void)_fetchContainerInfoForOperation:(id)arg1 requireUserIDs:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (id)_initWithContext:(id)arg1;
 - (id)_lockedCloudKitAuthTokenWithError:(id*)arg1;
 - (void)_lockedRenewTokenWithReason:(id)arg1 shouldForce:(bool)arg2 tokenFetchBlock:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
@@ -82,8 +83,8 @@
 - (id)dsid;
 - (id)fakeAccountInfo;
 - (void)fetchConfigurationForOperation:(id)arg1 withCompletionHandler:(id /* block */)arg2;
-- (void)fetchContainerScopedUserIDForOperation:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)fetchDeviceIDForOperation:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)fetchImportantUserIDsForOperation:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)fetchPrivateURLForServerType:(long long)arg1 operation:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)fetchPublicURLForServerType:(long long)arg1 operation:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)fetchServerEnvironmentForOperation:(id)arg1 withCompletionHandler:(id /* block */)arg2;

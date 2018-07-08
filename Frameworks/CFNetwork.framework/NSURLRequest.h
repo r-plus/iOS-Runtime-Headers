@@ -74,13 +74,16 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithURL:(id)arg1;
-- (id)initWithURL:(id)arg1 cachePolicy:(unsigned long long)arg2 timeoutInterval:(double)arg3;
 - (bool)isEqual:(id)arg1;
 - (id)mainDocumentURL;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long long)networkServiceType;
 - (double)timeoutInterval;
 - (id)valueForHTTPHeaderField:(id)arg1;
+
+// Image: /Library/TweakInject/Activator.dylib
+
+- (id)initWithURL:(id)arg1 cachePolicy:(unsigned long long)arg2 timeoutInterval:(double)arg3;
 
 // Image: /System/Library/PrivateFrameworks/AuthKit.framework/AuthKit
 

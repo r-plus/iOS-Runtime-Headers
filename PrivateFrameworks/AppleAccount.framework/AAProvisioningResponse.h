@@ -21,6 +21,7 @@
 @property (nonatomic, readonly) NSString *primaryEmail;
 @property (nonatomic, readonly) NSNumber *primaryEmailVerified;
 @property (nonatomic, readonly) NSArray *provisionedDataclasses;
+@property (nonatomic, readonly) NSDictionary *regionInfo;
 @property (getter=isSandboxAccount, nonatomic, readonly) bool sandboxAccount;
 
 - (void).cxx_destruct;
@@ -42,5 +43,6 @@
 - (id)primaryEmail;
 - (id)primaryEmailVerified;
 - (id)provisionedDataclasses;
+- (id)regionInfo;
 
 @end

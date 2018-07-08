@@ -19,18 +19,20 @@
 @property (setter=setAVOutputDevice:, nonatomic, retain) AVOutputDevice *avOutputDevice;
 @property (nonatomic, retain) MRAVOutputDeviceSourceInfo *sourceInfo;
 
+- (void).cxx_destruct;
 - (id)MACAddress;
 - (void)_onqueue_clearCachedAVOutputDeviceProperties;
 - (id)_playingPairedDeviceNameForAVOutputDevice:(id)arg1;
 - (id)avOutputDevice;
 - (float)batteryLevel;
 - (bool)canAccessRemoteAssets;
-- (void)dealloc;
+- (bool)canRelayCommunicationChannel;
 - (unsigned int)deviceSubtype;
 - (unsigned int)deviceType;
 - (id)groupID;
 - (bool)hasBatteryLevel;
 - (id)initWithAVOutputDevice:(id)arg1 sourceInfo:(id)arg2;
+- (bool)isDeviceGroupable;
 - (bool)isGroupLeader;
 - (bool)isGroupable;
 - (bool)isLocalDevice;

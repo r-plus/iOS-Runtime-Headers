@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPassFooterView : UIView <PKPassFooterContentViewDelegate> {
+@interface PKPassFooterView : UIView <PKForegroundActiveArbiterObserver, PKPassFooterContentViewDelegate, PKUIForegroundActiveArbiterDeactivationObserver> {
     bool  _acquiringSession;
     PKPassFooterContentView * _contentView;
     unsigned char  _contentViewVisibility;
     <PKPassFooterViewDelegate> * _delegate;
+    bool  _invalidated;
     bool  _isAssistantActive;
     bool  _isBackgrounded;
     PKPassView * _passView;
@@ -43,10 +44,6 @@
 - (void)_deleteButtonTapped;
 - (void)_endSession;
 - (void)_endSessionStartTimer;
-- (void)_handleAddDeactivationReasonNotification:(id)arg1;
-- (void)_handleEnterBackgroundNotification:(id)arg1;
-- (void)_handleEnterForegroundNotification:(id)arg1;
-- (void)_handleRemoveDeactivationReasonNotification:(id)arg1;
 - (void)_lostModeButtonTapped;
 - (void)_setContentView:(id)arg1 animated:(bool)arg2;
 - (void)_setUserIntentRequired:(bool)arg1;
@@ -58,7 +55,10 @@
 - (id)delegate;
 - (void)didBecomeHiddenAnimated:(bool)arg1;
 - (void)didBecomeVisibleAnimated:(bool)arg1;
+- (void)foregroundActiveArbiter:(id)arg1 didUpdateDeactivationReasons:(unsigned int)arg2;
+- (void)foregroundActiveArbiter:(id)arg1 didUpdateForegroundActiveState:(struct { bool x1; bool x2; })arg2;
 - (id)initWithPassView:(id)arg1 state:(long long)arg2 context:(id)arg3;
+- (void)invalidate;
 - (bool)isPassAuthorized;
 - (bool)isUserIntentRequired;
 - (void)layoutSubviews;

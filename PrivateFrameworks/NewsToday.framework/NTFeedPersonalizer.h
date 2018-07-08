@@ -33,6 +33,7 @@
 - (double)articleDiversificationSimilarityExpectationStart;
 - (double)articleDiversificationUniquePublisherExpectationSlope;
 - (double)articleDiversificationUniquePublisherExpectationYIntercept;
+- (double)decayedPublisherDiversificationPenalty;
 - (id)diversifyArticles:(id)arg1 limit:(unsigned long long)arg2;
 - (id)diversifyArticles:(id)arg1 limit:(unsigned long long)arg2 preselectedArticles:(id)arg3;
 - (id)globalScoreRangesValueStore;

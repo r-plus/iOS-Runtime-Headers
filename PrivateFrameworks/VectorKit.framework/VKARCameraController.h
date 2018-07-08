@@ -4,10 +4,6 @@
 
 @interface VKARCameraController : VKScreenCameraController <VKGesturingCameraController> {
     double  _altitudeOffset;
-    bool  _alwaysUseCurrentFrame;
-    struct { 
-        /* Warning: Unrecognized filer type: ']' using 'void*' */ void*columns[4]; 
-    }  _arFrameToPredicatedFrameCorrectionMatrix;
     struct Quaternion<double> { 
         struct Matrix<double, 3, 1> { 
             double _e[3]; 
@@ -94,9 +90,6 @@
         } _imaginary; 
         double _scalar; 
     }  _interfaceOrientationRotation;
-    struct { 
-        /* Warning: Unrecognized filer type: ']' using 'void*' */ void*columns[4]; 
-    }  _lastARCameraTransformMatrix;
     struct RigidTransform<double> { 
         struct Quaternion<double> { 
             struct Matrix<double, 3, 1> { 
@@ -126,8 +119,6 @@
         struct TaskContext {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
     }  _taskContext;
-    unsigned long long  _trackingState;
-    unsigned long long  _trackingStateReason;
     VKTimedAnimation * _transitionAnimation;
 }
 

@@ -13,6 +13,7 @@
         unsigned int maximumRating : 1; 
         unsigned int minimumRating : 1; 
         unsigned int numAvailableSkips : 1; 
+        unsigned int preferredPlaybackRate : 1; 
         unsigned int presentationStyle : 1; 
         unsigned int repeatMode : 1; 
         unsigned int shuffleMode : 1; 
@@ -33,6 +34,7 @@
         unsigned long long count; 
         unsigned long long size; 
     }  _preferredIntervals;
+    float  _preferredPlaybackRate;
     int  _presentationStyle;
     int  _repeatMode;
     int  _shuffleMode;
@@ -71,6 +73,7 @@
 @property (nonatomic) bool hasMaximumRating;
 @property (nonatomic) bool hasMinimumRating;
 @property (nonatomic) bool hasNumAvailableSkips;
+@property (nonatomic) bool hasPreferredPlaybackRate;
 @property (nonatomic) bool hasPresentationStyle;
 @property (nonatomic) bool hasRepeatMode;
 @property (nonatomic) bool hasShuffleMode;
@@ -85,6 +88,7 @@
 @property (nonatomic) int numAvailableSkips;
 @property (nonatomic, readonly) double*preferredIntervals;
 @property (nonatomic, readonly) unsigned long long preferredIntervalsCount;
+@property (nonatomic) float preferredPlaybackRate;
 @property (nonatomic) int presentationStyle;
 @property (nonatomic) int repeatMode;
 @property (nonatomic) int shuffleMode;
@@ -102,6 +106,7 @@
 
 + (Class)supportedCustomQueueIdentifierType;
 
+- (void).cxx_destruct;
 - (int)StringAsCommand:(id)arg1;
 - (int)StringAsRepeatMode:(id)arg1;
 - (int)StringAsShuffleMode:(id)arg1;
@@ -134,6 +139,7 @@
 - (bool)hasMaximumRating;
 - (bool)hasMinimumRating;
 - (bool)hasNumAvailableSkips;
+- (bool)hasPreferredPlaybackRate;
 - (bool)hasPresentationStyle;
 - (bool)hasRepeatMode;
 - (bool)hasShuffleMode;
@@ -152,6 +158,7 @@
 - (double)preferredIntervalAtIndex:(unsigned long long)arg1;
 - (double*)preferredIntervals;
 - (unsigned long long)preferredIntervalsCount;
+- (float)preferredPlaybackRate;
 - (int)presentationStyle;
 - (bool)readFrom:(id)arg1;
 - (int)repeatMode;
@@ -167,6 +174,7 @@
 - (void)setHasMaximumRating:(bool)arg1;
 - (void)setHasMinimumRating:(bool)arg1;
 - (void)setHasNumAvailableSkips:(bool)arg1;
+- (void)setHasPreferredPlaybackRate:(bool)arg1;
 - (void)setHasPresentationStyle:(bool)arg1;
 - (void)setHasRepeatMode:(bool)arg1;
 - (void)setHasShuffleMode:(bool)arg1;
@@ -180,6 +188,7 @@
 - (void)setMinimumRating:(float)arg1;
 - (void)setNumAvailableSkips:(int)arg1;
 - (void)setPreferredIntervals:(double*)arg1 count:(unsigned long long)arg2;
+- (void)setPreferredPlaybackRate:(float)arg1;
 - (void)setPresentationStyle:(int)arg1;
 - (void)setRepeatMode:(int)arg1;
 - (void)setShuffleMode:(int)arg1;

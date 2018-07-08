@@ -17,9 +17,9 @@
 
 + (id)analyzerForAxis:(id)arg1 needsMedian:(bool)arg2;
 
+- (void).cxx_destruct;
 - (void)addGridValue:(id)arg1 forSeries:(id)arg2;
 - (double)average;
-- (void)dealloc;
 - (id)initForAxis:(id)arg1 needsMedian:(bool)arg2;
 - (double)max;
 - (double)median;

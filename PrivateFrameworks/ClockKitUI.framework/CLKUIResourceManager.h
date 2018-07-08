@@ -3,22 +3,22 @@
  */
 
 @interface CLKUIResourceManager : NSObject {
-    NSMutableArray * _providers;
+    NSMutableDictionary * _atlasesByUuid;
+    NSMutableDictionary * _providersByKey;
     NSMutableDictionary * _recentProvidersForUuid;
-    NSMutableDictionary * _texturesByUuid;
 }
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (id)_newTextureForUuid:(id)arg1;
+- (id)_newAtlasForUuid:(id)arg1;
 - (void)_purgeAllUnconditionally;
-- (void)_purgeTextures:(id)arg1;
+- (void)_purgeAtlases:(id)arg1;
 - (void)dealloc;
 - (id)delegateForUuid:(id)arg1;
 - (id)init;
 - (void)purge:(id)arg1;
 - (void)purgeAllUnused;
-- (id)textureForUuid:(id)arg1 delegate:(id)arg2;
+- (id)textureForUuid:(void *)arg1 delegate:(void *)arg2 rect:(void *)arg3; // needs 3 arg types, found 2: id, id
 
 @end

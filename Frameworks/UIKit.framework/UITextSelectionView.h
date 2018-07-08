@@ -37,13 +37,7 @@
 @property (nonatomic, readonly) bool selectionCommandsShowing;
 @property (nonatomic) bool visible;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 - (void).cxx_destruct;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)activate;
 - (bool)affectedByScrollerNotification:(id)arg1;
 - (void)animateBoxShrinkOn:(id)arg1;
@@ -67,6 +61,7 @@
 - (void)configureForReplacementMode;
 - (void)configureForSelectionMode;
 - (void)deactivate;
+- (void)dealloc;
 - (void)deferredUpdateSelectionCommands;
 - (void)deferredUpdateSelectionRects;
 - (void)detach;

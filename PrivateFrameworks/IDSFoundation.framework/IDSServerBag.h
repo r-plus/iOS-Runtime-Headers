@@ -125,7 +125,6 @@
 - (void)set_loadDate:(id)arg1;
 - (void)set_remoteURLConnection:(id)arg1;
 - (void)set_urlRequest:(id)arg1;
-- (bool)shouldForceDevicesToCarry;
 - (void)startBagLoad;
 - (int)token;
 - (bool)trustRefFromCertificates:(id)arg1 trustRef:(struct __SecTrust {}**)arg2;

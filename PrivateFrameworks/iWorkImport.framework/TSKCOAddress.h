@@ -3,8 +3,8 @@
  */
 
 @interface TSKCOAddress : NSObject {
-    NSArray * mAllPathElements;
-    TSKCOAddress * mParent;
+    NSArray * _allPathElements;
+    TSKCOAddress * _parent;
 }
 
 @property (nonatomic, readonly) NSArray *allPathElements;
@@ -16,9 +16,9 @@
 + (void)registerClass:(Class)arg1 forExtensionNumber:(unsigned int)arg2;
 + (id)typeRegistry;
 
+- (void).cxx_destruct;
 - (id)allPathElements;
 - (bool)contains:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (bool)equals:(id)arg1;
 - (bool)hasSamePrefix:(id)arg1;

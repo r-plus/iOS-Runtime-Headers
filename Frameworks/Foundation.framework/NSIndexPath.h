@@ -2,23 +2,19 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSIndexPath : NSObject <DebugHierarchyValue, NSCopying, NSSecureCoding> {
+@interface NSIndexPath : NSObject <NSCopying, NSSecureCoding> {
     unsigned long long * _indexes;
     unsigned long long  _length;
     void * _reserved;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) unsigned long long element;
-@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) long long item;
 @property (nonatomic, readonly) long long kind;
 @property (readonly) unsigned long long length;
 @property (getter=pu_isValid, nonatomic, readonly) bool pu_valid;
 @property (nonatomic, readonly) long long row;
 @property (nonatomic, readonly) long long section;
-@property (readonly) Class superclass;
 @property (nonatomic, readonly) long long tk_row;
 @property (nonatomic, readonly) long long tk_section;
 @property (nonatomic, readonly) unsigned long long upNextSection;
@@ -48,12 +44,6 @@
 - (id)initWithIndexes:(const unsigned long long*)arg1 length:(unsigned long long)arg2;
 - (bool)isEqual:(id)arg1;
 - (unsigned long long)length;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)indexPathWithDebugHierarchyValue:(id)arg1;
-
-- (id)debugHierarchyValue;
 
 // Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
 

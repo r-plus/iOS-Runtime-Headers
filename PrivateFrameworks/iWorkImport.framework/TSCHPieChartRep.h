@@ -4,11 +4,12 @@
 
 @interface TSCHPieChartRep : TSCHChartRep {
     bool  mHasDrawnSinceWedgeKnobTrackerCreated;
-    TSCHChartPieElementsRenderer * mPieElementRenderer;
+    TSCHChartRadialElementsRenderer * mPieElementRenderer;
     NSDictionary * mSeriesIndexedPieWedgeDraggingLayers;
     NSArray * mWedgeKnobs;
 }
 
+- (void).cxx_destruct;
 - (void)clearRenderers;
 - (void)dealloc;
 - (double)dragTravelAlongBisectorBetweenStartPoint:(struct CGPoint { double x1; double x2; })arg1 andEndingPoint:(struct CGPoint { double x1; double x2; })arg2 forSeries:(unsigned long long)arg3;

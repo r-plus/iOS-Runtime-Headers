@@ -35,7 +35,7 @@
 - (void)_loadStoreFrontIfNeededWithCallbackAndAccessQueue:(id)arg1 completion:(id /* block */)arg2;
 - (void)_refreshUbiquityIdentityToken;
 - (void)_setStoreFrontDependentPropertiesWithStoreFrontLockingEnabled:(bool)arg1;
-- (void)checkAlliOSDevicesRunningMajorOSVersionOrLater:(long long)arg1 orInactiveForTimeInterval:(double)arg2 completionHandler:(id /* block */)arg3;
+- (void)checkAlliOSDevicesRunningMinimumOSVersion:(struct { long long x1; long long x2; })arg1 orInactiveForTimeInterval:(double)arg2 completionHandler:(id /* block */)arg3;
 - (id)contentStoreFrontID;
 - (id)currentStoreFrontID;
 - (id)endpointConnectionClientID;

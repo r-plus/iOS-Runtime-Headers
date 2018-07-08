@@ -5,8 +5,8 @@
 @interface FCForYouConfigHeadlinesOperation : FCOperation {
     NSArray * _additionalArticleListIDs;
     NSArray * _additionalTagIDs;
-    <FCAppConfiguration> * _appConfiguration;
     FCCachePolicy * _articleListCachePolicy;
+    <FCCoreConfiguration> * _configuration;
     <FCContentContext> * _context;
     FCCachePolicy * _editorialSectionTagCachePolicy;
     long long  _fields;
@@ -22,8 +22,8 @@
 
 @property (nonatomic, copy) NSArray *additionalArticleListIDs;
 @property (nonatomic, copy) NSArray *additionalTagIDs;
-@property (nonatomic, copy) <FCAppConfiguration> *appConfiguration;
 @property (nonatomic, retain) FCCachePolicy *articleListCachePolicy;
+@property (nonatomic, copy) <FCCoreConfiguration> *configuration;
 @property (nonatomic, retain) <FCContentContext> *context;
 @property (nonatomic, retain) FCCachePolicy *editorialSectionTagCachePolicy;
 @property (nonatomic) long long fields;
@@ -40,8 +40,8 @@
 - (long long)_requestTypeOverride;
 - (id)additionalArticleListIDs;
 - (id)additionalTagIDs;
-- (id)appConfiguration;
 - (id)articleListCachePolicy;
+- (id)configuration;
 - (id)context;
 - (id)editorialSectionTagCachePolicy;
 - (long long)fields;
@@ -56,8 +56,8 @@
 - (id)resultHeadlinesByArticleListID;
 - (void)setAdditionalArticleListIDs:(id)arg1;
 - (void)setAdditionalTagIDs:(id)arg1;
-- (void)setAppConfiguration:(id)arg1;
 - (void)setArticleListCachePolicy:(id)arg1;
+- (void)setConfiguration:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setEditorialSectionTagCachePolicy:(id)arg1;
 - (void)setFields:(long long)arg1;

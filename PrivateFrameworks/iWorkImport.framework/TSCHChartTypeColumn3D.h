@@ -9,5 +9,6 @@
 - (id)init;
 - (struct TSCH3DChartRotationLimit { float x1; float x2; float x3; float x4; })rotation3DLimit;
 - (id)userInterfaceName;
+- (long long)userInterfaceTag;
 
 @end

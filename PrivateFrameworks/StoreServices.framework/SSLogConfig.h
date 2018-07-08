@@ -52,6 +52,8 @@
 + (id)sharedFairPlayAnisetteConfig;
 + (id)sharedFeatureEnablerMigrationConfig;
 + (id)sharedFollowUpConfig;
++ (id)sharedPrivacyConfig;
++ (id)sharedPushNotificationConfig;
 + (id)sharedStoreServicesConfig;
 + (id)sharedStoreServicesConfigOversize;
 + (id)sharedWriteToDiskConfig;

@@ -9,5 +9,6 @@
 - (bool)supportsCategoryAxisPlotToEdgesOption;
 - (bool)supportsSeriesFill;
 - (id)userInterfaceName;
+- (long long)userInterfaceTag;
 
 @end

@@ -23,6 +23,7 @@
     double  _jingleTimeoutInterval;
     NSString * _osVersionAndBuild;
     int  _runState;
+    NSString * _storefrontLocalizationLanguage;
     float  _timezone;
 }
 
@@ -51,13 +52,15 @@
 @property (nonatomic, retain) NSString *iTunesStorefront;
 @property (nonatomic) bool internationalRoaming;
 @property (nonatomic, readonly) bool isManagedAppleID;
+@property (nonatomic, readonly) bool isManagediCloudAccount;
 @property (nonatomic) double jingleTimeoutInterval;
 @property (nonatomic, readonly) bool limitAdTrackingRestrictionEnabledBySpringboard;
 @property (nonatomic, readonly) NSString *localeIdentifier;
-@property (nonatomic) double maxSegmentSendInterval;
+@property (nonatomic) int maxSegmentSendInterval;
 @property (nonatomic, retain) NSString *osVersionAndBuild;
 @property (nonatomic) int runState;
-@property (nonatomic) double segmentRetrievalInterval;
+@property (nonatomic) int segmentRetrievalInterval;
+@property (nonatomic, retain) NSString *storefrontLocalizationLanguage;
 @property (nonatomic) float timezone;
 
 + (bool)educationModeEnabled;
@@ -94,14 +97,15 @@
 - (id)init;
 - (bool)internationalRoaming;
 - (bool)isManagedAppleID;
+- (bool)isManagediCloudAccount;
 - (double)jingleTimeoutInterval;
 - (bool)limitAdTrackingRestrictionEnabledBySpringboard;
 - (id)localeIdentifier;
-- (double)maxSegmentSendInterval;
+- (int)maxSegmentSendInterval;
 - (id)osVersionAndBuild;
 - (void)reloadStorefront:(id /* block */)arg1;
 - (int)runState;
-- (double)segmentRetrievalInterval;
+- (int)segmentRetrievalInterval;
 - (void)setAdServerTimeoutInterval:(double)arg1;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setConnectionType:(int)arg1;
@@ -117,13 +121,15 @@
 - (void)setITunesStorefront:(id)arg1;
 - (void)setInternationalRoaming:(bool)arg1;
 - (void)setJingleTimeoutInterval:(double)arg1;
-- (void)setMaxSegmentSendInterval:(double)arg1;
+- (void)setMaxSegmentSendInterval:(int)arg1;
 - (void)setNSURLConnectionTimeout:(double)arg1;
 - (void)setNSURLTransactionTimeout:(double)arg1;
 - (void)setOsVersionAndBuild:(id)arg1;
 - (void)setRunState:(int)arg1;
-- (void)setSegmentRetrievalInterval:(double)arg1;
+- (void)setSegmentRetrievalInterval:(int)arg1;
+- (void)setStorefrontLocalizationLanguage:(id)arg1;
 - (void)setTimezone:(float)arg1;
+- (id)storefrontLocalizationLanguage;
 - (float)timezone;
 
 @end

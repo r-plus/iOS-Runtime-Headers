@@ -26,11 +26,11 @@
     bool  _keychainSyncEnabled;
     HMFMessageDispatcher * _msgDispatcher;
     NSObject<OS_dispatch_source> * _pollTimer;
+    int  _proxSetupNotificationToken;
     APSConnection * _pushConnection;
     NSObject<OS_dispatch_source> * _retryTimer;
     NSUUID * _uuid;
     NSObject<OS_dispatch_source> * _watchdogControllerKeyPollTimer;
-    int  _whaProxSetupNotificationToken;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
@@ -64,13 +64,13 @@
 @property (nonatomic, readonly) HMDCloudMetadataZone *metadataZone;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *pollTimer;
+@property (nonatomic) int proxSetupNotificationToken;
 @property (nonatomic, retain) APSConnection *pushConnection;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *retryTimer;
 @property (nonatomic, readonly) NSData *serverTokenData;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSUUID *uuid;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *watchdogControllerKeyPollTimer;
-@property (nonatomic) int whaProxSetupNotificationToken;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 + (bool)isControllerKeyAvailable;
@@ -78,7 +78,7 @@
 - (void).cxx_destruct;
 - (void)_accountIsActive;
 - (void)_addHomeZoneName:(id)arg1 owner:(id)arg2;
-- (void)_auditWHAProxSetupNotification;
+- (void)_auditProxSetupNotification;
 - (id)_changeTokenFromData:(id)arg1;
 - (void)_checkZoneAndUploadTransaction:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_createZoneAndFetchChanges:(id /* block */)arg1;
@@ -91,11 +91,11 @@
 - (void)_handleAccountStatus:(long long)arg1 completionHandler:(id /* block */)arg2 error:(id)arg3;
 - (void)_handleControllerKeyAvailable;
 - (void)_handleKeychainSyncStateChanged:(bool)arg1;
-- (bool)_isWHAProxSetupRunning;
+- (bool)_isProxSetupRunning;
 - (void)_processFetchCompletedWithError:(id)arg1 serverToken:(id)arg2 fetchTransaction:(id)arg3 migrationOptions:(long long)arg4 completionHandler:(id /* block */)arg5 moreRecordsComing:(bool)arg6 emptyRecord:(bool)arg7;
 - (bool)_processFetchedTransaction:(id)arg1;
+- (void)_registerForProxSetupNotifications;
 - (void)_registerForPushNotifications;
-- (void)_registerForWHAProxSetupNotifications;
 - (void)_removeAllHomeZonesCompletionHandler:(id /* block */)arg1;
 - (void)_removeHomeZoneName:(id)arg1;
 - (void)_removeZones:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -164,6 +164,7 @@
 - (id)metadataZone;
 - (id)msgDispatcher;
 - (id)pollTimer;
+- (int)proxSetupNotificationToken;
 - (id)pushConnection;
 - (void)removeHomeZoneName:(id)arg1;
 - (void)removeZonesTransactions:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -201,11 +202,11 @@
 - (void)setKeychainSyncEnabled:(bool)arg1;
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setPollTimer:(id)arg1;
+- (void)setProxSetupNotificationToken:(int)arg1;
 - (void)setPushConnection:(id)arg1;
 - (void)setRetryTimer:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (void)setWatchdogControllerKeyPollTimer:(id)arg1;
-- (void)setWhaProxSetupNotificationToken:(int)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (void)updateAccountStatusChanged:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (void)updateCloudDataSyncFilterState:(bool)arg1;
@@ -214,7 +215,6 @@
 - (void)uploadTransaction:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)uuid;
 - (id)watchdogControllerKeyPollTimer;
-- (int)whaProxSetupNotificationToken;
 - (id)workQueue;
 
 @end

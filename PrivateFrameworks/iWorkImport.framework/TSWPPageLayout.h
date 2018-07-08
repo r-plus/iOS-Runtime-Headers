@@ -38,12 +38,12 @@
 - (void).cxx_destruct;
 - (bool)allowsHeaderFooter;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bodyRect;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })borderRectForHeaderFooter:(int)arg1 atIndex:(int)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })clipRectForHeaderFooter:(int)arg1 atIndex:(int)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })borderRectForHeaderFooter:(long long)arg1 atIndex:(long long)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })clipRectForHeaderFooter:(long long)arg1 atIndex:(long long)arg2;
 - (double)footerHeight;
 - (bool)hasFooters;
 - (bool)hasHeaders;
-- (id)headerFooterLayout:(int)arg1 atIndex:(int)arg2;
+- (id)headerFooterLayout:(long long)arg1 atIndex:(long long)arg2;
 - (id)headerFooterProvider;
 - (bool)headerFooterProviderValid;
 - (double)headerHeight;
@@ -51,10 +51,10 @@
 - (void)i_insertValidatedHeaderFooterLayouts;
 - (bool)i_updateHeaderFooterLayouts;
 - (bool)isHeaderFooterLayout:(id)arg1;
-- (bool)p_isHeaderFooter:(int)arg1 editingAtFragmentIndex:(int)arg2;
+- (bool)p_isHeaderFooter:(long long)arg1 editingAtFragmentIndex:(long long)arg2;
 - (void)p_updateHeaderFooterClipAndBorderRect;
-- (void)p_updateHeaderFooterClipAndBorderRects:(int)arg1;
+- (void)p_updateHeaderFooterClipAndBorderRects:(long long)arg1;
 - (void)parentWillChangeTo:(id)arg1;
-- (bool)shouldHeaderFooterBeVisible:(int)arg1;
+- (bool)shouldHeaderFooterBeVisible:(long long)arg1;
 
 @end

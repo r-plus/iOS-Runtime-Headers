@@ -72,7 +72,9 @@
 - (void).cxx_destruct;
 - (void)_handleUserInteractionGestureRecognizer:(id)arg1;
 - (id)_preferredImageName;
+- (struct CGSize { double x1; double x2; })_preferredLayoutSize;
 - (void)_resetTrackedState;
+- (void)_updateImageIfNeeded;
 - (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
@@ -96,13 +98,13 @@
 - (bool)isCollapsed;
 - (bool)isCollapsedOrExcluded;
 - (bool)isIncluded;
-- (void)layoutSubviews;
 - (id)longPressTimer;
 - (double)maximumForceSinceTrackingBegan;
 - (id)micaPackage;
 - (bool)multipleTouchesEndsTracking;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)previousHorizontalPositionOfLongPress;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setCollapsed:(bool)arg1;
 - (void)setDisablesHighlightWhenLongPressed:(bool)arg1;
 - (void)setEnabled:(bool)arg1;
@@ -117,6 +119,7 @@
 - (void)setHighlighted:(bool)arg1;
 - (void)setHitRectInsets:(struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setHorizontalTranslationOfLongPress:(double)arg1;
+- (void)setImage:(id)arg1 forState:(unsigned long long)arg2;
 - (void)setImageName:(id)arg1;
 - (void)setIncluded:(bool)arg1;
 - (void)setInlineAlternateImageName:(id)arg1;
@@ -136,5 +139,6 @@
 - (id)userInteractionGestureRecognizer;
 - (bool)wasForcePressTriggered;
 - (bool)wasLongPressed;
+- (void)willMoveToWindow:(id)arg1;
 
 @end

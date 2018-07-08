@@ -12,6 +12,7 @@
         double width; 
         double height; 
     }  _canvasSize;
+    <SXComponentBlueprintFactory> * _componentBlueprintFactory;
     SXComponentDependencyResolver * _dependencySolver;
     bool  _didPlaceDynamicAds;
     NSMutableDictionary * _flattenedBlueprint;
@@ -37,6 +38,7 @@
 @property (nonatomic, retain) NSMutableDictionary *blueprint;
 @property (nonatomic) struct CGSize { double x1; double x2; } blueprintSize;
 @property (nonatomic) struct CGSize { double x1; double x2; } canvasSize;
+@property (nonatomic, readonly) <SXComponentBlueprintFactory> *componentBlueprintFactory;
 @property (nonatomic, retain) SXComponentDependencyResolver *dependencySolver;
 @property (nonatomic) bool didPlaceDynamicAds;
 @property (nonatomic, retain) NSMutableDictionary *flattenedBlueprint;
@@ -54,6 +56,7 @@
 - (id)blueprint;
 - (struct CGSize { double x1; double x2; })blueprintSize;
 - (struct CGSize { double x1; double x2; })canvasSize;
+- (id)componentBlueprintFactory;
 - (id)componentBlueprintForComponentIdentifier:(id)arg1;
 - (id)componentBlueprintForComponentIdentifier:(id)arg1 includeChildren:(bool)arg2;
 - (id)componentIdentifiers;
@@ -65,7 +68,7 @@
 - (bool)didPlaceDynamicAds;
 - (void)endUpdates;
 - (id)flattenedBlueprint;
-- (id)init;
+- (id)initWithComponentBlueprintFactory:(id)arg1;
 - (void)invalidateBlueprint;
 - (void)invalidateBlueprintPosition;
 - (void)invalidateDependentsOfComponentNode:(id)arg1 forDependencyResolver:(id)arg2;

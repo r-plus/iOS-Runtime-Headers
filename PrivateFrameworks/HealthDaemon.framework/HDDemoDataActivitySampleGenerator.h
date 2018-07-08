@@ -42,6 +42,8 @@
 @property (nonatomic, retain) HDDataOriginProvenance *provenance;
 @property (nonatomic, retain) _HDDemoDataActivityWorkoutState *workoutState;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)_computeCyclingDistanceWithStepCount:(id)arg1 demoPerson:(id)arg2;
 - (double)_computeExerciseCaloriesForDemoPerson:(id)arg1 duration:(double)arg2 activity:(long long)arg3 weight:(double)arg4;

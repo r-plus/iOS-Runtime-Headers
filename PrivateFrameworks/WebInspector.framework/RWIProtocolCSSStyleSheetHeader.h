@@ -14,6 +14,8 @@
 @property (nonatomic, copy) NSString *styleSheetId;
 @property (nonatomic, copy) NSString *title;
 
+// Image: /System/Library/PrivateFrameworks/WebInspector.framework/WebInspector
+
 - (bool)disabled;
 - (id)frameId;
 - (id)initWithStyleSheetId:(id)arg1 frameId:(id)arg2 sourceURL:(id)arg3 origin:(long long)arg4 title:(id)arg5 disabled:(bool)arg6 isInline:(bool)arg7 startLine:(double)arg8 startColumn:(double)arg9;
@@ -33,5 +35,9 @@
 - (double)startLine;
 - (id)styleSheetId;
 - (id)title;
+
+// Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
+
++ (id)safe_initWithStyleSheetId:(id)arg1 frameId:(id)arg2 sourceURL:(id)arg3 origin:(long long)arg4 title:(id)arg5 disabled:(bool)arg6 isInline:(bool)arg7 startLine:(double)arg8 startColumn:(double)arg9;
 
 @end

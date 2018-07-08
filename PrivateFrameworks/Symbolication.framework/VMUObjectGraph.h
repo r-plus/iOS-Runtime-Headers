@@ -46,11 +46,11 @@
 - (id)initWithNodeCount:(unsigned int)arg1 nodeProvider:(id /* block */)arg2;
 - (id)initWithNodesNoCopy:(struct _VMUBlockNode { unsigned long long x1; unsigned int x2 : 3; unsigned int x3 : 2; unsigned int x4 : 36; unsigned int x5 : 23; }*)arg1 nodeCount:(unsigned int)arg2;
 - (void)internalizeNodes;
-- (void)markReachableNodesFromRoots:(void*)arg1 inMap:(void*)arg2;
 - (/* Warning: unhandled struct encoding: '{?=Qb60b4@}' */ struct { unsigned long long x1; unsigned int x2 : 60; unsigned int x3 : 4; id x4; })nodeDetails:(unsigned int)arg1;
 - (unsigned int)nodeForAddress:(unsigned long long)arg1;
 - (unsigned int)nodeReferencedFromSourceNode:(unsigned int)arg1 byIvarWithName:(id)arg2;
 - (struct { unsigned long long x1; unsigned int x2; unsigned long long x3; })referenceInfoWithName:(unsigned int)arg1;
+- (unsigned int)scanTypeOfReferenceWithName:(unsigned int)arg1;
 - (void)setIndexedClassInfos:(id)arg1;
 - (void)stronglyConnectedComponentSearch:(unsigned int)arg1 withRecorder:(id /* block */)arg2;
 - (id)subgraphWithShortestPathsFromNode:(unsigned int)arg1 toNodes:(void*)arg2;

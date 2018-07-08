@@ -6,28 +6,28 @@
     struct __CVPixelBufferPool { } * _canonicalDisparityPixelBufferPool;
     struct unique_ptr<DisparityAutofocus, std::__1::default_delete<DisparityAutofocus> > { 
         struct __compressed_pair<DisparityAutofocus *, std::__1::default_delete<DisparityAutofocus> > { 
-            struct DisparityAutofocus {} *__first_; 
+            struct DisparityAutofocus {} *__value_; 
         } __ptr_; 
     }  _disparityAutofocus;
     struct unique_ptr<DisparityConversion, std::__1::default_delete<DisparityConversion> > { 
         struct __compressed_pair<DisparityConversion *, std::__1::default_delete<DisparityConversion> > { 
-            struct DisparityConversion {} *__first_; 
+            struct DisparityConversion {} *__value_; 
         } __ptr_; 
     }  _disparityConversion;
     struct unique_ptr<GeometricTransformation, std::__1::default_delete<GeometricTransformation> > { 
         struct __compressed_pair<GeometricTransformation *, std::__1::default_delete<GeometricTransformation> > { 
-            struct GeometricTransformation {} *__first_; 
+            struct GeometricTransformation {} *__value_; 
         } __ptr_; 
     }  _disparityGeometricTransformation;
     <CVADisparityPostprocessingCompletionDelegate> * _disparityPostprocessingCompletionDelegate;
     struct unique_ptr<DisparityStatistics, std::__1::default_delete<DisparityStatistics> > { 
         struct __compressed_pair<DisparityStatistics *, std::__1::default_delete<DisparityStatistics> > { 
-            struct DisparityStatistics {} *__first_; 
+            struct DisparityStatistics {} *__value_; 
         } __ptr_; 
     }  _disparityStatistics;
     struct unique_ptr<cva::FocusStateMachine, std::__1::default_delete<cva::FocusStateMachine> > { 
         struct __compressed_pair<cva::FocusStateMachine *, std::__1::default_delete<cva::FocusStateMachine> > { 
-            struct FocusStateMachine {} *__first_; 
+            struct FocusStateMachine {} *__value_; 
         } __ptr_; 
     }  _focusStateMachine;
     <CVAMattingCompletionDelegate> * _mattingCompletionDelegate;
@@ -45,12 +45,12 @@
     float  _referenceLensPosition_um;
     struct unique_ptr<SdofStateMachine, std::__1::default_delete<SdofStateMachine> > { 
         struct __compressed_pair<SdofStateMachine *, std::__1::default_delete<SdofStateMachine> > { 
-            struct SdofStateMachine {} *__first_; 
+            struct SdofStateMachine {} *__value_; 
         } __ptr_; 
     }  _sdofIntensityStateMachine;
     struct unique_ptr<StageLightStateMachine, std::__1::default_delete<StageLightStateMachine> > { 
         struct __compressed_pair<StageLightStateMachine *, std::__1::default_delete<StageLightStateMachine> > { 
-            struct StageLightStateMachine {} *__first_; 
+            struct StageLightStateMachine {} *__value_; 
         } __ptr_; 
     }  _stageLightStateMachine;
     struct __CVBuffer { } * _untransformedCanonicalDisparityPixelBuffer;

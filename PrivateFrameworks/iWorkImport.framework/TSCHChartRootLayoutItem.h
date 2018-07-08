@@ -22,6 +22,7 @@
         bool forceOmitTitle; 
         bool forceOmitAxisTitle; 
         bool forceOmitLabelPlacement; 
+        bool forceTitleAtTop; 
         bool enable3DTightBounds; 
         bool enable3DScaledDepthBounds; 
         long long maxDepthRatioType; 
@@ -51,6 +52,7 @@
 @property (nonatomic, readonly, copy) NSDictionary *seriesIndexedPieNormalizedLabelDistancesFromWedgeTips;
 @property (nonatomic, copy) NSDictionary *seriesIndexedPieWedgeExplosions;
 
+- (void).cxx_destruct;
 - (void)beginResizeWithStartingSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)buildSubTree;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })calcDrawingRect;
@@ -67,7 +69,7 @@
 - (void)invalidateSeriesIndexedPieWedgeExplosions;
 - (void)invalidateTransientModel;
 - (bool)isInResize;
-- (struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; long long x7; unsigned long long x8; })layoutSettings;
+- (struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; long long x8; unsigned long long x9; })layoutSettings;
 - (id)legendAreaLayoutItem;
 - (id)model;
 - (void)p_layoutInward;
@@ -80,7 +82,7 @@
 - (void)setChartBodySize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setChartInnerFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 legendInnerFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (void)setDataSetIndex:(unsigned long long)arg1;
-- (void)setLayoutSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; long long x7; unsigned long long x8; })arg1;
+- (void)setLayoutSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; long long x8; unsigned long long x9; })arg1;
 - (void)setLegendSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setSeriesIndexedPieWedgeExplosions:(id)arg1;
 - (struct CGSize { double x1; double x2; })startingSize;

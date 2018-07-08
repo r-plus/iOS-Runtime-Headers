@@ -16,9 +16,8 @@
 + (id)connectionFromTCPConnection:(id)arg1 delegate:(id)arg2;
 
 - (void).cxx_destruct;
-- (void)close;
+- (void)closeInternal;
 - (id)connection;
-- (void)dealloc;
 - (id)initWithTCPConnection:(id)arg1 delegate:(id)arg2;
 - (void)sendMessage:(id)arg1;
 - (void)setConnection:(id)arg1;

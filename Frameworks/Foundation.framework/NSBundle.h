@@ -132,10 +132,18 @@
 - (id)URLForMovieResource:(id)arg1;
 - (id)imageForResource:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 
+// Image: /System/Library/Frameworks/BusinessChat.framework/BusinessChat
+
+- (id)businessBundle;
+
 // Image: /System/Library/Frameworks/CallKit.framework/CallKit
 
 - (id)cx_displayName;
 - (bool)cx_hasVoIPBackgroundMode;
+
+// Image: /System/Library/Frameworks/ClassKit.framework/ClassKit
+
++ (bool)cls_isDaemon;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
@@ -146,6 +154,10 @@
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 + (id)mediaPlayerBundle;
+
+// Image: /System/Library/Frameworks/Photos.framework/Photos
+
+- (bool)ph_isFirstPartyBundle;
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
@@ -278,6 +290,8 @@
 // Image: /System/Library/PrivateFrameworks/MediaControls.framework/MediaControls
 
 + (id)mediaControlsBundle;
+
+- (id)mediaControls_localizedStringForKey:(id)arg1 inTable:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
 
@@ -421,10 +435,6 @@
 // Image: /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras
 
 + (id)videosExtrasBundle;
-
-// Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
-
-- (id)webui_localizedDisplayName;
 
 // Image: /System/Library/PrivateFrameworks/iPhotoMigrationSupport.framework/iPhotoMigrationSupport
 

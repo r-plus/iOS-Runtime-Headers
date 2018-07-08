@@ -11,6 +11,7 @@
 + (Class)archivedSelectionClass;
 + (id)controlCellSelection;
 
+- (id)copy;
 - (id)initWithKeyboardShown:(bool)arg1;
 - (bool)isKeyboardShown;
 

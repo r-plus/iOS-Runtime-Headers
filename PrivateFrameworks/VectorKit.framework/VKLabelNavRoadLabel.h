@@ -12,6 +12,9 @@
         struct NavLabel {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
     }  _label;
+    struct Mercator2<double> { 
+        double _e[2]; 
+    }  _mercatorPoint;
     <VKLabelNavFeature> * _navFeature;
     int  _navLabelType;
 }

@@ -11,7 +11,7 @@
     NSObject<OS_dispatch_queue> * _srcQueue;
     struct unique_ptr<ASDSRCStreamHelper, std::__1::default_delete<ASDSRCStreamHelper> > { 
         struct __compressed_pair<ASDSRCStreamHelper *, std::__1::default_delete<ASDSRCStreamHelper> > { 
-            struct ASDSRCStreamHelper {} *__first_; 
+            struct ASDSRCStreamHelper {} *__value_; 
         } __ptr_; 
     }  _streamHelper;
     NSArray * _underlyingStreams;

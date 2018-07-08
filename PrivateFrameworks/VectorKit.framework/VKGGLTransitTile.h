@@ -10,7 +10,7 @@
         struct shared_ptr<md::TransitConnectedNode> {} *__begin_; 
         struct shared_ptr<md::TransitConnectedNode> {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<md::TransitConnectedNode> *, std::__1::allocator<std::__1::shared_ptr<md::TransitConnectedNode> > > { 
-            struct shared_ptr<md::TransitConnectedNode> {} *__first_; 
+            struct shared_ptr<md::TransitConnectedNode> {} *__value_; 
         } __end_cap_; 
     }  _connectedNodes;
     struct shared_ptr<md::DataOverrideManager> { 
@@ -22,7 +22,7 @@
     float  _displayConnectionInflation;
     struct unique_ptr<md::Ribbons::RibbonLayer<md::TransitDisplayConnectionRibbonDescriptor>, std::__1::default_delete<md::Ribbons::RibbonLayer<md::TransitDisplayConnectionRibbonDescriptor> > > { 
         struct __compressed_pair<md::Ribbons::RibbonLayer<md::TransitDisplayConnectionRibbonDescriptor> *, std::__1::default_delete<md::Ribbons::RibbonLayer<md::TransitDisplayConnectionRibbonDescriptor> > > { 
-            struct RibbonLayer<md::TransitDisplayConnectionRibbonDescriptor> {} *__first_; 
+            struct RibbonLayer<md::TransitDisplayConnectionRibbonDescriptor> {} *__value_; 
         } __ptr_; 
     }  _displayConnectionLayer;
     struct list<md::TransitDisplayConnection, std::__1::allocator<md::TransitDisplayConnection> > { 
@@ -31,7 +31,7 @@
             struct __list_node_base<md::TransitDisplayConnection, void *> {} *__next_; 
         } __end_; 
         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<md::TransitDisplayConnection, void *> > > { 
-            unsigned long long __first_; 
+            unsigned long long __value_; 
         } __size_alloc_; 
     }  _displayConnections;
     unsigned int  _easingPointCount;
@@ -42,7 +42,7 @@
     bool  _isNeighboringTilePresent;
     struct unique_ptr<md::TransitJunctionManager, std::__1::default_delete<md::TransitJunctionManager> > { 
         struct __compressed_pair<md::TransitJunctionManager *, std::__1::default_delete<md::TransitJunctionManager> > { 
-            struct TransitJunctionManager {} *__first_; 
+            struct TransitJunctionManager {} *__value_; 
         } __ptr_; 
     }  _junctionManager;
     struct LabelExternalObjectsModerator { struct shared_ptr<md::weak_interface_ptr<md::LabelExternalObjectsModerator> > { struct weak_interface_ptr<md::LabelExternalObjectsModerator> {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; struct LabelExternalIconRenderer {} *x2; struct vector<std::__1::shared_ptr<md::LabelCreateExternalIconRequest>, std::__1::allocator<std::__1::shared_ptr<md::LabelCreateExternalIconRequest> > > { struct shared_ptr<md::LabelCreateExternalIconRequest> {} *x_3_1_1; struct shared_ptr<md::LabelCreateExternalIconRequest> {} *x_3_1_2; struct __compressed_pair<std::__1::shared_ptr<md::LabelCreateExternalIconRequest> *, std::__1::allocator<std::__1::shared_ptr<md::LabelCreateExternalIconRequest> > > { struct shared_ptr<md::LabelCreateExternalIconRequest> {} *x_3_2_1; } x_3_1_3; } x3; struct unordered_set<std::__1::shared_ptr<md::LabelExternalIcon>, std::__1::hash<std::__1::shared_ptr<md::LabelExternalIcon> >, std::__1::equal_to<std::__1::shared_ptr<md::LabelExternalIcon> >, std::__1::allocator<std::__1::shared_ptr<md::LabelExternalIcon> > > { struct __hash_table<std::__1::shared_ptr<md::LabelExternalIcon>, std::__1::hash<std::__1::shared_ptr<md::LabelExternalIcon> >, std::__1::equal_to<std::__1::shared_ptr<md::LabelExternalIcon> >, std::__1::allocator<std::__1::shared_ptr<md::LabelExternalIcon> > > { struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::shared_ptr<md::LabelExternalIcon>, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::shared_ptr<md::LabelExternalIcon>, void *> *> *> > > { struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::shared_ptr<md::LabelExternalIcon>, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::shared_ptr<md::LabelExternalIcon>, void *> *> *> > > { struct __hash_node_base<std::__1::__hash_node<std::__1::shared_ptr<md::LabelExternalIcon>, void *> *> {} **x_1_4_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::shared_ptr<md::LabelExternalIcon>, void *> *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::shared_ptr<md::LabelExternalIcon>, void *> *> *> > { unsigned long long x_1_6_1; } x_2_5_1; } x_1_4_2; } x_1_3_1; } x_1_2_1; } x_4_1_1; } x4; } * _labelExternalObjectsModerator;
@@ -52,76 +52,76 @@
             struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, md::Ribbons::RibbonBatch<md::Ribbons::TransitRibbonDescriptor> *>, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
-                } __first_; 
+                } __value_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, md::Ribbons::RibbonBatch<md::Ribbons::TransitRibbonDescriptor> *>, std::__1::less<unsigned int>, true> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __pair3_; 
         } __tree_; 
     }  _lineBatches;
     struct unique_ptr<ggl::TransitLineRibbon::BasePipelineSetup, std::__1::default_delete<ggl::TransitLineRibbon::BasePipelineSetup> > { 
         struct __compressed_pair<ggl::TransitLineRibbon::BasePipelineSetup *, std::__1::default_delete<ggl::TransitLineRibbon::BasePipelineSetup> > { 
-            struct BasePipelineSetup {} *__first_; 
+            struct BasePipelineSetup {} *__value_; 
         } __ptr_; 
     }  _lineFillPipelineSetup;
     struct unique_ptr<md::StyleTexture<md::TransitLineSegment::StylePixel>, std::__1::default_delete<md::StyleTexture<md::TransitLineSegment::StylePixel> > > { 
         struct __compressed_pair<md::StyleTexture<md::TransitLineSegment::StylePixel> *, std::__1::default_delete<md::StyleTexture<md::TransitLineSegment::StylePixel> > > { 
-            struct StyleTexture<md::TransitLineSegment::StylePixel> {} *__first_; 
+            struct StyleTexture<md::TransitLineSegment::StylePixel> {} *__value_; 
         } __ptr_; 
     }  _lineFillStyleTexture;
     struct unordered_map<unsigned long long, std::__1::unordered_set<md::TransitNode *, std::__1::hash<md::TransitNode *>, std::__1::equal_to<md::TransitNode *>, std::__1::allocator<md::TransitNode *> >, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, std::__1::unordered_set<md::TransitNode *, std::__1::hash<md::TransitNode *>, std::__1::equal_to<md::TransitNode *>, std::__1::allocator<md::TransitNode *> > > > > { 
         struct __hash_table<std::__1::__hash_value_type<unsigned long long, std::__1::unordered_set<md::TransitNode *, std::__1::hash<md::TransitNode *>, std::__1::equal_to<md::TransitNode *>, std::__1::allocator<md::TransitNode *> > >, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, std::__1::unordered_set<md::TransitNode *, std::__1::hash<md::TransitNode *>, std::__1::equal_to<md::TransitNode *>, std::__1::allocator<md::TransitNode *> > >, std::__1::hash<unsigned long long>, true>, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, std::__1::unordered_set<md::TransitNode *, std::__1::hash<md::TransitNode *>, std::__1::equal_to<md::TransitNode *>, std::__1::allocator<md::TransitNode *> > >, std::__1::equal_to<unsigned long long>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned long long, std::__1::unordered_set<md::TransitNode *, std::__1::hash<md::TransitNode *>, std::__1::equal_to<md::TransitNode *>, std::__1::allocator<md::TransitNode *> > > > > { 
             struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unordered_set<md::TransitNode *, std::__1::hash<md::TransitNode *>, std::__1::equal_to<md::TransitNode *>, std::__1::allocator<md::TransitNode *> > >, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unordered_set<md::TransitNode *, std::__1::hash<md::TransitNode *>, std::__1::equal_to<md::TransitNode *>, std::__1::allocator<md::TransitNode *> > >, void *> *> *> > > { 
                 struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unordered_set<md::TransitNode *, std::__1::hash<md::TransitNode *>, std::__1::equal_to<md::TransitNode *>, std::__1::allocator<md::TransitNode *> > >, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unordered_set<md::TransitNode *, std::__1::hash<md::TransitNode *>, std::__1::equal_to<md::TransitNode *>, std::__1::allocator<md::TransitNode *> > >, void *> *> *> > > { 
-                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unordered_set<md::TransitNode *, std::__1::hash<md::TransitNode *>, std::__1::equal_to<md::TransitNode *>, std::__1::allocator<md::TransitNode *> > >, void *> *> {} **__first_; 
+                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unordered_set<md::TransitNode *, std::__1::hash<md::TransitNode *>, std::__1::equal_to<md::TransitNode *>, std::__1::allocator<md::TransitNode *> > >, void *> *> {} **__value_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unordered_set<md::TransitNode *, std::__1::hash<md::TransitNode *>, std::__1::equal_to<md::TransitNode *>, std::__1::allocator<md::TransitNode *> > >, void *> *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unordered_set<md::TransitNode *, std::__1::hash<md::TransitNode *>, std::__1::equal_to<md::TransitNode *>, std::__1::allocator<md::TransitNode *> > >, void *> *> *> > { 
-                            unsigned long long __first_; 
+                            unsigned long long __value_; 
                         } __data_; 
-                    } __second_; 
+                    } __value_; 
                 } __ptr_; 
             } __bucket_list_; 
             struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unordered_set<md::TransitNode *, std::__1::hash<md::TransitNode *>, std::__1::equal_to<md::TransitNode *>, std::__1::allocator<md::TransitNode *> > >, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unordered_set<md::TransitNode *, std::__1::hash<md::TransitNode *>, std::__1::equal_to<md::TransitNode *>, std::__1::allocator<md::TransitNode *> > >, void *> > > { 
                 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unordered_set<md::TransitNode *, std::__1::hash<md::TransitNode *>, std::__1::equal_to<md::TransitNode *>, std::__1::allocator<md::TransitNode *> > >, void *> *> { 
                     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, std::__1::unordered_set<md::TransitNode *, std::__1::hash<md::TransitNode *>, std::__1::equal_to<md::TransitNode *>, std::__1::allocator<md::TransitNode *> > >, void *> *> {} *__next_; 
-                } __first_; 
+                } __value_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, std::__1::unordered_set<md::TransitNode *, std::__1::hash<md::TransitNode *>, std::__1::equal_to<md::TransitNode *>, std::__1::allocator<md::TransitNode *> > >, std::__1::hash<unsigned long long>, true> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, std::__1::unordered_set<md::TransitNode *, std::__1::hash<md::TransitNode *>, std::__1::equal_to<md::TransitNode *>, std::__1::allocator<md::TransitNode *> > >, std::__1::equal_to<unsigned long long>, true> > { 
-                float __first_; 
+                float __value_; 
             } __p3_; 
         } __table_; 
     }  _lineIDToAssociatedNodesMap;
     float  _lineInflation;
     struct unique_ptr<md::Ribbons::RibbonLayer<md::Ribbons::TransitRibbonDescriptor>, std::__1::default_delete<md::Ribbons::RibbonLayer<md::Ribbons::TransitRibbonDescriptor> > > { 
         struct __compressed_pair<md::Ribbons::RibbonLayer<md::Ribbons::TransitRibbonDescriptor> *, std::__1::default_delete<md::Ribbons::RibbonLayer<md::Ribbons::TransitRibbonDescriptor> > > { 
-            struct RibbonLayer<md::Ribbons::TransitRibbonDescriptor> {} *__first_; 
+            struct RibbonLayer<md::Ribbons::TransitRibbonDescriptor> {} *__value_; 
         } __ptr_; 
     }  _lineLayer;
     struct unique_ptr<ggl::TransitLineRibbon::BasePipelineSetup, std::__1::default_delete<ggl::TransitLineRibbon::BasePipelineSetup> > { 
         struct __compressed_pair<ggl::TransitLineRibbon::BasePipelineSetup *, std::__1::default_delete<ggl::TransitLineRibbon::BasePipelineSetup> > { 
-            struct BasePipelineSetup {} *__first_; 
+            struct BasePipelineSetup {} *__value_; 
         } __ptr_; 
     }  _lineStrokePipelineSetup;
     struct unique_ptr<md::StyleTexture<md::TransitLineSegment::StylePixel>, std::__1::default_delete<md::StyleTexture<md::TransitLineSegment::StylePixel> > > { 
         struct __compressed_pair<md::StyleTexture<md::TransitLineSegment::StylePixel> *, std::__1::default_delete<md::StyleTexture<md::TransitLineSegment::StylePixel> > > { 
-            struct StyleTexture<md::TransitLineSegment::StylePixel> {} *__first_; 
+            struct StyleTexture<md::TransitLineSegment::StylePixel> {} *__value_; 
         } __ptr_; 
     }  _lineStrokeStyleTexture;
     struct vector<md::TransitLine, std::__1::allocator<md::TransitLine> > { 
         struct TransitLine {} *__begin_; 
         struct TransitLine {} *__end_; 
         struct __compressed_pair<md::TransitLine *, std::__1::allocator<md::TransitLine> > { 
-            struct TransitLine {} *__first_; 
+            struct TransitLine {} *__value_; 
         } __end_cap_; 
     }  _lines;
     struct vector<md::TransitLink, std::__1::allocator<md::TransitLink> > { 
         struct TransitLink {} *__begin_; 
         struct TransitLink {} *__end_; 
         struct __compressed_pair<md::TransitLink *, std::__1::allocator<md::TransitLink> > { 
-            struct TransitLink {} *__first_; 
+            struct TransitLink {} *__value_; 
         } __end_cap_; 
     }  _links;
     struct TransitNodeFeaturePool { int (**x1)(); int (**x2)(); struct vector<geo::_retain_ptr<VKTile *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, std::__1::allocator<geo::_retain_ptr<VKTile *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> > > { struct _retain_ptr<VKTile *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> {} *x_3_1_1; struct _retain_ptr<VKTile *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> {} *x_3_1_2; struct __compressed_pair<geo::_retain_ptr<VKTile *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> *, std::__1::allocator<geo::_retain_ptr<VKTile *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> > > { struct _retain_ptr<VKTile *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> {} *x_3_2_1; } x_3_1_3; } x3; struct vector<geo::_retain_ptr<VKTile *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, std::__1::allocator<geo::_retain_ptr<VKTile *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> > > { struct _retain_ptr<VKTile *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> {} *x_4_1_1; struct _retain_ptr<VKTile *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> {} *x_4_1_2; struct __compressed_pair<geo::_retain_ptr<VKTile *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> *, std::__1::allocator<geo::_retain_ptr<VKTile *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> > > { struct _retain_ptr<VKTile *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> {} *x_3_2_1; } x_4_1_3; } x4; } * _nodeFeaturePool;
@@ -129,28 +129,28 @@
         struct shared_ptr<md::TransitNode> {} *__begin_; 
         struct shared_ptr<md::TransitNode> {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<md::TransitNode> *, std::__1::allocator<std::__1::shared_ptr<md::TransitNode> > > { 
-            struct shared_ptr<md::TransitNode> {} *__first_; 
+            struct shared_ptr<md::TransitNode> {} *__value_; 
         } __end_cap_; 
     }  _nodes;
     struct vector<std::__1::shared_ptr<md::TransitConnectedNode>, std::__1::allocator<std::__1::shared_ptr<md::TransitConnectedNode> > > { 
         struct shared_ptr<md::TransitConnectedNode> {} *__begin_; 
         struct shared_ptr<md::TransitConnectedNode> {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<md::TransitConnectedNode> *, std::__1::allocator<std::__1::shared_ptr<md::TransitConnectedNode> > > { 
-            struct shared_ptr<md::TransitConnectedNode> {} *__first_; 
+            struct shared_ptr<md::TransitConnectedNode> {} *__value_; 
         } __end_cap_; 
     }  _nodesWithConnectivity;
     struct vector<std::__1::shared_ptr<md::TransitOrphanNode>, std::__1::allocator<std::__1::shared_ptr<md::TransitOrphanNode> > > { 
         struct shared_ptr<md::TransitOrphanNode> {} *__begin_; 
         struct shared_ptr<md::TransitOrphanNode> {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<md::TransitOrphanNode> *, std::__1::allocator<std::__1::shared_ptr<md::TransitOrphanNode> > > { 
-            struct shared_ptr<md::TransitOrphanNode> {} *__first_; 
+            struct shared_ptr<md::TransitOrphanNode> {} *__value_; 
         } __end_cap_; 
     }  _orphanNodes;
     struct vector<std::__1::shared_ptr<md::TransitParentNode>, std::__1::allocator<std::__1::shared_ptr<md::TransitParentNode> > > { 
         struct shared_ptr<md::TransitParentNode> {} *__begin_; 
         struct shared_ptr<md::TransitParentNode> {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<md::TransitParentNode> *, std::__1::allocator<std::__1::shared_ptr<md::TransitParentNode> > > { 
-            struct shared_ptr<md::TransitParentNode> {} *__first_; 
+            struct shared_ptr<md::TransitParentNode> {} *__value_; 
         } __end_cap_; 
     }  _parentNodes;
     struct map<PatternedLineKey, PatternedLineSetup, std::__1::less<PatternedLineKey>, std::__1::allocator<std::__1::pair<const PatternedLineKey, PatternedLineSetup> > > { 
@@ -159,10 +159,10 @@
             struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<PatternedLineKey, PatternedLineSetup>, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
-                } __first_; 
+                } __value_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<PatternedLineKey, std::__1::__value_type<PatternedLineKey, PatternedLineSetup>, std::__1::less<PatternedLineKey>, true> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __pair3_; 
         } __tree_; 
     }  _patternedLineSetups;

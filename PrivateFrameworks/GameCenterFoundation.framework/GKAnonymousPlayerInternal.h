@@ -4,6 +4,8 @@
 
 @interface GKAnonymousPlayerInternal : GKSpecialPlayerInternal
 
++ (bool)supportsSecureCoding;
+
 - (id)alias;
 - (bool)isAnonymousPlayer;
 - (bool)isEqual:(id)arg1;

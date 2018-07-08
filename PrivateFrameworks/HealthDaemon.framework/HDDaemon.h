@@ -7,9 +7,9 @@
     HDAchievementDefinitionAlertManager * _achievementDefinitionAlertManager;
     <HDAchievementDefinitionAlertNotifier> * _achievementDefinitionAlertNotifier;
     <HDAchievementDefinitionAlertSuppressor> * _achievementDefinitionAlertSuppressor;
-    HDAchievementDoctorManager * _achievementDoctorManager;
     <HDAchievementEvaluationDelegate> * _achievementEvaluationDelegate;
     <HDNanoAlertSuppressionService> * _alertSuppressionService;
+    HDAnalyticsSubmissionCoordinator * _analyticsSubmissionCoordinator;
     HDAppLauncher * _appLauncher;
     HDBackgroundTaskScheduler * _backgroundTaskScheduler;
     _HKBehavior * _behavior;
@@ -18,6 +18,7 @@
     HDCompanionAchievementManager * _companionAchievementManager;
     HDCompanionWorkoutCreditManager * _companionWorkoutCreditManager;
     HDContentProtectionManager * _contentProtectionManager;
+    NSDictionary * _daemonExtensionsByIdentifier;
     NSMutableArray * _daemonLaunchObservers;
     bool  _daemonReady;
     <HDDaemonTester> * _daemonTester;
@@ -42,9 +43,9 @@
 
 @property (nonatomic, retain) HDAchievementAssetManager *achievementAssetManager;
 @property (nonatomic, retain) HDAchievementDefinitionAlertManager *achievementDefinitionAlertManager;
-@property (nonatomic, retain) HDAchievementDoctorManager *achievementDoctorManager;
 @property (nonatomic) <HDAchievementEvaluationDelegate> *achievementEvaluationDelegate;
 @property (nonatomic, retain) <HDNanoAlertSuppressionService> *alertSuppressionService;
+@property (nonatomic, retain) HDAnalyticsSubmissionCoordinator *analyticsSubmissionCoordinator;
 @property (nonatomic, readonly) HDAppLauncher *appLauncher;
 @property (readonly) HDBackgroundTaskScheduler *backgroundTaskScheduler;
 @property (readonly) _HKBehavior *behavior;
@@ -76,6 +77,7 @@
 - (void)_handleSigterm;
 - (void)_localeOrLanguageChanged:(id)arg1;
 - (bool)_motionTrackingAvailable;
+- (id)_newAnalyticsSubmissionCoordinator;
 - (id)_newBackgroundTaskScheduler;
 - (id)_newBehavior;
 - (id)_newCloudSyncCoordinator;
@@ -104,9 +106,9 @@
 - (void)_updateCurrentDeviceName;
 - (id)achievementAssetManager;
 - (id)achievementDefinitionAlertManager;
-- (id)achievementDoctorManager;
 - (id)achievementEvaluationDelegate;
 - (id)alertSuppressionService;
+- (id)analyticsSubmissionCoordinator;
 - (id)appLauncher;
 - (id)backgroundTaskScheduler;
 - (id)behavior;
@@ -116,6 +118,8 @@
 - (id)companionWorkoutCreditManager;
 - (id)contentProtectionManager;
 - (id)createXPCListenerWithMachServiceName:(id)arg1;
+- (id)daemonExtensionWithIdentifier:(id)arg1;
+- (id)daemonExtensionsConformingToProtocol:(id)arg1;
 - (id)daemonTester;
 - (void)dealloc;
 - (id)diagnosticDescription;
@@ -149,9 +153,9 @@
 - (id)serviceListener;
 - (void)setAchievementAssetManager:(id)arg1;
 - (void)setAchievementDefinitionAlertManager:(id)arg1;
-- (void)setAchievementDoctorManager:(id)arg1;
 - (void)setAchievementEvaluationDelegate:(id)arg1;
 - (void)setAlertSuppressionService:(id)arg1;
+- (void)setAnalyticsSubmissionCoordinator:(id)arg1;
 - (void)setCompanionAchievementManager:(id)arg1;
 - (void)setDaemonTester:(id)arg1;
 - (void)setDynamicAchievementDefinitionDataStore:(id)arg1;

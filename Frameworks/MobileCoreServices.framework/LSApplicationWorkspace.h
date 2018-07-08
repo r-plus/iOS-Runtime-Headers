@@ -85,11 +85,8 @@
 - (id)observedInstallProgresses;
 - (id)observerProxy;
 - (bool)openApplicationWithBundleID:(id)arg1;
-- (bool)openSensitiveURL:(id)arg1 withOptions:(id)arg2;
 - (bool)openSensitiveURL:(id)arg1 withOptions:(id)arg2 error:(id*)arg3;
 - (bool)openURL:(id)arg1;
-- (bool)openURL:(id)arg1 withOptions:(id)arg2;
-- (bool)openURL:(id)arg1 withOptions:(id)arg2 error:(id*)arg3;
 - (void)openUserActivity:(id)arg1 withApplicationProxy:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)openUserActivity:(id)arg1 withApplicationProxy:(id)arg2 options:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)operationToOpenResource:(id)arg1 usingApplication:(id)arg2 uniqueDocumentIdentifier:(id)arg3 isContentManaged:(bool)arg4 sourceAuditToken:(const struct { unsigned int x1[8]; }*)arg5 userInfo:(id)arg6 options:(id)arg7 delegate:(id)arg8;
@@ -130,6 +127,17 @@
 - (bool)updateRecordForApp:(id)arg1 withSINF:(id)arg2 iTunesMetadata:(id)arg3 placeholderMetadata:(id)arg4 sendNotification:(int)arg5 error:(id*)arg6;
 - (bool)updateSINFWithData:(id)arg1 forApplication:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (bool)updateiTunesMetadataWithData:(id)arg1 forApplication:(id)arg2 options:(id)arg3 error:(id*)arg4;
+
+// Image: /Library/TweakInject/Activator.dylib
+
+- (bool)openURL:(id)arg1 withOptions:(id)arg2;
+- (bool)openURL:(id)arg1 withOptions:(id)arg2 error:(id*)arg3;
+
+// Image: /System/Library/AccessibilityBundles/GAXClient.bundle/GAXClient
+
++ (Class)safeCategoryBaseClass;
+
+- (bool)openSensitiveURL:(id)arg1 withOptions:(id)arg2;
 
 // Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
 

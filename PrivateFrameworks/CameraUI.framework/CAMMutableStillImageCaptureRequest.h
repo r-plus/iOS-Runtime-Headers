@@ -31,6 +31,7 @@
 @property (nonatomic, copy) NSURL *localVideoDestinationURL;
 @property (nonatomic, retain) CLLocation *location;
 @property (nonatomic) double loggingVideoZoomFactor;
+@property (nonatomic) long long loggingZoomInteractionType;
 @property (nonatomic) unsigned long long maximumBurstLength;
 @property (nonatomic) long long origin;
 @property (nonatomic, retain) NSArray *originalFilters;
@@ -83,6 +84,7 @@
 - (void)setLocalVideoDestinationURL:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setLoggingVideoZoomFactor:(double)arg1;
+- (void)setLoggingZoomInteractionType:(long long)arg1;
 - (void)setMaximumBurstLength:(unsigned long long)arg1;
 - (void)setOrigin:(long long)arg1;
 - (void)setOriginalFilters:(id)arg1;

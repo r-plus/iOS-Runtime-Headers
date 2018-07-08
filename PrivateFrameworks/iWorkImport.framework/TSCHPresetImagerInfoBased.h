@@ -8,7 +8,7 @@
 
 + (id)presetImagerForChartType:(id)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)imageWithPreset:(id)arg1 target:(int)arg2 imageSize:(struct CGSize { double x1; double x2; })arg3 imageScale:(double)arg4 swatchFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5 documentRoot:(id)arg6 shouldCache:(bool*)arg7;
 - (id)initWithChartType:(id)arg1;
 - (double)p_canvasScale;

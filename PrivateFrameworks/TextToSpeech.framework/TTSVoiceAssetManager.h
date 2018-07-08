@@ -13,6 +13,7 @@
 + (id)voiceResourceFromAsset:(id)arg1;
 
 - (void).cxx_destruct;
+- (bool)_assetExistsOnDisk:(id)arg1;
 - (id)_voiceAssetForASAsset:(id)arg1 voiceType:(long long)arg2;
 - (id)_voiceAssetQueryForVoiceName:(id)arg1 language:(id)arg2 gender:(long long)arg3 footprint:(long long)arg4 version:(id)arg5 voiceType:(long long)arg6 localOnly:(bool)arg7;
 - (void)getCustomVoiceAssetsLocalOnly:(bool)arg1 language:(id)arg2 voiceType:(long long)arg3 reply:(id /* block */)arg4;

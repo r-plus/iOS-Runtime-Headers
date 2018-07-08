@@ -4,7 +4,6 @@
 
 @interface ISDialog : NSObject <SSXPCCoding> {
     bool  _allowDuplicates;
-    bool  _allowsBioAuthorization;
     SSAuthenticationContext * _authenticationContext;
     bool  _authorizationIsForced;
     NSArray * _buttons;
@@ -34,7 +33,6 @@
 }
 
 @property bool allowDuplicates;
-@property (readonly) bool allowsBioAuthorization;
 @property (copy) SSAuthenticationContext *authenticationContext;
 @property bool authorizationIsForced;
 @property (retain) NSArray *buttons;
@@ -71,7 +69,6 @@
 - (void).cxx_destruct;
 - (long long)_kindForString:(id)arg1;
 - (bool)allowDuplicates;
-- (bool)allowsBioAuthorization;
 - (id)authenticationContext;
 - (bool)authorizationIsForced;
 - (id)buttons;

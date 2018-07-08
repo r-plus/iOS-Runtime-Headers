@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
  */
 
-@interface _ATXAppLaunch : NSObject {
+@interface _ATXAppLaunch : NSObject <ATXLaunchEventProtocol> {
     NSString * _bundleId;
     NSDate * _endDate;
     NSString * _reason;
@@ -11,9 +11,13 @@
 }
 
 @property (nonatomic, readonly) NSString *bundleId;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSDate *endDate;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *reason;
 @property (nonatomic, readonly) NSDate *startDate;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSTimeZone *timeZone;
 
 - (void).cxx_destruct;

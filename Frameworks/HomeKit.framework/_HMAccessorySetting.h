@@ -11,6 +11,7 @@
     NSString * _name;
     unsigned long long  _properties;
     NSObject<OS_dispatch_queue> * _propertyQueue;
+    bool  _reflected;
     long long  _type;
     <NSCopying><NSSecureCoding> * _value;
 }
@@ -29,6 +30,7 @@
 @property (readonly, copy) NSString *name;
 @property (readonly) unsigned long long properties;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
+@property (getter=isReflected, readonly) bool reflected;
 @property (readonly) Class superclass;
 @property (readonly) long long type;
 @property (copy) <NSCopying><NSSecureCoding> *value;
@@ -41,6 +43,7 @@
 
 - (void).cxx_destruct;
 - (void)_handleAddedConstraint:(id)arg1;
+- (void)_handleReflectedUpdate:(id)arg1;
 - (void)_handleRemovedConstraint:(id)arg1;
 - (void)_handleUpdatedValue:(id)arg1;
 - (void)_registerNotificationHandlers;
@@ -63,6 +66,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithType:(long long)arg1 properties:(unsigned long long)arg2 name:(id)arg3 constraints:(id)arg4;
 - (bool)isEqual:(id)arg1;
+- (bool)isReflected;
 - (id)logIdentifier;
 - (bool)mergeConstraints:(id)arg1;
 - (bool)mergeObject:(id)arg1;
@@ -81,6 +85,7 @@
 - (void)setConstraints:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setReflected:(bool)arg1;
 - (void)setValue:(id)arg1;
 - (id)shortDescription;
 - (long long)type;

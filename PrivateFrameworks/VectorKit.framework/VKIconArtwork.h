@@ -37,7 +37,7 @@
                             unsigned long long __words[3]; 
                         } __r; 
                     } ; 
-                } __first_; 
+                } __value_; 
             } __r_; 
         } _text; 
     }  _extraStyle;
@@ -58,7 +58,7 @@
             unsigned char *__begin_; 
             unsigned char *__end_; 
             struct __compressed_pair<md::IconImage::IconLayer *, std::__1::allocator<md::IconImage::IconLayer> > { 
-                unsigned char *__first_; 
+                unsigned char *__value_; 
             } __end_cap_; 
         } _iconLayers; 
         float _scale; 
@@ -112,7 +112,7 @@
                             unsigned long long __words[3]; 
                         } __r; 
                     } ; 
-                } __first_; 
+                } __value_; 
             } __r_; 
         } _shieldID; 
     }  _style;

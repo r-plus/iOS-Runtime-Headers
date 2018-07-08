@@ -13,9 +13,10 @@
         struct shared_ptr<ggl::Texture2D> {} *__begin_; 
         struct shared_ptr<ggl::Texture2D> {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<ggl::Texture2D> *, std::__1::allocator<std::__1::shared_ptr<ggl::Texture2D> > > { 
-            struct shared_ptr<ggl::Texture2D> {} *__first_; 
+            struct shared_ptr<ggl::Texture2D> {} *__value_; 
         } __end_cap_; 
     }  _facadeTextures;
+    float  _fadeProgress;
     struct FogInfo { 
         struct shared_ptr<ggl::ConstantDataTyped<ggl::Fog::Skyfog> > { 
             struct ConstantDataTyped<ggl::Fog::Skyfog> {} *__ptr_; 
@@ -33,7 +34,7 @@
     }  _shadowModelMatrix;
     struct unique_ptr<ggl::Texture2D, std::__1::default_delete<ggl::Texture2D> > { 
         struct __compressed_pair<ggl::Texture2D *, std::__1::default_delete<ggl::Texture2D> > { 
-            struct Texture2D {} *__first_; 
+            struct Texture2D {} *__value_; 
         } __ptr_; 
     }  _shadowTexture;
     struct shared_ptr<ggl::ConstantDataTyped<ggl::Tile::View> > { 
@@ -46,6 +47,7 @@
 @property (nonatomic, retain) VKAnimation *animation;
 @property (nonatomic, retain) VKAnimation *animationForPitch;
 @property (nonatomic, readonly) struct CullingGridWithHeight { float x1[16]; } cullingGrid;
+@property (nonatomic) float fadeProgress;
 @property (nonatomic, readonly) struct FogInfo { struct shared_ptr<ggl::ConstantDataTyped<ggl::Fog::Skyfog> > { struct ConstantDataTyped<ggl::Fog::Skyfog> {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; }*fogInfo;
 @property (nonatomic, readonly) double maxHeight;
 @property (nonatomic, readonly) float maxLayeringHeight;
@@ -69,6 +71,7 @@
 - (struct CullingGridWithHeight { float x1[16]; })cullingGrid;
 - (void)dealloc;
 - (const struct vector<std::__1::shared_ptr<ggl::Texture2D>, std::__1::allocator<std::__1::shared_ptr<ggl::Texture2D> > > { struct shared_ptr<ggl::Texture2D> {} *x1; struct shared_ptr<ggl::Texture2D> {} *x2; struct __compressed_pair<std::__1::shared_ptr<ggl::Texture2D> *, std::__1::allocator<std::__1::shared_ptr<ggl::Texture2D> > > { struct shared_ptr<ggl::Texture2D> {} *x_3_1_1; } x3; }*)facadeTextures;
+- (float)fadeProgress;
 - (struct FogInfo { struct shared_ptr<ggl::ConstantDataTyped<ggl::Fog::Skyfog> > { struct ConstantDataTyped<ggl::Fog::Skyfog> {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; }*)fogInfo;
 - (bool)heightAtPoint:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg1 outZ:(float*)arg2 outBuildingId:(unsigned long long*)arg3;
 - (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 modelTile:(id)arg2 prepareExtrusion:(bool)arg3 styleManager:(struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; })arg4 sharedResources:(id)arg5 contentScale:(double)arg6 device:(struct Device { int (**x1)(); struct DeviceVersion { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; struct DeviceCapabilities { bool x_3_1_1; bool x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; unsigned int x_3_1_5; struct DeviceSize { unsigned int x_6_2_1; unsigned int x_6_2_2; unsigned int x_6_2_3; } x_3_1_6; } x3; struct DeviceAPIProperties { int x_4_1_1; double x_4_1_2; } x4; int x5; int x6; }*)arg7;
@@ -82,6 +85,7 @@
 - (void)setAlpha:(float)arg1;
 - (void)setAnimation:(id)arg1;
 - (void)setAnimationForPitch:(id)arg1;
+- (void)setFadeProgress:(float)arg1;
 - (void)setScale:(float)arg1;
 - (struct Texture2D { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int (**x4)(); char *x5; int x6; int x7; int x8; int x9; unsigned int x10; struct shared_ptr<const ggl::TextureDataAbstract> { struct TextureDataAbstract {} *x_11_1_1; struct __shared_weak_count {} *x_11_1_2; } x11; bool x12; bool x13; unsigned int x14; unsigned int x15; bool x16; struct shared_ptr<ggl::SamplerState> { struct SamplerState {} *x_17_1_1; struct __shared_weak_count {} *x_17_1_2; } x17; }*)shadowTexture;
 - (struct shared_ptr<ggl::ConstantDataTyped<ggl::Tile::View> > { struct ConstantDataTyped<ggl::Tile::View> {} *x1; struct __shared_weak_count {} *x2; })shadowViewConstantData;

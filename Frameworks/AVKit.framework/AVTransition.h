@@ -3,6 +3,7 @@
  */
 
 @interface AVTransition : NSObject {
+    UIView * _backgroundView;
     UIViewPropertyAnimator * _currentAnimator;
     double  _interactiveTransitionPercentComplete;
     AVPlayerViewController * _playerViewController;
@@ -10,6 +11,7 @@
     bool  _wasInitiallyInteractive;
 }
 
+@property (nonatomic, readonly) UIView *backgroundView;
 @property (nonatomic, readonly) UIView *containerView;
 @property (nonatomic) UIViewPropertyAnimator *currentAnimator;
 @property (nonatomic, readonly) double duration;
@@ -30,6 +32,7 @@
 - (void)animateAlongsideNonInteractiveTransitionAnimation;
 - (void)animateNonInteractiveTransition;
 - (id)animatorWithDurationFactor:(double)arg1;
+- (id)backgroundView;
 - (void)cancelInteractiveTransition;
 - (void)completeTransition:(bool)arg1;
 - (id)containerView;

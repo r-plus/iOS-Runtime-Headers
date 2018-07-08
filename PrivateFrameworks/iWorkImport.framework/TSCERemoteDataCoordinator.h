@@ -47,6 +47,7 @@
 - (id)sourceFetchers;
 - (id)storeMap;
 - (void)unregisterStore:(id)arg1;
+- (void)updateKnownCachedStocksInStore:(id)arg1;
 - (id)valueForSingleKey:(id)arg1;
 
 @end

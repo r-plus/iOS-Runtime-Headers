@@ -10,7 +10,7 @@
         struct pair<unsigned long, unsigned long> {} *__begin_; 
         struct pair<unsigned long, unsigned long> {} *__end_; 
         struct __compressed_pair<std::__1::pair<unsigned long, unsigned long> *, std::__1::allocator<std::__1::pair<unsigned long, unsigned long> > > { 
-            struct pair<unsigned long, unsigned long> {} *__first_; 
+            struct pair<unsigned long, unsigned long> {} *__value_; 
         } __end_cap_; 
     }  index_mapping;
 }

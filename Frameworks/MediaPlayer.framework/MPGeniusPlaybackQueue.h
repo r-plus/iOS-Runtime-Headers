@@ -8,6 +8,8 @@
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
++ (bool)supportsSecureCoding;
+
 - (id)description;
 - (id)seedTrack;
 

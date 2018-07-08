@@ -13,14 +13,14 @@
         unsigned long long *__begin_; 
         unsigned long long *__end_; 
         struct __compressed_pair<unsigned long *, std::__1::allocator<unsigned long> > { 
-            unsigned long long *__first_; 
+            unsigned long long *__value_; 
         } __end_cap_; 
     }  mSheetPageCountArray;
     struct vector<unsigned long, std::__1::allocator<unsigned long> > { 
         unsigned long long *__begin_; 
         unsigned long long *__end_; 
         struct __compressed_pair<unsigned long *, std::__1::allocator<unsigned long> > { 
-            unsigned long long *__first_; 
+            unsigned long long *__value_; 
         } __end_cap_; 
     }  mSheetPageStartArray;
     unsigned long long  mTotalPagesCount;

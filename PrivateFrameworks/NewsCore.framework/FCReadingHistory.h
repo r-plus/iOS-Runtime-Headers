@@ -76,6 +76,8 @@
 - (void)setItemsByArticleID:(id)arg1;
 - (void)setItemsByIdentifier:(id)arg1;
 - (void)setItemsLock:(id)arg1;
+- (double)softMaxRecordAgeWhenMigratingZoneName:(id)arg1;
+- (unsigned long long)softMaxRecordCountWhenMigratingZoneName:(id)arg1;
 - (id)syncReadingHistoryItemRecords:(id)arg1 deletedArticleIDs:(id)arg2 didRemoveLastVisitedAt:(out bool*)arg3;
 - (bool)toggleArticleHasBeenConsumed:(id)arg1;
 - (bool)toggleArticleHasBeenMarkedAsOffensive:(id)arg1;

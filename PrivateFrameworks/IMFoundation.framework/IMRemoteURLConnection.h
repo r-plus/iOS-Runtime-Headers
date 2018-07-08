@@ -17,6 +17,7 @@
     NSURLRequest * _request;
     bool  _requireIDSHost;
     int  _retries;
+    bool  _shouldReturnTimingData;
     bool  _shouldUsePipelining;
 }
 
@@ -30,6 +31,7 @@
 @property int keepAliveWifi;
 @property (retain) NSURLRequest *request;
 @property bool requireIDSHost;
+@property bool shouldReturnTimingData;
 @property bool shouldUsePipelining;
 
 - (bool)_connect;
@@ -44,6 +46,7 @@
 - (bool)disableKeepAlive;
 - (bool)forceCellularIfPossible;
 - (id)initWithURLRequest:(id)arg1 completionBlock:(id /* block */)arg2;
+- (id)initWithURLRequest:(id)arg1 completionBlockWithTimingData:(id /* block */)arg2;
 - (int)keepAliveCell;
 - (int)keepAliveWifi;
 - (void)load;
@@ -59,7 +62,9 @@
 - (void)setKeepAliveWifi:(int)arg1;
 - (void)setRequest:(id)arg1;
 - (void)setRequireIDSHost:(bool)arg1;
+- (void)setShouldReturnTimingData:(bool)arg1;
 - (void)setShouldUsePipelining:(bool)arg1;
+- (bool)shouldReturnTimingData;
 - (bool)shouldUsePipelining;
 
 @end

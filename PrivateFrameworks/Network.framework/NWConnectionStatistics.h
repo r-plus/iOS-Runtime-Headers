@@ -56,7 +56,8 @@
                     unsigned int kernel_reporting_write_stalled : 1; 
                     unsigned int tcp_fast_open : 1; 
                     unsigned int first_party : 1; 
-                    unsigned int __pad_bits : 6; 
+                    unsigned int tls13_configured : 1; 
+                    unsigned int __pad_bits : 5; 
                     unsigned char __pad[6]; 
                 } statistics_report; 
                 struct netcore_stats_tcp_cell_fallback_report { 
@@ -128,7 +129,8 @@
                     unsigned int kernel_reporting_write_stalled : 1; 
                     unsigned int tcp_fast_open : 1; 
                     unsigned int first_party : 1; 
-                    unsigned int __pad_bits : 6; 
+                    unsigned int tls13_configured : 1; 
+                    unsigned int __pad_bits : 5; 
                     unsigned char __pad[6]; 
                 } connection_attempts[8]; 
                 int report_reason; 
@@ -186,6 +188,7 @@
                 unsigned int used_fallback : 1; 
                 unsigned int resolution_required : 1; 
                 unsigned int tls_configured : 1; 
+                unsigned int tls13_configured : 1; 
                 unsigned int tfo_configured : 1; 
                 unsigned int multipath_configured : 1; 
                 unsigned int connected : 1; 
@@ -197,7 +200,6 @@
                 unsigned int used_tfo : 1; 
                 unsigned int tls_version_timeout : 1; 
                 unsigned int first_party : 1; 
-                unsigned int tls13_configured : 1; 
                 unsigned int __pad_bits : 4; 
                 unsigned char __pad[3]; 
             } nw_connection_report; 
@@ -260,7 +262,7 @@
 - (void).cxx_destruct;
 - (id)_createDataUsageSnapshotFromStruct:(const struct netcore_stats_data_usage_snapshot { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; }*)arg1;
 - (id)_createFallbackReportFromStruct:(const struct netcore_stats_tcp_cell_fallback_report { struct netcore_stats_network_event { int x_1_1_1; unsigned int x_1_1_2; } x1[20]; struct netcore_stats_data_usage_snapshot { unsigned long long x_2_1_1; unsigned long long x_2_1_2; unsigned long long x_2_1_3; unsigned long long x_2_1_4; unsigned long long x_2_1_5; unsigned long long x_2_1_6; unsigned long long x_2_1_7; unsigned long long x_2_1_8; } x2[20]; int x3; unsigned int x4; unsigned int x5; unsigned int x6; bool x7; unsigned char x8[7]; }*)arg1;
-- (id)_createStatisticsReportFromStruct:(const struct netcore_stats_tcp_statistics_report { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned long long x11; unsigned long long x12; unsigned long long x13; unsigned long long x14; unsigned long long x15; unsigned long long x16; unsigned int x17; unsigned int x18; unsigned int x19; unsigned int x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; unsigned int x32; unsigned int x33; int x34; int x35; int x36; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; unsigned int x42 : 1; unsigned int x43 : 1; unsigned int x44 : 1; unsigned int x45 : 1; unsigned int x46 : 1; unsigned int x47 : 6; unsigned char x48[6]; }*)arg1;
+- (id)_createStatisticsReportFromStruct:(const struct netcore_stats_tcp_statistics_report { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned long long x11; unsigned long long x12; unsigned long long x13; unsigned long long x14; unsigned long long x15; unsigned long long x16; unsigned int x17; unsigned int x18; unsigned int x19; unsigned int x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; unsigned int x32; unsigned int x33; int x34; int x35; int x36; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; unsigned int x42 : 1; unsigned int x43 : 1; unsigned int x44 : 1; unsigned int x45 : 1; unsigned int x46 : 1; unsigned int x47 : 1; unsigned int x48 : 5; unsigned char x49[6]; }*)arg1;
 - (unsigned int)awdMetricID;
 - (id)awdReport;
 - (unsigned long long)bytesDuplicate;

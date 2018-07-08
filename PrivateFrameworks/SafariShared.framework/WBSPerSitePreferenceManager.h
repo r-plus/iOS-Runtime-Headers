@@ -25,7 +25,7 @@
 - (void)getDefaultPreferenceValueForPreference:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)getValueOfPreference:(id)arg1 forDomain:(id)arg2 withTimeout:(id)arg3 usingBlock:(id /* block */)arg4;
 - (id)preferences;
-- (void)removePreferenceValuesForDomains:(id)arg1 fromPreference:(id)arg2;
+- (void)removePreferenceValuesForDomains:(id)arg1 fromPreference:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setDefaultValue:(id)arg1 ofPreference:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setDefaultsDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;

@@ -18,12 +18,12 @@
 @property (nonatomic, retain) _MRCommandOptionsProtobuf *options;
 @property (nonatomic, retain) _MRNowPlayingPlayerPathProtobuf *playerPath;
 
+- (void).cxx_destruct;
 - (int)StringAsCommand:(id)arg1;
 - (int)command;
 - (id)commandAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasCommand;

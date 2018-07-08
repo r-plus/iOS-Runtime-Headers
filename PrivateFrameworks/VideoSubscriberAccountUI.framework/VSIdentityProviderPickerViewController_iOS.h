@@ -11,6 +11,7 @@
     VSIdentityProviderTableViewDataSource * _filteredDataSource;
     VSFontCenter * _fontCenter;
     NSArray * _identityProviders;
+    VSOnboardingInfoCenter * _onboardingInfoCenter;
     NSString * _requestingAppDisplayName;
     NSString * _resourceTitle;
     VSSearchBarDelegate * _searchBarDelegate;
@@ -30,6 +31,7 @@
 @property (nonatomic, retain) VSFontCenter *fontCenter;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSArray *identityProviders;
+@property (nonatomic, retain) VSOnboardingInfoCenter *onboardingInfoCenter;
 @property (nonatomic, copy) NSString *requestingAppDisplayName;
 @property (nonatomic, copy) NSString *resourceTitle;
 @property (nonatomic, retain) VSSearchBarDelegate *searchBarDelegate;
@@ -42,7 +44,6 @@
 - (void)_cancelButtonPressed:(id)arg1;
 - (void)_didPickAdditionalIdentityProviders;
 - (void)_didPickIdentityProvider:(id)arg1;
-- (void)_dismissAboutPrivacy:(id)arg1;
 - (void)_performSelectionForIdentityProvider:(id)arg1;
 - (void)_showAboutPrivacy:(id)arg1;
 - (id)_titleForTableHeaderView;
@@ -59,6 +60,7 @@
 - (id)initWithStyle:(long long)arg1;
 - (bool)isCancellationAllowed;
 - (bool)isDismissingSearchDueToSelection;
+- (id)onboardingInfoCenter;
 - (id)requestingAppDisplayName;
 - (id)resourceTitle;
 - (id)searchBarDelegate;
@@ -72,6 +74,7 @@
 - (void)setFilteredDataSource:(id)arg1;
 - (void)setFontCenter:(id)arg1;
 - (void)setIdentityProviders:(id)arg1;
+- (void)setOnboardingInfoCenter:(id)arg1;
 - (void)setRequestingAppDisplayName:(id)arg1;
 - (void)setResourceTitle:(id)arg1;
 - (void)setSearchBarDelegate:(id)arg1;

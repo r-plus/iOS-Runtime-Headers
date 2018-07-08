@@ -26,6 +26,7 @@
 @property (nonatomic, readonly, copy) FBSDisplayIdentity *rootIdentity;
 @property (getter=isSecure, nonatomic, readonly) bool secure;
 @property (readonly) Class superclass;
+@property (getter=isTatlDisplay, nonatomic, readonly) bool tatlDisplay;
 
 // Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
 
@@ -53,6 +54,7 @@
 - (bool)isRestrictedAirPlayDisplay;
 - (bool)isRootIdentity;
 - (bool)isSecure;
+- (bool)isTatlDisplay;
 - (bool)isiPodOnlyDisplay;
 - (int)pid;
 - (id)rootIdentity;

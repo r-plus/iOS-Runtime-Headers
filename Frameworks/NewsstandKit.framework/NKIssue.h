@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/NewsstandKit.framework/NewsstandKit
  */
 
-@interface NKIssue : NSObject {
+@interface NKIssue : NSObject <NSSecureCoding> {
     NSMutableArray * _assets;
     NSMapTable * _assetsByRequest;
     NSDate * _date;
@@ -14,12 +14,15 @@
     NSMutableSet * _resolvedAssets;
 }
 
+@property (setter=_setLibrary:, nonatomic) NKLibrary *_library;
 @property (readonly, copy) NSURL *contentURL;
 @property (copy) NSDate *date;
 @property (copy) NSString *directory;
 @property (readonly, copy) NSArray *downloadingAssets;
 @property (copy) NSString *name;
 @property (readonly) long long status;
+
++ (bool)supportsSecureCoding;
 
 - (void)_assetChanged:(id)arg1;
 - (id)_assetsForRequest:(id)arg1;

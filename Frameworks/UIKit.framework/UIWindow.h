@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIWindow : UIView <DebugHierarchyEntryPoint, NSISEngineDelegate, _UIContextBindable, _UIFocusEventRecognizerDelegate, _UIFocusMovementActionForwarding> {
+@interface UIWindow : UIView <NSISEngineDelegate, _UIContextBindable, _UIFocusEventRecognizerDelegate, _UIFocusMovementActionForwarding> {
     bool  ___hostViewUnderlapsStatusBar;
     _UIWindowAnimationController * __animationController;
     bool  __containedGestureRecognizersShouldRespectGestureServerInstructions;
@@ -131,6 +131,7 @@
 + (void)__popKeyWindow:(id)arg1 findNewKeyWindowIfStackEmpty:(bool)arg2;
 + (bool)_allWindowsKeepContextInBackground;
 + (void)_clearKeyWindowStack;
++ (bool)_clearPreCommitHandlerRegistration;
 + (void)_enumerateWindowsIncludingInternalWindows:(bool)arg1 onlyVisibleWindows:(bool)arg2 allowMutation:(bool)arg3 withBlock:(id /* block */)arg4;
 + (void)_enumerateWindowsIncludingInternalWindows:(bool)arg1 onlyVisibleWindows:(bool)arg2 withBlock:(id /* block */)arg3;
 + (void)_executeDeferredLaunchBlocks;
@@ -441,7 +442,6 @@
 - (bool)_supportsFocus;
 - (void)_switchToLayoutEngine:(id)arg1;
 - (bool)_systemGestureRecognitionIsPossible;
-- (id)_targetForStolenStatusBarTouchesAtPoint:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2 excludingWindow:(id)arg3;
 - (id)_targetWindowForPathIndex:(long long)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 forEvent:(id)arg3 windowServerHitTestWindow:(id)arg4 onScreen:(id)arg5;
 - (void)_tintViewDidChangeAppearance:(id)arg1;
 - (long long)_toWindowOrientation;
@@ -503,19 +503,6 @@
 - (void)_windowInternalConstraints_sizeDidChange;
 - (bool)_windowOwnsInterfaceOrientation;
 - (void)_writeLayerTreeToPath:(id)arg1;
-- (void)dealloc;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-+ (id)debugHierarchyGroupingIDs;
-+ (id)debugHierarchyObjectsInGroupWithID:(id)arg1 outOptions:(id*)arg2;
-
-- (id)debugHierarchyAdditionalGroupingIDs;
-- (id)debugHierarchyObjectsInGroupWithID:(id)arg1 outOptions:(id*)arg2;
-- (id)debugHierarchyPropertyDescriptions;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)addRootViewControllerViewIfPossible;
 - (bool)autorotates;
 - (void)awakeFromNib;
@@ -533,6 +520,7 @@
 - (struct CGPoint { double x1; double x2; })convertWindowToDevice:(struct CGPoint { double x1; double x2; })arg1;
 - (void*)createIOSurface;
 - (void*)createIOSurfaceWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)dealloc;
 - (id)delegate;
 - (void)encodeWithCoder:(id)arg1;
 - (void)endDisablingInterfaceAutorotation;
@@ -605,6 +593,23 @@
 - (struct CGPoint { double x1; double x2; })warpPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (double)windowLevel;
 - (int)windowOutput;
+
+// Image: /System/Library/AccessibilityBundles/GAXClient.bundle/GAXClient
+
++ (Class)safeCategoryBaseClass;
+
+- (void)_gaxBeginOverridingBackgroundColorToClear;
+- (void)_gaxEndOverridingBackgroundColorToClear;
+- (id)_gaxOriginalBackgroundColor;
+- (unsigned long long)_gaxOverridingBackgroundColorToClearRequestsCount;
+- (void)_gaxSetOriginalBackgroundColor:(id)arg1;
+- (void)_gaxSetOverridingBackgroundColorToClearRequestsCount:(unsigned long long)arg1;
+- (id)_targetForStolenStatusBarTouchesAtPoint:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2 excludingWindow:(id)arg3;
+- (void)setBackgroundColor:(id)arg1;
+
+// Image: /System/Library/Frameworks/AVKit.framework/AVKit
+
+- (bool)avkit_isHostedInAnotherProcess;
 
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 

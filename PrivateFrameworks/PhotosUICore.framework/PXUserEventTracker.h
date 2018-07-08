@@ -36,6 +36,16 @@
 - (void)didPlayMiroMovieForAssetCollection:(id)arg1;
 - (void)didViewDetailsForAssetCollection:(id)arg1;
 - (id)init;
+- (void)livePhotoEffectOptionsAppeared;
+- (void)livePhotoEffectPreviewFinishedRendering:(double)arg1;
+- (void)livePhotoEffectRenderingFailed;
+- (void)livePhotoEffectReverted;
+- (void)livePhotoEffectSavingFailed;
+- (void)livePhotoEffectSavingFinished:(double)arg1;
+- (void)livePhotoEffectSelected:(long long)arg1;
+- (void)livePhotoEffectShared;
+- (void)livePhotoEffectSuggested:(long long)arg1;
+- (void)livePhotoEffectSuggestionApplied;
 - (void)logBootstrapMergeCandidateFaceCountVerifiedConfirmed:(unsigned long long)arg1 verifiedRejected:(unsigned long long)arg2 unverifiedConfirmed:(unsigned long long)arg3 unverifiedRejected:(unsigned long long)arg4;
 - (void)logBootstrapMergeCandidatesVerifiedConfirmed:(unsigned long long)arg1 verifiedRejected:(unsigned long long)arg2 unverifiedConfirmed:(unsigned long long)arg3 unverifiedRejected:(unsigned long long)arg4;
 - (void)logConfirmAdditionalCVMLFaceCountConfirmed:(unsigned long long)arg1 rejected:(unsigned long long)arg2;
@@ -56,6 +66,7 @@
 - (void)logPeopleDetailShowFaces;
 - (void)logPeopleHomeCount;
 - (void)logPeopleHomeFavoritePersonCount:(unsigned long long)arg1 totalPersonCount:(unsigned long long)arg2;
+- (void)logPeopleHomeNumberOfPeopleWithContactName:(unsigned long long)arg1 numberOfPeopleWithStringName:(unsigned long long)arg2;
 - (void)logPeopleMeSuggestionConfirmed:(bool)arg1;
 - (void)logPeopleRemoveFromPeopleHome;
 - (void)willViewDetailsWithCurrentContext:(id)arg1;

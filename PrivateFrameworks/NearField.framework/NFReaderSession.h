@@ -38,7 +38,7 @@
 - (id)ndefReadWithError:(id*)arg1;
 - (bool)ndefWrite:(id)arg1;
 - (bool)ndefWrite:(id)arg1 error:(id*)arg2;
-- (unsigned int)runScript:(id)arg1 results:(id*)arg2 lastStatus:(unsigned long long*)arg3;
+- (unsigned int)runScript:(id)arg1 parameters:(id)arg2 results:(id*)arg3;
 - (void)setDelegate:(id)arg1;
 - (bool)startPolling;
 - (bool)startPollingForTechnology:(unsigned int)arg1;

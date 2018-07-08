@@ -96,4 +96,9 @@
 - (void)pl_insertObjects:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)pl_removeObjectsInArray:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
+
+- (void)safari_insertObject:(id)arg1 inSortedOrderUsingComparator:(id /* block */)arg2;
+- (bool)safari_isSortedInAscendingOrDescendingOrderUsingComparator:(id /* block */)arg1;
+
 @end

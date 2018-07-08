@@ -17,9 +17,11 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly) bool needsFeedItemHeadlinesFetch;
+@property (nonatomic, readonly) unsigned long long preferredDynamicSlotAllocation;
 @property (nonatomic, readonly, copy) SFSearchResult *searchResult;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned long long todayItemType;
+@property (nonatomic, readonly) bool usesDynamicSlotAllocation;
 @property (nonatomic, readonly, copy) NTPBTodaySectionConfigWebEmbed *webEmbed;
 
 - (void).cxx_destruct;
@@ -36,9 +38,11 @@
 - (bool)isEligibleForLeadingCellAppearance;
 - (bool)isEqual:(id)arg1;
 - (bool)needsFeedItemHeadlinesFetch;
+- (unsigned long long)preferredDynamicSlotAllocation;
 - (id)protoitemWithFetchedFeedItemHeadline:(id)arg1;
 - (id)searchResult;
 - (unsigned long long)todayItemType;
+- (bool)usesDynamicSlotAllocation;
 - (id)webEmbed;
 
 @end

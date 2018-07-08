@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) NSArray *t_localRecords;
 
 + (id)desiredKeys;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (bool)canCoalesceWithCommand:(id)arg1;

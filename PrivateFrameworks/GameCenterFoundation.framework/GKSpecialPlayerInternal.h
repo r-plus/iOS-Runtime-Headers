@@ -4,6 +4,8 @@
 
 @interface GKSpecialPlayerInternal : GKPlayerInternal
 
++ (bool)supportsSecureCoding;
+
 - (id)alias;
 - (id)compositeName;
 - (bool)isLoaded;

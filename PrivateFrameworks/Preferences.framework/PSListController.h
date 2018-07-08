@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSListController : PSViewController <PSSpecifierObserver, PSViewControllerOffsetProtocol, UIAlertViewDelegate, UIAppearance, UIPopoverPresentationControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
+@interface PSListController : PSViewController <PSSpecifierObserver, PSViewControllerOffsetProtocol, UIAlertViewDelegate, UIAppearance, UIPopoverPresentationControllerDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching, UITableViewDelegate> {
     UIColor * _altTextColor;
     UIColor * _backgroundColor;
     NSMutableArray * _bundleControllers;
@@ -38,6 +38,7 @@
     NSDictionary * _pendingURLResourceDictionary;
     bool  _popupIsDismissing;
     bool  _popupIsModal;
+    bool  _prefetchingEnabled;
     NSMutableArray * _prequeuedReusablePSTableCells;
     bool  _requestingSpecifiersFromDataSource;
     bool  _reusesCells;
@@ -76,6 +77,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) long long observerType;
 @property (nonatomic, retain) NSDictionary *pendingURLResourceDictionary;
+@property (nonatomic) bool prefetchingEnabled;
 @property (nonatomic, retain) UIColor *segmentedSliderTrackColor;
 @property (nonatomic, retain) UIColor *separatorColor;
 @property (nonatomic, retain) <PSSpecifierDataSource> *specifierDataSource;
@@ -218,6 +220,8 @@
 - (bool)popoverPresentationControllerShouldDismissPopover:(id)arg1;
 - (id)popupStylePopoverController;
 - (void)popupViewWillDisappear;
+- (void)prefetchResourcesFor:(id)arg1;
+- (bool)prefetchingEnabled;
 - (bool)prepareHandlingURLForSpecifierID:(id)arg1 resourceDictionary:(id)arg2 animatePush:(bool*)arg3;
 - (void)prepareSpecifiersMetadata;
 - (void)pushController:(id)arg1 animate:(bool)arg2;
@@ -267,6 +271,7 @@
 - (void)setForceSynchronousIconLoadForCreatedCells:(bool)arg1;
 - (void)setForegroundColor:(id)arg1;
 - (void)setPendingURLResourceDictionary:(id)arg1;
+- (void)setPrefetchingEnabled:(bool)arg1;
 - (void)setReusesCells:(bool)arg1;
 - (void)setSegmentedSliderTrackColor:(id)arg1;
 - (void)setSeparatorColor:(id)arg1;
@@ -308,6 +313,7 @@
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (void)tableView:(id)arg1 prefetchRowsAtIndexPaths:(id)arg2;
 - (bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 titleAlignmentForFooterInSection:(long long)arg2;
 - (long long)tableView:(id)arg1 titleAlignmentForHeaderInSection:(long long)arg2;

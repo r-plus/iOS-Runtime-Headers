@@ -9,6 +9,7 @@
     float  _lastRequestSatScore;
     void * _novDetect;
     unsigned long long  _numSamplesProecssed;
+    NSMutableData * _psrAudioDataForLogging;
     NSObject<OS_dispatch_queue> * _queue;
     NSString * _resourcePath;
     NSString * _satDirectory;
@@ -27,6 +28,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) float lastRequestSatScore;
 @property (nonatomic) unsigned long long numSamplesProecssed;
+@property (nonatomic, retain) NSMutableData *psrAudioDataForLogging;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, retain) NSString *resourcePath;
 @property (nonatomic, retain) NSString *satDirectory;
@@ -56,8 +58,10 @@
 - (double)getThresholdSAT;
 - (id)initWithResourcePath:(id)arg1 satDirectory:(id)arg2 assetHash:(id)arg3 shouldCreateModelDir:(bool)arg4 delegate:(id)arg5;
 - (float)lastRequestSatScore;
+- (void)logWithAudioFilepath:(id)arg1;
 - (unsigned long long)numSamplesProecssed;
 - (void)processAudio:(const short*)arg1 numSamples:(unsigned long long)arg2;
+- (id)psrAudioDataForLogging;
 - (void)psrAudioProcessor:(id)arg1 hasResult:(id)arg2 numElements:(unsigned long long)arg3;
 - (id)queue;
 - (void)removeInvalidSATModel;
@@ -68,6 +72,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setLastRequestSatScore:(float)arg1;
 - (void)setNumSamplesProecssed:(unsigned long long)arg1;
+- (void)setPsrAudioDataForLogging:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setResourcePath:(id)arg1;
 - (void)setSatDirectory:(id)arg1;

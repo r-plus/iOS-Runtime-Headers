@@ -3,7 +3,6 @@
  */
 
 @interface HDHealthServiceManager : NSObject <CBCentralManagerPrivateDelegate, CBPairingAgentDelegate> {
-    NSMutableArray * _allServicesArray;
     CBUUID * _allServicesUUID;
     NSMutableDictionary * _bluetoothUpdateHandlers;
     CBCentralManager * _central;
@@ -21,7 +20,6 @@
     NSSet * _scanServiceUUIDs;
 }
 
-@property (nonatomic, retain) NSMutableArray *allServicesArray;
 @property (nonatomic, retain) CBUUID *allServicesUUID;
 @property (nonatomic, retain) NSMutableDictionary *bluetoothUpdateHandlers;
 @property (nonatomic, retain) CBCentralManager *central;
@@ -45,6 +43,7 @@
 
 - (void).cxx_destruct;
 - (unsigned long long)_addConnectedPeripheral:(id)arg1 service:(id)arg2 connectionInfo:(id)arg3;
+- (id)_allServiceUUIDs;
 - (unsigned long long)_connectHealthService:(id)arg1 connectionInfo:(id)arg2 error:(id*)arg3;
 - (id)_copyConnectionInfosForPeripheralUUID:(id)arg1;
 - (id)_copyDiscoveryInfosForServiceUUID:(id)arg1;
@@ -62,7 +61,6 @@
 - (id)_reportPeripheral:(id)arg1 serviceUUID:(id)arg2 serviceAdvertisementData:(id)arg3 peripheralAdvertisementData:(id)arg4;
 - (id)_scanOptionsForDiscoveryInfos:(id)arg1;
 - (id)_serviceFromUUID:(id)arg1 peripheral:(id)arg2 serviceAdvertisementData:(id)arg3 peripheralAdvertisementData:(id)arg4;
-- (id)allServicesArray;
 - (id)allServicesUUID;
 - (id)bluetoothUpdateHandlers;
 - (id)central;
@@ -110,7 +108,6 @@
 - (id)scanServiceUUIDs;
 - (void)sendBluetoothStatusUpdatesForServer:(id)arg1 updateHandler:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (void)servicesInvalidatedForDevice:(id)arg1 withError:(id)arg2;
-- (void)setAllServicesArray:(id)arg1;
 - (void)setAllServicesUUID:(id)arg1;
 - (void)setBluetoothUpdateHandlers:(id)arg1;
 - (void)setCentral:(id)arg1;

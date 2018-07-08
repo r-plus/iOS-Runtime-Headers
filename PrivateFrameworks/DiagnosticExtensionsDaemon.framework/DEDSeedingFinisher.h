@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DiagnosticExtensionsDaemon.framework/DiagnosticExtensionsDaemon
  */
 
-@interface DEDSeedingFinisher : NSObject <DEDFinisher, DEDSeedingClientDelegate, NSSecureCoding> {
+@interface DEDSeedingFinisher : NSObject <DEDFinisher, DEDSecureArchiving, DEDSeedingClientDelegate, NSSecureCoding> {
     DEDSeedingClient * _client;
     DEDBugSessionConfiguration * _config;
     NSObject<OS_os_log> * _log;
@@ -27,6 +27,7 @@
 @property (retain) NSObject<OS_os_transaction> *transaction;
 @property (retain) NSMutableDictionary *uploads;
 
++ (id)archivedClasses;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;

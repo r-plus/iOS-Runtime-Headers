@@ -42,6 +42,7 @@
 @property (readonly) struct CGPath { }*unitSymbolPath;
 @property (readonly) TSCHChartValueAxis *valueAxis;
 
+- (void).cxx_destruct;
 - (double)dataPointSize;
 - (void)dealloc;
 - (id)groupAxis;

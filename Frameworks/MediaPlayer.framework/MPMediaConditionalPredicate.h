@@ -17,6 +17,7 @@
 @property (nonatomic, readonly, copy) MPMediaPredicate *thenPredicate;
 
 + (id)predicateWithConditionPredicate:(id)arg1 thenPredicate:(id)arg2 elsePredicate:(id)arg3;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)ML3PredicateForContainer;

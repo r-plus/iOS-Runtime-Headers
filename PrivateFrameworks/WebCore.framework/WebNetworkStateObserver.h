@@ -3,15 +3,11 @@
  */
 
 @interface WebNetworkStateObserver : NSObject {
-    const struct NetworkStateNotifier { struct Vector<WTF::Function<void (bool)>, 0, WTF::CrashOnOverflow, 16>=^{Function<void (bool)> {} x1; unsigned int x2; unsigned int x3; unsigned int x4; } * _notifier;
+    id /* block */  block;
 }
 
-@property (nonatomic) const /* Warning: unhandled struct encoding: '{NetworkStateNotifier={Vector<WTF::Function<void (bool)>' */ struct *notifier; /* unknown property attribute:  16>=^{Function<void (bool)>}III}BB{RetainPtr<WebNetworkStateObserver>=^v}} */
-
 - (void)dealloc;
-- (id)initWithNotifier:(const struct NetworkStateNotifier { struct Vector<WTF::Function<void (bool)>, 0, WTF::CrashOnOverflow, 16>=^{Function<void (bool)> {} x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg1;
+- (id)initWithBlock:(id /* block */)arg1;
 - (void)networkStateChanged:(id)arg1;
-- (const struct NetworkStateNotifier { struct Vector<WTF::Function<void (bool)>, 0, WTF::CrashOnOverflow, 16>=^{Function<void (bool)> {} x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)notifier;
-- (void)setNotifier:(const struct NetworkStateNotifier { struct Vector<WTF::Function<void (bool)>, 0, WTF::CrashOnOverflow, 16>=^{Function<void (bool)> {} x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg1;
 
 @end

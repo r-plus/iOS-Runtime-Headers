@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DiagnosticExtensionsDaemon.framework/DiagnosticExtensionsDaemon
  */
 
-@interface DEDDevice : NSObject <NSCopying, NSSecureCoding> {
+@interface DEDDevice : NSObject <DEDSecureArchiving, NSCopying, NSSecureCoding> {
     NSString * _address;
     NSString * _build;
     NSString * _color;
@@ -22,8 +22,11 @@
 @property (retain) NSString *address;
 @property (retain) NSString *build;
 @property (retain) NSString *color;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (retain) NSString *deviceClass;
 @property (retain) NSString *enclosureColor;
+@property (readonly) unsigned long long hash;
 @property (retain) NSString *identifier;
 @property (retain) NSString *model;
 @property (retain) NSString *name;
@@ -32,8 +35,10 @@
 @property long long remoteTransport;
 @property (retain) SFDevice *sfDevice;
 @property long long status;
+@property (readonly) Class superclass;
 @property long long transport;
 
++ (id)archivedClasses;
 + (id)currentDevice;
 + (id)deviceClassForProductType:(id)arg1;
 + (id)deviceForSFDevice:(id)arg1 andStatus:(long long)arg2;

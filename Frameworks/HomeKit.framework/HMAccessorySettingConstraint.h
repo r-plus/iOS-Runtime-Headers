@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMAccessorySettingConstraint : NSObject <NSSecureCoding> {
+@interface HMAccessorySettingConstraint : NSObject <NSCopying, NSSecureCoding> {
     NSUUID * _identifier;
     long long  _type;
     <NSCopying><NSSecureCoding> * _value;
@@ -19,6 +19,7 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugDescription;
 - (id)description;
 - (id)descriptionWithPointer:(bool)arg1;

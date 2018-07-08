@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
  */
 
-@interface CRKStudentDaemonProxy : NSObject <CATTaskClientDelegate> {
+@interface CRKStudentDaemonProxy : NSObject <CATTaskClientDelegate, CRKRequestPerformingProtocol> {
     bool  _connected;
     long long  _maxConnectionAttempts;
     bool  mConnecting;

@@ -2,14 +2,19 @@
    Image: /System/Library/PrivateFrameworks/DiagnosticExtensionsDaemon.framework/DiagnosticExtensionsDaemon
  */
 
-@interface DEDExtension : NSObject {
+@interface DEDExtension : NSObject <DEDSecureArchiving> {
     NSString * _identifier;
     NSString * _name;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (retain) NSString *identifier;
 @property (retain) NSString *name;
+@property (readonly) Class superclass;
 
++ (id)archivedClasses;
 + (id)extensionWithDEExtension:(id)arg1;
 + (id)extensionWithDicionary:(id)arg1;
 

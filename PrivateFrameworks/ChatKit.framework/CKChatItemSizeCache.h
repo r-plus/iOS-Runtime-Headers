@@ -26,6 +26,7 @@
 + (id)test_cachePath;
 
 - (void).cxx_destruct;
+- (bool)_boldTextEnabled;
 - (void)_commonInit;
 - (void)_evictIfNeeded;
 - (id)_fontSizeCategory;

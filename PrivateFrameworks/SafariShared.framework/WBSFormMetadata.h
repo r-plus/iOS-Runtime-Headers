@@ -10,6 +10,7 @@
     bool  _bestForPageLevelAutoFill;
     NSString * _confirmPasswordElementUniqueID;
     bool  _containsActiveElement;
+    NSNumber * _containsAtLeastOneSecureTextField;
     NSArray * _controls;
     NSString * _firstCreditCardCardholderFieldOrCreditCardNumberFieldUniqueID;
     bool  _isSearchForm;
@@ -32,6 +33,7 @@
 @property (getter=isBestForPageLevelAutoFill, nonatomic, readonly) bool bestForPageLevelAutoFill;
 @property (nonatomic, readonly, copy) NSString *confirmPasswordElementUniqueID;
 @property (nonatomic, readonly) bool containsActiveElement;
+@property (nonatomic, readonly) bool containsAtLeastOneSecureTextField;
 @property (nonatomic, readonly, copy) NSArray *controls;
 @property (nonatomic, readonly, copy) NSDictionary *dictionaryRepresentation;
 @property (nonatomic, readonly, copy) NSString *firstCreditCardCardholderFieldOrCreditCardNumberFieldUniqueID;
@@ -56,6 +58,7 @@
 - (id)annotations;
 - (id)confirmPasswordElementUniqueID;
 - (bool)containsActiveElement;
+- (bool)containsAtLeastOneSecureTextField;
 - (id)controls;
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-@interface AVPlaybackControlsView : AVButtonOverlappingHitRectResolverView <AVPlaybackControlsViewItemAvailabilityObserver> {
+@interface AVPlaybackControlsView : UIView <AVPlaybackControlsViewItemAvailabilityObserver> {
     bool  _canHideInteractiveContentOverlayView;
     <AVPlaybackControlsViewDelegate> * _delegate;
     AVButton * _doneButton;
@@ -10,12 +10,18 @@
     bool  _fullScreen;
     AVButton * _fullScreenButton;
     UIView * _interactiveContentOverlayView;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _interactiveContentOverlayViewLayoutMargins;
     AVButton * _mediaSelectionButton;
     AVButton * _miniPlayPauseButton;
     AVBackdropView * _miniPlayPauseButtonBackdropView;
     bool  _needsIntialLayout;
     AVButton * _pictureInPictureButton;
-    NSString * _playbackControlsViewGroupName;
+    UIView * _playbackControlsContainer;
     NSArray * _playbackControlsViewItems;
     long long  _preferredUnobscuredArea;
     AVButton * _prominentPlayButton;
@@ -24,15 +30,18 @@
     AVBackdropView * _screenModeControls;
     NSLayoutConstraint * _screenModeControlsToVolumeControlsSpacingConstraint;
     AVScrubber * _scrubber;
+    bool  _showsProminentPlayButton;
+    UIViewPropertyAnimator * _showsProminentPlayButtonVisibilityAnimator;
     AVButton * _skipBackButton;
     AVButton * _skipForwardButton;
     AVButton * _standardPlayPauseButton;
     AVView * _transportControlsContainerView;
     AVTransportControlsView * _transportControlsView;
     AVButton * _videoGravityButton;
-    NSLayoutConstraint * _volumeBottomToTransportControlsTopConstraint;
     AVVolumeButtonControl * _volumeButton;
+    NSLayoutConstraint * _volumeButtonBottomToLayoutMarginsGuideBottomConstraint;
     AVBackdropView * _volumeControls;
+    UIView * _volumeControlsContainer;
     AVVolumeSlider * _volumeSlider;
     NSLayoutConstraint * _volumeTopToLayoutGuideTopConstraint;
     NSLayoutConstraint * _volumeTopToViewTopConstraint;
@@ -48,12 +57,13 @@
 @property (nonatomic, readonly) AVButton *fullScreenButton;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) UIView *interactiveContentOverlayView;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } interactiveContentOverlayViewLayoutMargins;
 @property (nonatomic, readonly) AVButton *mediaSelectionButton;
 @property (nonatomic, readonly) AVButton *miniPlayPauseButton;
 @property (nonatomic, readonly) AVBackdropView *miniPlayPauseButtonBackdropView;
 @property (nonatomic) bool needsIntialLayout;
 @property (nonatomic, readonly) AVButton *pictureInPictureButton;
-@property (nonatomic, readonly) NSString *playbackControlsViewGroupName;
+@property (nonatomic, readonly) UIView *playbackControlsContainer;
 @property (nonatomic, readonly) NSArray *playbackControlsViewItems;
 @property (nonatomic) long long preferredUnobscuredArea;
 @property (nonatomic, readonly) AVButton *prominentPlayButton;
@@ -62,6 +72,8 @@
 @property (nonatomic, readonly) AVBackdropView *screenModeControls;
 @property (nonatomic, readonly) NSLayoutConstraint *screenModeControlsToVolumeControlsSpacingConstraint;
 @property (nonatomic, readonly) AVScrubber *scrubber;
+@property (nonatomic) bool showsProminentPlayButton;
+@property (nonatomic, retain) UIViewPropertyAnimator *showsProminentPlayButtonVisibilityAnimator;
 @property (nonatomic, readonly) AVButton *skipBackButton;
 @property (nonatomic, readonly) AVButton *skipForwardButton;
 @property (nonatomic, readonly) AVButton *standardPlayPauseButton;
@@ -69,9 +81,10 @@
 @property (nonatomic, readonly) AVView *transportControlsContainerView;
 @property (nonatomic, readonly) AVTransportControlsView *transportControlsView;
 @property (nonatomic, readonly) AVButton *videoGravityButton;
-@property (nonatomic, readonly) NSLayoutConstraint *volumeBottomToTransportControlsTopConstraint;
 @property (nonatomic, readonly) AVVolumeButtonControl *volumeButton;
+@property (nonatomic, readonly) NSLayoutConstraint *volumeButtonBottomToLayoutMarginsGuideBottomConstraint;
 @property (nonatomic, readonly) AVBackdropView *volumeControls;
+@property (nonatomic, readonly) UIView *volumeControlsContainer;
 @property (nonatomic, readonly) AVVolumeSlider *volumeSlider;
 @property (nonatomic, readonly) NSLayoutConstraint *volumeTopToLayoutGuideTopConstraint;
 @property (nonatomic, readonly) NSLayoutConstraint *volumeTopToViewTopConstraint;
@@ -87,15 +100,16 @@
 - (void)_updateDoubleRowTransportControlsEnabled;
 - (void)_updateLayoutMargins;
 - (void)_updateLayoutMargins:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (double)_volumeButtonToTransportControlsTopConstraintConstant;
 - (void)animateAlongsideVisibilityChangeIfNeeded;
 - (bool)canHideInteractiveContentOverlayView;
 - (void)dealloc;
 - (id)delegate;
 - (id)doneButton;
 - (id)fullScreenButton;
-- (id)init;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)interactiveContentOverlayView;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })interactiveContentOverlayViewLayoutMargins;
 - (bool)isDoubleRowLayoutEnabled;
 - (bool)isFullScreen;
 - (void)layoutSubviews;
@@ -104,7 +118,7 @@
 - (id)miniPlayPauseButtonBackdropView;
 - (bool)needsIntialLayout;
 - (id)pictureInPictureButton;
-- (id)playbackControlsViewGroupName;
+- (id)playbackControlsContainer;
 - (void)playbackControlsViewItemChangedAvailability:(id)arg1;
 - (id)playbackControlsViewItems;
 - (long long)preferredUnobscuredArea;
@@ -119,18 +133,25 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDoubleRowLayoutEnabled:(bool)arg1;
 - (void)setFullScreen:(bool)arg1;
+- (void)setInteractiveContentOverlayViewLayoutMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setNeedsIntialLayout:(bool)arg1;
 - (void)setPreferredUnobscuredArea:(long long)arg1;
+- (void)setShowsProminentPlayButton:(bool)arg1;
+- (void)setShowsProminentPlayButtonVisibilityAnimator:(id)arg1;
+- (bool)showsProminentPlayButton;
+- (id)showsProminentPlayButtonVisibilityAnimator;
 - (id)skipBackButton;
 - (id)skipForwardButton;
 - (id)standardPlayPauseButton;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)transportControlsContainerView;
 - (id)transportControlsView;
+- (void)updateInteractiveContentOverlayViewLayoutMargins;
 - (id)videoGravityButton;
-- (id)volumeBottomToTransportControlsTopConstraint;
 - (id)volumeButton;
+- (id)volumeButtonBottomToLayoutMarginsGuideBottomConstraint;
 - (id)volumeControls;
+- (id)volumeControlsContainer;
 - (id)volumeSlider;
 - (id)volumeTopToLayoutGuideTopConstraint;
 - (id)volumeTopToViewTopConstraint;

@@ -359,6 +359,7 @@
 // Image: /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
 
 - (void)safari_addObjectUnlessNil:(id)arg1;
+- (void)safari_setObject:(id)arg1 atIndex:(unsigned long long)arg2 withPaddingObject:(id)arg3;
 
 // Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
 
@@ -413,6 +414,7 @@
 - (id)tsu_dequeue;
 - (void)tsu_enqueue:(id)arg1;
 - (unsigned long long)tsu_insertObject:(id)arg1 usingComparator:(id /* block */)arg2;
+- (id)tsu_peek;
 - (id)tsu_pop;
 - (void)tsu_push:(id)arg1;
 - (void)tsu_removeObjectsIdenticalToObjectsInArray:(id)arg1;

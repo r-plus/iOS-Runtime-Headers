@@ -33,6 +33,7 @@
 + (unsigned char)styleOwnerPathType;
 + (unsigned long long)styleSwapOrStyleOwnerIndexFromAxisID:(id)arg1 refLineIndex:(unsigned long long)arg2;
 
+- (void).cxx_destruct;
 - (id)axis;
 - (id)axisID;
 - (id)chartInfo;

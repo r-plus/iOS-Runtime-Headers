@@ -14,6 +14,7 @@
 @property (readonly, copy) NSString *name;
 @property (readonly, copy) NSString *reason;
 @property (readonly, copy) NSDictionary *userInfo;
+@property (readonly, copy) NSString *xct_formattedDescription;
 
 // Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
 
@@ -83,6 +84,7 @@
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
 + (void)sfu_errnoRaise:(id)arg1 format:(id)arg2;
++ (bool)tsu_catchExceptionsInBlock:(id /* block */)arg1 error:(id*)arg2;
 + (void)tsu_raiseWithError:(id)arg1;
 
 - (int)sfu_localErrno;

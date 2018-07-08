@@ -4,7 +4,7 @@
 
 @interface MDLScene : NSObject {
     NSMutableArray * _objects;
-    /* Warning: unhandled struct encoding: '{vector<MDLLight *, std::__1::allocator<MDLLight *> >="__begin_"^@"__end_"^@"__end_cap_"{__compressed_pair<MDLLight *__strong *, std::__1::allocator<MDLLight *> >="__first_"^@}}' */ struct vector<MDLLight *, std::__1::allocator<MDLLight *> > { 
+    /* Warning: unhandled struct encoding: '{vector<MDLLight *, std::__1::allocator<MDLLight *> >="__begin_"^@"__end_"^@"__end_cap_"{__compressed_pair<MDLLight *__strong *, std::__1::allocator<MDLLight *> >="__value_"^@}}' */ struct vector<MDLLight *, std::__1::allocator<MDLLight *> > { 
         __end_ **__begin_; 
     }  _sceneLights;
     struct mutex { struct _opaque_pthread_mutex_t { long long x_1_1_1; BOOL x_1_1_2[56]; } x1; } * _sceneMutex;
@@ -12,7 +12,7 @@
         struct RTRenderable {} **__begin_; 
         struct RTRenderable {} **__end_; 
         struct __compressed_pair<ModelIO::RTRenderable **, std::__1::allocator<ModelIO::RTRenderable *> > { 
-            struct RTRenderable {} **__first_; 
+            struct RTRenderable {} **__value_; 
         } __end_cap_; 
     }  _sceneObjects;
     int  _signature;

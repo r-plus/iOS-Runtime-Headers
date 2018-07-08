@@ -3,10 +3,10 @@
  */
 
 @interface SASProximityAnisetteDataProvider : NSObject <AKAnisetteServiceProtocol, NSCopying> {
-    NSObject<SASProximitySessionProtocol> * _session;
+    SASProximitySession * _session;
 }
 
-@property (retain) NSObject<SASProximitySessionProtocol> *session;
+@property (retain) SASProximitySession *session;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -37,7 +37,6 @@
 - (void)setRecordZoneIDsToDelete:(id)arg1;
 - (void)setRecordZoneModifiedBlock:(id /* block */)arg1;
 - (void)setRecordZonesToSave:(id)arg1;
-- (bool)shouldSendKeyIDs;
 - (id)zoneIDsToLock;
 
 @end

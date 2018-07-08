@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSOperation : NSObject <ICLoggable> {
+@interface NSOperation : NSObject <FCOperationIdentifying, ICLoggable> {
     id  _private;
     int  _private1;
     int  _private1b;
@@ -84,6 +84,11 @@
 
 - (void)setShouldEnqueueDependenciesWhenPerformingAsCloudRequest:(bool)arg1;
 - (bool)shouldEnqueueDependenciesWhenPerformingAsCloudRequest;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
+- (id)longOperationDescription;
+- (id)shortOperationDescription;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 

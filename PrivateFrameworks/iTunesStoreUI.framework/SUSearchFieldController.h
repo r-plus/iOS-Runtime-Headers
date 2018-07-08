@@ -8,6 +8,7 @@
     ISStoreURLOperation * _completionsOperation;
     SUSearchFieldConfiguration * _configuration;
     UIControl * _dimmerView;
+    bool  _hasLoadedSearchResultsTableView;
     UISearchBar * _searchBar;
     SUSearchDisplayController * _searchController;
     long long  _searchFieldStyle;
@@ -69,7 +70,9 @@
 - (bool)searchBarShouldEndEditing:(id)arg1;
 - (void)searchBarTextDidEndEditing:(id)arg1;
 - (void)searchBarWillRemoveFromSuperview:(id)arg1;
+- (void)searchDisplayController:(id)arg1 didLoadSearchResultsTableView:(id)arg2;
 - (bool)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
+- (void)searchDisplayController:(id)arg1 willUnloadSearchResultsTableView:(id)arg2;
 - (id)searchFieldConfiguration;
 - (long long)searchFieldStyle;
 - (void)setSearchFieldConfiguration:(id)arg1;

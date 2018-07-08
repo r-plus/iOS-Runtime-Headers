@@ -8,6 +8,9 @@
     int  _needsSpotlightReindex;
 }
 
++ (bool)_mobileMailNeedsSpotlightReIndex;
++ (bool)_setMobileMailNeedsSpotlightReIndex:(bool)arg1;
+
 - (bool)migrateWithSQLiteConnection:(id)arg1;
 - (bool)needsRebuildMessageInfoIndex;
 - (bool)needsRebuildTriggers;

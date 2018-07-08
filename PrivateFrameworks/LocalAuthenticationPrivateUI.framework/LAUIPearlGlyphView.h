@@ -21,7 +21,7 @@
     }  _cameraTransform;
     bool  _changingState;
     struct CGColorSpace { } * _colorSpace;
-    struct vector<void (^)(bool), std::__1::allocator<void (^)(bool)> >="__begin_"^@?"__end_"^@?"__end_cap_"{__compressed_pair<void (^__strong *)(bool), std::__1::allocator<void (^)(bool)> >="__first_"^@? {}  _completionHandlers;
+    struct vector<void (^)(bool), std::__1::allocator<void (^)(bool)> >="__begin_"^@?"__end_"^@?"__end_cap_"{__compressed_pair<void (^__strong *)(bool), std::__1::allocator<void (^)(bool)> >="__value_"^@? {}  _completionHandlers;
     UIView * _containerView;
     CALayer * _contentLayer;
     CAShapeLayer * _contentLayerMask;
@@ -31,24 +31,24 @@
         struct __hash_table<std::__1::__hash_value_type<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 6> >, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 6> >, std::__1::hash<unsigned long>, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 6> >, std::__1::equal_to<unsigned long>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 6> > > > { 
             struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 6> >, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 6> >, void *> *> *> > > { 
                 struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 6> >, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 6> >, void *> *> *> > > { 
-                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 6> >, void *> *> {} **__first_; 
+                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 6> >, void *> *> {} **__value_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 6> >, void *> *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 6> >, void *> *> *> > { 
-                            unsigned long long __first_; 
+                            unsigned long long __value_; 
                         } __data_; 
-                    } __second_; 
+                    } __value_; 
                 } __ptr_; 
             } __bucket_list_; 
             struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 6> >, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 6> >, void *> > > { 
                 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 6> >, void *> *> { 
                     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 6> >, void *> *> {} *__next_; 
-                } __first_; 
+                } __value_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 6> >, std::__1::hash<unsigned long>, true> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 6> >, std::__1::equal_to<unsigned long>, true> > { 
-                float __first_; 
+                float __value_; 
             } __p3_; 
         } __table_; 
     }  _cornerStates;
@@ -65,10 +65,10 @@
             struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<unsigned long, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
-                } __first_; 
+                } __value_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::less<unsigned long> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __pair3_; 
         } __tree_; 
     }  _duplicateCornerIdentifiers;
@@ -78,24 +78,24 @@
         struct __hash_table<std::__1::__hash_value_type<unsigned long, std::__1::unordered_map<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3> > > > >, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, std::__1::unordered_map<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3> > > > >, std::__1::hash<unsigned long>, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, std::__1::unordered_map<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3> > > > >, std::__1::equal_to<unsigned long>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned long, std::__1::unordered_map<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3> > > > > > > { 
             struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::unordered_map<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3> > > > >, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::unordered_map<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3> > > > >, void *> *> *> > > { 
                 struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::unordered_map<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3> > > > >, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::unordered_map<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3> > > > >, void *> *> *> > > { 
-                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::unordered_map<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3> > > > >, void *> *> {} **__first_; 
+                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::unordered_map<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3> > > > >, void *> *> {} **__value_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::unordered_map<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3> > > > >, void *> *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::unordered_map<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3> > > > >, void *> *> *> > { 
-                            unsigned long long __first_; 
+                            unsigned long long __value_; 
                         } __data_; 
-                    } __second_; 
+                    } __value_; 
                 } __ptr_; 
             } __bucket_list_; 
             struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::unordered_map<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3> > > > >, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::unordered_map<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3> > > > >, void *> > > { 
                 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::unordered_map<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3> > > > >, void *> *> { 
                     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, std::__1::unordered_map<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3> > > > >, void *> *> {} *__next_; 
-                } __first_; 
+                } __value_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, std::__1::unordered_map<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3> > > > >, std::__1::hash<unsigned long>, true> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, std::__1::unordered_map<unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3>, std::__1::hash<unsigned long>, std::__1::equal_to<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, std::__1::array<LAUI_uniform_cubic_b_spline_renderer::spline_instance_state, 3> > > > >, std::__1::equal_to<unsigned long>, true> > { 
-                float __first_; 
+                float __value_; 
             } __p3_; 
         } __table_; 
     }  _faceStates;
@@ -133,10 +133,10 @@
             struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned long, std::__1::set<unsigned long, std::__1::less<unsigned long>, std::__1::allocator<unsigned long> > >, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
-                } __first_; 
+                } __value_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, std::__1::set<unsigned long, std::__1::less<unsigned long>, std::__1::allocator<unsigned long> > >, std::__1::less<unsigned long>, true> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __pair3_; 
         } __tree_; 
     }  _rendererIdentifiers;

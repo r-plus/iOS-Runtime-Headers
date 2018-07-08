@@ -50,6 +50,6 @@
 - (id)type;
 - (id)unbox;
 - (id)valueForPropertyPath:(id)arg1;
-- (id)valuesForPropertyPath:(id)arg1 subscriptRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (id)valuesForSubscripts:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 ofPropertyPath:(id)arg2;
 
 @end

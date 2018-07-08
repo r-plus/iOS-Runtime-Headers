@@ -20,6 +20,7 @@
 @property (readonly) NSExpression *requestExpression;
 
 + (id)expressionForFetch:(id)arg1 context:(id)arg2 countOnly:(bool)arg3;
++ (bool)supportsSecureCoding;
 
 - (id)_expressionWithSubstitutionVariables:(id)arg1;
 - (void)acceptVisitor:(id)arg1 flags:(unsigned long long)arg2;

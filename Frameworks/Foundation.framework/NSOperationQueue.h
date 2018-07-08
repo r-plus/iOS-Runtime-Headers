@@ -98,6 +98,7 @@
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
 + (id)tsu_newSerialOperationQueueWithName:(id)arg1;
++ (id)tsu_newSerialOperationQueueWithName:(id)arg1 attribute:(id)arg2;
 
 - (bool)tsu_isCurrentQueue;
 - (void)tsu_performBlock:(id /* block */)arg1;

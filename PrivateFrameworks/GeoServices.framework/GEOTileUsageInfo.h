@@ -48,5 +48,6 @@
 - (double)startTime;
 - (unsigned long long)tileSize;
 - (int)tileStyle;
+- (id)transactionMetrics;
 
 @end

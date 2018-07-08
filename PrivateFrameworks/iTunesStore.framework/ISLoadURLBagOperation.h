@@ -3,11 +3,13 @@
  */
 
 @interface ISLoadURLBagOperation : ISOperation <ISStoreURLOperationDelegate> {
+    NSNumber * _accountDSID;
     SSURLBagContext * _context;
     ISURLBag * _outputBag;
 }
 
 @property (readonly) ISURLBag *URLBag;
+@property (nonatomic, retain) NSNumber *accountDSID;
 @property (readonly) SSURLBagContext *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -29,12 +31,14 @@
 - (void)_sendPingsForURLBag:(id)arg1;
 - (void)_setOutputURLBag:(id)arg1;
 - (bool)_setURLBagWithDictionary:(id)arg1 response:(id)arg2 error:(id*)arg3;
+- (id)accountDSID;
 - (id)context;
 - (id)init;
 - (id)initWithBagContext:(id)arg1;
 - (bool)operation:(id)arg1 shouldSetStoreFrontID:(id)arg2;
 - (void)operation:(id)arg1 willSendRequest:(id)arg2;
 - (void)run;
+- (void)setAccountDSID:(id)arg1;
 - (id)uniqueKey;
 
 @end

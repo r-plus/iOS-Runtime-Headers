@@ -8,6 +8,7 @@
 - (NSString *)accessoryText;
 - (NSArray *)allowedStorefrontIDs;
 - (NSString *)articleID;
+- (NSString *)articleRecirculationConfigJSON;
 - (<FCNativeAdProviding> *)associatedAd;
 - (long long)backendArticleVersion;
 - (NSArray *)blockedStorefrontIDs;
@@ -25,10 +26,12 @@
 - (NSArray *)iAdSectionIDs;
 - (NSString *)identifier;
 - (bool)isBlockedExplicitContent;
+- (bool)isBoundToContext;
 - (bool)isDeleted;
 - (bool)isDisplayingAsNativeAd;
 - (bool)isDraft;
 - (bool)isFeatureCandidate;
+- (bool)isHiddenFromFeeds;
 - (bool)isPaid;
 - (bool)isSponsored;
 - (bool)isTopStory;
@@ -40,6 +43,7 @@
 - (bool)needsRapidUpdates;
 - (NSString *)primaryAudience;
 - (NSDate *)publishDate;
+- (NSArray *)publisherSpecifiedArticleIDs;
 - (NSString *)referencedArticleID;
 - (NSArray *)relatedArticleIDs;
 - (FCFeedPersonalizedArticleScoreProfile *)scoreProfile;
@@ -73,6 +77,8 @@
 - (NSArray *)topics;
 - (bool)usesImageOnTopLayout;
 - (NSString *)versionIdentifier;
+- (NSString *)videoCallToActionTitle;
+- (NSURL *)videoCallToActionURL;
 - (double)videoDuration;
 - (NSURL *)videoURL;
 

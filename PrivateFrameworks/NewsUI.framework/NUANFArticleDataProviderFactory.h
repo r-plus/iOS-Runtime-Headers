@@ -6,7 +6,7 @@
     <FCContentContext> * _contentContext;
     <NUEmbedDataManager> * _embedDataManager;
     <NUFontRegistration> * _fontRegistration;
-    SXHost * _host;
+    <SXHost> * _host;
 }
 
 @property (nonatomic, readonly) <FCContentContext> *contentContext;
@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) <NUEmbedDataManager> *embedDataManager;
 @property (nonatomic, readonly) <NUFontRegistration> *fontRegistration;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) SXHost *host;
+@property (nonatomic, readonly) <SXHost> *host;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

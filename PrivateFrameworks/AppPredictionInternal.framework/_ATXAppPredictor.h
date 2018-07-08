@@ -15,6 +15,8 @@
     ATXAppPredictionBlacklist * _appPredictionBlacklist;
     _APRParzenModel * _appSiriKitIntentParzen;
     NSString * _dayZeroABGroupIdentifier;
+    NSString * _dayZeroIntentABGroupIdentifier;
+    NSDictionary * _dayZeroIntentParameters;
     NSDictionary * _dayZeroParameters;
     NSArray * _finalSubScores;
     NSArray * _interpreters;
@@ -27,23 +29,34 @@
     NSUserDefaults * _userDefaults;
 }
 
++ (float)_computeL2DistanceFromBundleId:(id)arg1 to:(float*)arg2 app2vecMapping:(id)arg3;
++ (bool)_predictNextAppLaunchEmbedding:(id)arg1 into:(float*)arg2;
 + (id)getABGroupOverride;
 + (id)getParseTreeForConsumerSubType:(unsigned char)arg1;
 + (id)recreateSharedInstanceWithCurrentABGroup;
-+ (void)removeOldLaunchInfoFrom:(id)arg1 appLaunchHistogram:(id)arg2 spotlightLaunchHistogram:(id)arg3 unlockTimeHistogram:(id)arg4 dayOfWeekHistogram:(id)arg5 airplaneModeLaunchHistogram:(id)arg6 trendingLaunchHistogram:(id)arg7 wifiLaunchHistogram:(id)arg8 launchSequenceManager:(id)arg9 bundleIdTable:(id)arg10 aprExplicitConfirmsHistogram:(id)arg11 aprExplicitRejectsHistogram:(id)arg12 aprImplicitConfirmsHistogram:(id)arg13 aprImplicitRejectsHistogram:(id)arg14 aprSiriKitIntentsHistogram:(id)arg15 aprNonSiriKitIntentsHistogram:(id)arg16;
++ (void)removeOldLaunchInfoFrom:(id)arg1 appLaunchHistogram:(id)arg2 spotlightLaunchHistogram:(id)arg3 unlockTimeHistogram:(id)arg4 dayOfWeekHistogram:(id)arg5 airplaneModeLaunchHistogram:(id)arg6 trendingLaunchHistogram:(id)arg7 wifiLaunchHistogram:(id)arg8 appIntentLaunchHistogram:(id)arg9 appIntentUnlockTimeHistogram:(id)arg10 appIntentDayOfWeekHistogram:(id)arg11 appIntentAirplaneModeLaunchHistogram:(id)arg12 appIntentTrendingLaunchHistogram:(id)arg13 appIntentWifiHistogram:(id)arg14 appForAllIntentsLaunchHistogram:(id)arg15 appForAllIntentsUnlockTimeHistogram:(id)arg16 appForAllIntentsDayOfWeekHistogram:(id)arg17 appForAllIntentsAirplaneModeLaunchHistogram:(id)arg18 appForAllIntentsTrendingLaunchHistogram:(id)arg19 appForAllIntentsWifiHistogram:(id)arg20 launchSequenceManager:(id)arg21 bundleIdTable:(id)arg22 aprExplicitConfirmsHistogram:(id)arg23 aprExplicitRejectsHistogram:(id)arg24 aprImplicitConfirmsHistogram:(id)arg25 aprImplicitRejectsHistogram:(id)arg26 aprSiriKitIntentsHistogram:(id)arg27 aprNonSiriKitIntentsHistogram:(id)arg28;
 + (id)sharedInstance;
 + (double)time:(double)arg1 toAccuracyInSeconds:(double)arg2;
 
 - (void).cxx_destruct;
+- (void)_addZeroDayAppIntentKeysToBundleIdTable:(id)arg1;
 - (id)_appsToPredictWithConsumerSubType:(unsigned char)arg1 intent:(id)arg2 candidateBundleIdentifiers:(id)arg3 allSBApps:(id)arg4 blacklistedApps:(id)arg5;
-- (struct { char *x1; double x2[70]; double x3; }*)_getPredictionForApps:(id)arg1 consumerSubType:(unsigned char)arg2 intent:(id)arg3 scoreLogger:(id)arg4;
+- (void)_copyValidScoreInputsFromPredictionItem:(struct { char *x1; float x2[153]; float x3; }*)arg1 toPredictionItem:(struct { char *x1; float x2[153]; float x3; }*)arg2;
+- (id)_createDictionaryOfKeyToItemForPredictionItems:(struct { char *x1; float x2[153]; float x3; }*)arg1 withCount:(int)arg2;
+- (struct { char *x1; float x2[153]; float x3; }*)_evalFeaturesForAppForAllIntents:(id)arg1 scoreLogger:(id)arg2;
+- (struct { char *x1; float x2[153]; float x3; }*)_evalFeaturesForAppIntents:(id)arg1 scoreLogger:(id)arg2;
+- (struct { char *x1; float x2[153]; float x3; }*)_evalFeaturesForApps:(id)arg1 consumerSubType:(unsigned char)arg2 intent:(id)arg3 scoreLogger:(id)arg4;
+- (struct { char *x1; float x2[153]; float x3; }*)_evalFeaturesForIntents:(id)arg1 scoreLogger:(id)arg2;
+- (struct { char *x1; float x2[153]; float x3; }*)_getPredictionForItems:(id)arg1 consumerSubType:(unsigned char)arg2 intent:(id)arg3 scoreLogger:(id)arg4;
 - (bool)_initAppLaunchAndInstallMonitors;
-- (double)_predictionScoreForItem:(const struct { char *x1; double x2[70]; double x3; }*)arg1 consumerSubType:(unsigned char)arg2 scoreLogger:(id)arg3 intentType:(id)arg4;
+- (double)_predictionScoreForItem:(const struct { char *x1; float x2[153]; float x3; }*)arg1 consumerSubType:(unsigned char)arg2 scoreLogger:(id)arg3 intentType:(id)arg4;
 - (void)_updateFromAppPreferencePredictorAsset;
 - (void)_updateFromAsset;
 - (void)_updateFromZeroDayAsset;
+- (void)_updateFromZeroDayIntentAsset;
 - (id)abGroupNilString;
 - (id)appInstallMonitor;
+- (id)appIntentMonitor;
 - (id)appLaunchMonitor;
 - (void)dealloc;
 - (id)getABGroups;
@@ -51,8 +64,8 @@
 - (id)init;
 - (id)initInternal;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (id)predictWithLimit:(unsigned long long)arg1 consumerSubType:(unsigned char)arg2 intent:(id)arg3 candidateBundleIdentifiers:(id)arg4 scoreLogger:(id)arg5;
-- (double)predictionScoreForItem:(const struct { char *x1; double x2[70]; double x3; }*)arg1 consumerSubType:(unsigned char)arg2;
+- (id)predictWithLimit:(unsigned long long)arg1 consumerSubType:(unsigned char)arg2 intent:(id)arg3 candidateBundleIdentifiers:(id)arg4 candidateIntenttypes:(id)arg5 scoreLogger:(id)arg6;
+- (double)predictionScoreForItem:(const struct { char *x1; float x2[153]; float x3; }*)arg1 consumerSubType:(unsigned char)arg2;
 - (void)receiveFeedbackForConsumerType:(unsigned long long)arg1 consumerSubType:(unsigned char)arg2 atxResponse:(id)arg3 aprResponse:(id)arg4 engagementType:(unsigned long long)arg5 engagedBundleId:(id)arg6 bundleIdsShown:(id)arg7;
 - (void)restoreSerializedState:(id)arg1;
 - (id)serializeState;

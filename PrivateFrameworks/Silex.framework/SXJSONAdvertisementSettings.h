@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) struct _SXConvertibleValue { double x1; unsigned long long x2; } distanceFromMedia;
 @property (nonatomic, readonly) unsigned long long frequency;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) <SXDynamicAdLayout> *layout;
+@property (nonatomic, readonly) <SXAutoPlacementLayout> *layout;
 @property (readonly) Class superclass;
 
 + (Class)classForProtocolProperty:(id)arg1 withValue:(id)arg2;

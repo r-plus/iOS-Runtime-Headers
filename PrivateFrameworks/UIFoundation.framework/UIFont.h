@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@interface UIFont : NSObject <DebugHierarchyValue, NSCopying, NSSecureCoding>
+@interface UIFont : NSObject <NSCopying, NSSecureCoding>
 
 @property (nonatomic, readonly) double ascender;
 @property (nonatomic, readonly) double capHeight;
-@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) double descender;
-@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *familyName;
 @property (nonatomic, readonly) UIFontDescriptor *fontDescriptor;
 @property (nonatomic, readonly) NSString *fontName;
-@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) double leading;
 @property (nonatomic, readonly) double lineHeight;
 @property (nonatomic, readonly) double maximumPointSizeAfterScaling;
@@ -22,7 +19,6 @@
 @property (nonatomic, readonly) UIFont *pu_fontWithMonospacedNumbers;
 @property (nonatomic, readonly) UIFont *px_fontWithMonospacedNumbers;
 @property (nonatomic, readonly) NSString *rc_textStyle;
-@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *textStyleForScaling;
 @property (nonatomic, readonly) double xHeight;
 
@@ -145,10 +141,6 @@
 - (double)underlineThickness;
 - (id)verticalFont;
 - (double)xHeight;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyValue;
 
 // Image: /System/Library/Frameworks/AVKit.framework/AVKit
 
@@ -324,13 +316,19 @@
 + (double)hk_fittingScaleFactorForUILabels:(id)arg1 constrainingWidth:(double)arg2;
 + (id)hk_preferredFontForTextStyle:(id)arg1;
 + (id)hk_preferredFontForTextStyle:(id)arg1 symbolicTraits:(unsigned int)arg2;
++ (id)hk_preferredFontForTextStyle:(id)arg1 symbolicTraits:(unsigned int)arg2 maximumContentSizeCategory:(id)arg3;
 + (id)hk_preferredFontIgnoringAccessibilitySizeForTextStyle:(id)arg1;
 + (id)hk_preferredFontIgnoringAccessibilitySizeForTextStyle:(id)arg1 symbolicTraits:(unsigned int)arg2;
 + (id)hk_roundedSystemFontWithSize:(double)arg1 weight:(double)arg2;
++ (id)hk_scalableFontForTextStyle:(id)arg1 symbolicTraits:(unsigned int)arg2;
 + (id)hk_staticPreferredFontForTextStyle:(id)arg1;
 + (id)hk_staticPreferredFontForTextStyle:(id)arg1 symbolicTraits:(unsigned int)arg2;
 + (id)hk_titleLabelFontScaledBy:(double)arg1;
 + (id)hk_unitLabelFontScaledBy:(double)arg1;
+
+- (id)_hk_fontByModifyingSymbolicTraits:(id /* block */)arg1;
+- (id)hk_fontByAddingSymbolicTraits:(unsigned int)arg1;
+- (id)hk_fontByRemovingSymbolicTraits:(unsigned int)arg1;
 
 // Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
 

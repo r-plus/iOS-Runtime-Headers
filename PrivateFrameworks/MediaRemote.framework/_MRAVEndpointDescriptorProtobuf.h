@@ -6,9 +6,11 @@
     _MRAVOutputDeviceDescriptorProtobuf * _designatedGroupLeader;
     struct { 
         unsigned int isLocalEndpoint : 1; 
+        unsigned int isProxyGroupPlayer : 1; 
     }  _has;
     NSString * _instanceIdentifier;
     bool  _isLocalEndpoint;
+    bool  _isProxyGroupPlayer;
     NSString * _name;
     NSMutableArray * _outputDevices;
     NSString * _uniqueIdentifier;
@@ -18,33 +20,37 @@
 @property (nonatomic, readonly) bool hasDesignatedGroupLeader;
 @property (nonatomic, readonly) bool hasInstanceIdentifier;
 @property (nonatomic) bool hasIsLocalEndpoint;
+@property (nonatomic) bool hasIsProxyGroupPlayer;
 @property (nonatomic, readonly) bool hasName;
 @property (nonatomic, readonly) bool hasUniqueIdentifier;
 @property (nonatomic, retain) NSString *instanceIdentifier;
 @property (nonatomic) bool isLocalEndpoint;
+@property (nonatomic) bool isProxyGroupPlayer;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSMutableArray *outputDevices;
 @property (nonatomic, retain) NSString *uniqueIdentifier;
 
 + (Class)outputDevicesType;
 
+- (void).cxx_destruct;
 - (void)addOutputDevices:(id)arg1;
 - (void)clearOutputDevices;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)designatedGroupLeader;
 - (id)dictionaryRepresentation;
 - (bool)hasDesignatedGroupLeader;
 - (bool)hasInstanceIdentifier;
 - (bool)hasIsLocalEndpoint;
+- (bool)hasIsProxyGroupPlayer;
 - (bool)hasName;
 - (bool)hasUniqueIdentifier;
 - (unsigned long long)hash;
 - (id)instanceIdentifier;
 - (bool)isEqual:(id)arg1;
 - (bool)isLocalEndpoint;
+- (bool)isProxyGroupPlayer;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
 - (id)outputDevices;
@@ -53,8 +59,10 @@
 - (bool)readFrom:(id)arg1;
 - (void)setDesignatedGroupLeader:(id)arg1;
 - (void)setHasIsLocalEndpoint:(bool)arg1;
+- (void)setHasIsProxyGroupPlayer:(bool)arg1;
 - (void)setInstanceIdentifier:(id)arg1;
 - (void)setIsLocalEndpoint:(bool)arg1;
+- (void)setIsProxyGroupPlayer:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setOutputDevices:(id)arg1;
 - (void)setUniqueIdentifier:(id)arg1;

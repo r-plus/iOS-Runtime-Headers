@@ -3,49 +3,37 @@
  */
 
 @interface FCTopStoriesOperation : FCOperation {
-    <FCAppConfiguration> * _appConfiguration;
-    FCArticleList * _articleList;
     id /* block */  _catchUpCompletionHandler;
+    <FCCoreConfiguration> * _configuration;
     FCCloudContext * _context;
     NSError * _error;
-    NSArray * _mandatoryHeadlines;
-    NSArray * _optionalHeadlines;
     <FCChannelProviding> * _topStoriesChannel;
-    NSDictionary * _topStoriesMetadataByArticleID;
+    FCTopStoriesOperationResult * _topStoriesResult;
 }
 
-@property (nonatomic, copy) <FCAppConfiguration> *appConfiguration;
-@property (retain) FCArticleList *articleList;
 @property (copy) id /* block */ catchUpCompletionHandler;
+@property (nonatomic, copy) <FCCoreConfiguration> *configuration;
 @property (nonatomic, retain) FCCloudContext *context;
 @property (retain) NSError *error;
-@property (copy) NSArray *mandatoryHeadlines;
-@property (copy) NSArray *optionalHeadlines;
 @property (copy) <FCChannelProviding> *topStoriesChannel;
-@property (copy) NSDictionary *topStoriesMetadataByArticleID;
+@property (retain) FCTopStoriesOperationResult *topStoriesResult;
 
 - (void).cxx_destruct;
 - (void)_checkShouldShowTopStoriesWithCompletionHandler:(id /* block */)arg1;
-- (id)appConfiguration;
-- (id)articleList;
 - (id /* block */)catchUpCompletionHandler;
+- (id)configuration;
 - (id)context;
 - (id)error;
-- (id)mandatoryHeadlines;
 - (void)operationWillFinishWithError:(id)arg1;
-- (id)optionalHeadlines;
 - (void)performOperation;
-- (void)setAppConfiguration:(id)arg1;
-- (void)setArticleList:(id)arg1;
 - (void)setCatchUpCompletionHandler:(id /* block */)arg1;
+- (void)setConfiguration:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setError:(id)arg1;
-- (void)setMandatoryHeadlines:(id)arg1;
-- (void)setOptionalHeadlines:(id)arg1;
 - (void)setTopStoriesChannel:(id)arg1;
-- (void)setTopStoriesMetadataByArticleID:(id)arg1;
+- (void)setTopStoriesResult:(id)arg1;
 - (id)topStoriesChannel;
-- (id)topStoriesMetadataByArticleID;
+- (id)topStoriesResult;
 - (bool)validateOperation;
 
 @end

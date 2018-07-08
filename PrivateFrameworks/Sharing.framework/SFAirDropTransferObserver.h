@@ -16,9 +16,11 @@
 
 - (void).cxx_destruct;
 - (void)_getRemoteObjectProxyOnQueue:(id /* block */)arg1;
+- (void)activate;
 - (id)delegate;
 - (id)exportedInterface;
 - (id)init;
+- (void)invalidate;
 - (id)machServiceName;
 - (void)observeForLocalOnlyPropertiesOnTransfer:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;

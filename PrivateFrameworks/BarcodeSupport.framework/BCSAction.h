@@ -11,6 +11,7 @@
 }
 
 @property (nonatomic, readonly, copy) NSArray *actionPickerItems;
+@property (nonatomic, readonly) bool canSkipUnlock;
 @property (nonatomic, readonly) <BCSParsedDataPrivate> *data;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly, copy) NSDictionary *debugDescriptionDictionary;
@@ -21,14 +22,16 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *localizedActionDescription;
 @property (nonatomic, readonly, copy) NSString *localizedDefaultActionDescription;
+@property (nonatomic, readonly, copy) NSString *localizedDefaultActionTitle;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSURL *url;
 @property (nonatomic, readonly) NSURL *urlThatCanBeOpened;
 
-+ (void)getActionWithData:(id)arg1 completionHandler:(id /* block */)arg2;
++ (void)getActionWithData:(id)arg1 codePayload:(id)arg2 completionHandler:(id /* block */)arg3;
 
 - (void).cxx_destruct;
 - (id)actionPickerItems;
+- (bool)canSkipUnlock;
 - (id)data;
 - (id)debugDescriptionDictionary;
 - (id)debugDescriptionExtraInfoDictionary;
@@ -39,6 +42,7 @@
 - (id)initWithData:(id)arg1;
 - (id)localizedActionDescription;
 - (id)localizedDefaultActionDescription;
+- (id)localizedDefaultActionTitle;
 - (void)performAction;
 - (void)performDefaultAction;
 - (void)setDelegate:(id)arg1;

@@ -15,6 +15,7 @@
     NSData * _bodyData;
     NSData * _cachedData;
     int  _kind;
+    <GEORequestCounterTicket> * _requestCounterTicket;
     double  _timeoutInterval;
     NSObject<OS_xpc_object> * _xpcRequest;
 }
@@ -34,6 +35,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) int kind;
+@property (nonatomic, readonly) <GEORequestCounterTicket> *requestCounterTicket;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) double timeoutInterval;
 @property (nonatomic, readonly) NSObject<OS_xpc_object> *xpcRequest;
@@ -53,11 +55,13 @@
 - (id)captureStateWithHints:(struct os_state_hints_s { unsigned int x1; char *x2; unsigned int x3; unsigned int x4; }*)arg1;
 - (id)description;
 - (id)init;
-- (id)initHttpOnlyRequestWithKind:(int)arg1 protobufRequest:(id)arg2 URL:(id)arg3 additionalHTTPHeaders:(id)arg4 allowCellularUse:(bool)arg5 compressRequest:(bool)arg6;
-- (id)initWithKind:(int)arg1 URL:(id)arg2 xpcRequest:(id)arg3 auditToken:(id)arg4 timeoutInterval:(double)arg5 additionalHTTPHeaders:(id)arg6 HTTPMethod:(BOOL)arg7 bodyData:(id)arg8 HTTPShouldHandleCookies:(bool)arg9 allowsCellularAccess:(bool)arg10 allowTLSSessionTicketUse:(bool)arg11 allowTFOUse:(bool)arg12 allowedRequestMode:(BOOL)arg13 userAgent:(id)arg14 entityTag:(id)arg15 cachedData:(id)arg16;
-- (id)initWithKind:(int)arg1 protobufRequest:(id)arg2 URL:(id)arg3 additionalHTTPHeaders:(id)arg4 auditToken:(id)arg5 traits:(id)arg6;
+- (id)initHttpOnlyRequestWithKind:(int)arg1 protobufRequest:(id)arg2 URL:(id)arg3 additionalHTTPHeaders:(id)arg4 allowCellularUse:(bool)arg5 compressRequest:(bool)arg6 requestCounterTicket:(id)arg7;
+- (id)initWithKind:(int)arg1 URL:(id)arg2 xpcRequest:(id)arg3 auditToken:(id)arg4 timeoutInterval:(double)arg5 additionalHTTPHeaders:(id)arg6 HTTPMethod:(BOOL)arg7 bodyData:(id)arg8 HTTPShouldHandleCookies:(bool)arg9 allowsCellularAccess:(bool)arg10 allowTLSSessionTicketUse:(bool)arg11 allowTFOUse:(bool)arg12 allowedRequestMode:(BOOL)arg13 userAgent:(id)arg14 entityTag:(id)arg15 cachedData:(id)arg16 requestCounterTicket:(id)arg17;
+- (id)initWithKind:(int)arg1 protobufRequest:(id)arg2 URL:(id)arg3 additionalHTTPHeaders:(id)arg4 auditToken:(id)arg5 traits:(id)arg6 requestCounterTicket:(id)arg7;
 - (int)kind;
 - (id)newURLRequest;
+- (id)publicLogDescription;
+- (id)requestCounterTicket;
 - (void)setCachedData:(id)arg1;
 - (double)timeoutInterval;
 - (id)updatedRequestWithNewBodyData:(id)arg1;

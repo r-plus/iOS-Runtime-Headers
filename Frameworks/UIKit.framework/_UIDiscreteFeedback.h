@@ -15,6 +15,7 @@
 @property (nonatomic) long long type;
 
 + (id)discreteFeedbackForType:(long long)arg1;
++ (bool)supportsSecureCoding;
 + (id)type;
 
 - (id)_debugDictionary;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXScrollViewController : UIViewController <STScrollViewDelegate, SXAdControllerPresentationDelegate, SXComponentControllerDelegate, SXComponentHosting, SXDocumentSectionHosting, SXKeyboardSupport, SXLayoutControllerDelegate, SXPresentationDelegate, SXPreviewViewControllerManagerDelegate, SXScrollPositionRestoring, SXTangierControllerDelegate, SXViewportChangeListener, UIGestureRecognizerDelegate> {
+@interface SXScrollViewController : UIViewController <STScrollViewDelegate, SXAdControllerPresentationDelegate, SXComponentControllerDelegate, SXComponentHosting, SXDocumentSectionHosting, SXKeyboardSupport, SXLayoutManagerDelegate, SXPresentationDelegate, SXPreviewViewControllerManagerDelegate, SXScrollPositionRestoring, SXTangierControllerDelegate, SXViewportChangeListener, UIGestureRecognizerDelegate> {
     <SXActionManager> * _actionManager;
     <SXAdControllerContainer> * _adControllerContainer;
     <SXAdDocumentStateManager> * _adDocumentStateManager;
@@ -26,8 +26,8 @@
     <SXDocumentSectionBlueprint> * _headerBlueprint;
     bool  _isPreviewing;
     double  _lastScrollOffset;
-    SXLayoutController * _layoutController;
     SXLayoutDataProvider * _layoutDataProvider;
+    <SXLayoutManager> * _layoutManager;
     SXMediaPlaybackController * _mediaPlaybackController;
     SXPresentationAttributes * _presentationAttributes;
     <SXPresentationAttributesManager> * _presentationAttributesManager;
@@ -38,13 +38,14 @@
     bool  _restoreScrollPositionOnNextLayout;
     SXScrollPosition * _restoredScrollPosition;
     <SXScrollPositionManager> * _scrollPositionManager;
+    <SXScrollReporting> * _scrollReporter;
     UIScrollView * _scrollView;
     bool  _shouldFadeInAfterRotation;
     NSOrderedSet * _snapLines;
     SXTangierController * _tangierController;
     <SXTextSelectionManager> * _textSelectionManager;
     <SXTransitionDataSourceProvider> * _transitionDataSourceProvider;
-    <SXVideoPlayerViewControllerProvider> * _videoPlayerViewControllerProvider;
+    SXVideoPlayerViewControllerManager * _videoPlayerViewControllerManager;
     SXViewControllerPresentingManager * _viewControllerPresentingManager;
     SXViewport * _viewport;
     SXViewportDebugger * _viewportDebugger;
@@ -78,8 +79,8 @@
 @property (nonatomic, readonly) bool isPresentingFullscreenCanvas;
 @property (nonatomic) bool isPreviewing;
 @property (nonatomic) double lastScrollOffset;
-@property (nonatomic, retain) SXLayoutController *layoutController;
 @property (nonatomic, readonly) SXLayoutDataProvider *layoutDataProvider;
+@property (nonatomic, retain) <SXLayoutManager> *layoutManager;
 @property (nonatomic, readonly) SXMediaPlaybackController *mediaPlaybackController;
 @property (nonatomic, readonly) SXPresentationAttributes *presentationAttributes;
 @property (nonatomic, readonly) <SXPresentationAttributesManager> *presentationAttributesManager;
@@ -90,6 +91,7 @@
 @property (nonatomic) bool restoreScrollPositionOnNextLayout;
 @property (nonatomic, retain) SXScrollPosition *restoredScrollPosition;
 @property (nonatomic, readonly) <SXScrollPositionManager> *scrollPositionManager;
+@property (nonatomic, readonly) <SXScrollReporting> *scrollReporter;
 @property (nonatomic, readonly) UIScrollView *scrollView;
 @property (nonatomic) bool shouldFadeInAfterRotation;
 @property (nonatomic, retain) NSOrderedSet *snapLines;
@@ -97,7 +99,7 @@
 @property (nonatomic, retain) SXTangierController *tangierController;
 @property (nonatomic, readonly) <SXTextSelectionManager> *textSelectionManager;
 @property (nonatomic, readonly) <SXTransitionDataSourceProvider> *transitionDataSourceProvider;
-@property (nonatomic, readonly) <SXVideoPlayerViewControllerProvider> *videoPlayerViewControllerProvider;
+@property (nonatomic, readonly) SXVideoPlayerViewControllerManager *videoPlayerViewControllerManager;
 @property (nonatomic, readonly) SXViewControllerPresentingManager *viewControllerPresentingManager;
 @property (nonatomic, retain) SXViewport *viewport;
 @property (nonatomic, retain) SXViewportDebugger *viewportDebugger;
@@ -144,7 +146,7 @@
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)headerBlueprint;
 - (id)headlineAccessibilityElement;
-- (id)initWithScrollView:(id)arg1 documentControllerContainer:(id)arg2 resourceDataSourceContainer:(id)arg3 analyticsReportingContainer:(id)arg4 presentationDelegateContainer:(id)arg5 adControllerContainer:(id)arg6 presentationAttributeManager:(id)arg7 viewport:(id)arg8 tangierController:(id)arg9 componentController:(id)arg10 layoutController:(id)arg11 appStateMonitor:(id)arg12 viewControllerPresentingManager:(id)arg13 scrollPositionManager:(id)arg14 documentStyleRenderer:(id)arg15 previewViewControllerManager:(id)arg16;
+- (id)initWithScrollView:(id)arg1 documentControllerContainer:(id)arg2 resourceDataSourceContainer:(id)arg3 analyticsReportingContainer:(id)arg4 presentationDelegateContainer:(id)arg5 adControllerContainer:(id)arg6 presentationAttributeManager:(id)arg7 viewport:(id)arg8 tangierController:(id)arg9 componentController:(id)arg10 layoutManager:(id)arg11 appStateMonitor:(id)arg12 viewControllerPresentingManager:(id)arg13 scrollPositionManager:(id)arg14 documentStyleRenderer:(id)arg15 previewViewControllerManager:(id)arg16 scrollReporter:(id)arg17 videoPlayerViewControllerManager:(id)arg18;
 - (id)interactiveCanvasController;
 - (bool)isPresentingFullscreenCanvas;
 - (bool)isPreviewing;
@@ -152,12 +154,12 @@
 - (bool)isValidBlueprintForCurrentSize:(id)arg1;
 - (double)lastScrollOffset;
 - (id)layoutAttributesFromPresentationAttributes:(id)arg1 headerBlueprint:(id)arg2;
-- (id)layoutController;
-- (void)layoutController:(id)arg1 didLayoutBlueprint:(id)arg2 layoutDataProvider:(id)arg3;
-- (void)layoutController:(id)arg1 willLayoutForViewportSize:(struct CGSize { double x1; double x2; })arg2 layoutDataProvider:(id)arg3;
 - (id)layoutDataProvider;
 - (void)layoutForSize:(struct CGSize { double x1; double x2; })arg1 transitionCoordinator:(id)arg2;
-- (void)loadContext:(id)arg1 analyticsReporting:(id)arg2 videoPlayerViewControllerProvider:(id)arg3 adControllerFactory:(id)arg4;
+- (id)layoutManager;
+- (void)layoutManager:(id)arg1 didLayoutBlueprint:(id)arg2 layoutDataProvider:(id)arg3;
+- (void)layoutManager:(id)arg1 willLayoutForViewportSize:(struct CGSize { double x1; double x2; })arg2 layoutDataProvider:(id)arg3;
+- (void)loadContext:(id)arg1 analyticsReporting:(id)arg2 adControllerFactory:(id)arg3;
 - (void)maintainPositionOfViewWhileScrolling:(id)arg1;
 - (id)mediaPlaybackController;
 - (id)presentationAttributes;
@@ -180,6 +182,7 @@
 - (id)scrollPositionForComponentViews:(id)arg1;
 - (id)scrollPositionForPlayingVideoComponentInComponentViews:(id)arg1;
 - (id)scrollPositionManager;
+- (id)scrollReporter;
 - (void)scrollToRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 animated:(bool)arg2;
 - (id)scrollView;
 - (id)scrollViewForFullscreenGalleryWithComponentIdentifier:(id)arg1;
@@ -194,7 +197,7 @@
 - (void)setFullscreenCanvasViewController:(id)arg1;
 - (void)setIsPreviewing:(bool)arg1;
 - (void)setLastScrollOffset:(double)arg1;
-- (void)setLayoutController:(id)arg1;
+- (void)setLayoutManager:(id)arg1;
 - (void)setPreviewingContext:(id)arg1;
 - (void)setRestoreScrollPositionOnNextLayout:(bool)arg1;
 - (void)setRestoredScrollPosition:(id)arg1;
@@ -228,7 +231,7 @@
 - (void)updateStickyHeaders;
 - (void)updateViewportForBlueprint:(id)arg1;
 - (id)videoComponentViewForVideoPlayerViewController:(id)arg1;
-- (id)videoPlayerViewControllerProvider;
+- (id)videoPlayerViewControllerManager;
 - (id)viewControllerPresentingManager;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;

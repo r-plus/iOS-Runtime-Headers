@@ -3,7 +3,6 @@
  */
 
 @interface _SFSharingLinkExtractor : NSObject {
-    <_SFWebProcessSharingLinkExtractor> * _remoteObjectProxy;
     WKWebView * _webView;
 }
 

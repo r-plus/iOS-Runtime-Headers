@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
  */
 
-@interface AFUISiriViewController : UIViewController <AFUIDelayedActionCommandCacheDelegate, AFUISiriRemoteViewControllerDataSource, AFUISiriRemoteViewControllerDelegate, AFUISiriSessionLocalDataSource, AFUISiriSessionLocalDelegate, AFUISiriViewDataSource, AFUISiriViewDelegate, SiriUIAudioRoutePickerControllerDelegate, SiriUIKeyboardViewDelegate> {
+@interface AFUISiriViewController : UIViewController <AFUISiriRemoteViewControllerDataSource, AFUISiriRemoteViewControllerDelegate, AFUISiriSessionLocalDataSource, AFUISiriSessionLocalDelegate, AFUISiriViewDataSource, AFUISiriViewDelegate, SiriUIAudioRoutePickerControllerDelegate, SiriUIKeyboardViewDelegate> {
     bool  _active;
     bool  _attemptingRemoteViewControllerPresentation;
     bool  _carDNDActive;
@@ -13,6 +13,7 @@
     <AFUISiriViewControllerDataSource> * _dataSource;
     AFUIDelayedActionCommandCache * _delayedActionCommandCache;
     <AFUISiriViewControllerDelegate> * _delegate;
+    NSDictionary * _dismissalUserInfo;
     bool  _eyesFree;
     bool  _hasCalledBeginAppearanceTransition;
     bool  _hasCalledEndAppearanceTransition;
@@ -168,8 +169,6 @@
 - (void)cancelTTS;
 - (bool)carDNDActive;
 - (id)childViewControllerForHomeIndicatorAutoHidden;
-- (void)commandCache:(id)arg1 didInvalidateDelayedActionCommand:(id)arg2;
-- (void)commandCache:(id)arg1 didPerformDelayedActionCommand:(id)arg2;
 - (id)contextAppInfosForSiriSession:(id)arg1;
 - (id)currentRequestOptions;
 - (long long)currentSource;
@@ -178,7 +177,7 @@
 - (void)defrost;
 - (id)delegate;
 - (void)didMoveToParentViewController:(id)arg1;
-- (void)dismissSiriRemoteViewController:(id)arg1 delayForTTS:(bool)arg2;
+- (void)dismissSiriRemoteViewController:(id)arg1 delayForTTS:(bool)arg2 userInfo:(id)arg3;
 - (void)dismissViewControllerAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (void)endSession;
 - (void)enterUITrackingMode;
@@ -209,7 +208,6 @@
 - (unsigned long long)lockStateForSiriSession:(id)arg1;
 - (bool)mapsGatekeeperEnabled;
 - (void)notifyOnNextUserInteractionForSiriRemoteViewController:(id)arg1;
-- (void)performGenericAceCommands:(id)arg1 forCommandCache:(id)arg2;
 - (void)preheat;
 - (void)preloadPresentationBundleWithIdentifier:(id)arg1;
 - (void)presentRemoteViewControllerIfNecessary;
@@ -289,7 +287,7 @@
 - (void)siriSession:(id)arg1 didChangeToState:(long long)arg2;
 - (void)siriSession:(id)arg1 didReceiveDeviceUnlockRequestAndCancelRequest:(bool)arg2 withCompletion:(id /* block */)arg3;
 - (void)siriSession:(id)arg1 didReceiveDeviceUnlockRequestWithCompletion:(id /* block */)arg2;
-- (bool)siriSessionCanEnd:(id)arg1;
+- (void)siriSession:(id)arg1 speechRecordingDidBeginOnAVRecordRoute:(id)arg2;
 - (void)siriSessionDidEnd:(id)arg1;
 - (void)siriSessionDidReceiveDelayedActionCancelCommand:(id)arg1 completion:(id /* block */)arg2;
 - (void)siriSessionDidReceiveDelayedActionCommand:(id)arg1 completion:(id /* block */)arg2;

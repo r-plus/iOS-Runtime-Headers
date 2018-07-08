@@ -11,9 +11,9 @@
 
 + (id)sharedManager;
 
+- (void).cxx_destruct;
 - (id)allDevices;
 - (void)clearDevices;
-- (void)dealloc;
 - (id)deviceWithIdentifier:(id)arg1;
 - (id)init;
 - (void)registerDevice:(id)arg1;

@@ -12,8 +12,8 @@
 
 + (id)encryptedMessageWithState:(unsigned long long)arg1 text:(id)arg2 attributes:(id)arg3 usingCryptoSession:(id)arg4;
 
+- (void).cxx_destruct;
 - (id)attributes;
-- (void)dealloc;
 - (id)decryptedTextUsingCryptoSession:(id)arg1;
 - (id)encryptedTextCyphertext;
 - (id)initWithState:(unsigned long long)arg1 encryptedTextCyphertext:(id)arg2 attributes:(id)arg3;

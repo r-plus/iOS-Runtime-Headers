@@ -8,13 +8,8 @@
     NSString * _personNameString;
 }
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 - (void).cxx_destruct;
 - (bool)_updateWithPersonName:(id)arg1 maxWidth:(double)arg2;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)accessibilityHUDRepresentation;
 - (double)addContentOverlap:(double)arg1;
 - (id)contentsImage;

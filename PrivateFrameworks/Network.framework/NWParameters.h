@@ -11,6 +11,7 @@
 @property (nonatomic, copy) NSData *TLSSessionID;
 @property (nonatomic, copy) NSString *account;
 @property (nonatomic) bool allowSocketAccess;
+@property (nonatomic) bool allowUnusableAddresses;
 @property (nonatomic) unsigned long long dataMode;
 @property (nonatomic) bool disableBlackHoleDetection;
 @property (nonatomic) bool disableNagleAlgorithm;
@@ -41,6 +42,7 @@
 @property (nonatomic) bool noProxy;
 @property (nonatomic, retain) NSUUID *parentID;
 @property (nonatomic) int pid;
+@property (nonatomic) bool preferNoProxy;
 @property (nonatomic, readonly, copy) NSString *privateDescription;
 @property (nonatomic, copy) NSUUID *processUUID;
 @property (nonatomic, readonly) bool prohibitCellular;
@@ -77,6 +79,7 @@
 - (id)TLSSessionID;
 - (id)account;
 - (bool)allowSocketAccess;
+- (bool)allowUnusableAddresses;
 - (id)applicationProtocols;
 - (id)copyCParameters;
 - (bool)copyEffectiveAuditToken:(struct { unsigned int x1[8]; }*)arg1;
@@ -131,6 +134,7 @@
 - (int)pid;
 - (void)preferNetworkAgentWithDomain:(id)arg1 type:(id)arg2;
 - (void)preferNetworkAgentWithUUID:(id)arg1;
+- (bool)preferNoProxy;
 - (id)privateDescription;
 - (id)processUUID;
 - (bool)prohibitCellular;
@@ -157,6 +161,7 @@
 - (id)sanitizedURL;
 - (void)setAccount:(id)arg1;
 - (void)setAllowSocketAccess:(bool)arg1;
+- (void)setAllowUnusableAddresses:(bool)arg1;
 - (void)setDataMode:(unsigned long long)arg1;
 - (void)setDisableBlackHoleDetection:(bool)arg1;
 - (void)setDisableNagleAlgorithm:(bool)arg1;
@@ -187,6 +192,7 @@
 - (void)setNoProxy:(bool)arg1;
 - (void)setParentID:(id)arg1;
 - (void)setPid:(int)arg1;
+- (void)setPreferNoProxy:(bool)arg1;
 - (void)setProcessUUID:(id)arg1;
 - (void)setProhibitExpensivePaths:(bool)arg1;
 - (void)setProhibitFallback:(bool)arg1;

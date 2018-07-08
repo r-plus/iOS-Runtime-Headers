@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UISearchController : UIViewController <DebugHierarchyObject, NSCoding, UIViewControllerAnimatedTransitioning, UIViewControllerPresenting, UIViewControllerTransitioningDelegate, _UIScrollViewScrollObserver_Internal> {
+@interface UISearchController : UIViewController <NSCoding, UIViewControllerAnimatedTransitioning, UIViewControllerPresenting, UIViewControllerTransitioningDelegate, _UIScrollViewScrollObserver_Internal> {
     long long  __previousSearchBarPosition;
     double  __resultsContentScrollViewPresentationOffset;
     bool  __showResultsForEmptySearch;
@@ -50,8 +50,6 @@
 @property (nonatomic) <UISearchResultsUpdating> *searchResultsUpdater;
 @property (readonly) Class superclass;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 + (void)_resignSearchBarAsFirstResponder:(id)arg1;
 
 - (void).cxx_destruct;
@@ -72,6 +70,7 @@
 - (bool)_disableAutomaticKeyboardUI;
 - (void)_dismissFromBackButton:(id)arg1;
 - (void)_dismissPresentation:(bool)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(bool*)arg2;
 - (void)_endWatchingPresentingController;
 - (void)_installBackGestureRecognizer;
 - (void)_installDoneGestureRecognizer;
@@ -155,9 +154,5 @@
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(bool)arg2;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
 
 @end

@@ -8,6 +8,7 @@
     bool  _cloudDataSyncPeerAvailable;
     NSDate * _dataSyncTimerStartTimestamp;
     bool  _decryptionFailed;
+    bool  _deviceSetupRunning;
     HMDHomeManager * _homeManager;
     bool  _iCloudAccountActive;
     NSObject<OS_dispatch_source> * _iCloudSwitchPopupTimer;
@@ -20,6 +21,7 @@
     HMFMessageDispatcher * _msgDispatcher;
     bool  _networkConnectivityAvailable;
     NSObject<OS_dispatch_source> * _popupTimer;
+    NSObject<OS_dispatch_queue> * _propertyQueue;
     double  _remainingDataSyncPeriod;
     double  _remainingResetConfigDisplayPeriod;
     bool  _resetConfigDisplayTimeHasElapsed;
@@ -37,6 +39,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) bool decryptionFailed;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) bool deviceSetupRunning;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) HMDHomeManager *homeManager;
 @property (nonatomic) bool iCloudAccountActive;
@@ -52,6 +55,7 @@
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic) bool networkConnectivityAvailable;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *popupTimer;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic) double remainingDataSyncPeriod;
 @property (nonatomic) double remainingResetConfigDisplayPeriod;
 @property (nonatomic) bool resetConfigDisplayTimeHasElapsed;
@@ -65,6 +69,7 @@
 + (bool)isWhitelistedRemoteTransportMessage:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)__handleDeviceSetupRunningUpdated;
 - (void)_clearResetConfigDisplayTimer;
 - (bool)_cloudSyncinProgressCheck:(id)arg1 supressPopup:(bool)arg2 sendCanceledError:(bool*)arg3 dataSyncState:(unsigned long long*)arg4;
 - (void)_handleAccountStatusChanged:(id)arg1;
@@ -93,6 +98,7 @@
 - (id)dataSyncTimerStartTimestamp;
 - (void)dealloc;
 - (bool)decryptionFailed;
+- (bool)deviceSetupRunning;
 - (void)handleKeychainSyncStateChangedNotification:(id)arg1;
 - (id)homeManager;
 - (bool)iCloudAccountActive;
@@ -106,12 +112,14 @@
 - (bool)isiCloudSwitchEnabled;
 - (bool)keychainSyncEnabled;
 - (bool)keychainSyncRequiredPopShown;
+- (void)kickResetConfigDisplayTimer;
 - (bool)localDataDecryptionFailed;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
 - (id)msgDispatcher;
 - (bool)networkConnectivityAvailable;
 - (id)popupTimer;
+- (id)propertyQueue;
 - (double)remainingDataSyncPeriod;
 - (double)remainingResetConfigDisplayPeriod;
 - (bool)resetConfigDisplayTimeHasElapsed;
@@ -124,6 +132,7 @@
 - (void)setCloudDataSyncPeerAvailable:(bool)arg1;
 - (void)setDataSyncTimerStartTimestamp:(id)arg1;
 - (void)setDecryptionFailed:(bool)arg1;
+- (void)setDeviceSetupRunning:(bool)arg1;
 - (void)setHomeManager:(id)arg1;
 - (void)setICloudAccountActive:(bool)arg1;
 - (void)setICloudSwitchPopupTimer:(id)arg1;
@@ -145,6 +154,7 @@
 - (void)setTotalHomes:(long long)arg1;
 - (void)setUuid:(id)arg1;
 - (bool)shouldCloudSyncData;
+- (void)startDataConfigResetTimers;
 - (void)timerDidFire:(id)arg1;
 - (long long)totalHomes;
 - (void)updateCloudDataSyncState:(bool)arg1;

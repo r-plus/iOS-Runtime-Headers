@@ -4,6 +4,8 @@
 
 @interface TSUCustomFormat : NSObject <NSCopying, NSMutableCopying> {
     NSMutableArray * _conditionList;
+    NSString * _currencyCode;
+    bool  _currencyCodeComputed;
     TSUCustomFormatData * _defaultFormatData;
     NSString * _formatName;
     NSString * _formatNameStem;
@@ -13,6 +15,7 @@
 
 @property (nonatomic, readonly) unsigned long long conditionCount;
 @property (nonatomic, readonly) NSMutableArray *conditionList;
+@property (nonatomic, readonly) NSString *currencyCode;
 @property (nonatomic, readonly) TSUCustomFormatData *defaultFormatData;
 @property (nonatomic, readonly) NSString *formatName;
 @property (nonatomic, readonly) NSString *formatNameStem;
@@ -27,6 +30,7 @@
 - (id)conditionalFormatDataForValue:(double)arg1;
 - (id)conditionalFormatDataForValue:(double)arg1 outKey:(unsigned long long*)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)currencyCode;
 - (id)customFormatWithNewName:(id)arg1;
 - (id)defaultFormatData;
 - (id)description;

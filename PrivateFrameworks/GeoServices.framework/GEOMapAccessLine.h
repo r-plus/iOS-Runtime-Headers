@@ -7,7 +7,7 @@
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<GEOLocationCoordinate2D *, std::__1::allocator<GEOLocationCoordinate2D> > { 
-            struct { /* ? */ } *__first_; 
+            struct { /* ? */ } *__value_; 
         } __end_cap_; 
     }  _coordinates;
     struct shared_ptr<geo::MapEdge> { 

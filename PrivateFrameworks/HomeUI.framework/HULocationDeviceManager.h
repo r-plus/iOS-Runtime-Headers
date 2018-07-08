@@ -21,6 +21,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_updateActiveFMFDevice:(id)arg1;
 - (id)activeFMFDeviceFuture;
 - (id)activeLocationDeviceFuture;
 - (void)addObserver:(id)arg1;

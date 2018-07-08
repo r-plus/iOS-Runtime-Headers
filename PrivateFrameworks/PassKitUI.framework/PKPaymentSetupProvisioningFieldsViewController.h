@@ -7,6 +7,7 @@
     NSString * _activatingPaymentPassUniqueID;
     UINotificationFeedbackGenerator * _cardAddedFeedbackGenerator;
     PKPaymentSetupFooterView * _cardDetailsFooterView;
+    id /* block */  _continueActionHandler;
     bool  _hideSetupLaterButton;
     PKPaymentProvisioningController * _paymentProvisioningController;
     bool  _termsPresented;
@@ -17,6 +18,7 @@
     NSTimer * _waitForActivationTimer;
 }
 
+@property (nonatomic, copy) id /* block */ continueActionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -48,6 +50,7 @@
 - (void)_waitForActivationDidTimeout:(id)arg1;
 - (void)acceptTerms;
 - (void)addDifferentCard:(id)arg1;
+- (id /* block */)continueActionHandler;
 - (void)dealloc;
 - (id)defaultFields;
 - (id)defaultHeaderViewSubTitle;
@@ -75,7 +78,9 @@
 - (void)requestRequirements:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)resetAllFieldsAndProvisioningState;
 - (void)resetProvisioningState;
+- (void)setContinueActionHandler:(id /* block */)arg1;
 - (void)setHideSetupLaterButton:(bool)arg1;
+- (void)setNotificationTextInFooterView:(id)arg1;
 - (void)setPaymentProvisioningController:(id)arg1;
 - (void)setupLater:(id)arg1;
 - (void)showEligibilityIssueWithReason:(long long)arg1 learnMoreURL:(id)arg2 completion:(id /* block */)arg3;
@@ -83,6 +88,7 @@
 - (void)showProvisioningError:(id)arg1 completion:(id /* block */)arg2;
 - (void)suppressFooterViewManualEntryButton;
 - (void)suppressFooterViewSetupLaterButton;
+- (void)suppressFooterViewSkipCardButton;
 - (void)updateFieldsModelWithPaymentCredential:(id)arg1;
 - (void)updateFieldsModelWithRequirementsResponse:(id)arg1;
 - (void)viewDidDisappear:(bool)arg1;

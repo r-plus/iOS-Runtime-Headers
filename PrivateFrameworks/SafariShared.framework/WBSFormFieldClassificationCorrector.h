@@ -8,6 +8,7 @@
     NSString * _domain;
     WBSFormMetadata * _formMetadata;
     NSDictionary * _formValues;
+    NSSet * _uniqueIDsOfControlsThatWereAutoFilled;
 }
 
 @property (nonatomic) <WBSFormFieldClassificationCorrectorDelegate> *delegate;
@@ -22,7 +23,7 @@
 - (id)formMetadata;
 - (id)formValues;
 - (id)init;
-- (id)initWithDomain:(id)arg1 formMetadata:(id)arg2 formValues:(id)arg3;
+- (id)initWithDomain:(id)arg1 formMetadata:(id)arg2 formValues:(id)arg3 uniqueIDsOfControlsThatWereAutoFilled:(id)arg4;
 - (void)processCorrections;
 - (void)setDelegate:(id)arg1;
 

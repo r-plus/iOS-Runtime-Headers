@@ -8,6 +8,8 @@
 
 @property (nonatomic) long long unlockFailureCount;
 
++ (bool)supportsSecureCoding;
+
 - (void)setUnlockFailureCount:(long long)arg1;
 - (long long)unlockFailureCount;
 

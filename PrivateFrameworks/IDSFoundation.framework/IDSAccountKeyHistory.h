@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
  */
 
-@interface IDSAccountKeyHistory : NSObject <NSCoding, NSCopying> {
+@interface IDSAccountKeyHistory : NSObject <NSCopying, NSSecureCoding> {
     NSArray * _entries;
 }
 

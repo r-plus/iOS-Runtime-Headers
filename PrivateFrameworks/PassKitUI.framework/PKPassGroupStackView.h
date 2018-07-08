@@ -5,7 +5,6 @@
 @interface PKPassGroupStackView : UIScrollView <PKPassDeleteAnimationControllerDelegate, PKPassDeleteHandler, PKPassFooterViewDelegate, PKPassGroupViewDelegate, PKPaymentServiceDelegate> {
     NSMutableDictionary * _animatorsByGroupID;
     NSTimer * _autoscrollTimer;
-    PKBacklightController * _backlightController;
     UIColor * _currentPageIndicatorTintColor;
     int  _currentTestReps;
     <PKPassGroupStackViewDatasource> * _datasource;
@@ -101,6 +100,7 @@
     id /* block */  _transitionCanceller;
     NSMutableArray * _transitionCompletionHandlers;
     unsigned int  _userInteractionCounter;
+    bool  _wantsBacklightRamping;
 }
 
 @property (nonatomic, copy) UIColor *currentPageIndicatorTintColor;
@@ -195,12 +195,12 @@
 - (void)_presentModalGroupViewPostAnimationActions;
 - (void)_presentOffscreenAnimated:(bool)arg1 split:(bool)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)_presentPassIngestionWithAnimation:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)_rampBacklightIfNecessary:(bool)arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_rangeOfEagerLoadedIndexes;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_rangeOfVisibleIndexes;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_rangeOfVisibleIndexesIgnoringBottomInset:(bool)arg1;
 - (bool)_recomputeLayoutState;
 - (void)_refreshBacklightForFrontmostPassGroup;
-- (void)_refreshBrightness;
 - (void)_removeGroupViewAsSubviewWithGroupID:(id)arg1;
 - (void)_reorderPositionChangedForReorderedGroupViewWithVelocity:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_resetBrightness;
@@ -260,7 +260,6 @@
 - (double)_yForModallyPresentedGroupIgnoringCompactState:(bool)arg1;
 - (double)_yForSingleGroupView:(id)arg1;
 - (double)_yPositionForGroupAtIndex:(unsigned long long)arg1 forState:(long long)arg2;
-- (id)backlightController;
 - (void)beginScrollCardListTest;
 - (void)beginSelectCardTest;
 - (id)currentPageIndicatorTintColor;
@@ -270,6 +269,7 @@
 - (void)deleteAnimationControllerWillBeginDeleteAnimation:(id)arg1;
 - (void)deleteGroup:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)didUpdateDefaultPaymentPassWithUniqueIdentifier:(id)arg1;
+- (void)evaluateBrightness;
 - (bool)footerSuppressed;
 - (void)gotoBaseTestState;
 - (bool)groupView:(id)arg1 deleteButtonEnabledForPass:(id)arg2;
@@ -318,6 +318,7 @@
 - (void)presentPassWithUniqueID:(id)arg1;
 - (long long)presentationState;
 - (void)reloadData;
+- (void)resetBrightness;
 - (void)safeAreaInsetsDidChange;
 - (void)scrollDownTest;
 - (void)scrollNext;

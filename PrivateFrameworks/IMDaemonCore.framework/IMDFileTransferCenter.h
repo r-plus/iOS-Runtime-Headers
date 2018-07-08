@@ -46,6 +46,7 @@
 - (id)_temporaryPathForGUID:(id)arg1 filename:(id)arg2;
 - (void)_transferTimerTick:(id)arg1;
 - (void)_updateContextStamp;
+- (bool)_usingStingRay;
 - (void)acceptTransfer:(id)arg1 path:(id)arg2;
 - (void)addDefaultGatekeeperPropertiesToDirectory:(id)arg1;
 - (void)addTransfer:(id)arg1 forGUID:(id)arg2;
@@ -72,6 +73,7 @@
 - (void)makeNewOutgoingTransferWithGUID:(id)arg1 filename:(id)arg2 isDirectory:(bool)arg3 totalBytes:(unsigned long long)arg4 hfsType:(unsigned int)arg5 hfsCreator:(unsigned int)arg6 hfsFlags:(unsigned short)arg7;
 - (bool)markAttachment:(id)arg1 sender:(id)arg2 recipients:(id)arg3 isIncoming:(bool)arg4;
 - (void)markTransferAsNotSyncSuccessFullyUsingCKRecord:(id)arg1;
+- (void)markTransferAsNotSyncSuccessfullyDownloadedFromCloud:(id)arg1;
 - (bool)populateLocalURLsForTransfer:(id)arg1 fromCKRecord:(id)arg2;
 - (void)registerStandaloneTransfer:(id)arg1;
 - (void)removeTransferForGUID:(id)arg1;

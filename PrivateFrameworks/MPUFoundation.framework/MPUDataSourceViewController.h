@@ -40,7 +40,6 @@
 - (void)setShouldReloadWhenVisible:(bool)arg1;
 - (void)setVisible:(bool)arg1;
 - (bool)shouldReloadWhenVisible;
-- (void)viewDidAppear:(bool)arg1;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 

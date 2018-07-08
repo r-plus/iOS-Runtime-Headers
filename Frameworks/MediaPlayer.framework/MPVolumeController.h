@@ -31,6 +31,7 @@
 - (void).cxx_destruct;
 - (float)EUVolumeLimit;
 - (void)_updateVolumeControlAvailability;
+- (void)adjustVolumeValue:(float)arg1;
 - (id)dataSource;
 - (id)delegate;
 - (id)init;

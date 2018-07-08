@@ -3,6 +3,7 @@
  */
 
 @interface FBSceneSnapshotContext : NSObject <BSDescriptionProviding> {
+    BSSettings * _clientExtendedData;
     NSDate * _expirationDate;
     struct CGRect { 
         struct CGPoint { 
@@ -22,6 +23,7 @@
     FBSSceneSettings * _settings;
 }
 
+@property (nonatomic, copy) BSSettings *clientExtendedData;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSDate *expirationDate;
@@ -37,6 +39,7 @@
 
 + (id)contextWithFBSContext:(id)arg1;
 
+- (id)clientExtendedData;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
@@ -50,6 +53,7 @@
 - (long long)orientation;
 - (double)scale;
 - (id)sceneID;
+- (void)setClientExtendedData:(id)arg1;
 - (void)setExpirationDate:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setLayersToExclude:(id)arg1;

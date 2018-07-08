@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/ARKit.framework/ARKit
  */
 
-@interface ARFaceTrackingData : NSObject <ARResultData, NSCopying> {
+@interface ARFaceTrackingData : NSObject <ARResultData, NSCopying, NSSecureCoding> {
     struct vector<float, std::__1::allocator<float> > { 
         float *__begin_; 
         float *__end_; 
         struct __compressed_pair<float *, std::__1::allocator<float> > { 
-            float *__first_; 
+            float *__value_; 
         } __end_cap_; 
     }  _blendShapeCoefficients;
     NSObject<OS_dispatch_semaphore> * _imageVerticesSemaphore;
@@ -15,8 +15,8 @@
         /* Warning: Unrecognized filer type: ']' using 'void*' */ void*columns[4]; 
     }  _leftEyeTransform;
     void _lookAtPoint;
-    struct vector<float __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))> >="__begin_"^"__end_"^"__end_cap_"{__compressed_pair<float * __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))> >="__first_"^ {}  _meshVertices;
-    struct vector<float __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))> >="__begin_"^"__end_"^"__end_cap_"{__compressed_pair<float * __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))> >="__first_"^ {}  _normals;
+    struct vector<float __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))> >="__begin_"^"__end_"^"__end_cap_"{__compressed_pair<float * __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))> >="__value_"^ {}  _meshVertices;
+    struct vector<float __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))> >="__begin_"^"__end_"^"__end_cap_"{__compressed_pair<float * __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))> >="__value_"^ {}  _normals;
     NSObject<OS_dispatch_semaphore> * _normalsSemaphore;
     struct { 
         /* Warning: Unrecognized filer type: ']' using 'void*' */ void*columns[4]; 
@@ -25,7 +25,7 @@
     struct { 
         /* Warning: Unrecognized filer type: ']' using 'void*' */ void*columns[4]; 
     }  _transform;
-    struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >="__begin_"^"__end_"^"__end_cap_"{__compressed_pair<float * __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >="__first_"^ {}  _verticesImageSpace;
+    struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >="__begin_"^"__end_"^"__end_cap_"{__compressed_pair<float * __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >="__value_"^ {}  _verticesImageSpace;
 }
 
 @property (nonatomic, readonly) const float*blendShapeCoefficients;
@@ -47,6 +47,7 @@
 @property (nonatomic, readonly) const /* Warning: Unrecognized filer type: '' using 'void*' */ void**vertices;
 
 + (id)sharedNeutralGeometry;
++ (bool)supportsSecureCoding;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -55,8 +56,12 @@
 - (const float*)blendShapeCoefficients;
 - (unsigned long long)blendShapeCoefficientsCount;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (const /* Warning: Unrecognized filer type: '1' using 'void*' */ void**)imageVertices;
+- (id)initPrivate;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithTrackingData:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (bool)isValid;
 - (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })leftEyeTransform;
 - (void)lookAtPoint;

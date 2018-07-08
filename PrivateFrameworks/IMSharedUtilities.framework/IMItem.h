@@ -21,6 +21,10 @@
     NSString * _roomName;
     NSDictionary * _senderInfo;
     NSString * _service;
+    unsigned long long  _sortID;
+    NSString * _srCloudKitRecordChangeTag;
+    NSString * _srCloudKitRecordID;
+    long long  _srCloudKitSyncState;
     NSDate * _time;
     long long  _type;
     NSString * _unformattedID;
@@ -48,6 +52,10 @@
 @property (nonatomic, retain) NSString *sender;
 @property (nonatomic, retain) NSDictionary *senderInfo;
 @property (nonatomic, retain) NSString *service;
+@property (nonatomic) unsigned long long sortID;
+@property (nonatomic, copy) NSString *srCloudKitRecordChangeTag;
+@property (nonatomic, copy) NSString *srCloudKitRecordID;
+@property (nonatomic) long long srCloudKitSyncState;
 @property (nonatomic, retain) NSDate *time;
 @property (nonatomic) long long type;
 @property (nonatomic, retain) NSString *unformattedID;
@@ -124,9 +132,17 @@
 - (void)setSender:(id)arg1;
 - (void)setSenderInfo:(id)arg1;
 - (void)setService:(id)arg1;
+- (void)setSortID:(unsigned long long)arg1;
+- (void)setSrCloudKitRecordChangeTag:(id)arg1;
+- (void)setSrCloudKitRecordID:(id)arg1;
+- (void)setSrCloudKitSyncState:(long long)arg1;
 - (void)setTime:(id)arg1;
 - (void)setType:(long long)arg1;
 - (void)setUnformattedID:(id)arg1;
+- (unsigned long long)sortID;
+- (id)srCloudKitRecordChangeTag;
+- (id)srCloudKitRecordID;
+- (long long)srCloudKitSyncState;
 - (id)time;
 - (long long)type;
 - (id)unformattedID;
@@ -179,6 +195,8 @@
 - (id)_recordIDUsingName:(id)arg1 zoneID:(id)arg2;
 - (id)_recordNameUsingSalt:(id)arg1;
 - (id)_recordType;
+- (bool)_shouldDownloadIfPhoneNumberAndNoSIM:(id)arg1;
+- (bool)_usingStingRay;
 - (id)compressedProtobufDataForGroupActionItem;
 - (id)compressedProtobufDataForGroupTitleChangeItem;
 - (id)compressedProtobufDataForLocationShareStatusChangeItem;

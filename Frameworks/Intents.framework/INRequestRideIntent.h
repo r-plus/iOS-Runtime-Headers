@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INRequestRideIntent : INIntent <INRequestRideIntentExport>
+@interface INRequestRideIntent : INIntent <ATXSlotResolver, INRequestRideIntentExport>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -44,6 +44,14 @@
 
 // Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
 
++ (bool)isRequired;
++ (id)resolveIntentFromSlot:(id)arg1;
++ (id)slotFromContext:(id)arg1;
+
 - (void)apr_getArgsInto:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
+
+- (id)contextMetadata;
 
 @end

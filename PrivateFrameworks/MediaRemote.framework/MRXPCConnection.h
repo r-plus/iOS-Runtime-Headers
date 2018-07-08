@@ -15,6 +15,7 @@
 @property (nonatomic, copy) id /* block */ messageHandler;
 @property (nonatomic, readonly) int pid;
 
+- (void).cxx_destruct;
 - (void)_registerCallbacks;
 - (void)addCustomXPCHandler:(id /* block */)arg1 forKey:(id)arg2;
 - (id)connection;

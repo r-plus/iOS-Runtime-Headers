@@ -24,6 +24,8 @@
 @property (nonatomic) double nextPeripheralPerfusionIndexSampleTime;
 @property (nonatomic) double nextRespirationRateSampleTime;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (long long)_computeBloodPressureForDemoPerson:(id)arg1 atTime:(double)arg2 baseBloodPressure:(double)arg3 stdDev:(double)arg4;
 - (double)_computeBodyTempInCelsiusForDemoPerson:(id)arg1 atTime:(double)arg2 addNoise:(bool)arg3;

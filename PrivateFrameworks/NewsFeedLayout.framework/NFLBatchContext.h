@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/NewsFeedLayout.framework/NewsFeedLayout
  */
 
-@interface NFLBatchContext : NSObject <NSCoding, NSCopying> {
+@interface NFLBatchContext : NSObject <NSCopying, NSSecureCoding> {
     unsigned long long  _batchType;
     NSString * _identifier;
 }
 
 @property (nonatomic, readonly) unsigned long long batchType;
 @property (nonatomic, readonly, copy) NSString *identifier;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (unsigned long long)batchType;

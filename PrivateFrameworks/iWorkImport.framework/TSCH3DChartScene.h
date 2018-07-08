@@ -13,6 +13,7 @@
             bool forceOmitTitle; 
             bool forceOmitAxisTitle; 
             bool forceOmitLabelPlacement; 
+            bool forceTitleAtTop; 
             bool enable3DTightBounds; 
             bool enable3DScaledDepthBounds; 
             long long maxDepthRatioType; 
@@ -21,7 +22,7 @@
     }  mSceneInfo;
 }
 
-+ (void)addObjectsToSceneWithSceneInfo:(const struct ChartSceneInfo { id x1; id x2; struct { bool x_3_1_1; bool x_3_1_2; bool x_3_1_3; bool x_3_1_4; bool x_3_1_5; bool x_3_1_6; long long x_3_1_7; unsigned long long x_3_1_8; } x3; }*)arg1;
++ (void)addObjectsToSceneWithSceneInfo:(const struct ChartSceneInfo { id x1; id x2; struct { bool x_3_1_1; bool x_3_1_2; bool x_3_1_3; bool x_3_1_4; bool x_3_1_5; bool x_3_1_6; bool x_3_1_7; long long x_3_1_8; unsigned long long x_3_1_9; } x3; }*)arg1;
 + (bool)supportsValueAxisLabelAlignmentCaching;
 
 - (void)addAllLabelsToScene;
@@ -33,8 +34,8 @@
 - (void)adjustSceneSettings;
 - (id)chartInfo;
 - (id)chartType;
-- (id)initWithSceneInfo:(const struct ChartSceneInfo { id x1; id x2; struct { bool x_3_1_1; bool x_3_1_2; bool x_3_1_3; bool x_3_1_4; bool x_3_1_5; bool x_3_1_6; long long x_3_1_7; unsigned long long x_3_1_8; } x3; }*)arg1;
-- (const struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; long long x7; unsigned long long x8; }*)layoutSettings;
+- (id)initWithSceneInfo:(const struct ChartSceneInfo { id x1; id x2; struct { bool x_3_1_1; bool x_3_1_2; bool x_3_1_3; bool x_3_1_4; bool x_3_1_5; bool x_3_1_6; bool x_3_1_7; long long x_3_1_8; unsigned long long x_3_1_9; } x3; }*)arg1;
+- (const struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; long long x8; unsigned long long x9; }*)layoutSettings;
 - (id)scene;
 - (id)seriesType;
 

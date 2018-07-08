@@ -2,10 +2,8 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPAVPlaylistManager : NSObject <MPAVQueueController, MPAVQueueCoordinatorDataSource, MPQueueBehaviorManaging, MPQueueFeederDelegate, NSCoding> {
+@interface MPAVPlaylistManager : NSObject <MPAVQueueController, MPAVQueueCoordinatorDataSource, MPQueueBehaviorManaging, MPQueueFeederDelegate, NSSecureCoding> {
     MPAVController * _avController;
-    bool  _changingPlayer;
-    bool  _changingPlaylistFeeder;
     MPAVItem * _currentItem;
     <MPAVItemQueueIdentifier> * _currentItemQueueIdentifier;
     MPQueueFeeder * _currentQueueFeeder;
@@ -13,7 +11,6 @@
     bool  _goToTargetIndex;
     long long  _lastSelectionDirection;
     long long  _playbackMode;
-    MPQueuePlayer * _player;
     MPQueueFeeder * _playlistFeeder;
     MPAVQueueCoordinator * _queueCoordinator;
     long long  _repeatMode;
@@ -26,24 +23,24 @@
 @property (nonatomic) MPAVController *avController;
 @property (nonatomic, readonly) bool canSeek;
 @property (nonatomic, readonly) bool canSkipToPreviousItem;
-@property (getter=isChangingPlayer, nonatomic, readonly) bool changingPlayer;
-@property (getter=isChangingPlaylistFeeder, nonatomic, readonly) bool changingPlaylistFeeder;
 @property (readonly) long long currentIndex;
-@property (readonly) MPAVItem *currentItem;
+@property (retain) MPAVItem *currentItem;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MPAVPlaylistManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) bool isTransitioningSource;
 @property (nonatomic, readonly) long long playbackMode;
-@property (readonly) MPQueuePlayer *player;
 @property (nonatomic, readonly) MPQueueFeeder *playlistFeeder;
+@property (nonatomic, readonly) long long playlistItemCount;
 @property (readonly) MPAVQueueCoordinator *queueCoordinator;
 @property (nonatomic) long long repeatMode;
 @property (nonatomic) bool shouldDeferItemLoading;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *uniqueIdentifier;
 @property (nonatomic, readonly) long long upNextItemCount;
 @property (nonatomic, readonly) bool userCanChangeShuffleAndRepeatType;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_applyVolumeNormalizationForQueuedItems;
@@ -63,21 +60,20 @@
 - (bool)allowsQueueResetWhenReachingEnd;
 - (bool)allowsUserVisibleUpcomingItems;
 - (id)avController;
-- (bool)canChangePlaylistFeeder;
 - (bool)canSeek;
 - (bool)canSeekItem:(id)arg1;
 - (bool)canSkipItem:(id)arg1;
 - (bool)canSkipToPreviousItem;
 - (bool)canSkipToPreviousItemForItem:(id)arg1;
 - (void)clearQueueFeeder;
-- (void)connectPlayer;
+- (void)connectQueueCoordinator:(id)arg1;
 - (id)contentItemIDForPlaylistIndex:(long long)arg1;
 - (long long)currentIndex;
 - (id)currentItem;
 - (id)currentQueueUUID;
 - (void)dealloc;
 - (id)delegate;
-- (void)disconnectPlayer;
+- (void)disconnectQueueCoordinator;
 - (unsigned long long)displayCountForItem:(id)arg1;
 - (unsigned long long)displayIndexForItem:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -89,17 +85,12 @@
 - (long long)indexWithDelta:(long long)arg1 fromIndex:(long long)arg2 ignoreElapsedTime:(bool)arg3 didReachEnd:(bool*)arg4;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (bool)isChangingPlayer;
-- (bool)isChangingPlaylistFeeder;
 - (bool)isPlaceholderItemForContentItemID:(id)arg1;
-- (bool)isTransitioningSource;
 - (id)itemForContentItemID:(id)arg1;
 - (id)itemForPlaylistIndex:(long long)arg1;
 - (id)metadataItemForPlaylistIndex:(long long)arg1;
 - (id)musicPlayerControllerQueueForUUID:(id)arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (long long)playbackMode;
-- (id)player;
 - (void)player:(id)arg1 currentItemDidChangeFromItem:(id)arg2 toItem:(id)arg3;
 - (id)playlistFeeder;
 - (id)playlistFeederForPlaylistIndex:(long long)arg1;
@@ -108,6 +99,7 @@
 - (long long)playlistIndexOfItemIdentifier:(id)arg1;
 - (long long)playlistIndexOfQueueIdentifier:(id)arg1 inPlaylistFeeder:(id)arg2;
 - (long long)playlistIndexWithDelta:(long long)arg1 fromIndex:(long long)arg2 ignoreElapsedTime:(bool)arg3 didReachEnd:(bool*)arg4;
+- (long long)playlistItemCount;
 - (id)queueCoordinator;
 - (void)queueCoordinator:(id)arg1 failedToLoadItem:(id)arg2;
 - (id)queueCoordinator:(id)arg1 itemToFollowItem:(id)arg2;
@@ -126,12 +118,14 @@
 - (void)reset;
 - (void)setAvController:(id)arg1;
 - (void)setCurrentIndex:(long long)arg1 selectionDirection:(long long)arg2;
+- (void)setCurrentItem:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (bool)setMusicPlayerControllerQueue:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (bool)setPlaylistFeeder:(id)arg1 startIndex:(long long)arg2 keepPlaying:(bool)arg3;
 - (void)setRepeatMode:(long long)arg1;
 - (void)setShouldDeferItemLoading:(bool)arg1;
 - (bool)shouldDeferItemLoading;
+- (id)uniqueIdentifier;
 - (long long)upNextItemCount;
 - (void)updateForSoundCheckDefaultsChange;
 - (void)updateLocationDependentPropertiesForItem:(id)arg1;

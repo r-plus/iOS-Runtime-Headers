@@ -12,7 +12,6 @@
     NSMutableSet * _positiveSet;
     unsigned int  _requestCount;
     NSObject<OS_dispatch_queue> * _senderQueue;
-    NSString * _serviceName;
     bool  _setupComplete;
     NSObject<OS_dispatch_semaphore> * _setupSemaphore;
     bool  _skipFileProviderItems;
@@ -27,7 +26,6 @@
 @property (nonatomic) double minDate;
 @property (nonatomic, readonly) unsigned int requestCount;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *senderQueue;
-@property (nonatomic, readonly) NSString *serviceName;
 @property (nonatomic) bool setupComplete;
 @property (retain) NSObject<OS_dispatch_semaphore> *setupSemaphore;
 @property (nonatomic) bool skipFileProviderItems;
@@ -68,7 +66,6 @@
 - (unsigned int)requestCount;
 - (void)runOnSenderQueue:(id /* block */)arg1;
 - (id)senderQueue;
-- (id)serviceName;
 - (void)setMinDate:(double)arg1;
 - (void)setSetupComplete:(bool)arg1;
 - (void)setSetupSemaphore:(id)arg1;

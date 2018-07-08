@@ -170,6 +170,7 @@
 - (void)requestGraphReadyNotificationWithCoalescingIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)requestGraphRebuildProgressWithCompletion:(id /* block */)arg1;
 - (void)requestGraphRebuildWithProgress:(id)arg1 completion:(id /* block */)arg2;
+- (void)requestHighlightEstimatesWithCompletion:(id /* block */)arg1;
 - (void)requestPermissionToDownloadFaceResourcesOfCount:(unsigned long long)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)requestTotalProgressCountsForWorkerType:(short)arg1 states:(id)arg2 completion:(id /* block */)arg3;
 - (void)requestTotalProgressCountsWithCompletion:(id /* block */)arg1;
@@ -276,6 +277,5 @@
 
 + (unsigned long long)vcp_assetCount;
 + (id)vcp_photoLibrary;
-+ (id)vcp_sharedPhotoLibrary;
 
 @end

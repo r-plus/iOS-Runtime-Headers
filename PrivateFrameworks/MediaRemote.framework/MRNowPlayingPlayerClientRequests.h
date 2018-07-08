@@ -5,44 +5,45 @@
 @interface MRNowPlayingPlayerClientRequests : NSObject <MRNowPlayingClientState> {
     NSOperationQueue * _enquedNowPlayingInfoAssetRequests;
     NSOperationQueue * _enquedNowPlayingInfoRequests;
-    void * _playbackQueue;
+    _MRPlaybackQueueProtobuf * _playbackQueue;
     MRPlaybackQueuePlayerClient * _playbackQueueClient;
     NSMutableDictionary * _playbackQueueCompletions;
     unsigned int  _playbackState;
-    void * _playerPath;
+    _MRNowPlayingPlayerPathProtobuf * _playerPath;
     NSObject<OS_dispatch_queue> * _responseQueue;
     NSObject<OS_dispatch_queue> * _serialQueue;
     NSMutableDictionary * _transactionCallbacks;
     NSMutableDictionary * _transactions;
 }
 
-@property (nonatomic, readonly) void*playbackQueue;
+@property (nonatomic, readonly) _MRPlaybackQueueProtobuf *playbackQueue;
 @property (nonatomic, readonly) MRPlaybackQueuePlayerClient *playbackQueueClient;
 @property (nonatomic, readonly) unsigned int playbackState;
-@property (nonatomic, readonly) void*playerPath;
+@property (nonatomic, readonly) _MRNowPlayingPlayerPathProtobuf *playerPath;
 
+- (void).cxx_destruct;
 - (void)_handleContentItemArtworkDidChangeNotification:(id)arg1;
 - (void)_handleContentItemsDidChangeNotification:(id)arg1;
-- (void)_handleEnqueuedPlaybackQueueRequest:(void*)arg1 completion:(id /* block */)arg2;
+- (void)_handleEnqueuedPlaybackQueueRequest:(id)arg1 completion:(id /* block */)arg2;
 - (void)_handlePlaybackQueueDidChangeNotification:(id)arg1;
 - (void)_handlePlaybackStateDidChangeNotification:(id)arg1;
 - (void)_handleTransactionPackets:(id)arg1 packets:(id)arg2 completion:(id /* block */)arg3;
 - (void)_registerDefaultCallbacks;
 - (id)_transactionDestintationForName:(unsigned long long)arg1;
-- (void)addPlaybackQueueCompletion:(id /* block */)arg1 forRequest:(void*)arg2;
+- (void)addPlaybackQueueCompletion:(id /* block */)arg1 forRequest:(id)arg2;
 - (void)addTransactionCallback:(id /* block */)arg1 forName:(unsigned long long)arg2;
 - (void)dealloc;
-- (void)enqueuePlaybackQueueRequest:(void*)arg1 completion:(id /* block */)arg2;
-- (id)initWithPlayerPath:(void*)arg1;
-- (void*)playbackQueue;
+- (id)debugDescription;
+- (void)enqueuePlaybackQueueRequest:(id)arg1 completion:(id /* block */)arg2;
+- (id)initWithPlayerPath:(id)arg1;
+- (id)playbackQueue;
 - (id)playbackQueueClient;
 - (unsigned int)playbackState;
-- (void*)playerPath;
+- (id)playerPath;
 - (void)receiveTransaction:(unsigned long long)arg1 fromMessage:(id)arg2;
-- (void)removePlaybackQueueCompletionForRequest:(void*)arg1;
+- (void)removePlaybackQueueCompletionForRequest:(id)arg1;
 - (void)restoreNowPlayingClientState;
-- (void)setPlaybackQueue:(void*)arg1;
+- (void)setPlaybackQueue:(id)arg1;
 - (id)transactionCallbacksForName:(unsigned long long)arg1;
-- (bool)verifyCommandOptions:(id)arg1 forCommand:(unsigned int)arg2;
 
 @end

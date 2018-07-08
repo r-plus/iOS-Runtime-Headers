@@ -6,7 +6,7 @@
     NSDictionary * inputScores;
     NSString * intentType;
     double  stack;
-    int  stackLen;
+    unsigned long long  stackLen;
     NSMutableDictionary * subscores;
 }
 

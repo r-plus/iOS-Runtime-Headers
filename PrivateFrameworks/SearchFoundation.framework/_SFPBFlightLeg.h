@@ -6,6 +6,7 @@
     _SFPBDate * _arrivalActualTime;
     _SFPBAirport * _arrivalAirport;
     NSString * _arrivalGate;
+    _SFPBDate * _arrivalGateTime;
     _SFPBDate * _arrivalPublishedTime;
     _SFPBDate * _arrivalRunwayTime;
     NSString * _arrivalTerminal;
@@ -28,6 +29,7 @@
 @property (nonatomic, retain) _SFPBDate *arrivalActualTime;
 @property (nonatomic, retain) _SFPBAirport *arrivalAirport;
 @property (nonatomic, copy) NSString *arrivalGate;
+@property (nonatomic, retain) _SFPBDate *arrivalGateTime;
 @property (nonatomic, retain) _SFPBDate *arrivalPublishedTime;
 @property (nonatomic, retain) _SFPBDate *arrivalRunwayTime;
 @property (nonatomic, copy) NSString *arrivalTerminal;
@@ -45,6 +47,7 @@
 @property (nonatomic, readonly) bool hasArrivalActualTime;
 @property (nonatomic, readonly) bool hasArrivalAirport;
 @property (nonatomic, readonly) bool hasArrivalGate;
+@property (nonatomic, readonly) bool hasArrivalGateTime;
 @property (nonatomic, readonly) bool hasArrivalPublishedTime;
 @property (nonatomic, readonly) bool hasArrivalRunwayTime;
 @property (nonatomic, readonly) bool hasArrivalTerminal;
@@ -69,6 +72,7 @@
 - (id)arrivalActualTime;
 - (id)arrivalAirport;
 - (id)arrivalGate;
+- (id)arrivalGateTime;
 - (id)arrivalPublishedTime;
 - (id)arrivalRunwayTime;
 - (id)arrivalTerminal;
@@ -85,6 +89,7 @@
 - (bool)hasArrivalActualTime;
 - (bool)hasArrivalAirport;
 - (bool)hasArrivalGate;
+- (bool)hasArrivalGateTime;
 - (bool)hasArrivalPublishedTime;
 - (bool)hasArrivalRunwayTime;
 - (bool)hasArrivalTerminal;
@@ -109,6 +114,7 @@
 - (void)setArrivalActualTime:(id)arg1;
 - (void)setArrivalAirport:(id)arg1;
 - (void)setArrivalGate:(id)arg1;
+- (void)setArrivalGateTime:(id)arg1;
 - (void)setArrivalPublishedTime:(id)arg1;
 - (void)setArrivalRunwayTime:(id)arg1;
 - (void)setArrivalTerminal:(id)arg1;

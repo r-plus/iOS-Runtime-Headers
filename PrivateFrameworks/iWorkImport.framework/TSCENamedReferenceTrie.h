@@ -3,30 +3,30 @@
  */
 
 @interface TSCENamedReferenceTrie : NSObject {
-    NSLocale * mLocale;
+    NSLocale * _locale;
     struct TSCENamedReferenceTrieNode { 
-        struct unordered_map<TSU::UUIDData<TSP::UUIDData>, SFUtility::ObjcSharedPtr<NSMutableSet>, std::__1::hash<TSUUUID>, std::__1::equal_to<TSU::UUIDData<TSP::UUIDData> >, std::__1::allocator<std::__1::pair<const TSU::UUIDData<TSP::UUIDData>, SFUtility::ObjcSharedPtr<NSMutableSet> > > > { 
-            struct __hash_table<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, SFUtility::ObjcSharedPtr<NSMutableSet> >, std::__1::__unordered_map_hasher<TSU::UUIDData<TSP::UUIDData>, std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, SFUtility::ObjcSharedPtr<NSMutableSet> >, std::__1::hash<TSUUUID>, true>, std::__1::__unordered_map_equal<TSU::UUIDData<TSP::UUIDData>, std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, SFUtility::ObjcSharedPtr<NSMutableSet> >, std::__1::equal_to<TSU::UUIDData<TSP::UUIDData> >, true>, std::__1::allocator<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, SFUtility::ObjcSharedPtr<NSMutableSet> > > > { 
-                struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, SFUtility::ObjcSharedPtr<NSMutableSet> >, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, SFUtility::ObjcSharedPtr<NSMutableSet> >, void *> *> *> > > { 
-                    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, SFUtility::ObjcSharedPtr<NSMutableSet> >, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, SFUtility::ObjcSharedPtr<NSMutableSet> >, void *> *> *> > > { 
-                        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, SFUtility::ObjcSharedPtr<NSMutableSet> >, void *> *> {} **__first_; 
-                        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, SFUtility::ObjcSharedPtr<NSMutableSet> >, void *> *> *> > { 
-                            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, SFUtility::ObjcSharedPtr<NSMutableSet> >, void *> *> *> > { 
-                                unsigned long long __first_; 
+        struct unordered_map<TSU::UUIDData<TSP::UUIDData>, NSMutableSet *, std::__1::hash<TSUUUID>, std::__1::equal_to<TSU::UUIDData<TSP::UUIDData> >, std::__1::allocator<std::__1::pair<const TSU::UUIDData<TSP::UUIDData>, NSMutableSet *> > > { 
+            struct __hash_table<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, NSMutableSet *>, std::__1::__unordered_map_hasher<TSU::UUIDData<TSP::UUIDData>, std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, NSMutableSet *>, std::__1::hash<TSUUUID>, true>, std::__1::__unordered_map_equal<TSU::UUIDData<TSP::UUIDData>, std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, NSMutableSet *>, std::__1::equal_to<TSU::UUIDData<TSP::UUIDData> >, true>, std::__1::allocator<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, NSMutableSet *> > > { 
+                struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, NSMutableSet *>, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, NSMutableSet *>, void *> *> *> > > { 
+                    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, NSMutableSet *>, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, NSMutableSet *>, void *> *> *> > > { 
+                        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, NSMutableSet *>, void *> *> {} **__value_; 
+                        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, NSMutableSet *>, void *> *> *> > { 
+                            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, NSMutableSet *>, void *> *> *> > { 
+                                unsigned long long __value_; 
                             } __data_; 
-                        } __second_; 
+                        } __value_; 
                     } __ptr_; 
                 } __bucket_list_; 
-                struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, SFUtility::ObjcSharedPtr<NSMutableSet> >, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, SFUtility::ObjcSharedPtr<NSMutableSet> >, void *> > > { 
-                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, SFUtility::ObjcSharedPtr<NSMutableSet> >, void *> *> { 
-                        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, SFUtility::ObjcSharedPtr<NSMutableSet> >, void *> *> {} *__next_; 
-                    } __first_; 
+                struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, NSMutableSet *>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, NSMutableSet *>, void *> > > { 
+                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, NSMutableSet *>, void *> *> { 
+                        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, NSMutableSet *>, void *> *> {} *__next_; 
+                    } __value_; 
                 } __p1_; 
-                struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<TSU::UUIDData<TSP::UUIDData>, std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, SFUtility::ObjcSharedPtr<NSMutableSet> >, std::__1::hash<TSUUUID>, true> > { 
-                    unsigned long long __first_; 
+                struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<TSU::UUIDData<TSP::UUIDData>, std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, NSMutableSet *>, std::__1::hash<TSUUUID>, true> > { 
+                    unsigned long long __value_; 
                 } __p2_; 
-                struct __compressed_pair<float, std::__1::__unordered_map_equal<TSU::UUIDData<TSP::UUIDData>, std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, SFUtility::ObjcSharedPtr<NSMutableSet> >, std::__1::equal_to<TSU::UUIDData<TSP::UUIDData> >, true> > { 
-                    float __first_; 
+                struct __compressed_pair<float, std::__1::__unordered_map_equal<TSU::UUIDData<TSP::UUIDData>, std::__1::__hash_value_type<TSU::UUIDData<TSP::UUIDData>, NSMutableSet *>, std::__1::equal_to<TSU::UUIDData<TSP::UUIDData> >, true> > { 
+                    float __value_; 
                 } __p3_; 
             } __table_; 
         } _trackedReferencesByOwner; 
@@ -34,28 +34,28 @@
             struct __hash_table<std::__1::__hash_value_type<unsigned short, TSCENamedReferenceTrieNode *>, std::__1::__unordered_map_hasher<unsigned short, std::__1::__hash_value_type<unsigned short, TSCENamedReferenceTrieNode *>, std::__1::hash<unsigned short>, true>, std::__1::__unordered_map_equal<unsigned short, std::__1::__hash_value_type<unsigned short, TSCENamedReferenceTrieNode *>, std::__1::equal_to<unsigned short>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned short, TSCENamedReferenceTrieNode *> > > { 
                 struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned short, TSCENamedReferenceTrieNode *>, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned short, TSCENamedReferenceTrieNode *>, void *> *> *> > > { 
                     struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned short, TSCENamedReferenceTrieNode *>, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned short, TSCENamedReferenceTrieNode *>, void *> *> *> > > { 
-                        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned short, TSCENamedReferenceTrieNode *>, void *> *> {} **__first_; 
+                        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned short, TSCENamedReferenceTrieNode *>, void *> *> {} **__value_; 
                         struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned short, TSCENamedReferenceTrieNode *>, void *> *> *> > { 
                             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned short, TSCENamedReferenceTrieNode *>, void *> *> *> > { 
-                                unsigned long long __first_; 
+                                unsigned long long __value_; 
                             } __data_; 
-                        } __second_; 
+                        } __value_; 
                     } __ptr_; 
                 } __bucket_list_; 
                 struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned short, TSCENamedReferenceTrieNode *>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned short, TSCENamedReferenceTrieNode *>, void *> > > { 
                     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned short, TSCENamedReferenceTrieNode *>, void *> *> { 
                         struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned short, TSCENamedReferenceTrieNode *>, void *> *> {} *__next_; 
-                    } __first_; 
+                    } __value_; 
                 } __p1_; 
                 struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned short, std::__1::__hash_value_type<unsigned short, TSCENamedReferenceTrieNode *>, std::__1::hash<unsigned short>, true> > { 
-                    unsigned long long __first_; 
+                    unsigned long long __value_; 
                 } __p2_; 
                 struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned short, std::__1::__hash_value_type<unsigned short, TSCENamedReferenceTrieNode *>, std::__1::equal_to<unsigned short>, true> > { 
-                    float __first_; 
+                    float __value_; 
                 } __p3_; 
             } __table_; 
         } _children; 
-    }  mRoot;
+    }  _root;
 }
 
 - (id).cxx_construct;

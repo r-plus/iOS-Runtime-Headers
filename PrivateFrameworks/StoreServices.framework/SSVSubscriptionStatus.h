@@ -73,6 +73,7 @@
 - (id)initWithUserDefaultsRepresentation:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (bool)isDiscoveryModeEligible;
+- (bool)isEqualToStatus:(id)arg1;
 - (bool)isFamilyOrganizer;
 - (bool)isFamilySubscription;
 - (bool)isFreeTrialIneligible;

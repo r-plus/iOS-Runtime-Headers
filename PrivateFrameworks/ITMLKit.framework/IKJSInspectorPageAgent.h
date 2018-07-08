@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKJSInspectorPageAgent : NSObject <IKNetworkRequestLoader, RWIProtocolPageDomainHandler> {
+@interface IKJSInspectorPageAgent : NSObject <RWIProtocolPageDomainHandler> {
     IKJSInspectorController * _controller;
     NSString * _currentFrameIdentifier;
     RWIProtocolPageFrameResourceTree * _resourceTree;
@@ -16,10 +16,7 @@
 @property (nonatomic, readonly) RWIProtocolPageFrameResourceTree *resourceTree;
 @property (readonly) Class superclass;
 
-+ (id)_pageFromDOMDocument:(id)arg1;
-
 - (void).cxx_destruct;
-- (void)addScriptToEvaluateOnLoadWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 scriptSource:(id)arg3;
 - (void)archiveWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2;
 - (id)controller;
 - (id)currentFrameIdentifier;
@@ -33,10 +30,8 @@
 - (void)getResourceTreeWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2;
 - (id)initWithInspectorController:(id)arg1;
 - (void)navigateWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 url:(id)arg3;
-- (void)reloadWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 ignoreCache:(bool*)arg3 revalidateAllResources:(bool*)arg4 scriptToEvaluateOnLoad:(id*)arg5;
-- (void)removeScriptToEvaluateOnLoadWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 identifier:(id)arg3;
+- (void)reloadWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 ignoreCache:(bool*)arg3 revalidateAllResources:(bool*)arg4;
 - (id)resourceTree;
-- (void)searchInResourceWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 frameId:(id)arg3 url:(id)arg4 query:(id)arg5 caseSensitive:(bool*)arg6 isRegex:(bool*)arg7;
 - (void)searchInResourceWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 frameId:(id)arg3 url:(id)arg4 query:(id)arg5 caseSensitive:(bool*)arg6 isRegex:(bool*)arg7 requestId:(id*)arg8;
 - (void)searchInResourcesWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 text:(id)arg3 caseSensitive:(bool*)arg4 isRegex:(bool*)arg5;
 - (void)setCompositingBordersVisibleWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 visible:(bool)arg3;

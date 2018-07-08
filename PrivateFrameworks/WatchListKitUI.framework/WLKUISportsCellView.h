@@ -43,6 +43,7 @@
 - (void)setAppImageElement:(id)arg1;
 - (void)setAppImageView:(id)arg1;
 - (void)setCellSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setImageElement:(id)arg1;
 - (void)setImageView:(id)arg1;
 - (void)setOverlayView:(id)arg1;

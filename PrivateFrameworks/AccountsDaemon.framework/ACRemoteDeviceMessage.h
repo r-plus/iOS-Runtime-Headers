@@ -18,10 +18,11 @@
 @property (nonatomic) bool isReply;
 @property (nonatomic) bool needsReply;
 @property (nonatomic, readonly) NSDictionary *options;
-@property (nonatomic, readonly) NSObject<NSCoding> *result;
+@property (nonatomic, readonly) NSObject<NSSecureCoding> *result;
 @property (nonatomic, readonly) NSString *sentMessageIdentifier;
 @property (nonatomic, readonly) bool success;
 
++ (id)_whitelistedClasses;
 + (id)actionMessageWithCommand:(id)arg1 account:(id)arg2 options:(id)arg3;
 + (id)replyForMessage:(id)arg1 withSuccess:(bool)arg2 error:(id)arg3;
 + (id)replyForMessage:(id)arg1 withSuccess:(bool)arg2 result:(id)arg3 error:(id)arg4;

@@ -92,6 +92,7 @@
 - (void)updateVoiceTriggerAOPModel:(id)arg1;
 - (void)voiceControllerBeginRecordInterruption:(id)arg1;
 - (void)voiceControllerBeginRecordInterruption:(id)arg1 withContext:(id)arg2;
+- (void)voiceControllerDidSetAudioSessionActive:(id)arg1 isActivated:(bool)arg2;
 - (void)voiceControllerDidStartRecording:(id)arg1 successfully:(bool)arg2 error:(id)arg3;
 - (void)voiceControllerDidStopRecording:(id)arg1 forReason:(long long)arg2;
 - (void)voiceControllerEndRecordInterruption:(id)arg1;
@@ -100,6 +101,7 @@
 - (void)voiceControllerMediaServicesWereReset:(id)arg1;
 - (void)voiceControllerRecordBufferAvailable:(id)arg1 buffer:(id)arg2;
 - (void)voiceControllerRecordHardwareConfigurationDidChange:(id)arg1 toConfiguration:(int)arg2;
+- (void)voiceControllerWillSetAudioSessionActive:(id)arg1 willActivate:(bool)arg2;
 - (id)voiceTriggerInfo;
 - (void)voiceTriggerOccuredNotification:(id)arg1;
 - (void)willDestroy;

@@ -3,30 +3,30 @@
  */
 
 @interface WebItemProviderPasteboard : NSObject <AbstractPasteboard> {
-    struct RetainPtr<NSArray> { 
-        void *m_ptr; 
-    }  _cachedTypeIdentifiers;
     long long  _changeCount;
     struct RetainPtr<NSArray> { 
         void *m_ptr; 
     }  _itemProviders;
+    struct Vector<WTF::RetainPtr<WebItemProviderLoadResult>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { 
+        struct RetainPtr<WebItemProviderLoadResult> {} *m_buffer; 
+        unsigned int m_capacity; 
+        unsigned int m_size; 
+        unsigned int m_mask; 
+    }  _loadResults;
     long long  _numberOfItems;
     long long  _pendingOperationCount;
-    struct RetainPtr<NSArray> { 
+    struct RetainPtr<WebItemProviderRegistrationInfoList> { 
         void *m_ptr; 
-    }  _registrationInfoLists;
+    }  _stagedRegistrationInfoList;
     struct RetainPtr<NSArray> { 
         void *m_ptr; 
     }  _supportedTypeIdentifiers;
-    struct RetainPtr<NSArray> { 
-        void *m_ptr; 
-    }  _typeToFileURLMaps;
 }
 
+@property (nonatomic, readonly) NSArray *allDroppedFileURLs;
 @property (nonatomic) long long changeCount;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) NSArray *fileURLsForDataInteraction;
 @property (nonatomic, readonly) bool hasPendingOperation;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSArray *itemProviders;
@@ -40,13 +40,14 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)_preLoadedDataConformingToType:(id)arg1 forItemProviderAtIndex:(unsigned long long)arg2;
+- (id)allDroppedFileURLs;
 - (long long)changeCount;
+- (id)dataForPasteboardType:(id)arg1;
 - (id)dataForPasteboardType:(id)arg1 inItemSet:(id)arg2;
 - (void)decrementPendingOperationCount;
 - (void)doAfterLoadingProvidedContentIntoFileURLs:(id /* block */)arg1;
 - (void)doAfterLoadingProvidedContentIntoFileURLs:(id /* block */)arg1 synchronousTimeout:(double)arg2;
 - (void)enumerateItemProvidersWithBlock:(id /* block */)arg1;
-- (id)fileURLsForDataInteraction;
 - (bool)hasPendingOperation;
 - (void)incrementPendingOperationCount;
 - (id)init;
@@ -57,13 +58,14 @@
 - (id)pasteboardTypes;
 - (id)pasteboardTypesByFidelityForItemAtIndex:(unsigned long long)arg1;
 - (long long)pendingOperationCount;
-- (id)registrationInfoAtIndex:(unsigned long long)arg1;
+- (id)preferredFileUploadURLAtIndex:(unsigned long long)arg1 fileType:(id*)arg2;
 - (void)setChangeCount:(long long)arg1;
 - (void)setItemProviders:(id)arg1;
-- (void)setItemsUsingRegistrationInfoLists:(id)arg1;
 - (void)setNumberOfItems:(long long)arg1;
 - (void)setPendingOperationCount:(long long)arg1;
-- (id)typeIdentifierToLoadForRegisteredTypeIdentfiers:(id)arg1;
+- (void)stageRegistrationList:(id)arg1;
+- (id)takeRegistrationList;
+- (id)typeIdentifiersToLoadForRegisteredTypeIdentfiers:(id)arg1;
 - (void)updateSupportedTypeIdentifiers:(id)arg1;
 - (id)valuesForPasteboardType:(id)arg1 inItemSet:(id)arg2;
 

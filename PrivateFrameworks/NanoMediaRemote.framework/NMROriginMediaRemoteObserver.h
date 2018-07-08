@@ -34,7 +34,6 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_bundleIdentifierForOption:(unsigned long long)arg1;
 - (void)_configureMediaRemoteUpdaters;
 - (void)_handleContentItemArtworkDidChangeNotification:(id)arg1;
 - (void)_handleContentItemsDidChangeNotification:(id)arg1;

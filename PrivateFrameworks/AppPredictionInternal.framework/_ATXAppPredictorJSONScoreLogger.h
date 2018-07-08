@@ -15,7 +15,6 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (void)enumerateChunksOfDescriptionWithoutSpacesUTF8:(id)arg1 block:(id /* block */)arg2;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;

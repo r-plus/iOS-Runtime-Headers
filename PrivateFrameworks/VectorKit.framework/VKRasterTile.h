@@ -12,12 +12,12 @@
     bool  _hasGenericTileType;
     struct unique_ptr<ggl::Textured::Pos2DUVPipelineSetup, std::__1::default_delete<ggl::Textured::Pos2DUVPipelineSetup> > { 
         struct __compressed_pair<ggl::Textured::Pos2DUVPipelineSetup *, std::__1::default_delete<ggl::Textured::Pos2DUVPipelineSetup> > { 
-            struct Pos2DUVPipelineSetup {} *__first_; 
+            struct Pos2DUVPipelineSetup {} *__value_; 
         } __ptr_; 
     }  _pipelineSetup;
     struct unique_ptr<ggl::Clut::Pos2DUVPipelineSetup, std::__1::default_delete<ggl::Clut::Pos2DUVPipelineSetup> > { 
         struct __compressed_pair<ggl::Clut::Pos2DUVPipelineSetup *, std::__1::default_delete<ggl::Clut::Pos2DUVPipelineSetup> > { 
-            struct Pos2DUVPipelineSetup {} *__first_; 
+            struct Pos2DUVPipelineSetup {} *__value_; 
         } __ptr_; 
     }  _pipelineSetupCLUT;
     struct RenderItem { 
@@ -38,7 +38,7 @@
     }  _renderItem;
     struct unique_ptr<ggl::TextureWithReverseAlpha::Pos2DUVPipelineSetup, std::__1::default_delete<ggl::TextureWithReverseAlpha::Pos2DUVPipelineSetup> > { 
         struct __compressed_pair<ggl::TextureWithReverseAlpha::Pos2DUVPipelineSetup *, std::__1::default_delete<ggl::TextureWithReverseAlpha::Pos2DUVPipelineSetup> > { 
-            struct Pos2DUVPipelineSetup {} *__first_; 
+            struct Pos2DUVPipelineSetup {} *__value_; 
         } __ptr_; 
     }  _shaderReverseAlphaSetup;
     struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { 

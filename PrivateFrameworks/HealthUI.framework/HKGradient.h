@@ -5,6 +5,7 @@
 @interface HKGradient : NSObject
 
 + (id)generateGradientWithTopColor:(id)arg1 bottomColor:(id)arg2 height:(double)arg3;
++ (id)generateRoundedCornerGradientWithTopColor:(id)arg1 bottomColor:(id)arg2 byRoundingCorners:(unsigned long long)arg3 cornerRadii:(struct CGSize { double x1; double x2; })arg4 height:(double)arg5;
 + (id)generateRoundedCornerGradientWithTopColor:(id)arg1 bottomColor:(id)arg2 cornerRadius:(double)arg3 height:(double)arg4;
 + (struct CGGradient { }*)newGradientWithTopColor:(id)arg1 bottomColor:(id)arg2;
 

@@ -11,7 +11,7 @@
     NSError * _error;
     NSString * _generatedOpportunityIdentifier;
     bool  _hasInvalidatedLayout;
-    SXHost * _host;
+    <SXHost> * _host;
     bool  _isDisplayingBannerView;
     bool  _isReceivingViewportChanges;
     int  _opportunityError;
@@ -32,7 +32,7 @@
 @property (nonatomic, retain) NSString *generatedOpportunityIdentifier;
 @property (nonatomic) bool hasInvalidatedLayout;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) SXHost *host;
+@property (nonatomic, readonly) <SXHost> *host;
 @property (nonatomic) bool isDisplayingBannerView;
 @property (nonatomic) bool isReceivingViewportChanges;
 @property (nonatomic) int opportunityError;

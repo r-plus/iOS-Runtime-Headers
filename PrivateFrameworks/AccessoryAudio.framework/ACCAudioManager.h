@@ -15,6 +15,7 @@
 + (id)sharedACCAudioManager;
 
 - (void).cxx_destruct;
+- (bool)allowBackgroundAudioForClient:(id)arg1;
 - (id)audioClient;
 - (id)deviceAudioStates;
 - (id)init;

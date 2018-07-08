@@ -3,6 +3,7 @@
  */
 
 @interface NSFileProviderManager : NSObject {
+    NSMutableDictionary * _completionHandlersByItemID;
     NSXPCConnection<FPDDaemon> * _connection;
     NSObject<OS_dispatch_queue> * _connectionQueue;
     NSURL * _documentStorageURL;
@@ -12,6 +13,8 @@
     <FPDRemoteFileProvider><NSXPCProxyCreating> * _remoteFileProvider;
     NSObject<OS_dispatch_queue> * _requestQueue;
     NSObject<OS_dispatch_semaphore> * _sem;
+    NSObject<OS_dispatch_queue> * _signalUpdateQueue;
+    NSObject<OS_dispatch_source> * _signalUpdateSource;
 }
 
 @property (nonatomic, readonly) NSURL *documentStorageURL;
@@ -35,9 +38,11 @@
 
 - (void).cxx_destruct;
 - (void)_cacheProviderInfo;
+- (void)_callAllCompletionHandlersForItemID:(id)arg1 error:(id)arg2;
 - (id)_connection;
 - (id)_initWithProviderIdentifier:(id)arg1;
 - (id)_initWithProviderIdentifier:(id)arg1 domain:(id)arg2;
+- (void)_signalPendingEnumerators;
 - (void)dealloc;
 - (void)deleteSearchableItemsWithDomainIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)documentStorageURL;

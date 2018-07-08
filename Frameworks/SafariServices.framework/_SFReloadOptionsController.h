@@ -4,7 +4,7 @@
 
 @interface _SFReloadOptionsController : NSObject <RequestDesktopSiteUIProcessListener, SFContentBlockerManagerObserver> {
     _SFInjectedJavaScriptController * _activityJSController;
-    NSMutableSet * _domainsNeedingDesktopUserAgent;
+    NSMutableDictionary * _domainToUserAgentPolicyMap;
     bool  _hasEnabledContentBlockers;
     _WKRemoteObjectInterface * _requestDesktopSiteUIProcessPlugInListenerInterface;
     <RequestDesktopSiteWebProcessPlugInListener> * _requestDesktopSiteWebProcessPlugInListener;
@@ -21,6 +21,7 @@
 
 - (void).cxx_destruct;
 - (void)_checkForContentBlockers;
+- (void)_setUpPlugInListenersIfNeeded;
 - (id)activityJSController;
 - (void)contentBlockerManagerExtensionListDidChange:(id)arg1;
 - (void)dealloc;

@@ -8,7 +8,10 @@
 - (void)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 balloonView:(CKBalloonView *)arg2 doubleTappedItemAtIndexPath:(NSIndexPath *)arg3;
 - (void)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 balloonView:(CKBalloonView *)arg2 longPressedForItemWithIndexPath:(NSIndexPath *)arg3;
 - (void)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 balloonView:(CKBalloonView *)arg2 tappedForChatItem:(CKChatItem *)arg3;
+- (bool)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 balloonViewDidRequestCommitPayload:(CKBrowserItemPayload *)arg2 forPlugin:(NSString *)arg3 allowAllCommits:(bool)arg4 error:(id*)arg5;
+- (bool)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 balloonViewDidRequestCommitSticker:(IMSticker *)arg2 forPlugin:(NSString *)arg3 allowAllCommits:(bool)arg4 error:(id*)arg5;
 - (void)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 balloonViewDidRequestPresentationStyleExpanded:(bool)arg2 forChatItem:(CKChatItem *)arg3;
+- (void)transcriptCollectionViewController:(void *)arg1 balloonViewDidRequestStartEditingPayload:(void *)arg2 forPlugin:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 9: CKTranscriptCollectionViewController *, CKBrowserItemPayload *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 balloonViewTitleTappedForItemWithIndexPath:(NSIndexPath *)arg2;
 - (void)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 collectionViewContentSizeDidChange:(struct CGSize { double x1; double x2; })arg2;
 - (void)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 didDeselectItemAtIndexPath:(NSIndexPath *)arg2;

@@ -38,7 +38,7 @@
 - (void)handleDownloadAllPaymentPasses;
 - (void)handlePaymentTransactions:(id)arg1 appletStates:(id)arg2 forUniqueIDs:(id)arg3;
 - (void)handlePaymentWebServiceContextFromWatch:(id)arg1;
-- (void)handlePreconditionNotMetWithUniqueIDs:(id)arg1 shouldUnregister:(bool)arg2;
+- (void)handlePreconditionNotMetWithUniqueIDs:(id)arg1 preconditionDescription:(id)arg2 shouldUnregister:(bool)arg3;
 - (void)handlePreferredAID:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (void)handlePushToken:(id)arg1;
 - (void)handleRemoveTransactionsWithIdentifiers:(id)arg1;

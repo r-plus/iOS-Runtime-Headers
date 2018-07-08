@@ -18,6 +18,7 @@
 @property (getter=isActiveLockerAccount) bool activeLockerAccount;
 @property (copy) NSString *altDSID;
 @property (getter=isAuthenticated) bool authenticated;
+@property (nonatomic, copy) NSArray *automaticDownloadKinds;
 @property long long availableServiceTypes;
 @property (nonatomic, readonly) ACAccount *backingAccount;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *backingAccountAccessQueue;
@@ -35,10 +36,12 @@
 @property (readonly) unsigned long long hash;
 @property (copy) NSString *lastName;
 @property (getter=isLocalAccount, nonatomic, readonly) bool localAccount;
+@property (readonly) NSString *localizedName;
 @property (getter=isManagedAppleID) bool managedAppleID;
 @property (getter=isNewCustomer) bool newCustomer;
 @property long long paidPurchasesPasswordSetting;
 @property (nonatomic, copy) NSString *passwordEquivalentToken;
+@property (copy) NSDictionary *privacyAcknowledgement;
 @property (nonatomic, copy) NSString *rawPassword;
 @property (nonatomic, copy) NSString *secureToken;
 @property (getter=isSocialEnabled) bool socialEnabled;
@@ -48,6 +51,8 @@
 
 + (id)DSIDFromAuthenticationResponseDictionary:(id)arg1;
 + (id)_countryCodeFromStorefrontIdentifier:(id)arg1;
++ (id)_displayedServerPromptKeyWithIdentifier:(id)arg1;
++ (id)_lastAttemptForServerPromptKeyWithIdentifier:(id)arg1;
 + (id)_valueForFirstAvailableKeyPath:(id)arg1 inDictionary:(id)arg2;
 + (long long)accountKindFromAuthenticationResponseDictionary:(id)arg1;
 + (id)accountNameFromAuthenticationResponseDictionary:(id)arg1;
@@ -65,7 +70,6 @@
 
 - (void).cxx_destruct;
 - (id)ITunesPassSerialNumber;
-- (id)_accountPropertyForKey:(id)arg1;
 - (void)_addAccountPropertyBitmask:(long long)arg1 forKey:(id)arg2;
 - (id)_backingAccount;
 - (void)_removeAccountPropertyBitmask:(long long)arg1 forKey:(id)arg2;
@@ -76,11 +80,13 @@
 - (void)acceptTermsAndConditions:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (long long)accountKind;
 - (id)accountName;
+- (id)accountPropertyForKey:(id)arg1;
 - (long long)accountScope;
 - (long long)accountSource;
 - (void)addAvailableServiceTypes:(long long)arg1;
 - (void)addEnabledServiceTypes:(long long)arg1;
 - (id)altDSID;
+- (id)automaticDownloadKinds;
 - (long long)availableServiceTypes;
 - (id)backingAccount;
 - (id)backingAccountAccessQueue;
@@ -91,6 +97,7 @@
 - (id)demoAccountRawPassword;
 - (id)description;
 - (bool)didFallbackToPassword;
+- (bool)displayedServerPromptWithIdentifier:(id)arg1;
 - (id)eligibilityForService:(long long)arg1;
 - (long long)enabledServiceTypes;
 - (id)firstName;
@@ -118,11 +125,14 @@
 - (bool)isManagedAppleID;
 - (bool)isNewCustomer;
 - (bool)isSocialEnabled;
+- (id)lastAttemptDateForServerPromptWithIdentifier:(id)arg1;
 - (id)lastName;
+- (id)localizedName;
 - (bool)mergeValuesFromAccount:(id)arg1;
 - (long long)paidPurchasesPasswordSetting;
 - (id)passwordEquivalentToken;
 - (id)popBiometricToken;
+- (id)privacyAcknowledgement;
 - (id)rawPassword;
 - (void)removeAvailableServiceTypes:(long long)arg1;
 - (void)removeEnabledServiceTypes:(long long)arg1;
@@ -136,23 +146,27 @@
 - (void)setActiveLockerAccount:(bool)arg1;
 - (void)setAltDSID:(id)arg1;
 - (void)setAuthenticated:(bool)arg1;
+- (void)setAutomaticDownloadKinds:(id)arg1;
 - (void)setAvailableServiceTypes:(long long)arg1;
 - (void)setBackingAccountAccessQueue:(id)arg1;
 - (void)setBiometricToken:(id)arg1;
 - (void)setCreditsString:(id)arg1;
 - (void)setDemoAccountRawPassword:(id)arg1;
 - (void)setDidFallbackToPassword:(bool)arg1;
+- (void)setDisplayedServerPrompt:(bool)arg1 withIdentifier:(id)arg2;
 - (void)setEligibility:(id)arg1 forServiceType:(long long)arg2;
 - (void)setEnabledServiceTypes:(long long)arg1;
 - (void)setFirstName:(id)arg1;
 - (void)setFreeDownloadsPasswordSetting:(long long)arg1;
 - (void)setITunesPassSerialNumber:(id)arg1;
+- (void)setLastAttemptDate:(id)arg1 forServerPromptWithIdentifier:(id)arg2;
 - (void)setLastName:(id)arg1;
 - (void)setLockdownDictionary:(id)arg1;
 - (void)setManagedAppleID:(bool)arg1;
 - (void)setNewCustomer:(bool)arg1;
 - (void)setPaidPurchasesPasswordSetting:(long long)arg1;
 - (void)setPasswordEquivalentToken:(id)arg1;
+- (void)setPrivacyAcknowledgement:(id)arg1;
 - (void)setRawPassword:(id)arg1;
 - (void)setSecureToken:(id)arg1;
 - (void)setSocialEnabled:(bool)arg1;

@@ -18,6 +18,7 @@
 @property (nonatomic) long long shouldDisablePiggybacking;
 @property (nonatomic) long long shouldFakeAuthSuccess;
 @property (nonatomic) long long shouldSuppressHSA2Suggestions;
+@property (nonatomic) long long shouldSuppressModalSheetsInMacBuddy;
 
 + (id)sharedConfiguration;
 
@@ -39,6 +40,7 @@
 - (void)setShouldDisablePiggybacking:(long long)arg1;
 - (void)setShouldFakeAuthSuccess:(long long)arg1;
 - (void)setShouldSuppressHSA2Suggestions:(long long)arg1;
+- (void)setShouldSuppressModalSheetsInMacBuddy:(long long)arg1;
 - (long long)shouldAddHSA2CreateHeader;
 - (long long)shouldAllowExperimentalMode;
 - (long long)shouldAllowPhoneNumberAccounts;
@@ -46,5 +48,6 @@
 - (long long)shouldDisablePiggybacking;
 - (long long)shouldFakeAuthSuccess;
 - (long long)shouldSuppressHSA2Suggestions;
+- (long long)shouldSuppressModalSheetsInMacBuddy;
 
 @end

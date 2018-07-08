@@ -8,6 +8,8 @@
     NSString * _serverRecordType;
 }
 
+@property (nonatomic, readonly, copy) NSArray *allEncryptedFieldNames;
+@property (nonatomic, readonly, copy) NSArray *allUnencryptedFieldNames;
 @property (nonatomic, readonly, copy) NSString *clientRecordType;
 @property (nonatomic, readonly) bool hasEncryptedFields;
 @property (nonatomic, readonly, copy) NSString *serverRecordType;
@@ -15,6 +17,8 @@
 + (id)recordWithClientType:(id)arg1 serverType:(id)arg2 fields:(id)arg3;
 
 - (void).cxx_destruct;
+- (id)allEncryptedFieldNames;
+- (id)allUnencryptedFieldNames;
 - (id)clientRecordType;
 - (bool)hasEncryptedFields;
 - (id)init;

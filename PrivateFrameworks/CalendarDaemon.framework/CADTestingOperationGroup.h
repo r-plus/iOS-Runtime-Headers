@@ -8,6 +8,7 @@
 + (bool)requiresEventOrReminderAccess;
 + (bool)requiresReminderAccess;
 
+- (void)CADTestingCloseDatabase:(id /* block */)arg1;
 - (void)CADTestingSimulateDaemonCrash;
 - (bool)accessGrantedToPerformSelector:(SEL)arg1;
 

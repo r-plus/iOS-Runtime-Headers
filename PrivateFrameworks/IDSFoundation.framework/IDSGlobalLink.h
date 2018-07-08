@@ -182,7 +182,7 @@
 - (id)_interfaceTypeListToString:(unsigned char)arg1;
 - (bool)_isBetterCandidatePair:(id)arg1 newCandidatePair:(id)arg2;
 - (bool)_isExtIPDiscoveryDone;
-- (bool)_isLocalAddressUsed:(const struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg1;
+- (bool)_isInterfaceUsedForRelay:(int)arg1 candidatePairs:(id)arg2;
 - (bool)_isReachableInterface:(id)arg1 interfaceIPVersion:(unsigned long long)arg2;
 - (id)_linkTypeListToString:(unsigned char)arg1;
 - (id)_linkTypeMaskToString:(unsigned char)arg1;

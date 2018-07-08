@@ -9,9 +9,12 @@
 }
 
 @property (nonatomic, retain) NSCache *cache;
-@property (nonatomic, readonly) bool hasRestrictions;
+@property (nonatomic, readonly) bool hasAnyEffectiveRestrictions;
+@property (nonatomic, readonly) bool hasOpenInRestrictions;
 @property (nonatomic, retain) NSString *hostIdentifier;
+@property (nonatomic, readonly) bool isHostAccountOrAppManaged;
 @property (nonatomic) bool isHostManaged;
+@property (nonatomic, readonly) bool isInEducationMode;
 
 + (id)defaultPermission;
 
@@ -19,6 +22,7 @@
 - (id)cache;
 - (bool)canCopyItems:(id)arg1;
 - (bool)canCopySourceIsManaged:(bool)arg1;
+- (bool)canCopyfromContainingBundleIdentifer:(id)arg1;
 - (bool)canHostAppPerformAction:(unsigned long long)arg1 targetBundleIdentifier:(id)arg2;
 - (bool)canHostAppPerformAction:(unsigned long long)arg1 targetItem:(id)arg2;
 - (bool)canHostAppPerformAction:(unsigned long long)arg1 targetSearchableItem:(id)arg2;
@@ -30,10 +34,13 @@
 - (id)filterBundleIdentifiers:(id)arg1 byCanPerformAction:(unsigned long long)arg2 targetBundleIdentifier:(id)arg3 targetBundleIsManaged:(bool)arg4;
 - (id)filterItems:(id)arg1 byCanPerformAction:(unsigned long long)arg2 targetItem:(id)arg3;
 - (id)filterProviders:(id)arg1 byCanPerformAction:(unsigned long long)arg2 targetBundleIdentifier:(id)arg3 targetBundleIsManaged:(bool)arg4;
-- (bool)hasRestrictions;
+- (bool)hasAnyEffectiveRestrictions;
+- (bool)hasOpenInRestrictions;
 - (id)hostIdentifier;
 - (id)init;
+- (bool)isHostAccountOrAppManaged;
 - (bool)isHostManaged;
+- (bool)isInEducationMode;
 - (id)queueFileDataForAcceptance:(id)arg1 originalFileName:(id)arg2 forBundleID:(id)arg3 outError:(id*)arg4;
 - (void)setCache:(id)arg1;
 - (void)setHostIdentifier:(id)arg1;

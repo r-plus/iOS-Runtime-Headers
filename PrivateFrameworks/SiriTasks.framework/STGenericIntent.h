@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SiriTasks.framework/SiriTasks
  */
 
-@interface STGenericIntent : NSObject <NSCoding> {
+@interface STGenericIntent : NSObject <NSSecureCoding> {
     bool  _appInForeground;
     NSString * _attributes;
     bool  _finishedState;
@@ -25,6 +25,8 @@
 @property (nonatomic, retain) NSMutableDictionary *parameters;
 @property (nonatomic, retain) AFSiriTask *siriTask;
 @property (nonatomic, copy) NSString *utterance;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)addParam:(id)arg1 withValue:(id)arg2;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DiagnosticExtensionsDaemon.framework/DiagnosticExtensionsDaemon
  */
 
-@interface DEDAttachmentGroup : NSObject {
+@interface DEDAttachmentGroup : NSObject <DEDSecureArchiving> {
     NSArray * _attachmentItems;
     NSString * _deviceID;
     NSString * _displayName;
@@ -12,12 +12,17 @@
 }
 
 @property (retain) NSArray *attachmentItems;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (retain) NSString *deviceID;
 @property (retain) NSString *displayName;
 @property (retain) NSString *extensionID;
 @property (retain) DEDBugSession *fromBugSession;
+@property (readonly) unsigned long long hash;
 @property (retain) NSURL *rootURL;
+@property (readonly) Class superclass;
 
++ (id)archivedClasses;
 + (id)groupWithDEGroup:(id)arg1 identifier:(id)arg2;
 + (id)groupWithDictionary:(id)arg1;
 

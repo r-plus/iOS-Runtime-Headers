@@ -52,7 +52,7 @@
 
 + (id)currentOnRamp;
 + (void)logKeybag:(id)arg1 message:(id)arg2 identifier:(id)arg3;
-+ (id)resetWithOnRamps:(id)arg1 currentTimestamp:(unsigned int)arg2 currentNetworkInfo:(id)arg3 currentEdgeIndex:(long long)arg4 currentEdgeList:(id)arg5 lastFailureReason:(unsigned int)arg6 generation:(unsigned int)arg7 identifier:(id)arg8;
++ (id)resetWithOnRamps:(id)arg1 currentTimestamp:(unsigned int)arg2 currentNetworkInfo:(id)arg3 currentEdgeIndex:(long long)arg4 currentEdgeList:(id)arg5 lastFailureReason:(unsigned int)arg6 generation:(unsigned int)arg7 identifier:(id)arg8 updateHash:(id)arg9;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -123,6 +123,7 @@
 - (double)timeSinceLastUsed;
 - (id)tuscanyEndpoint;
 - (void)unregisterAgent;
+- (bool)updateHashMatchesEdgeSet:(id)arg1;
 - (void)updateSessionCounterFromKernel;
 
 @end

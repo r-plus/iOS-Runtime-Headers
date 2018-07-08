@@ -38,7 +38,7 @@
 + (id)matchedRangesForString:(id)arg1 withRegularExpression:(struct URegularExpression { }*)arg2;
 + (id)pauseMarkupString:(id)arg1;
 + (id)remapLanguageCode:(id)arg1;
-+ (id)spellOutMarkupString:(id)arg1;
++ (id)spellOutMarkupString:(id)arg1 string:(id)arg2;
 + (void)test_actionStartTap:(id /* block */)arg1;
 + (void)test_setAvailableVoices:(id)arg1;
 + (void)test_setUnitTestMode:(bool)arg1;

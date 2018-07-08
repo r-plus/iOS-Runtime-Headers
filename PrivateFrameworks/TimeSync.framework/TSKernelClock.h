@@ -34,6 +34,7 @@
 - (unsigned long long)convertFromMachAbsoluteToDomainTime:(unsigned long long)arg1 withFlags:(unsigned int*)arg2;
 - (void)dealloc;
 - (bool)deregisterAsyncDCLCallback;
+- (id)diagnosticDescriptionWithIndent:(id)arg1;
 - (bool)getRateRatioNumerator:(unsigned long long*)arg1 denominator:(unsigned long long*)arg2 machAnchor:(unsigned long long*)arg3 andDomainAnchor:(unsigned long long*)arg4 withError:(id*)arg5;
 - (double)hostRateRatio;
 - (id)initWithClockIdentifier:(unsigned long long)arg1;

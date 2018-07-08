@@ -46,6 +46,8 @@
 @property (nonatomic) bool skipClientRotationCallbacks;
 @property (nonatomic, readonly) long long toOrientation;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (bool)_isFooterTranslucent;
 - (bool)_isHeaderTranslucent;
 - (void)_positionHeaderView:(id)arg1 andFooterView:(id)arg2 outsideContentViewForInterfaceOrientation:(long long)arg3;
@@ -57,7 +59,6 @@
 - (void)finishFirstHalfRotation;
 - (void)finishFullRotateUsingOnePartAnimation:(bool)arg1;
 - (long long)fromOrientation;
-- (id)initWithClient:(id)arg1 toOrientation:(long long)arg2 duration:(double)arg3 andWindow:(id)arg4;
 - (void)rotateSnapshots;
 - (id)rotatingClient;
 - (void)setSkipClientRotationCallbacks:(bool)arg1;
@@ -65,5 +66,11 @@
 - (bool)skipClientRotationCallbacks;
 - (void)slideHeaderViewAndFooterViewOffScreen:(bool)arg1 forInterfaceOrientation:(long long)arg2;
 - (long long)toOrientation;
+
+// Image: /System/Library/AccessibilityBundles/GAXClient.bundle/GAXClient
+
++ (Class)safeCategoryBaseClass;
+
+- (id)initWithClient:(id)arg1 toOrientation:(long long)arg2 duration:(double)arg3 andWindow:(id)arg4;
 
 @end

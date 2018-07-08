@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
  */
 
-@interface MiroBlueprint : NSObject <MiroBlueprintEditStyleProtocol, MiroBlueprintMusicInfoProtocol, MiroBlueprintProtocol, MiroBlueprintTitleStyleProtocol, NSCoding, NSCopying> {
+@interface MiroBlueprint : NSObject <MiroBlueprintEditStyleProtocol, MiroBlueprintMusicInfoProtocol, MiroBlueprintProtocol, MiroBlueprintTitleStyleProtocol, NSCopying, NSSecureCoding> {
     NSString * _editStyleID;
     NSString * _flexMusicID;
     unsigned long long  _iCloudMusicAccountID;
@@ -90,6 +90,7 @@
 + (id)emptyBlueprint;
 + (id)keysAffectingAutoEdit;
 + (id)nominalBlueprint;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_moodPaceKey;

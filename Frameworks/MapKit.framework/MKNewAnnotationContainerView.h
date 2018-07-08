@@ -23,6 +23,7 @@
 - (void)_updateCollidableAnnotationViews;
 - (void)addAnnotationView:(id)arg1 allowAnimation:(bool)arg2;
 - (void)dealloc;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)removeAnnotationView:(id)arg1;
 - (void)setAnnotationViewsRotationRadians:(double)arg1 animation:(id)arg2;
 - (void)stopSuppressingUpdates;

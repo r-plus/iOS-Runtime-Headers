@@ -3,20 +3,7 @@
  */
 
 @interface MPModelPodcastEpisode : MPModelObject {
-    id /* block */  _artworkCatalogBlock;
-    MPModelPodcastAuthor * _author;
     NSString * _commentText;
-    NSDate * _datePlayed;
-    NSString * _descriptionText;
-    double  _duration;
-    bool  _explicitEpisode;
-    MPModelFileAsset * _localFileAsset;
-    MPModelPlaybackPosition * _playbackPosition;
-    MPModelPodcast * _podcast;
-    NSDateComponents * _releaseDateComponents;
-    NSURL * _shareURL;
-    NSString * _title;
-    float  _userRating;
 }
 
 @property (nonatomic, copy) id /* block */ artworkCatalogBlock;
@@ -26,6 +13,7 @@
 @property (nonatomic, copy) NSString *descriptionText;
 @property (nonatomic) double duration;
 @property (getter=isExplicitEpisode, nonatomic) bool explicitEpisode;
+@property (nonatomic, readonly) bool hasVideo;
 @property (nonatomic, retain) MPModelFileAsset *localFileAsset;
 @property (nonatomic, retain) MPModelPlaybackPosition *playbackPosition;
 @property (nonatomic, retain) MPModelPodcast *podcast;
@@ -34,65 +22,26 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic) float userRating;
 
-+ (id)__MPModelPropertyPodcastEpisodeArtwork__PROPERTY;
-+ (id)__MPModelPropertyPodcastEpisodeDatePlayed__PROPERTY;
-+ (id)__MPModelPropertyPodcastEpisodeDescriptionText__PROPERTY;
-+ (id)__MPModelPropertyPodcastEpisodeDuration__PROPERTY;
-+ (id)__MPModelPropertyPodcastEpisodeExplicit__PROPERTY;
-+ (id)__MPModelPropertyPodcastEpisodeReleaseDateComponents__PROPERTY;
-+ (id)__MPModelPropertyPodcastEpisodeShareURL__PROPERTY;
-+ (id)__MPModelPropertyPodcastEpisodeTitle__PROPERTY;
-+ (id)__MPModelPropertyPodcastEpisodeUserRating__PROPERTY;
-+ (id)__MPModelRelationshipPodcastEpisodeAuthor__PROPERTY;
-+ (id)__MPModelRelationshipPodcastEpisodeLocalFileAsset__PROPERTY;
-+ (id)__MPModelRelationshipPodcastEpisodePlaybackPosition__PROPERTY;
-+ (id)__MPModelRelationshipPodcastEpisodePodcast__PROPERTY;
-+ (id)__artworkCatalogBlock__KEY;
-+ (id)__author__KEY;
-+ (id)__datePlayed__KEY;
-+ (id)__descriptionText__KEY;
-+ (id)__duration__KEY;
-+ (id)__explicitEpisode__KEY;
-+ (id)__localFileAsset__KEY;
-+ (id)__playbackPosition__KEY;
-+ (id)__podcast__KEY;
-+ (id)__releaseDateComponents__KEY;
-+ (id)__shareURL__KEY;
-+ (id)__title__KEY;
-+ (id)__userRating__KEY;
++ (id)__artworkCatalogBlock_KEY;
++ (id)__author_KEY;
++ (id)__datePlayed_KEY;
++ (id)__descriptionText_KEY;
++ (id)__duration_KEY;
++ (id)__explicitEpisode_KEY;
++ (id)__hasVideo_KEY;
++ (id)__localFileAsset_KEY;
++ (id)__playbackPosition_KEY;
++ (id)__podcast_KEY;
++ (id)__releaseDateComponents_KEY;
++ (id)__shareURL_KEY;
++ (id)__title_KEY;
++ (id)__userRating_KEY;
 + (id)kindWithVariants:(unsigned long long)arg1;
 + (id)kindWithVariants:(unsigned long long)arg1 options:(unsigned long long)arg2;
 
 - (void).cxx_destruct;
 - (id)artworkCatalog;
-- (id /* block */)artworkCatalogBlock;
-- (id)author;
 - (id)commentText;
-- (id)datePlayed;
-- (id)descriptionText;
-- (id)descriptionWithType:(long long)arg1;
-- (double)duration;
-- (bool)isExplicitEpisode;
-- (id)localFileAsset;
-- (id)playbackPosition;
-- (id)podcast;
-- (id)releaseDateComponents;
-- (void)setArtworkCatalogBlock:(id /* block */)arg1;
-- (void)setAuthor:(id)arg1;
 - (void)setCommentText:(id)arg1;
-- (void)setDatePlayed:(id)arg1;
-- (void)setDescriptionText:(id)arg1;
-- (void)setDuration:(double)arg1;
-- (void)setExplicitEpisode:(bool)arg1;
-- (void)setLocalFileAsset:(id)arg1;
-- (void)setPlaybackPosition:(id)arg1;
-- (void)setPodcast:(id)arg1;
-- (void)setReleaseDateComponents:(id)arg1;
-- (void)setShareURL:(id)arg1;
-- (void)setTitle:(id)arg1;
-- (void)setUserRating:(float)arg1;
-- (id)shareURL;
-- (id)title;
-- (float)userRating;
 
 @end

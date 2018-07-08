@@ -7,7 +7,7 @@
 
 - (bool)canProvideInfoForPageIndex:(unsigned long long)arg1;
 - (bool)canProvideNumberingInfoForPageIndex:(unsigned long long)arg1;
-- (int)contentFlagsForPageIndex:(unsigned long long)arg1;
+- (unsigned long long)contentFlagsForPageIndex:(unsigned long long)arg1;
 - (NSString *)displayPageNumberForCharIndex:(unsigned long long)arg1;
 - (NSString *)displayPageNumberForPageIndex:(unsigned long long)arg1;
 - (<TSWPHeaderFooterProvider> *)headerFooterProviderForPageIndex:(unsigned long long)arg1;

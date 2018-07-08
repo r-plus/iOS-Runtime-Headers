@@ -57,6 +57,7 @@
 + (bool)_fixCustomKeyAssetForAlbum:(id)arg1;
 + (bool)_fixCustomRenderedValues:(id)arg1;
 + (bool)_fixDuplicatedAssets:(id)arg1;
++ (bool)_fixDuplicatedRootFolderAndOrphanedAlbumsInStore:(id)arg1;
 + (bool)_fixEmptyVideoResourcePathsInStore:(id)arg1;
 + (bool)_fixFaceAlgorithmVersion:(id)arg1;
 + (bool)_fixFaceGroupUnverifiedPerson:(id)arg1;

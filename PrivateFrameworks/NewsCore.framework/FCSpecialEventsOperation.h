@@ -3,36 +3,33 @@
  */
 
 @interface FCSpecialEventsOperation : FCOperation {
-    <FCAppConfiguration> * _appConfiguration;
-    FCSpecialEventsOperationResult * _breakingNewsResult;
     id /* block */  _catchUpCompletionHandler;
+    <FCCoreConfiguration> * _configuration;
     FCCloudContext * _context;
     NSError * _error;
-    FCSpecialEventsOperationResult * _specialEventResult;
+    FCSpecialEventsOperationResult * _specialEventsResult;
 }
 
-@property (nonatomic, copy) <FCAppConfiguration> *appConfiguration;
-@property (readonly) FCSpecialEventsOperationResult *breakingNewsResult;
 @property (copy) id /* block */ catchUpCompletionHandler;
+@property (nonatomic, copy) <FCCoreConfiguration> *configuration;
 @property (nonatomic, retain) FCCloudContext *context;
 @property (retain) NSError *error;
-@property (retain) FCSpecialEventsOperationResult *specialEventResult;
+@property (retain) FCSpecialEventsOperationResult *specialEventsResult;
 
 - (void).cxx_destruct;
 - (void)_checkShouldShowBreakingNewsWithCompletionHandler:(id /* block */)arg1;
-- (id)appConfiguration;
-- (id)breakingNewsResult;
 - (id /* block */)catchUpCompletionHandler;
+- (id)configuration;
 - (id)context;
 - (id)error;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
-- (void)setAppConfiguration:(id)arg1;
 - (void)setCatchUpCompletionHandler:(id /* block */)arg1;
+- (void)setConfiguration:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setError:(id)arg1;
-- (void)setSpecialEventResult:(id)arg1;
-- (id)specialEventResult;
+- (void)setSpecialEventsResult:(id)arg1;
+- (id)specialEventsResult;
 - (bool)validateOperation;
 
 @end

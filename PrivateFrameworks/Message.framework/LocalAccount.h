@@ -7,7 +7,7 @@
 + (id)accountTypeIdentifier;
 + (id)accountTypeString;
 + (id)csAccountTypeString;
-+ (id)defaultPathNameForAccountWithHostname:(id)arg1 username:(id)arg2;
++ (id)legacyPathNameForAccountWithHostname:(id)arg1 username:(id)arg2;
 + (id)localAccount;
 
 - (id)_URLScheme;
@@ -22,8 +22,10 @@
 - (id)displayName;
 - (id)initWithLibrary:(id)arg1 persistentAccount:(id)arg2;
 - (bool)isActive;
+- (id)legacySQLExpressionToMatchAllMailboxes;
 - (id)mailboxPathExtension;
 - (id)mailboxUidForFileSystemPath:(id)arg1;
+- (id)mailboxUidForRelativePath:(id)arg1 create:(bool)arg2 withOption:(int)arg3;
 - (id)primaryMailboxUid;
 - (id)pushedMailboxUids;
 - (bool)renameMailbox:(id)arg1 newName:(id)arg2 parent:(id)arg3;

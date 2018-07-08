@@ -27,6 +27,7 @@
 - (void)keyboardItemButtonWasTapped:(id)arg1 withEvent:(id)arg2;
 - (void)loadView;
 - (void)setDockView:(id)arg1;
+- (void)setKeyboardDockItem;
 - (void)updateDockItemsVisibility;
 - (void)viewDidLoad;
 

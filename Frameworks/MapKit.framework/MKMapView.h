@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKMapView : UIView <DebugHierarchyObject, GEOLogContextDelegate, GEOResourceManifestTileGroupObserver, MKAnnotationContainerViewDelegate, MKAnnotationManagerDelegate, MKAnnotationMarkerContainer, MKMapGestureControllerDelegate, MKOverlayContainerViewDelegate, MKVariableDelayTapRecognizerDelegate, NSCoding, UIGestureRecognizerDelegate, VKMapViewDelegate> {
+@interface MKMapView : UIView <GEOLogContextDelegate, GEOResourceManifestTileGroupObserver, MKAnnotationContainerViewDelegate, MKAnnotationManagerDelegate, MKAnnotationMarkerContainer, MKMapGestureControllerDelegate, MKOverlayContainerViewDelegate, MKVariableDelayTapRecognizerDelegate, NSCoding, UIGestureRecognizerDelegate, VKMapViewDelegate> {
     MKAnnotationContainerView * _annotationContainer;
     id /* block */  _annotationCoordinateTest;
     MKMapAnnotationManager * _annotationManager;
@@ -944,10 +944,6 @@
 - (void)willMoveToWindow:(id)arg1;
 - (double)zoomToFocusVenue:(id)arg1;
 - (double)zoomToFocusVenueBuilding:(id)arg1;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
 
 // Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
 

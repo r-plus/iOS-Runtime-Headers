@@ -3,24 +3,24 @@
  */
 
 @interface ASTProfileResult : ASTSealablePayload {
+    ASTIdentity * _identity;
     NSArray * _properties;
-    NSString * _serialNumber;
     NSArray * _tests;
 }
 
+@property (nonatomic, readonly) ASTIdentity *identity;
 @property (nonatomic, retain) NSArray *properties;
-@property (nonatomic, readonly) NSString *serialNumber;
 @property (nonatomic, retain) NSArray *tests;
 
-+ (id)resultWithSerialNumber:(id)arg1;
++ (id)resultWithIdentity:(id)arg1;
 + (id)sealedProfileResultWithPayload:(id)arg1 signature:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)generatePayload;
+- (id)identity;
 - (id)init;
-- (id)initWithSerialNumber:(id)arg1;
+- (id)initWithIdentity:(id)arg1;
 - (id)properties;
-- (id)serialNumber;
 - (void)setProperties:(id)arg1;
 - (void)setTests:(id)arg1;
 - (id)tests;

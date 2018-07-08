@@ -15,6 +15,8 @@
     NSString * _fuzzyLocationStoragePath;
     NSString * _geoBookmarksSettingsPath;
     NSString * _geoHistorySettingsPath;
+    NSString * _groupDirectory;
+    NSURL * _groupLibraryURL;
     NSString * _historySettingsPath;
     NSString * _historySyncedMarkerFile;
     id /* block */  _invalidationHandler;
@@ -41,6 +43,7 @@
 @property (nonatomic, readonly) NSString *fuzzyLocationStoragePath;
 @property (nonatomic, readonly) NSString *geoBookmarksSettingsPath;
 @property (nonatomic, readonly) NSString *geoHistorySettingsPath;
+@property (nonatomic, readonly) NSString *groupDirectory;
 @property (nonatomic, readonly) NSString *historySettingsPath;
 @property (nonatomic, readonly) NSString *historySyncedMarkerFile;
 @property (nonatomic, readonly) NSString *homeDirectory;
@@ -56,6 +59,7 @@
 + (id)bookmarksSettingsPath;
 + (id)cacheDirectory;
 + (id)currentMapsApplicationContainerURL;
++ (id)currentMapsGroupContainerURL;
 + (id)directionsCachePath;
 + (id)directionsSettingsPath;
 + (id)failedDirectionsSettingsPath;
@@ -65,6 +69,7 @@
 + (id)favoritesSyncedMarkerFile;
 + (id)geoBookmarksSettingsPath;
 + (id)geoHistorySettingsPath;
++ (id)groupDirectory;
 + (id)historySettingsPath;
 + (id)historySyncedMarkerFile;
 + (id)mapsApplicationContainerPaths;
@@ -97,10 +102,11 @@
 - (id)fuzzyLocationStoragePath;
 - (id)geoBookmarksSettingsPath;
 - (id)geoHistorySettingsPath;
+- (id)groupDirectory;
 - (id)historySettingsPath;
 - (id)historySyncedMarkerFile;
 - (id)homeDirectory;
-- (id)initWithLibraryDirectoryURL:(id)arg1 invalidationHandler:(id /* block */)arg2;
+- (id)initWithLibraryDirectoryURL:(id)arg1 groupLibraryURL:(id)arg2 invalidationHandler:(id /* block */)arg3;
 - (id)mapsDirectory;
 - (id)nanoDirectory;
 - (id)nanoHistorySettingsPath;

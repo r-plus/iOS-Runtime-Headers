@@ -23,8 +23,8 @@
 }
 
 @property (nonatomic, readonly) unsigned long long analyticsDataSize;
-@property (nonatomic, readonly, retain) NSArray *axisList;
-@property (nonatomic, readonly, retain) NSArray *categoryAxisList;
+@property (nonatomic, readonly) NSArray *axisList;
+@property (nonatomic, readonly) NSArray *categoryAxisList;
 @property (nonatomic) TSCHChartInfo *chartInfo;
 @property (nonatomic, retain) TSCHChartGrid *grid;
 @property (nonatomic, readonly) bool isMultiData;
@@ -37,12 +37,13 @@
 @property (nonatomic, readonly) unsigned long long numberOfSeries;
 @property (nonatomic, readonly) unsigned long long numberOfSeriesForCalculatingBarWidth;
 @property (nonatomic, readonly) unsigned long long numberOfValues;
-@property (nonatomic, readonly, retain) NSDictionary *referenceLinesMap;
+@property (nonatomic, readonly) NSDictionary *referenceLinesMap;
 @property (nonatomic) int scatterFormat;
-@property (nonatomic, readonly, retain) NSArray *seriesList;
-@property (nonatomic, readonly, retain) id syncRoot;
-@property (nonatomic, readonly, retain) NSArray *valueAxisList;
+@property (nonatomic, readonly) NSArray *seriesList;
+@property (nonatomic, readonly) id syncRoot;
+@property (nonatomic, readonly) NSArray *valueAxisList;
 
+- (void).cxx_destruct;
 - (unsigned long long)analyticsDataSize;
 - (id)axisForID:(id)arg1;
 - (id)axisList;

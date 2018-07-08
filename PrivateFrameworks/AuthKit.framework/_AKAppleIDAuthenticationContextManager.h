@@ -33,7 +33,7 @@
 - (void)presentNativeRecoveryUIForContext:(id)arg1 recoveryContext:(id)arg2 completion:(id /* block */)arg3;
 - (void)presentSecondFactorAlertForContext:(id)arg1 withError:(id)arg2 title:(id)arg3 message:(id)arg4 completion:(id /* block */)arg5;
 - (void)presentSecondFactorUIForContext:(id)arg1 completion:(id /* block */)arg2;
-- (void)presentServerProvidedUIForContext:(id)arg1 URLRequest:(id)arg2 delegate:(id)arg3 completion:(id /* block */)arg4;
+- (void)presentServerProvidedUIForContext:(id)arg1 withConfiguration:(id)arg2 completion:(id /* block */)arg3;
 - (void)provisionAnisetteForContext:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)registerContext:(id)arg1;
 - (void)setDelegate:(id)arg1;

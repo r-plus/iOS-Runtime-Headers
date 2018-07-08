@@ -7,6 +7,9 @@
 }
 
 @property (readonly, copy) NSString *buildVersion;
+@property (nonatomic, readonly) bool hf_softwareUpdateWouldSupportHomePodPairing;
+
+// Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
 
 + (bool)supportsSecureCoding;
 + (id)versionFromOperatingSystemVersion:(struct { long long x1; long long x2; long long x3; })arg1;
@@ -21,5 +24,9 @@
 - (id)initWithVersionString:(id)arg1;
 - (struct { long long x1; long long x2; long long x3; })operatingSystemVersion;
 - (id)versionString;
+
+// Image: /System/Library/PrivateFrameworks/Home.framework/Home
+
+- (bool)hf_softwareUpdateWouldSupportHomePodPairing;
 
 @end

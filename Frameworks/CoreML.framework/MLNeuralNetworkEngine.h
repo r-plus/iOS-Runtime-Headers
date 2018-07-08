@@ -8,7 +8,7 @@
         int *__begin_; 
         int *__end_; 
         struct __compressed_pair<int *, std::__1::allocator<int> > { 
-            int *__first_; 
+            int *__value_; 
         } __end_cap_; 
     }  _batches;
     NSArray * _classLabels;
@@ -19,7 +19,7 @@
         int *__begin_; 
         int *__end_; 
         struct __compressed_pair<int *, std::__1::allocator<int> > { 
-            int *__first_; 
+            int *__value_; 
         } __end_cap_; 
     }  _heights;
     struct map<std::__1::basic_string<char>, espresso_buffer_t *, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, espresso_buffer_t *> > > { 
@@ -28,10 +28,10 @@
             struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, espresso_buffer_t *>, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
-                } __first_; 
+                } __value_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, espresso_buffer_t *>, std::__1::less<std::__1::basic_string<char> >, true> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __pair3_; 
         } __tree_; 
     }  _inputBuffers;
@@ -41,7 +41,7 @@
         int *__begin_; 
         int *__end_; 
         struct __compressed_pair<int *, std::__1::allocator<int> > { 
-            int *__first_; 
+            int *__value_; 
         } __end_cap_; 
     }  _ks;
     NSString * _modelFilePath;
@@ -49,7 +49,7 @@
         char **__begin_; 
         char **__end_; 
         struct __compressed_pair<const char **, std::__1::allocator<const char *> > { 
-            char **__first_; 
+            char **__value_; 
         } __end_cap_; 
     }  _names;
     struct { 
@@ -64,10 +64,10 @@
             struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, espresso_buffer_t *>, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
-                } __first_; 
+                } __value_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, espresso_buffer_t *>, std::__1::less<std::__1::basic_string<char> >, true> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __pair3_; 
         } __tree_; 
     }  _outputBuffers;
@@ -78,10 +78,10 @@
             struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, espresso_simple_image_preprocessing_params_t>, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
-                } __first_; 
+                } __value_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, espresso_simple_image_preprocessing_params_t>, std::__1::less<std::__1::basic_string<char> >, true> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __pair3_; 
         } __tree_; 
     }  _params;
@@ -94,7 +94,7 @@
         int *__begin_; 
         int *__end_; 
         struct __compressed_pair<int *, std::__1::allocator<int> > { 
-            int *__first_; 
+            int *__value_; 
         } __end_cap_; 
     }  _sequences;
     bool  _usingCPU;
@@ -102,7 +102,7 @@
         int *__begin_; 
         int *__end_; 
         struct __compressed_pair<int *, std::__1::allocator<int> > { 
-            int *__first_; 
+            int *__value_; 
         } __end_cap_; 
     }  _widths;
 }

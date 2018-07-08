@@ -25,7 +25,8 @@
     HUPillButton * _detailsButton;
     unsigned long long  _edgesForExtendedLayout;
     double  _initialSourceViewScale;
-    bool  _shouldShowControls;
+    bool  _shouldShowActiveControl;
+    bool  _shouldShowAlternateControlButton;
     bool  _shouldShowDetailsButton;
     bool  _showAlternateControlButton;
     struct CGRect { 
@@ -65,7 +66,8 @@
 @property (nonatomic) unsigned long long edgesForExtendedLayout;
 @property (nonatomic) double initialSourceViewScale;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } presentedControlFrame;
-@property (nonatomic) bool shouldShowControls;
+@property (nonatomic) bool shouldShowActiveControl;
+@property (nonatomic) bool shouldShowAlternateControlButton;
 @property (nonatomic) bool shouldShowDetailsButton;
 @property (nonatomic) bool showAlternateControlButton;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } sourceRect;
@@ -145,12 +147,15 @@
 - (void)setDetailsButton:(id)arg1;
 - (void)setEdgesForExtendedLayout:(unsigned long long)arg1;
 - (void)setInitialSourceViewScale:(double)arg1;
-- (void)setShouldShowControls:(bool)arg1;
+- (void)setShouldShowActiveControl:(bool)arg1;
+- (void)setShouldShowAlternateControlButton:(bool)arg1;
 - (void)setShouldShowDetailsButton:(bool)arg1;
 - (void)setShowAlternateControlButton:(bool)arg1;
 - (void)setSummaryView:(id)arg1;
 - (void)setTopToSummarySpacingLayoutGuide:(id)arg1;
-- (bool)shouldShowControls;
+- (void)setshouldShowActiveControl:(bool)arg1;
+- (bool)shouldShowActiveControl;
+- (bool)shouldShowAlternateControlButton;
 - (bool)shouldShowDetailsButton;
 - (bool)showAlternateControlButton;
 - (void)showAuxiliaryView:(id)arg1;

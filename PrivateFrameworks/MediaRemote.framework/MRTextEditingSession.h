@@ -14,10 +14,10 @@
 @property (nonatomic, readonly) NSString *text;
 @property (nonatomic, readonly) unsigned long long uniqueIdentifier;
 
+- (void).cxx_destruct;
 - (id)_copyWithZone:(struct _NSZone { }*)arg1 usingConcreteClass:(Class)arg2;
 - (id)attributes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)init;
 - (id)initWithText:(id)arg1 attributes:(id)arg2;

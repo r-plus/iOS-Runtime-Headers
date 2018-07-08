@@ -4,6 +4,7 @@
 
 @interface NTKUpNextDataSourceManager : NSObject {
     unsigned long long  _aggregatedState;
+    bool  _allowsLocationUse;
     NSObject<OS_dispatch_queue> * _coordinatorQueue;
     NSMutableArray * _dataSourceControllers;
     <NTKUpNextDataSourceManagerDelegate> * _delegate;
@@ -13,6 +14,7 @@
     NSObject<OS_dispatch_queue> * _queue;
 }
 
+@property (nonatomic) bool allowsLocationUse;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *coordinatorQueue;
 @property (nonatomic, readonly) NSSet *currentDataSourceIdentifiers;
 @property (nonatomic) unsigned long long dataSourceState;
@@ -38,6 +40,7 @@
 - (void)_availableDataSourcesDidChange;
 - (void)_loadDataSourceWithIdentifier:(id)arg1;
 - (void)_unloadDataSourceWithIdentifier:(id)arg1;
+- (bool)allowsLocationUse;
 - (id)coordinatorQueue;
 - (id)currentDataSourceIdentifiers;
 - (unsigned long long)dataSourceState;
@@ -49,6 +52,7 @@
 - (bool)isPaused;
 - (void)pauseDataSources;
 - (void)resumeDataSources;
+- (void)setAllowsLocationUse:(bool)arg1;
 - (void)setDataSourceState:(unsigned long long)arg1;
 - (void)setUserDisabledDataSources:(id)arg1;
 - (id)userDisabledDataSources;

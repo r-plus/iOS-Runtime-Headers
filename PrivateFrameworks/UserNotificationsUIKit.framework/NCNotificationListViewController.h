@@ -121,6 +121,7 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insetMargins;
 - (bool)isBackgroundBlurred;
 - (bool)isContentExtensionVisible:(id)arg1;
+- (bool)isNotificationListCellVisibleForNotificationRequest:(id)arg1;
 - (bool)isPresentingNotificationInLongLook;
 - (double)itemSpacing;
 - (void)listViewControllerPresentedByUserAction;

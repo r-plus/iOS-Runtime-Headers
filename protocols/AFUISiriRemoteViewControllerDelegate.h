@@ -5,7 +5,7 @@
 
 @required
 
-- (void)dismissSiriRemoteViewController:(AFUISiriRemoteViewController *)arg1 delayForTTS:(bool)arg2;
+- (void)dismissSiriRemoteViewController:(AFUISiriRemoteViewController *)arg1 delayForTTS:(bool)arg2 userInfo:(NSDictionary *)arg3;
 - (void)notifyOnNextUserInteractionForSiriRemoteViewController:(AFUISiriRemoteViewController *)arg1;
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 didChangePresentationPeekMode:(unsigned long long)arg2;
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 didDismissViewControllerWithStatusBarStyle:(long long)arg2;

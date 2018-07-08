@@ -154,7 +154,7 @@
 @property (nonatomic, retain) NSString *universalSectionID;
 
 + (void)_addAttachmentsFromBBBulletin:(id)arg1 toBLTPBBulletin:(id)arg2 observer:(id)arg3 completion:(id /* block */)arg4;
-+ (id)_attachmentFromBBAttachmentMetadata:(id)arg1 bulletin:(id)arg2 observer:(id)arg3 favorFile:(bool)arg4 completion:(id /* block */)arg5;
++ (void)_attachmentFromBBAttachmentMetadata:(id)arg1 bulletin:(id)arg2 observer:(id)arg3 fileOption:(unsigned long long)arg4 completion:(id /* block */)arg5;
 + (Class)additionalAttachmentsType;
 + (void)bulletinWithBBBulletin:(id)arg1 sockPuppetAppBundleID:(id)arg2 isSockPuppetAppInstalled:(bool)arg3 observer:(id)arg4 feed:(unsigned long long)arg5 teamID:(id)arg6 universalSectionID:(id)arg7 isCriticalBulletin:(bool)arg8 replyToken:(id)arg9 completion:(id /* block */)arg10;
 + (Class)peopleIDsType;

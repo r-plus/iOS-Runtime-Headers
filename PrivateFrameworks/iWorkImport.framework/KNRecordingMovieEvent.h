@@ -3,9 +3,9 @@
  */
 
 @interface KNRecordingMovieEvent : KNRecordingEvent {
-    long long  mMovieEventType;
-    double  mMovieEventValue;
-    TSPLazyReference * mMovieInfoReference;
+    long long  _movieEventType;
+    double  _movieEventValue;
+    TSPLazyReference * _movieInfoReference;
 }
 
 @property (nonatomic, readonly) bool beginsScrubbing;
@@ -18,9 +18,9 @@
 @property (nonatomic, readonly) bool startsPlayback;
 @property (nonatomic, readonly) bool stopsPlayback;
 
+- (void).cxx_destruct;
 - (bool)beginsScrubbing;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (bool)endsScrubbing;
 - (unsigned long long)hash;

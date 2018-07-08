@@ -46,6 +46,7 @@
 - (id)_allPlayableChildrenMetadataObjectsForMetadata:(id)arg1;
 - (void)_configureNavigationBar;
 - (void)_insertSearchBarIntoTableView:(id)arg1;
+- (void)_insertSearchBarIntoViewControllerIfNeeded:(id)arg1;
 - (bool)_isMetadataAddable:(id)arg1;
 - (void)_reloadDataInViewController:(id)arg1;
 - (id)_searchBarInViewController:(id)arg1;
@@ -89,6 +90,7 @@
 - (long long)state;
 - (void)viewDidLoad;
 - (void)viewSafeAreaInsetsDidChange;
+- (void)viewWillAppear:(bool)arg1;
 - (unsigned int)watchCompatibilityVersion;
 
 @end

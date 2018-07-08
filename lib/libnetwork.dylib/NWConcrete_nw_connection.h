@@ -23,6 +23,7 @@
     id /* block */  excessive_keepalive_handler;
     unsigned int  excessive_keepalive_interval;
     unsigned int  generic_stats_reported;
+    unsigned int  hit_max_timestamps;
     NSObject<OS_nw_write_request> * initial_write_requests;
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 

@@ -9,12 +9,12 @@
     /* Warning: unhandled struct encoding: '{WeakObjCPtr<id<WKBrowsingContextLoadDelegate> >="m_weakReference"@}' */ struct WeakObjCPtr<id<WKBrowsingContextLoadDelegate> > { 
         id m_weakReference; 
     }  _loadDelegate;
-    struct RefPtr<WebKit::WebPageProxy> { 
+    struct RefPtr<WebKit::WebPageProxy, WTF::DumbPtrTraits<WebKit::WebPageProxy> > { 
         struct WebPageProxy {} *m_ptr; 
     }  _page;
     struct unique_ptr<WebKit::PageLoadStateObserver, std::__1::default_delete<WebKit::PageLoadStateObserver> > { 
         struct __compressed_pair<WebKit::PageLoadStateObserver *, std::__1::default_delete<WebKit::PageLoadStateObserver> > { 
-            struct PageLoadStateObserver {} *__first_; 
+            struct PageLoadStateObserver {} *__value_; 
         } __ptr_; 
     }  _pageLoadStateObserver;
     /* Warning: unhandled struct encoding: '{WeakObjCPtr<id<WKBrowsingContextPolicyDelegate> >="m_weakReference"@}' */ struct WeakObjCPtr<id<WKBrowsingContextPolicyDelegate> > { 

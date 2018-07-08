@@ -18,6 +18,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_executeCompletionHandlers;
 - (void)authorizationDidAuthorizePaymentCompleteWithResult:(id)arg1;
 - (void)authorizationDidAuthorizePeerPaymentQuoteCompleteWithResult:(id)arg1;
 - (void)authorizationDidAuthorizePurchaseCompleteWithStatus:(long long)arg1;

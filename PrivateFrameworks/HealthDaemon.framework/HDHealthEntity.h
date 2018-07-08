@@ -9,7 +9,6 @@
 + (id)_syncQueryWithDatabase:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3 orderingDirections:(id)arg4 limit:(unsigned long long)arg5 anchorProperty:(id)arg6;
 + (unsigned long long)_transactionOptionsForWriting:(bool)arg1 highPriority:(bool)arg2;
 + (id)anyWithPredicate:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
-+ (id)checkConstraints;
 + (id)columnNamesForTimeOffset;
 + (id)columnsDefinition;
 + (long long)countOfObjectsWithPredicate:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
@@ -40,6 +39,7 @@
 + (id)updateSQLForTimeOffsetWithBindingCount:(unsigned long long*)arg1;
 
 - (bool)getValuesForProperties:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3 handler:(id /* block */)arg4;
+- (id)stringForProperty:(id)arg1 healthDatabase:(id)arg2 error:(out id*)arg3;
 - (bool)updateProperties:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3 bindingHandler:(id /* block */)arg4;
 - (id)valueForProperty:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
 

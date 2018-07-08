@@ -5,6 +5,7 @@
 @interface SXWebContentViewController : UIViewController <WKNavigationDelegate, WKUIDelegate> {
     <SXWebContentDocumentStateReporting> * _documentStateReporter;
     <SXWebContentErrorReporting> * _errorReporter;
+    <SXWebContentLogger> * _logger;
     <SXWebContentMessageHandlerManager> * _messageHandlerManager;
     <SXWebContentNavigationManager> * _navigationManager;
     <SXReachabilityProvider> * _reachabilityProvider;
@@ -19,6 +20,7 @@
 @property (nonatomic, readonly) <SXWebContentDocumentStateReporting> *documentStateReporter;
 @property (nonatomic, readonly) <SXWebContentErrorReporting> *errorReporter;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) <SXWebContentLogger> *logger;
 @property (nonatomic, readonly) <SXWebContentMessageHandlerManager> *messageHandlerManager;
 @property (nonatomic, readonly) <SXWebContentNavigationManager> *navigationManager;
 @property (nonatomic, readonly) <SXReachabilityProvider> *reachabilityProvider;
@@ -31,8 +33,9 @@
 - (void).cxx_destruct;
 - (id)documentStateReporter;
 - (id)errorReporter;
-- (id)initWithWebView:(id)arg1 scriptsManager:(id)arg2 messageHandlerManager:(id)arg3 navigationManager:(id)arg4 errorReporter:(id)arg5 documentStateReporter:(id)arg6 timeoutManager:(id)arg7 terminationManager:(id)arg8 reachabilityProvider:(id)arg9;
+- (id)initWithWebView:(id)arg1 scriptsManager:(id)arg2 messageHandlerManager:(id)arg3 navigationManager:(id)arg4 errorReporter:(id)arg5 documentStateReporter:(id)arg6 timeoutManager:(id)arg7 terminationManager:(id)arg8 reachabilityProvider:(id)arg9 logger:(id)arg10;
 - (void)loadURL:(id)arg1;
+- (id)logger;
 - (id)messageHandlerManager;
 - (id)navigationManager;
 - (id)reachabilityProvider;

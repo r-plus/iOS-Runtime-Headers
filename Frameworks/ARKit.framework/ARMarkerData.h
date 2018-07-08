@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/ARKit.framework/ARKit
  */
 
-@interface ARMarkerData : NSObject <ARResultData> {
+@interface ARMarkerData : NSObject <ARResultData, NSSecureCoding> {
     bool  _isTracked;
     struct { 
         /* Warning: Unrecognized filer type: ']' using 'void*' */ void*columns[4]; 
@@ -18,7 +18,11 @@
 @property (nonatomic) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; } transform;
 @property (nonatomic) unsigned long long uid;
 
++ (bool)supportsSecureCoding;
+
 - (id)anchorsForCameraWithTransform:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg1 referenceOriginTransform:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg2 existingAnchors:(id)arg3 anchorsToRemove:(id)arg4;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (bool)isTracked;
 - (void)setIsTracked:(bool)arg1;
 - (void)setTransform:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg1;

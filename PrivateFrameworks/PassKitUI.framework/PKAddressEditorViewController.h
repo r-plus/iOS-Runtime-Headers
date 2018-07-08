@@ -30,6 +30,7 @@
     bool  _preselectedNameField;
     bool  _readOnly;
     NSArray * _requiredFieldKeys;
+    bool  _requirementsMet;
     MKLocalSearchCompleter * _searchCompleter;
     long long  _style;
     NSArray * _suggestions;
@@ -62,6 +63,7 @@
 @property (nonatomic) PKAddressTextField *phoneticGivenNameTextField;
 @property (nonatomic) bool readOnly;
 @property (nonatomic, retain) NSArray *requiredFieldKeys;
+@property (nonatomic) bool requirementsMet;
 @property (nonatomic, retain) MKLocalSearchCompleter *searchCompleter;
 @property (nonatomic) long long style;
 @property (nonatomic, retain) NSArray *suggestions;
@@ -109,6 +111,7 @@
 - (bool)readOnly;
 - (void)recomputeEditingFields;
 - (id)requiredFieldKeys;
+- (bool)requirementsMet;
 - (id)searchCompleter;
 - (void)setAddressFormatter:(id)arg1;
 - (void)setCurrentlySelectedField:(id)arg1;
@@ -134,6 +137,7 @@
 - (void)setPhoneticGivenNameTextField:(id)arg1;
 - (void)setReadOnly:(bool)arg1;
 - (void)setRequiredFieldKeys:(id)arg1;
+- (void)setRequirementsMet:(bool)arg1;
 - (void)setSearchCompleter:(id)arg1;
 - (void)setStyle:(long long)arg1;
 - (void)setSuggestions:(id)arg1;
@@ -141,7 +145,7 @@
 - (id)suggestions;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementString:(id)arg3;
+- (void)textDidChange:(id)arg1;
 - (void)textFieldDidBeginEditing:(id)arg1;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (bool)textFieldShouldBeginEditing:(id)arg1;

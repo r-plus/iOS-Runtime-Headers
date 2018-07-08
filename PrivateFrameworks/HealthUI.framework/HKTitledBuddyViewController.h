@@ -14,7 +14,11 @@
 }
 
 @property (nonatomic, readonly) NSArray *buttons;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) UIActivityIndicatorView *loadingIndicator;
+@property (readonly) Class superclass;
 
 + (id)embedView:(id)arg1 inContainerViewWithMinimumEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 
@@ -24,6 +28,7 @@
 - (id)_createHeaderView;
 - (void)_updateForCurrentSizeCategory;
 - (id)bodyString;
+- (long long)bodyTextAlignment;
 - (id)bottomAnchoredButtons;
 - (void)buttonAtIndexTapped:(long long)arg1;
 - (id)buttons;
@@ -41,6 +46,7 @@
 - (id)titleString;
 - (void)titledBuddyHeaderViewDidTapLinkButton:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)updateBodyTextAttributesWithMutableString:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;

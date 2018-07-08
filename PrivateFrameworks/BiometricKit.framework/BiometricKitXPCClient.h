@@ -36,7 +36,7 @@
 - (bool)fileRadarWithLogs:(id)arg1 withDescription:(id)arg2;
 - (int)forceBioLockoutForUser:(unsigned int)arg1 withOptions:(id)arg2;
 - (int)getAugmentationEligibility:(bool*)arg1 forIdentity:(id)arg2;
-- (long long)getBioLockoutStateForUser:(unsigned int)arg1;
+- (int)getBioLockoutState:(long long*)arg1 forUser:(unsigned int)arg2;
 - (int)getBiometryAvailability:(long long*)arg1 forUser:(unsigned int)arg2;
 - (id)getCalibrationDataInfo;
 - (int)getCountersignedStoreToken:(id*)arg1;
@@ -62,6 +62,7 @@
 - (bool)isAriadneSignpostsEnabled;
 - (bool)isFingerOn;
 - (bool)isXARTAvailable;
+- (void)logEventOrCode:(unsigned long long)arg1;
 - (void)match:(id)arg1 withOptions:(id)arg2 async:(bool)arg3 withReply:(id /* block */)arg4;
 - (void)notifyAppIsBackground:(bool)arg1;
 - (void)notifyAppIsInactive:(bool)arg1;

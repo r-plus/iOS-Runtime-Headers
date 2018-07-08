@@ -40,6 +40,7 @@
     NSNumber * _serviceID;
     NSNumber * _shouldComposeInitialData;
     NSNumber * _telemetryRatio;
+    NSData * _updateHash;
     NSNumber * _useCustomProtocol;
     NSNumber * _useLocalFlowDivert;
     NSNumber * _useTFOHeuristics;
@@ -82,6 +83,7 @@
 @property (copy) NSNumber *serviceID;
 @property (copy) NSNumber *shouldComposeInitialData;
 @property (copy) NSNumber *telemetryRatio;
+@property (retain) NSData *updateHash;
 @property (copy) NSNumber *useCustomProtocol;
 @property (copy) NSNumber *useLocalFlowDivert;
 @property (copy) NSNumber *useTFOHeuristics;
@@ -177,12 +179,14 @@
 - (void)setServiceID:(id)arg1;
 - (void)setShouldComposeInitialData:(id)arg1;
 - (void)setTelemetryRatio:(id)arg1;
+- (void)setUpdateHash:(id)arg1;
 - (void)setUseCustomProtocol:(id)arg1;
 - (void)setUseLocalFlowDivert:(id)arg1;
 - (void)setUseTFOHeuristics:(id)arg1;
 - (id)shouldComposeInitialData;
 - (void)teardownNetworkAgent;
 - (id)telemetryRatio;
+- (id)updateHash;
 - (bool)updateNetworkAgent;
 - (id)useCustomProtocol;
 - (id)useLocalFlowDivert;

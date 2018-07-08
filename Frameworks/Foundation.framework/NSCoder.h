@@ -94,6 +94,19 @@
 - (bool)validateClassSupportsSecureCoding:(Class)arg1;
 - (long long)versionForClassName:(id)arg1;
 
+// Image: /System/Library/Frameworks/ARKit.framework/ARKit
+
+- (struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; })decodeCMRotationMatrixForKey:(id)arg1;
+- (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[3]; })decodeMatrix3x3ForKey:(id)arg1;
+- (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })decodeMatrix4x3ForKey:(id)arg1;
+- (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })decodeMatrix4x4ForKey:(id)arg1;
+- (void)decodeVector3ForKey:(id)arg1;
+- (void)encodeCMRotationMatrix:(struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; })arg1 forKey:(id)arg2;
+- (void)encodeMatrix3x3:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[3]; })arg1 forKey:(id)arg2;
+- (void)encodeMatrix4x3:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg1 forKey:(id)arg2;
+- (void)encodeMatrix4x4:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg1 forKey:(id)arg2;
+- (void)encodeVector3:(void *)arg1 forKey:(void *)arg2; // needs 2 arg types, found 1: id
+
 // Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })decodeCMTimeForKey:(id)arg1;

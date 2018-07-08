@@ -96,7 +96,11 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, retain) IMMessage *invitationForPendingParticipants;
+@property (nonatomic, readonly) bool isAppleChat;
+@property (nonatomic, readonly) bool isBusinessChat;
 @property (nonatomic) bool isFiltered;
+@property (nonatomic, readonly) bool isMakoChat;
+@property (nonatomic, readonly) bool isReplyEnabled;
 @property (nonatomic, readonly) long long joinState;
 @property (nonatomic, readonly) NSString *lastAddressedHandleID;
 @property (nonatomic, readonly) IMMessage *lastFinishedMessage;
@@ -113,6 +117,7 @@
 @property (nonatomic, retain) NSString *localUserIsComposing;
 @property (nonatomic) bool localUserIsRecording;
 @property (nonatomic) bool localUserIsTyping;
+@property (nonatomic, readonly) MKMapItem *mapItem;
 @property (nonatomic, readonly) unsigned long long messageCount;
 @property (nonatomic, readonly) unsigned long long messageFailureCount;
 @property (nonatomic) unsigned long long numberOfMessagesToKeepLoaded;
@@ -167,7 +172,7 @@
 - (void)_endTiming;
 - (void)_engroupParticipantsUpdated;
 - (void)_fixItemForSendingMessageTime:(id)arg1;
-- (void)_fixSendingItemDate:(id)arg1;
+- (void)_fixSendingItemDateAndSortID:(id)arg1;
 - (id)_getDeleteChatItemMap:(id)arg1;
 - (id)_getMessageChatItemMap:(id)arg1 withDeleteMap:(id)arg2 andAllChatItems:(id)arg3;
 - (id)_guids;
@@ -352,6 +357,7 @@
 - (id)localUserIsComposing;
 - (bool)localUserIsRecording;
 - (bool)localUserIsTyping;
+- (id)mapItem;
 - (void)markAllLocationShareItemsAsUnactionable;
 - (void)markAllMessagesAsRead;
 - (void)markAsAutoSpamReported;

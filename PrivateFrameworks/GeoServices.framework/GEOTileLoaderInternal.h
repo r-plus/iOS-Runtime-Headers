@@ -17,7 +17,7 @@
             struct __list_node_base<LoadItem, void *> {} *__next_; 
         } __end_; 
         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<LoadItem, void *> > > { 
-            unsigned long long __first_; 
+            unsigned long long __value_; 
         } __size_alloc_; 
     }  _loadItems;
     NSObject<OS_dispatch_queue> * _loadQ;
@@ -34,12 +34,12 @@
             struct ErrorInfo {} **__begin_; 
             struct ErrorInfo {} **__end_; 
             struct __compressed_pair<ErrorInfo **, std::__1::allocator<ErrorInfo *> > { 
-                struct ErrorInfo {} **__first_; 
+                struct ErrorInfo {} **__value_; 
             } __end_cap_; 
         } __map_; 
         unsigned long long __start_; 
         struct __compressed_pair<unsigned long, std::__1::allocator<ErrorInfo> > { 
-            unsigned long long __first_; 
+            unsigned long long __value_; 
         } __size_; 
     }  _recentErrors;
     int  _rollingBatchId;
@@ -52,7 +52,7 @@
     NSObject<OS_dispatch_queue> * _tileDecodersIsolation;
     struct unique_ptr<geo::DispatchTimer, std::__1::default_delete<geo::DispatchTimer> > { 
         struct __compressed_pair<geo::DispatchTimer *, std::__1::default_delete<geo::DispatchTimer> > { 
-            struct DispatchTimer {} *__first_; 
+            struct DispatchTimer {} *__value_; 
         } __ptr_; 
     }  _timer;
     GEOTileLoaderUsage * _usage;
@@ -68,7 +68,6 @@
 - (void)_cancel:(struct __list_iterator<LoadItem, void *> { struct __list_node_base<LoadItem, void *> {} *x1; }*)arg1 err:(id)arg2;
 - (bool)_cancelIfNeeded:(struct __list_iterator<LoadItem, void *> { struct __list_node_base<LoadItem, void *> {} *x1; }*)arg1;
 - (id)_findInCache:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
-- (void)_loadedTile:(id)arg1 forKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2 fromOfflinePack:(id)arg3;
 - (void)_loadedTile:(id)arg1 forKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2 info:(id)arg3;
 - (void)_loadedTileForLocalKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })arg1 preliminary:(bool)arg2 quickly:(bool)arg3 tileDecoder:(id)arg4 data:(id)arg5 disburseTile:(id /* block */)arg6;
 - (void)_localeChanged:(id)arg1;
@@ -78,7 +77,6 @@
 - (id)_tileDecoderForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 quickly:(bool*)arg2;
 - (void)_tileEditionChanged:(id)arg1;
 - (void)_timerFired;
-- (void)_updateNetworkActive;
 - (void)beginPreloadSessionOfSize:(unsigned long long)arg1 forClient:(id)arg2 exclusive:(bool)arg3;
 - (id)cachedTileForKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (void)calculateFreeableSizeWithCallbackQ:(id)arg1 finished:(id /* block */)arg2;
@@ -95,11 +93,14 @@
 - (void)expireTilesWithPredicate:(id /* block */)arg1;
 - (id)init;
 - (id)initWithConfiguration:(id)arg1;
+- (id)initWithConfiguration:(id)arg1 serverProxy:(id)arg2;
 - (id)internalDelegate;
 - (id)internalDelegateQ;
 - (void)loadKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 additionalInfo:(const struct { unsigned int x1[4]; }*)arg2 priority:(unsigned int)arg3 forClient:(id)arg4 options:(unsigned long long)arg5 callbackQ:(id)arg6 beginNetwork:(id /* block */)arg7 callback:(id /* block */)arg8;
-- (void)loadKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 additionalInfo:(const struct { unsigned int x1[4]; }*)arg2 priority:(unsigned int)arg3 forClient:(id)arg4 proxyClient:(id)arg5 options:(unsigned long long)arg6 callbackQ:(id)arg7 beginNetwork:(id /* block */)arg8 callback:(id /* block */)arg9;
+- (void)loadKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 additionalInfo:(const struct { unsigned int x1[4]; }*)arg2 priority:(unsigned int)arg3 forClient:(id)arg4 options:(unsigned long long)arg5 qos:(unsigned int)arg6 callbackQ:(id)arg7 beginNetwork:(id /* block */)arg8 callback:(id /* block */)arg9;
+- (void)loadKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 additionalInfo:(const struct { unsigned int x1[4]; }*)arg2 priority:(unsigned int)arg3 forClient:(id)arg4 proxyClient:(id)arg5 options:(unsigned long long)arg6 qos:(unsigned int)arg7 callbackQ:(id)arg8 beginNetwork:(id /* block */)arg9 callback:(id /* block */)arg10;
 - (void)loadKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 priority:(unsigned int)arg2 forClient:(id)arg3 options:(unsigned long long)arg4 callbackQ:(id)arg5 beginNetwork:(id /* block */)arg6 callback:(id /* block */)arg7;
+- (void)loadKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 priority:(unsigned int)arg2 forClient:(id)arg3 options:(unsigned long long)arg4 qos:(unsigned int)arg5 callbackQ:(id)arg6 beginNetwork:(id /* block */)arg7 callback:(id /* block */)arg8;
 - (int)memoryHits;
 - (int)networkHits;
 - (void)openForClient:(id)arg1;

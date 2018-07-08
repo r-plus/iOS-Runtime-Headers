@@ -11,6 +11,7 @@
 @property (nonatomic, readonly) void*logicalLeaderOutputDevice;
 @property (nonatomic, readonly) NSArray *outputDevices;
 
++ (id)localDeviceUID;
 + (id)localOutputDeviceLocalizedName;
 + (void*)logicalLeaderFromOutputDevices:(id)arg1;
 + (long long)pickableRouteTypeForOutputDevice:(void*)arg1;
@@ -39,6 +40,7 @@
 - (long long)routeSubtype;
 - (long long)routeType;
 - (id)routeUID;
+- (bool)supportsGrouping;
 - (bool)supportsWirelessDisplay;
 
 @end

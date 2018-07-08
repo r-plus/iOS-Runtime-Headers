@@ -28,6 +28,7 @@
 - (id)customStrokeLayer;
 - (id)defaultStrokeLayer;
 - (id)dynamicStrokeLayer;
+- (bool)hasSpillStrokeInRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg1;
 - (id)initWithStackKind:(long long)arg1;
 - (void)insertClearedStrokeAtRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg1;
 - (void)insertDynamicStroke:(id)arg1 strokeOrder:(int)arg2 atRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg3;

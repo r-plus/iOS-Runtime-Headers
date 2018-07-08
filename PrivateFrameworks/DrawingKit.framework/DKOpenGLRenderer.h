@@ -41,7 +41,7 @@
         struct Vertex {} *__begin_; 
         struct Vertex {} *__end_; 
         struct __compressed_pair<Vertex *, std::__1::allocator<Vertex> > { 
-            struct Vertex {} *__first_; 
+            struct Vertex {} *__value_; 
         } __end_cap_; 
     }  mContiguousVertexStorage;
     struct CGRect { 
@@ -61,7 +61,7 @@
         struct Page {} *__begin_; 
         struct Page {} *__end_; 
         struct __compressed_pair<Page *, std::__1::allocator<Page> > { 
-            struct Page {} *__first_; 
+            struct Page {} *__value_; 
         } __end_cap_; 
     }  mPages;
     unsigned int  mPaperTex;
@@ -75,7 +75,7 @@
         struct VertexGroup {} *__begin_; 
         struct VertexGroup {} *__end_; 
         struct __compressed_pair<VertexGroup *, std::__1::allocator<VertexGroup> > { 
-            struct VertexGroup {} *__first_; 
+            struct VertexGroup {} *__value_; 
         } __end_cap_; 
     }  mVertexHistory;
     struct _NSRange { 

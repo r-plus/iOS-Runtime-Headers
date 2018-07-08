@@ -18,6 +18,7 @@
 }
 
 @property (nonatomic, readonly) unsigned short categoryCount;
+@property (nonatomic, retain) ATXHistogramData *histogramData;
 @property (nonatomic, readonly) unsigned short maxCategoryCount;
 @property (nonatomic, readonly) long long pruningMethod;
 
@@ -40,6 +41,11 @@
 - (void)decayWithHalfLife:(double)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (double)entropy;
+- (double)entropyForBundleId:(id)arg1;
+- (double)entropyForCategory:(id)arg1;
+- (void)executeBlockOnHistogramData:(id /* block */)arg1;
+- (id)histogramData;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithHistogram:(id)arg1 categoryToCategoryId:(id)arg2 maxCategoryId:(unsigned short)arg3 maxCategoryCount:(unsigned short)arg4 lastDates:(id)arg5 pruningMethod:(long long)arg6;
@@ -59,6 +65,8 @@
 - (bool)removeHistoryForCategory:(id)arg1;
 - (void)removeMappingForCategory:(id)arg1;
 - (void)resetData;
+- (void)resetHistogram:(id)arg1;
+- (void)setHistogramData:(id)arg1;
 - (void)swapWithCoder:(id)arg1;
 - (double)totalLaunches;
 - (double)totalLaunchesForCategory:(id)arg1;

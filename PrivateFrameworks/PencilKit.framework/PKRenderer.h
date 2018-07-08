@@ -11,7 +11,7 @@
         struct AnimatingStroke {} *__begin_; 
         struct AnimatingStroke {} *__end_; 
         struct __compressed_pair<AnimatingStroke *, std::__1::allocator<AnimatingStroke> > { 
-            struct AnimatingStroke {} *__first_; 
+            struct AnimatingStroke {} *__value_; 
         } __end_cap_; 
     }  _animatingStrokes;
     double  _backboardPaperMultiply;

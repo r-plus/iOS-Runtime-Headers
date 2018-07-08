@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@interface RCWaveform : NSObject <NSCoding, NSCopying, NSMutableCopying> {
+@interface RCWaveform : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     unsigned long long  _decodedVersion;
     NSMutableArray * _segments;
 }
@@ -11,6 +11,7 @@
 @property (nonatomic, readonly) NSArray *segments;
 
 + (void)initialize;
++ (bool)supportsSecureCoding;
 + (id)waveformURLForAVURL:(id)arg1;
 + (id)waveformWithContentsOfURL:(id)arg1 minimumRequiredVersion:(unsigned long long)arg2;
 

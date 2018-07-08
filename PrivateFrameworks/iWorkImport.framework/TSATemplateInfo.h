@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) NSURL *previewImageURL;
 @property (nonatomic, readonly, copy) NSSet *tags;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)displayName;
 - (id)documentURL;
 - (unsigned long long)hash;

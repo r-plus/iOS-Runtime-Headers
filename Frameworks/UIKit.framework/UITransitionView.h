@@ -29,8 +29,6 @@
 @property (nonatomic) bool ignoreDirectTouchEvents;
 @property (nonatomic) bool shouldNotifyDidCompleteImmediately;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 + (double)defaultDurationForTransition:(int)arg1;
 
 - (void).cxx_destruct;
@@ -41,9 +39,6 @@
 - (bool)_shouldDisableGroupOpacityOnAlphaTransitions;
 - (void)_startTransition:(int)arg1 withDuration:(double)arg2;
 - (void)_transitionDidStop:(id)arg1 finished:(id)arg2;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (long long)animationTimingCurve;
 - (id)delegate;
 - (double)durationForTransition:(int)arg1;

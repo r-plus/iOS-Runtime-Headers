@@ -11,17 +11,19 @@
     NSMutableDictionary * _requestHeaders;
     NSData * _responseBody;
     NSDictionary * _responseHeaders;
+    long long  _statusCode;
     NSNumber * _token;
 }
 
 @property (nonatomic, copy) NSString *DSID;
 @property (nonatomic, retain) NSString *bagKey;
 @property (nonatomic, copy) id /* block */ completionHandler;
-@property (nonatomic, copy) NSError *error;
+@property (copy) NSError *error;
 @property (nonatomic, retain) NSData *requestBody;
 @property (nonatomic, retain) NSMutableDictionary *requestHeaders;
-@property (nonatomic, retain) NSData *responseBody;
-@property (nonatomic, retain) NSDictionary *responseHeaders;
+@property (retain) NSData *responseBody;
+@property (retain) NSDictionary *responseHeaders;
+@property long long statusCode;
 @property (nonatomic, retain) NSNumber *token;
 
 + (id)incrementToken;
@@ -31,9 +33,9 @@
 - (id)bagKey;
 - (id /* block */)completionHandler;
 - (id)error;
+- (void)handleJingleResponse;
 - (id)init:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)requestBody;
-- (void)requestCompleted:(id)arg1 responseHeaders:(id)arg2 error:(id)arg3;
 - (id)requestHeaders;
 - (id)responseBody;
 - (id)responseHeaders;
@@ -47,7 +49,9 @@
 - (void)setRequestHeaders:(id)arg1;
 - (void)setResponseBody:(id)arg1;
 - (void)setResponseHeaders:(id)arg1;
+- (void)setStatusCode:(long long)arg1;
 - (void)setToken:(id)arg1;
+- (long long)statusCode;
 - (id)token;
 
 @end

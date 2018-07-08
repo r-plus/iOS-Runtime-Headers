@@ -6,6 +6,7 @@
 @required
 
 - (void)_overrideBiometricMatchingEnabled:(bool)arg1 forReason:(NSString *)arg2;
+- (void)_resumeBiometricMatchingAdvisory:(bool)arg1;
 
 @optional
 

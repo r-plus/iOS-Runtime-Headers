@@ -29,6 +29,8 @@
 @property (nonatomic, readonly) NSArray *screenIDs;
 @property (nonatomic, readonly) NSDictionary *screenInputCapabilities;
 @property (nonatomic, readonly) NSDictionary *screenPrimaryInputDevices;
+@property (nonatomic, readonly) NSDictionary *screenSafeAreas;
+@property (nonatomic, readonly) NSDictionary *screenViewAreas;
 @property (nonatomic, readonly) NSArray *supportedFeatures;
 @property (nonatomic, readonly) long long transportType;
 
@@ -72,10 +74,13 @@
 - (void)requestCarUIForURL:(id)arg1;
 - (void)requestCarUIForURL:(id)arg1 withUUID:(id)arg2;
 - (id)requestTurnByTurnNavigationOwnership;
+- (void)requestViewArea:(long long)arg1 forScreenID:(id)arg2;
 - (bool)rightHandDrive;
 - (id)screenIDs;
 - (id)screenInputCapabilities;
 - (id)screenPrimaryInputDevices;
+- (id)screenSafeAreas;
+- (id)screenViewAreas;
 - (void)sendCommand:(id)arg1 withParameters:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (id)supportedFeatures;

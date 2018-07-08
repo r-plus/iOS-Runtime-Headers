@@ -15,7 +15,9 @@
 
 - (void).cxx_destruct;
 - (void)addLaunchWithBundleId:(id)arg1 date:(id)arg2 timeZone:(id)arg3;
+- (void)addLaunchWithBundleId:(id)arg1 date:(id)arg2 timeZone:(id)arg3 weight:(float)arg4;
 - (void)addLaunchWithBundleId:(id)arg1 elapsedTime:(double)arg2;
+- (void)addLaunchWithBundleId:(id)arg1 elapsedTime:(double)arg2 weight:(float)arg3;
 - (id)datastore;
 - (void)flush;
 - (long long)histogramType;

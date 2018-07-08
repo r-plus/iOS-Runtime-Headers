@@ -15,8 +15,8 @@
 + (id)_randomPasscode;
 + (id)standardCredentials;
 
+- (void).cxx_destruct;
 - (unsigned long long)characterCount;
-- (void)dealloc;
 - (id)passcode;
 - (void)setCharacterCount:(unsigned long long)arg1;
 - (void)setPasscode:(id)arg1;

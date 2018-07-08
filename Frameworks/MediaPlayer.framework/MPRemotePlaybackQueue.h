@@ -2,29 +2,28 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPRemotePlaybackQueue : NSObject <MPCPlaybackContextCreating> {
+@interface MPRemotePlaybackQueue : NSObject <NSSecureCoding> {
     struct _MRSystemAppPlaybackQueue { } * _mediaRemotePlaybackQueue;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
 @property (nonatomic) long long replaceIntent;
 @property (getter=isRequestingImmediatePlayback, nonatomic) bool requestingImmediatePlayback;
 @property (nonatomic) bool shouldOverrideManuallyCuratedQueue;
 @property (nonatomic, readonly, copy) NSString *siriAssetInfo;
 @property (nonatomic, copy) NSString *siriRecommendationIdentifier;
-@property (readonly) Class superclass;
 @property (nonatomic, copy) NSDictionary *userInfo;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 + (id)queueWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue { }*)arg1;
 + (void)registerRemotePlaybackQueueClass:(Class)arg1 forPlaybackQueueType:(int)arg2;
++ (bool)supportsSecureCoding;
 
 - (struct _MRSystemAppPlaybackQueue { }*)_mediaRemotePlaybackQueue;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue { }*)arg1;
 - (bool)isRequestingImmediatePlayback;
 - (long long)replaceIntent;
@@ -41,6 +40,8 @@
 
 // Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
 
+- (void)createPlaybackContextWithCompletion:(id /* block */)arg1;
 - (void)getPlaybackContextWithCompletion:(id /* block */)arg1;
+- (void)getRemoteRepresentationForPlayerPath:(id)arg1 completion:(id /* block */)arg2;
 
 @end

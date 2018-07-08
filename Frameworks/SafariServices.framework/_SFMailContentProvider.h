@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)dataSource;
-- (void)prepareContentForMail:(id)arg1;
+- (void)prepareMailComposeViewController:(id)arg1 withURL:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setDataSource:(id)arg1;
 
 @end

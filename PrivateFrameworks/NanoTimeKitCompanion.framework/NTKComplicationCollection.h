@@ -9,8 +9,10 @@
     bool  _hasLoaded;
     NSMutableDictionary * _localizeableSampleDataTemplates;
     NSHashTable * _observers;
+    NSLock * _observersLock;
     bool  _registrationNeeded;
     NSNumber * _seqId;
+    NSLock * _templatesLock;
     NSMutableArray * _updatesEnqueuedWhileSuspended;
     bool  _updatesSuspended;
 }

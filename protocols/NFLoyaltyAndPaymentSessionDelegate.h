@@ -19,6 +19,7 @@
 - (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didStartTransaction:(NFContactlessPaymentStartEvent *)arg2;
 - (void)loyaltyAndPaymentSessionDidEndUnexpectedly:(NFLoyaltyAndPaymentSession *)arg1;
 - (void)loyaltyAndPaymentSessionDidReceiveActivityTimeout:(NFLoyaltyAndPaymentSession *)arg1;
+- (void)loyaltyAndPaymentSessionDidReceiveActivityTimeout:(NFLoyaltyAndPaymentSession *)arg1 result:(NSString *)arg2;
 - (void)loyaltyAndPaymentSessionHasPendingServerRequest:(NFLoyaltyAndPaymentSession *)arg1;
 
 @end

@@ -43,6 +43,7 @@
 - (void)setPairingHandler:(id /* block */)arg1;
 - (void)setText:(id)arg1;
 - (void)setTextEditingHandler:(id /* block */)arg1;
+- (void)setVoiceRecordingStateHandler:(id /* block */)arg1;
 - (void)setWantsNowPlayingUpdates:(bool)arg1;
 - (void)setWantsVolumeControlAvailabilityUpdates:(bool)arg1;
 - (id)softwareVersion;

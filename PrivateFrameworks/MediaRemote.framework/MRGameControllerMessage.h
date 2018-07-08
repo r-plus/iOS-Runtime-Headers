@@ -3,16 +3,15 @@
  */
 
 @interface MRGameControllerMessage : MRProtocolMessage {
-    void * _event;
     unsigned long long  _priority;
 }
 
 @property (nonatomic, readonly) unsigned long long controllerID;
-@property (nonatomic, readonly) void*event;
+@property (nonatomic, readonly) _MRGameControllerMessageProtobuf *event;
 
 - (unsigned long long)controllerID;
-- (void*)event;
-- (id)initWithGameControllerEvent:(void*)arg1 controllerID:(unsigned long long)arg2;
+- (id)event;
+- (id)initWithGameControllerEvent:(id)arg1 controllerID:(unsigned long long)arg2;
 - (unsigned long long)priority;
 - (bool)shouldLog;
 - (unsigned long long)type;

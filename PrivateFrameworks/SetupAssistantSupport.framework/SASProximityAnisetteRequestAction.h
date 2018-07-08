@@ -35,7 +35,7 @@
 - (void)setAnisetteData:(id)arg1;
 - (void)setDsid:(id)arg1;
 - (void)setRequest:(long long)arg1;
-- (void)setResponseFromDictionary:(id)arg1;
+- (void)setResponseFromData:(id)arg1;
 - (void)setShouldProvision:(bool)arg1;
 - (void)setSim:(id)arg1;
 - (void)setSuccess:(bool)arg1;

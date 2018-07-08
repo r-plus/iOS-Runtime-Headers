@@ -9,7 +9,6 @@
 @property (nonatomic, retain) NSError *error;
 
 - (void).cxx_destruct;
-- (id)_createSyncNotEnabledError;
 - (id)error;
 - (id)initWithErrorCode:(long long)arg1;
 - (void)setError:(id)arg1;

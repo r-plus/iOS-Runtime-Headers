@@ -4,18 +4,23 @@
 
 @interface MRExternalDevice : NSObject {
     unsigned int  _connectionState;
-    void * _deviceInfo;
+    struct { 
+        unsigned int type; 
+        bool isProxyGroupPlayer; 
+        unsigned int reserved[2]; 
+    }  _systemMusicContextInfo;
     bool  _valid;
 }
 
 @property (nonatomic, readonly) unsigned int connectionState;
-@property (nonatomic, readonly) void*customOrigin;
-@property (nonatomic, readonly) void*deviceInfo;
+@property (nonatomic, readonly) _MROriginProtobuf *customOrigin;
+@property (nonatomic, readonly) _MRDeviceInfoMessageProtobuf *deviceInfo;
 @property (nonatomic, readonly) NSString *hostName;
 @property (nonatomic, readonly) NSString *name;
 @property (getter=isPaired, nonatomic, readonly) bool paired;
 @property (nonatomic, readonly) long long port;
-@property (nonatomic, retain) MRSupportedProtocolMessages *supportedMessages;
+@property (nonatomic, readonly) MRSupportedProtocolMessages *supportedMessages;
+@property (nonatomic, readonly) struct { unsigned int x1; bool x2; unsigned int x3[2]; } systemMusicContextInfo;
 @property (getter=isUsingSystemPairing, nonatomic) bool usingSystemPairing;
 @property (getter=isValid, nonatomic, readonly) bool valid;
 @property (nonatomic) bool wantsNowPlayingArtworkNotifications;
@@ -26,8 +31,8 @@
 - (void)connectWithOptions:(unsigned int)arg1;
 - (unsigned int)connectionState;
 - (id)currentClientUpdatesConfigMessage;
-- (void*)customOrigin;
-- (void*)deviceInfo;
+- (id)customOrigin;
+- (id)deviceInfo;
 - (void)disconnect:(id)arg1;
 - (id)errorForCurrentState;
 - (id)hostName;
@@ -44,6 +49,7 @@
 - (void)setConnectionStateCallback:(id /* block */)arg1 withQueue:(id)arg2;
 - (void)setCustomDataCallback:(id /* block */)arg1 withQueue:(id)arg2;
 - (void)setNameCallback:(id /* block */)arg1 withQueue:(id)arg2;
+- (void)setOutputContextCallback:(id /* block */)arg1 withQueue:(id)arg2;
 - (void)setOutputDeviceVolume:(float)arg1 outputDevice:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
 - (void)setPairingAllowedCallback:(id /* block */)arg1 withQueue:(id)arg2;
 - (void)setPairingCallback:(id /* block */)arg1 withQueue:(id)arg2;
@@ -55,6 +61,7 @@
 - (void)setWantsNowPlayingNotifications:(bool)arg1;
 - (void)setWantsVolumeNotifications:(bool)arg1;
 - (id)supportedMessages;
+- (struct { unsigned int x1; bool x2; unsigned int x3[2]; })systemMusicContextInfo;
 - (void)unpair;
 - (void)volumeWithQueue:(id)arg1 completion:(id /* block */)arg2;
 - (bool)wantsNowPlayingArtworkNotifications;

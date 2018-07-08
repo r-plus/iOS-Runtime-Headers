@@ -9,7 +9,7 @@
     struct AugmentableInspectorController { int (**x1)(); } * _inspectorController;
     struct unique_ptr<RWIAugmentableInspectorControllerClient, std::__1::default_delete<RWIAugmentableInspectorControllerClient> > { 
         struct __compressed_pair<RWIAugmentableInspectorControllerClient *, std::__1::default_delete<RWIAugmentableInspectorControllerClient> > { 
-            struct RWIAugmentableInspectorControllerClient {} *__first_; 
+            struct RWIAugmentableInspectorControllerClient {} *__value_; 
         } __ptr_; 
     }  _inspectorControllerClient;
 }

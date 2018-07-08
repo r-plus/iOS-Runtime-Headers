@@ -20,7 +20,7 @@
     NSString * _personID;
     long long  _photoNumber;
     NSDate * _timestamp;
-    <NSCoding> * _userInfo;
+    id  _userInfo;
 }
 
 @property (nonatomic, retain) NSString *GUID;
@@ -40,7 +40,7 @@
 @property (nonatomic, retain) NSString *personID;
 @property (nonatomic) long long photoNumber;
 @property (nonatomic, retain) NSDate *timestamp;
-@property (nonatomic, retain) <NSCoding> *userInfo;
+@property (nonatomic, retain) id userInfo;
 
 + (id)MSASPAssetCollectionFromProtocolDictionary:(id)arg1;
 + (id)assetCollectionWithAssetCollection:(id)arg1;

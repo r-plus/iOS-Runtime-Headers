@@ -9,6 +9,7 @@
 @property (nonatomic) <PUAssetActionManagerDelegate> *delegate;
 
 + (id /* block */)_unlockDeviceHandler;
++ (id)actionManagerLog;
 + (void)setUnlockDeviceHandler:(id /* block */)arg1;
 
 - (void).cxx_destruct;

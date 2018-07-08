@@ -11,10 +11,12 @@
 @property (nonatomic, readonly, copy) NSArray *allowedStorefrontIDs;
 @property (nonatomic, readonly) unsigned long long articleContentType;
 @property (nonatomic, readonly, copy) NSString *articleID;
+@property (nonatomic, readonly) NSString *articleRecirculationConfigJSON;
 @property (nonatomic, readonly) <FCNativeAdProviding> *associatedAd;
 @property (nonatomic, readonly) long long backendArticleVersion;
 @property (nonatomic, readonly) NSData *backingArticleRecordData;
 @property (nonatomic, readonly, copy) NSArray *blockedStorefrontIDs;
+@property (getter=isBoundToContext, nonatomic, readonly) bool boundToContext;
 @property (nonatomic, readonly) bool canBePurchased;
 @property (nonatomic, readonly, copy) NSString *clusterID;
 @property (nonatomic, readonly) unsigned long long contentType;
@@ -40,6 +42,7 @@
 @property (nonatomic, readonly) bool hasThumbnail;
 @property (nonatomic, readonly) bool hasVideo;
 @property (readonly) unsigned long long hash;
+@property (getter=isHiddenFromFeeds, nonatomic, readonly) bool hiddenFromFeeds;
 @property (nonatomic, readonly, copy) NSArray *iAdCategories;
 @property (nonatomic, readonly, copy) NSArray *iAdKeywords;
 @property (nonatomic, readonly, copy) NSArray *iAdSectionIDs;
@@ -62,6 +65,7 @@
 @property (nonatomic, readonly) long long publisherArticleVersion;
 @property (nonatomic, readonly) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort *publisherCohort;
 @property (nonatomic, readonly, copy) NSString *publisherID;
+@property (nonatomic, readonly) NSArray *publisherSpecifiedArticleIDs;
 @property (nonatomic, readonly, copy) NSString *referencedArticleID;
 @property (nonatomic, readonly, copy) NSArray *relatedArticleIDs;
 @property (nonatomic, readonly) FCFeedPersonalizedArticleScoreProfile *scoreProfile;
@@ -100,6 +104,8 @@
 @property (nonatomic, readonly, copy) NSArray *topics;
 @property (nonatomic, readonly) bool usesImageOnTopLayout;
 @property (nonatomic, readonly, copy) NSString *versionIdentifier;
+@property (nonatomic, readonly, copy) NSString *videoCallToActionTitle;
+@property (nonatomic, readonly, copy) NSURL *videoCallToActionURL;
 @property (nonatomic, readonly) double videoDuration;
 @property (nonatomic, readonly) NSURL *videoURL;
 
@@ -108,6 +114,7 @@
 - (id)allowedStorefrontIDs;
 - (unsigned long long)articleContentType;
 - (id)articleID;
+- (id)articleRecirculationConfigJSON;
 - (id)associatedAd;
 - (long long)backendArticleVersion;
 - (id)blockedStorefrontIDs;
@@ -138,6 +145,7 @@
 - (id)identifier;
 - (id)initWithPBHeadline:(id)arg1 sharedStrings:(id)arg2;
 - (bool)isBlockedExplicitContent;
+- (bool)isBoundToContext;
 - (bool)isDeleted;
 - (bool)isDisplayingAsNativeAd;
 - (bool)isDraft;
@@ -145,6 +153,7 @@
 - (bool)isFeatureCandidate;
 - (bool)isFromBlockedStorefront;
 - (bool)isGap;
+- (bool)isHiddenFromFeeds;
 - (bool)isPaid;
 - (bool)isSponsored;
 - (bool)isTopStory;
@@ -162,6 +171,7 @@
 - (long long)publisherArticleVersion;
 - (id)publisherCohort;
 - (id)publisherID;
+- (id)publisherSpecifiedArticleIDs;
 - (id)referencedArticleID;
 - (id)relatedArticleIDs;
 - (id)scoreProfile;
@@ -201,6 +211,8 @@
 - (id)topics;
 - (bool)usesImageOnTopLayout;
 - (id)versionIdentifier;
+- (id)videoCallToActionTitle;
+- (id)videoCallToActionURL;
 - (double)videoDuration;
 - (id)videoURL;
 

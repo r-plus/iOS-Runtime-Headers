@@ -17,14 +17,14 @@
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<SP_FrameInfo *, std::__1::allocator<SP_FrameInfo> > { 
-            struct { /* ? */ } *__first_; 
+            struct { /* ? */ } *__value_; 
         } __end_cap_; 
     }  mFrameInfo;
     struct vector<CMTime, std::__1::allocator<CMTime> > { 
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<CMTime *, std::__1::allocator<CMTime> > { 
-            struct { /* ? */ } *__first_; 
+            struct { /* ? */ } *__value_; 
         } __end_cap_; 
     }  mFrameTimeArray;
     unsigned int  numFrames;

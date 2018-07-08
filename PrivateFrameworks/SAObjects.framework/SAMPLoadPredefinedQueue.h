@@ -10,6 +10,8 @@
 @property (nonatomic) bool shouldShuffle;
 @property (nonatomic, copy) NSNumber *startPlaying;
 
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+
 + (id)loadPredefinedQueue;
 + (id)loadPredefinedQueueWithDictionary:(id)arg1 context:(id)arg2;
 
@@ -27,5 +29,9 @@
 - (void)setStartPlaying:(id)arg1;
 - (bool)shouldShuffle;
 - (id)startPlaying;
+
+// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+
+- (void)af_addEntriesToAnalyticsContext:(id)arg1;
 
 @end

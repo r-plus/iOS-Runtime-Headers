@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIViewController : UIResponder <DebugHierarchyObject, GKContentRefresh, GKURLHandling, HUItemPresentationContainer, MKInfoCardThemeListener, NSCoding, NSExtensionRequestHandling, PXAnonymousViewController, PXDiagnosticsEnvironment, UIAppearanceContainer, UIContentContainer, UIFocusEnvironment, UITraitEnvironment, UIViewControllerPresenting, _UIContentContainerInternal, _UIFocusEnvironmentInternal, _UITraitEnvironmentInternal, _UIViewServiceDeputy> {
+@interface UIViewController : UIResponder <GKContentRefresh, GKURLHandling, HUItemPresentationContainer, MKInfoCardThemeListener, NSCoding, NSExtensionRequestHandling, PXAnonymousViewController, PXDiagnosticsEnvironment, UIAppearanceContainer, UIContentContainer, UIFocusEnvironment, UITraitEnvironment, UIViewControllerPresenting, _UIContentContainerInternal, _UIFocusEnvironmentInternal, _UITraitEnvironmentInternal, _UIViewServiceDeputy> {
     UIViewController * __childControllerToIgnoreWhileLookingForTransitionCoordinator;
     <_UIViewControllerContentViewEmbedding> * __embeddedDelegate;
     UIView * __embeddedView;
@@ -182,6 +182,9 @@
         unsigned int freezeLayoutForOrientationChangeOnDismissal : 1; 
         unsigned int viewRespectsSystemMinimumLayoutMargins : 1; 
         unsigned int ignoresWrapperViewForContentOverlayInsets : 1; 
+        unsigned int overridesContentScrollView : 1; 
+        unsigned int didCheckContentScrollViewReturnValue : 1; 
+        unsigned int usingContentScrollViewForUnknownPurpose : 1; 
     }  _viewControllerFlags;
     bool  _viewHostsLayoutEngine;
     bool  overrideUseCustomPresentation;
@@ -245,7 +248,6 @@
 @property (nonatomic, readonly) _UIActionSheetPresentationController *actionSheetPresentationController;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } additionalSafeAreaInsets;
 @property (nonatomic, copy) id /* block */ afterAppearanceBlock;
-@property (nonatomic, retain) NSString *aggregateStatisticsDisplayCountKey;
 @property (nonatomic) bool appearanceTransitionsAreDisabled;
 @property (nonatomic) bool automaticallyAdjustsScrollViewInsets;
 @property (getter=isBeingDismissed, nonatomic, readonly) bool beingDismissed;
@@ -547,6 +549,7 @@
 - (double)_contentMargin;
 - (double)_contentMarginForChildViewController:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentOverlayInsets;
+- (id)_contentScrollView;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_cumulativeOverlayInsetsForViewControllerHierarchy;
 - (id)_customAnimatorForDismissedController:(id)arg1;
 - (id)_customAnimatorForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
@@ -640,6 +643,7 @@
 - (bool)_ignoreAppSupportedOrientations;
 - (bool)_ignoresWrapperViewForContentOverlayInsets;
 - (long long)_imagePickerStatusBarStyle;
+- (id)_independentContainedScrollViewIntermediateToDescendantViewController:(id)arg1;
 - (void)_inferLayoutGuidesFromSubviews;
 - (void)_initializeNavigationContentInsetAdjustmentForContentScrollViewIfNecessary;
 - (void)_installLayoutGuidesAndConstraintsIfNecessary;
@@ -1298,7 +1302,6 @@
 - (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (void)window:(id)arg1 didAnimateFirstHalfOfRotationToInterfaceOrientation:(long long)arg2;
-- (void)window:(id)arg1 didRotateFromInterfaceOrientation:(long long)arg2;
 - (void)window:(id)arg1 didRotateFromInterfaceOrientation:(long long)arg2 oldSize:(struct CGSize { double x1; double x2; })arg3;
 - (void)window:(id)arg1 resizeFromOrientation:(long long)arg2;
 - (void)window:(id)arg1 setupWithInterfaceOrientation:(long long)arg2;
@@ -1310,15 +1313,14 @@
 - (void)window:(id)arg1 willAnimateRotationToInterfaceOrientation:(long long)arg2 duration:(double)arg3;
 - (void)window:(id)arg1 willAnimateRotationToInterfaceOrientation:(long long)arg2 duration:(double)arg3 newSize:(struct CGSize { double x1; double x2; })arg4;
 - (void)window:(id)arg1 willAnimateSecondHalfOfRotationFromInterfaceOrientation:(long long)arg2 duration:(double)arg3;
-- (void)window:(id)arg1 willRotateToInterfaceOrientation:(long long)arg2 duration:(double)arg3;
 - (void)window:(id)arg1 willRotateToInterfaceOrientation:(long long)arg2 duration:(double)arg3 newSize:(struct CGSize { double x1; double x2; })arg4;
 
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
+// Image: /System/Library/AccessibilityBundles/GAXClient.bundle/GAXClient
 
-- (id)debugHierarchyAdditionalGroupingIDs;
-- (id)debugHierarchyChildGroupingID;
-- (id)debugHierarchyObjectsInGroupWithID:(id)arg1 outOptions:(id*)arg2;
-- (id)debugHierarchyPropertyDescriptions;
++ (Class)safeCategoryBaseClass;
+
+- (void)window:(id)arg1 didRotateFromInterfaceOrientation:(long long)arg2;
+- (void)window:(id)arg1 willRotateToInterfaceOrientation:(long long)arg2 duration:(double)arg3;
 
 // Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
 
@@ -1345,13 +1347,12 @@
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
-- (id)aggregateStatisticsDisplayCountKey;
 - (void)dismissMoviePlayerViewControllerAnimated;
 - (void)presentMoviePlayerViewControllerAnimated:(id)arg1;
-- (void)setAggregateStatisticsDisplayCountKey:(id)arg1;
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
+- (id)mf_classesForUICustomization;
 - (id)mf_dataForUICustomization;
 - (id)mf_keyPathsMapForUICustomization;
 - (void)mf_setDataForUICustomization:(id)arg1;
@@ -1528,16 +1529,29 @@
 
 // Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
 
+- (void)_gkAddMenuButtonTapGestureRecognizerWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)_gkAddPositionConstraintsForOverlayBubble:(id)arg1 center:(struct CGPoint { double x1; double x2; })arg2 movingFromView:(id)arg3 toView:(id)arg4;
 - (id)_gkBorrowBubbleViewFromOverlayWithBubbleType:(long long)arg1 andMoveTo:(id)arg2;
 - (id)_gkBorrowBubbleViewFromOverlayWithBubbleType:(long long)arg1 expectedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 andMoveTo:(id)arg3;
 - (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; })_gkBubbleFlowAdoptionInfo;
 - (bool)_gkCanBeRemovedFromParentWhenCovered;
+- (void)_gkDismissViewController:(id)arg1 animated:(bool)arg2;
 - (bool)_gkIsTransitioningFromTheLocalPlayerViewController;
 - (bool)_gkIsTransitioningToTheLocalPlayerViewController;
 - (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; })_gkMakeBubbleFlowAdoptionInfo;
+- (void)_gkModifyTopConstraintToLayoutGuideForSubview:(id)arg1;
+- (id)_gkOriginatingViewController;
+- (id)_gkOriginatingViewControllerAutoDetermined;
+- (void)_gkPopViewControllerAnimated:(bool)arg1;
+- (void)_gkPresentViewController:(id)arg1 animated:(bool)arg2;
+- (void)_gkPresentViewController:(id)arg1 asPopoverFromView:(id)arg2 animated:(bool)arg3;
+- (void)_gkPushViewController:(id)arg1 animated:(bool)arg2;
+- (void)_gkPushViewController:(id)arg1 replaceCurrent:(bool)arg2 animated:(bool)arg3;
+- (void)_gkRemoveViewController:(id)arg1 animated:(bool)arg2;
 - (id)_gkReturnBubbleViewToOverlayWithBubbleType:(long long)arg1;
 - (id)_gkReturnBubbleViewToOverlayWithBubbleType:(long long)arg1 expectedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)_gkSetOriginatingViewController:(id)arg1;
+- (void)_gkShowViewController:(id)arg1;
 - (bool)_gkUsesBubbleFlowModalPresentation;
 - (bool)_gkUsesFormSheetForBubbleFlowModalPresentationOnPad;
 - (long long)gkFocusBubbleType;
@@ -1641,10 +1655,10 @@
 
 // Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
 
-- (void)paymentSetupPreflight:(id /* block */)arg1;
-- (void)paymentSetupSetHideSetupLaterButton:(bool)arg1;
 - (void)pk_applyAppearance:(id)arg1;
 - (id)pk_childrenForAppearance;
+- (void)pk_paymentSetupPreflight:(id /* block */)arg1;
+- (void)pk_paymentSetupSetHideSetupLaterButton:(bool)arg1;
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
 

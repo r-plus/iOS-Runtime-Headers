@@ -5,7 +5,7 @@
 @interface _WKGeolocationPosition : NSObject <WKObject> {
     struct ObjectStorage<WebKit::WebGeolocationPosition> { 
         struct type { 
-            unsigned char __lx[88]; 
+            unsigned char __lx[128]; 
         } data; 
     }  _geolocationPosition;
 }

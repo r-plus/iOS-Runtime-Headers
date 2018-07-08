@@ -8,6 +8,7 @@
     NSString * _contentVersion;
     NSString * _copyrightText;
     NSString * _copyrightTopicIdentifier;
+    bool  _fullBookView;
     bool  _hasSectionIcon;
     NSURL * _helpBookURL;
     NSMutableDictionary * _helpItemMap;
@@ -26,6 +27,7 @@
 @property (nonatomic, retain) NSString *contentVersion;
 @property (nonatomic, retain) NSString *copyrightText;
 @property (nonatomic, retain) NSString *copyrightTopicIdentifier;
+@property (nonatomic) bool fullBookView;
 @property (nonatomic) bool hasSectionIcon;
 @property (nonatomic, retain) NSURL *helpBookURL;
 @property (nonatomic, retain) NSMutableDictionary *helpItemMap;
@@ -49,6 +51,7 @@
 - (id)copyrightTopicItem;
 - (void)dealloc;
 - (id)dynamicServerSectionsForIdentifiers:(id)arg1 level:(long long)arg2 parent:(id)arg3 tocMap:(id)arg4;
+- (bool)fullBookView;
 - (bool)hasSectionIcon;
 - (id)helpBookURL;
 - (id)helpItemForID:(id)arg1;
@@ -70,6 +73,7 @@
 - (void)setContentVersion:(id)arg1;
 - (void)setCopyrightText:(id)arg1;
 - (void)setCopyrightTopicIdentifier:(id)arg1;
+- (void)setFullBookView:(bool)arg1;
 - (void)setHasSectionIcon:(bool)arg1;
 - (void)setHelpBookURL:(id)arg1;
 - (void)setHelpItemMap:(id)arg1;

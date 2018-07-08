@@ -27,10 +27,10 @@
 - (void).cxx_destruct;
 - (void)_appleAccountDidChange:(id)arg1;
 - (void)_didStartLoading;
-- (void)_dismissAboutPrivacy:(id)arg1;
 - (void)_dismissViewController:(id)arg1 completion:(id /* block */)arg2;
 - (void)_finishAfterOfferingOptions:(bool)arg1 endingUndoGrouping:(bool)arg2;
 - (void)_obtainConsentForBundleIDs:(id)arg1 vouchers:(id)arg2 withAppleAccount:(id)arg3 identityProvider:(id)arg4 endingUndoGrouping:(bool)arg5 arrivedViaNotNowButton:(bool)arg6 arrivedAfterSigningIn:(bool)arg7 goingBack:(bool)arg8;
+- (void)_offerAuthenticationForProvider:(id)arg1 withSupportedAppsButton:(bool)arg2;
 - (void)_offerAuthenticationWithSupportedAppsButton:(bool)arg1;
 - (void)_offerFreeOnBoardingIfNeededAfterOfferingOptions:(bool)arg1 endingUndoGrouping:(bool)arg2 arrivedViaNotNowButton:(bool)arg3 arrivedAfterSigningIn:(bool)arg4 goingBack:(bool)arg5;
 - (void)_pickProviderWithViewController:(id)arg1;
@@ -60,10 +60,10 @@
 - (void)setRemoteNotifier:(id)arg1;
 - (void)setSigningIn:(bool)arg1;
 - (void)setStorage:(id)arg1;
-- (void)showAboutPrivacy;
 - (void)showSupportedApps;
 - (void)startLoadingWhenGoingBack:(bool)arg1;
 - (void)startSigningIn;
+- (void)startSigningInForIdentityProvider:(id)arg1;
 - (id)storage;
 - (void)supportedAppsViewControllerDidFinish:(id)arg1;
 

@@ -64,6 +64,7 @@
 - (id)debugQuickLookObject;
 - (id)description;
 - (bool)didChangeBounds;
+- (bool)disableUndoManagerForAK;
 - (bool)displaysAnnotations;
 - (id)document;
 - (void)drawBurnedInAnnotationsWithBox:(long long)arg1 inContext:(struct CGContext { }*)arg2;
@@ -71,6 +72,7 @@
 - (void)drawWithBox:(long long)arg1 inContext:(struct CGContext { }*)arg2;
 - (void)drawWithBox:(long long)arg1 inContext:(struct CGContext { }*)arg2 isThumbnail:(bool)arg3;
 - (void)drawWithBox:(long long)arg1 toContext:(struct CGContext { }*)arg2;
+- (void)enableUndoManagerForAK:(bool)arg1;
 - (bool)enqueuedForDataDetection;
 - (bool)enqueuedForLayout;
 - (void)fetchPageLayoutOnThread:(id)arg1;

@@ -75,6 +75,7 @@
 @property (nonatomic, readonly) unsigned long long maxFolderEnumerationCount;
 @property (nonatomic, readonly) unsigned long long maxFolderEnumerationDepth;
 @property (nonatomic, readonly) unsigned long long maxNumberOfFilesInAFolder;
+@property (nonatomic, readonly) unsigned long long maxPreservedXattrBlobSize;
 @property (nonatomic, readonly) unsigned int maxRecordCountInClientZoneModifyRecordsOperation;
 @property (nonatomic, readonly) unsigned int maxRecordCountInFetchRecordsOperation;
 @property (nonatomic, readonly) unsigned int maxRecordCountInModifyRecordsOperation;
@@ -295,6 +296,7 @@
 - (unsigned long long)maxFolderEnumerationCount;
 - (unsigned long long)maxFolderEnumerationDepth;
 - (unsigned long long)maxNumberOfFilesInAFolder;
+- (unsigned long long)maxPreservedXattrBlobSize;
 - (unsigned int)maxRecordCountInClientZoneModifyRecordsOperation;
 - (unsigned int)maxRecordCountInFetchRecordsOperation;
 - (unsigned int)maxRecordCountInModifyRecordsOperation;

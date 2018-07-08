@@ -17,21 +17,21 @@
         struct VenueFloorGroup {} *__begin_; 
         struct VenueFloorGroup {} *__end_; 
         struct __compressed_pair<md::VenueFloorGroup *, std::__1::allocator<md::VenueFloorGroup> > { 
-            struct VenueFloorGroup {} *__first_; 
+            struct VenueFloorGroup {} *__value_; 
         } __end_cap_; 
     }  _venueFloorGroups;
     struct vector<geo::_retain_ptr<VKVenueGroup *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, std::__1::allocator<geo::_retain_ptr<VKVenueGroup *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> > > { 
         struct _retain_ptr<VKVenueGroup *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> {} *__begin_; 
         struct _retain_ptr<VKVenueGroup *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> {} *__end_; 
         struct __compressed_pair<geo::_retain_ptr<VKVenueGroup *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> *, std::__1::allocator<geo::_retain_ptr<VKVenueGroup *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> > > { 
-            struct _retain_ptr<VKVenueGroup *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> {} *__first_; 
+            struct _retain_ptr<VKVenueGroup *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> {} *__value_; 
         } __end_cap_; 
     }  _venueGroups;
-    struct vector<md::Venue, std::__1::allocator<md::Venue> > { 
-        struct Venue {} *__begin_; 
-        struct Venue {} *__end_; 
-        struct __compressed_pair<md::Venue *, std::__1::allocator<md::Venue> > { 
-            struct Venue {} *__first_; 
+    struct vector<std::__1::shared_ptr<md::Venue>, std::__1::allocator<std::__1::shared_ptr<md::Venue> > > { 
+        struct shared_ptr<md::Venue> {} *__begin_; 
+        struct shared_ptr<md::Venue> {} *__end_; 
+        struct __compressed_pair<std::__1::shared_ptr<md::Venue> *, std::__1::allocator<std::__1::shared_ptr<md::Venue> > > { 
+            struct shared_ptr<md::Venue> {} *__value_; 
         } __end_cap_; 
     }  _venues;
 }
@@ -44,7 +44,7 @@
 @property (nonatomic) float scale;
 @property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{vector<md::VenueFloorGroup' */ struct *venueFloorGroups; /* unknown property attribute:  std::__1::allocator<md::VenueFloorGroup> >=^{VenueFloorGroup}}} */
 @property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{vector<geo::_retain_ptr<VKVenueGroup *' */ struct *venueGroups; /* unknown property attribute:  geo::_equal_objc>}}} */
-@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{vector<md::Venue' */ struct *venues; /* unknown property attribute:  std::__1::allocator<md::Venue> >=^{Venue}}} */
+@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{vector<std::__1::shared_ptr<md::Venue>' */ struct *venues; /* unknown property attribute:  std::__1::allocator<std::__1::shared_ptr<md::Venue> > >=^{shared_ptr<md::Venue>}}} */
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -65,6 +65,6 @@
 - (void)setScale:(float)arg1;
 - (struct vector<md::VenueFloorGroup, std::__1::allocator<md::VenueFloorGroup> > { struct VenueFloorGroup {} *x1; struct VenueFloorGroup {} *x2; struct __compressed_pair<md::VenueFloorGroup *, std::__1::allocator<md::VenueFloorGroup> > { struct VenueFloorGroup {} *x_3_1_1; } x3; }*)venueFloorGroups;
 - (const struct vector<geo::_retain_ptr<VKVenueGroup *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, std::__1::allocator<geo::_retain_ptr<VKVenueGroup *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> > > { struct _retain_ptr<VKVenueGroup *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> {} *x1; struct _retain_ptr<VKVenueGroup *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> {} *x2; struct __compressed_pair<geo::_retain_ptr<VKVenueGroup *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> *, std::__1::allocator<geo::_retain_ptr<VKVenueGroup *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> > > { struct _retain_ptr<VKVenueGroup *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> {} *x_3_1_1; } x3; }*)venueGroups;
-- (const struct vector<md::Venue, std::__1::allocator<md::Venue> > { struct Venue {} *x1; struct Venue {} *x2; struct __compressed_pair<md::Venue *, std::__1::allocator<md::Venue> > { struct Venue {} *x_3_1_1; } x3; }*)venues;
+- (const struct vector<std::__1::shared_ptr<md::Venue>, std::__1::allocator<std::__1::shared_ptr<md::Venue> > > { struct shared_ptr<md::Venue> {} *x1; struct shared_ptr<md::Venue> {} *x2; struct __compressed_pair<std::__1::shared_ptr<md::Venue> *, std::__1::allocator<std::__1::shared_ptr<md::Venue> > > { struct shared_ptr<md::Venue> {} *x_3_1_1; } x3; }*)venues;
 
 @end

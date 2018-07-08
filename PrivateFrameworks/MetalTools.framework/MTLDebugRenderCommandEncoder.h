@@ -108,7 +108,7 @@
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<MTLScissorRect *, std::__1::allocator<MTLScissorRect> > { 
-            struct { /* ? */ } *__first_; 
+            struct { /* ? */ } *__value_; 
         } __end_cap_; 
     }  _scissorRects;
     /* Warning: unhandled struct encoding: '{?="isValid"B"hasBeenUsed"B"type"Q"object"@"baseLevel"Q"bufferLength"Q"bufferOffset"Q"threadgroupMemoryLength"Q"threadgroupMemoryOffset"Q"hasLodClamp"B"lodMinClamp"f"lodMaxClamp"f}' */ struct { 
@@ -168,7 +168,7 @@
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<MTLViewport *, std::__1::allocator<MTLViewport> > { 
-            struct { /* ? */ } *__first_; 
+            struct { /* ? */ } *__value_; 
         } __end_cap_; 
     }  _viewports;
     struct set<unsigned int, std::__1::less<unsigned int>, std::__1::allocator<unsigned int> > { struct __tree<unsigned int, std::__1::less<unsigned int>, std::__1::allocator<unsigned int> > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<unsigned int, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::less<unsigned int> > { unsigned long long x_3_2_1; } x_1_1_3; } x1; } * _visibilityOffsets;
@@ -176,7 +176,7 @@
     unsigned long long  _visibilityResultOffset;
     unsigned long long  _width;
     struct deque<id, std::__1::allocator<id> > { 
-        /* Warning: unhandled struct encoding: '{__split_buffer<id *, std::__1::allocator<id *> >="__first_"^^@"__begin_"^^@"__end_"^^@"__end_cap_"{__compressed_pair<id **, std::__1::allocator<id *> >="__first_"^^@}}"__start_"Q"__size_"{__compressed_pair<unsigned long, std::__1::allocator<id> >="__first_"Q}}' */ struct __split_buffer<id *, std::__1::allocator<id *> > { 
+        /* Warning: unhandled struct encoding: '{__split_buffer<id *, std::__1::allocator<id *> >="__first_"^^@"__begin_"^^@"__end_"^^@"__end_cap_"{__compressed_pair<id **, std::__1::allocator<id *> >="__value_"^^@}}"__start_"Q"__size_"{__compressed_pair<unsigned long, std::__1::allocator<id> >="__value_"Q}}' */ struct __split_buffer<id *, std::__1::allocator<id *> > { 
             __begin_ ***__first_; 
         } __map_; 
     }  updatedFences;

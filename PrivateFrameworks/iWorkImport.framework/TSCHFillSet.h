@@ -17,6 +17,7 @@
 
 + (struct CGSize { double x1; double x2; })defaultSwatchSize;
 
+- (void).cxx_destruct;
 - (bool)chartAlreadyMatches:(id)arg1;
 - (id)colorFromProperties:(id)arg1;
 - (id)commandToApplyToChart:(id)arg1 context:(id)arg2;

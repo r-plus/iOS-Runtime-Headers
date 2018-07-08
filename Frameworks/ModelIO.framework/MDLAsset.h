@@ -10,6 +10,7 @@
     NSMapTable * _components;
     double  _endTime;
     double  _frameInterval;
+    bool  _isSceneKitBridged;
     <MDLObjectContainerComponent> * _masters;
     NSMutableArray * _objects;
     <MDLAssetResolver> * _resolver;
@@ -62,6 +63,7 @@
 - (bool)exportAssetToURL:(id)arg1 error:(id*)arg2;
 - (double)frameInterval;
 - (id)init;
+- (id)initThroughSCNKitBridgeWithURL:(id)arg1 preserveTopology:(bool)arg2 error:(id)arg3;
 - (id)initWithBufferAllocator:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)initWithURL:(id)arg1 bufferAllocator:(id)arg2 preserveIndexing:(bool)arg3 error:(id*)arg4;

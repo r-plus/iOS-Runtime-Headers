@@ -8,6 +8,7 @@
     unsigned long long  _controlSize;
     <HUQuickControlViewControllerDelegate> * _delegate;
     HMHome * _home;
+    HUQuickControlSimpleItemUpdater * _internalItemUpdater;
     <HUQuickControlItemUpdating> * _itemUpdater;
     <HULayoutAnchorProviding> * _preferredFrameLayoutGuide;
     <HUQuickControlContentHosting> * _quickControlHost;
@@ -24,11 +25,14 @@
 @property (nonatomic, readonly) bool hasSingleControlView;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HMHome *home;
+@property (nonatomic, readonly) HUQuickControlSimpleItemUpdater *internalItemUpdater;
 @property (nonatomic, readonly) <HUQuickControlItemUpdating> *itemUpdater;
 @property (nonatomic, readonly, copy) NSString *overrideSecondaryStatusText;
 @property (nonatomic, readonly, copy) NSString *overrideStatusText;
 @property (nonatomic, retain) <HULayoutAnchorProviding> *preferredFrameLayoutGuide;
+@property (nonatomic, readonly) unsigned long long preferredPresentationStyle;
 @property (nonatomic) <HUQuickControlContentHosting> *quickControlHost;
+@property (nonatomic, readonly) bool shouldShowControlWhenUnreachable;
 @property (readonly) Class superclass;
 @property (getter=isUserInteractionEnabled, nonatomic) bool userInteractionEnabled;
 
@@ -48,6 +52,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithControlItems:(id)arg1 home:(id)arg2 itemUpdater:(id)arg3;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)internalItemUpdater;
 - (id)intrinsicSizeDescriptorForControlSize:(unsigned long long)arg1;
 - (bool)isUserInteractionEnabled;
 - (id)itemUpdater;
@@ -55,6 +60,7 @@
 - (id)overrideStatusText;
 - (id)overrideValueForCharacteristic:(id)arg1;
 - (id)preferredFrameLayoutGuide;
+- (unsigned long long)preferredPresentationStyle;
 - (id)quickControlHost;
 - (void)quickControlItemUpdater:(id)arg1 didUpdateResultsForControlItems:(id)arg2;
 - (void)setCharacteristicWritingDelegate:(id)arg1;
@@ -63,6 +69,7 @@
 - (void)setPreferredFrameLayoutGuide:(id)arg1;
 - (void)setQuickControlHost:(id)arg1;
 - (void)setUserInteractionEnabled:(bool)arg1;
+- (bool)shouldShowControlWhenUnreachable;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewWillAppear:(bool)arg1;
 

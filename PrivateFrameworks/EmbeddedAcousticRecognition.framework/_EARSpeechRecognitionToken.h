@@ -23,7 +23,7 @@
                             unsigned long long __words[3]; 
                         } __r; 
                     } ; 
-                } __first_; 
+                } __value_; 
             } __r_; 
         } tokenName; 
         unsigned int startMilliseconds; 
@@ -51,7 +51,7 @@
                             unsigned long long __words[3]; 
                         } __r; 
                     } ; 
-                } __first_; 
+                } __value_; 
             } __r_; 
         } phoneSeq; 
     }  _quasarToken;

@@ -20,7 +20,7 @@
 - (bool)_hasTotalFrames;
 - (unsigned long long)_totalFrameCount;
 - (id)initWithDictionary:(id)arg1;
-- (id)initWithSubsystem:(id)arg1 category:(id)arg2 serialNumber:(unsigned long long)arg3;
+- (id)initWithSubsystem:(id)arg1 category:(id)arg2 serialNumber:(unsigned long long)arg3 timebaseRatio:(double)arg4;
 - (unsigned long long)serialNumber;
 - (id)serializeableDictionary;
 - (void)setTimeoutSource:(id)arg1;

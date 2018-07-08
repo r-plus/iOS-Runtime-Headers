@@ -50,8 +50,13 @@
 - (void)getAvailableVoicesForRecognitionLanguage:(id)arg1 includeAssetInfo:(bool)arg2 completion:(id /* block */)arg3;
 - (void)getAvailableVoicesForSynthesisLanguage:(id)arg1 completion:(id /* block */)arg2;
 - (void)getDevicesWithAvailablePHSAssetsForLanguage:(id)arg1 completion:(id /* block */)arg2;
+- (void)getHorsemanSupplementalLanguageDictionary:(id /* block */)arg1;
 - (void)getOfflineDictationStatusWithCompletion:(id /* block */)arg1;
 - (void)getPeerIdentifiers:(id /* block */)arg1;
+- (void)getSupplementalLanguageDictionaryForProduct:(id)arg1 completion:(id /* block */)arg2;
+- (void)getSupplementalLanguagesDictionary:(id /* block */)arg1;
+- (void)getSupplementalLanguagesForProduct:(id)arg1 forBuildVersion:(id)arg2 completion:(id /* block */)arg3;
+- (void)getSupplementalLanguagesModificationDate:(id /* block */)arg1;
 - (id)init;
 - (void)killDaemon;
 - (void)purgeAnalyticsStoreWithCompletion:(id /* block */)arg1;
@@ -66,11 +71,14 @@
 - (void)setDESPolicyCDNOverride:(id)arg1 completion:(id /* block */)arg2;
 - (void)setDESRecordingAlwaysIsEnabled:(bool)arg1 completion:(id /* block */)arg2;
 - (void)setDictationEnabled:(bool)arg1;
+- (void)setHorsemanSupplementalLanguageDictionary:(id)arg1 completion:(id /* block */)arg2;
 - (void)setLanguage:(id)arg1;
 - (void)setLanguage:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)setOfflineDictationProfileOverridePath:(id)arg1 completion:(id /* block */)arg2;
 - (void)setOutputVoice:(id)arg1;
 - (void)setOutputVoice:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)setSupplementalLanguageDictionary:(id)arg1 forProduct:(id)arg2 completion:(id /* block */)arg3;
+- (void)setSupplementalLanguages:(id)arg1 forProduct:(id)arg2 forBuildVersion:(id)arg3 completion:(id /* block */)arg4;
 - (void)startAudioPlaybackRequest:(id)arg1 completion:(id /* block */)arg2;
 - (void)startRemoteRequest:(id)arg1 onPeer:(id)arg2 completion:(id /* block */)arg3;
 - (void)startUIRequest:(id)arg1;

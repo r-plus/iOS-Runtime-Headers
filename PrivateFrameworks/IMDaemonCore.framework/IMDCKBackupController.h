@@ -2,18 +2,21 @@
    Image: /System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
  */
 
-@interface IMDCKBackupController : NSObject {
+@interface IMDCKBackupController : NSObject <IMDXPCEventStreamHandlerDelegate> {
     IMDCKUtilities * _ckUtilities;
 }
 
 @property (nonatomic) IMDCKUtilities *ckUtilities;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSDate *firstSyncDate;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) bool iCloudBackupsDisabled;
+@property (readonly) Class superclass;
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)_accountDidChange:(id)arg1;
 - (long long)_attemptToDisableiCloudBackupsWithCurrentDeviceState:(id)arg1;
 - (bool)_canDisableiCloudBackupsAfterRestore;
 - (bool)_currentDeviceStateIsRestore:(id)arg1;
@@ -27,6 +30,7 @@
 - (void)_fetchCountOfSyncedCloudKitRecords:(long long*)arg1 totalCount:(long long*)arg2;
 - (double)_firstSyncExpirationTimeInterval;
 - (bool)_firstSyncTimeoutHasExpired;
+- (id)_primaryAccountAltDSID;
 - (id)_readCurrentDeviceState;
 - (id)_readPreviousDeviceState;
 - (long long)_readRecordCount;
@@ -39,12 +43,14 @@
 - (id)ckUtilities;
 - (id)createBackupManager;
 - (id)dateOfLastBackUp;
+- (void)eventStreamHandler:(id)arg1 didReceiveEventWithName:(id)arg2 userInfo:(id)arg3;
 - (id)firstSyncDate;
+- (bool)iCloudBackupEnabledSystemWide;
 - (bool)iCloudBackupsDisabled;
 - (bool)pathRemovedFromBackup:(id)arg1;
 - (bool)readUserDefaultBoolForKey:(id)arg1;
 - (id)readUserDefaultForKey:(id)arg1;
-- (void)registerForAccountNotifications;
+- (void)registerForDistributedNotifications;
 - (void)removePathFromiCloudBackup:(id)arg1;
 - (void)removeUserDefault:(id)arg1;
 - (void)sendDeviceIDToCloudKitWithCompletion:(id /* block */)arg1;

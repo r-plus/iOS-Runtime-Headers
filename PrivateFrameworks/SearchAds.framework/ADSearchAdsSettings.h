@@ -17,9 +17,11 @@
     double  _locationGridSpacing;
     unsigned long long  _maxClickCapElements;
     unsigned long long  _maxFrequencyCapElements;
+    NSString * _requestedIcon;
     double  _requestedLocationAccuracy;
+    NSString * _requestedText;
     double  _reverseGeolocationRefreshThresholdInMeters;
-    NSString * _storefrontLocalizationLanguage;
+    NSString * _templateType;
     NSArray * _userKeyboards;
 }
 
@@ -37,9 +39,11 @@
 @property (nonatomic) double locationGridSpacing;
 @property (nonatomic) unsigned long long maxClickCapElements;
 @property (nonatomic) unsigned long long maxFrequencyCapElements;
+@property (nonatomic, retain) NSString *requestedIcon;
 @property (nonatomic) double requestedLocationAccuracy;
+@property (nonatomic, retain) NSString *requestedText;
 @property (nonatomic) double reverseGeolocationRefreshThresholdInMeters;
-@property (nonatomic, retain) NSString *storefrontLocalizationLanguage;
+@property (nonatomic, retain) NSString *templateType;
 @property (nonatomic, retain) NSArray *userKeyboards;
 
 + (id)sharedInstance;
@@ -47,7 +51,7 @@
 - (void).cxx_destruct;
 - (id)algoID;
 - (void)applyClientSettings;
-- (void)checkForInternalSettingsOverrides;
+- (void)checkDefaultsAndSetInternalSettingsOverrides;
 - (double)clickExpirationThresholdInSeconds;
 - (id)clientSettings;
 - (double)clientSettingsExpirationDate;
@@ -71,7 +75,9 @@
 - (void)overrideToroClickExpiration:(double)arg1;
 - (void)refresh;
 - (void)refreshClientSettings:(id /* block */)arg1;
+- (id)requestedIcon;
 - (double)requestedLocationAccuracy;
+- (id)requestedText;
 - (void)restoreClientSettings;
 - (double)reverseGeolocationRefreshThresholdInMeters;
 - (void)setAlgoID:(id)arg1;
@@ -88,11 +94,13 @@
 - (void)setLocationGridSpacing:(double)arg1;
 - (void)setMaxClickCapElements:(unsigned long long)arg1;
 - (void)setMaxFrequencyCapElements:(unsigned long long)arg1;
+- (void)setRequestedIcon:(id)arg1;
 - (void)setRequestedLocationAccuracy:(double)arg1;
+- (void)setRequestedText:(id)arg1;
 - (void)setReverseGeolocationRefreshThresholdInMeters:(double)arg1;
-- (void)setStorefrontLocalizationLanguage:(id)arg1;
+- (void)setTemplateType:(id)arg1;
 - (void)setUserKeyboards:(id)arg1;
-- (id)storefrontLocalizationLanguage;
+- (id)templateType;
 - (id)userKeyboards;
 
 @end

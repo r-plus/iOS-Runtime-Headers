@@ -18,6 +18,7 @@
     long long  _metadataQuotaUsage;
     CKDPZone * _targetZone;
     bool  _zoneKeyRollAllowed;
+    NSString * _zonePcsModificationDevice;
     CKDPDate * _zonePcsModificationTime;
     bool  _zoneishPcsNeedsRolled;
 }
@@ -35,11 +36,13 @@
 @property (nonatomic) bool hasMetadataQuotaUsage;
 @property (nonatomic, readonly) bool hasTargetZone;
 @property (nonatomic) bool hasZoneKeyRollAllowed;
+@property (nonatomic, readonly) bool hasZonePcsModificationDevice;
 @property (nonatomic, readonly) bool hasZonePcsModificationTime;
 @property (nonatomic) bool hasZoneishPcsNeedsRolled;
 @property (nonatomic) long long metadataQuotaUsage;
 @property (nonatomic, retain) CKDPZone *targetZone;
 @property (nonatomic) bool zoneKeyRollAllowed;
+@property (nonatomic, retain) NSString *zonePcsModificationDevice;
 @property (nonatomic, retain) CKDPDate *zonePcsModificationTime;
 @property (nonatomic) bool zoneishPcsNeedsRolled;
 
@@ -61,6 +64,7 @@
 - (bool)hasMetadataQuotaUsage;
 - (bool)hasTargetZone;
 - (bool)hasZoneKeyRollAllowed;
+- (bool)hasZonePcsModificationDevice;
 - (bool)hasZonePcsModificationTime;
 - (bool)hasZoneishPcsNeedsRolled;
 - (unsigned long long)hash;
@@ -81,11 +85,13 @@
 - (void)setMetadataQuotaUsage:(long long)arg1;
 - (void)setTargetZone:(id)arg1;
 - (void)setZoneKeyRollAllowed:(bool)arg1;
+- (void)setZonePcsModificationDevice:(id)arg1;
 - (void)setZonePcsModificationTime:(id)arg1;
 - (void)setZoneishPcsNeedsRolled:(bool)arg1;
 - (id)targetZone;
 - (void)writeTo:(id)arg1;
 - (bool)zoneKeyRollAllowed;
+- (id)zonePcsModificationDevice;
 - (id)zonePcsModificationTime;
 - (bool)zoneishPcsNeedsRolled;
 

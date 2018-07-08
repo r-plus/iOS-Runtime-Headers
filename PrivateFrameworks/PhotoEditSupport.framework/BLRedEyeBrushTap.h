@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@interface BLRedEyeBrushTap : AutoEncodeDecodeObject {
+@interface BLRedEyeBrushTap : AutoEncodeDecodeObject <NSSecureCoding> {
     int  _destinationWidth;
     NSDictionary * _eyeRepairData;
     struct CGPoint { 
@@ -16,6 +16,8 @@
 @property (nonatomic, retain) NSDictionary *eyeRepairData;
 @property (nonatomic) struct CGPoint { double x1; double x2; } point;
 @property (nonatomic) double timestamp;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (int)destinationWidth;

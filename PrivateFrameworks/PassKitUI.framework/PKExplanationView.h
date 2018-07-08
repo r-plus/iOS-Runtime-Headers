@@ -20,8 +20,8 @@
     UIImage * _image;
     UIImageView * _imageView;
     UIImageView * _logoImageView;
-    PKPaymentSetupPrivacyFooterView * _privacyFooter;
     bool  _privacyFooterShouldPin;
+    OBPrivacyLinkController * _privacyLink;
     UIScrollView * _scrollView;
     bool  _showPrivacyView;
     UIFont * _titleFont;
@@ -46,7 +46,7 @@
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, readonly) UIImageView *imageView;
 @property (nonatomic, retain) UIImageView *logoImageView;
-@property (nonatomic, readonly) PKPaymentSetupPrivacyFooterView *privacyView;
+@property (nonatomic, retain) OBPrivacyLinkController *privacyLink;
 @property (nonatomic) bool showPrivacyView;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) UIFont *titleFont;
@@ -81,7 +81,7 @@
 - (void)layoutSubviews;
 - (id)logoImageView;
 - (void)pk_applyAppearance:(id)arg1;
-- (id)privacyView;
+- (id)privacyLink;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)setBodyText:(id)arg1;
 - (void)setBodyTextIsLeftAlgined:(bool)arg1;
@@ -91,6 +91,7 @@
 - (void)setHideTitleText:(bool)arg1;
 - (void)setImage:(id)arg1;
 - (void)setLogoImageView:(id)arg1;
+- (void)setPrivacyLink:(id)arg1;
 - (void)setShowPrivacyView:(bool)arg1;
 - (void)setTitleFont:(id)arg1;
 - (void)setTitleText:(id)arg1;

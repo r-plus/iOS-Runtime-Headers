@@ -4,7 +4,7 @@
 
 @interface TSCHChartCategoryAxisRenderer : TSCHChartAxisRenderer
 
-- (void)addSelection:(id)arg1 toCGPath:(struct CGPath { }*)arg2;
+- (void)addSelection:(id)arg1 toCGPath:(struct CGPath { }*)arg2 useWrapWidth:(bool)arg3;
 - (bool)canEditTextForSelectionPath:(id)arg1;
 - (bool)canRenderSelectionPath:(id)arg1;
 - (id)categoryAxisLayoutItem;

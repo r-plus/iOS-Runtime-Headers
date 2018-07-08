@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCPaidSubscriptionCursor : NSObject <NSCoding> {
+@interface FCPaidSubscriptionCursor : FCFeedGroupEmittingCursor {
     NSMutableDictionary * _expiredChannelIDs;
     NSMutableSet * _processedChannelIDs;
     NSMutableDictionary * _supplementalArticleIDs;
@@ -11,6 +11,8 @@
 @property (nonatomic, retain) NSMutableDictionary *expiredChannelIDs;
 @property (nonatomic, retain) NSMutableSet *processedChannelIDs;
 @property (nonatomic, retain) NSMutableDictionary *supplementalArticleIDs;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (unsigned long long)countForFeedItem:(id)arg1;

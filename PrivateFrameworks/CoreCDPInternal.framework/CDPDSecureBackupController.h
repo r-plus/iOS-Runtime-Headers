@@ -15,7 +15,7 @@
 @property (nonatomic, retain) NSDictionary *cachedAccountInfo;
 @property (nonatomic, retain) CDPDSecureBackupConfiguration *configuration;
 @property (nonatomic, retain) CDPContext *context;
-@property (nonatomic, readonly) <CDPDSecureBackupDelegate> *delegate;
+@property (nonatomic) <CDPDSecureBackupDelegate> *delegate;
 @property (nonatomic) bool fakeNearlyDepletedRecords;
 @property (nonatomic, retain) <CDPDSecureBackupProxy> *secureBackupProxy;
 @property (nonatomic, readonly) <CDPStateUIProviderInternal> *uiProvider;
@@ -67,6 +67,7 @@
 - (void)setCachedAccountInfo:(id)arg1;
 - (void)setConfiguration:(id)arg1;
 - (void)setContext:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setFakeNearlyDepletedRecords:(bool)arg1;
 - (void)setSecureBackupProxy:(id)arg1;
 - (id)stashedPRK;

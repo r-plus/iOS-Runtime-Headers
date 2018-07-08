@@ -13,6 +13,8 @@
 
 @property (nonatomic) <EARCaesuraSilencePosteriorGeneratorDelegate> *delegate;
 
++ (void)initialize;
+
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_startComputeTask;

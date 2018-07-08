@@ -17,8 +17,8 @@
         unsigned long long location; 
         unsigned long long length; 
     }  _columnRange;
-    SXComponent * _component;
-    SXComponentLayout * _componentLayout;
+    <SXComponent> * _component;
+    <SXComponentLayout> * _componentLayout;
     SXComponentSizer * _componentSizer;
     struct CGRect { 
         struct CGPoint { 
@@ -58,8 +58,8 @@
 
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } absoluteFrame;
 @property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } columnRange;
-@property (nonatomic, readonly) SXComponent *component;
-@property (nonatomic, readonly) SXComponentLayout *componentLayout;
+@property (nonatomic, readonly) <SXComponent> *component;
+@property (nonatomic, readonly) <SXComponentLayout> *componentLayout;
 @property (nonatomic, retain) SXComponentSizer *componentSizer;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } contentFrame;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;

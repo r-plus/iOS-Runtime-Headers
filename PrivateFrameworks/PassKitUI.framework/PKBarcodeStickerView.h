@@ -5,6 +5,7 @@
 @interface PKBarcodeStickerView : UIButton {
     UILabel * _altTextLabel;
     PKBarcode * _barcode;
+    UIImage * _barcodeImage;
     UIImageView * _barcodeView;
     bool  _drawBarcode;
     long long  _layoutMode;
@@ -23,8 +24,10 @@
 - (void).cxx_destruct;
 - (void)_generateMatteRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 barcodeRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 altTextRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3 boundingSize:(struct CGSize { double x1; double x2; })arg4;
 - (id)_resizedBarcode:(id)arg1 desiredSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)_updateDrawBarcode;
 - (void)_updateValidity;
 - (struct CGSize { double x1; double x2; })_varianceForBarcode:(id)arg1;
+- (id)barcodeImage;
 - (id)initWithBarcode:(id)arg1 validityState:(long long)arg2 layoutMode:(long long)arg3;
 - (void)layoutSubviews;
 - (id)matteView;

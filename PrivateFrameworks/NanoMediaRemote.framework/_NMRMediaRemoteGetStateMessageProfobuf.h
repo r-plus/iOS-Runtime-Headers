@@ -6,10 +6,12 @@
     NSData * _applicationInfoDigest;
     struct { 
         unsigned int timestamp : 1; 
+        unsigned int originIdentifier : 1; 
         unsigned int state : 1; 
     }  _has;
     NSData * _knownDigest;
     NSData * _nowPlayingInfoDigest;
+    int  _originIdentifier;
     NSData * _playbackQueueDigest;
     int  _state;
     NSData * _supportedCommandsDigest;
@@ -20,12 +22,14 @@
 @property (nonatomic, readonly) bool hasApplicationInfoDigest;
 @property (nonatomic, readonly) bool hasKnownDigest;
 @property (nonatomic, readonly) bool hasNowPlayingInfoDigest;
+@property (nonatomic) bool hasOriginIdentifier;
 @property (nonatomic, readonly) bool hasPlaybackQueueDigest;
 @property (nonatomic) bool hasState;
 @property (nonatomic, readonly) bool hasSupportedCommandsDigest;
 @property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) NSData *knownDigest;
 @property (nonatomic, retain) NSData *nowPlayingInfoDigest;
+@property (nonatomic) int originIdentifier;
 @property (nonatomic, retain) NSData *playbackQueueDigest;
 @property (nonatomic) int state;
 @property (nonatomic, retain) NSData *supportedCommandsDigest;
@@ -40,6 +44,7 @@
 - (bool)hasApplicationInfoDigest;
 - (bool)hasKnownDigest;
 - (bool)hasNowPlayingInfoDigest;
+- (bool)hasOriginIdentifier;
 - (bool)hasPlaybackQueueDigest;
 - (bool)hasState;
 - (bool)hasSupportedCommandsDigest;
@@ -49,13 +54,16 @@
 - (id)knownDigest;
 - (void)mergeFrom:(id)arg1;
 - (id)nowPlayingInfoDigest;
+- (int)originIdentifier;
 - (id)playbackQueueDigest;
 - (bool)readFrom:(id)arg1;
 - (void)setApplicationInfoDigest:(id)arg1;
+- (void)setHasOriginIdentifier:(bool)arg1;
 - (void)setHasState:(bool)arg1;
 - (void)setHasTimestamp:(bool)arg1;
 - (void)setKnownDigest:(id)arg1;
 - (void)setNowPlayingInfoDigest:(id)arg1;
+- (void)setOriginIdentifier:(int)arg1;
 - (void)setPlaybackQueueDigest:(id)arg1;
 - (void)setState:(int)arg1;
 - (void)setSupportedCommandsDigest:(id)arg1;

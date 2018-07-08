@@ -23,12 +23,12 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (void)addSelection:(id)arg1 toCGPath:(struct CGPath { }*)arg2;
+- (void).cxx_destruct;
+- (void)addSelection:(id)arg1 toCGPath:(struct CGPath { }*)arg2 useWrapWidth:(bool)arg3;
 - (id)axisLayoutItem;
 - (id)axisTitleSelectionPath;
 - (bool)canEditTextForSelectionPath:(id)arg1;
 - (bool)canRenderSelectionPath:(id)arg1;
-- (void)dealloc;
 - (void)drawIntoLayer:(int)arg1 inContext:(struct CGContext { }*)arg2 visible:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (id)editingString;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForEditingTextForSelectionPath:(id)arg1;

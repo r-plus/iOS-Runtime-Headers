@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WeatherUI.framework/WeatherUI
  */
 
-@interface WUIWeatherCondition : NSObject {
+@interface WUIWeatherCondition : NSObject <CALayerDelegate> {
     unsigned long long  _CAMLState;
     double  _alpha;
     City * _city;
@@ -27,9 +27,12 @@
 @property (nonatomic) double alpha;
 @property (nonatomic) City *city;
 @property (nonatomic) long long condition;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) bool forcesCondition;
 @property (nonatomic) long long forcesNight;
 @property (nonatomic, retain) NSMutableArray *gyroLayers;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) bool hidden;
 @property (nonatomic) bool isRotating;
 @property (nonatomic, readonly) CALayer *layer;
@@ -39,6 +42,7 @@
 @property (nonatomic) bool shouldRasterize;
 @property (nonatomic) double speed;
 @property (nonatomic, retain) CAStateController *stateController;
+@property (readonly) Class superclass;
 @property (nonatomic) double timeOffset;
 
 - (void).cxx_destruct;

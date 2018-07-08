@@ -4,6 +4,8 @@
 
 @interface _CDContextQueries : NSObject
 
+// Image: /System/Library/PrivateFrameworks/CoreDuetContext.framework/CoreDuetContext
+
 + (id)accessoryClientName;
 + (id)accessoryHomeUUID;
 + (id)accessoryName;
@@ -32,15 +34,26 @@
 + (id)characteristicType;
 + (id)currentSunriseKey;
 + (id)currentSunsetKey;
++ (id)eligibility;
++ (id)intentAmountKey;
 + (id)intentClassKey;
 + (id)intentDKObjUUIDKey;
 + (id)intentDonatedBySiriKey;
++ (id)intentDropOffLocationKey;
++ (id)intentGoalKey;
 + (id)intentHandlingStatusKey;
++ (id)intentPayeeKey;
++ (id)intentPayerKey;
++ (id)intentPickupLocationKey;
++ (id)intentRecipientsKey;
++ (id)intentServiceNameKey;
 + (id)intentSourceBundleIDKey;
 + (id)intentSourceItemIDKey;
 + (id)intentTypeKey;
 + (id)intentVerbKey;
++ (id)intentWorkoutNameKey;
 + (id)isDaylightKey;
++ (id)itemIdentifier;
 + (id)keyPathForAirplaneModeStatus;
 + (id)keyPathForAppDataDictionary;
 + (id)keyPathForAudioOutputDataDictionary;
@@ -79,6 +92,7 @@
 + (id)keyPathForSiriActiveStatus;
 + (id)keyPathForSunriseSunsetDataDictionary;
 + (id)keyPathForThermalPressureLevel;
++ (id)keyPathForUserActivityDataDictionary;
 + (id)keyPathForWatchActiveStatus;
 + (id)keyPathForWatchBatteryLevel;
 + (id)keyPathForWatchNearbyStatus;
@@ -109,9 +123,23 @@
 + (id)serviceName;
 + (id)serviceType;
 + (id)sunriseSunsetAvailabilityStatusKey;
++ (id)title;
++ (id)userActivityRequiredString;
++ (id)userActivityType;
++ (id)userActivityUUID;
 + (id)viewHomeUUID;
 + (id)viewInformation;
 + (id)viewName;
 + (id)viewUUID;
+
+// Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
+
++ (id)intentAmountKey;
++ (id)intentCurrencyKey;
++ (id)intentDropOffLocationKey;
++ (id)intentPayeeKey;
++ (id)intentPayerKey;
++ (id)intentRecipientsKey;
++ (id)intentWorkoutNameKey;
 
 @end

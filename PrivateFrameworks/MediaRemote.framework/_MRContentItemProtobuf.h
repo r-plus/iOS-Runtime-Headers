@@ -7,7 +7,6 @@
     NSData * _artworkData;
     int  _artworkDataHeight;
     int  _artworkDataWidth;
-    NSData * _artworkURLTemplatesData;
     NSMutableArray * _availableLanguageOptions;
     NSMutableArray * _currentLanguageOptions;
     struct { 
@@ -28,14 +27,12 @@
 @property (nonatomic, retain) NSData *artworkData;
 @property (nonatomic) int artworkDataHeight;
 @property (nonatomic) int artworkDataWidth;
-@property (nonatomic, retain) NSData *artworkURLTemplatesData;
 @property (nonatomic, retain) NSMutableArray *availableLanguageOptions;
 @property (nonatomic, retain) NSMutableArray *currentLanguageOptions;
 @property (nonatomic, readonly) bool hasAncestorIdentifier;
 @property (nonatomic, readonly) bool hasArtworkData;
 @property (nonatomic) bool hasArtworkDataHeight;
 @property (nonatomic) bool hasArtworkDataWidth;
-@property (nonatomic, readonly) bool hasArtworkURLTemplatesData;
 @property (nonatomic, readonly) bool hasIdentifier;
 @property (nonatomic, readonly) bool hasInfo;
 @property (nonatomic, readonly) bool hasLyrics;
@@ -57,6 +54,7 @@
 + (void)initialize;
 + (Class)sectionsType;
 
+- (void).cxx_destruct;
 - (id)_init;
 - (id)_initWithData:(id)arg1;
 - (void)addAvailableLanguageOptions:(id)arg1;
@@ -66,7 +64,6 @@
 - (id)artworkData;
 - (int)artworkDataHeight;
 - (int)artworkDataWidth;
-- (id)artworkURLTemplatesData;
 - (id)availableLanguageOptions;
 - (id)availableLanguageOptionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)availableLanguageOptionsCount;
@@ -78,14 +75,12 @@
 - (id)currentLanguageOptions;
 - (id)currentLanguageOptionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)currentLanguageOptionsCount;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasAncestorIdentifier;
 - (bool)hasArtworkData;
 - (bool)hasArtworkDataHeight;
 - (bool)hasArtworkDataWidth;
-- (bool)hasArtworkURLTemplatesData;
 - (bool)hasIdentifier;
 - (bool)hasInfo;
 - (bool)hasLyrics;
@@ -111,7 +106,6 @@
 - (void)setArtworkData:(id)arg1;
 - (void)setArtworkDataHeight:(int)arg1;
 - (void)setArtworkDataWidth:(int)arg1;
-- (void)setArtworkURLTemplatesData:(id)arg1;
 - (void)setAvailableLanguageOptions:(id)arg1;
 - (void)setCurrentLanguageOptions:(id)arg1;
 - (void)setHasArtworkDataHeight:(bool)arg1;

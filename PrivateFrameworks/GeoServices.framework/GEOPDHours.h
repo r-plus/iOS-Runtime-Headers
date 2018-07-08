@@ -8,6 +8,7 @@
         unsigned long long count; 
         unsigned long long size; 
     }  _days;
+    GEOPDHoursThreshold * _hoursThreshold;
     struct GEOPDLocalTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } * _timeRanges;
     unsigned long long  _timeRangesCount;
     unsigned long long  _timeRangesSpace;
@@ -16,6 +17,8 @@
 
 @property (nonatomic, readonly) int*days;
 @property (nonatomic, readonly) unsigned long long daysCount;
+@property (nonatomic, readonly) bool hasHoursThreshold;
+@property (nonatomic, retain) GEOPDHoursThreshold *hoursThreshold;
 @property (nonatomic, readonly) struct GEOPDLocalTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*timeRanges;
 @property (nonatomic, readonly) unsigned long long timeRangesCount;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
@@ -41,11 +44,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (bool)hasHoursThreshold;
 - (unsigned long long)hash;
+- (id)hoursThreshold;
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (void)setDays:(int*)arg1 count:(unsigned long long)arg2;
+- (void)setHoursThreshold:(id)arg1;
 - (void)setTimeRanges:(struct GEOPDLocalTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg1 count:(unsigned long long)arg2;
 - (struct GEOPDLocalTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })timeRangeAtIndex:(unsigned long long)arg1;
 - (struct GEOPDLocalTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)timeRanges;

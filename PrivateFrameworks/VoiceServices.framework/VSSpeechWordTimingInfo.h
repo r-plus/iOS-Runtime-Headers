@@ -14,6 +14,7 @@
 @property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } textRange;
 
 + (bool)supportsSecureCoding;
++ (id)wordTimingInfoFrom:(id)arg1 timestamps:(id)arg2;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

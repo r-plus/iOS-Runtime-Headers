@@ -18,11 +18,11 @@
 @property (nonatomic) bool hasState;
 @property (nonatomic) int state;
 
+- (void).cxx_destruct;
 - (int)StringAsState:(id)arg1;
 - (id)attributes;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)encryptedTextCyphertext;

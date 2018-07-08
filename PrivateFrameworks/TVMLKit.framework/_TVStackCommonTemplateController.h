@@ -50,6 +50,7 @@
 - (void)_configureWithBgImage:(id)arg1 backdropImage:(id)arg2;
 - (void)_disableScrollingIfNecessary:(id)arg1;
 - (void)_dispatchEventOfType:(unsigned long long)arg1 forItemAtIndexPath:(id)arg2;
+- (id)_modalPresenterPresentedViewController;
 - (id)_overlayView;
 - (id)_preferredFocusedSupplementaryView;
 - (void)_recordImpressionsForVisibleView;
@@ -107,6 +108,7 @@
 - (void)setViewElement:(id)arg1;
 - (id)stackWrappingView;
 - (id)supplementaryViewControllers;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)uberImgElement;
 - (void)updateWithViewElement:(id)arg1;
 - (void)viewDidAppear:(bool)arg1;

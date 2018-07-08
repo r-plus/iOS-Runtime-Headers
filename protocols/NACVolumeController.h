@@ -12,8 +12,6 @@
 - (void)endObservingHaptics;
 - (void)endObservingVolume;
 - (float)hapticIntensity;
-- (id)init;
-- (id)initWithAudioCategory:(NSString *)arg1;
 - (bool)isMuted;
 - (bool)isProminentHapticEnabled;
 - (bool)isSystemMuted;
@@ -25,7 +23,6 @@
 - (void)setProminentHapticEnabled:(bool)arg1;
 - (void)setSystemMuted:(bool)arg1;
 - (void)setVolumeValue:(float)arg1;
-- (void)setVolumeValue:(float)arg1 muted:(bool)arg2 overrideEULimit:(bool)arg3;
 - (float)volumeValue;
 
 @optional

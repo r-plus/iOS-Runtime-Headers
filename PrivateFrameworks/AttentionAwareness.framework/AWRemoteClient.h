@@ -3,7 +3,6 @@
  */
 
 @interface AWRemoteClient : NSObject <AWRemoteClient> {
-    NSData * _archivedTag;
     NSArray * _attentionLostTimeoutsSec;
     NSXPCConnection * _connection;
     unsigned long long  _eventMask;
@@ -15,6 +14,7 @@
     unsigned long long  _lastPositiveEventTime;
     unsigned long long  _lastPositiveNonSampledEventTime;
     unsigned long long  _pollingDeadline;
+    unsigned long long  _pollingStartTime;
     <AWFrameworkClient> * _proxy;
     NSObject<OS_dispatch_queue> * _queue;
     bool  _samplingClient;
@@ -22,6 +22,7 @@
     unsigned long long  _samplingInterval;
     AWScheduler * _scheduler;
     bool  _sentPollInitialized;
+    unsigned long long  _tagIndex;
     bool  _unitTestSampling;
 }
 

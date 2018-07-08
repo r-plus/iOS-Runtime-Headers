@@ -2,9 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
  */
 
-@interface WBSCyclerService : NSObject <NSXPCListenerDelegate, WBSCyclerDeviceCoordinatorDelegate, WBSCyclerServiceProtocol> {
-    id /* block */  _deviceAddressRequestReply;
-    WBSCyclerDeviceCoordinator * _deviceCoordinator;
+@interface WBSCyclerService : NSObject <NSXPCListenerDelegate, WBSCyclerServiceProtocol> {
     NSString * _identifier;
     WBSCyclerTestRunner * _testRunner;
     <WBSCyclerTestSuite> * _testSuite;
@@ -26,11 +24,6 @@
 - (void)_setSeed:(unsigned long long)arg1 reply:(id /* block */)arg2;
 - (void)_setTestSuiteName:(id)arg1 reply:(id /* block */)arg2;
 - (id)_startCyclingFromBeginning:(bool)arg1;
-- (void)deviceCoordinator:(id)arg1 didBeginPrimaryDeviceCoordinationWithAddress:(id)arg2;
-- (void)deviceCoordinator:(id)arg1 didEncounterError:(id)arg2;
-- (void)deviceCoordinator:(id)arg1 didReceiveData:(id)arg2 reply:(id /* block */)arg3;
-- (void)deviceCoordinatorDidEstablishConnectionsToAllDevices:(id)arg1;
-- (void)fetchDeviceAddressWithReply:(id /* block */)arg1;
 - (void)fetchStatusWithReply:(id /* block */)arg1;
 - (id)identifier;
 - (id)init;

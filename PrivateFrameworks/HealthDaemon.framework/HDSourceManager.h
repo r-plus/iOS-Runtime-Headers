@@ -20,13 +20,16 @@
 - (id)_createSourceEntityForBundleIdentifier:(id)arg1 name:(id)arg2 options:(unsigned long long)arg3 isCurrentDevice:(bool)arg4 productType:(id)arg5 error:(id*)arg6;
 - (id)_createSourceEntityForLocalDeviceWithError:(id*)arg1;
 - (id)_createSourceEntityForSpartanDeviceWithError:(id*)arg1;
+- (bool)_createSourcesWithCodables:(id)arg1 provenance:(long long)arg2 sourceUUIDSToDelete:(id)arg3 deleteSamples:(bool)arg4 database:(id)arg5 error:(id*)arg6;
 - (void)_deleteSourceIfNoSampleFoundWithBundleIdentifier:(id)arg1;
+- (bool)_deleteSourcesWithUUIDs:(id)arg1 localSourceEntityCacheKey:(id)arg2 deleteSamples:(bool)arg3 database:(id)arg4 error:(id*)arg5;
 - (id)_fetchClientSourceForPersistentID:(id)arg1 error:(id*)arg2;
 - (id)_getNameForBundleIdentifier:(id)arg1 isCurrentDevice:(bool)arg2;
 - (id)_predicateForSourceBundleIdentifier:(id)arg1 localOnly:(bool)arg2;
 - (id)_sourceForBundleIdentifier:(id)arg1 createSourceBlock:(id /* block */)arg2 modifySourceBlock:(id /* block */)arg3 error:(id*)arg4;
 - (unsigned long long)_sourceOptionsForApplicationEntitlements:(id)arg1;
 - (id)_sourcePersistentIDsFromSourceEntities:(id)arg1;
+- (id)_sourceUUIDsForBundleIdentifier:(id)arg1 error:(id*)arg2;
 - (id)allSourcesForBundleIdentifier:(id)arg1 error:(id*)arg2;
 - (id)allSourcesWithError:(id*)arg1;
 - (id)allWatchSourcesWithError:(id*)arg1;
@@ -51,6 +54,7 @@
 - (id)sourceForAppleDeviceWithUUID:(id)arg1 identifier:(id)arg2 name:(id)arg3 productType:(id)arg4 createIfNecessary:(bool)arg5 error:(id*)arg6;
 - (id)sourceForApplicationIdentifier:(id)arg1 createOrUpdateIfNecessary:(bool)arg2 entitlements:(id)arg3 name:(id)arg4 error:(id*)arg5;
 - (id)sourceForClient:(id)arg1 error:(id*)arg2;
+- (id)sourceForClinicalAccountIdentifier:(id)arg1 provenance:(long long)arg2 createIfNecessary:(bool)arg3 error:(id*)arg4;
 - (id)sourceForCodableSource:(id)arg1 provenance:(long long)arg2 createIfNecessary:(bool)arg3 isDeleted:(bool*)arg4 error:(id*)arg5;
 - (id)sourceUUIDForBundleIdentifier:(id)arg1 error:(id*)arg2;
 - (bool)updateCurrentDeviceNameWithError:(id*)arg1;

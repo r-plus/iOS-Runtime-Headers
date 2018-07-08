@@ -4,6 +4,8 @@
 
 @interface HFIrrigationSystemServiceItem : HFServiceItem
 
++ (id)supportedServiceTypes;
+
 - (id)_childValveServiceFilter;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (bool)containsActionableCharacteristics;

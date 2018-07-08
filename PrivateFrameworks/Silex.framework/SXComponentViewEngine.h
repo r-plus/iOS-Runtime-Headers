@@ -15,9 +15,11 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)addFactory:(id)arg1;
 - (id)componentViewForComponent:(id)arg1;
 - (id)factoryMatching;
-- (id)initWithFactories:(id)arg1 postProcessorManager:(id)arg2;
+- (id)initWithPostProcessorManager:(id)arg1;
 - (id)postProcessorManager;
+- (void)removeFactory:(id)arg1;
 
 @end

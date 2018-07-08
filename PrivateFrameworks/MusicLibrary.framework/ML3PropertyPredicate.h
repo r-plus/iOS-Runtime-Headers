@@ -9,6 +9,7 @@
 @property (nonatomic, copy) NSString *property;
 
 + (id)predicateWithProperty:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)SQLJoinClausesForClass:(Class)arg1;

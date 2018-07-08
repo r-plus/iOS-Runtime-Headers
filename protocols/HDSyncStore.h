@@ -6,6 +6,7 @@
 @required
 
 - (bool)canRecieveSyncObjectsForEntityClass:(Class)arg1;
+- (NSUUID *)databaseIdentifier;
 - (bool)enforceSyncEntityOrdering;
 - (long long)expectedSequenceNumberForSyncEntityClass:(Class)arg1;
 - (NSArray *)orderedSyncEntities;
@@ -20,6 +21,6 @@
 - (long long)syncProvenance;
 - (NSString *)syncStoreDefaultSourceBundleIdentifier;
 - (NSUUID *)syncStoreIdentifier;
-- (NSString *)syncStoreTypeIdentifier;
+- (long long)syncStoreType;
 
 @end

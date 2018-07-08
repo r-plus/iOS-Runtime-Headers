@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DiagnosticExtensionsDaemon.framework/DiagnosticExtensionsDaemon
  */
 
-@interface DEDRadarFinisher : NSObject <DEDFinisher, NSSecureCoding, NSURLSessionDataDelegate> {
+@interface DEDRadarFinisher : NSObject <DEDFinisher, DEDSecureArchiving, NSSecureCoding, NSURLSessionDataDelegate> {
     NSArray * _attachments;
     NSMutableArray * _finishedAttachments;
     NSObject<OS_os_log> * _log;
@@ -20,6 +20,7 @@
 @property DEDBugSession *session;
 @property (readonly) Class superclass;
 
++ (id)archivedClasses;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;

@@ -5,6 +5,15 @@
 @interface TSgPTPPortStatistics : NSObject {
     unsigned int  _allowedLostResponsesExceededCounter;
     unsigned int  _announceReceiptTimeoutCounter;
+    unsigned int  _attemptedAnnounceCounter;
+    unsigned int  _attemptedDelayRequestCounter;
+    unsigned int  _attemptedDelayResponseCounter;
+    unsigned int  _attemptedFollowUpCounter;
+    unsigned int  _attemptedPDelayRequestCounter;
+    unsigned int  _attemptedPDelayResponseCounter;
+    unsigned int  _attemptedPDelayResponseFollowUpCounter;
+    unsigned int  _attemptedSignalCounter;
+    unsigned int  _attemptedSyncCounter;
     NSString * _portIdentifier;
     long long  _portRole;
     long long  _portType;
@@ -33,6 +42,15 @@
 
 @property (nonatomic, readonly) unsigned int allowedLostResponsesExceededCounter;
 @property (nonatomic, readonly) unsigned int announceReceiptTimeoutCounter;
+@property (nonatomic, readonly) unsigned int attemptedAnnounceCounter;
+@property (nonatomic, readonly) unsigned int attemptedDelayRequestCounter;
+@property (nonatomic, readonly) unsigned int attemptedDelayResponseCounter;
+@property (nonatomic, readonly) unsigned int attemptedFollowUpCounter;
+@property (nonatomic, readonly) unsigned int attemptedPDelayRequestCounter;
+@property (nonatomic, readonly) unsigned int attemptedPDelayResponseCounter;
+@property (nonatomic, readonly) unsigned int attemptedPDelayResponseFollowUpCounter;
+@property (nonatomic, readonly) unsigned int attemptedSignalCounter;
+@property (nonatomic, readonly) unsigned int attemptedSyncCounter;
 @property (nonatomic, readonly, copy) NSString *portIdentifier;
 @property (nonatomic, readonly) long long portRole;
 @property (nonatomic, readonly) long long portType;
@@ -60,6 +78,15 @@
 
 - (unsigned int)allowedLostResponsesExceededCounter;
 - (unsigned int)announceReceiptTimeoutCounter;
+- (unsigned int)attemptedAnnounceCounter;
+- (unsigned int)attemptedDelayRequestCounter;
+- (unsigned int)attemptedDelayResponseCounter;
+- (unsigned int)attemptedFollowUpCounter;
+- (unsigned int)attemptedPDelayRequestCounter;
+- (unsigned int)attemptedPDelayResponseCounter;
+- (unsigned int)attemptedPDelayResponseFollowUpCounter;
+- (unsigned int)attemptedSignalCounter;
+- (unsigned int)attemptedSyncCounter;
 - (void)dealloc;
 - (id)init;
 - (id)initWithPort:(id)arg1;

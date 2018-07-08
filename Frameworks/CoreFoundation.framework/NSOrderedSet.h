@@ -28,7 +28,6 @@
 
 - (id)allObjects;
 - (id)array;
-- (Class)classForCoder;
 - (bool)containsObject:(id)arg1;
 - (bool)containsObject:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -98,6 +97,8 @@
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
++ (bool)supportsSecureCoding;
+
 - (id)_avgForKeyPath:(id)arg1;
 - (id)_countForKeyPath:(id)arg1;
 - (id)_maxForKeyPath:(id)arg1;
@@ -110,7 +111,10 @@
 - (bool)_validateValue:(inout id*)arg1 forKeyPath:(id)arg2 ofObjectAtIndex:(unsigned long long)arg3 error:(out id*)arg4;
 - (id)_valueForKeyPath:(id)arg1 ofObjectAtIndex:(unsigned long long)arg2;
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned long long)arg3 context:(void*)arg4;
+- (Class)classForCoder;
+- (void)encodeWithCoder:(id)arg1;
 - (id)filteredOrderedSetUsingPredicate:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void*)arg3;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
@@ -149,6 +153,7 @@
 - (id)fc_orderedSetByCollectingObjectsWithBlock:(id /* block */)arg1;
 - (id)fc_orderedSetByMinusingOrderedSet:(id)arg1;
 - (id)fc_orderedSetByTransformingWithBlock:(id /* block */)arg1;
+- (id)fc_orderedSetOfObjectsPassingTest:(id /* block */)arg1;
 - (id)fc_orderedSetWithObjectsAtIndexes:(id)arg1;
 - (id)fc_orderedSetWithObjectsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 

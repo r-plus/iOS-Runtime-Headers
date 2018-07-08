@@ -7,10 +7,10 @@
     NSObject<OS_xpc_object> * _activity;
     CKServerChangeToken * _archivedRecordSyncToken;
     NSObject<OS_dispatch_queue> * _ckQueue;
-    CKServerChangeToken * _latestSyncToken;
     IMDRecordZoneManager * _recordZoneManager;
     bool  _shouldCheckDeviceConditions;
     <IMDCKSyncTokenStore> * _syncTokenStore;
+    NSMutableDictionary * _visitedChats;
 }
 
 @property (nonatomic, retain) IMDCKMessageSyncCKOperationFactory *CKOperationFactory;
@@ -21,15 +21,18 @@
 @property (nonatomic, retain) IMDRecordZoneManager *recordZoneManager;
 @property (nonatomic) bool shouldCheckDeviceConditions;
 @property (nonatomic, retain) <IMDCKSyncTokenStore> *syncTokenStore;
+@property (nonatomic, retain) NSMutableDictionary *visitedChats;
 
 + (id)sharedInstance;
 
 - (id)CKOperationFactory;
+- (id)_changeTokenKey;
 - (id)_chatRegistry;
 - (id)_ckUtilitiesInstance;
 - (id)_constructMessageRecordIDUsingTombStoneDictionary:(id)arg1;
 - (id)_copyRecordIDsToDeleteWithLimit:(unsigned long long)arg1;
 - (void)_deleteMessagesWithRecordIDs:(id)arg1 completion:(id /* block */)arg2;
+- (void)_deleteStingRaySyncToken;
 - (bool)_deviceConditionsAllowsMessageSync;
 - (bool)_doesAnyRecordZoneIDHavePendingArchivedRecords:(long long)arg1;
 - (void)_fetchArchivedRecordsIfNeeded:(bool)arg1 currentBatchCount:(long long)arg2 maxNumberOfBatches:(long long)arg3 WithCompletionBlock:(id /* block */)arg4;
@@ -84,9 +87,12 @@
 - (void)setRecordZoneManager:(id)arg1;
 - (void)setShouldCheckDeviceConditions:(bool)arg1;
 - (void)setSyncTokenStore:(id)arg1;
+- (void)setVisitedChats:(id)arg1;
 - (bool)shouldCheckDeviceConditions;
+- (long long)syncControllerRecordType;
 - (void)syncDeletedMessagesToCloudKitWithCompletion:(id /* block */)arg1;
 - (void)syncMessagesWithSyncType:(long long)arg1 shouldCheckDeviceConditions:(bool)arg2 activity:(id)arg3 completionBlock:(id /* block */)arg4;
 - (id)syncTokenStore;
+- (id)visitedChats;
 
 @end

@@ -24,10 +24,14 @@
 @property (nonatomic, copy) NSURL *stationURL;
 
 + (Class)queueFeederClass;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)descriptionComponents;
+- (void)encodeWithCoder:(id)arg1;
+- (void)getRemotePlaybackQueueRepresentationWithPlayerPath:(id)arg1 completion:(id /* block */)arg2;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)nowPlayingContentReference;
 - (id)playbackRequestEnvironment;
 - (id)prefixItem;

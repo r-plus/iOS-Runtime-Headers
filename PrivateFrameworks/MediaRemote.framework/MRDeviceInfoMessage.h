@@ -6,13 +6,13 @@
     MRSupportedProtocolMessages * _supportedProtocolMessages;
 }
 
-@property (nonatomic, readonly) void*deviceInfo;
+@property (nonatomic, readonly) _MRDeviceInfoMessageProtobuf *deviceInfo;
 @property (nonatomic, readonly) MRSupportedProtocolMessages *supportedProtocolMessages;
 
-- (void)dealloc;
-- (void*)deviceInfo;
+- (void).cxx_destruct;
+- (id)deviceInfo;
 - (unsigned long long)encryptionType;
-- (id)initWithDeviceInfo:(void*)arg1;
+- (id)initWithDeviceInfo:(id)arg1;
 - (id)supportedProtocolMessages;
 - (unsigned long long)type;
 

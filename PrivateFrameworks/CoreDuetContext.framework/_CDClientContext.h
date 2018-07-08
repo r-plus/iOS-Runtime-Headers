@@ -40,6 +40,7 @@
 - (void)addKeyPathsWithRegistrationsForAnyChangeFromRegistration:(id)arg1;
 - (void)cleanupInternalReferencesToRegistration:(id)arg1;
 - (void)clearCacheForKeyPathsWithFireOnChangeRegistrations:(id)arg1;
+- (id)currentConnection;
 - (void)dealloc;
 - (void)deregisterCallback:(id)arg1;
 - (id)endpoint;
@@ -74,9 +75,9 @@
 - (void)setQueue:(id)arg1;
 - (void)setRegistrationCallbackQueue:(id)arg1;
 - (void)setRegistrations:(id)arg1;
-- (void)setUpXPCConnectionWithEndpoint:(id)arg1;
 - (void)setXpcConnection:(id)arg1;
 - (void)setXpcQueue:(id)arg1;
+- (void)unprotectedSetUpXPCConnectionWithEndpoint:(id)arg1;
 - (id)valuesForKeyPaths:(id)arg1 inContextsMatchingPredicate:(id)arg2;
 - (id)xpcConnection;
 - (id)xpcQueue;

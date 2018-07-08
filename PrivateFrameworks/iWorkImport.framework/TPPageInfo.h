@@ -12,6 +12,7 @@
 @property (getter=isAnchoredToText, nonatomic, readonly) bool anchoredToText;
 @property (getter=isAttachedToBodyText, nonatomic, readonly) bool attachedToBodyText;
 @property (nonatomic, readonly) TPBodyInfo *bodyInfo;
+@property (nonatomic, readonly) NSArray *childInfos;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) TPDocumentRoot *documentRoot;
@@ -26,6 +27,9 @@
 @property (nonatomic, readonly) unsigned long long pageIndex;
 @property (nonatomic) NSObject<TSDContainerInfo> *parentInfo;
 @property (readonly) Class superclass;
+
++ (bool)hasBodyInfo;
++ (bool)isDocSetupPageIndex:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (id)bodyInfo;

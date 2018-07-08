@@ -38,6 +38,7 @@
     GEOLogMsgEventTransitAppLaunch * _transitAppLaunchEvent;
     double  _usageEventTime;
     GEOLogMsgEventUserAction * _userActionEvent;
+    GEOLogMsgEventWifiConnectionQualityProbe * _wifiConnectionQualityProbeEvent;
 }
 
 @property (nonatomic, retain) GEOLogMsgEventBatchTrafficProbe *batchTrafficProbeCollection;
@@ -78,6 +79,7 @@
 @property (nonatomic, readonly) bool hasTransitAppLaunchEvent;
 @property (nonatomic) bool hasUsageEventTime;
 @property (nonatomic, readonly) bool hasUserActionEvent;
+@property (nonatomic, readonly) bool hasWifiConnectionQualityProbeEvent;
 @property (nonatomic, retain) GEOLogMsgEventListInteractionSession *listInteractionSession;
 @property (nonatomic, retain) GEOLogMsgEventLogFramework *logFrameworkEvent;
 @property (nonatomic, retain) NSMutableArray *logMsgStates;
@@ -101,6 +103,7 @@
 @property (nonatomic, retain) GEOLogMsgEventTransitAppLaunch *transitAppLaunchEvent;
 @property (nonatomic) double usageEventTime;
 @property (nonatomic, retain) GEOLogMsgEventUserAction *userActionEvent;
+@property (nonatomic, retain) GEOLogMsgEventWifiConnectionQualityProbe *wifiConnectionQualityProbeEvent;
 
 + (void)_initializeAcceptedLogMsgStateTypes;
 + (id)acceptedLogMsgStates;
@@ -156,6 +159,7 @@
 - (bool)hasTransitAppLaunchEvent;
 - (bool)hasUsageEventTime;
 - (bool)hasUserActionEvent;
+- (bool)hasWifiConnectionQualityProbeEvent;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
 - (id)listInteractionSession;
@@ -211,6 +215,7 @@
 - (void)setTransitAppLaunchEvent:(id)arg1;
 - (void)setUsageEventTime:(double)arg1;
 - (void)setUserActionEvent:(id)arg1;
+- (void)setWifiConnectionQualityProbeEvent:(id)arg1;
 - (id)staleResourceEvent;
 - (id)stateTimingEvent;
 - (id)tableBookedSession;
@@ -224,6 +229,7 @@
 - (void)unregisterLogMsgStatesOfTypes:(id)arg1;
 - (double)usageEventTime;
 - (id)userActionEvent;
+- (id)wifiConnectionQualityProbeEvent;
 - (void)writeTo:(id)arg1;
 
 @end

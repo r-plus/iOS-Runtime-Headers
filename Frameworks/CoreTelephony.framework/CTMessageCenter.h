@@ -24,13 +24,14 @@
 - (bool)isMmsEnabled;
 - (struct { int x1; int x2; })send:(id)arg1;
 - (struct { int x1; int x2; })send:(id)arg1 withMoreToFollow:(bool)arg2;
+- (bool)sendBinarySMS:(id)arg1 trackingID:(unsigned int*)arg2;
 - (struct { int x1; int x2; })sendMMS:(id)arg1;
 - (struct { int x1; int x2; })sendMMSFromData:(id)arg1 messageId:(unsigned int)arg2;
 - (void)sendMessageAsSmsToShortCodeRecipients:(id)arg1 andReplaceData:(id*)arg2;
-- (struct { int x1; int x2; })sendSMS:(id)arg1 withMoreToFollow:(bool)arg2;
+- (struct { int x1; int x2; })sendSMS:(id)arg1 withMoreToFollow:(bool)arg2 trackingID:(unsigned int*)arg3;
 - (bool)sendSMSWithText:(id)arg1 serviceCenter:(id)arg2 toAddress:(id)arg3;
+- (bool)sendSMSWithText:(id)arg1 serviceCenter:(id)arg2 toAddress:(id)arg3 trackingID:(unsigned int*)arg4;
 - (bool)sendSMSWithText:(id)arg1 serviceCenter:(id)arg2 toAddress:(id)arg3 withID:(unsigned int)arg4;
-- (bool)sendSMSWithText:(id)arg1 serviceCenter:(id)arg2 toAddress:(id)arg3 withMoreToFollow:(bool)arg4;
 - (bool)sendSMSWithText:(id)arg1 serviceCenter:(id)arg2 toAddress:(id)arg3 withMoreToFollow:(bool)arg4 withID:(unsigned int)arg5;
 - (void)setDeliveryReportsEnabled:(bool)arg1;
 - (bool)simulateDeferredMessage;

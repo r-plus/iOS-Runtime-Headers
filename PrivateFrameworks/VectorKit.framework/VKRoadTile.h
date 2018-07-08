@@ -5,17 +5,17 @@
 @interface VKRoadTile : VKVectorTile {
     struct unique_ptr<md::PatternedLayer, std::__1::default_delete<md::PatternedLayer> > { 
         struct __compressed_pair<md::PatternedLayer *, std::__1::default_delete<md::PatternedLayer> > { 
-            struct PatternedLayer {} *__first_; 
+            struct PatternedLayer {} *__value_; 
         } __ptr_; 
     }  _patternedRibbonLayer;
     struct unique_ptr<md::RoadLayer, std::__1::default_delete<md::RoadLayer> > { 
         struct __compressed_pair<md::RoadLayer *, std::__1::default_delete<md::RoadLayer> > { 
-            struct RoadLayer {} *__first_; 
+            struct RoadLayer {} *__value_; 
         } __ptr_; 
     }  _roadLayer;
     struct unique_ptr<md::RoadLayer, std::__1::default_delete<md::RoadLayer> > { 
         struct __compressed_pair<md::RoadLayer *, std::__1::default_delete<md::RoadLayer> > { 
-            struct RoadLayer {} *__first_; 
+            struct RoadLayer {} *__value_; 
         } __ptr_; 
     }  _roadTrafficLayer;
     VKTrafficTile * _trafficTile;

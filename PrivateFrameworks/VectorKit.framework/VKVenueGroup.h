@@ -15,14 +15,14 @@
                     struct pair<unsigned short, unsigned int> {} *__begin_; 
                     struct pair<unsigned short, unsigned int> {} *__end_; 
                     struct __compressed_pair<std::__1::pair<unsigned short, unsigned int> *, std::__1::allocator<std::__1::pair<unsigned short, unsigned int> > > { 
-                        struct pair<unsigned short, unsigned int> {} *__first_; 
+                        struct pair<unsigned short, unsigned int> {} *__value_; 
                     } __end_cap_; 
                 } _vertexAndIndexCounts; 
                 struct vector<std::__1::shared_ptr<ggl::VenueWall::EndCapMesh>, std::__1::allocator<std::__1::shared_ptr<ggl::VenueWall::EndCapMesh> > > { 
                     struct shared_ptr<ggl::VenueWall::EndCapMesh> {} *__begin_; 
                     struct shared_ptr<ggl::VenueWall::EndCapMesh> {} *__end_; 
                     struct __compressed_pair<std::__1::shared_ptr<ggl::VenueWall::EndCapMesh> *, std::__1::allocator<std::__1::shared_ptr<ggl::VenueWall::EndCapMesh> > > { 
-                        struct shared_ptr<ggl::VenueWall::EndCapMesh> {} *__first_; 
+                        struct shared_ptr<ggl::VenueWall::EndCapMesh> {} *__value_; 
                     } __end_cap_; 
                 } _meshes; 
                 struct DataWrite<ggl::VenueWall::EndCapVbo> { 
@@ -61,7 +61,7 @@
         struct shared_ptr<ggl::VenueWall::EndCapMesh> {} *__begin_; 
         struct shared_ptr<ggl::VenueWall::EndCapMesh> {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<ggl::VenueWall::EndCapMesh> *, std::__1::allocator<std::__1::shared_ptr<ggl::VenueWall::EndCapMesh> > > { 
-            struct shared_ptr<ggl::VenueWall::EndCapMesh> {} *__first_; 
+            struct shared_ptr<ggl::VenueWall::EndCapMesh> {} *__value_; 
         } __end_cap_; 
     }  _venueWallEndMeshes;
     struct optional<md::MeshSet<ggl::Venue3DStroke::HorizontalVenue3DStrokeMesh, ggl::Venue3DStroke::HorizontalDefaultVbo> > { 
@@ -73,14 +73,14 @@
                     struct pair<unsigned short, unsigned int> {} *__begin_; 
                     struct pair<unsigned short, unsigned int> {} *__end_; 
                     struct __compressed_pair<std::__1::pair<unsigned short, unsigned int> *, std::__1::allocator<std::__1::pair<unsigned short, unsigned int> > > { 
-                        struct pair<unsigned short, unsigned int> {} *__first_; 
+                        struct pair<unsigned short, unsigned int> {} *__value_; 
                     } __end_cap_; 
                 } _vertexAndIndexCounts; 
                 struct vector<std::__1::shared_ptr<ggl::Venue3DStroke::HorizontalVenue3DStrokeMesh>, std::__1::allocator<std::__1::shared_ptr<ggl::Venue3DStroke::HorizontalVenue3DStrokeMesh> > > { 
                     struct shared_ptr<ggl::Venue3DStroke::HorizontalVenue3DStrokeMesh> {} *__begin_; 
                     struct shared_ptr<ggl::Venue3DStroke::HorizontalVenue3DStrokeMesh> {} *__end_; 
                     struct __compressed_pair<std::__1::shared_ptr<ggl::Venue3DStroke::HorizontalVenue3DStrokeMesh> *, std::__1::allocator<std::__1::shared_ptr<ggl::Venue3DStroke::HorizontalVenue3DStrokeMesh> > > { 
-                        struct shared_ptr<ggl::Venue3DStroke::HorizontalVenue3DStrokeMesh> {} *__first_; 
+                        struct shared_ptr<ggl::Venue3DStroke::HorizontalVenue3DStrokeMesh> {} *__value_; 
                     } __end_cap_; 
                 } _meshes; 
                 struct DataWrite<ggl::Venue3DStroke::HorizontalDefaultVbo> { 
@@ -119,7 +119,7 @@
         struct shared_ptr<ggl::Venue3DStroke::HorizontalVenue3DStrokeMesh> {} *__begin_; 
         struct shared_ptr<ggl::Venue3DStroke::HorizontalVenue3DStrokeMesh> {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<ggl::Venue3DStroke::HorizontalVenue3DStrokeMesh> *, std::__1::allocator<std::__1::shared_ptr<ggl::Venue3DStroke::HorizontalVenue3DStrokeMesh> > > { 
-            struct shared_ptr<ggl::Venue3DStroke::HorizontalVenue3DStrokeMesh> {} *__first_; 
+            struct shared_ptr<ggl::Venue3DStroke::HorizontalVenue3DStrokeMesh> {} *__value_; 
         } __end_cap_; 
     }  _venueWallHorizontalStrokeMeshes;
     struct optional<md::MeshSet<ggl::VenueWall::MeshMesh, ggl::VenueWall::DefaultVbo> > { 
@@ -131,14 +131,14 @@
                     struct pair<unsigned short, unsigned int> {} *__begin_; 
                     struct pair<unsigned short, unsigned int> {} *__end_; 
                     struct __compressed_pair<std::__1::pair<unsigned short, unsigned int> *, std::__1::allocator<std::__1::pair<unsigned short, unsigned int> > > { 
-                        struct pair<unsigned short, unsigned int> {} *__first_; 
+                        struct pair<unsigned short, unsigned int> {} *__value_; 
                     } __end_cap_; 
                 } _vertexAndIndexCounts; 
                 struct vector<std::__1::shared_ptr<ggl::VenueWall::MeshMesh>, std::__1::allocator<std::__1::shared_ptr<ggl::VenueWall::MeshMesh> > > { 
                     struct shared_ptr<ggl::VenueWall::MeshMesh> {} *__begin_; 
                     struct shared_ptr<ggl::VenueWall::MeshMesh> {} *__end_; 
                     struct __compressed_pair<std::__1::shared_ptr<ggl::VenueWall::MeshMesh> *, std::__1::allocator<std::__1::shared_ptr<ggl::VenueWall::MeshMesh> > > { 
-                        struct shared_ptr<ggl::VenueWall::MeshMesh> {} *__first_; 
+                        struct shared_ptr<ggl::VenueWall::MeshMesh> {} *__value_; 
                     } __end_cap_; 
                 } _meshes; 
                 struct DataWrite<ggl::VenueWall::DefaultVbo> { 
@@ -177,7 +177,7 @@
         struct shared_ptr<ggl::VenueWall::MeshMesh> {} *__begin_; 
         struct shared_ptr<ggl::VenueWall::MeshMesh> {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<ggl::VenueWall::MeshMesh> *, std::__1::allocator<std::__1::shared_ptr<ggl::VenueWall::MeshMesh> > > { 
-            struct shared_ptr<ggl::VenueWall::MeshMesh> {} *__first_; 
+            struct shared_ptr<ggl::VenueWall::MeshMesh> {} *__value_; 
         } __end_cap_; 
     }  _venueWallMeshes;
     struct optional<md::MeshSet<ggl::Venue3DStroke::VerticalVenue3DStrokeMesh, ggl::Venue3DStroke::VerticalDefaultVbo> > { 
@@ -189,14 +189,14 @@
                     struct pair<unsigned short, unsigned int> {} *__begin_; 
                     struct pair<unsigned short, unsigned int> {} *__end_; 
                     struct __compressed_pair<std::__1::pair<unsigned short, unsigned int> *, std::__1::allocator<std::__1::pair<unsigned short, unsigned int> > > { 
-                        struct pair<unsigned short, unsigned int> {} *__first_; 
+                        struct pair<unsigned short, unsigned int> {} *__value_; 
                     } __end_cap_; 
                 } _vertexAndIndexCounts; 
                 struct vector<std::__1::shared_ptr<ggl::Venue3DStroke::VerticalVenue3DStrokeMesh>, std::__1::allocator<std::__1::shared_ptr<ggl::Venue3DStroke::VerticalVenue3DStrokeMesh> > > { 
                     struct shared_ptr<ggl::Venue3DStroke::VerticalVenue3DStrokeMesh> {} *__begin_; 
                     struct shared_ptr<ggl::Venue3DStroke::VerticalVenue3DStrokeMesh> {} *__end_; 
                     struct __compressed_pair<std::__1::shared_ptr<ggl::Venue3DStroke::VerticalVenue3DStrokeMesh> *, std::__1::allocator<std::__1::shared_ptr<ggl::Venue3DStroke::VerticalVenue3DStrokeMesh> > > { 
-                        struct shared_ptr<ggl::Venue3DStroke::VerticalVenue3DStrokeMesh> {} *__first_; 
+                        struct shared_ptr<ggl::Venue3DStroke::VerticalVenue3DStrokeMesh> {} *__value_; 
                     } __end_cap_; 
                 } _meshes; 
                 struct DataWrite<ggl::Venue3DStroke::VerticalDefaultVbo> { 
@@ -235,31 +235,31 @@
         struct shared_ptr<ggl::Venue3DStroke::VerticalVenue3DStrokeMesh> {} *__begin_; 
         struct shared_ptr<ggl::Venue3DStroke::VerticalVenue3DStrokeMesh> {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<ggl::Venue3DStroke::VerticalVenue3DStrokeMesh> *, std::__1::allocator<std::__1::shared_ptr<ggl::Venue3DStroke::VerticalVenue3DStrokeMesh> > > { 
-            struct shared_ptr<ggl::Venue3DStroke::VerticalVenue3DStrokeMesh> {} *__first_; 
+            struct shared_ptr<ggl::Venue3DStroke::VerticalVenue3DStrokeMesh> {} *__value_; 
         } __end_cap_; 
     }  _venueWallVerticalStrokeMeshes;
     struct unordered_map<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> >, std::__1::hash<SectionKey>, std::__1::equal_to<std::__1::pair<void *, unsigned long> >, std::__1::allocator<std::__1::pair<const std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > > > > { 
         struct __hash_table<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, std::__1::__unordered_map_hasher<std::__1::pair<void *, unsigned long>, std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, std::__1::hash<SectionKey>, true>, std::__1::__unordered_map_equal<std::__1::pair<void *, unsigned long>, std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, std::__1::equal_to<std::__1::pair<void *, unsigned long> >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > > > > { 
             struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *> *> > > { 
                 struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *> *> > > { 
-                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *> {} **__first_; 
+                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *> {} **__value_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *> *> > { 
-                            unsigned long long __first_; 
+                            unsigned long long __value_; 
                         } __data_; 
-                    } __second_; 
+                    } __value_; 
                 } __ptr_; 
             } __bucket_list_; 
             struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> > > { 
                 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *> { 
                     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *> {} *__next_; 
-                } __first_; 
+                } __value_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<std::__1::pair<void *, unsigned long>, std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, std::__1::hash<SectionKey>, true> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<std::__1::pair<void *, unsigned long>, std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, std::__1::equal_to<std::__1::pair<void *, unsigned long> >, true> > { 
-                float __first_; 
+                float __value_; 
             } __p3_; 
         } __table_; 
     }  _venueWalls;

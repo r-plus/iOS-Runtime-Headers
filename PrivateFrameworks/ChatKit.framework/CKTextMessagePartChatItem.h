@@ -22,6 +22,7 @@
 - (id)pasteboardItems;
 - (id)sendAnimationText;
 - (bool)shouldUseBigEmoji;
+- (bool)showMoneyResults;
 - (id)subject;
 - (id)text;
 

@@ -15,8 +15,9 @@
 
 - (void).cxx_destruct;
 - (id)checkTokenAndDSID:(id)arg1;
+- (void)handleJingleSegmentResponse:(id)arg1 activeRecord:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)handleSegmentUpdateResponse:(id)arg1 error:(id)arg2 completionHandler:(id /* block */)arg3;
-- (id)init;
+- (void)handleSuccessfulJingleSegmentResponse:(id)arg1 dsidRecord:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)pendingJingleRequestToken;
 - (void)populateAccountTypeFields:(id)arg1;
 - (void)retrieveSegmentData:(id)arg1 forceSegments:(bool)arg2 completionHandler:(id /* block */)arg3;

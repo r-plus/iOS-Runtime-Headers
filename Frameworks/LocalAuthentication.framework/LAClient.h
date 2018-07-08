@@ -28,6 +28,7 @@
 - (void)_performCallIdCore:(id /* block */)arg1 finally:(id /* block */)arg2;
 - (void)_recoverConnection;
 - (void)_scheduleRecovery;
+- (void)_serializedInvalidateWithMessage:(id)arg1;
 - (bool)_setPermanentError:(id)arg1;
 - (id)_updateOptions:(id)arg1;
 - (void)connectToServerWithInterruptionHandler:(id /* block */)arg1;

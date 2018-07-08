@@ -7,6 +7,7 @@
     struct sqlite3 { } * _db;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     bool  _isInTransaction;
+    NSString * _protectionType;
     bool  _readOnly;
     id /* block */  _setupBlock;
     struct __CFDictionary { } * _statementCache;
@@ -46,6 +47,7 @@
 - (void)expireBackgroundTask;
 - (id)initWithDatabaseURL:(id)arg1;
 - (id)initWithDatabaseURL:(id)arg1 readOnly:(bool)arg2;
+- (id)initWithDatabaseURL:(id)arg1 readOnly:(bool)arg2 protectionType:(id)arg3;
 - (id)newDispatchSourceWithType:(struct dispatch_source_type_s { }*)arg1;
 - (void)performTransactionWithBlock:(id /* block */)arg1;
 - (void)prepareStatementForSQL:(id)arg1 cache:(bool)arg2 usingBlock:(id /* block */)arg3;

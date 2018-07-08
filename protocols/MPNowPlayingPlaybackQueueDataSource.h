@@ -18,5 +18,6 @@
 - (NSProgress *)nowPlayingInfoCenter:(void *)arg1 currentLanguageOptionsForContentItem:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: MPNowPlayingInfoCenter *, MPNowPlayingContentItem *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
 - (NSProgress *)nowPlayingInfoCenter:(void *)arg1 infoForContentItem:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: MPNowPlayingInfoCenter *, MPNowPlayingContentItem *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, NSError *, void*
 - (NSProgress *)nowPlayingInfoCenter:(void *)arg1 lyricsForContentItem:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: MPNowPlayingInfoCenter *, MPNowPlayingContentItem *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, MPNowPlayingInfoLyricsItem *, NSError *, void*
+- (NSString *)playbackQueueIdentifierForNowPlayingInfoCenter:(MPNowPlayingInfoCenter *)arg1;
 
 @end

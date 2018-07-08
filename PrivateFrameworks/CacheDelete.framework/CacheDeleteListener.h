@@ -22,9 +22,6 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) id xObj;
 
-+ (id)daemonListenerWithExportedObject:(id)arg1;
-+ (id)daemonPublicListenerWithExportedObject:(id)arg1;
-
 - (void).cxx_destruct;
 - (void)addRequiredEntitlement:(id)arg1;
 - (id)initWithName:(id)arg1 listener:(id)arg2 protocol:(id)arg3 exportedObj:(id)arg4 isExtension:(bool)arg5;

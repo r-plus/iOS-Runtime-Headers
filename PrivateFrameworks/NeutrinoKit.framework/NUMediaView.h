@@ -43,7 +43,6 @@
     bool  _muted;
     NUAVPlayerController * _nuAVPlayerController;
     NUAVPlayerView * _playerView;
-    NUCoalescer * _renderCoalescer;
     NURenderView * _renderView;
     NUMediaViewRenderer * _renderer;
     NUScrollView * _scrollView;
@@ -96,7 +95,6 @@
 - (void)_transitionToInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)_updateContentInsets;
 - (void)_updateRenderContent;
-- (void)_updateRenderContentCoalesced:(bool)arg1;
 - (void)_updateVideoPlayerAlpha;
 - (id)_videoPlayerView;
 - (id)_videoPlayerViewWithoutControls;

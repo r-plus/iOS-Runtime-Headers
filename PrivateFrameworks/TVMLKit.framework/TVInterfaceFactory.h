@@ -16,6 +16,7 @@
         unsigned int respondsToStyleSheetURLForTemplate : 1; 
     }  _extenderFlags;
     _TVLockupFactory * _lockupFactory;
+    TVStyleSheetRegistry * _styleSheetRegistry;
     _TVTemplateFactory * _templateFactory;
     NSMutableDictionary * _viewControllerCreatorsByKey;
     NSMutableDictionary * _viewCreatorsByKey;
@@ -26,6 +27,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) <TVInterfaceCreating> *extendedInterfaceCreator;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) TVStyleSheetRegistry *styleSheetRegistry;
 @property (readonly) Class superclass;
 
 + (id)_URLForResource:(id)arg1 bundle:(id)arg2;
@@ -43,10 +45,8 @@
 - (void)_registerProductTemplateURL:(id)arg1 forTemplateName:(id)arg2 includeParentStyleSheets:(bool)arg3;
 - (void)_registerViewControllerCreator:(id /* block */)arg1 withType:(unsigned long long)arg2;
 - (void)_registerViewCreator:(id /* block */)arg1 withType:(unsigned long long)arg2;
-- (void)_setViewProxy:(id)arg1 forViewElement:(id)arg2;
 - (id)_styleSheetURLForTemplate:(id)arg1;
 - (id)_viewControllerFromElement:(id)arg1 existingController:(id)arg2;
-- (id)_viewForElement:(id)arg1;
 - (id)_viewFromElement:(id)arg1 existingView:(id)arg2;
 - (Class)collectionViewCellClassForElement:(id)arg1;
 - (void)dealloc;
@@ -55,6 +55,7 @@
 - (id)init;
 - (void)setExtendedInterfaceCreator:(id)arg1;
 - (void)setup;
+- (id)styleSheetRegistry;
 - (id)viewControllerForElement:(id)arg1 existingViewController:(id)arg2;
 - (id)viewForElement:(id)arg1 existingView:(id)arg2;
 

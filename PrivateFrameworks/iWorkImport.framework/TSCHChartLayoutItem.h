@@ -52,7 +52,7 @@
 @property (nonatomic, readonly) bool isInResize;
 @property (nonatomic) struct CGPoint { double x1; double x2; } layoutOffset;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } layoutRect;
-@property (nonatomic) struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; long long x7; unsigned long long x8; } layoutSettings;
+@property (nonatomic) struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; long long x8; unsigned long long x9; } layoutSettings;
 @property (nonatomic) struct CGSize { double x1; double x2; } layoutSize;
 @property (readonly) struct CGSize { double x1; double x2; } minSize;
 @property (nonatomic, readonly) TSCHChartModel *model;
@@ -65,6 +65,7 @@
 
 + (id)chartLayoutWithChartInfo:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)buildSubTree;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })calcDrawingRect;
 - (struct CGSize { double x1; double x2; })calcMinSize;
@@ -87,7 +88,7 @@
 - (bool)isInResize;
 - (struct CGPoint { double x1; double x2; })layoutOffset;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })layoutRect;
-- (struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; long long x7; unsigned long long x8; })layoutSettings;
+- (struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; long long x8; unsigned long long x9; })layoutSettings;
 - (struct CGSize { double x1; double x2; })layoutSize;
 - (void)layoutUsingMethod:(int)arg1;
 - (struct CGSize { double x1; double x2; })minSize;
@@ -109,7 +110,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rootedLayoutRect;
 - (void)setLayoutOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setLayoutRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (void)setLayoutSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; long long x7; unsigned long long x8; })arg1;
+- (void)setLayoutSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; long long x8; unsigned long long x9; })arg1;
 - (void)setLayoutSize:(struct CGSize { double x1; double x2; })arg1;
 - (struct CGSize { double x1; double x2; })startingSize;
 - (bool)stopIteratingItemsContainingPoint:(struct CGPoint { double x1; double x2; })arg1 withBlock:(id /* block */)arg2;

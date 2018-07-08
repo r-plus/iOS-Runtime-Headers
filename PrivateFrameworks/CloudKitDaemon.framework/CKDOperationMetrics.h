@@ -18,7 +18,8 @@
     unsigned long long  _recordsDeleted;
     unsigned long long  _recordsDownloaded;
     unsigned long long  _recordsUploaded;
-    NSMutableDictionary * _requestOperationCountsByOperationTypeByRequestUUID;
+    unsigned long long  _requestCount;
+    NSMutableDictionary * _requestOperationCountsByType;
     NSMutableSet * _requestUUIDs;
     unsigned long long  _retries;
     NSDate * _startDate;
@@ -43,9 +44,9 @@
 @property unsigned long long recordsDeleted;
 @property unsigned long long recordsDownloaded;
 @property unsigned long long recordsUploaded;
-@property (nonatomic, retain) NSMutableDictionary *requestOperationCountsByOperationTypeByRequestUUID;
-@property (nonatomic, readonly) NSDictionary *requestOperationCountsByType;
-@property (nonatomic, retain) NSMutableSet *requestUUIDs;
+@property unsigned long long requestCount;
+@property (nonatomic, retain) NSMutableDictionary *requestOperationCountsByType;
+@property (readonly) NSMutableSet *requestUUIDs;
 @property unsigned long long retries;
 @property (retain) NSDate *startDate;
 @property (readonly) Class superclass;
@@ -57,6 +58,7 @@
 - (id)_initWithStartDate:(id)arg1;
 - (void)addCKSpecificMetricsFromMetrics:(id)arg1;
 - (void)addRange:(id)arg1;
+- (void)addRequestOperationCountsByOperationType:(id)arg1;
 - (unsigned long long)assetsDownloaded;
 - (unsigned long long)assetsDownloadedFileSize;
 - (unsigned long long)assetsUploaded;
@@ -79,7 +81,7 @@
 - (unsigned long long)recordsDeleted;
 - (unsigned long long)recordsDownloaded;
 - (unsigned long long)recordsUploaded;
-- (id)requestOperationCountsByOperationTypeByRequestUUID;
+- (unsigned long long)requestCount;
 - (id)requestOperationCountsByType;
 - (id)requestUUIDs;
 - (unsigned long long)retries;
@@ -98,8 +100,8 @@
 - (void)setRecordsDeleted:(unsigned long long)arg1;
 - (void)setRecordsDownloaded:(unsigned long long)arg1;
 - (void)setRecordsUploaded:(unsigned long long)arg1;
-- (void)setRequestOperationCountsByOperationTypeByRequestUUID:(id)arg1;
-- (void)setRequestUUIDs:(id)arg1;
+- (void)setRequestCount:(unsigned long long)arg1;
+- (void)setRequestOperationCountsByType:(id)arg1;
 - (void)setRetries:(unsigned long long)arg1;
 - (void)setStartDate:(id)arg1;
 - (id)startDate;

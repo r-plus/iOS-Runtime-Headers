@@ -25,6 +25,7 @@
 - (id)databaseMigrationMigrateRecord:(id)arg1 database:(id)arg2 error:(id*)arg3;
 - (id)databaseMigrationRecordNamesToMigrateInZone:(id)arg1 database:(id)arg2;
 - (bool)databaseMigrationShouldDropRecord:(id)arg1 database:(id)arg2;
+- (bool)databaseMigrationShouldMigrateEntireZone:(id)arg1 database:(id)arg2;
 - (id)databaseMigrationZoneNamesForDatabase:(id)arg1;
 - (id /* block */)deprecatedBlock;
 - (id)initWithSourceSchema:(id)arg1 recordEncryptionMiddleware:(id)arg2 deprecatedBlock:(id /* block */)arg3;

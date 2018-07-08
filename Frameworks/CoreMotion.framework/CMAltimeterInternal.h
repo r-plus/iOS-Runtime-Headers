@@ -27,12 +27,12 @@
             float **__begin_; 
             float **__end_; 
             struct __compressed_pair<float **, std::__1::allocator<float *> > { 
-                float **__first_; 
+                float **__value_; 
             } __end_cap_; 
         } __map_; 
         unsigned long long __start_; 
         struct __compressed_pair<unsigned long, std::__1::allocator<float> > { 
-            unsigned long long __first_; 
+            unsigned long long __value_; 
         } __size_; 
     }  fPressureSamples;
     id /* block */  fRelativeAltimeterHandler;

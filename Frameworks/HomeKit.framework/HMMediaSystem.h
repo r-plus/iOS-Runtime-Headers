@@ -2,19 +2,28 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMMediaSystem : NSObject <HFMediaProfileContainer, HMAccessorySettingsContainer, HMApplicationData, HMMediaObject> {
+@interface HMMediaSystem : NSObject <HFHomeKitObject, HFMediaProfileContainer, HMAccessorySettingsContainer, HMApplicationData, HMControllable, HMFLogging, HMFMessageReceiver, HMMediaObject, HMObjectMerge, NSSecureCoding> {
+    HMApplicationData * _applicationData;
     bool  _compatible;
-    NSArray * _components;
+    HMThreadSafeMutableArrayCollection * _componentsArray;
+    _HMContext * _context;
     <HMMediaSystemDelegate> * _delegate;
     HMHome * _home;
     NSString * _name;
+    NSObject<OS_dispatch_queue> * _propertyQueue;
+    HMAccessorySettings * _settings;
+    HMSymptomsHandler * _symptomsHandler;
     NSUUID * _uniqueIdentifier;
+    NSUUID * _uuid;
 }
 
-@property (nonatomic, readonly) HMApplicationData *applicationData;
+@property (nonatomic, retain) HMApplicationData *applicationData;
 @property (getter=isCompatible, nonatomic, readonly) bool compatible;
 @property (nonatomic, readonly) NSArray *components;
+@property (nonatomic, retain) HMThreadSafeMutableArrayCollection *componentsArray;
 @property (readonly) HMHome *containerHome;
+@property (nonatomic, retain) _HMContext *context;
+@property (getter=isControllable, readonly) bool controllable;
 @property (readonly, copy) NSString *debugDescription;
 @property <HMMediaObjectDelegate> *delegate;
 @property <HMMediaSystemDelegate> *delegate;
@@ -22,81 +31,145 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HMAccessory *hf_backingAccessory;
 @property (nonatomic, readonly, copy) NSDate *hf_dateAdded;
+@property (nonatomic, readonly) NSString *hf_defaultName;
 @property (nonatomic, readonly) NSSet *hf_dependentHomeKitObjects;
 @property (nonatomic, readonly, copy) NSString *hf_displayName;
+@property (nonatomic, readonly) NSString *hf_editingName;
+@property (nonatomic, readonly) NSSet *hf_fakeDebugSymptoms;
+@property (nonatomic, readonly) bool hf_fakeStereoPairGeneralSymptom;
+@property (nonatomic, readonly) bool hf_fakeStereoPairNotFoundSymptom;
+@property (nonatomic, readonly) bool hf_fakeStereoPairVersionMismatchSymptom;
 @property (nonatomic, readonly) bool hf_hasSetFavorite;
 @property (nonatomic, readonly) HMHome *hf_home;
+@property (nonatomic, readonly) bool hf_isAccessorySettingsReachable;
+@property (nonatomic, readonly) bool hf_isAppleMusicReachable;
 @property (nonatomic, readonly) bool hf_isCurrentAccessory;
 @property (nonatomic, readonly) bool hf_isFavorite;
 @property (nonatomic, readonly) bool hf_isReachable;
 @property (nonatomic, readonly) <HFMediaValueSource> *hf_mediaValueSource;
 @property (nonatomic, readonly) HMRoom *hf_parentRoom;
 @property (nonatomic, readonly) NSString *hf_prettyDescription;
-@property (nonatomic, readonly) HMRemoteLoginHandler *hf_remoteLoginHandler;
 @property (nonatomic, readonly) HFServiceNameComponents *hf_serviceNameComponents;
 @property (nonatomic, readonly) HFAccessorySettingAdapterManager *hf_settingsAdapterManager;
 @property (nonatomic, readonly) HFMediaProfileContainerSettingsValueManager *hf_settingsValueManager;
 @property (nonatomic, readonly) bool hf_shouldShowInFavorites;
+@property (nonatomic, readonly) bool hf_showsAudioSettings;
+@property (nonatomic, readonly) bool hf_supportsMediaSystem;
 @property (nonatomic, readonly) bool hf_supportsSoftwareUpdate;
 @property (nonatomic, readonly) HMHome *home;
 @property (nonatomic, readonly) <HFHomeKitObject> *homeKitObject;
 @property (nonatomic, readonly) bool isContainedWithinItemGroup;
 @property (nonatomic, readonly) bool isItemGroup;
 @property (readonly, copy) HMMediaSession *mediaSession;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) unsigned long long numberOfItemsContainedWithinGroup;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (readonly) HMAccessorySettings *settings;
 @property (readonly) Class superclass;
+@property (readonly, copy) NSSet *symptoms;
+@property (nonatomic, readonly) HMSymptomsHandler *symptomsHandler;
 @property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
 @property (nonatomic, readonly) NSUUID *uniqueIdentifier;
+@property (nonatomic, readonly) NSUUID *uuid;
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
++ (id)logCategory;
++ (id)mediaSystemWithDictionary:(id)arg1 home:(id)arg2;
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
+- (void)_configureWithContext:(id)arg1;
+- (void)_handleAppDataUpdatedNotification:(id)arg1;
+- (void)_handleRootSettingsUpdated:(id)arg1;
+- (void)_handleSystemUpdatedNotification:(id)arg1;
+- (void)_invalidate;
+- (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2 includeSettingsAndAppData:(bool)arg3;
+- (void)_registerNotificationHandlers;
+- (void)_updateAccessoryReference;
+- (void)_updateApplicationData:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)applicationData;
 - (id)components;
+- (id)componentsArray;
 - (id)containerHome;
+- (id)context;
+- (void)dealloc;
 - (id)delegate;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
 - (id)home;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithHome:(id)arg1 uuid:(id)arg2 name:(id)arg3 compatible:(bool)arg4 components:(id)arg5 settings:(id)arg6 symptomHandler:(id)arg7;
 - (bool)isCompatible;
+- (bool)isControllable;
+- (bool)isEqual:(id)arg1;
+- (id)logIdentifier;
 - (id)mediaSession;
+- (id)messageReceiveQueue;
+- (id)messageTargetUUID;
 - (id)name;
+- (void)notifyDelegateOfUpdatedApplicationData:(id)arg1;
+- (void)notifyDelegateOfUpdatedComponents:(id)arg1;
+- (void)notifyDelegateOfUpdatedMediaSession:(id)arg1;
+- (void)notifyDelegateOfUpdatedName:(id)arg1;
+- (void)notifyDelegateOfUpdatedSettings:(id)arg1;
+- (id)propertyQueue;
+- (void)setApplicationData:(id)arg1;
+- (void)setComponentsArray:(id)arg1;
+- (void)setContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setName:(id)arg1;
+- (void)setSettings:(id)arg1;
 - (id)settings;
+- (id)symptomsHandler;
 - (id)uniqueIdentifier;
 - (void)updateApplicationData:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)updateMediaSession:(id)arg1 forMediaProfile:(id)arg2;
+- (id)uuid;
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
 - (id)accessories;
 - (id)hf_accessoryForRole:(id)arg1;
-- (id)hf_appleMusicCompleteLoginWithAuthenticationResults:(id)arg1;
 - (id)hf_appleMusicCurrentLoggedInAccount;
 - (id)hf_appleMusicCurrentLoggedInAccountDSID;
-- (id)hf_appleMusicLoginWithAccount:(id)arg1;
-- (id)hf_appleMusicLogout;
 - (id)hf_backingAccessory;
 - (id)hf_dateAdded;
+- (id)hf_defaultName;
 - (id)hf_dependentHomeKitObjects;
 - (id)hf_displayName;
+- (id)hf_editingName;
+- (id)hf_fakeDebugSymptoms;
+- (bool)hf_fakeStereoPairGeneralSymptom;
+- (bool)hf_fakeStereoPairNotFoundSymptom;
+- (bool)hf_fakeStereoPairVersionMismatchSymptom;
 - (id)hf_fetchLog:(id)arg1 timeout:(double)arg2;
 - (id)hf_fetchLogListWithTimeout:(double)arg1;
 - (bool)hf_hasSetFavorite;
 - (id)hf_home;
 - (id)hf_idsDeviceIdentifierWithError:(id*)arg1;
+- (bool)hf_isAccessorySettingsReachable;
+- (bool)hf_isAppleMusicReachable;
 - (bool)hf_isCurrentAccessory;
 - (bool)hf_isFavorite;
 - (bool)hf_isReachable;
+- (bool)hf_isValidObject;
 - (id)hf_mediaValueSource;
 - (id)hf_parentRoom;
 - (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
-- (id)hf_remoteLoginHandler;
 - (id)hf_roleForAccessory:(id)arg1;
 - (id)hf_serializedStateDumpRepresentation;
 - (id)hf_serviceNameComponents;
 - (id)hf_settingsAdapterManager;
 - (id)hf_settingsValueManager;
 - (bool)hf_shouldShowInFavorites;
+- (bool)hf_showsAudioSettings;
+- (bool)hf_supportsMediaSystem;
 - (bool)hf_supportsSoftwareUpdate;
 - (id)hf_updateDateAdded:(id)arg1;
 - (id)hf_updateIsFavorite:(bool)arg1;
@@ -104,5 +177,6 @@
 - (bool)isContainedWithinItemGroup;
 - (bool)isItemGroup;
 - (unsigned long long)numberOfItemsContainedWithinGroup;
+- (id)symptoms;
 
 @end

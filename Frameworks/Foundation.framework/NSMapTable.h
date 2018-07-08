@@ -61,6 +61,11 @@
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)valuePointerFunctions;
 
+// Image: /System/Library/Frameworks/ClassKit.framework/ClassKit
+
+- (id)objectForKeyedSubscript:(id)arg1;
+- (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
+
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
 - (id)allKeys;
@@ -128,7 +133,9 @@
 + (id)newTspWeakObjectsMapTableWithCapacity:(unsigned long long)arg1;
 
 - (id)objectAtIndexedSubscript:(unsigned long long)arg1;
+- (id)objectForKeyedSubscript:(id)arg1;
 - (void)setObject:(id)arg1 atIndexedSubscript:(unsigned long long)arg2;
+- (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)tsp_enumerateIdentifiersAndObjectsUsingBlock:(id /* block */)arg1;
 - (void)tsp_enumerateObjectsUsingBlock:(id /* block */)arg1;
 - (bool)tsp_isWeakObjectMapTable;
@@ -136,6 +143,5 @@
 - (void)tsp_removeObjectForIdentifier:(long long)arg1;
 - (void)tsp_setObject:(id)arg1 forIdentifier:(long long)arg2;
 - (id)tsu_allKeys;
-- (id)tsu_noCopyDictionaryRepresentation;
 
 @end

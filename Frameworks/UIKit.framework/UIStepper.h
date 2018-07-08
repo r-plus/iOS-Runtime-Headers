@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIStepper : UIControl <DebugHierarchyObject> {
+@interface UIStepper : UIControl {
     bool  _autorepeat;
     bool  _continuous;
     NSMutableDictionary * _dividerImages;
@@ -21,18 +21,12 @@
 
 @property (nonatomic) bool autorepeat;
 @property (getter=isContinuous, nonatomic) bool continuous;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned long long hash;
 @property (nonatomic) double maximumValue;
 @property (nonatomic) double minimumValue;
 @property (nonatomic) double stepValue;
-@property (readonly) Class superclass;
 @property (nonatomic, retain) UIColor *tintColor;
 @property (nonatomic) double value;
 @property (nonatomic) bool wraps;
-
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (void).cxx_destruct;
 - (id)__scalarStatisticsForUserValueChangedEvent;
@@ -54,13 +48,6 @@
 - (void)_updateDividerImageForButtonState;
 - (void)_updateHighlightingAtPoint:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)_updateImages;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)autorepeat;
 - (id)backgroundImageForState:(unsigned long long)arg1;
 - (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;

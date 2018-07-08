@@ -12,6 +12,8 @@
 @property (nonatomic) double displayStartDate;
 @property (nonatomic) long long type;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)_ui_descriptionBuilder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -26,6 +26,8 @@
     bool  canUseExtraNetworking;
     AVWeakReference * clientsOriginalVideoComposition;
     AVCustomVideoCompositorSession * customVideoCompositorSession;
+    bool  decodesAllFramesDuringOrdinaryPlayback;
+    bool  decodesAllFramesDuringOrdinaryPlaybackWasSet;
     <AVPlayerItemDelegate> * delegate;
     bool  didBecomeReadyForBasicInspection;
     bool  didBecomeReadyForInspectionOfDuration;

@@ -9,12 +9,12 @@
     }  _overlayData;
     struct unique_ptr<ggl::Textured::Pos2DUVPipelineSetup, std::__1::default_delete<ggl::Textured::Pos2DUVPipelineSetup> > { 
         struct __compressed_pair<ggl::Textured::Pos2DUVPipelineSetup *, std::__1::default_delete<ggl::Textured::Pos2DUVPipelineSetup> > { 
-            struct Pos2DUVPipelineSetup {} *__first_; 
+            struct Pos2DUVPipelineSetup {} *__value_; 
         } __ptr_; 
     }  _pipelineSetup;
     struct unique_ptr<ggl::RenderItem, std::__1::default_delete<ggl::RenderItem> > { 
         struct __compressed_pair<ggl::RenderItem *, std::__1::default_delete<ggl::RenderItem> > { 
-            struct RenderItem {} *__first_; 
+            struct RenderItem {} *__value_; 
         } __ptr_; 
     }  _renderItem;
 }

@@ -3,6 +3,7 @@
  */
 
 @interface MTLToolsDevice : MTLToolsObject <MTLDeviceSPI> {
+    MTLToolsPointerArray * _argumentEncoders;
     MTLToolsPointerArray * _buffers;
     MTLToolsPointerArray * _commandQueues;
     MTLToolsPointerArray * _computePipelineStates;
@@ -24,6 +25,7 @@
 
 @property (readonly) unsigned int acceleratorPort;
 @property (readonly) unsigned long long argumentBuffersSupport;
+@property (nonatomic, readonly) MTLToolsPointerArray *argumentEncoders;
 @property (nonatomic, readonly) MTLToolsPointerArray *buffers;
 @property (nonatomic, readonly) MTLToolsPointerArray *commandQueues;
 @property (nonatomic, readonly) MTLToolsPointerArray *computePipelineStates;
@@ -129,6 +131,7 @@
 - (bool)areProgrammableSamplePositionsSupported;
 - (bool)areRasterOrderGroupsSupported;
 - (unsigned long long)argumentBuffersSupport;
+- (id)argumentEncoders;
 - (id)buffers;
 - (id)commandQueues;
 - (void)compilerPropagatesThreadPriority:(bool)arg1;
@@ -163,6 +166,7 @@
 - (bool)isHeadless;
 - (bool)isIntegrated;
 - (bool)isLowPower;
+- (bool)isQuadDataSharingSupported;
 - (bool)isRemovable;
 - (id)libraries;
 - (struct { unsigned int x1; unsigned int x2; })libraryCacheStats;

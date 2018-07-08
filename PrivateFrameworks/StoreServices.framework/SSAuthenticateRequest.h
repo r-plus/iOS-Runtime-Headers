@@ -25,6 +25,7 @@
 - (void).cxx_destruct;
 - (id)_parentViewController;
 - (void)_performRemoteAuthenticationWithCompletion:(id /* block */)arg1;
+- (long long)_responseTypeForError:(id)arg1;
 - (bool)_shouldRunAuthenticationForAccount:(id)arg1;
 - (id)_verifyCredentialsOptionsFromUpdateAccountResponse:(id)arg1 skipAuthKit:(bool)arg2;
 - (id)authenticationContext;

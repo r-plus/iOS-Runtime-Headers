@@ -18,7 +18,6 @@
     NSData * _peerCertificateData;
     struct __SecKey { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned long long x_1_1_2; } x1; struct __SecKeyDescriptor {} *x2; void *x3; } * _peerPublicKey;
     bool  _peerSignatureVerified;
-    struct __SecTrust { } * _peerTrust;
     bool  _peerValidated;
     NSData * _peerValidationData;
     NSDictionary * _peerValidationDict;
@@ -40,6 +39,7 @@
 - (struct __SecKey { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned long long x_1_1_2; } x1; struct __SecKeyDescriptor {} *x2; void *x3; }*)_getMySecretKeyAndReturnError:(id*)arg1;
 - (struct __SecCertificate { }*)_getPeerCertificateAndReturnError:(id*)arg1;
 - (struct __SecKey { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned long long x_1_1_2; } x1; struct __SecKeyDescriptor {} *x2; void *x3; }*)_getPeerPublicKeyAndReturnError:(id*)arg1;
+- (bool)_validatePeerHashes:(id)arg1;
 - (id)copyMyAppleIDAndReturnError:(id*)arg1;
 - (id)copyMyCertificateDataAndReturnError:(id*)arg1;
 - (id)copyMyValidationDataAndReturnError:(id*)arg1;

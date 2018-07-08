@@ -10,8 +10,8 @@
 @property (nonatomic, readonly) AVAudioCompressedBuffer *buffer;
 @property (nonatomic, readonly) NSDictionary *formatSettings;
 
+- (void).cxx_destruct;
 - (id)buffer;
-- (void)dealloc;
 - (id)formatSettings;
 - (id)initWithFormatSettings:(id)arg1 packetCapacity:(unsigned long long)arg2 maximumPacketSize:(unsigned long long)arg3;
 

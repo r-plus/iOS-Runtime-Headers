@@ -4,18 +4,18 @@
 
 @interface MRNowPlayingPlayerPathInvalidationHandler : NSObject {
     id /* block */  _callback;
-    void * _playerPath;
+    _MRNowPlayingPlayerPathProtobuf * _playerPath;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, readonly) id /* block */ callback;
-@property (nonatomic, readonly) void*playerPath;
+@property (nonatomic, readonly) _MRNowPlayingPlayerPathProtobuf *playerPath;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 
+- (void).cxx_destruct;
 - (id /* block */)callback;
-- (void)dealloc;
-- (id)initWithPlayerPath:(void*)arg1 queue:(id)arg2 invalidationCallback:(id /* block */)arg3;
-- (void*)playerPath;
+- (id)initWithPlayerPath:(id)arg1 queue:(id)arg2 invalidationCallback:(id /* block */)arg3;
+- (id)playerPath;
 - (id)queue;
 
 @end

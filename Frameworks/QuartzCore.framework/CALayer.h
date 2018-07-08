@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@interface CALayer : NSObject <CAMediaTiming, CAPropertyInfo, DebugHierarchyObject, NSSecureCoding> {
+@interface CALayer : NSObject <CAMediaTiming, CAPropertyInfo, NSSecureCoding> {
     struct _CALayerIvars { 
         int refcount; 
         unsigned int magic; 
@@ -55,9 +55,9 @@
 @property bool cornerContentsMasksEdges;
 @property double cornerRadius;
 @property (nonatomic, readonly, retain) CALayer *currentLayer;
-@property (readonly, copy) NSString *debugDescription;
+@property bool definesDisplayRegionOfInterest;
 @property <CALayerDelegate> *delegate;
-@property (readonly, copy) NSString *description;
+@property unsigned int disableUpdateMask;
 @property (getter=isDoubleSided) bool doubleSided;
 @property bool drawsAsynchronously;
 @property double duration;
@@ -68,7 +68,6 @@
 @property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } frame;
 @property (getter=isFrozen) bool frozen;
 @property (getter=isGeometryFlipped) bool geometryFlipped;
-@property (readonly) unsigned long long hash;
 @property (getter=isHidden) bool hidden;
 @property bool hitTestsAsOpaque;
 @property bool inheritsTiming;
@@ -116,7 +115,6 @@
 @property (copy) NSDictionary *style;
 @property struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; } sublayerTransform;
 @property (copy) NSArray *sublayers;
-@property (readonly) Class superclass;
 @property (readonly) CALayer *superlayer;
 @property double timeOffset;
 @property struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; } transform;
@@ -232,6 +230,7 @@
 - (double)cornerRadius;
 - (void)dealloc;
 - (id)debugDescription;
+- (bool)definesDisplayRegionOfInterest;
 - (id)delegate;
 - (id)dependentStatesOfState:(id)arg1;
 - (unsigned int)disableUpdateMask;
@@ -367,6 +366,7 @@
 - (void)setCornerContentsCenter:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setCornerContentsMasksEdges:(bool)arg1;
 - (void)setCornerRadius:(double)arg1;
+- (void)setDefinesDisplayRegionOfInterest:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisableUpdateMask:(unsigned int)arg1;
 - (void)setDoubleSided:(bool)arg1;
@@ -460,12 +460,9 @@
 - (bool)wantsExtendedDynamicRangeContent;
 - (double)zPosition;
 
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
+// Image: /System/Library/Frameworks/AVKit.framework/AVKit
 
-- (id)debugHierarchyChildGroupingID;
-- (id)debugHierarchyObjectsInGroupWithID:(id)arg1 outOptions:(id*)arg2;
-- (id)debugHierarchyPropertyDescriptions;
-- (id)debugHierarchyValueForPropertyWithName:(id)arg1;
+- (void)avkit_removeAllSublayerTransformAnimations;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
@@ -669,6 +666,8 @@
 
 // Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
 
++ (id)_web_renderLayerWithContextID:(unsigned int)arg1;
+
 - (void)web_disableAllActions;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
@@ -751,6 +750,8 @@
 - (void)resumeAtTime:(double)arg1;
 - (void)setIfDifferentFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 orTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2;
 - (struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })transform3DByApplyingAnimation:(id)arg1 atTime:(double)arg2 offset:(struct CGPoint { double x1; double x2; })arg3 animationCache:(id)arg4;
+- (bool)tsd_hideOverlayLayerDuringZoomOperations;
+- (void)tsd_setHideOverlayLayerDuringZoomOperations:(bool)arg1;
 - (void)tsu_transformToQuadrilateralWithTopLeft:(struct CGPoint { double x1; double x2; })arg1 topRight:(struct CGPoint { double x1; double x2; })arg2 bottomLeft:(struct CGPoint { double x1; double x2; })arg3 bottomRight:(struct CGPoint { double x1; double x2; })arg4;
 - (id)zoomDownAnimation;
 

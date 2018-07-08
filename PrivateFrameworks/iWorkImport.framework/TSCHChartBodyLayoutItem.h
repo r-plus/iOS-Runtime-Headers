@@ -12,6 +12,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })calcOverhangRect;
 - (unsigned long long)countOfElementsForModel:(id)arg1 series:(id)arg2 forGroupsBySeries:(id)arg3 outNewElementBounds:(struct CGRect {}**)arg4 outNewClipRects:(struct CGRect {}**)arg5 outNewElementPaths:(const struct CGPath {}***)arg6;
 - (id)initWithParent:(id)arg1;
+- (bool)layoutSpacePointIsInChartBody:(struct CGPoint { double x1; double x2; })arg1;
 - (struct CGPath { }*)newDragAndDropHighlightPathForSelection:(id)arg1;
 - (void)p_addRendererOfClass:(Class)arg1 andRep:(id)arg2 toArray:(id)arg3;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })p_calcDrawingRectForModel:(id)arg1;

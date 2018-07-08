@@ -32,6 +32,7 @@
 - (Class)classHandle;
 - (long long)compare:(id)arg1;
 - (long long)compareToProperty:(id)arg1;
+- (id)description;
 - (unsigned long long)flags;
 - (id)getFromObject:(id)arg1;
 - (id)getterMethodSignature;

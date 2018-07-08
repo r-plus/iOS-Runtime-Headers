@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface PFUbiquityBaselineMetadata : NSObject <NSCoding> {
+@interface PFUbiquityBaselineMetadata : NSObject <NSCoding, NSSecureCoding> {
     NSString * _authorPeerID;
     PFUbiquityKnowledgeVector * _kv;
     NSString * _modelVersionHash;
@@ -19,6 +19,8 @@
 @property (nonatomic, readonly) PFUbiquityKnowledgeVector *previousKnowledgeVector;
 @property (readonly) PFUbiquityLocation *rootLocation;
 @property (readonly) NSString *storeName;
+
++ (bool)supportsSecureCoding;
 
 - (void)_migrateToModelVersionHash:(id)arg1;
 - (void)addDictionaryForPeerRange:(id)arg1;

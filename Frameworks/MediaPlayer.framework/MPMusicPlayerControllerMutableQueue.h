@@ -13,6 +13,8 @@
 @property (nonatomic, readonly, copy) NSDictionary *queueInsertions;
 @property (nonatomic, readonly, copy) NSArray *removals;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (bool)hasModifications;

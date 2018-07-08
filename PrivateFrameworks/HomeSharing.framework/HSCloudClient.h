@@ -9,6 +9,8 @@
     NSXPCConnection * _nsxpcConnection;
     long long  _preferredVideoQuality;
     id /* block */  _updateInProgressChangedHandler;
+    id /* block */  _updateJaliscoInProgressChangedHandler;
+    id /* block */  _updateSagaInProgressChangedHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -16,11 +18,14 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) id /* block */ updateInProgressChangedHandler;
+@property (nonatomic, copy) id /* block */ updateJaliscoInProgressChangedHandler;
+@property (nonatomic, copy) id /* block */ updateSagaInProgressChangedHandler;
 
 - (void).cxx_destruct;
 - (void)_sendConfigurationToDaemon;
 - (void)_serverDidLaunch;
-- (void)_serverUpdateInProgressDidChange;
+- (void)_serverJaliscoUpdateInProgressDidChange;
+- (void)_serverSagaUpdateInProgressDidChange;
 - (void)addGeniusPlaylistWithPersistentID:(long long)arg1 name:(id)arg2 seedItemSagaIDs:(id)arg3 itemSagaIDs:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)addItemWithSagaID:(long long)arg1 toPlaylistWithPersistentID:(long long)arg2 completionHandler:(id /* block */)arg3;
 - (void)addStoreItemWithAdamID:(long long)arg1 completionHandler:(id /* block */)arg2;
@@ -88,10 +93,14 @@
 - (void)loadBooksForStoreIDs:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)loadGeniusItemsForSagaID:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)loadIsJaliscoGeniusSupportedWithCompletionHandler:(id /* block */)arg1;
+- (void)loadIsJaliscoUpdateInProgressWithCompletionHandler:(id /* block */)arg1;
+- (void)loadIsSagaUpdateInProgressWithCompletionHandler:(id /* block */)arg1;
 - (void)loadIsUpdateInProgressWithCompletionHandler:(id /* block */)arg1;
 - (void)loadJaliscoGeniusCUIDWithCompletionHandler:(id /* block */)arg1;
 - (void)loadJaliscoGeniusLearnMoreURLWithCompletionHandler:(id /* block */)arg1;
 - (void)loadJaliscoGeniusOperationStatusWithCompletionHandler:(id /* block */)arg1;
+- (void)loadJaliscoUpdateProgressWithCompletionHandler:(id /* block */)arg1;
+- (void)loadSagaUpdateProgressWithCompletionHandler:(id /* block */)arg1;
 - (void)loadScreenshotInfoForPurchaseHistoryID:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)loadScreenshotInfoForPurchaseHistoryIDs:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)loadScreenshotInfoForSagaID:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
@@ -120,6 +129,8 @@
 - (void)setPlaylistProperties:(id)arg1 trackList:(id)arg2 forPlaylistPersistentID:(long long)arg3 completionHandler:(id /* block */)arg4;
 - (void)setPreferredVideoQuality:(long long)arg1;
 - (void)setUpdateInProgressChangedHandler:(id /* block */)arg1;
+- (void)setUpdateJaliscoInProgressChangedHandler:(id /* block */)arg1;
+- (void)setUpdateSagaInProgressChangedHandler:(id /* block */)arg1;
 - (bool)shouldProhibitActionsForCurrentNetworkConditions;
 - (bool)shouldProhibitMusicActionForCurrentNetworkConditions;
 - (bool)shouldProhibitStoreAppsActionForCurrentNetworkConditions;
@@ -131,8 +142,10 @@
 - (void)updateJaliscoAppsLibraryForFamilyMemberStoreID:(id)arg1 withReason:(long long)arg2 completionHandler:(id /* block */)arg3;
 - (void)updateJaliscoAppsLibraryWithReason:(long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)updateJaliscoGeniusDataWithCompletionHandler:(id /* block */)arg1;
+- (id /* block */)updateJaliscoInProgressChangedHandler;
 - (void)updateJaliscoLibraryWithCompletionHandler:(id /* block */)arg1;
 - (void)updateJaliscoLibraryWithReason:(long long)arg1 completionHandler:(id /* block */)arg2;
+- (id /* block */)updateSagaInProgressChangedHandler;
 - (void)updateSagaLibraryWithCompletionHandler:(id /* block */)arg1;
 - (void)updateSagaLibraryWithReason:(long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)updateSubscribedPlaylistsWithSagaIDs:(id)arg1 ignoreMinRefreshInterval:(bool)arg2 completionHandler:(id /* block */)arg3;

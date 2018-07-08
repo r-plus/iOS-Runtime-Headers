@@ -5,7 +5,7 @@
 @interface UIMailActivity : UIActivity <UIManagedConfigurationRestrictableActivity, UIStateRestoring> {
     NSString * _autosaveIdentifier;
     bool  _hasAnyAccount;
-    bool  _hasFilteredAccount;
+    bool  _hasValidAccountForSending;
     bool  _keyboardVisible;
     MFMailComposeViewController * _mailComposeViewController;
     NSString * _sourceApplicationBundleID;
@@ -17,7 +17,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool hasAnyAccount;
-@property (nonatomic) bool hasFilteredAccount;
+@property (nonatomic) bool hasValidAccountForSending;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool keyboardVisible;
 @property (nonatomic, retain) MFMailComposeViewController *mailComposeViewController;
@@ -51,7 +51,7 @@
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (bool)hasAnyAccount;
-- (bool)hasFilteredAccount;
+- (bool)hasValidAccountForSending;
 - (id)init;
 - (bool)keyboardVisible;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(long long)arg2 error:(id)arg3;
@@ -59,7 +59,7 @@
 - (void)prepareWithActivityItems:(id)arg1;
 - (void)setAutosaveIdentifier:(id)arg1;
 - (void)setHasAnyAccount:(bool)arg1;
-- (void)setHasFilteredAccount:(bool)arg1;
+- (void)setHasValidAccountForSending:(bool)arg1;
 - (void)setKeyboardVisible:(bool)arg1;
 - (void)setMailComposeViewController:(id)arg1;
 - (void)setSourceApplicationBundleID:(id)arg1;

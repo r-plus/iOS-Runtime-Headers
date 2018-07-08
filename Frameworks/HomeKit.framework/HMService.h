@@ -160,6 +160,7 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
++ (id)_hf_allowedChildServicesTypeMap;
 + (id)hf_allRequiredCharacteristicTypesForStandardServices;
 + (id)hf_defaultServiceSubtypeForServiceType:(id)arg1;
 + (id)hf_programmableSwitchServiceTypes;
@@ -186,6 +187,7 @@
 - (bool)hf_isLegacyService;
 - (bool)hf_isProgrammableSwitch;
 - (bool)hf_isShowNotificationsStatus;
+- (bool)hf_isValidObject;
 - (bool)hf_isVisible;
 - (bool)hf_isVisibleInHomeStatus;
 - (id)hf_labelIndexCharacteristic;

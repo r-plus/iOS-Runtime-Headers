@@ -2,7 +2,8 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface _MFMailCompositionContext : NSObject {
+@interface _MFMailCompositionContext : NSObject <MFMailCompositionUTITypes> {
+    NSArray * UTITypes;
     MFAttachmentCompositionContext * _attachmentContext;
     NSString * _attachmentToMarkupContentID;
     id  _autosaveIdentifier;
@@ -30,6 +31,7 @@
     bool  _usingDefaultAccount;
 }
 
+@property (nonatomic, copy) NSArray *UTITypes;
 @property (nonatomic, readonly) MFAttachmentCompositionContext *attachmentContext;
 @property (nonatomic, retain) NSString *attachmentToMarkupContentID;
 @property (nonatomic, readonly) id autosaveIdentifier;
@@ -54,6 +56,7 @@
 @property (nonatomic, copy) NSArray *toRecipients;
 @property (nonatomic) bool usingDefaultAccount;
 
+- (id)UTITypes;
 - (void)_contextRegisterForDrawNotification;
 - (void)_contextUnregisterForDrawNotification;
 - (id)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
@@ -115,6 +118,7 @@
 - (void)setSourceAccountManagement:(int)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setToRecipients:(id)arg1;
+- (void)setUTITypes:(id)arg1;
 - (void)setUsingDefaultAccount:(bool)arg1;
 - (bool)showContentImmediately;
 - (bool)showKeyboardImmediately;

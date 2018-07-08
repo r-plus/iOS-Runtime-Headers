@@ -12,6 +12,7 @@
 @property (nonatomic, copy) NSString *deviceIdentifier;
 @property (nonatomic, copy) NSString *deviceModel;
 @property (nonatomic, copy) NSString *dspStatus;
+@property (nonatomic, copy) NSString *firmwareVersion;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *headsetAddress;
 @property (nonatomic, copy) NSString *headsetId;
@@ -36,6 +37,7 @@
 - (id)deviceModel;
 - (id)dspStatus;
 - (id)encodedClassName;
+- (id)firmwareVersion;
 - (id)groupIdentifier;
 - (id)headsetAddress;
 - (id)headsetId;
@@ -50,6 +52,7 @@
 - (void)setDeviceIdentifier:(id)arg1;
 - (void)setDeviceModel:(id)arg1;
 - (void)setDspStatus:(id)arg1;
+- (void)setFirmwareVersion:(id)arg1;
 - (void)setHeadsetAddress:(id)arg1;
 - (void)setHeadsetId:(id)arg1;
 - (void)setHeadsetName:(id)arg1;

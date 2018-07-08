@@ -19,9 +19,9 @@
 @property (nonatomic) double startTime;
 @property (nonatomic, retain) _MRLyricsTokenProtobuf *token;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (double)endTime;

@@ -2,14 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPModelPodcast : MPModelObject {
-    id /* block */  _artworkCatalogBlock;
-    MPModelPodcastAuthor * _author;
-    NSURL * _feedURL;
-    NSURL * _shareURL;
-    bool  _supportsSubscription;
-    NSString * _title;
-}
+@interface MPModelPodcast : MPModelObject
 
 @property (nonatomic, copy) id /* block */ artworkCatalogBlock;
 @property (nonatomic, retain) MPModelPodcastAuthor *author;
@@ -18,34 +11,14 @@
 @property (nonatomic) bool supportsSubscription;
 @property (nonatomic, copy) NSString *title;
 
-+ (id)__MPModelPropertyPodcastArtwork__PROPERTY;
-+ (id)__MPModelPropertyPodcastFeedURL__PROPERTY;
-+ (id)__MPModelPropertyPodcastShareURL__PROPERTY;
-+ (id)__MPModelPropertyPodcastSupportsSubscription__PROPERTY;
-+ (id)__MPModelPropertyPodcastTitle__PROPERTY;
-+ (id)__MPModelRelationshipPodcastAuthor__PROPERTY;
-+ (id)__artworkCatalogBlock__KEY;
-+ (id)__author__KEY;
-+ (id)__feedURL__KEY;
-+ (id)__shareURL__KEY;
-+ (id)__supportsSubscription__KEY;
-+ (id)__title__KEY;
++ (id)__artworkCatalogBlock_KEY;
++ (id)__author_KEY;
++ (id)__feedURL_KEY;
++ (id)__shareURL_KEY;
++ (id)__supportsSubscription_KEY;
++ (id)__title_KEY;
 + (id)kindWithEpisodeKind:(id)arg1;
 
-- (void).cxx_destruct;
 - (id)artworkCatalog;
-- (id /* block */)artworkCatalogBlock;
-- (id)author;
-- (id)descriptionWithType:(long long)arg1;
-- (id)feedURL;
-- (void)setArtworkCatalogBlock:(id /* block */)arg1;
-- (void)setAuthor:(id)arg1;
-- (void)setFeedURL:(id)arg1;
-- (void)setShareURL:(id)arg1;
-- (void)setSupportsSubscription:(bool)arg1;
-- (void)setTitle:(id)arg1;
-- (id)shareURL;
-- (bool)supportsSubscription;
-- (id)title;
 
 @end

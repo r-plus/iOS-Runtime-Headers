@@ -5,9 +5,7 @@
 @interface WLKUIAppsGridViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIViewControllerTransitioningDelegate> {
     NSArray * _apps;
     UICollectionView * _collectionView;
-    UIFont * _labelFont;
     UICollectionViewFlowLayout * _layout;
-    UINavigationBar * _navBar;
     UILabel * _titleLabel;
 }
 

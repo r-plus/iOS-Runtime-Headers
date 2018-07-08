@@ -10,7 +10,7 @@
             struct shared_ptr<md::DebugTreeNode> {} *__begin_; 
             struct shared_ptr<md::DebugTreeNode> {} *__end_; 
             struct __compressed_pair<std::__1::shared_ptr<md::DebugTreeNode> *, std::__1::allocator<std::__1::shared_ptr<md::DebugTreeNode> > > { 
-                struct shared_ptr<md::DebugTreeNode> {} *__first_; 
+                struct shared_ptr<md::DebugTreeNode> {} *__value_; 
             } __end_cap_; 
         } _nodes; 
         bool _options[4]; 

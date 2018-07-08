@@ -37,6 +37,8 @@
 @property (nonatomic) bool selected;
 @property (nonatomic, copy) NSArray *selectedChildNodeIds;
 
+// Image: /System/Library/PrivateFrameworks/WebInspector.framework/WebInspector
+
 - (int)activeDescendantNodeId;
 - (bool)busy;
 - (long long)checked;
@@ -102,5 +104,9 @@
 - (void)setRole:(id)arg1;
 - (void)setSelected:(bool)arg1;
 - (void)setSelectedChildNodeIds:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
+
++ (id)safe_initWithExists:(bool)arg1 label:(id)arg2 nodeId:(int)arg3 role:(id)arg4;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIViewPropertyCollectingAnimationState : UIViewAnimationState {
+@interface UIViewPropertyCollectingAnimationState : UIViewInProcessAnimationState {
     _UICompoundObjectMap * _capturedProperties;
 }
 

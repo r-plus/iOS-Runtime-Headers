@@ -39,6 +39,10 @@
 - (id)predicateWithSubstitutionVariables:(id)arg1;
 - (id)subpredicates;
 
+// Image: /System/Library/Frameworks/ClassKit.framework/ClassKit
+
+- (id)cls_normalizedPredicate:(id)arg1 error:(id*)arg2;
+
 // Image: /System/Library/Frameworks/CoreData.framework/CoreData
 
 - (id)minimalFormInContext:(id)arg1;

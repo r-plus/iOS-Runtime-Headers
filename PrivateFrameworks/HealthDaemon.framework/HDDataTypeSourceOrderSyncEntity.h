@@ -17,6 +17,6 @@
 + (id)sourceOrderSyncPredicateForSession:(id)arg1;
 + (unsigned long long)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
 + (id)syncEntityDependenciesForSyncProtocolVersion:(int)arg1;
-+ (long long)syncEntityType;
++ (id)syncEntityIdentifier;
 
 @end

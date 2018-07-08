@@ -5,6 +5,7 @@
 @interface CKDContainerInfo : NSObject <NSCopying, NSSecureCoding> {
     NSString * _containerScopedUserID;
     long long  _environment;
+    NSString * _orgAdminUserID;
     NSURL * _publicCloudDBURL;
     NSURL * _publicCodeServiceURL;
     NSURL * _publicDeviceServiceURL;
@@ -14,6 +15,7 @@
 
 @property (nonatomic, copy) NSString *containerScopedUserID;
 @property (nonatomic) long long environment;
+@property (nonatomic, copy) NSString *orgAdminUserID;
 @property (nonatomic, copy) NSURL *publicCloudDBURL;
 @property (nonatomic, copy) NSURL *publicCodeServiceURL;
 @property (nonatomic, copy) NSURL *publicDeviceServiceURL;
@@ -33,6 +35,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (bool)isEqual:(id)arg1;
+- (id)orgAdminUserID;
 - (id)publicCloudDBURL;
 - (id)publicCodeServiceURL;
 - (id)publicDeviceServiceURL;
@@ -40,6 +43,7 @@
 - (id)publicShareServiceURL;
 - (void)setContainerScopedUserID:(id)arg1;
 - (void)setEnvironment:(long long)arg1;
+- (void)setOrgAdminUserID:(id)arg1;
 - (void)setPublicCloudDBURL:(id)arg1;
 - (void)setPublicCodeServiceURL:(id)arg1;
 - (void)setPublicDeviceServiceURL:(id)arg1;

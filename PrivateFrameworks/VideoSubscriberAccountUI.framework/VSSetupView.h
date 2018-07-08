@@ -3,7 +3,6 @@
  */
 
 @interface VSSetupView : UIView {
-    NSString * _aboutButtonTitle;
     NSString * _appsButtonTitle;
     NSString * _beginButtonTitle;
     NSString * _caption;
@@ -13,13 +12,13 @@
     NSString * _footnote;
     UIImage * _image;
     NSString * _message;
+    UIView * _privacyButtonContainer;
     bool  _shouldShowAboutButton;
     bool  _shouldShowAppsButton;
     NSString * _skipButtonTitle;
     NSString * _title;
 }
 
-@property (nonatomic, copy) NSString *aboutButtonTitle;
 @property (nonatomic, copy) NSString *appsButtonTitle;
 @property (nonatomic, copy) NSString *beginButtonTitle;
 @property (nonatomic, retain) NSString *caption;
@@ -29,17 +28,16 @@
 @property (nonatomic, retain) NSString *footnote;
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, copy) NSString *message;
+@property (nonatomic, readonly) UIView *privacyButtonContainer;
 @property (nonatomic) bool shouldShowAboutButton;
 @property (nonatomic) bool shouldShowAppsButton;
 @property (nonatomic, copy) NSString *skipButtonTitle;
 @property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
-- (void)_aboutButtonPressed:(id)arg1;
 - (void)_appsButtonPressed:(id)arg1;
 - (void)_beginButtonPressed:(id)arg1;
 - (void)_skipButtonPressed:(id)arg1;
-- (id)aboutButtonTitle;
 - (id)appsButtonTitle;
 - (id)beginButtonTitle;
 - (id)caption;
@@ -52,7 +50,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)message;
-- (void)setAboutButtonTitle:(id)arg1;
+- (id)privacyButtonContainer;
 - (void)setAppsButtonTitle:(id)arg1;
 - (void)setBeginButtonTitle:(id)arg1;
 - (void)setCaption:(id)arg1;

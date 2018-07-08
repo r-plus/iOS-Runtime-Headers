@@ -352,6 +352,10 @@
 - (id)updatedObjects;
 - (id)userInfo;
 
+// Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
+
+- (void)vs_removeAllPersistentStores;
+
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
 - (id)debugName;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UICollectionView : UIScrollView <DebugHierarchyObject, UIDataSourceTranslating, _UIDataSourceBackedView, _UIKeyboardAutoRespondingScrollView> {
+@interface UICollectionView : UIScrollView <UIDataSourceTranslating, _UIDataSourceBackedView, _UIKeyboardAutoRespondingScrollView> {
     NSTimer * _autoscrollTimer;
     UIView * _backgroundView;
     NSIndexPath * _cancellingToIndexPath;
@@ -436,6 +436,7 @@
 - (bool)_itemIndexPathIsReordered:(id)arg1;
 - (bool)_keepsFirstResponderVisibleOnBoundsChange;
 - (id)_keysForObject:(id)arg1 inDictionary:(id)arg2;
+- (void)_managedSubviewAdded:(id)arg1;
 - (id)_managedSubviewForView:(id)arg1;
 - (id)_managedViews;
 - (void)_moveItemAtIndexPath:(id)arg1 toIndexPath:(id)arg2;
@@ -602,15 +603,6 @@
 - (id)_visibleViewDictForElementCategory:(unsigned long long)arg1 elementKind:(id)arg2;
 - (id)_visibleViewForLayoutAttributes:(id)arg1;
 - (id)_visibleViews;
-- (void)dealloc;
-- (id)description;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)allowsMultipleSelection;
 - (bool)allowsSelection;
 - (id)backgroundView;
@@ -625,11 +617,13 @@
 - (id)dataSource;
 - (id)dataSourceIndexPathForPresentationIndexPath:(id)arg1;
 - (long long)dataSourceSectionIndexForPresentationSectionIndex:(long long)arg1;
+- (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)deleteItemsAtIndexPaths:(id)arg1;
 - (void)deleteSections:(id)arg1;
 - (id)dequeueReusableCellWithReuseIdentifier:(id)arg1 forIndexPath:(id)arg2;
 - (id)dequeueReusableSupplementaryViewOfKind:(id)arg1 withReuseIdentifier:(id)arg2 forIndexPath:(id)arg3;
+- (id)description;
 - (void)deselectItemAtIndexPath:(id)arg1 animated:(bool)arg2;
 - (void)didMoveToWindow;
 - (id)dragDelegate;
@@ -763,6 +757,8 @@
 
 - (id)_gkDequeueCellForClass:(Class)arg1 forIndexPath:(id)arg2;
 - (id)_gkDequeueSupplementaryViewForClass:(Class)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3;
+- (id)_gkFocusingLayout;
+- (id)_gkHorizontalLayout;
 - (void)_gkPerformWithoutViewReuse:(id /* block */)arg1;
 - (void)_gkRegisterCellClass:(Class)arg1;
 - (void)_gkRegisterClass:(Class)arg1 forSupplementaryViewOfKind:(id)arg2;

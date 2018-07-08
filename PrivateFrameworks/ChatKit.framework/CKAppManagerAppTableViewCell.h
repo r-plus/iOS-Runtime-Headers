@@ -21,7 +21,7 @@
 - (void)prepareForReuse;
 - (void)setAppToggle:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setToggleVisible:(bool)arg1 isOn:(bool)arg2;
+- (void)setToggleVisible:(bool)arg1 editable:(bool)arg2 isOn:(bool)arg3;
 - (void)updateCellWithPluginInfo:(id)arg1;
 
 @end

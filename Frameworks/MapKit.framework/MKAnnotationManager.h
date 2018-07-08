@@ -46,6 +46,7 @@
 - (void)addAnnotations:(id)arg1;
 - (void)addManagedAnnotation:(id)arg1;
 - (void)addManagedAnnotation:(id)arg1 observeCoordinateChanges:(bool)arg2;
+- (id)addRepresentationForAnnotation:(id)arg1;
 - (id)addRepresentationForManagedAnnotation:(id)arg1 notifyDelegate:(bool)arg2;
 - (void)addRepresentationsForAnnotations:(id)arg1;
 - (bool)annotationIsInternal:(id)arg1;

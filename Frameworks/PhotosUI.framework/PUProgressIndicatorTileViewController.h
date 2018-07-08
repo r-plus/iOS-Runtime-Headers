@@ -4,6 +4,7 @@
 
 @interface PUProgressIndicatorTileViewController : PUTileViewController <PUAssetSharedViewModelChangeObserver, PUBrowsingVideoPlayerChangeObserver> {
     UILabel * __debugProgressLabel;
+    bool  __didStartProgressLogging;
     UIButton * __errorButton;
     bool  __isProgressViewVisible;
     bool  __needsUpdateProgressViewStyle;
@@ -19,12 +20,14 @@
 }
 
 @property (setter=_setDebugProgressLabel:, nonatomic, retain) UILabel *_debugProgressLabel;
+@property (getter=_didStartProgressLogging, setter=_setDidStartProgressLogging:, nonatomic) bool _didStartProgressLogging;
 @property (setter=_setErrorButton:, nonatomic, retain) UIButton *_errorButton;
 @property (setter=_setProgressViewVisible:, nonatomic) bool _isProgressViewVisible;
 @property (setter=_setNeedsUpdateProgressViewStyle:, nonatomic) bool _needsUpdateProgressViewStyle;
 @property (setter=_setNeedsUpdateSizeClass:, nonatomic) bool _needsUpdateSizeClass;
 @property (setter=_setNeedsUpdateStatus:, nonatomic) bool _needsUpdateStatus;
 @property (setter=_setNeedsUpdateStatusViews:, nonatomic) bool _needsUpdateStatusViews;
+@property (nonatomic, readonly) NSObject<OS_os_log> *_progressLog;
 @property (setter=_setProgressView:, nonatomic, retain) PLRoundProgressView *_progressView;
 @property (setter=_setProgressViewStyle:, nonatomic) long long _progressViewStyle;
 @property (setter=_setSizeClass:, nonatomic) long long _sizeClass;
@@ -41,6 +44,7 @@
 
 - (void).cxx_destruct;
 - (id)_debugProgressLabel;
+- (bool)_didStartProgressLogging;
 - (id)_errorButton;
 - (void)_handleAssetSharedViewModel:(id)arg1 didChange:(id)arg2;
 - (void)_handleErrorButtonTap:(id)arg1;
@@ -55,9 +59,11 @@
 - (bool)_needsUpdateSizeClass;
 - (bool)_needsUpdateStatus;
 - (bool)_needsUpdateStatusViews;
+- (id)_progressLog;
 - (id)_progressView;
 - (long long)_progressViewStyle;
 - (void)_setDebugProgressLabel:(id)arg1;
+- (void)_setDidStartProgressLogging:(bool)arg1;
 - (void)_setErrorButton:(id)arg1;
 - (void)_setNeedsUpdate;
 - (void)_setNeedsUpdateProgressViewStyle:(bool)arg1;

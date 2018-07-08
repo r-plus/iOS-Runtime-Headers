@@ -20,8 +20,8 @@
 + (void)p_loadAllParametersIfNecessary;
 + (id)parameterGroupForName:(id)arg1;
 
+- (void).cxx_destruct;
 - (bool)boolForKey:(id)arg1;
-- (void)dealloc;
 - (double)doubleForAnimationCurve:(id)arg1 atPercent:(double)arg2;
 - (double)doubleForKey:(id)arg1;
 - (id)fileName;

@@ -9,6 +9,7 @@
 }
 
 @property (nonatomic, readonly) NSSet *accessoriesSupportingSoftwareUpdate;
+@property (nonatomic, readonly) NSSet *availableSoftwareUpdates;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -31,6 +32,7 @@
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)accessories;
 - (id)accessoriesSupportingSoftwareUpdate;
+- (id)availableSoftwareUpdates;
 - (id)copyWithValueSource:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)createControlItems;

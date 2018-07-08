@@ -17,6 +17,7 @@
     bool  _shouldExpire;
     NSString * _statusText;
     NSString * _summaryText;
+    NSDate * _time;
 }
 
 @property (nonatomic, copy) NSURL *URL;
@@ -33,6 +34,7 @@
 @property (nonatomic) bool shouldExpire;
 @property (nonatomic, copy) NSString *statusText;
 @property (nonatomic, copy) NSString *summaryText;
+@property (nonatomic, retain) NSDate *time;
 
 // Image: /System/Library/Frameworks/Messages.framework/Messages
 
@@ -72,11 +74,13 @@
 - (void)setShouldExpire:(bool)arg1;
 - (void)setStatusText:(id)arg1;
 - (void)setSummaryText:(id)arg1;
+- (void)setTime:(id)arg1;
 - (void)setURL:(id)arg1;
 - (void)set_data:(id)arg1;
 - (bool)shouldExpire;
 - (id)statusText;
 - (id)summaryText;
+- (id)time;
 
 // Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
 

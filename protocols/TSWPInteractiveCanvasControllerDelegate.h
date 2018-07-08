@@ -7,6 +7,7 @@
 
 - (TSWPTwoPartAction *)actionForHyperlink:(TSWPHyperlinkField *)arg1 inRep:(TSDRep<TSWPHyperlinkHostRepProtocol> *)arg2 gesture:(id <TSDGesture>)arg3;
 - (bool)interactiveCanvasController:(TSWPInteractiveCanvasController *)arg1 allowsDragOfSmartField:(TSWPSmartField *)arg2;
+- (bool)interactiveCanvasController:(TSWPInteractiveCanvasController *)arg1 configureHardPressGesture:(_UINonEditableTextSelectionForceGesture *)arg2;
 - (UIDragItem *)interactiveCanvasController:(TSWPInteractiveCanvasController *)arg1 dragItemForSmartField:(TSWPSmartField *)arg2 interaction:(UIDragInteraction *)arg3 session:(id <UIDragSession>)arg4;
 - (bool)interactiveCanvasController:(TSWPInteractiveCanvasController *)arg1 tappedOnFootnoteAttachment:(TSWPFootnoteReferenceAttachment *)arg2;
 - (bool)interactiveCanvasControllerAllowsHyperlinkInteraction;

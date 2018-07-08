@@ -80,6 +80,7 @@
 - (void)setOutputDevice:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setOutputDevices:(id)arg1;
 - (void)setVolume:(float)arg1;
+- (bool)supportsMultipleOutputDevices;
 - (float)volume;
 
 @end

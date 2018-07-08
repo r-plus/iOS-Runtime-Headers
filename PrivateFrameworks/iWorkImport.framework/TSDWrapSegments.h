@@ -17,7 +17,7 @@
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<TSDWrapSegment *, std::__1::allocator<TSDWrapSegment> > { 
-            struct { /* ? */ } *__first_; 
+            struct { /* ? */ } *__value_; 
         } __end_cap_; 
     }  mSegments;
 }

@@ -25,9 +25,12 @@
 - (id)init;
 - (void)reportAPSSphereInteractionCalibrationForPosition:(int)arg1 residualErrorNeutral:(float)arg2 calibrationZHeightNeutral:(float)arg3 residualErrorMacro:(float)arg4 calibrationZHeightMacro:(float)arg5 calibrationStatus:(unsigned int)arg6 isValid:(bool)arg7;
 - (void)reportAutoFocusCalibrationForPosition:(int)arg1 freqZ:(float)arg2 deltaFreqZ:(float)arg3 qZ:(float)arg4 deltaQZ:(float)arg5 gainZ:(float)arg6 calibrationStatus:(unsigned int)arg7 isValid:(bool)arg8;
-- (void)reportAutoFocusPositionSensorCalibrationForPosition:(int)arg1 iStopZEstimate:(int)arg2 eSensorOutput:(short)arg3 wSensorOutput:(short)arg4 gravityZ:(int)arg5 calibrationStatus:(unsigned int)arg6 sensorTemp:(short)arg7 factoryCalibrationOffset:(int)arg8 infinityEndStopDelta:(int)arg9 deltaNeutralZFromNVM:(int)arg10 estimateSagZ:(int)arg11 combinedSensorOutput:(int)arg12 isValid:(bool)arg13;
+- (void)reportAutoFocusPositionSensorCalibrationForPosition:(int)arg1 iStopZEstimate:(int)arg2 eSensorOutput:(short)arg3 wSensorOutput:(short)arg4 gravityZ:(int)arg5 calibrationStatus:(unsigned int)arg6 sensorTemp:(short)arg7 factoryCalibrationOffset:(int)arg8 successfulInfinityEndStopDelta:(int)arg9 currentInfinityEndStopDelta:(int)arg10 previousInfinityEndStopDelta:(int)arg11 currentAngleDelta:(int)arg12 previousAngleDelta:(int)arg13 deltaNeutralZFromNVM:(int)arg14 estimateSagZ:(int)arg15 combinedSensorOutput:(int)arg16 isValid:(bool)arg17 dataWasRejectedByHistory:(bool)arg18;
 - (void)reportAutoFocusPositionSensorMode:(int)arg1 portType:(id)arg2;
 - (void)reportCalibrationStatisticsWithTime:(id)arg1 timeValue:(double)arg2 attemptsField:(id)arg3 attemptsValue:(long long)arg4 successField:(id)arg5 successValue:(long long)arg6 magneticFieldMagnitudeField:(id)arg7 magneticFieldMagnitudeValue:(double)arg8;
+- (void)reportCameraAppCaptureForNonCameraAppLoggingWithFrontCamera:(bool)arg1;
+- (void)reportCameraLaunchIconTouch:(int)arg1;
+- (void)reportCameraLaunchWithoutPrewarm:(int)arg1;
 - (void)reportCameraStreamingTimeInMilliseconds:(unsigned long long)arg1 deviceType:(int)arg2 devicePosition:(int)arg3;
 - (void)reportGNRSampleBufferProcessorProcessingStatus:(int)arg1;
 - (void)reportLuxLevel:(unsigned int)arg1 primaryCaptureType:(int)arg2 secondaryCaptureType:(int)arg3 captureFlags:(unsigned long long)arg4 stillDuringVideo:(bool)arg5 frontCamera:(bool)arg6;

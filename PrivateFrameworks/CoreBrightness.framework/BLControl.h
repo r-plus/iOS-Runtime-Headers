@@ -12,6 +12,7 @@
     id /* block */  _ecoModePreferencesUpdateNotificationHandler;
     int  _ecoModePreferencesUpdateNotificationToken;
     NightModeControl * _nightModeControl;
+    NightShiftDisplayWrapper * _nightShiftWrapper;
     bool  _useMultiCurves;
     struct AABC {} * aab;
     bool  aabExist;
@@ -38,7 +39,7 @@
 
 - (void)callBlockWithProperty:(struct __CFString { }*)arg1 value:(void*)arg2;
 - (void*)copyBLControlPropertyWithkey:(struct __CFString { }*)arg1;
-- (void*)copyPropertyWithKey:(struct __CFString { }*)arg1 client:(struct __CFNumber { }*)arg2;
+- (id)copyPropertyWithKey:(id)arg1 client:(id)arg2;
 - (struct __CFDictionary { }*)createDictWithUsagePairPage:(unsigned int)arg1 usage:(unsigned int)arg2;
 - (bool)findAlsNodes;
 - (bool)findBacklight;
@@ -47,7 +48,7 @@
 - (void)registerNotificationBlock:(id /* block */)arg1;
 - (int)rootQueuePthreadAttrInit:(struct _opaque_pthread_attr_t { long long x1; BOOL x2[56]; }*)arg1;
 - (bool)setBLControlPropertyWithKey:(struct __CFString { }*)arg1 property:(void*)arg2;
-- (bool)setPropertyWithKey:(struct __CFString { }*)arg1 property:(void*)arg2 client:(struct __CFNumber { }*)arg3;
+- (bool)setPropertyWithKey:(id)arg1 property:(id)arg2 client:(id)arg3;
 - (bool)start;
 - (void)stop;
 - (void)waitForALSArrival;

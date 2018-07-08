@@ -59,13 +59,13 @@
 - (void)preWarmDeviceSetupWelcomePhaseWithCompletion:(id /* block */)arg1;
 - (void)sessionService:(id)arg1 didChangeStateFrom:(long long)arg2 to:(long long)arg3;
 - (void)sessionService:(id)arg1 didNotStartSoundWithID:(long long)arg2 error:(id)arg3;
+- (void)sessionService:(id)arg1 didResignActiveWithDeactivationContext:(id)arg2;
 - (void)sessionService:(id)arg1 didStartSoundWithID:(long long)arg2;
 - (void)sessionService:(id)arg1 didStopSoundWithID:(long long)arg2 error:(id)arg3;
 - (void)sessionService:(id)arg1 willChangeStateFrom:(long long)arg2 to:(long long)arg3;
 - (void)sessionService:(id)arg1 willPresentFeedbackWithDialogIdentifier:(id)arg2;
 - (void)sessionService:(id)arg1 willResignActiveWithOptions:(unsigned long long)arg2 duration:(double)arg3;
 - (void)sessionService:(id)arg1 willStartSoundWithID:(long long)arg2;
-- (void)sessionServiceDidResignActive:(id)arg1;
 - (void)setDispatchQueue:(id)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;
 - (void)setSiriDialogHandler:(id /* block */)arg1;
@@ -74,8 +74,8 @@
 - (void)speakText:(id)arg1 completion:(id /* block */)arg2;
 - (void)speakText:(id)arg1 flags:(unsigned int)arg2 rate:(double)arg3 delay:(double)arg4 startHandler:(id /* block */)arg5 completion:(id /* block */)arg6;
 - (void)speakText:(id)arg1 rate:(double)arg2 completion:(id /* block */)arg3;
+- (void)speechSynthesizer:(id)arg1 didFinishSpeakingRequest:(id)arg2 successfully:(bool)arg3 phonemesSpoken:(id)arg4 withError:(id)arg5;
 - (void)speechSynthesizer:(id)arg1 didFinishSpeakingRequest:(id)arg2 successfully:(bool)arg3 withError2:(id)arg4;
-- (void)speechSynthesizer:(id)arg1 didFinishSpeakingRequest:(id)arg2 successfully:(bool)arg3 withError:(id)arg4;
 - (void)speechSynthesizer:(id)arg1 didFinishSynthesisRequest:(id)arg2 withInstrumentMetrics:(id)arg3 error2:(id)arg4;
 - (void)speechSynthesizer:(id)arg1 didFinishSynthesisRequest:(id)arg2 withInstrumentMetrics:(id)arg3 error:(id)arg4;
 - (void)speechSynthesizer:(id)arg1 didStartSpeakingRequest:(id)arg2;

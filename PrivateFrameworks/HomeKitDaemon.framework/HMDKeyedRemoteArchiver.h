@@ -15,8 +15,9 @@
 - (id)archiver;
 - (void)dealloc;
 - (void)encodeObject:(id)arg1 forKey:(id)arg2;
+- (id)encodedData;
 - (void)finishEncoding;
-- (id)initForWritingWithMutableData:(id)arg1 remoteDeviceIsOnSameAccount:(bool)arg2 remoteGateway:(bool)arg3 remoteUserIsAdministrator:(bool)arg4 user:(id)arg5 supportedFeatures:(id)arg6;
+- (id)initForWritingWithRemoteDeviceIsOnSameAccount:(bool)arg1 remoteGateway:(bool)arg2 remoteUserIsAdministrator:(bool)arg3 user:(id)arg4 supportedFeatures:(id)arg5;
 - (void)setArchiver:(id)arg1;
 - (void)setTransportType:(id)arg1;
 - (id)transportType;

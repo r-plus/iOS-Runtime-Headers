@@ -14,6 +14,8 @@
 @property (nonatomic, readonly) NSDictionary *attributes;
 @property (nonatomic, readonly) long long state;
 
+// Image: /System/Library/PrivateFrameworks/MobileAsset.framework/MobileAsset
+
 + (void)startCatalogDownload:(id)arg1 options:(id)arg2 then:(id /* block */)arg3;
 + (void)startCatalogDownload:(id)arg1 then:(id /* block */)arg2;
 
@@ -38,5 +40,16 @@
 - (void)startDownload:(id)arg1 then:(id /* block */)arg2;
 - (void)startDownloadWithExtractor:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (long long)state;
+
+// Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
+
+- (bool)cancelDownload;
+- (void)cancelDownloadIfNecessary;
+- (void)cleanupAsset;
+- (bool)isDownloading;
+- (bool)isDownloadingOrInstalled;
+- (bool)isEmergencyUpdate;
+- (bool)isInstalled;
+- (bool)purge;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFComposeRecipient : NSObject <NSCoding, NSCopying, UIItemProviderReading, UIItemProviderWriting> {
+@interface MFComposeRecipient : NSObject <NSCopying, NSSecureCoding, UIItemProviderReading, UIItemProviderWriting> {
     NSString * _address;
     CNAutocompleteResult * _autocompleteResult;
     NSArray * _cachedCompleteMatches;
@@ -64,6 +64,7 @@
 + (id)recipientWithProperty:(int)arg1 address:(id)arg2;
 + (id)recipientWithRecord:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
 + (id)recipientWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4;
++ (bool)supportsSecureCoding;
 + (id)writableTypeIdentifiersForItemProvider;
 
 - (id)_unformattedAddress;

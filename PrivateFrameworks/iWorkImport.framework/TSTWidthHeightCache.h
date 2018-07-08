@@ -7,14 +7,14 @@
         struct WHCCol {} *__begin_; 
         struct WHCCol {} *__end_; 
         struct __compressed_pair<TSTWidthHeightCache_Private::WHCCol *, std::__1::allocator<TSTWidthHeightCache_Private::WHCCol> > { 
-            struct WHCCol {} *__first_; 
+            struct WHCCol {} *__value_; 
         } __end_cap_; 
     }  mFittingColumnWidth;
     struct vector<TSTWidthHeightCache_Private::WHCRow, std::__1::allocator<TSTWidthHeightCache_Private::WHCRow> > { 
         struct WHCRow {} *__begin_; 
         struct WHCRow {} *__end_; 
         struct __compressed_pair<TSTWidthHeightCache_Private::WHCRow *, std::__1::allocator<TSTWidthHeightCache_Private::WHCRow> > { 
-            struct WHCRow {} *__first_; 
+            struct WHCRow {} *__value_; 
         } __end_cap_; 
     }  mFittingRowHeight;
     struct _opaque_pthread_rwlock_t { 
@@ -27,14 +27,14 @@
         double *__begin_; 
         double *__end_; 
         struct __compressed_pair<double *, std::__1::allocator<double> > { 
-            double *__first_; 
+            double *__value_; 
         } __end_cap_; 
     }  mModelColumnWidth;
     struct vector<double, std::__1::allocator<double> > { 
         double *__begin_; 
         double *__end_; 
         struct __compressed_pair<double *, std::__1::allocator<double> > { 
-            double *__first_; 
+            double *__value_; 
         } __end_cap_; 
     }  mModelRowHeight;
 }

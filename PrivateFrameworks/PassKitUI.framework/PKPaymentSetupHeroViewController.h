@@ -43,7 +43,6 @@
 - (id)initWithProvisioningController:(id)arg1 context:(long long)arg2 delegate:(id)arg3;
 - (void)loadView;
 - (long long)paymentSetupMode;
-- (void)privacyFooterLinkTapped:(id)arg1;
 - (id)provisioningController;
 - (void)setAllowsManualEntry:(bool)arg1;
 - (void)setDelegate:(id)arg1;

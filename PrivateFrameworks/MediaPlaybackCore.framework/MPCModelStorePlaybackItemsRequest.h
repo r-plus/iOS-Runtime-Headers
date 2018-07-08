@@ -31,6 +31,7 @@
 @property (nonatomic) bool wantsDetailedKeepLocalRequestableResponse;
 
 + (void)MPC_consumeSiriAssetInfo:(id)arg1 withCompletion:(id /* block */)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (bool)allowLocalEquivalencies;

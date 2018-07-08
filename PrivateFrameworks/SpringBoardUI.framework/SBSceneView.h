@@ -48,6 +48,7 @@
 - (bool)_addContentLikeViewToHeierarchyForTransitionIfPossible:(id)arg1;
 - (long long)_bestDisplayModeLessThanMode:(long long)arg1;
 - (void)_clearSnapshotViews;
+- (void)_configureBackgroundColorForLiveSnapshot:(bool)arg1;
 - (void)_configureHostView;
 - (void)_configureLiveSnapshotView;
 - (void)_configurePlaceholderContentView;

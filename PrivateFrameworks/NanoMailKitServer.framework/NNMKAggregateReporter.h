@@ -44,6 +44,7 @@
 + (void)reportNewMessageCountFetchedOverCloudMessaging:(unsigned long long)arg1;
 + (void)reportNotificationAction:(unsigned long long)arg1;
 + (void)reportNotificationReceivedOverCloudMessaging;
++ (void)reportOriginalMessageContentSizeInBytes:(unsigned long long)arg1;
 + (void)reportRenderedNotificationUsingLocalContent:(bool)arg1 mailboxSynced:(bool)arg2 messageSynced:(bool)arg3 contentDownloaded:(bool)arg4;
 
 @end

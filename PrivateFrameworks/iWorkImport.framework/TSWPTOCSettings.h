@@ -34,6 +34,7 @@
 - (void)loadFromArchive:(const struct TOCSettingsArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<TSWP::TOCSettingsArchive_TOCEntryData> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; unsigned int x7; }*)arg1 unarchiver:(id)arg2;
 - (void)loadFromUnarchiver:(id)arg1;
 - (id)map;
+- (void)p_upgradeStyle:(id)arg1 withStylesheet:(id)arg2;
 - (id)paragraphStylesShownInTOC;
 - (id)presetKind;
 - (id)referencedStyles;

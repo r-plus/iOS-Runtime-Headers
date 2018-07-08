@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@interface AXReplayableGesture : NSObject <NSCoding> {
+@interface AXReplayableGesture : NSObject <NSSecureCoding> {
     NSArray * _allEvents;
     bool  _arePointsDeviceRelative;
 }
 
++ (bool)supportsSecureCoding;
 + (id)tapGestureForInterfaceOrientedPoint:(struct CGPoint { double x1; double x2; })arg1;
 
 - (void).cxx_destruct;

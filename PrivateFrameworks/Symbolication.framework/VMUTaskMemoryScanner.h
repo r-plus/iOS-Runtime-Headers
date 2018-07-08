@@ -17,14 +17,18 @@
     /* Warning: unhandled struct encoding: '{_VMUInstanceValues=Q@}' */ struct _VMUInstanceValues { unsigned long long x1; id x2; } * _instanceValues;
     unsigned int  _instanceValuesCount;
     unsigned int  _instanceValuesSize;
+    bool  _javaScriptCoreUsingPoisoning;
     unsigned long long  _maxInteriorOffset;
     id /* block */  _nodeLogger;
     VMUObjectIdentifier * _objectIdentifier;
+    unsigned long long  _physicalFootprint;
+    unsigned long long  _physicalFootprintPeak;
     int  _pid;
     NSString * _processDescriptionString;
     NSString * _processName;
     VMUProcessObjectGraph * _processObjectGraph;
     id /* block */  _referenceLogger;
+    unsigned long long  _regionDescriptionOptions;
     VMUVMRegionIdentifier * _regionIdentifier;
     struct _VMURegionMap { void *x1; struct _VMURegionNode {} *x2; unsigned int x3; unsigned long long x4; unsigned long long x5; unsigned int x6[0]; } * _regionMap;
     struct _VMURegionNode { id x1; void x2; unsigned long long x3; struct _VMURegionNode {} *x4; struct { /* ? */ } *x5; unsigned int x6; unsigned long long x7; unsigned long long x8; } * _regions;
@@ -32,6 +36,7 @@
     bool  _saveNodeLabelsInGraph;
     struct _VMUScanLocationCache {} ** _scanCaches;
     unsigned int  _scanningMask;
+    bool  _showRawClassNames;
     VMURangeArray * _stackRanges;
     unsigned long long  _suspendTime;
     unsigned int  _suspensionToken;
@@ -57,6 +62,8 @@
 @property (nonatomic, readonly) unsigned int nodeCount;
 @property (nonatomic, readonly) unsigned int nodeNamespaceSize;
 @property (nonatomic, readonly) VMUObjectIdentifier *objectIdentifier;
+@property (nonatomic, readonly) unsigned long long physicalFootprint;
+@property (nonatomic, readonly) unsigned long long physicalFootprintPeak;
 @property (nonatomic, readonly) int pid;
 @property (nonatomic, readonly) NSString *processDescriptionString;
 @property (nonatomic, readonly) NSString *processName;
@@ -64,6 +71,7 @@
 @property (nonatomic, readonly) unsigned int regionCount;
 @property (nonatomic) bool saveNodeLabelsInGraph;
 @property (nonatomic) unsigned int scanningMask;
+@property (nonatomic) bool showRawClassNames;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned int task;
 @property (nonatomic, readonly) unsigned int vmPageSize;
@@ -121,6 +129,8 @@
 - (unsigned int)nodeNamespaceSize;
 - (id)objectIdentifier;
 - (void)orderedNodeTraversal:(int)arg1 withBlock:(id /* block */)arg2;
+- (unsigned long long)physicalFootprint;
+- (unsigned long long)physicalFootprintPeak;
 - (int)pid;
 - (id)processDescriptionString;
 - (id)processName;
@@ -142,6 +152,8 @@
 - (void)setReferenceScanningLogger:(id /* block */)arg1;
 - (void)setSaveNodeLabelsInGraph:(bool)arg1;
 - (void)setScanningMask:(unsigned int)arg1;
+- (void)setShowRawClassNames:(bool)arg1;
+- (bool)showRawClassNames;
 - (unsigned int)task;
 - (bool)validateAddressRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (unsigned int)vmPageSize;

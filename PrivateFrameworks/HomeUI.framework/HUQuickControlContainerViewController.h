@@ -63,9 +63,9 @@
 - (id)_prepareDetailViewController;
 - (id)_presentControlOfType:(unsigned long long)arg1 animated:(bool)arg2;
 - (void)_updateActiveControlViewController;
-- (void)_updateControlReachability;
 - (void)_updateControlStatusText;
 - (void)_updateIconDescriptorAnimated:(bool)arg1;
+- (void)_updateReachabilityStateForActiveControl;
 - (void)_updateUserInteractionEnabledForActiveControl;
 - (id)activeControlViewController;
 - (void)alternateControlButtonPressedInContainerView:(id)arg1;
@@ -95,8 +95,8 @@
 - (id)presentationDelegate;
 - (unsigned long long)presentationState;
 - (bool)presentedDetailView;
+- (void)quickControlContent:(id)arg1 requestDismissalOfType:(unsigned long long)arg2;
 - (void)quickControlContent:(id)arg1 showAuxiliaryView:(id)arg2;
-- (void)quickControlContentWantsDismissal:(id)arg1;
 - (void)setActiveControlViewController:(id)arg1;
 - (void)setControlContainerView:(id)arg1;
 - (void)setDelegate:(id)arg1;

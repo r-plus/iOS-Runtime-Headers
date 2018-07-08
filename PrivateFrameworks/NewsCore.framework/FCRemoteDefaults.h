@@ -18,6 +18,7 @@
 - (id)dictionaryForKey:(id)arg1;
 - (id)init;
 - (id)initWithBackgroundTaskable:(id)arg1;
+- (bool)isAvailable;
 - (id)objectForKey:(id)arg1;
 - (void)processResponse:(id)arg1 data:(id)arg2 error:(id)arg3;
 - (id)remoteDefaults;

@@ -21,11 +21,11 @@
 @property (nonatomic, readonly) bool hasMotion;
 @property (nonatomic, retain) _MRGameControllerMotionProtobuf *motion;
 
+- (void).cxx_destruct;
 - (id)buttons;
 - (unsigned long long)controllerID;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)digitizer;

@@ -12,6 +12,8 @@
 
 @property (nonatomic, readonly, retain) MPConcreteMediaEntityPropertiesCache *cachedPropertyValues;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (void)_enumerateItemPersistentIDsUsingBlock:(id /* block */)arg1;
 - (id)_initWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2 itemsQuery:(id)arg3 grouping:(long long)arg4 representativeItemIdentifier:(long long)arg5 propertiesCache:(id)arg6;

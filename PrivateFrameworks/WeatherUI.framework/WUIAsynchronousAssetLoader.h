@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WeatherUI.framework/WeatherUI
  */
 
-@interface WUIAsynchronousAssetLoader : NSObject {
+@interface WUIAsynchronousAssetLoader : NSObject <CAMLParserDelegate> {
     NSCache * _caDataCache;
     NSObject<OS_dispatch_queue> * _caml_parsing_queue;
     NSCache * _dataCache;
@@ -14,9 +14,13 @@
 
 @property (nonatomic, retain) NSCache *caDataCache;
 @property (nonatomic, retain) NSCache *dataCache;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <WAAssetLoaderDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSTimer *opportunityTimer;
 @property (nonatomic, retain) NSCache *resourceCache;
+@property (readonly) Class superclass;
 
 + (id)sharedAssetLoader;
 

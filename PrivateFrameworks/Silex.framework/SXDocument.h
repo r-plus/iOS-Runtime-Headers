@@ -6,6 +6,7 @@
 
 @property (nonatomic, readonly) <SXAdvertisingSettings> *advertisingSettings;
 @property (nonatomic, readonly) SXJSONArray *allComponents;
+@property (nonatomic, readonly) <SXAutoPlacement> *autoplacement;
 @property (nonatomic, readonly) SXJSONDictionary *componentLayouts;
 @property (nonatomic, readonly) SXJSONDictionary *componentStyles;
 @property (nonatomic, readonly) SXJSONDictionary *componentTextStyles;

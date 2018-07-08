@@ -26,6 +26,7 @@
 - (void)unregisterDeviceWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
 - (void)updateAccountWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKPeerPaymentAccount *, void*
 - (void)updateMemo:(void *)arg1 forTransactionWithIdentifier:(void *)arg2 handler:(void *)arg3; // needs 3 arg types, found 7: NSString *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)updateMessageReceivedDate:(void *)arg1 forTransactionWithIdentifier:(void *)arg2 handler:(void *)arg3; // needs 3 arg types, found 7: NSDate *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)updateMockAccountBalanceByAddingAmount:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: NSDecimalNumber *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKPeerPaymentAccount *, void*
 
 @optional

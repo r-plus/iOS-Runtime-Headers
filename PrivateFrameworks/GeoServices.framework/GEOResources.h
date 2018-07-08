@@ -55,6 +55,7 @@
     NSMutableArray * _tileSets;
     PBUnknownFields * _unknownFields;
     GEOVersionManifest * _versionManifest;
+    NSString * _wifiConnectionQualityProbeURL;
     NSMutableArray * _xmlChecksums;
     NSMutableArray * _xmls;
 }
@@ -110,6 +111,7 @@
 @property (nonatomic, readonly) bool hasSimpleETAURL;
 @property (nonatomic, readonly) bool hasSpatialLookupURL;
 @property (nonatomic, readonly) bool hasVersionManifest;
+@property (nonatomic, readonly) bool hasWifiConnectionQualityProbeURL;
 @property (nonatomic, retain) NSMutableArray *iconChecksums;
 @property (nonatomic, retain) NSMutableArray *icons;
 @property (nonatomic, retain) NSMutableArray *locationShiftEnabledRegions;
@@ -139,6 +141,7 @@
 @property (nonatomic, retain) NSMutableArray *tileSets;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) GEOVersionManifest *versionManifest;
+@property (nonatomic, retain) NSString *wifiConnectionQualityProbeURL;
 @property (nonatomic, retain) NSMutableArray *xmlChecksums;
 @property (nonatomic, retain) NSMutableArray *xmls;
 
@@ -269,6 +272,7 @@
 - (bool)hasSimpleETAURL;
 - (bool)hasSpatialLookupURL;
 - (bool)hasVersionManifest;
+- (bool)hasWifiConnectionQualityProbeURL;
 - (unsigned long long)hash;
 - (id)iconAtIndex:(unsigned long long)arg1;
 - (id)iconChecksumAtIndex:(unsigned long long)arg1;
@@ -351,6 +355,7 @@
 - (void)setTileGroups:(id)arg1;
 - (void)setTileSets:(id)arg1;
 - (void)setVersionManifest:(id)arg1;
+- (void)setWifiConnectionQualityProbeURL:(id)arg1;
 - (void)setXmlChecksums:(id)arg1;
 - (void)setXmls:(id)arg1;
 - (id)simpleETAURL;
@@ -375,6 +380,7 @@
 - (unsigned long long)tileSetsCount;
 - (id)unknownFields;
 - (id)versionManifest;
+- (id)wifiConnectionQualityProbeURL;
 - (void)workAround24919568IfNecessary;
 - (void)writeTo:(id)arg1;
 - (id)xmlAtIndex:(unsigned long long)arg1;

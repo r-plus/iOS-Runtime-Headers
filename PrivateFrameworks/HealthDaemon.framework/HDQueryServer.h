@@ -12,6 +12,7 @@
     <HDQueryServerDelegate> * _delegate;
     bool  _didEndActivationTransaction;
     _HKFilter * _filter;
+    bool  _isCollectingData;
     HKObjectType * _objectType;
     bool  _observingData;
     HDProfile * _profile;
@@ -51,15 +52,16 @@
 - (id)_activationTransactionString;
 - (id)_collectionObserverState;
 - (void)_currentWorkoutDidChange:(id)arg1;
-- (void)_pauseServerValidate:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (id)_predicateString;
 - (id)_queryStateString;
 - (void)_queue_beginObservingDataTypes;
 - (void)_queue_closeActivationTransactionIfNecessary;
 - (void)_queue_endObservingDataTypes;
+- (id)_queue_sampleTypesForObservation;
 - (void)_queue_setQueryState:(long long)arg1;
 - (void)_queue_start;
 - (void)_queue_startDataCollection;
+- (void)_queue_startDataCollectionIfNecessary;
 - (void)_queue_startQueryIfNecessary;
 - (void)_queue_stop;
 - (void)_queue_stopDataCollection;
@@ -67,6 +69,7 @@
 - (void)_queue_transitionToPaused;
 - (void)_queue_transitionToRunning;
 - (void)_queue_transitionToSuspendedState:(long long)arg1;
+- (void)_queue_updateDataCollectionAssertions;
 - (bool)_queue_validateConfiguration:(id*)arg1;
 - (id)_sampleTypeToObserveForUpdates;
 - (void)_scheduleStartQuery;
@@ -76,7 +79,7 @@
 - (bool)_shouldObserveOnPause;
 - (bool)_shouldStopProcessingQuery;
 - (bool)_shouldSuspendQuery;
-- (void)activateServerWithCompletion:(id /* block */)arg1;
+- (void)activateServerPaused:(bool)arg1 completion:(id /* block */)arg2;
 - (id)client;
 - (bool)clientHasActiveWorkout;
 - (bool)clientIsInForeground;
@@ -97,7 +100,6 @@
 - (id)objectType;
 - (void)onQueue:(id /* block */)arg1;
 - (void)pauseServer;
-- (void)pauseServerValidateWithCompletion:(id /* block */)arg1;
 - (id)profile;
 - (id)quantityType;
 - (id)queryQueue;

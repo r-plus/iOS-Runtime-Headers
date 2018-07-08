@@ -15,6 +15,7 @@
 - (void)getVisitedLinksWithCompletionHandler:(id /* block */)arg1;
 - (void)groupVisitsIntoSessionsBetweenStartDate:(id)arg1 endDate:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)initWithHistoryService:(id)arg1;
+- (void)queryMemoryFootprint:(id /* block */)arg1;
 - (void)registerForRemoteHistoryNotifications;
 - (void)unregisterForRemoteHistoryNotifications;
 

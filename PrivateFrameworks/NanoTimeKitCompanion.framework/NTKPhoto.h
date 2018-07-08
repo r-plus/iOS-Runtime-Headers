@@ -45,6 +45,7 @@
 @property (nonatomic, copy) NSDate *modificationDate;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } originalCrop;
 @property (nonatomic, copy) NTKPhotoAnalysis *topAnalysis;
+@property (nonatomic, readonly) NSString *uuidFromLocalIdentifierAndModificationDate;
 
 + (id)decodeFromDictionary:(id)arg1 forResourceDirectory:(id)arg2;
 
@@ -77,5 +78,6 @@
 - (void)setOriginalCrop:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setTopAnalysis:(id)arg1;
 - (id)topAnalysis;
+- (id)uuidFromLocalIdentifierAndModificationDate;
 
 @end

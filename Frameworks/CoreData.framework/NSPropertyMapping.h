@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSPropertyMapping : NSObject {
+@interface NSPropertyMapping : NSObject <NSSecureCoding> {
     NSString * _name;
     struct __propertyMappingFlags { 
         unsigned int _isInUse : 1; 
@@ -20,6 +20,7 @@
 @property (retain) NSExpression *valueExpression;
 
 + (void)initialize;
++ (bool)supportsSecureCoding;
 
 - (void)_createCachesAndOptimizeState;
 - (id)_initWithDestinationName:(id)arg1 valueExpression:(id)arg2;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIButton : UIControl <ABText, CAMAccessibilityHUDItemProvider, DebugHierarchyObject, NSCoding, TSDPlatformButtonProtocol, UIAccessibilityContentSizeCategoryImageAdjusting, UIGestureRecognizerDelegate, _UIFloatingContentViewDelegate> {
+@interface UIButton : UIControl <ABText, CAMAccessibilityHUDItemProvider, NSCoding, TSDPlatformButtonProtocol, UIAccessibilityContentSizeCategoryImageAdjusting, UIGestureRecognizerDelegate, _UIFloatingContentViewDelegate> {
     long long  __imageContentMode;
     UIColor * __plainButtonBackgroundColor;
     UIImageView * _backgroundView;
@@ -292,15 +292,6 @@
 - (bool)_wantsAccessibilityUnderline;
 - (bool)_wantsContentBackdropView;
 - (void)_willMoveToWindow:(id)arg1;
-- (void)dealloc;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
-- (id)debugHierarchyValueForPropertyWithName:(id)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)adjustsImageSizeForAccessibilityContentSizeCategory;
 - (bool)adjustsImageWhenDisabled;
 - (bool)adjustsImageWhenHighlighted;
@@ -321,6 +312,7 @@
 - (id)currentTitle;
 - (id)currentTitleColor;
 - (id)currentTitleShadowColor;
+- (void)dealloc;
 - (unsigned long long)defaultAccessibilityTraits;
 - (void)encodeWithCoder:(id)arg1;
 - (void)floatingContentView:(id)arg1 isTransitioningFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;

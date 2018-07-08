@@ -24,8 +24,11 @@
 - (void)encodeWithCoder:(id)arg1;
 - (long long)foodType;
 - (id)genericName;
+- (unsigned long long)hash;
 - (id)initWithBrandName:(id)arg1 genericName:(id)arg2 foodType:(long long)arg3 nutritionFacts:(id)arg4;
 - (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToHDDemoDataFoodObject:(id)arg1;
 - (id)nutritionFacts;
 - (double)recommendedNumServings;
 - (void)setBrandName:(id)arg1;

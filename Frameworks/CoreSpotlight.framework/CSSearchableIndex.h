@@ -23,6 +23,7 @@
 @property (nonatomic, retain) NSMutableArray *batchedItemIdentifiersToDelete;
 @property (nonatomic, retain) NSMutableArray *batchedItemsToIndex;
 @property (nonatomic, copy) NSString *bundleIdentifier;
+@property (readonly) CSIndexConnection *connection;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *delegateQueue;
 @property <CSSearchableIndexDelegate> *indexDelegate;
 @property (nonatomic, readonly) int indexID;
@@ -73,6 +74,7 @@
 - (void)beginIndexBatch;
 - (id)bundleIdentifier;
 - (void)changeStateOfSearchableItemsWithUIDs:(id)arg1 toState:(long long)arg2;
+- (id)connection;
 - (void)dealloc;
 - (id)delegateQueue;
 - (void)deleteAllInteractionsWithBundleID:(id)arg1 protectionClass:(id)arg2 completionHandler:(id /* block */)arg3;
@@ -132,6 +134,6 @@
 - (void)unthrottle;
 - (void)willModifySearchableItemsWithIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)willModifySearchableItemsWithIdentifiers:(id)arg1 protectionClass:(id)arg2 forBundleID:(id)arg3 options:(long long)arg4 completionHandler:(id /* block */)arg5;
-- (id)xpc_dictionary_for_command:(const char *)arg1;
+- (id)xpc_dictionary_for_command:(const char *)arg1 requiresInitialization:(bool)arg2;
 
 @end

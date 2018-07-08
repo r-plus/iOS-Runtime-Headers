@@ -24,9 +24,11 @@
 - (void)_clearCurrentFile;
 - (void)_closeCurrentFile;
 - (bool)_executeFile:(id)arg1 onDb:(id)arg2 becameLocked:(bool*)arg3;
+- (bool)_executeNextRecordFromFile:(id)arg1 onDb:(id)arg2 becameLocked:(bool*)arg3 deleteFile:(bool*)arg4;
 - (id)_getCurrentFile;
 - (bool)deleteAllJournaledQueries;
 - (id)description;
+- (id)directoryPath;
 - (bool)executeQueriesOnDatabase:(id)arg1;
 - (bool)journaling;
 - (void)runQuery:(id)arg1 values:(id)arg2 onDb:(id)arg3;

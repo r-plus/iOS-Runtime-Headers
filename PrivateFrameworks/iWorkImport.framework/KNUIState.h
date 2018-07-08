@@ -26,6 +26,7 @@
     double  _desktopPresenterNotesScrollPosition;
     KNMacUILayout * _documentUILayout;
     NSArray * _elementListExpandedGroups;
+    TSDFreehandDrawingToolkitUIState * _freehandDrawingToolkitUIState;
     bool  _lightTableHidesSkippedSlides;
     double  _lightTableZoomScale;
     struct CGPoint { 
@@ -59,6 +60,7 @@
 @property (nonatomic) double desktopPresenterNotesScrollPosition;
 @property (nonatomic, copy) KNMacUILayout *documentUILayout;
 @property (nonatomic, copy) NSArray *elementListExpandedGroups;
+@property (nonatomic, retain) TSDFreehandDrawingToolkitUIState *freehandDrawingToolkitUIState;
 @property (nonatomic) bool lightTableHidesSkippedSlides;
 @property (nonatomic) double lightTableZoomScale;
 @property (nonatomic) bool mobileLightTableHidesSkippedSlides;
@@ -92,6 +94,7 @@
 - (double)desktopPresenterNotesScrollPosition;
 - (id)documentUILayout;
 - (id)elementListExpandedGroups;
+- (id)freehandDrawingToolkitUIState;
 - (id)init;
 - (bool)lightTableHidesSkippedSlides;
 - (double)lightTableZoomScale;
@@ -115,6 +118,7 @@
 - (void)setDesktopPresenterNotesScrollPosition:(double)arg1;
 - (void)setDocumentUILayout:(id)arg1;
 - (void)setElementListExpandedGroups:(id)arg1;
+- (void)setFreehandDrawingToolkitUIState:(id)arg1;
 - (void)setLightTableHidesSkippedSlides:(bool)arg1;
 - (void)setLightTableZoomScale:(double)arg1;
 - (void)setMobileLightTableHidesSkippedSlides:(bool)arg1;

@@ -9,15 +9,16 @@
     bool  _needsFindRowForServiceGap;
     NSArray * _sequences;
     NSMapTable * _sequencesToInclude;
+    MKTransitDepartureServiceGapFormatter * _serviceGapFormatter;
     NSDictionary * _serviceGapStrings;
 }
 
 @property (nonatomic, readonly) bool departuresAreVehicleSpecific;
+@property (nonatomic, retain) MKTransitDepartureServiceGapFormatter *serviceGapFormatter;
 @property (nonatomic, readonly) bool showOperatingHours;
 
 - (void).cxx_destruct;
 - (void)_buildRows;
-- (id)_descriptionForDepartureDate:(id)arg1 canIncludeDate:(bool)arg2;
 - (bool)_isDateLastDeparture:(id)arg1 withNextDepartureDate:(id)arg2 forSequence:(id)arg3;
 - (id)_nextLastDepartureDateForSequence:(id)arg1 afterDate:(id)arg2;
 - (id)_pagingFilter;
@@ -30,6 +31,9 @@
 - (id)sequenceForRow:(long long)arg1 outIsNewLine:(out bool*)arg2 outNextLineIsSame:(out bool*)arg3;
 - (id)sequences;
 - (id)serviceGapDescriptionForRow:(long long)arg1;
+- (id)serviceGapFormatter;
+- (void)setDepartureCutoffDate:(id)arg1;
+- (void)setServiceGapFormatter:(id)arg1;
 - (bool)showOperatingHours;
 
 @end

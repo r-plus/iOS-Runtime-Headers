@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UINavigationBar : UIView <DebugHierarchyObject, NSCoding, UIAccessibilityHUDGestureHosting, UIBarPositioning, UIGestureRecognizerDelegate, UIStatusBarTinting, _UIBarPositioningInternal> {
+@interface UINavigationBar : UIView <NSCoding, UIAccessibilityHUDGestureHosting, UIBarPositioning, UIGestureRecognizerDelegate, UIStatusBarTinting, _UIBarPositioningInternal> {
     double  __backgroundOpacity;
     double  __overrideBackgroundExtension;
     bool  __startedAnimationTracking;
@@ -294,21 +294,11 @@
 - (bool)_wantsLargeTitleDisplayed;
 - (bool)_wantsLetterpressContent;
 - (void)_willMoveToWindow:(id)arg1;
-- (void)dealloc;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
-- (id)debugHierarchyValueForPropertyWithName:(id)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)addConstraint:(id)arg1;
 - (bool)alwaysUseDefaultMetrics;
 - (long long)animationDisabledCount;
 - (id)animationFactory;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })availableTitleArea;
-- (id)backButtonViewAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)backIndicatorImage;
 - (id)backIndicatorTransitionMaskImage;
 - (id)backItem;
@@ -325,6 +315,7 @@
 - (long long)currentContentSize;
 - (id)currentLeftView;
 - (id)currentRightView;
+- (void)dealloc;
 - (double)defaultBackButtonAlignmentHeight;
 - (double)defaultHeight;
 - (double)defaultHeightForMetrics:(long long)arg1;
@@ -341,7 +332,6 @@
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)hideButtons;
 - (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
-- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
@@ -427,13 +417,20 @@
 - (void)updateConstraints;
 - (void)updatePrompt;
 
+// Image: /System/Library/AccessibilityBundles/GAXClient.bundle/GAXClient
+
++ (Class)safeCategoryBaseClass;
+
+- (id)backButtonViewAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+
 // Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
 
 - (void)_cnui_applyContactStyle;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
-- (void)setBizEffectStyle:(bool)arg1;
+- (void)enableBranding:(bool)arg1 forBusinessChat:(id)arg2;
 - (void)setDarkEffectStyle:(bool)arg1;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI

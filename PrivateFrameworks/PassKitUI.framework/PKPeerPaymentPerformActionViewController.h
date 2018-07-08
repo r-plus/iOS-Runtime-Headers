@@ -9,11 +9,13 @@
     PKPeerPaymentBankAccountInformation * _bankInformation;
     <PKPeerPaymentPerformActionViewControllerDelegate> * _delegate;
     long long  _detailViewStyle;
+    bool  _fieldsVerified;
     PKPerformActionLoadingView * _loadingView;
     PKPaymentPass * _pass;
     unsigned long long  _peerPaymentAction;
     bool  _performingAction;
     RemoteUIController * _termsController;
+    bool  _viewHasAppeared;
 }
 
 @property (nonatomic, retain) PKPeerPaymentAccount *account;
@@ -34,6 +36,7 @@
 - (id)_actionViewForPass:(id)arg1 action:(unsigned long long)arg2;
 - (void)_cancelButtonPressed:(id)arg1;
 - (void)_doneBarButtonPressed:(id)arg1;
+- (void)_handleApplicationDidBecomeActiveNotification:(id)arg1;
 - (void)_handleError:(id)arg1;
 - (void)_handleError:(id)arg1 completion:(id /* block */)arg2;
 - (id)_navigationBarTitle;
@@ -46,6 +49,7 @@
 - (void)_showNavigationBarSpinner:(bool)arg1;
 - (id)account;
 - (id)actionView;
+- (void)dealloc;
 - (id)delegate;
 - (id)doneBarButton;
 - (id)initWithPaymentPass:(id)arg1 account:(id)arg2 peerPaymentAction:(unsigned long long)arg3;
@@ -62,6 +66,7 @@
 - (void)viewControllerDidCancelSetupFlow:(id)arg1;
 - (void)viewControllerDidTerminateSetupFlow:(id)arg1;
 - (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;

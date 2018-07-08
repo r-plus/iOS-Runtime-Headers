@@ -176,6 +176,9 @@
 
 + (id)safari_cloudBookmarksDefaults;
 
+- (id)safari_dateForKey:(id)arg1;
+- (void)safari_setDate:(id)arg1 forKey:(id)arg2;
+
 // Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
 
 - (bool)boolForKey:(id)arg1 withDefaultValue:(bool)arg2;

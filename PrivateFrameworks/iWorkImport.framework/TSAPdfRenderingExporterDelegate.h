@@ -12,7 +12,7 @@
     bool  mRequirePrintPassword;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithRenderingExporter:(id)arg1;
 - (struct CGContext { }*)newCGContextForURL:(id)arg1;
 - (void)releaseCGContext:(struct CGContext { }*)arg1;

@@ -13,9 +13,6 @@
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (void).cxx_destruct;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)destinationText;
 - (double)extraRightPadding;
 - (long long)labelLineBreakMode;
@@ -24,6 +21,11 @@
 - (id)shortenedTitleWithCompressionLevel:(int)arg1;
 - (id)systemNavigationAction;
 - (bool)updateForNewData:(id)arg1 actions:(int)arg2;
+
+// Image: /System/Library/AccessibilityBundles/GAXClient.bundle/GAXClient
+
++ (Class)safeCategoryBaseClass;
+
 - (void)userDidActivateButton:(id)arg1;
 
 @end

@@ -20,14 +20,16 @@
 + (id)_dateFormatterForTimeZone:(id)arg1;
 + (id)_entriesArrayForTaskMetrics:(id)arg1 requestData:(id)arg2 responseData:(id)arg3;
 + (id)_entryDictionaryForTaskMetrics:(id)arg1 requestData:(id)arg2 responseData:(id)arg3;
++ (id)_generateCommentsForTaskMetrics:(id)arg1;
 + (id)_headersArrayForHTTPHeaders:(id)arg1;
-+ (id)_outputDirectoryForLogConfig:(id)arg1;
++ (id)_localIPAddress;
 + (id)_requestDictionaryForTaskTransactionMetrics:(id)arg1 requestData:(id)arg2;
 + (id)_responseDictionaryForTaskMetrics:(id)arg1 responseData:(id)arg2;
 + (id)_stringFromDate:(id)arg1;
 + (double)_timeIntervalFromFilename:(id)arg1;
 + (id)merge:(id)arg1;
 + (id)merge:(id)arg1 withEstimatedFileSizeLimit:(unsigned long long)arg2;
++ (id)outputDirectoryForLogConfig:(id)arg1;
 + (void)removeLogsWithLogConfig:(id)arg1 olderThanDate:(id)arg2;
 + (void)sendWriteAllLogsToDiskDecompressedNotification;
 + (void)sendWriteAllLogsToDiskNotification;

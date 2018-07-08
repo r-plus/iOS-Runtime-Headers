@@ -11,6 +11,7 @@
     NSDictionary * _contextInfo;
     bool  _disableCompactVoiceFallback;
     long long  _footprint;
+    bool  _forceServerTTS;
     long long  _gender;
     NSString * _languageCode;
     bool  _maintainsInput;
@@ -39,6 +40,7 @@
 @property (nonatomic, copy) NSDictionary *contextInfo;
 @property (nonatomic) bool disableCompactVoiceFallback;
 @property (nonatomic) long long footprint;
+@property (nonatomic) bool forceServerTTS;
 @property (nonatomic) long long gender;
 @property (nonatomic, copy) NSString *languageCode;
 @property (nonatomic) bool maintainsInput;
@@ -72,6 +74,7 @@
 - (bool)disableCompactVoiceFallback;
 - (void)encodeWithCoder:(id)arg1;
 - (long long)footprint;
+- (bool)forceServerTTS;
 - (long long)gender;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -94,6 +97,7 @@
 - (void)setContextInfo:(id)arg1;
 - (void)setDisableCompactVoiceFallback:(bool)arg1;
 - (void)setFootprint:(long long)arg1;
+- (void)setForceServerTTS:(bool)arg1;
 - (void)setGender:(long long)arg1;
 - (void)setLanguageCode:(id)arg1;
 - (void)setMaintainsInput:(bool)arg1;

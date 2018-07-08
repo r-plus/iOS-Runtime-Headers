@@ -3,8 +3,9 @@
  */
 
 @interface SSBag : NSObject <ISStoreURLOperationDelegate> {
+    NSObject<OS_dispatch_queue> * _accessQueue;
     NSDictionary * _backingDictionary;
-    NSObject<OS_dispatch_queue> * _backingDictionaryAccessQueue;
+    bool  _ignoreDiskCacheOnNextBagLoad;
     SSUniqueExecutionQueue * _loadBagQueue;
     NSString * _logKey;
     NSObject<OS_dispatch_queue> * _notificationsQueue;
@@ -12,11 +13,14 @@
     SSBagProfileConfig * _profileConfig;
 }
 
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *accessQueue;
 @property (nonatomic, retain) NSDictionary *backingDictionary;
-@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *backingDictionaryAccessQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSDate *expirationDate;
+@property (getter=isExpired, nonatomic, readonly) bool expired;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) bool ignoreDiskCacheOnNextBagLoad;
 @property (nonatomic, readonly) SSUniqueExecutionQueue *loadBagQueue;
 @property (nonatomic, readonly) NSString *logKey;
 @property (nonatomic, readonly) NSNumber *metricsLoadURLSamplingPercentage;
@@ -32,7 +36,6 @@
 + (id)_URLBuildIdentifier;
 + (id)_URLCookieNamesForProfile:(id)arg1;
 + (void)_assertIfProfileConfigIsMisconfigured:(id)arg1;
-+ (bool)_backingDictionaryIsExpired:(id)arg1;
 + (id)_bagCache;
 + (id)_bagCacheAccessQueue;
 + (id)_callerVersionString;
@@ -40,6 +43,7 @@
 + (id)_cookiesForNames:(id)arg1;
 + (id)_debugBackingDictionaries;
 + (id)_debugBackingDictionariesAccessQueue;
++ (id)_debugBackingDictionaryForProfileConfig:(id)arg1;
 + (id)_defaultURLCookieNames;
 + (id)_deviceString;
 + (bool)_isBackingDictionary:(id)arg1 equalToBackingDictionary:(id)arg2;
@@ -55,7 +59,6 @@
 + (bool)_value:(id)arg1 isKindOfValueType:(unsigned long long)arg2;
 + (id)bagWithProfileConfig:(id)arg1;
 + (void)removeAllDebugBackingDictionaries;
-+ (void)resetCachesForProfileConfig:(id)arg1;
 + (void)setDebugBackingDictionary:(id)arg1 forProfileConfig:(id)arg2;
 
 - (void).cxx_destruct;
@@ -63,26 +66,30 @@
 - (id)URLCacheID;
 - (id)URLForKey:(id)arg1 error:(id*)arg2;
 - (void)URLForKey:(id)arg1 withCompletion:(id /* block */)arg2;
+- (bool)URLIsTrusted:(id)arg1;
 - (id)URLPromiseForKey:(id)arg1;
 - (id)_URLWithCookieNames:(id)arg1;
 - (void)_assertIfKey:(id)arg1 doesNotReturnValueType:(unsigned long long)arg2;
 - (void)_assertIfKeyWasNotRegistered:(id)arg1;
 - (id)_createLoadBagURLOperationWithCookieNames:(id)arg1 timeout:(double)arg2;
 - (void)_deviceStorefrontChanged:(id)arg1;
+- (void)_dispatchBarrierAsync:(id /* block */)arg1;
+- (id)_expirationDate;
 - (id)_initWithProfileConfig:(id)arg1;
 - (id)_initWithProfileConfig:(id)arg1 logKey:(id)arg2;
 - (bool)_isExpired;
 - (id)_loadBagIfNeeded;
 - (id)_loadBagWithAttempt:(unsigned long long)arg1 error:(id*)arg2;
 - (void)_valueForKey:(id)arg1 ofType:(unsigned long long)arg2 completion:(id /* block */)arg3;
+- (id)accessQueue;
 - (id)arrayForKey:(id)arg1 error:(id*)arg2;
 - (void)arrayForKey:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)arrayPromiseForKey:(id)arg1;
 - (id)backingDictionary;
-- (id)backingDictionaryAccessQueue;
 - (id)boolForKey:(id)arg1 error:(id*)arg2;
 - (void)boolForKey:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)boolPromiseForKey:(id)arg1;
+- (bool)canHandleTrustedDomains;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryForKey:(id)arg1 error:(id*)arg2;
@@ -91,15 +98,20 @@
 - (id)doubleForKey:(id)arg1 error:(id*)arg2;
 - (void)doubleForKey:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)doublePromiseForKey:(id)arg1;
+- (id)expirationDate;
+- (bool)ignoreDiskCacheOnNextBagLoad;
 - (id)integerForKey:(id)arg1 error:(id*)arg2;
 - (void)integerForKey:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)integerPromiseForKey:(id)arg1;
+- (bool)isExpired;
 - (id)loadBagQueue;
 - (id)logKey;
 - (id)notificationsQueue;
 - (id)operationQueue;
 - (id)profileConfig;
+- (id)resetCaches;
 - (void)setBackingDictionary:(id)arg1;
+- (void)setIgnoreDiskCacheOnNextBagLoad:(bool)arg1;
 - (void)setOperationQueue:(id)arg1;
 - (id)stringForKey:(id)arg1 error:(id*)arg2;
 - (void)stringForKey:(id)arg1 withCompletion:(id /* block */)arg2;

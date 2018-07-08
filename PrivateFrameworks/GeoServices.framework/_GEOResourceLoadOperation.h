@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface _GEOResourceLoadOperation : NSObject <GEOResourceLoadOperation, NSProgressReporting, NSURLSessionDataDelegate> {
+@interface _GEOResourceLoadOperation : NSObject <GEOResourceLoadOperation, NSURLSessionDataDelegate> {
     GEOApplicationAuditToken * _auditToken;
     NSObject<OS_dispatch_queue> * _callbackQueue;
     id /* block */  _completionHandler;

@@ -18,6 +18,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSXPCConnection *xpcConnection;
 
++ (id)retrySynchronousIPC:(id /* block */)arg1;
 + (id)sharedConnection;
 
 - (void).cxx_destruct;

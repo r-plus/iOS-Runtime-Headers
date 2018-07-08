@@ -140,11 +140,16 @@
 
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
 
++ (id)geo_backgroundSessionConfigurationWithIdentifier:(id)arg1;
++ (id)geo_defaultSessionConfiguration;
++ (id)geo_ephemeralSessionConfiguration;
+
 - (void)applyNSURLConnectionProperties:(id)arg1;
 - (void)geo_configureWithRequest:(id)arg1;
 - (bool)geo_hasApplicationAttribution:(id)arg1;
 - (bool)geo_isCompatibleWithRequest:(id)arg1;
 - (void)geo_setApplicationAttribution:(id)arg1;
+- (void)geo_setRequiredProperties;
 
 // Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
 

@@ -355,6 +355,7 @@
 - (void)test_restoreMissingSpecialBookmarks;
 - (bool)updateReadingListWebFilterStatusForUnsetItemsOnly:(bool)arg1;
 - (bool)vacuum;
+- (id)validBookmarkUUIDsFromUUIDs:(id)arg1;
 - (id)webFilterWhiteList;
 - (id)webFilterWhiteListFolder;
 - (int)webFilterWhiteListFolderBookmarkID;

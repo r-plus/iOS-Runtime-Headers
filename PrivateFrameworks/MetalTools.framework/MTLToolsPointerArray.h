@@ -9,24 +9,24 @@
         struct __hash_table<void *, std::__1::hash<void *>, std::__1::equal_to<void *>, std::__1::allocator<void *> > { 
             struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<void *, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<void *, void *> *> *> > > { 
                 struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<void *, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<void *, void *> *> *> > > { 
-                    struct __hash_node_base<std::__1::__hash_node<void *, void *> *> {} **__first_; 
+                    struct __hash_node_base<std::__1::__hash_node<void *, void *> *> {} **__value_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<void *, void *> *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<void *, void *> *> *> > { 
-                            unsigned long long __first_; 
+                            unsigned long long __value_; 
                         } __data_; 
-                    } __second_; 
+                    } __value_; 
                 } __ptr_; 
             } __bucket_list_; 
             struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<void *, void *> *>, std::__1::allocator<std::__1::__hash_node<void *, void *> > > { 
                 struct __hash_node_base<std::__1::__hash_node<void *, void *> *> { 
                     struct __hash_node_base<std::__1::__hash_node<void *, void *> *> {} *__next_; 
-                } __first_; 
+                } __value_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::hash<void *> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::equal_to<void *> > { 
-                float __first_; 
+                float __value_; 
             } __p3_; 
         } __table_; 
     }  _pointerSet;

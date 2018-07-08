@@ -5,12 +5,12 @@
 @interface MRNotificationMessage : MRProtocolMessage
 
 @property (nonatomic, readonly) NSString *notification;
-@property (nonatomic, readonly) void*playerPath;
+@property (nonatomic, readonly) _MRNowPlayingPlayerPathProtobuf *playerPath;
 @property (nonatomic, readonly) NSDictionary *userInfo;
 
 - (id)initWithNotification:(id)arg1;
 - (id)notification;
-- (void*)playerPath;
+- (id)playerPath;
 - (unsigned long long)type;
 - (id)userInfo;
 

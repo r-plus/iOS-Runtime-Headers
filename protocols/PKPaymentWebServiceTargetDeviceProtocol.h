@@ -46,8 +46,11 @@
 - (NSArray *)paymentWebService:(PKPaymentWebService *)arg1 passesOfType:(unsigned long long)arg2;
 - (void)paymentWebService:(void *)arg1 removePass:(void *)arg2 withCompletionHandler:(void *)arg3; // needs 3 arg types, found 9: PKPaymentWebService *, PKPass *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, void*
 - (bool)paymentWebServiceSupportsPeerPaymentRegistration:(PKPaymentWebService *)arg1;
+- (bool)secureElementIsAvailable;
 - (void)setMaximumPaymentCards:(unsigned long long)arg1;
 - (void)startBackgroundVerificationObserverForPass:(PKPaymentPass *)arg1 verificationMethod:(PKVerificationChannel *)arg2;
+- (bool)supportsCredentialType:(long long)arg1;
+- (bool)supportsExpressMode:(NSString *)arg1;
 - (bool)supportsExpressModeForExpressPassType:(long long)arg1;
 - (PKTrustedDeviceEnrollmentInfo *)trustedDeviceEnrollmentInfoForWebService:(PKPaymentWebService *)arg1;
 

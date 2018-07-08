@@ -5,7 +5,7 @@
 @interface VKSharedResources : NSObject {
     struct unique_ptr<ggl::AlphaAtlas, std::__1::default_delete<ggl::AlphaAtlas> > { 
         struct __compressed_pair<ggl::AlphaAtlas *, std::__1::default_delete<ggl::AlphaAtlas> > { 
-            struct AlphaAtlas {} *__first_; 
+            struct AlphaAtlas {} *__value_; 
         } __ptr_; 
     }  _alphaAtlas;
     struct shared_ptr<ggl::CommonLibrary> { 
@@ -14,17 +14,17 @@
     }  _commonLibrary;
     struct unique_ptr<md::Device, std::__1::default_delete<md::Device> > { 
         struct __compressed_pair<md::Device *, std::__1::default_delete<md::Device> > { 
-            struct Device {} *__first_; 
+            struct Device {} *__value_; 
         } __ptr_; 
     }  _device;
     struct unique_ptr<ggl::DistanceAtlas, std::__1::default_delete<ggl::DistanceAtlas> > { 
         struct __compressed_pair<ggl::DistanceAtlas *, std::__1::default_delete<ggl::DistanceAtlas> > { 
-            struct DistanceAtlas {} *__first_; 
+            struct DistanceAtlas {} *__value_; 
         } __ptr_; 
     }  _distanceAtlas;
     struct unique_ptr<md::FontManager, std::__1::default_delete<md::FontManager> > { 
         struct __compressed_pair<md::FontManager *, std::__1::default_delete<md::FontManager> > { 
-            struct FontManager {} *__first_; 
+            struct FontManager {} *__value_; 
         } __ptr_; 
     }  _fontManager;
     struct _retain_ptr<VKGGLTextureManager *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> { 
@@ -35,7 +35,7 @@
     }  _gglTextureManager;
     struct unique_ptr<ggl::IsoAlphaAtlas, std::__1::default_delete<ggl::IsoAlphaAtlas> > { 
         struct __compressed_pair<ggl::IsoAlphaAtlas *, std::__1::default_delete<ggl::IsoAlphaAtlas> > { 
-            struct IsoAlphaAtlas {} *__first_; 
+            struct IsoAlphaAtlas {} *__value_; 
         } __ptr_; 
     }  _highInflationAlphaAtlas;
     struct _retain_ptr<VKIconManager *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> { 
@@ -46,7 +46,7 @@
     }  _iconManager;
     struct unique_ptr<ggl::IsoAlphaAtlas, std::__1::default_delete<ggl::IsoAlphaAtlas> > { 
         struct __compressed_pair<ggl::IsoAlphaAtlas *, std::__1::default_delete<ggl::IsoAlphaAtlas> > { 
-            struct IsoAlphaAtlas {} *__first_; 
+            struct IsoAlphaAtlas {} *__value_; 
         } __ptr_; 
     }  _isoAlphaAtlas;
     GEOResourceManifestConfiguration * _manifestConfiguration;

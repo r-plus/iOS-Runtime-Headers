@@ -83,20 +83,42 @@
 
 // Image: /Developer/Library/PrivateFrameworks/DVTInstrumentsUtilities.framework/DVTInstrumentsUtilities
 
++ (id)xr_archiveSecureCodingObject:(id)arg1 withError:(id*)arg2;
 + (id)xr_deepCopy:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/AVConference.framework/AVConference
+// Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
 
-+ (id)secureArchiveObjectOfClass:(id)arg1;
++ (id)CalArchivedDataWithRootObject:(id)arg1 ofClasses:(id)arg2 error:(id*)arg3;
+
+// Image: /System/Library/PrivateFrameworks/Catalyst.framework/Catalyst
+
++ (id)cat_archivedDataWithRootObject:(id)arg1;
++ (id)cat_archivedDataWithRootObject:(id)arg1 error:(id*)arg2;
+
+// Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
+
++ (id)cpl_archivedDataWithRootObject:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/DigitalTouchShared.framework/DigitalTouchShared
 
 + (id)_et_secureArchivedDataWithRootObject:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/Frameworks/XCTest.framework/XCTest
+
++ (id)xct_archivedDataWithRootObject:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NewsFoundation.framework/NewsFoundation
+
++ (id)nf_securelyArchiveObject:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/PairedSync.framework/PairedSync
 
 + (bool)secureArchiveRootObject:(id)arg1 toFile:(id)arg2;
 + (bool)secureArchiveRootObject:(id)arg1 toFile:(id)arg2 withOptions:(unsigned long long)arg3;
 + (id)secureArchivedDataWithRootObject:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
++ (id)tsu_securelyArchiveRoot:(id)arg1;
 
 @end

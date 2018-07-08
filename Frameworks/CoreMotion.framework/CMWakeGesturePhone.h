@@ -22,7 +22,7 @@
     /* Warning: unhandled struct encoding: '{Dispatcher=^^?@}' */ struct Dispatcher { int (**x1)(); id x2; } * fWakeDispatcher;
     struct unique_ptr<CMWakeGestureVisitor, std::__1::default_delete<CMWakeGestureVisitor> > { 
         struct __compressed_pair<CMWakeGestureVisitor *, std::__1::default_delete<CMWakeGestureVisitor> > { 
-            struct CMWakeGestureVisitor {} *__first_; 
+            struct CMWakeGestureVisitor {} *__value_; 
         } __ptr_; 
     }  fWakeGestureVisitor;
     double  fWakePacketTimestamp;

@@ -11,9 +11,11 @@
 @property (readonly) long long type;
 
 + (id)archive:(id)arg1;
++ (id)archiveSymptomDict:(struct NSDictionary { Class x1; }*)arg1;
 + (bool)supportsSecureCoding;
 + (id)symptomWithType:(long long)arg1;
 + (id)unarchive:(id)arg1;
++ (struct NSDictionary { Class x1; }*)unarchiveSymptomDict:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)description;

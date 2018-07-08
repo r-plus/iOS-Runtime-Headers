@@ -8,6 +8,7 @@
     NSObject<OS_dispatch_queue> * _ivarQueue;
     void * _ivarQueueIdentifier;
     bool  _ivarQueue_aggressivelyCacheVideoFrames;
+    bool  _ivarQueue_decodesAllFramesDuringOrdinaryPlayback;
     NSError * _ivarQueue_error;
     struct { 
         bool videoPlayerItem; 
@@ -122,6 +123,7 @@
 - (id)asset;
 - (void)cancelLoading;
 - (void)dealloc;
+- (bool)decodesAllFramesDuringOrdinaryPlayback;
 - (void)didPerformChanges;
 - (void)discardContentBelowLoadingTarget;
 - (id)error;
@@ -134,6 +136,7 @@
 - (void)resetAVObjects;
 - (bool)reversesMoreVideoFramesInMemory;
 - (void)setAggressivelyCacheVideoFrames:(bool)arg1;
+- (void)setDecodesAllFramesDuringOrdinaryPlayback:(bool)arg1;
 - (void)setLoadingTarget:(long long)arg1;
 - (void)setReversesMoreVideoFramesInMemory:(bool)arg1;
 - (void)setVideoComposition:(id)arg1;

@@ -25,7 +25,9 @@
 - (struct CGSize { double x1; double x2; })derivedAssetSizeForMasterSizeWidth:(double)arg1 height:(double)arg2;
 - (bool)enqueueAssetForPSPublishing:(id)arg1 fullPath:(id)arg2 fileSize:(id)arg3 reenqueueCount:(unsigned long long)arg4 publicGlobalUUID:(id*)arg5;
 - (void)enumerateMasterHashesAndPublicGlobalUUIDsForAssets:(id)arg1 withBlock:(id /* block */)arg2;
+- (void)fetchMPSStateWithCompletion:(id /* block */)arg1;
 - (long long)friendsLimit;
+- (void)handleMPSStateIfNecessary;
 - (long long)imageLimitForFriendStream;
 - (long long)imageLimitForOwnStream;
 - (id)imageLimitsByAssetType;

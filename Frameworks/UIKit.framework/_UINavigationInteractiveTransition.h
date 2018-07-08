@@ -8,6 +8,8 @@
 
 @property (nonatomic, readonly) UIScreenEdgePanGestureRecognizer *screenEdgePanGestureRecognizer;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
 - (void)_configureNavigationGesture;
 - (bool)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
@@ -15,11 +17,16 @@
 - (void)dealloc;
 - (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)gestureRecognizerView;
 - (id)initWithViewController:(id)arg1 animator:(id)arg2;
 - (id)screenEdgePanGestureRecognizer;
 - (void)setNotInteractiveTransition;
 - (void)startInteractiveTransition;
+
+// Image: /System/Library/AccessibilityBundles/GAXClient.bundle/GAXClient
+
++ (Class)safeCategoryBaseClass;
+
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
 
 @end

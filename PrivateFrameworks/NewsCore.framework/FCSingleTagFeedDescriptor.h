@@ -3,6 +3,8 @@
  */
 
 @interface FCSingleTagFeedDescriptor : FCFeedDescriptor {
+    long long  _feedFilterOptions;
+    long long  _feedSortMethod;
     long long  _feedType;
     <FCTagProviding> * _masterTag;
     <FCTagProviding> * _tag;
@@ -18,7 +20,7 @@
 - (id)backingTopicID;
 - (bool)enableNotificationsWithSubscriptionController:(id)arg1 error:(id*)arg2;
 - (long long)feedFilterOptions;
-- (id)feedGroupEmittersWithAppConfiguration:(id)arg1;
+- (id)feedGroupEmittersWithCoreConfiguration:(id)arg1;
 - (long long)feedSortMethod;
 - (long long)feedType;
 - (bool)hasNotificationsEnabledWithSubscriptionController:(id)arg1;
@@ -29,7 +31,9 @@
 - (id)iAdKeywords;
 - (id)iAdPrimaryAudience;
 - (id)iAdSectionID;
-- (id)initWithContext:(id)arg1 identifier:(id)arg2 tag:(id)arg3;
+- (id)initWithContext:(id)arg1 tag:(id)arg2;
+- (id)initWithContext:(id)arg1 tag:(id)arg2 sortMethod:(long long)arg3 filterOptions:(long long)arg4;
+- (id)initWithIdentifier:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (bool)isMutedWithSubscriptionController:(id)arg1;
 - (bool)isSubscribable;

@@ -28,6 +28,7 @@
 - (void)addConnection:(id)arg1;
 - (void)cancelConnectionsOfClass:(Class)arg1;
 - (id)init;
+- (id)initWithSOCKSProxyServer:(id)arg1 port:(id)arg2;
 - (void)invalidate;
 - (int)networkDisconnectRetryCount;
 - (id)networkStorage;

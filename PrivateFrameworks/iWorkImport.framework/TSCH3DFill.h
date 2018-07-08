@@ -56,6 +56,7 @@
 - (id)p_imageFillForSize:(struct CGSize { double x1; double x2; })arg1 context:(id)arg2;
 - (id)p_lazyLightingModel;
 - (void)paintPath:(struct CGPath { }*)arg1 inContext:(struct CGContext { }*)arg2;
+- (void)paintPath:(struct CGPath { }*)arg1 inContext:(struct CGContext { }*)arg2 offset:(struct CGPoint { double x1; double x2; })arg3;
 - (void)paintPath:(struct CGPath { }*)arg1 naturalBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 inContext:(struct CGContext { }*)arg3 isPDF:(bool)arg4;
 - (void)paintRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
 - (id)percentage;

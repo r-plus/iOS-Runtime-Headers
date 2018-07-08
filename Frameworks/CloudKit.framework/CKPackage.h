@@ -70,7 +70,7 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)CKPropertiesDescription;
+- (id)CKDescriptionPropertiesWithPublic:(bool)arg1 private:(bool)arg2 shouldExpand:(bool)arg3;
 - (id)UUID;
 - (id)_initWithBasePath:(id)arg1 UUID:(id)arg2;
 - (id)_itemOrNilAtIndex:(unsigned long long)arg1;

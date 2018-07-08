@@ -14,6 +14,7 @@
 @property (nonatomic, retain) NSData *approximateLocationData;
 @property (nonatomic, retain) NSOrderedSet *assets;
 @property (nonatomic, readonly) unsigned long long assetsCount;
+@property (nonatomic, readonly, retain) NSArray *batchedAssets;
 @property (nonatomic) int cachedCount;
 @property (nonatomic) int cachedPhotosCount;
 @property (nonatomic) int cachedVideosCount;
@@ -70,6 +71,7 @@
 - (unsigned long long)assetsCount;
 - (void)awakeFromFetch;
 - (void)awakeFromInsert;
+- (id)batchedAssets;
 - (bool)canPerformEditOperation:(unsigned long long)arg1;
 - (bool)canShowAvalancheStacks;
 - (bool)canShowComments;

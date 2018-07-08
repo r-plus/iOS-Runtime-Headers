@@ -27,7 +27,7 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (getter=isReachable, readonly) bool reachable;
 @property (readonly) Class superclass;
-@property (readonly, copy) NSUUID *uuid;
+@property (setter=setUUID:, copy) NSUUID *uuid;
 
 + (id)logCategory;
 + (id)otherAccessoryCategory;
@@ -65,6 +65,7 @@
 - (id)propertyQueue;
 - (void)setCategory:(id)arg1;
 - (void)setName:(id)arg1;
+- (void)setUUID:(id)arg1;
 - (id)shortDescription;
 - (void)updateCategoryWithCategoryIdentifier:(id)arg1;
 - (id)uuid;

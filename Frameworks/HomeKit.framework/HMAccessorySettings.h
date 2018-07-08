@@ -3,13 +3,14 @@
  */
 
 @interface HMAccessorySettings : NSObject <HFPrettyDescription, HFStateDumpSerializable, HMFLogging, HMObjectMerge> {
-    HMAccessory * _accessory;
     <HMAccessorySettingsDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _propertyQueue;
     HMAccessorySettingGroup * _rootGroup;
+    <HMAccessorySettingsContainer> * _settingsContainer;
+    <HMControllable> * _settingsControl;
 }
 
-@property HMAccessory *accessory;
+@property (readonly) HMAccessory *accessory;
 @property (getter=isControllable, readonly) bool controllable;
 @property (readonly, copy) NSString *debugDescription;
 @property <HMAccessorySettingsDelegate> *delegate;
@@ -19,6 +20,7 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (readonly) HMAccessorySettingGroup *rootGroup;
 @property (readonly) <HMAccessorySettingsContainer> *settingsContainer;
+@property <HMControllable> *settingsControl;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSUUID *uniqueIdentifier;
 
@@ -35,13 +37,15 @@
 - (void)_updateSettingsWithBlock:(id /* block */)arg1;
 - (id)accessory;
 - (id)delegate;
-- (id)initWithAccessory:(id)arg1 rootGroup:(id)arg2;
+- (id)initWithSettingsContainer:(id)arg1 settingsControl:(id)arg2 rootGroup:(id)arg3;
 - (bool)isControllable;
 - (id)propertyQueue;
 - (id)rootGroup;
-- (void)setAccessory:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setSettingsContainer:(id)arg1;
+- (void)setSettingsControl:(id)arg1;
 - (id)settingsContainer;
+- (id)settingsControl;
 - (id)uniqueIdentifier;
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home

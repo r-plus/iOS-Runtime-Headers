@@ -8,14 +8,14 @@
         struct TSUCellRect {} *__begin_; 
         struct TSUCellRect {} *__end_; 
         struct __compressed_pair<TSUCellRect *, std::__1::allocator<TSUCellRect> > { 
-            struct TSUCellRect {} *__first_; 
+            struct TSUCellRect {} *__value_; 
         } __end_cap_; 
     }  _cellRangesToInvalidate;
     struct vector<unsigned short, std::__1::allocator<unsigned short> > { 
         unsigned short *__begin_; 
         unsigned short *__end_; 
         struct __compressed_pair<unsigned short *, std::__1::allocator<unsigned short> > { 
-            unsigned short *__first_; 
+            unsigned short *__value_; 
         } __end_cap_; 
     }  _hiddenRowIndices;
     bool  _needsToUpdateFilterSetForImport;
@@ -50,7 +50,7 @@
         struct pair<unsigned short, bool> {} *__begin_; 
         struct pair<unsigned short, bool> {} *__end_; 
         struct __compressed_pair<std::__1::pair<unsigned short, bool> *, std::__1::allocator<std::__1::pair<unsigned short, bool> > > { 
-            struct pair<unsigned short, bool> {} *__first_; 
+            struct pair<unsigned short, bool> {} *__value_; 
         } __end_cap_; 
     }  _pendingComputedShowRowResults;
     NSObject<OS_dispatch_queue> * _pendingComputedShowRowResultsQueue;

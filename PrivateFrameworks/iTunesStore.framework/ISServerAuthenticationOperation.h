@@ -3,6 +3,7 @@
  */
 
 @interface ISServerAuthenticationOperation : ISOperation {
+    unsigned long long  _authenticatedAccountCredentialSource;
     NSNumber * _authenticatedAccountDSID;
     SSAuthenticationContext * _authenticationContext;
     ISDialog * _dialog;
@@ -12,6 +13,7 @@
     ISDialogButton * _selectedButton;
 }
 
+@property unsigned long long authenticatedAccountCredentialSource;
 @property (retain) NSNumber *authenticatedAccountDSID;
 @property (retain) SSAuthenticationContext *authenticationContext;
 @property (retain) ISDialog *dialog;
@@ -20,6 +22,7 @@
 @property (retain) NSURL *redirectURL;
 @property (retain) ISDialogButton *selectedButton;
 
+- (unsigned long long)authenticatedAccountCredentialSource;
 - (id)authenticatedAccountDSID;
 - (id)authenticationContext;
 - (void)dealloc;
@@ -30,6 +33,7 @@
 - (id)redirectURL;
 - (void)run;
 - (id)selectedButton;
+- (void)setAuthenticatedAccountCredentialSource:(unsigned long long)arg1;
 - (void)setAuthenticatedAccountDSID:(id)arg1;
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setDialog:(id)arg1;

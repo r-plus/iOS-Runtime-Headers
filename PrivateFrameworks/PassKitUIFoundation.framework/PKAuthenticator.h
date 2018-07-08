@@ -35,12 +35,13 @@
 + (id)viewServiceBundleID;
 
 - (void).cxx_destruct;
-- (id)_compareAndSwapWithCompareContext:(id)arg1 replacementContext:(id)arg2;
 - (id)_context;
 - (void)_contextChanged;
-- (bool)_contextMatchesContext:(id)arg1;
 - (bool)_delegateSupportsPasscodePresentation;
 - (bool)_delegateSupportsPassphrasePresentation;
+- (void)_evaluateRequest:(id)arg1 withContext:(id)arg2;
+- (void)_handleInstructionsForRequest:(id)arg1 withContext:(id)arg2 completion:(id /* block */)arg3;
+- (id)_optionsForEvaluationRequest:(id)arg1;
 - (id)_swapContext:(id)arg1;
 - (id)_swapContext:(id)arg1 withOptions:(unsigned long long)arg2;
 - (void)accessExternalizedContextWithCompletion:(id /* block */)arg1;
@@ -49,8 +50,7 @@
 - (void)cancelEvaluationWithOptions:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)evaluatePolicy:(long long)arg1 completion:(id /* block */)arg2;
-- (void)evaluateRequest:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)evaluateRequest:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)fallbackToSystemPasscodeUI;
 - (bool)fingerPresent;
 - (double)fingerPresentTimeout;

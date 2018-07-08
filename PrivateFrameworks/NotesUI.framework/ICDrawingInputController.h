@@ -12,7 +12,7 @@
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<ICDrawingInputPoint *, std::__1::allocator<ICDrawingInputPoint> > { 
-            struct { /* ? */ } *__first_; 
+            struct { /* ? */ } *__value_; 
         } __end_cap_; 
     }  _drawPoints;
     bool  _drawingEndedButNotFinished;
@@ -55,7 +55,7 @@
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<ICDrawingInputPoint *, std::__1::allocator<ICDrawingInputPoint> > { 
-            struct { /* ? */ } *__first_; 
+            struct { /* ? */ } *__value_; 
         } __end_cap_; 
     }  _updatedDrawPoints;
     bool  _useRuler;

@@ -3,7 +3,7 @@
  */
 
 @interface FCFeedViewportRemoveGroupOperation : FCOperation <FCFeedViewportRemoveGroupOperationType> {
-    <FCAppConfiguration> * _appConfiguration;
+    <FCCoreConfiguration> * _configuration;
     FCFeedDescriptor * _feedDescriptor;
     NSString * _groupID;
     id /* block */  _removeGroupCompletionHandler;
@@ -12,7 +12,7 @@
     FCFeedViewportDiff * _viewportDiff;
 }
 
-@property (nonatomic, copy) <FCAppConfiguration> *appConfiguration;
+@property (nonatomic, copy) <FCCoreConfiguration> *configuration;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) FCFeedDescriptor *feedDescriptor;
@@ -25,14 +25,14 @@
 @property (nonatomic, retain) FCFeedViewportDiff *viewportDiff;
 
 - (void).cxx_destruct;
-- (id)appConfiguration;
+- (id)configuration;
 - (id)feedDescriptor;
 - (id)groupID;
 - (void)operationDidFinishWithError:(id)arg1;
 - (void)performOperation;
 - (id /* block */)removeGroupCompletionHandler;
 - (id)resultViewport;
-- (void)setAppConfiguration:(id)arg1;
+- (void)setConfiguration:(id)arg1;
 - (void)setFeedDescriptor:(id)arg1;
 - (void)setGroupID:(id)arg1;
 - (void)setRemoveGroupCompletionHandler:(id /* block */)arg1;

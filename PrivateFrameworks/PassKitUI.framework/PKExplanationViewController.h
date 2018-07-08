@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKExplanationViewController : PKViewController <PKPaymentSetupPrivacyFooterViewDelegate> {
+@interface PKExplanationViewController : PKViewController {
     long long  _context;
     PKExplanationView * _explanationView;
     <PKExplanationViewControllerDelegate> * _explanationViewControllerDelegate;
+    OBPrivacyLinkController * _privacyLinkController;
     bool  _showCancelButton;
     bool  _showDoneButton;
 }
@@ -13,6 +14,7 @@
 @property (nonatomic, readonly) long long context;
 @property (nonatomic, readonly) PKExplanationView *explanationView;
 @property (nonatomic) <PKExplanationViewControllerDelegate> *explanationViewControllerDelegate;
+@property (nonatomic, retain) OBPrivacyLinkController *privacyLinkController;
 @property (nonatomic) bool showCancelButton;
 @property (nonatomic) bool showDoneButton;
 
@@ -28,8 +30,9 @@
 - (void)loadView;
 - (id)pkui_navigationBarTintColor;
 - (bool)pkui_prefersNavigationBarShadowHidden;
-- (void)privacyFooterLinkTapped:(id)arg1;
+- (id)privacyLinkController;
 - (void)setExplanationViewControllerDelegate:(id)arg1;
+- (void)setPrivacyLinkController:(id)arg1;
 - (void)setShowCancelButton:(bool)arg1;
 - (void)setShowDoneButton:(bool)arg1;
 - (bool)showCancelButton;

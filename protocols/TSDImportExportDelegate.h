@@ -12,8 +12,8 @@
 @optional
 
 - (void)addIncompatibleMediaContainer:(id <TSDCompatibilityAwareMediaContainer>)arg1 incompatibleData:(TSPData *)arg2 compatibilityLevel:(long long)arg3;
-- (NSDictionary *)incompatibleMediaContainersWithDataUnsupportedOnAllDevices;
-- (NSDictionary *)incompatibleMediaContainersWithDataUnsupportedOnThisDevice;
+- (NSMapTable *)incompatibleMediaContainersWithDataUnsupportedOnAllDevices;
+- (NSMapTable *)incompatibleMediaContainersWithDataUnsupportedOnThisDevice;
 - (bool)isBrowsingVersions;
 - (void)removeIncompatibleMediaContainer:(id <TSDCompatibilityAwareMediaContainer>)arg1;
 - (void)replaceIncompatibleMediaContainer:(id <TSDCompatibilityAwareMediaContainer>)arg1 withNewMediaContainer:(id <TSDCompatibilityAwareMediaContainer>)arg2;

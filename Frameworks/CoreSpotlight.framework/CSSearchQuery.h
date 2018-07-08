@@ -17,6 +17,8 @@
     id /* block */  _gatherEndedHandler;
     NSMapTable * _liveIndexBundleIDToBundleString;
     NSMapTable * _liveIndexBundleIDToIndexItemIDMap;
+    NSString * _privateBundleID;
+    bool  _privateIndex;
     CSSearchQueryContext * _queryContext;
     NSString * _queryString;
     NSObject<OS_dispatch_queue> * _queue;
@@ -38,6 +40,8 @@
 @property (copy) id /* block */ gatherEndedHandler;
 @property (nonatomic, retain) NSMapTable *liveIndexBundleIDToBundleString;
 @property (nonatomic, retain) NSMapTable *liveIndexBundleIDToIndexItemIDMap;
+@property (nonatomic, retain) NSString *privateBundleID;
+@property (nonatomic) bool privateIndex;
 @property (copy) NSArray *protectionClasses;
 @property (nonatomic, retain) CSSearchQueryContext *queryContext;
 @property (nonatomic, copy) NSString *queryString;
@@ -61,6 +65,7 @@
 - (id /* block */)changedAttributesHandler;
 - (id /* block */)changedItemsHandler;
 - (id /* block */)completionHandler;
+- (id)connection;
 - (id /* block */)countChangedHandler;
 - (bool)counting;
 - (id)createCSSearchableItemWithOID:(long long)arg1 values:(id*)arg2 valueCount:(unsigned long long)arg3 protectionClass:(id)arg4 isTopHitQuery:(bool)arg5;
@@ -85,6 +90,8 @@
 - (id)liveIndexBundleIDToBundleString;
 - (id)liveIndexBundleIDToIndexItemIDMap;
 - (id)options;
+- (id)privateBundleID;
+- (bool)privateIndex;
 - (void)processAttributesData:(id)arg1 update:(bool)arg2 protectionClass:(id)arg3;
 - (void)processLiveResultsData:(id)arg1 oidData:(id)arg2 protectionClass:(id)arg3 isTopHitQuery:(bool)arg4;
 - (void)processRemoveResultsData:(id)arg1 protectionClass:(id)arg2;
@@ -109,6 +116,8 @@
 - (void)setGatherEndedHandler:(id /* block */)arg1;
 - (void)setLiveIndexBundleIDToBundleString:(id)arg1;
 - (void)setLiveIndexBundleIDToIndexItemIDMap:(id)arg1;
+- (void)setPrivateBundleID:(id)arg1;
+- (void)setPrivateIndex:(bool)arg1;
 - (void)setProtectionClasses:(id)arg1;
 - (void)setQueryContext:(id)arg1;
 - (void)setQueryString:(id)arg1;

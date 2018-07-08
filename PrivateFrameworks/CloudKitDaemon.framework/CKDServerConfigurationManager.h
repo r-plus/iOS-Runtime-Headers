@@ -34,13 +34,13 @@
 - (id)CKStatusReportArray;
 - (void)_behaviorOptionsChanged:(id)arg1;
 - (void)_dropAllConfigurations;
-- (void)_fetchContainerSpecificInfoForOperation:(id)arg1 needUserID:(bool)arg2 completionHandler:(id /* block */)arg3;
+- (void)_fetchContainerSpecificInfoForOperation:(id)arg1 requireUserIDs:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (void)_fetchGlobalConfigForOperation:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_reallyDropAllConfigurations;
 - (id)_uniqueStringForContainerAndAccount:(id)arg1;
 - (void)configurationForOperation:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)configurationQueue;
-- (void)containerScopedUserIDForOperation:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)containerInfoForOperation:(id)arg1 requireUserIDs:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (id)containerSpecificInfoOperations;
 - (id)containerSpecificInfoQueue;
 - (id)containerSpecificInfos;
@@ -52,8 +52,6 @@
 - (int)iCloudEnvNotifToken;
 - (id)init;
 - (id)propertyQueue;
-- (void)publicURLForServerType:(long long)arg1 operation:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)serverEnvironmentForOperation:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setConfigurationQueue:(id)arg1;
 - (void)setContainerSpecificInfoOperations:(id)arg1;
 - (void)setContainerSpecificInfoQueue:(id)arg1;

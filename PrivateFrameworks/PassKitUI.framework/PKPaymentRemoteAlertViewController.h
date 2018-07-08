@@ -5,13 +5,14 @@
 @interface PKPaymentRemoteAlertViewController : SBUIRemoteAlertServiceViewController <PKPaymentServiceDelegate, SBSHardwareButtonEventConsuming> {
     bool  _appearedOnce;
     bool  _backlightActive;
+    bool  _brightnessRampingAllowed;
     bool  _deviceUILocked;
     PKFieldDetectEducationViewController * _educationVC;
     NSArray * _fieldPassUniqueIdentifiers;
     PKFieldProperties * _fieldProperties;
     NSObject<OS_dispatch_group> * _fieldPropertiesLookupGroup;
     bool  _insertedGroupsVC;
-    bool  _invalidated;
+    long long  _invalidationStatus;
     SBSAssertion * _lockButtonAssertion;
     <BSInvalidatable> * _lockButtonObserver;
     PKAssertion * _notificationSuppressionAssertion;
@@ -42,6 +43,7 @@
 - (void)_dismissIfRestricted;
 - (void)_insertGroupController;
 - (void)_invalidate;
+- (void)_invalidateForType:(long long)arg1;
 - (bool)_notificationIsFromChildViewController:(id)arg1;
 - (void)_paymentDidReceiveSuccessfulTransactionNotification:(id)arg1;
 - (void)_presentHomeButtonDoubleTapAlertIfNecessary;

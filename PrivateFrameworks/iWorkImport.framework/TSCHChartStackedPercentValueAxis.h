@@ -6,6 +6,7 @@
     TSCHChartAxisAnalysis * mInProgressAnalysisForErrorBarData;
 }
 
+- (void).cxx_destruct;
 - (void)adjustMinMaxForDataRangeInAnalysis:(id)arg1;
 - (id)dataFormatter;
 - (id)dataFormatterForSeries:(id)arg1 index:(unsigned long long)arg2;

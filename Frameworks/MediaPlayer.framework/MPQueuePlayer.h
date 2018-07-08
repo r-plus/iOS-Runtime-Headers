@@ -39,7 +39,6 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) long long defaultItemEQPresetType;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) bool disallowsAMRAudio;
 @property (nonatomic, readonly) NSError *error;
 @property (getter=isExternalPlaybackActive, nonatomic, readonly) bool externalPlaybackActive;
 @property (nonatomic, readonly) long long externalPlaybackType;
@@ -85,7 +84,6 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })currentTime;
 - (void)dealloc;
 - (long long)defaultItemEQPresetType;
-- (bool)disallowsAMRAudio;
 - (id)error;
 - (long long)externalPlaybackType;
 - (id)externalPlaybackVideoGravity;
@@ -115,7 +113,6 @@
 - (void)setAllowsExternalPlayback:(bool)arg1 shouldIgnorePlaybackQueueTransactions:(bool)arg2;
 - (void)setCurrentPlaybackQueueTransactionDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setDefaultItemEQPresetType:(long long)arg1;
-- (void)setDisallowsAMRAudio:(bool)arg1;
 - (void)setExternalPlaybackVideoGravity:(id)arg1;
 - (void)setLimitsBandwidthForCellularAccess:(bool)arg1;
 - (void)setMediaSelectionCriteria:(id)arg1 forMediaCharacteristic:(id)arg2;

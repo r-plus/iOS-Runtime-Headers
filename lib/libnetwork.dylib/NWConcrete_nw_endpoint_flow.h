@@ -24,6 +24,7 @@
     unsigned int  initialized_protocol;
     unsigned int  input_finished;
     void * internally_retained_object;
+    struct nw_protocol_identifier { BOOL x1[32]; int x2; int x3; } * ip_protocol_identifier;
     unsigned int  is_channel;
     unsigned int  is_flow_divert;
     unsigned int  is_multipath;

@@ -42,7 +42,6 @@
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
-- (id)initWithTriggerEvent:(int)arg1 input:(id)arg2 uuid:(id)arg3;
 - (id)input;
 - (bool)isEqual:(id)arg1;
 - (id)jsonData;

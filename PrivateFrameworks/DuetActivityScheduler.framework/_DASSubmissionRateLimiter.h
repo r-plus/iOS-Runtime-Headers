@@ -20,6 +20,9 @@
 @property (nonatomic, retain) NSMutableDictionary *penaltyBox;
 @property (nonatomic, retain) NSMutableDictionary *submittedActivities;
 
++ (id)groupNameForActivity:(id)arg1;
++ (id)pluginGroupNameForGroupName:(id)arg1;
+
 - (void).cxx_destruct;
 - (void)activityCanceled:(id)arg1 withScheduler:(id)arg2;
 - (void)activityCompleted:(id)arg1 withScheduler:(id)arg2;

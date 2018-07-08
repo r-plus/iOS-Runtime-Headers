@@ -13,6 +13,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) HFZoneModule *module;
 @property (nonatomic, retain) HMRoom *room;
 @property (readonly) Class superclass;
 
@@ -42,6 +43,5 @@
 - (bool)textFieldShouldEndEditing:(id)arg1;
 - (bool)textFieldShouldReturn:(id)arg1;
 - (void)updateCell:(id)arg1 forItem:(id)arg2 animated:(bool)arg3;
-- (id)zoneModule;
 
 @end

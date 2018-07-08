@@ -100,6 +100,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
++ (bool)hk_isUSLocale;
+
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
 + (unsigned long long)pu_currentCharacterDirection;
@@ -224,6 +228,7 @@
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
++ (id)pk_deviceLanguage;
 + (id)pk_preferredLocale;
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore

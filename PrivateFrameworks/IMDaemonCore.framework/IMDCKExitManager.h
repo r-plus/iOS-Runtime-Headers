@@ -12,6 +12,7 @@
     bool  _fetchedExitDateOnLaunch;
     IMDRecordZoneManager * _recordZoneManager;
     NSNumber * _saltZoneCreatedOverride;
+    NSNumber * _subscriptionCreatedOverride;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *ckQueue;
@@ -23,14 +24,20 @@
 @property (nonatomic) bool fetchedExitDateOnLaunch;
 @property (nonatomic, retain) IMDRecordZoneManager *recordZoneManager;
 @property (nonatomic, retain) NSNumber *saltZoneCreatedOverride;
+@property (nonatomic, retain) NSNumber *subscriptionCreatedOverride;
 
 + (id)sharedInstance;
 
+- (void)_evalToggleiCloudSettingsSwitch;
 - (void)_fetchExitRecordDateWithCompletion:(id /* block */)arg1;
+- (id)_modifiedOpGroupName:(id)arg1 useManatee:(bool)arg2;
 - (bool)_saltZoneCreated;
+- (void)_scheduleMetricOperation:(id)arg1 useManate:(bool)arg2;
 - (void)_scheduleOperation:(id)arg1;
 - (bool)_serverAllowsMetricSubmission;
 - (void)_setUpSubscription;
+- (id)_sharedCKUtilities;
+- (bool)_subscriptionCreated;
 - (id)ckQueue;
 - (id)databaseManager;
 - (void)dealloc;
@@ -55,11 +62,13 @@
 - (void)setFetchedExitDateOnLaunch:(bool)arg1;
 - (void)setRecordZoneManager:(id)arg1;
 - (void)setSaltZoneCreatedOverride:(id)arg1;
-- (void)submitCloudKitMetricWithData:(id)arg1 operationGroupName:(id)arg2 completion:(id /* block */)arg3;
-- (void)submitCloudKitMetricWithOperationGroupName:(id)arg1;
+- (void)setSubscriptionCreatedOverride:(id)arg1;
+- (void)submitCloudKitMetricWithData:(id)arg1 operationGroupName:(id)arg2 useManatee:(bool)arg3 completion:(id /* block */)arg4;
+- (void)submitCloudKitMetricWithOperationGroupName:(id)arg1 useManatee:(bool)arg2;
+- (id)subscriptionCreatedOverride;
 - (id)syncCompleteRecordID;
 - (void)writeExitRecordWithDate:(id)arg1 completion:(id /* block */)arg2;
 - (void)writeInitialSyncCompletedRecordIfNeeded;
-- (void)writeSyncCompletedRecordWithDate:(id)arg1 completion:(id /* block */)arg2;
+- (void)writeSyncCompletedRecordWithDate:(id)arg1 useManatee:(bool)arg2 completion:(id /* block */)arg3;
 
 @end

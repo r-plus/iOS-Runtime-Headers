@@ -28,7 +28,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) SXViewport *viewport;
 
-+ (id)debugAdvertismentSettings;
++ (id)debugAdvertisementSettings;
 + (bool)interactivityDebuggingEnabled;
 + (bool)isDebugModeEnabled;
 + (void)setDebugAdvertisingSettings:(id)arg1;
@@ -38,7 +38,7 @@
 - (void).cxx_destruct;
 - (id)adProvider;
 - (bool)allowComponentViewInFirstViewport:(id)arg1;
-- (id /* block */)bannerViewForComponentView:(id)arg1 metadataProvider:(id)arg2 adType:(unsigned long long)arg3 completionBlock:(id /* block */)arg4;
+- (id /* block */)bannerViewForComponentView:(id)arg1 component:(id)arg2 metadataProvider:(id)arg3 adType:(unsigned long long)arg4 completionBlock:(id /* block */)arg5;
 - (id)bannerViews;
 - (id)bannerViewsSemaphore;
 - (bool)component:(id)arg1 isLastComponentInComponents:(id)arg2;

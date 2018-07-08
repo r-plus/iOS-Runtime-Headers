@@ -7,7 +7,7 @@
         struct EntriesContainer {} *__begin_; 
         struct EntriesContainer {} *__end_; 
         struct __compressed_pair<MPU::LayoutInterpolator::EntriesContainer *, std::__1::allocator<MPU::LayoutInterpolator::EntriesContainer> > { 
-            struct EntriesContainer {} *__first_; 
+            struct EntriesContainer {} *__value_; 
         } __end_cap_; 
     }  _entriesContainers;
     bool  _hasEntryWithSpecificSecondaryReferenceMetric;

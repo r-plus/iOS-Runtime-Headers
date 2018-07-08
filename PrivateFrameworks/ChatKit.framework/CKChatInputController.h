@@ -8,6 +8,7 @@
     IMBalloonPluginDataSource * _browserPluginDataSource;
     CKBrowserSwitcherViewController * _browserSwitcher;
     CKKeyboardContentViewController * _currentInputViewController;
+    IMBalloonPluginDataSource * _deferredPluginDataSource;
     <CKChatInputControllerDelegate> * _delegate;
     IMScheduledUpdater * _dismissEntryViewShelfUpdater;
     CKMessageEntryView * _entryView;
@@ -26,6 +27,7 @@
     UIViewController * _statusBarStyleViewController;
     CKKeyboardContentViewController * _switcherInputViewController;
     NSDate * _switcherLastTouchDate;
+    UITextInputPayloadController * _textInputPayloadController;
 }
 
 @property (nonatomic) bool _isRunningPPT;
@@ -38,6 +40,7 @@
 @property (nonatomic, retain) CKBrowserSwitcherViewController *browserSwitcher;
 @property (nonatomic, retain) CKKeyboardContentViewController *currentInputViewController;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) IMBalloonPluginDataSource *deferredPluginDataSource;
 @property (nonatomic) <CKChatInputControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) IMScheduledUpdater *dismissEntryViewShelfUpdater;
@@ -60,6 +63,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) CKKeyboardContentViewController *switcherInputViewController;
 @property (nonatomic, retain) NSDate *switcherLastTouchDate;
+@property (nonatomic, retain) UITextInputPayloadController *textInputPayloadController;
 
 - (void).cxx_destruct;
 - (id)_adamIDFromPluginPayloadData:(id)arg1;
@@ -106,13 +110,17 @@
 - (void)clearBrowserViewControllerIfNecessary;
 - (void)commitPayload:(id)arg1;
 - (bool)commitPayload:(id)arg1 forPlugin:(id)arg2 allowAllCommits:(bool)arg3 error:(id*)arg4;
+- (bool)commitPayloadBypassingValidation:(id)arg1 forPlugin:(id)arg2;
 - (void)commitSticker:(id)arg1;
 - (void)commitSticker:(id)arg1 atScreenCoordinate:(struct CGPoint { double x1; double x2; })arg2 scale:(double)arg3 rotation:(double)arg4;
 - (void)commitSticker:(id)arg1 forPlugin:(id)arg2;
+- (void)commitSticker:(id)arg1 forPlugin:(id)arg2 bypassValidation:(bool)arg3;
 - (void)commitSticker:(id)arg1 withDragTarget:(id)arg2;
+- (void)commitStickerBypassingValidation:(id)arg1 forPlugin:(id)arg2;
 - (void)composeRecipientViewDidBecomeFirstResponder:(id)arg1;
 - (id)currentInputViewController;
 - (void)dealloc;
+- (id)deferredPluginDataSource;
 - (id)delegate;
 - (void)deviceOrientationManager:(id)arg1 orientationDidChange:(long long)arg2;
 - (void)didBeginInstallingAppWithBundleIdentifier:(id)arg1;
@@ -129,7 +137,7 @@
 - (id)entryView;
 - (void)entryViewDidChangeSize;
 - (void)fullscreenAppViewController:(id)arg1 hasUpdatedLastTouchDate:(id)arg2;
-- (void)fullscreenAppViewController:(id)arg1 wantsToSwitchToPlugin:(id)arg2;
+- (void)fullscreenAppViewController:(id)arg1 wantsToSwitchToPlugin:(id)arg2 datasource:(id)arg3;
 - (void)fullscreenAppViewControllerDidTransitionFromOrientation:(long long)arg1 toOrientation:(long long)arg2;
 - (void)fullscreenAppViewControllerSwitcherDidSelectAppManager:(id)arg1;
 - (void)fullscreenAppViewControllerSwitcherDidSelectAppStore:(id)arg1;
@@ -187,6 +195,7 @@
 - (void)setBrowserPluginDataSource:(id)arg1;
 - (void)setBrowserSwitcher:(id)arg1;
 - (void)setCurrentInputViewController:(id)arg1;
+- (void)setDeferredPluginDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDismissEntryViewShelfUpdater:(id)arg1;
 - (void)setEntryView:(id)arg1;
@@ -209,6 +218,7 @@
 - (void)setStatusBarStyleViewController:(id)arg1;
 - (void)setSwitcherInputViewController:(id)arg1;
 - (void)setSwitcherLastTouchDate:(id)arg1;
+- (void)setTextInputPayloadController:(id)arg1;
 - (void)set_isRunningPPT:(bool)arg1;
 - (bool)shouldRestoreAppSwitcher;
 - (bool)shouldSuppressStatusBarForHandwriting;
@@ -225,6 +235,7 @@
 - (void)startEditingPayload:(id)arg1 dismiss:(bool)arg2;
 - (void)startEditingPayload:(id)arg1 dismiss:(bool)arg2 forPlugin:(id)arg3;
 - (void)startEditingPayload:(id)arg1 dismiss:(bool)arg2 forPlugin:(id)arg3 completion:(id /* block */)arg4;
+- (void)startEditingPayloadBypassingValidation:(id)arg1 forPlugin:(id)arg2 completion:(id /* block */)arg3;
 - (id)statusBarStyleViewController;
 - (void)swipeDismissBrowser;
 - (id)switcherInputViewController;
@@ -237,6 +248,7 @@
 - (void)switcherViewControllerDidSelectAppManager:(id)arg1 shouldRestoreAppSwitcher:(bool)arg2;
 - (void)switcherViewControllerDidSelectAppStore:(id)arg1 shouldRestoreAppSwitcher:(bool)arg2;
 - (void)switcherViewControllerDidStartSwitching:(id)arg1;
+- (id)textInputPayloadController;
 - (void)unregisterForTextInputPayloadHandling;
 - (id)workingDirForDraft;
 

@@ -22,11 +22,14 @@
 
 - (void).cxx_destruct;
 - (void)_cleanupState;
+- (void)_processCompositeInterval:(id)arg1;
 - (void)_trackBegin:(id)arg1;
 - (bool)buildAnimationCompositeIntervalTimelines;
 - (bool)compositeIntervalIsInFlight;
 - (id)doneProcessing;
+- (bool)eventIsCompositeLoopEvent:(id)arg1;
 - (id)init;
+- (bool)isCompositeLoopSubsystem:(id)arg1 category:(id)arg2;
 - (id)matchingEventForEvent:(id)arg1 removeIfFound:(bool)arg2;
 - (id)outstandingAnimationStarts;
 - (void)processBeginEvent:(id)arg1;

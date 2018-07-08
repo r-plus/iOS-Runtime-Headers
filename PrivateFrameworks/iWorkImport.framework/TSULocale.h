@@ -5,6 +5,7 @@
 @interface TSULocale : NSObject {
     NSString * _activeCurrencyCode;
     NSString * _activeNoMinusSignCurrencyCode;
+    NSString * _amString;
     NSCache * _cachedLocalizedStrings;
     NSString * _currencyCode;
     NSString * _currencyDecimalSeparator;
@@ -36,6 +37,7 @@
     NSMutableArray * _numberFormatters;
     NSString * _percentSymbol;
     struct __CFNumberFormatter { } * _plainFormatter;
+    NSString * _pmString;
     NSMutableArray * _scientificNumberFormatters;
     NSArray * _shortMonthSymbols;
     NSArray * _shortStandaloneMonthSymbols;
@@ -47,6 +49,7 @@
     NSArray * _weekdaySymbols;
 }
 
+@property (readonly) NSString *amString;
 @property (readonly) NSString *arrayRowSeparator;
 @property (readonly) struct __CFLocale { }*cfGregorianCalendarLocale;
 @property (readonly) struct __CFLocale { }*cfLocale;
@@ -68,6 +71,7 @@
 @property (readonly) NSString *localeIdentifier;
 @property (readonly) NSArray *monthSymbols;
 @property (readonly) NSString *percentSymbol;
+@property (readonly) NSString *pmString;
 @property (readonly) NSArray *shortMonthSymbols;
 @property (readonly) NSArray *shortStandaloneMonthSymbols;
 @property (readonly) NSArray *shortStandaloneWeekdaySymbols;
@@ -98,6 +102,7 @@
 + (id)localeIDWithoutDefaultRegionCode:(id)arg1 avoidAmbiguousCases:(bool)arg2;
 + (bool)localeIsAutoUpdating:(id)arg1;
 + (id)preferredLanguages;
++ (id)preferredLocale;
 + (void)saveLocaleForReuse:(id)arg1;
 + (void)setLocalizedStringBundle:(struct __CFBundle { }*)arg1;
 + (id)simplifiedDisplayNameForLocaleID:(id)arg1 displayStandalone:(bool)arg2;
@@ -108,6 +113,7 @@
 - (void)_initializeNumberFormatterStringFromDoubleCache;
 - (id)_localizedStringFromArgumentsTable:(id)arg1;
 - (id)allLocalizedFunctions;
+- (id)amString;
 - (id)arrayRowSeparator;
 - (struct __CFLocale { }*)cfGregorianCalendarLocale;
 - (struct __CFLocale { }*)cfLocale;
@@ -169,6 +175,7 @@
 - (id)monthSymbols;
 - (id)numberFormatterStringFromDouble:(double)arg1 withFormat:(id)arg2 useDecimalPlaces:(bool)arg3 minDecimalPlaces:(unsigned short)arg4 decimalPlaces:(unsigned short)arg5 showThousandsSeparator:(bool)arg6 currencyCode:(id)arg7 suppressMinusSign:(bool)arg8;
 - (id)percentSymbol;
+- (id)pmString;
 - (void)returnNumberFormatter:(struct __CFNumberFormatter { }*)arg1;
 - (void)returnScientificNumberFormatter:(struct __CFNumberFormatter { }*)arg1;
 - (void)setLocaleSpecificStorage:(id)arg1 forKey:(id)arg2;

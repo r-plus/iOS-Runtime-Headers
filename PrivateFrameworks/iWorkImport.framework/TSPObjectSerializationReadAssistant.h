@@ -8,6 +8,8 @@
     bool  _deserializeAsPasteboard;
     NSDictionary * _identiferToResourceNameDictionary;
     NSDictionary * _identifierToObjectUUIDDictionary;
+    bool  _isCrossAppPaste;
+    bool  _isCrossDocumentPaste;
     bool  _resetObjectUUIDs;
     NSURL * _resourcesFolderURL;
     TSPComponent * _rootObjectComponent;
@@ -19,8 +21,8 @@
 @property (nonatomic, readonly) unsigned long long fileFormatVersion;
 @property (nonatomic, readonly) bool hasDocumentVersionUUID;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) bool isCrossAppPaste;
-@property (nonatomic, readonly) bool isCrossDocumentPaste;
+@property (nonatomic) bool isCrossAppPaste;
+@property (nonatomic) bool isCrossDocumentPaste;
 @property (nonatomic, readonly) long long sourceType;
 @property (readonly) Class superclass;
 
@@ -41,6 +43,8 @@
 - (id)objectUUIDForExternalReferenceToIdentifier:(long long)arg1;
 - (bool)processMetadataObject:(id)arg1 error:(id*)arg2;
 - (id)rootObjectComponent;
+- (void)setIsCrossAppPaste:(bool)arg1;
+- (void)setIsCrossDocumentPaste:(bool)arg1;
 - (bool)shouldDecodeMissingDataAsRemote;
 - (bool)shouldResolveExternalReferencesUsingObjectUUID;
 - (long long)sourceType;

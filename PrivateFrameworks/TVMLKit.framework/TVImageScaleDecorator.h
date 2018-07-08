@@ -55,6 +55,7 @@
 - (id)initWithScaleToSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)initWithScaleToSize:(struct CGSize { double x1; double x2; })arg1 cropToFit:(bool)arg2;
 - (id)initWithScaleToSize:(struct CGSize { double x1; double x2; })arg1 scaleMode:(long long)arg2;
+- (bool)isEqual:(id)arg1;
 - (bool)loaderCropToFit;
 - (struct CGSize { double x1; double x2; })loaderScaleToSize;
 - (bool)needsAlphaForImage:(id)arg1;

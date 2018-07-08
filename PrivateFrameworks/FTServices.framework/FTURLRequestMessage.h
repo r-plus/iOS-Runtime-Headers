@@ -11,6 +11,7 @@
     NSData * _responseBody;
     NSDictionary * _responseHeaders;
     NSNumber * _responseStatusCode;
+    NSDictionary * _timingData;
 }
 
 @property (nonatomic, copy) NSData *requestBody;
@@ -21,6 +22,7 @@
 @property (nonatomic, copy) NSData *responseBody;
 @property (nonatomic, copy) NSDictionary *responseHeaders;
 @property (nonatomic, copy) NSNumber *responseStatusCode;
+@property (nonatomic, copy) NSDictionary *timingData;
 
 - (void).cxx_destruct;
 - (id)additionalMessageHeaders;
@@ -49,6 +51,8 @@
 - (void)setResponseBody:(id)arg1;
 - (void)setResponseHeaders:(id)arg1;
 - (void)setResponseStatusCode:(id)arg1;
+- (void)setTimingData:(id)arg1;
+- (id)timingData;
 - (bool)wantsBodySignature;
 - (bool)wantsHTTPGet;
 - (bool)wantsIDSServer;

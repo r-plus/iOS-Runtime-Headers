@@ -10,6 +10,7 @@
     bool  _allowAddUnauthenticatedAccessory;
     NSString * _homeName;
     long long  _linkType;
+    bool  _needsUserConsent;
     HMFTimer * _pairingInterruptionTimer;
     HMFTimer * _pairingRetryTimer;
     bool  _provideNetworkCredentialsToAccessory;
@@ -27,6 +28,7 @@
 @property (nonatomic) bool allowAddUnauthenticatedAccessory;
 @property (nonatomic, retain) NSString *homeName;
 @property (nonatomic) long long linkType;
+@property (nonatomic) bool needsUserConsent;
 @property (nonatomic, retain) HMFTimer *pairingInterruptionTimer;
 @property (nonatomic, retain) HMFTimer *pairingRetryTimer;
 @property (nonatomic) bool provideNetworkCredentialsToAccessory;
@@ -44,9 +46,10 @@
 - (bool)allowAddUnauthenticatedAccessory;
 - (id)description;
 - (id)homeName;
-- (id)initWithAccessoryDescription:(id)arg1 linkType:(long long)arg2 completionHandler:(id /* block */)arg3 progressHandler:(id /* block */)arg4;
+- (id)initWithAccessoryDescription:(id)arg1 linkType:(long long)arg2 needsUserConsent:(bool)arg3 completionHandler:(id /* block */)arg4 progressHandler:(id /* block */)arg5;
 - (id)initWithAccessoryUUID:(id)arg1 accessoryName:(id)arg2 linkType:(long long)arg3 homeName:(id)arg4 setupCode:(id)arg5 completionHandler:(id /* block */)arg6 setupCodeProvider:(id /* block */)arg7;
 - (long long)linkType;
+- (bool)needsUserConsent;
 - (id)pairingInterruptionTimer;
 - (id)pairingRetryTimer;
 - (bool)provideNetworkCredentialsToAccessory;
@@ -58,6 +61,7 @@
 - (void)setAllowAddUnauthenticatedAccessory:(bool)arg1;
 - (void)setHomeName:(id)arg1;
 - (void)setLinkType:(long long)arg1;
+- (void)setNeedsUserConsent:(bool)arg1;
 - (void)setPairingInterruptionTimer:(id)arg1;
 - (void)setPairingRetryTimer:(id)arg1;
 - (void)setProvideNetworkCredentialsToAccessory:(bool)arg1;

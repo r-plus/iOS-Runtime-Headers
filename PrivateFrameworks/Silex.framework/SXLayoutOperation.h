@@ -3,13 +3,15 @@
  */
 
 @interface SXLayoutOperation : NSOperation <SXLayouterDelegate> {
+    id /* block */  _afterBlock;
+    id /* block */  _beforeBlock;
     <SXComponentSizerEngine> * _componentSizerEngine;
     double  _constrainedWidth;
-    SXDynamicAdController * _dynamicAdController;
     bool  _executing;
     bool  _finished;
     SXLayoutAttributes * _layoutAttributes;
     SXLayoutBlueprint * _layoutBlueprint;
+    <SXLayoutBlueprintFactory> * _layoutBlueprintFactory;
     SXLayoutDataProvider * _layoutDataProvider;
     NSString * _targetComponentIdentifier;
     struct CGSize { 
@@ -18,32 +20,37 @@
     }  _viewportSize;
 }
 
+@property (setter=afterLayout:, nonatomic, copy) id /* block */ afterBlock;
+@property (setter=beforeLayout:, nonatomic, copy) id /* block */ beforeBlock;
 @property (nonatomic, readonly) <SXComponentSizerEngine> *componentSizerEngine;
 @property (nonatomic, readonly) double constrainedWidth;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) SXDynamicAdController *dynamicAdController;
 @property bool executing;
 @property bool finished;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SXLayoutAttributes *layoutAttributes;
 @property (nonatomic, retain) SXLayoutBlueprint *layoutBlueprint;
+@property (nonatomic, readonly) <SXLayoutBlueprintFactory> *layoutBlueprintFactory;
 @property (nonatomic, readonly) SXLayoutDataProvider *layoutDataProvider;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *targetComponentIdentifier;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } viewportSize;
 
 - (void).cxx_destruct;
+- (id /* block */)afterBlock;
+- (void)afterLayout:(id /* block */)arg1;
+- (id /* block */)beforeBlock;
+- (void)beforeLayout:(id /* block */)arg1;
 - (id)componentSizerEngine;
 - (double)constrainedWidth;
 - (id)createLayoutBlueprintForLayoutDataProvider:(id)arg1 documentColumnLayout:(id)arg2;
 - (void)doFinishBookKeeping;
 - (void)doStartBookKeeping;
-- (id)dynamicAdController;
 - (bool)executing;
 - (void)finalizeLayoutBlueprint:(id)arg1 startOffset:(struct CGPoint { double x1; double x2; })arg2;
 - (bool)finished;
-- (id)initWithViewportSize:(struct CGSize { double x1; double x2; })arg1 constrainedToWidth:(double)arg2 layoutDataProvider:(id)arg3 componentSizerEngine:(id)arg4 dynamicAdController:(id)arg5;
+- (id)initWithViewportSize:(struct CGSize { double x1; double x2; })arg1 constrainedToWidth:(double)arg2 layoutDataProvider:(id)arg3 componentSizerEngine:(id)arg4 layoutBlueprintFactory:(id)arg5;
 - (bool)isAsynchronous;
 - (bool)isExecuting;
 - (bool)isFinished;
@@ -51,9 +58,9 @@
 - (bool)isValidLayoutBlueprint:(id)arg1 viewportSize:(struct CGSize { double x1; double x2; })arg2;
 - (id)layoutAttributes;
 - (id)layoutBlueprint;
+- (id)layoutBlueprintFactory;
 - (id)layoutDataProvider;
 - (void)layouter:(id)arg1 didFinishLayoutForComponent:(id)arg2 layoutBlueprint:(id)arg3 shouldContinueLayout:(bool*)arg4;
-- (void)placeDynamicAdsForBlueprint:(id)arg1;
 - (void)prepareLayoutBlueprint:(id)arg1;
 - (void)registerComponent:(id)arg1 toLayoutBlueprint:(id)arg2 layoutDataProvider:(id)arg3 documentColumnLayout:(id)arg4;
 - (void)setExecuting:(bool)arg1;

@@ -35,6 +35,7 @@
 }
 
 @property (getter=isAppDomain, nonatomic, readonly) bool appDomain;
+@property (getter=isCameraRollDomain, nonatomic, readonly) bool cameraRollDomain;
 @property (nonatomic, readonly) NSString *containerID;
 @property (nonatomic, readonly) int containerType;
 @property (getter=isGroupAppDomain, nonatomic, readonly) bool groupAppDomain;
@@ -120,6 +121,7 @@
 - (id)initWithName:(id)arg1 plist:(id)arg2;
 - (id)initWithName:(id)arg1 rootPath:(id)arg2;
 - (bool)isAppDomain;
+- (bool)isCameraRollDomain;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToDomain:(id)arg1;
 - (bool)isExternalConfig;

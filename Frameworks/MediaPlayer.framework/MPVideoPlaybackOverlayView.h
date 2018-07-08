@@ -2,9 +2,8 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPVideoPlaybackOverlayView : UIView <MPAVRoutingControllerDelegate, MPDetailSliderDelegate, MPVideoOverlay, MPVolumeControllerDelegate, UIPopoverPresentationControllerDelegate> {
+@interface MPVideoPlaybackOverlayView : UIView <MPAVLightweightRoutingControllerDelegate, MPDetailSliderDelegate, MPVideoOverlay, MPVolumeControllerDelegate, UIPopoverPresentationControllerDelegate> {
     MPKnockoutButton * _airplayButton;
-    MPAVRoutingController * _airplayController;
     bool  _allowsAudioAndSubtitles;
     bool  _allowsExitFromFullscreen;
     bool  _allowsPictureInPicture;
@@ -28,6 +27,7 @@
     bool  _ignoreTouchUp;
     MPAVItem * _item;
     MPKnockoutButton * _leftButton;
+    MPAVLightweightRoutingController * _lightweightRoutingController;
     UIActivityIndicatorView * _loadingIndicator;
     UILabel * _loadingLabel;
     long long  _overrideType;
@@ -180,6 +180,8 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(long long)arg2;
 - (id)item;
 - (void)layoutSubviews;
+- (void)lightweightRoutingController:(id)arg1 didChangeDevicePresenceDetected:(bool)arg2;
+- (void)lightweightRoutingController:(id)arg1 didChangePickedRoutes:(id)arg2;
 - (id)navigationBar;
 - (bool)navigationBarHidden;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
@@ -189,7 +191,6 @@
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (void)presentationController:(id)arg1 willPresentWithAdaptiveStyle:(long long)arg2 transitionCoordinator:(id)arg3;
 - (void)removeFromSuperview;
-- (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (void)setAllowsAudioAndSubtitles:(bool)arg1;
 - (void)setAllowsDetailScrubbing:(bool)arg1;
 - (void)setAllowsExitFromFullscreen:(bool)arg1;
@@ -228,6 +229,7 @@
 - (id)videoViewController;
 - (id)viewControllerForModalPresentationOrientation;
 - (unsigned long long)visibleParts;
+- (void)volumeController:(id)arg1 volumeControlAvailableDidChange:(bool)arg2;
 - (void)volumeController:(id)arg1 volumeValueDidChange:(float)arg2;
 
 @end

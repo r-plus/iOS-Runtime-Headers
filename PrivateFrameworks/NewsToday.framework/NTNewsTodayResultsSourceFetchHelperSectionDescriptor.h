@@ -14,9 +14,7 @@
 @property (nonatomic, readonly, copy) NSString *compactName;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly, copy) NSString *discoverMoreVideosSubtitle;
-@property (nonatomic, readonly, copy) NSString *discoverMoreVideosTitle;
-@property (nonatomic, readonly, copy) NSURL *discoverMoreVideosURL;
+@property (nonatomic, readonly, copy) NTPBDiscoverMoreVideosInfo *discoverMoreVideosInfo;
 @property (nonatomic, readonly) bool displaysAsVideoPlaylist;
 @property (nonatomic, readonly) unsigned long long fallbackOrder;
 @property (readonly) unsigned long long hash;
@@ -26,6 +24,7 @@
 @property (nonatomic, readonly) unsigned long long minimumStoriesAllocation;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSString *nameColor;
+@property (nonatomic, readonly) bool openVideoPlaylistInApp;
 @property (nonatomic, readonly, copy) <NTSectionQueueDescriptor> *parentSectionQueueDescriptor;
 @property (nonatomic, readonly, copy) NSString *personalizationFeatureID;
 @property (nonatomic, readonly) int readArticlesFilterMethod;
@@ -48,9 +47,7 @@
 - (id)compactName;
 - (void)configureCatchUpOperationWithFetchRequest:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)discoverMoreVideosSubtitle;
-- (id)discoverMoreVideosTitle;
-- (id)discoverMoreVideosURL;
+- (id)discoverMoreVideosInfo;
 - (bool)displaysAsVideoPlaylist;
 - (unsigned long long)fallbackOrder;
 - (id)identifier;
@@ -63,6 +60,7 @@
 - (unsigned long long)minimumStoriesAllocation;
 - (id)name;
 - (id)nameColor;
+- (bool)openVideoPlaylistInApp;
 - (id)parentSectionQueueDescriptor;
 - (id)personalizationFeatureID;
 - (int)readArticlesFilterMethod;

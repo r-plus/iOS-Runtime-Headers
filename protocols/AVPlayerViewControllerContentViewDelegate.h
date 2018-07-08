@@ -5,9 +5,12 @@
 
 @required
 
+- (void)playerViewControllerContentView:(AVPlayerViewControllerContentView *)arg1 didLoadPlaybackControlsView:(AVPlaybackControlsView *)arg2;
 - (void)playerViewControllerContentViewDidChangeVideoGravity:(AVPlayerViewControllerContentView *)arg1;
+- (void)playerViewControllerContentViewDidLayoutSubviews:(AVPlayerViewControllerContentView *)arg1;
 - (void)playerViewControllerContentViewDidMoveToWindow:(AVPlayerViewControllerContentView *)arg1;
+- (bool)playerViewControllerContentViewIsBeingTransitionedToOrFromFullScreen:(AVPlayerViewControllerContentView *)arg1;
+- (bool)playerViewControllerContentViewIsPlayingOnSecondScreen:(AVPlayerViewControllerContentView *)arg1;
 - (bool)playerViewControllerContentViewShouldApplyAutomaticVideoGravity:(AVPlayerViewControllerContentView *)arg1;
-- (void)playerViewControllerContentViewWillLayoutSubviews:(AVPlayerViewControllerContentView *)arg1;
 
 @end

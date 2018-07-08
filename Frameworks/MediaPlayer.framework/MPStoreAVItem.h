@@ -9,6 +9,9 @@
     NSNumber * _bookmarkTime;
     bool  _didDeferLeaseStart;
     long long  _equivalencySourceAdamID;
+    bool  _externalDisplay;
+    AVAssetResourceLoadingRequest * _externalLoadingRequest;
+    NSData * _externalServerPlaybackContextDataForStoppingLease;
     bool  _hasEverPrioritizedPlayerItem;
     bool  _hasPrioritizedPlayWhileDownloadSession;
     bool  _hasPrioritizedStreamingDownloadSession;
@@ -39,6 +42,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) long long equivalencySourceAdamID;
+@property (nonatomic, retain) NSData *externalServerPlaybackContextDataForStoppingLease;
 @property (readonly) unsigned long long hash;
 @property (getter=isiTunesStoreStream, nonatomic, readonly) bool iTunesStoreStream;
 @property (getter=isIgnoringHLSOfflinePlaybackKeys, nonatomic) bool ignoreHLSOfflinePlaybackKeys;
@@ -71,6 +75,7 @@
 - (void)_applyLoudnessInfo;
 - (id)_bookmarkTime;
 - (id)_chapterTitleForTime:(double)arg1;
+- (void)_checkInExternalPlaybackLease;
 - (void)_currentPlaybackRateDidChange:(float)arg1;
 - (bool)_getAssetURL:(id*)arg1 playWhileDownloadSession:(id*)arg2 assetQuality:(unsigned long long*)arg3 error:(id*)arg4 usingStoreDownload:(id)arg5 assetOptions:(id)arg6 shouldStartDownload:(bool)arg7;
 - (void)_handlePlaybackFinishedTime:(double)arg1 finishedByHittingEnd:(bool)arg2;
@@ -87,6 +92,7 @@
 - (long long)_persistedLikedState;
 - (void)_prioritizeDownloadSessionsIfNeeded;
 - (bool)_shouldRememberBookmarkTime;
+- (void)_stopLease:(id)arg1 withContextData:(id)arg2;
 - (id)_storeUbiquitousIdentifier;
 - (void)_updateBookmarkTimeIfNecessary:(double)arg1 isCheckpoint:(bool)arg2;
 - (void)_willBecomeActivePlayerItem;
@@ -124,6 +130,7 @@
 - (double)durationFromExternalMetadata;
 - (long long)equivalencySourceAdamID;
 - (id)externalContentIdentifier;
+- (id)externalServerPlaybackContextDataForStoppingLease;
 - (id)genre;
 - (unsigned long long)genrePersistentID;
 - (void)handlePlaybackFinishedTime:(double)arg1 finishedByHittingEnd:(bool)arg2;
@@ -173,6 +180,8 @@
 - (void)setAlternateAudioTrackLocale:(id)arg1;
 - (void)setAssetSourceStoreFrontID:(id)arg1;
 - (void)setEquivalencySourceAdamID:(long long)arg1;
+- (void)setExternalDisplay:(bool)arg1;
+- (void)setExternalServerPlaybackContextDataForStoppingLease:(id)arg1;
 - (void)setIgnoreHLSOfflinePlaybackKeys:(bool)arg1;
 - (void)setLoudnessInfoVolumeNormalization:(float)arg1;
 - (void)setPlaybackCheckpointCurrentTime:(double)arg1;

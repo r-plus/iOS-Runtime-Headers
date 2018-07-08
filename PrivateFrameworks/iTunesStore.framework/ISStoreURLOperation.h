@@ -90,7 +90,7 @@
 - (id)_loadURLBagInterpreterWithRequest:(id)arg1 requestProperties:(id)arg2;
 - (bool)_performMachineDataRequest:(id)arg1;
 - (bool)_processResponseData:(id)arg1 error:(id*)arg2;
-- (id)_resolvedURLInBagContext:(id)arg1 URLBag:(id*)arg2;
+- (id)_resolvedURLInBagContext:(id)arg1 bagTrusted:(bool*)arg2;
 - (void)_runURLOperation;
 - (void)_setStoreFrontIdentifier:(id)arg1 isTransient:(bool)arg2;
 - (bool)_shouldRetryForTouchIDChallengeWithError:(id)arg1;

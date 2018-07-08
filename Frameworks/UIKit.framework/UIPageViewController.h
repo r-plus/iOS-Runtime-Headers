@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIPageViewController : UIViewController <DebugHierarchyObject, UIGestureRecognizerDelegate, _UIQueuingScrollViewDataSource, _UIQueuingScrollViewDelegate> {
+@interface UIPageViewController : UIViewController <UIGestureRecognizerDelegate, _UIQueuingScrollViewDataSource, _UIQueuingScrollViewDelegate> {
     NSMutableDictionary * _cachedViewControllersForCurl;
     NSHashTable * _cachedViewControllersForScroll;
     <UIPageViewControllerDataSource> * _dataSource;
@@ -216,10 +216,6 @@
 - (void)viewWillUnload;
 - (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
 
 // Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
 

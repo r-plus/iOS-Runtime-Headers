@@ -3,7 +3,7 @@
  */
 
 @interface DOCThumbnailCache : NSObject {
-    NSMutableDictionary * _cachedGenericItems;
+    NSCache * _cachedGenericItems;
     NSMapTable * _cachedIconItems;
     NSMapTable * _cachedThumbnailItems;
     NSOperationQueue * _operationQueue;
@@ -12,7 +12,7 @@
     long long  _thumnailFetchingPriority;
 }
 
-@property (nonatomic, readonly) NSMutableDictionary *cachedGenericItems;
+@property (nonatomic, readonly) NSCache *cachedGenericItems;
 @property (nonatomic, readonly) NSMapTable *cachedIconItems;
 @property (nonatomic, readonly) NSMapTable *cachedThumbnailItems;
 @property (nonatomic, readonly) NSOperationQueue *operationQueue;

@@ -5,7 +5,7 @@
 @interface SPApplication : NSObject <NSSecureCoding> {
     NSURL * _URL;
     NSString * _displayIdentifier;
-    NSString * _displayName;
+    NSString * _displayNameInternal;
     bool  _isWebClip;
     NSMutableArray * _keywords;
     NSString * _longDisplayName;
@@ -15,6 +15,7 @@
 @property (nonatomic, retain) NSURL *URL;
 @property (nonatomic, retain) NSString *displayIdentifier;
 @property (nonatomic, retain) NSString *displayName;
+@property (retain) NSString *displayNameInternal;
 @property (nonatomic, readonly) bool displayNameLoaded;
 @property (nonatomic) bool isWebClip;
 @property (nonatomic, retain) NSMutableArray *keywords;
@@ -29,6 +30,7 @@
 - (id)description;
 - (id)displayIdentifier;
 - (id)displayName;
+- (id)displayNameInternal;
 - (bool)displayNameLoaded;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -38,6 +40,7 @@
 - (id)longDisplayName;
 - (void)setDisplayIdentifier:(id)arg1;
 - (void)setDisplayName:(id)arg1;
+- (void)setDisplayNameInternal:(id)arg1;
 - (void)setIsWebClip:(bool)arg1;
 - (void)setKeywords:(id)arg1;
 - (void)setLongDisplayName:(id)arg1;

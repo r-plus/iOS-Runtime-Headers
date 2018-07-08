@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
  */
 
-@interface _MPCAVPlaylistIteration : NSObject <NSCoding> {
+@interface _MPCAVPlaylistIteration : NSObject <NSSecureCoding> {
     unsigned long long  _count;
     unsigned long long  _indexToFaultIn;
     unsigned long long  _iterationIndex;
@@ -13,6 +13,8 @@
 @property (nonatomic) unsigned long long indexToFaultIn;
 @property (nonatomic) unsigned long long iterationIndex;
 @property (nonatomic, retain) MPSparseArray *sourceContexts;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (unsigned long long)count;

@@ -16,6 +16,7 @@
     }  _layoutMargins;
     _UINavigationControllerRefreshControlHost * _refreshControlHost;
     UIView * _refreshHostContainerView;
+    NSMutableDictionary * _restingHeightCache;
     double  _restingHeightOfRefreshControl;
     bool  _supportsTwoLines;
     NSMutableDictionary * _titleHeightCache;

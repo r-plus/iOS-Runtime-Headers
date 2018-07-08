@@ -58,7 +58,7 @@
 - (void)dealloc;
 - (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })getNext;
 - (bool)getNextCellData:(id*)arg1;
-- (id)initWithInfoDelegating:(id)arg1 region:(id)arg2 flags:(unsigned long long)arg3 searchMask:(unsigned long long)arg4;
+- (id)initWithTableModel:(id)arg1 region:(id)arg2 flags:(unsigned long long)arg3 searchMask:(unsigned long long)arg4;
 - (void)iterateCellsUsingBlock:(id /* block */)arg1;
 - (id)nextCellData;
 - (void)p_setupTileAndRowAtCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;

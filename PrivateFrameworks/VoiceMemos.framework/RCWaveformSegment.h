@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@interface RCWaveformSegment : NSObject <NSCoding> {
+@interface RCWaveformSegment : NSObject <NSSecureCoding> {
     NSData * _averagePowerLevelData;
     struct { 
         double beginTime; 
@@ -24,6 +24,7 @@
 + (id)segmentsByMergingSegments:(id)arg1 preferredSegmentDuration:(double)arg2;
 + (id)segmentsByReparingDiscontinuitiesInSegments:(id)arg1;
 + (id)segmentsByShiftingSegments:(id)arg1 byTimeOffset:(double)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithTimeRange:(struct { double x1; double x2; })arg1 averagePowerLevelData:(id)arg2;

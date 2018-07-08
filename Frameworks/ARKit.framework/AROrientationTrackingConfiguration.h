@@ -4,7 +4,10 @@
 
 @interface AROrientationTrackingConfiguration : ARConfiguration
 
+@property (getter=isAutoFocusEnabled, nonatomic) bool autoFocusEnabled;
+
 + (id)new;
++ (id)supportedVideoFormats;
 
 - (id)init;
 

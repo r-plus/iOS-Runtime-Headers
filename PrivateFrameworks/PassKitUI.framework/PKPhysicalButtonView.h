@@ -3,12 +3,15 @@
  */
 
 @interface PKPhysicalButtonView : UIView {
+    bool  _animateSlide;
     bool  _animating;
-    NSString * _animationKey;
     double  _animationWidth;
     UIView * _buttonView;
+    UIView * _containerView;
     NSString * _instruction;
     UILabel * _instructionLabel;
+    NSString * _periodicAnimationKey;
+    NSString * _presentationAnimationKey;
     long long  _style;
 }
 
@@ -18,8 +21,11 @@
 
 - (void).cxx_destruct;
 - (void)_animateWithWidth:(double)arg1;
+- (void)_animateWithWidth:(double)arg1 delay:(double)arg2;
 - (void)_beginAnimationIfNecessary;
+- (void)_beginAnimationIfNecessaryWithDelay:(double)arg1;
 - (void)_endAnimationIfNecessary;
+- (void)_removePeriodicAnimationForKey:(id)arg1 fromLayer:(id)arg2;
 - (bool)animating;
 - (void)didMoveToWindow;
 - (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;

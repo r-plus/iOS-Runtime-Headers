@@ -3,7 +3,11 @@
  */
 
 @interface MRAVEndpoint : NSObject {
+    NSOperationQueue * _connectionHandlerOperationQueue;
+    NSTimer * _connectionTimeoutTimer;
     NSString * _localizedName;
+    NSMutableArray * _pendingConnectionHandlers;
+    bool  _registeredForConnectionStateDidChangeNotifications;
     NSString * _uniqueIdentifier;
 }
 
@@ -11,6 +15,7 @@
 @property (nonatomic, readonly) MRAVOutputDevice *designatedGroupLeader;
 @property (nonatomic, readonly) MRExternalDevice *externalDevice;
 @property (nonatomic, readonly) NSString *instanceIdentifier;
+@property (nonatomic, readonly) bool isProxyGroupPlayer;
 @property (getter=isLocalEndpoint, nonatomic, readonly) bool localEndpoint;
 @property (nonatomic, retain) NSString *localizedName;
 @property (nonatomic, readonly) NSArray *outputDevices;
@@ -19,7 +24,10 @@
 
 + (id)sharedLocalEndpointForRoutingContextWithUID:(id)arg1;
 
+- (void).cxx_destruct;
+- (void)_callAllCompletionHandlersWithError:(id)arg1;
 - (void)_connectToExternalDeviceWithCompletion:(id /* block */)arg1;
+- (void)_externalDeviceConnectionStateDidChangeNotification:(id)arg1;
 - (id)_init;
 - (void)_requestSharedAudioPresentationOutputContextModificationWithAddingDevices:(id)arg1 removingDevices:(id)arg2 settingDevices:(id)arg3 replyQueue:(id)arg4 completion:(id /* block */)arg5;
 - (unsigned long long)_volumeControlMode;
@@ -33,6 +41,7 @@
 - (id)instanceIdentifier;
 - (bool)isEqual:(id)arg1;
 - (bool)isLocalEndpoint;
+- (bool)isProxyGroupPlayer;
 - (bool)isVolumeControlAvailable;
 - (id)localizedName;
 - (void)outputDeviceVolume:(id)arg1 queue:(id)arg2 completion:(id /* block */)arg3;

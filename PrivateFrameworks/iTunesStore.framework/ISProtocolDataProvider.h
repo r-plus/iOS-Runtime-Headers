@@ -24,6 +24,7 @@
 @property bool shouldTriggerDownloads;
 
 - (void).cxx_destruct;
+- (void)_checkBiometricFailureForResponse:(id)arg1;
 - (void)_checkDownloadQueues;
 - (void)_checkInAppPurchaseQueueForAction:(id)arg1;
 - (id)_metricsDictionaryForResponse:(id)arg1;

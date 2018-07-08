@@ -13,8 +13,8 @@
 + (id)sharedGLInstance;
 
 - (void).cxx_destruct;
-- (id)_newTextureForUuid:(id)arg1;
-- (void)_purgeTextures:(id)arg1;
+- (id)_newAtlasForUuid:(id)arg1;
+- (void)_purgeAtlases:(id)arg1;
 - (id)init;
 
 @end

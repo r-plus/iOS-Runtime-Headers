@@ -23,7 +23,6 @@
 - (NSSet *)netstatTCPAttributes;
 - (NSSet *)netstatUDPAttributes;
 - (NSDictionary *)networkInformation;
-- (NSArray *)networkInterfaceNames;
 - (NSNumber *)pidIs64Bit:(NSNumber *)arg1;
 - (NSArray *)runningProcesses;
 - (NSData *)symbolicatorSignatureForPid:(NSNumber *)arg1 trackingSelector:(NSString *)arg2;

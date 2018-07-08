@@ -25,7 +25,7 @@
     }  _sharedBuffer;
     struct unique_ptr<ClientSyncCaller, std::__1::default_delete<ClientSyncCaller> > { 
         struct __compressed_pair<ClientSyncCaller *, std::__1::default_delete<ClientSyncCaller> > { 
-            struct ClientSyncCaller {} *__first_; 
+            struct ClientSyncCaller {} *__value_; 
         } __ptr_; 
     }  _syncCaller;
     unsigned long long  _uniqueID;

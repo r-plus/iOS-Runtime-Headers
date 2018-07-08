@@ -13,7 +13,7 @@
 - (id)activityViewControllerPlaceholderItem:(id)arg1;
 - (id)articleURL;
 - (id)bodyStringForMailMessage;
-- (id)initWithHeadline:(id)arg1;
+- (id)initWithHeadline:(id)arg1 URLModifier:(id)arg2;
 - (id)marketingPageLink;
 
 @end

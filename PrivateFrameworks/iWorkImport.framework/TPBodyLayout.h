@@ -13,7 +13,7 @@
 @property (nonatomic, retain) NSMutableArray *anchoredDrawablesForRelayout;
 @property (nonatomic, readonly) unsigned int autosizeFlags;
 @property (nonatomic, readonly) TSDCanvas *canvas;
-@property (nonatomic, readonly, retain) NSMutableArray *columns;
+@property (nonatomic, readonly) NSMutableArray *columns;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } currentSize;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -24,6 +24,7 @@
 @property (nonatomic, readonly) bool isInstructional;
 @property (nonatomic, readonly) bool isLinked;
 @property (nonatomic, readonly) bool layoutIsValid;
+@property (nonatomic, readonly) bool marginsAreMirrored;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } maskRect;
 @property (nonatomic, readonly) double maxAnchorY;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } maxSize;
@@ -31,13 +32,13 @@
 @property (nonatomic, readonly) int naturalAlignment;
 @property (nonatomic, readonly) int naturalDirection;
 @property (nonatomic, readonly) TSPObject<TSDHint> *nextTargetFirstChildHint;
-@property (nonatomic, readonly, retain) <TSWPOffscreenColumn> *nextTargetFirstColumn;
+@property (nonatomic, readonly) <TSWPOffscreenColumn> *nextTargetFirstColumn;
 @property (nonatomic, readonly) NSObject<TSWPTopicNumberHints> *nextTargetTopicNumbers;
 @property (nonatomic, readonly) unsigned long long pageCount;
 @property (nonatomic, readonly) unsigned long long pageNumber;
 @property (nonatomic, readonly) TSDLayout *parentLayoutForInlineAttachments;
 @property (nonatomic, readonly) struct CGPoint { double x1; double x2; } position;
-@property (nonatomic, readonly, retain) <TSWPOffscreenColumn> *previousTargetLastColumn;
+@property (nonatomic, readonly) <TSWPOffscreenColumn> *previousTargetLastColumn;
 @property (nonatomic, readonly) NSObject<TSWPTopicNumberHints> *previousTargetTopicNumbers;
 @property (nonatomic, readonly) bool repShouldPreventCaret;
 @property (nonatomic, readonly) bool shouldHyphenate;
@@ -78,6 +79,7 @@
 - (bool)isLayoutOffscreen;
 - (bool)layoutIsValid;
 - (struct CGPoint { double x1; double x2; })layoutPositionFromAnchoredAttachmentPosition:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)marginsAreMirrored;
 - (double)maxAnchorY;
 - (struct CGSize { double x1; double x2; })maxSize;
 - (struct CGSize { double x1; double x2; })maximumFrameSizeForChild:(id)arg1;
@@ -102,6 +104,7 @@
 - (bool)processWidowAndInflation;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForPresentingAnnotationPopoverForSelectionPath:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForSelection:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectInRootForAnchoringPencilAnnotationsForSelectionPath:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectInRootForPresentingAnnotationPopoverForSelectionPath:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectInRootForSelectionPath:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectInRootOfAutoZoomContextOfSelectionPath:(id)arg1;
@@ -113,11 +116,10 @@
 - (void)setNeedsInflation;
 - (bool)shouldProvideSizingGuides;
 - (bool)shouldWrapAroundExternalDrawables;
-- (bool)siblingTargetIsManipulatingDrawable:(id)arg1;
 - (id)storage;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })targetRectForCanvasRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)textIsVertical;
-- (void)updateStartCharIndexWithDirtyRanges:(const struct TSWPDirtyRangeVector { struct TSWPDirtyRange {} *x1; struct TSWPDirtyRange {} *x2; struct __compressed_pair<TSWPDirtyRange *, std::__1::allocator<TSWPDirtyRange> > { struct TSWPDirtyRange {} *x_3_1_1; } x3; }*)arg1;
+- (void)updateStartCharIndexWithDirtyRanges:(id)arg1;
 - (void)validate;
 - (id)validatedLayoutForAnchoredDrawable:(id)arg1;
 - (id)validatedLayoutForInlineDrawable:(id)arg1;

@@ -5,6 +5,8 @@
 
 @required
 
+- (NSArray *)allOrderedSyncEntities;
+- (NSDictionary *)allSyncEntitiesByIdentifier;
 - (bool)applyAcknowledgedAnchorMap:(id <HDSyncAnchorMap>)arg1 forStore:(id <HDSyncStore>)arg2 resetNext:(bool)arg3 resetInvalid:(bool)arg4 error:(id*)arg5;
 - (bool)applySyncChange:(id <HDSyncChange>)arg1 forStore:(id <HDSyncStore>)arg2 error:(id*)arg3;
 - (bool)getReceivedAnchorMap:(id <HDSyncAnchorMap>)arg1 forStore:(id <HDSyncStore>)arg2 error:(id*)arg3;

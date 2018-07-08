@@ -55,6 +55,7 @@
 + (bool)_canSetPauseMarkerWithUnpauseTime:(id)arg1 onPauseData:(id)arg2;
 + (void)_createPauseMarkerForReason:(short)arg1 withUnpauseTime:(id)arg2 withPath:(id)arg3;
 + (id)_dataMigratorFinishedFilePath;
++ (id)_dataMigratorFinishedMarkerQueue;
 + (id)_dataProtectionIndicatorFilePath;
 + (void)_doFilesystemImportIfNeededWithMOC:(id)arg1 reason:(id)arg2;
 + (void)_enqeueRecoveryJob:(id)arg1;
@@ -96,6 +97,7 @@
 + (void)forceSoftResetSync;
 + (id)forceSoftResetSyncPath;
 + (void)handlePossibleCoreDataError:(id)arg1;
++ (bool)hasITunesSyncedContent;
 + (id)iTunesPhotosDirectory;
 + (id)iTunesSyncedAssetMetadataThumbnailsDirectory;
 + (id)iTunesSyncedAssetSmallThumbnailsDirectory;
@@ -164,6 +166,7 @@
 + (bool)processWithID:(int)arg1 canReadSandboxForPath:(id)arg2;
 + (bool)processWithID:(int)arg1 canWriteSandboxForPath:(id)arg2;
 + (id)queueStatusDescription;
++ (void)recordDataMigrationInfo:(id)arg1;
 + (void)recoverFromCrashIfNeeded;
 + (void)refreshCachedCountsOnAllAssetContainersInContext:(id)arg1;
 + (void)refreshCachedCountsOnAssetsContainerClass:(Class)arg1 inContext:(id)arg2 withPredicate:(id)arg3;
@@ -216,6 +219,7 @@
 - (void)_batchDeleteAssets:(id)arg1 inManagedObjectContext:(id)arg2 withReason:(id)arg3;
 - (void)_calculatePendingItemCountsAfterOTARestoreWithMangedObjectContext:(id)arg1;
 - (bool)_checkMomentAnalysisCompletion;
+- (id)_dataMigrationInfo;
 - (void)_deleteEmptyImportAlbumsWithAddedAlbums:(id)arg1;
 - (void)_deleteObsoleteMetadataFiles;
 - (void)_enumerateFilesAtURL:(id)arg1 withBlock:(id /* block */)arg2;
@@ -228,7 +232,7 @@
 - (bool)_hasPendingAssetsIgnoreiTunes:(bool)arg1;
 - (id)_init;
 - (bool)_isHeifUTI:(struct __CFString { }*)arg1;
-- (bool)_isOTARestoreFinished;
+- (bool)_isOTARestoreInProgress;
 - (void)_linkAsideAlbumMetadataForOTARestore;
 - (void)_loadDatabase:(const char *)arg1;
 - (void)_photoLibraryCorruptNotification;
@@ -237,6 +241,7 @@
 - (void)_recreateItemsFromMetadataAtDirectoryURLs:(id)arg1;
 - (void)_removeOldFaceMetadataAsync;
 - (void)_removeSyncedAlbumsInTransactionWithManagedObjectContext:(id)arg1;
+- (void)_reportExpungedAssets:(id)arg1;
 - (void)_safeSave:(id)arg1;
 - (bool)_shouldCreateDatabase;
 - (void)_updateHasAtLeastOnePhotoWithGPSWithInsertedCount:(unsigned long long)arg1 deletedCount:(unsigned long long)arg2 updatedAssets:(id)arg3;
@@ -268,6 +273,7 @@
 - (void)cleanupAfterImportAllDCIMAssets;
 - (void)cleanupFilesAfteriTunesSyncBeforeDate:(id)arg1;
 - (void)cleanupForStoreDemoMode;
+- (void)cleanupIncompleteAssetsAfterOTARestore;
 - (void)cleanupModelForDataMigrationPurgeMissingSharedAndSynced;
 - (void)clientApplicationWillEnterForeground;
 - (unsigned long long)concurrencyType;
@@ -299,7 +305,6 @@
 - (bool)hasAtLeastOnePhotoWithGPS;
 - (bool)hasCompletedMomentAnalysis;
 - (bool)hasCompletedRestorePostProcessing;
-- (bool)hasITunesSyncedContent;
 - (bool)hasPhotoWithFileCreationDate:(id)arg1 fileName:(id)arg2 fileSize:(long long)arg3;
 - (struct NSObject { Class x1; }*)iPadAllPhotosAlbum;
 - (struct NSObject { Class x1; }*)iPadAllPhotosAlbumIfExists;

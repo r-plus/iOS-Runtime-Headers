@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CVML.framework/CVML
  */
 
-@interface CVMLFaceRegionMap : NSObject <NSCoding> {
+@interface CVMLFaceRegionMap : NSObject <NSSecureCoding> {
     bool  mDeallocateBuffer;
     struct _Geometry2D_rect2D_ { 
         struct _Geometry2D_point2D_ { 
@@ -32,6 +32,8 @@
         } size; 
     }  mUserBBox;
 }
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)dealloc;

@@ -13,9 +13,9 @@
 }
 
 @property (nonatomic, readonly) unsigned long long actualLength;
-@property (nonatomic, readonly, retain) NSData *data;
+@property (nonatomic, readonly) NSData *data;
 @property (nonatomic, readonly) NSString *identifier;
-@property (nonatomic, readonly, retain) _MRTransactionKeyProtobuf *key;
+@property (nonatomic, readonly) _MRTransactionKeyProtobuf *key;
 @property (nonatomic, readonly) _MRTransactionPacketProtobuf *protobuf;
 @property (getter=isReadComplete, nonatomic, readonly) bool readComplete;
 @property (nonatomic, readonly) unsigned long long totalLength;
@@ -24,10 +24,10 @@
 @property (nonatomic) unsigned long long writeLength;
 @property (nonatomic, readonly) unsigned long long writePosition;
 
+- (void).cxx_destruct;
 - (unsigned long long)actualLength;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)data;
-- (void)dealloc;
 - (id)description;
 - (id)identifier;
 - (id)initWithData:(id)arg1 forKey:(struct _MRTransactionKeyProtobuf { Class x1; id x2; }*)arg2;

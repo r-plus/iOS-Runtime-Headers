@@ -68,9 +68,9 @@
     bool  mValueUseSeparator;
 }
 
-@property (nonatomic, readonly, retain) TSCHChartType *chartType;
+@property (nonatomic, readonly) TSCHChartType *chartType;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; long long x7; unsigned long long x8; } defaultLayoutSettings;
+@property (nonatomic) struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; long long x8; unsigned long long x9; } defaultLayoutSettings;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool displayMessageOnRepCreation;
 @property (nonatomic, readonly) TSKDocumentRoot *documentRoot;
@@ -135,8 +135,10 @@
 + (id)specificPropertiesThatCanContainCustomNumberFormats;
 + (unsigned char)styleOwnerPathType;
 + (id)swapTuplesForParagraphStyleMutations:(id)arg1 forReferencingProperty:(int)arg2 forStyleOwner:(id)arg3;
++ (bool)updateInitialLabelExplosionIfNeededForChartType:(id)arg1 seriesNonStyles:(inout id*)arg2 stylePreset:(id)arg3 rowCount:(unsigned long long)arg4 columnCount:(unsigned long long)arg5;
 + (id)valueAxisStyleIdentifierForRoleIndex:(unsigned long long)arg1 ordinal:(unsigned long long)arg2;
 
+- (void).cxx_destruct;
 - (unsigned long long)addParagraphStyle:(id)arg1;
 - (void)addReferenceLineForAxisID:(id)arg1 nonStyle:(id)arg2 style:(id)arg3 uuid:(id)arg4;
 - (void)addViewStyleProxyForMutationTuples:(id)arg1 layouts:(id)arg2;
@@ -170,13 +172,13 @@
 - (id)copyWithContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1 context:(id)arg2;
-- (id)create3DSceneWithLayoutSettings:(const struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; long long x7; unsigned long long x8; }*)arg1;
+- (id)create3DSceneWithLayoutSettings:(const struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; long long x8; unsigned long long x9; }*)arg1;
 - (void)dealloc;
 - (void)debugLayoutCache;
 - (void)debugVerifyPreset;
 - (unsigned long long)defaultDataColumnCountForChartType:(id)arg1 forDocumentLocale:(id)arg2;
 - (unsigned long long)defaultDataRowCountForChartType:(id)arg1 forDocumentLocale:(id)arg2;
-- (struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; long long x7; unsigned long long x8; })defaultLayoutSettings;
+- (struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; long long x8; unsigned long long x9; })defaultLayoutSettings;
 - (id)defaultProperties;
 - (int)defaultPropertyForGeneric:(int)arg1;
 - (void)deleteReferenceLineForAxisID:(id)arg1 uuid:(id)arg2;
@@ -198,6 +200,7 @@
 - (bool)hasObjectValueForProperty:(int)arg1 value:(id*)arg2;
 - (bool)hasSetDefaultLayoutSettings;
 - (id)infoGeometryForDesiredCircumscribingGeometry:(id)arg1;
+- (id)infoGeometryForDesiredCircumscribingGeometry:(id)arg1 omitLabelPlacement:(bool)arg2;
 - (id)infoGeometryForDesiredPureLayoutGeometry:(id)arg1;
 - (id)infoGeometryForVisiblePositioningInfoGeometry:(id)arg1;
 - (id)infoGeometryForVisuallyCenteringOnUnscaledCanvasPoint:(struct CGPoint { double x1; double x2; })arg1;
@@ -247,7 +250,7 @@
 - (void)p_duplicatePersistableMembersOfCopiedChartUsingContext:(id)arg1;
 - (id)p_genericToDefaultPropertyMap;
 - (id)p_getLocalizableDefaultDataDictionaryForChartType:(id)arg1 forDocumentLocale:(id)arg2;
-- (id)p_infoGeometryForGeometry:(id)arg1 isCircumscribing:(bool)arg2;
+- (id)p_infoGeometryForGeometry:(id)arg1 isCircumscribing:(bool)arg2 omitLabelPlacement:(bool)arg3;
 - (id)p_init;
 - (void)p_invalidateCachesInLayouts:(id)arg1;
 - (unsigned long long)p_paragraphStyleIndexOfFirstCategoryAxisParagraphStyle;
@@ -292,7 +295,7 @@
 - (void)setCategoryAxisNonstyle:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)setChartNonstyle:(id)arg1;
 - (void)setChartType:(id)arg1 andSetLegendDefaults:(bool)arg2 gridRowIds:(id)arg3 gridColumnIds:(id)arg4 forDocumentLocale:(id)arg5;
-- (void)setDefaultLayoutSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; long long x7; unsigned long long x8; })arg1;
+- (void)setDefaultLayoutSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; long long x8; unsigned long long x9; })arg1;
 - (void)setDefaultLegendPositionIfNeededWithOptionalLayout:(id)arg1;
 - (void)setDisplayMessageOnRepCreation:(bool)arg1;
 - (void)setGeometry:(id)arg1;

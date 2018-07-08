@@ -22,6 +22,8 @@
     NSString * _type;
 }
 
+@property (nonatomic, readonly) MFError *SMIMEError;
+
 // Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
 
 + (Class)attachmentClass;

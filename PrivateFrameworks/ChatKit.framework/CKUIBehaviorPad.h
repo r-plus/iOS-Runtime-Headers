@@ -40,5 +40,6 @@
 - (double)transcriptHeaderViewMaxRows;
 - (bool)usesPopovers;
 - (bool)usesUncollapsedSplitview;
+- (double)welcomeViewContentViewTopAnchorLayoutConstraintConstant;
 
 @end

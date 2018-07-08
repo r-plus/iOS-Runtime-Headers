@@ -3,6 +3,7 @@
  */
 
 @interface PUAssetActionPerformer : NSObject {
+    NSObject<OS_os_log> * _actionPerformerLog;
     unsigned long long  _actionType;
     NSArray * _assets;
     NSDictionary * _assetsByAssetCollection;
@@ -12,6 +13,7 @@
     unsigned long long  _state;
 }
 
+@property (nonatomic) NSObject<OS_os_log> *actionPerformerLog;
 @property (nonatomic, readonly) unsigned long long actionType;
 @property (nonatomic, readonly, copy) NSArray *assets;
 @property (nonatomic, readonly, copy) NSDictionary *assetsByAssetCollection;
@@ -26,6 +28,7 @@
 - (void)_performUnlockIfNeeded;
 - (bool)_requiresUnlockedDevice;
 - (void)_transitionToState:(unsigned long long)arg1 withSuccess:(bool)arg2 error:(id)arg3;
+- (id)actionPerformerLog;
 - (unsigned long long)actionType;
 - (id)assets;
 - (id)assetsByAssetCollection;
@@ -40,6 +43,7 @@
 - (void)performWithCompletionHandler:(id /* block */)arg1;
 - (bool)presentViewController:(id)arg1;
 - (id)presentedViewController;
+- (void)setActionPerformerLog:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (unsigned long long)state;
 

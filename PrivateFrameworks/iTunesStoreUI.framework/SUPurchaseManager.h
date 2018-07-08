@@ -13,6 +13,7 @@
     NSMutableSet * _purchasedIdentifiers;
     SUQueueSessionManager * _queueSessionManager;
     bool  _showingErrorDialogs;
+    NSDictionary * _tidHeaders;
     long long  _updatesCount;
     NSString * _userAgent;
     bool  _waitingForAuthentication;
@@ -27,6 +28,7 @@
 @property (nonatomic, readonly) NSSet *purchasedItemIdentifiers;
 @property (nonatomic, retain) SUQueueSessionManager *queueSessionManager;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) NSDictionary *tidHeaders;
 @property (nonatomic, copy) NSString *userAgent;
 
 - (id)_accountForPurchase:(id)arg1;
@@ -84,7 +86,9 @@
 - (void)requestDidFinish:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setQueueSessionManager:(id)arg1;
+- (void)setTidHeaders:(id)arg1;
 - (void)setUserAgent:(id)arg1;
+- (id)tidHeaders;
 - (id)userAgent;
 
 @end

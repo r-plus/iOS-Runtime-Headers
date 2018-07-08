@@ -14,7 +14,7 @@
     UIButton * _disallowButton;
     UIStackView * _logoStack;
     UIButton * _nackButton;
-    UIButton * _privacyButton;
+    UIView * _privacyView;
     UIButton * _seeAllButton;
     UILabel * _titleLabel;
 }
@@ -22,6 +22,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) UIView *privacyView;
 @property (readonly) Class superclass;
 
 + (struct CGSize { double x1; double x2; })iconSize;
@@ -40,9 +41,10 @@
 - (void)layoutSubviews;
 - (id)nackButton;
 - (unsigned long long)numberOfItemsInCarouselView:(id)arg1;
-- (id)privacyButton;
+- (id)privacyView;
 - (id)seeAllButton;
 - (void)setBody:(id)arg1;
+- (void)setPrivacyView:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)showNackScreen;
 

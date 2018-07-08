@@ -48,6 +48,7 @@
 - (void)unregisterDeviceWithCompletion:(id /* block */)arg1;
 - (void)updateAccountWithCompletion:(id /* block */)arg1;
 - (void)updateMemo:(id)arg1 forTransactionWithIdentifier:(id)arg2;
+- (void)updateMessageReceivedDate:(id)arg1 forTransactionWithIdentifier:(id)arg2;
 - (void)updateMockAccountBalanceByAddingAmount:(id)arg1 completion:(id /* block */)arg2;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLPersistedPersonFaceMetadata : NSObject <NSCoding, PLFaceRebuildDescription> {
+@interface PLPersistedPersonFaceMetadata : NSObject <NSSecureCoding, PLFaceRebuildDescription> {
     NSString * _assetCloudGUID;
     NSString * _assetUUID;
     double  _centerX;
@@ -40,6 +40,7 @@
 + (id)_persistedFaceMetadataWithDetectedFace:(id)arg1 isKeyFace:(bool)arg2 isClusterRejected:(bool)arg3;
 + (id)_persistedFacesWithUnarchiver:(id)arg1 key:(id)arg2;
 + (void)enumerateMatchedAssetsWithMetadata:(id)arg1 inContext:(id)arg2 withBlock:(id /* block */)arg3;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_identifier;

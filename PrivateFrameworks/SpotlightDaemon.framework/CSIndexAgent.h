@@ -14,7 +14,8 @@
 + (void)initialize;
 
 - (void).cxx_destruct;
-- (bool)allowClientConnection:(id)arg1;
+- (bool)addClientConnectionIfAllowedForConfiguration:(id)arg1;
+- (bool)addClientConnectionIfAllowedForConnection:(id)arg1;
 - (bool)handleCommand:(const char *)arg1 info:(id)arg2 connection:(id)arg3;
 - (id)indexConnection:(id)arg1;
 - (id)indexConnections;

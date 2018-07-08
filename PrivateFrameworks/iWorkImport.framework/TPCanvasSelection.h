@@ -43,9 +43,9 @@
 - (id)copyWithNewType:(int)arg1;
 - (id)copyWithNewType:(int)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (id)copyWithNewType:(int)arg1 smartFieldRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
-- (id)copyWithNewVisualRanges:(const struct TSWPRangeVector { struct _NSRange {} *x1; struct _NSRange {} *x2; struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange> > { struct _NSRange {} *x_3_1_1; } x3; }*)arg1;
+- (id)copyWithNewVisualRanges:(id)arg1;
 - (id)copyWithNewVisualTypeRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 head:(unsigned long long)arg2 tail:(unsigned long long)arg3;
-- (id)copyWithVisualRanges:(const struct TSWPRangeVector { struct _NSRange {} *x1; struct _NSRange {} *x2; struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange> > { struct _NSRange {} *x_3_1_1; } x3; }*)arg1 headChar:(unsigned long long)arg2 tailChar:(unsigned long long)arg3 rightToLeft:(bool)arg4 sameLine:(bool)arg5;
+- (id)copyWithVisualRanges:(id)arg1 headChar:(unsigned long long)arg2 tailChar:(unsigned long long)arg3 rightToLeft:(bool)arg4 sameLine:(bool)arg5;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (unsigned long long)infoCount;

@@ -11,7 +11,7 @@
         struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *__begin_; 
         struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *__end_; 
         struct __compressed_pair<std::__1::basic_string<char> *, std::__1::allocator<std::__1::basic_string<char> > > { 
-            struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *__first_; 
+            struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *__value_; 
         } __end_cap_; 
     }  _locationIds;
     double  _tolerance;
@@ -20,14 +20,14 @@
             struct point_xy<double, boost::geometry::cs::cartesian> {} *__begin_; 
             struct point_xy<double, boost::geometry::cs::cartesian> {} *__end_; 
             struct __compressed_pair<boost::geometry::model::d2::point_xy<double, boost::geometry::cs::cartesian> *, std::__1::allocator<boost::geometry::model::d2::point_xy<double, boost::geometry::cs::cartesian> > > { 
-                struct point_xy<double, boost::geometry::cs::cartesian> {} *__first_; 
+                struct point_xy<double, boost::geometry::cs::cartesian> {} *__value_; 
             } __end_cap_; 
         } m_outer; 
         struct vector<boost::geometry::model::ring<boost::geometry::model::d2::point_xy<double, boost::geometry::cs::cartesian>, true, true, vector, allocator>, std::__1::allocator<boost::geometry::model::ring<boost::geometry::model::d2::point_xy<double, boost::geometry::cs::cartesian>, true, true, vector, allocator> > > { 
             struct ring<boost::geometry::model::d2::point_xy<double, boost::geometry::cs::cartesian>, true, true, vector, allocator> {} *__begin_; 
             struct ring<boost::geometry::model::d2::point_xy<double, boost::geometry::cs::cartesian>, true, true, vector, allocator> {} *__end_; 
             struct __compressed_pair<boost::geometry::model::ring<boost::geometry::model::d2::point_xy<double, boost::geometry::cs::cartesian>, true, true, vector, allocator> *, std::__1::allocator<boost::geometry::model::ring<boost::geometry::model::d2::point_xy<double, boost::geometry::cs::cartesian>, true, true, vector, allocator> > > { 
-                struct ring<boost::geometry::model::d2::point_xy<double, boost::geometry::cs::cartesian>, true, true, vector, allocator> {} *__first_; 
+                struct ring<boost::geometry::model::d2::point_xy<double, boost::geometry::cs::cartesian>, true, true, vector, allocator> {} *__value_; 
             } __end_cap_; 
         } m_inners; 
     }  _vertices;
@@ -37,10 +37,10 @@
             struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<unsigned long, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
-                } __first_; 
+                } __value_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::less<unsigned long> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __pair3_; 
         } __tree_; 
     }  _wifiOnlyDownloadLocIdxs;

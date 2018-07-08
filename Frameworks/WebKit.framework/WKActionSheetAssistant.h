@@ -45,7 +45,7 @@
                 } adjustedPointForNodeRespondingToClickEvents; 
                 struct URL { 
                     struct String { 
-                        struct RefPtr<WTF::StringImpl> { 
+                        struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
                             struct StringImpl {} *m_ptr; 
                         } m_impl; 
                     } m_string; 
@@ -64,7 +64,7 @@
                 } url; 
                 struct URL { 
                     struct String { 
-                        struct RefPtr<WTF::StringImpl> { 
+                        struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
                             struct StringImpl {} *m_ptr; 
                         } m_impl; 
                     } m_string; 
@@ -82,12 +82,12 @@
                     unsigned int m_queryEnd; 
                 } imageURL; 
                 struct String { 
-                    struct RefPtr<WTF::StringImpl> { 
+                    struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } title; 
                 struct String { 
-                    struct RefPtr<WTF::StringImpl> { 
+                    struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } idAttribute; 
@@ -101,16 +101,16 @@
                         int m_height; 
                     } m_size; 
                 } bounds; 
-                struct RefPtr<WebKit::ShareableBitmap> { 
+                struct RefPtr<WebKit::ShareableBitmap, WTF::DumbPtrTraits<WebKit::ShareableBitmap> > { 
                     struct ShareableBitmap {} *m_ptr; 
                 } image; 
                 struct String { 
-                    struct RefPtr<WTF::StringImpl> { 
+                    struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } textBefore; 
                 struct String { 
-                    struct RefPtr<WTF::StringImpl> { 
+                    struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } textAfter; 
@@ -145,20 +145,20 @@
                             float m_height; 
                         } m_size; 
                     } contentImageWithoutSelectionRectInRootViewCoordinates; 
-                    struct Vector<WebCore::FloatRect, 0, WTF::CrashOnOverflow, 16> { 
+                    struct Vector<WebCore::FloatRect, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { 
                         struct FloatRect {} *m_buffer; 
                         unsigned int m_capacity; 
                         unsigned int m_size; 
                         unsigned int m_mask; 
                     } textRectsInBoundingRectCoordinates; 
                     float contentImageScaleFactor; 
-                    struct RefPtr<WebCore::Image> { 
+                    struct RefPtr<WebCore::Image, WTF::DumbPtrTraits<WebCore::Image> > { 
                         struct Image {} *m_ptr; 
                     } contentImageWithHighlight; 
-                    struct RefPtr<WebCore::Image> { 
+                    struct RefPtr<WebCore::Image, WTF::DumbPtrTraits<WebCore::Image> > { 
                         struct Image {} *m_ptr; 
                     } contentImageWithoutSelection; 
-                    struct RefPtr<WebCore::Image> { 
+                    struct RefPtr<WebCore::Image, WTF::DumbPtrTraits<WebCore::Image> > { 
                         struct Image {} *m_ptr; 
                     } contentImage; 
                     struct Color { 
@@ -171,7 +171,7 @@
                     unsigned short options; 
                 } linkIndicator; 
                 struct String { 
-                    struct RefPtr<WTF::StringImpl> { 
+                    struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
                         struct StringImpl {} *m_ptr; 
                     } m_impl; 
                 } dataDetectorIdentifier; 

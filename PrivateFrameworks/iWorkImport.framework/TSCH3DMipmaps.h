@@ -20,9 +20,9 @@
 + (id)mipmapsWithWidth:(int)arg1 height:(int)arg2 components:(unsigned long long)arg3 mipmapData:(id)arg4;
 + (struct CGSize { double x1; double x2; })optimizedMipmapLevel0Size;
 
+- (void).cxx_destruct;
 - (unsigned long long)components;
 - (id)data;
-- (void)dealloc;
 - (id)description;
 - (int)height;
 - (id)initFromData:(id)arg1;

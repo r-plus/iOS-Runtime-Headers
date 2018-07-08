@@ -90,17 +90,20 @@
 - (unsigned int)systemVersion;
 - (long long)versionForClassName:(id)arg1;
 
-// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+// Image: /Developer/Library/PrivateFrameworks/DVTInstrumentsUtilities.framework/DVTInstrumentsUtilities
 
-+ (id)_mapkit_safeUnarchiveObjectWithData:(id)arg1;
++ (id)xr_unarchiveSecureCodingObjectFromData:(id)arg1 ofClasses:(id)arg2 withError:(id*)arg3;
 
-// Image: /System/Library/Frameworks/Messages.framework/Messages
+// Image: /System/Library/Frameworks/ClassKit.framework/ClassKit
 
-+ (id)__ms_unarchiveObjectOfClasses:(id)arg1 data:(id)arg2;
++ (id)cls_secureUnarchiveObjectOfClass:(Class)arg1 withData:(id)arg2;
++ (id)cls_secureUnarchiveObjectOfClasses:(id)arg1 withData:(id)arg2;
 
-// Image: /System/Library/PrivateFrameworks/AVConference.framework/AVConference
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
-+ (id)secureUnarchiveObjectOfClass:(Class)arg1 withData:(id)arg2;
++ (bool)_hk_performUnarchivingWithData:(id)arg1 error:(id*)arg2 handler:(id /* block */)arg3;
++ (id)hk_unarchivedObjectOfClass:(Class)arg1 forKey:(id)arg2 data:(id)arg3 error:(id*)arg4;
++ (id)hk_unarchivedObjectOfClasses:(id)arg1 forKey:(id)arg2 data:(id)arg3 error:(id*)arg4;
 
 // Image: /System/Library/PrivateFrameworks/AXMediaUtilities.framework/AXMediaUtilities
 
@@ -113,19 +116,23 @@
 // Image: /System/Library/PrivateFrameworks/Catalyst.framework/Catalyst
 
 + (id)cat_unarchiveObjectOfClass:(Class)arg1 withData:(id)arg2;
++ (id)cat_unarchiveObjectOfClass:(Class)arg1 withData:(id)arg2 error:(id*)arg3;
 + (id)cat_unarchiveObjectOfClasses:(id)arg1 withData:(id)arg2;
++ (id)cat_unarchiveObjectOfClasses:(id)arg1 withData:(id)arg2 error:(id*)arg3;
 + (id)cat_unarchivePropertyListObjectWithData:(id)arg1;
++ (id)cat_unarchivePropertyListObjectWithData:(id)arg1 error:(id*)arg2;
 
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
-+ (id)cpl_safeUnarchiveObjectWithData:(id)arg1;
-+ (id)cpl_safeUnarchiveObjectWithFile:(id)arg1;
++ (id)cpl_safeUnarchiveObjectWithData:(id)arg1 class:(Class)arg2;
 
-- (id)cpl_safeInitForReadingWithData:(id)arg1;
+// Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
+
++ (id)sy_unarchivedObjectFromData:(id)arg1;
++ (id)sy_whitelistedClasses;
 
 // Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
 
-+ (id)MSSafeUnarchiveObjectWithData:(id)arg1;
 + (id)MSSafeUnarchiveObjectWithData:(id)arg1 outError:(id*)arg2;
 + (id)MSSafeUnarchiveObjectWithFile:(id)arg1 outError:(id*)arg2;
 + (id)allowedClasses;
@@ -149,11 +156,30 @@
 
 + (id)ids_secureUnarchiveObjectOfClass:(Class)arg1 withData:(id)arg2;
 
+// Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/Frameworks/XCTest.framework/XCTest
+
++ (id)xct_unarchivedObjectOfClass:(Class)arg1 fromData:(id)arg2;
++ (id)xct_unarchivedObjectOfClasses:(id)arg1 fromData:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
+
++ (id)icUnarchivedObjectFromData:(id)arg1 withKey:(id)arg2;
++ (id)icWhitelistedClasses;
+
 // Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
 
 + (id)nnmk_whitelistedClasses;
 + (id)unarchiveObjectOfClass:(Class)arg1 withData:(id)arg2;
 + (id)unarchiveObjectOfClasses:(id)arg1 withData:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/NewsFoundation.framework/NewsFoundation
+
++ (id)nf_securelyUnarchiveObjectOfClass:(Class)arg1 withData:(id)arg2;
++ (id)nf_securelyUnarchiveObjectOfClass:(Class)arg1 withFile:(id)arg2;
++ (id)nf_securelyUnarchiveObjectOfClasses:(id)arg1 withData:(id)arg2;
++ (id)nf_securelyUnarchiveObjectOfClasses:(id)arg1 withFile:(id)arg2;
+
+- (id)nf_securelyUnarchiveObjectOfClass:(Class)arg1;
 
 // Image: /System/Library/PrivateFrameworks/PairedSync.framework/PairedSync
 
@@ -162,13 +188,23 @@
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 
-+ (id)pl_safeUnarchiveObjectWithData:(id)arg1;
-+ (id)pl_safeUnarchiveObjectWithFile:(id)arg1;
++ (id)pl_safeUnarchiveObjectFromData:(id)arg1 class:(Class)arg2;
++ (id)pl_safeUnarchiveObjectFromData:(id)arg1 classes:(id)arg2;
++ (id)pl_safeUnarchiveObjectFromFile:(id)arg1 class:(Class)arg2;
++ (id)pl_safeUnarchiveObjectFromFile:(id)arg1 classes:(id)arg2;
 
-- (id)pl_safeInitForReadingWithData:(id)arg1;
+- (id)pl_safeInitForReadingFromData:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
 
 + (int)_swift_checkClassAndWarnForKeyedArchiving:(Class)arg1 operation:(int)arg2;
+
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
++ (id)tsu_securelyUnarchiveObjectWithFile:(id)arg1 ofClasses:(id)arg2;
++ (id)tsu_securelyUnarchiveRoot:(id)arg1 forClass:(Class)arg2;
++ (id)tsu_securelyUnarchiveRoot:(id)arg1 forClasses:(id)arg2;
+
+- (id)tsu_initSecurelyFromData:(id)arg1 error:(id*)arg2;
 
 @end

@@ -22,12 +22,9 @@
 + (bool)canMakePaymentsUsingNetworks:(id)arg1;
 + (bool)canMakePaymentsUsingNetworks:(id)arg1 capabilities:(unsigned long long)arg2;
 + (void)paymentServicesMerchantURL:(id /* block */)arg1;
++ (void)paymentServicesMerchantURLForAPIType:(unsigned long long)arg1 completion:(id /* block */)arg2;
 
 - (void).cxx_destruct;
-- (void)_addDeactivationReason:(id)arg1;
-- (void)_registerForApplicationLifeCycleNotifications;
-- (void)_removeDeactivationReason:(id)arg1;
-- (void)_unregisterForApplicationLifeCycleNotifications;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithCoder:(id)arg1;

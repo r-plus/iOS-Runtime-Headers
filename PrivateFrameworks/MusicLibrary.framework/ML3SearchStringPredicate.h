@@ -11,6 +11,7 @@
 @property (nonatomic, copy) NSString *searchString;
 
 + (id)predicateWithConcatenatedProperties:(id)arg1 searchString:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)SQLJoinClausesForClass:(Class)arg1;

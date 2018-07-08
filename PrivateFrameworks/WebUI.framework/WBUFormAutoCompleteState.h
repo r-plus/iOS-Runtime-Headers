@@ -17,6 +17,7 @@
     NSDictionary * _formValues;
     bool  _gatheringFormValues;
     bool  _hasDeterminedIfURLIsAllowedByWhiteList;
+    bool  _hasNotedThatTextDidChangeInPasswordField;
     NSMutableDictionary * _matchesByCompletion;
     WBSMultiRoundAutoFillManager * _multiRoundAutoFillManager;
     NSArray * _relatedCredentialMatches;
@@ -88,8 +89,8 @@
 - (void)dealloc;
 - (void)dismissCustomAutoFill;
 - (void)fetchFormMetadataWithCompletion:(id /* block */)arg1;
-- (void)fillCredential:(id)arg1 setAutoFilled:(bool)arg2;
-- (void)fillCredentialAfterAuthenticationIfNeeded:(id)arg1;
+- (void)fillCredential:(id)arg1 setAutoFilled:(bool)arg2 setAsDefaultCredential:(bool)arg3;
+- (void)fillCredentialAfterAuthenticationIfNeeded:(id)arg1 setAsDefaultCredential:(bool)arg2;
 - (void)fillGeneratedPassword:(id)arg1 inField:(id)arg2;
 - (id)frame;
 - (void)getLoginFormUser:(id*)arg1 password:(id*)arg2 userIsAutoFilled:(bool*)arg3 passwordIsAutoFilled:(bool*)arg4;

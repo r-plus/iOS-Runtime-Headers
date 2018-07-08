@@ -32,6 +32,7 @@
     struct Matrix<double, 4, 4> { 
         double _e[16]; 
     }  _matrix;
+    unsigned char  _origin;
     VKTilePool * _pool;
     struct Matrix<float, 4, 4> { 
         float _e[16]; 
@@ -54,6 +55,7 @@
 @property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{Matrix<double' */ struct *inverseMatrix; /* unknown property attribute:  4>=[16d]} */
 @property (nonatomic, readonly) struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; } key;
 @property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{Matrix<double' */ struct *matrix; /* unknown property attribute:  4>=[16d]} */
+@property (nonatomic, readonly) unsigned char origin;
 @property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{Matrix<float' */ struct *shaderMatrix; /* unknown property attribute:  4>=[16f]} */
 @property (nonatomic, readonly) double tileWidth;
 @property (nonatomic, readonly) const struct shared_ptr<ggl::ConstantDataTyped<ggl::Tile::View> > { struct ConstantDataTyped<ggl::Tile::View> {} *x1; struct __shared_weak_count {} *x2; }*viewConstantData;
@@ -69,7 +71,9 @@
 - (struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; })key;
 - (const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)keyPointer;
 - (const struct Matrix<double, 4, 4> { double x1[16]; }*)matrix;
+- (unsigned char)origin;
 - (void)setKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
+- (void)setOrigin:(unsigned char)arg1;
 - (void)setPool:(id)arg1;
 - (const struct Matrix<float, 4, 4> { float x1[16]; }*)shaderMatrix;
 - (double)tileWidth;

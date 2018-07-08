@@ -12,5 +12,6 @@
 @optional
 
 - (double)displayScale;
+- (long long)effectiveUserInterfaceLayoutDirection;
 
 @end

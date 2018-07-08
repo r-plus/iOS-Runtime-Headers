@@ -22,7 +22,6 @@
     bool  _expressAccessEnabled;
     PKExpressPassInformation * _expressAccessPassInformation;
     PKSettingTableCell * _expressAccessSwitch;
-    PKFelicaPassProperties * _felicaProperties;
     struct UIEdgeInsets { 
         double top; 
         double left; 
@@ -53,8 +52,13 @@
     PKSpinnerHeaderView * _peerPaymentPreferencesHeaderView;
     PKPeerPaymentWebService * _peerPaymentWebService;
     bool  _performingCardTransfer;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _previousLayoutContentSize;
     double  _previousLayoutTableViewWidth;
     UIColor * _primaryTextColor;
+    bool  _requestingStatement;
     UISegmentedControl * _tabBar;
     double  _tabBarHeight;
     NSArray * _tabBarSegments;
@@ -65,6 +69,7 @@
     NSDateFormatter * _transactionYearFormatter;
     NSArray * _transactions;
     PKSettingTableCell * _transactionsSwitch;
+    PKTransitPassProperties * _transitProperties;
     PKPaymentVerificationController * _verificationController;
     bool  _viewIsDisappearing;
     UIColor * _warningTextColor;
@@ -144,6 +149,7 @@
 - (id)_imageViewCellForImage:(id)arg1 contentMode:(long long)arg2 forTableView:(id)arg3;
 - (id)_infoCellWithDescription:(id)arg1 forTableView:(id)arg2;
 - (id)_infoCellWithPrimaryText:(id)arg1 detailText:(id)arg2 cellStyle:(long long)arg3 forTableView:(id)arg4;
+- (id)_infoCellWithPrimaryText:(id)arg1 detailText:(id)arg2 cellStyle:(long long)arg3 reuseIdentifier:(id)arg4 forTableView:(id)arg5;
 - (bool)_isJapaneseRegion;
 - (id)_linkCellWithText:(id)arg1 forTableView:(id)arg2;
 - (id)_linkedAppCellForTableView:(id)arg1;
@@ -151,10 +157,13 @@
 - (id)_messagesSwitchCellForTableView:(id)arg1;
 - (void)_messagesSwitchChanged:(id)arg1;
 - (id)_moreTransactionsCellForTableView:(id)arg1;
+- (void)_normalizeContentOffset;
+- (struct CGPoint { double x1; double x2; })_normalizedContentOffsetForTargetOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (unsigned long long)_numberOfPeerPaymentBalanceActionsEnabled;
 - (double)_offscreenHeaderHeight;
 - (void)_openIssuerWebsite;
 - (void)_openPaymentSetup;
+- (void)_openPaymentSetupWithNetworkWhitelist:(id)arg1 paymentSetupMode:(long long)arg2;
 - (unsigned long long)_passOperationsCellWithOutput:(id*)arg1 forRowIndex:(long long)arg2 tableView:(id)arg3;
 - (void)_passSettingsChanged:(id)arg1;
 - (unsigned long long)_passStateSectionGenerateCellWithOutput:(id*)arg1 forRowIndex:(long long)arg2 tableView:(id)arg3;
@@ -183,7 +192,7 @@
 - (id)_remindersConfigurationCellForIndexPath:(id)arg1 tableView:(id)arg2;
 - (unsigned long long)_rowIndexForPeerPaymentBalanceActionRow:(unsigned long long)arg1;
 - (void)_setExpressAccessEnabled:(bool)arg1 paymentSetupContext:(long long)arg2 authenticationCredential:(id)arg3;
-- (void)_setFelicaProperties:(id)arg1;
+- (void)_setTransitProperties:(id)arg1;
 - (bool)_shouldShowAccountActions;
 - (bool)_shouldShowAutomaticPresentation;
 - (bool)_shouldShowBillingAddressCell;
@@ -213,8 +222,7 @@
 - (id)_transferCardCellForTableView:(id)arg1;
 - (long long)_transitCellGenerateCellWithOutput:(id*)arg1 forRowIndex:(long long)arg2 tableView:(id)arg3;
 - (void)_updateAccessExpressPassInformation;
-- (void)_updateFelicaProperties;
-- (bool)_updateHeaderHeight;
+- (bool)_updateHeaderHeightDeterminingLayout:(bool)arg1;
 - (void)_updatePassProperties;
 - (void)_updatePeerPaymentAccount;
 - (void)_updatePeerPaymentPreferences;
@@ -222,6 +230,7 @@
 - (void)_updatePeerPaymentPreferencesWithNewPreferences:(id)arg1;
 - (void)_updateTabBar;
 - (void)_updateTabBarWithSegments:(id)arg1;
+- (void)_updateTransitProperties;
 - (bool)canBeShownFromSuspendedState;
 - (id)commutePlanRenewalReminderTimeIntervalFormatter;
 - (void)commutePlanRenewalReminderValueDidChange:(id)arg1;
@@ -242,7 +251,7 @@
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableTransactionService:(bool)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didRemoveTransactionWithIdentifier:(id)arg2;
-- (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithFelicaPassProperties:(id)arg2;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithTransitPassProperties:(id)arg2;
 - (void)paymentSetupDidFinish:(id)arg1;
 - (void)peerPaymentAccountResolutionController:(id)arg1 requestsDismissCurrentViewControllerAnimated:(bool)arg2;
 - (void)peerPaymentAccountResolutionController:(id)arg1 requestsPresentViewController:(id)arg2 animated:(bool)arg3;

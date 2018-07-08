@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CVML.framework/CVML
  */
 
-@interface CVMLFaceprint : NSObject <CVMLFaceprintModel, NSCoding> {
+@interface CVMLFaceprint : NSObject <CVMLFaceprintModel, NSSecureCoding> {
     NSData * _faceprint;
     NSString * _faceprintInputPath;
     NSString * _key;
@@ -15,6 +15,8 @@
 @property (copy) NSString *key;
 @property unsigned int platform;
 @property unsigned int profile;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)computeDistanceToFaceprint:(id)arg1 withDistanceFunction:(long long)arg2 error:(id*)arg3;

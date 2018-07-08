@@ -111,6 +111,7 @@
 - (void)markNotifyingCharacteristicUpdatedForIdentifier:(id)arg1;
 - (void)matchAccessoryServerWithSetupID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)pairedAccessoryIdentifiers;
+- (void)pauseScans;
 - (id)peripheralsPendingConnection;
 - (id)peripheralsWithConnectionRequests;
 - (id)powerOnCentralManagerCompletions;

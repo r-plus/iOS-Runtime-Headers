@@ -16,5 +16,10 @@
 - (<NTTodayProtoitem> *)protoitemWithFetchedFeedItemHeadline:(id <FCHeadlineProviding>)arg1;
 - (SFSearchResult *)searchResult;
 - (unsigned long long)todayItemType;
+- (bool)usesDynamicSlotAllocation;
+
+@optional
+
+- (unsigned long long)preferredDynamicSlotAllocation;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSDate : NSObject <AFSecurityDigestibleChunksProviding, CKLParsedObject, CKRecordValue, FCKeyValueStoreCoding, HFPropertyListConvertible, NSCopying, NSSecureCoding, PQLValuable, TSCHChartGridValue>
+@interface NSDate : NSObject <AFSecurityDigestibleChunksProviding, CKLParsedObject, CKRecordValue, CLSMetaPropertyValue, FCKeyValueStoreCoding, HFPropertyListConvertible, NSCopying, NSSecureCoding, PQLValuable, TSCHChartGridValue>
 
 @property (nonatomic, readonly) NSString *briefFormattedDate;
 @property (nonatomic, readonly) int chartGridValueType;
@@ -84,13 +84,13 @@
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 - (id)asNumber;
-- (id)hk_convertedToLocalTimeZone;
 - (bool)hk_isAfterDate:(id)arg1;
 - (bool)hk_isAfterOrEqualToDate:(id)arg1;
 - (bool)hk_isBeforeDate:(id)arg1;
 - (bool)hk_isBeforeOrEqualToDate:(id)arg1;
 - (id)hk_nearestDate:(id)arg1;
 - (id)hk_rfc3339String;
+- (id)hk_truncateToDay;
 - (bool)isEqualToDateToSecondAccuracy:(id)arg1;
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
@@ -112,11 +112,16 @@
 
 // Image: /System/Library/PrivateFrameworks/AdCore.framework/AdCore
 
-+ (id)dateFromServerTime:(double)arg1;
++ (id)dateFromServerTime:(int)arg1;
++ (int)maxServerTime;
++ (int)minServerTime;
 
+- (id)doubleDateTimeAsString;
 - (bool)isAfterDate:(id)arg1;
 - (bool)isBeforeDate:(id)arg1;
-- (double)toServerTime;
+- (id)localDateTimeAsString;
+- (int)toServerTime;
+- (id)universalDateTimeAsString;
 
 // Image: /System/Library/PrivateFrameworks/AggregateDictionary.framework/AggregateDictionary
 
@@ -320,6 +325,10 @@
 - (id)dateReducedToResolution:(unsigned long long)arg1 calendar:(id)arg2;
 - (id)endOfDay;
 - (unsigned long long)hour;
+- (bool)isAfterDate:(id)arg1;
+- (bool)isBeforeDate:(id)arg1;
+- (bool)isOnOrAfter:(id)arg1;
+- (bool)isOnOrBefore:(id)arg1;
 - (unsigned long long)minute;
 - (id)startOfDay;
 - (id)stringFromDate;
@@ -377,6 +386,7 @@
 
 + (id)_geo_calendar;
 + (id)geo_dateWithJulianDay:(double)arg1;
++ (id)geo_dateWithJulianEphemerisDay:(double)arg1;
 
 - (double)geo_hoursAndMinutes;
 - (double)geo_julianDay;
@@ -442,6 +452,7 @@
 
 - (long long)__im_nanosecondTimeInterval;
 - (long long)differenceFromDate:(id)arg1;
+- (bool)isArchivable_im;
 - (bool)isToday;
 
 // Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
@@ -517,8 +528,10 @@
 - (id)fc_dateBySubtractingTimeInterval:(double)arg1;
 - (id)fc_dateOfEarliestGregorianCalendarDay;
 - (bool)fc_isEarlierThan:(id)arg1;
+- (bool)fc_isEarlierThan:(id)arg1 withPrecision:(long long)arg2;
 - (bool)fc_isEarlierThanOrEqualTo:(id)arg1;
 - (bool)fc_isLaterThan:(id)arg1;
+- (bool)fc_isLaterThan:(id)arg1 withPrecision:(long long)arg2;
 - (bool)fc_isLaterThanOrEqualTo:(id)arg1;
 - (bool)fc_isSameDayAs:(id)arg1;
 - (bool)fc_isWeekend;

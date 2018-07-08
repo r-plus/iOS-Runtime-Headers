@@ -4,6 +4,7 @@
 
 @interface WRM_iRATInterface : WRMClientInterface {
     NSMutableArray * mAppLists;
+    bool  mBBAssertionBGAppActive;
     bool  mClientSupportsMultipleAppTypes;
     bool  mLinkPreferenceSubscriptionEnabled;
     bool  mLocationAssertionEnabled;
@@ -14,10 +15,12 @@
     bool  mTelephonyStateEnabled;
 }
 
+- (void)_expediteBBAssertionBGAppActive_sync:(bool)arg1 handler:(id /* block */)arg2;
 - (void)addAppType:(id)arg1;
 - (void)assertCommCenterBaseBand:(int)arg1;
 - (void)assertCommCenterBaseBandMode:(int)arg1;
 - (void)dealloc;
+- (void)expediteBBAssertionBGAppActive:(bool)arg1 handler:(id /* block */)arg2;
 - (int)getStatusUpdateMessageType:(int)arg1;
 - (int)getSubscribeMessageType:(int)arg1;
 - (void)handleNotification:(id)arg1 :(bool)arg2;

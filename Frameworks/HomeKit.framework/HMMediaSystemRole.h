@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMMediaSystemRole : NSObject {
+@interface HMMediaSystemRole : NSObject <NSSecureCoding> {
     unsigned long long  _type;
 }
 
@@ -10,8 +10,16 @@
 
 + (id)leftRole;
 + (id)rightRole;
++ (bool)supportsSecureCoding;
 
-- (id)init;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithRole:(unsigned long long)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)serialize;
 - (unsigned long long)type;
 
 @end

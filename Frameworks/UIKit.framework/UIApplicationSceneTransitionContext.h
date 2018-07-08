@@ -12,6 +12,7 @@
 @property (nonatomic) bool runWatchdogIndependently;
 @property (nonatomic) bool safeMode;
 @property (nonatomic) bool shouldTakeKeyboardFocus;
+@property (nonatomic) unsigned long long signpostID;
 @property (nonatomic) double userLaunchEventTime;
 @property (nonatomic) bool waitForBackgroundTaskCompletion;
 @property (nonatomic) double watchdogExtension;
@@ -33,9 +34,11 @@
 - (void)setPayload:(id)arg1;
 - (void)setSafeMode:(bool)arg1;
 - (void)setShouldTakeKeyboardFocus:(bool)arg1;
+- (void)setSignpostID:(unsigned long long)arg1;
 - (void)setUserLaunchEventTime:(double)arg1;
 - (void)setWaitForBackgroundTaskCompletion:(bool)arg1;
 - (bool)shouldTakeKeyboardFocus;
+- (unsigned long long)signpostID;
 - (double)userLaunchEventTime;
 - (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
 - (bool)waitForBackgroundTaskCompletion;

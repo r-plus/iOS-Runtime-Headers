@@ -45,6 +45,7 @@
 + (void)initialize;
 
 - (void)cancelPendingReconcile;
+- (void)checkForLateReconcile;
 - (void)checkOnTask:(id)arg1 activity:(id)arg2;
 - (void)deleteRecords:(id /* block */)arg1;
 - (void)finishedReconciling:(id /* block */)arg1 withError:(id)arg2;
@@ -53,15 +54,18 @@
 - (void)incrementMonthlyResetCount;
 - (id)init;
 - (void)notifyActiveRecordChanged;
+- (void)performOperationAfterReconcile:(id /* block */)arg1;
 - (void)prepareForPushNotification;
 - (void)reconcile:(id /* block */)arg1;
 - (bool)reconcileInProgress;
-- (void)resumeSaveNotificationsAndShouldNotify:(bool)arg1;
+- (id)reconcileOperations;
 - (bool)runTask:(id)arg1;
-- (void)save:(id /* block */)arg1;
+- (id)save;
+- (id)saveAndNotifyIfNecessary;
 - (bool)scheduleReconciliation:(double)arg1;
 - (void)setDSID:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)suspendSaveNotifications;
+- (void)setDSID:(id)arg1 withoutRestrictions:(bool)arg2 completionHandler:(id /* block */)arg3;
+- (void)setReconcileOperations:(id)arg1;
 - (void)updateAccountData:(id /* block */)arg1;
 
 @end

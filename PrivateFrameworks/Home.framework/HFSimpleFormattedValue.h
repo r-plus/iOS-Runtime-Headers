@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Home.framework/Home
  */
 
-@interface HFSimpleFormattedValue : NSObject <HFDynamicFormattingValue, NAIdentifiable> {
+@interface HFSimpleFormattedValue : NSObject <HFDynamicFormattingValue> {
     <HFStringGenerator> * _currentFormattedValue;
 }
 
@@ -13,13 +13,9 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) id value;
 
-+ (id)na_identity;
-
 - (void).cxx_destruct;
 - (id)currentFormattedValue;
-- (unsigned long long)hash;
 - (id)initWithFormattedValue:(id)arg1;
-- (bool)isEqual:(id)arg1;
 - (id)observeFormattedValueChangesWithBlock:(id /* block */)arg1;
 - (id)value;
 

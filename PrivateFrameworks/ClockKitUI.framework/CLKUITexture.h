@@ -3,26 +3,24 @@
  */
 
 @interface CLKUITexture : NSObject {
-    unsigned long long  _height;
-    unsigned long long  _status;
-    NSString * _uuid;
-    unsigned long long  _width;
+    CLKUIAtlas * _atlas;
+    void _rect;
 }
 
-@property (nonatomic, readonly) unsigned long long height;
-@property (nonatomic) unsigned long long status;
+@property (nonatomic, readonly) CLKUIAtlas *atlas;
+@property (nonatomic, readonly) void rect;
+@property (nonatomic, readonly) unsigned long long status;
 @property (nonatomic, readonly) NSString *uuid;
-@property (nonatomic, readonly) unsigned long long width;
 
 + (id)textureWithProviderDelegate:(id)arg1 uuid:(id)arg2;
++ (id)textureWithProviderDelegate:(void *)arg1 uuid:(void *)arg2 rect:(void *)arg3; // needs 3 arg types, found 2: id, id
 
 - (void).cxx_destruct;
-- (id)backing;
-- (unsigned long long)height;
-- (id)initWithUuid:(id)arg1;
-- (void)setStatus:(unsigned long long)arg1;
+- (id)atlas;
+- (void)dealloc;
+- (id)initWithAtlas:(void *)arg1 rect:(void *)arg2; // needs 2 arg types, found 1: id
+- (void)rect;
 - (unsigned long long)status;
 - (id)uuid;
-- (unsigned long long)width;
 
 @end

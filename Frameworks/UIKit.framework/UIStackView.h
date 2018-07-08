@@ -39,9 +39,6 @@
 - (struct CGSize { double x1; double x2; })_systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3 hasIntentionallyCollapsedHeight:(bool*)arg4;
 - (void)_vendedBaselineViewDidMoveForFirst:(bool)arg1;
 - (void)_vendedBaselineViewParametersDidChange;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)addArrangedSubview:(id)arg1;
 - (long long)alignment;
 - (id)arrangedSubviews;

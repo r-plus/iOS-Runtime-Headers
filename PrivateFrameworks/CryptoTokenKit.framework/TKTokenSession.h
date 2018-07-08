@@ -36,9 +36,9 @@
 - (id)delegate;
 - (void)deleteObject:(id)arg1 reply:(id /* block */)arg2;
 - (void)endRequest;
-- (void)evaluateAuthOperation:(id)arg1 context:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)evaluateAuthOperation:(id)arg1 auditToken:(struct { unsigned int x1[8]; })arg2 context:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)evaluateAuthOperation:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
-- (void)finalizeAuthOperation:(id)arg1 evaluatedAuthOperation:(id)arg2 reply:(id /* block */)arg3;
+- (void)finalizeAuthOperation:(id)arg1 evaluatedAuthOperation:(id)arg2 auditToken:(struct { unsigned int x1[8]; })arg3 reply:(id /* block */)arg4;
 - (void)getAccessControlOfObject:(id)arg1 reply:(id /* block */)arg2;
 - (void)getDataOfObject:(id)arg1 reply:(id /* block */)arg2;
 - (void)getPublicKeyDataOfObject:(id)arg1 reply:(id /* block */)arg2;
@@ -47,10 +47,10 @@
 - (bool)handleCopyItemsEvent:(id)arg1 reply:(id)arg2 completionHandler:(id /* block */)arg3;
 - (bool)handleCreateObjectEvent:(id)arg1 reply:(id)arg2 attributes:(id)arg3 completionHandler:(id /* block */)arg4;
 - (bool)handleDeleteObjectEvent:(id)arg1 reply:(id)arg2 objectID:(id)arg3 completionHandler:(id /* block */)arg4;
-- (bool)handleEvaluateAccessControlEvent:(id)arg1 reply:(id)arg2 completionHandler:(id /* block */)arg3;
+- (bool)handleEvaluateAccessControlEvent:(id)arg1 auditToken:(struct { unsigned int x1[8]; })arg2 reply:(id)arg3 completionHandler:(id /* block */)arg4;
 - (bool)handleGetObjectAccessControlEvent:(id)arg1 reply:(id)arg2 objectID:(id)arg3 completionHandler:(id /* block */)arg4;
 - (bool)handleGetPublicKeyEvent:(id)arg1 reply:(id)arg2 objectID:(id)arg3 completionHandler:(id /* block */)arg4;
-- (bool)handleOperation:(long long)arg1 event:(id)arg2 reply:(id)arg3 completionHandler:(id /* block */)arg4;
+- (bool)handleOperation:(long long)arg1 auditToken:(struct { unsigned int x1[8]; })arg2 event:(id)arg3 reply:(id)arg4 completionHandler:(id /* block */)arg5;
 - (bool)handlePerformOperationEvent:(id)arg1 reply:(id)arg2 objectID:(id)arg3 completionHandler:(id /* block */)arg4;
 - (bool)handleReadDataEvent:(id)arg1 reply:(id)arg2 objectID:(id)arg3 completionHandler:(id /* block */)arg4;
 - (bool)handleUpdateObjectEvent:(id)arg1 reply:(id)arg2 objectID:(id)arg3 attributes:(id)arg4 completionHandler:(id /* block */)arg5;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCFeedRange : NSObject <NSCoding, NSCopying> {
+@interface FCFeedRange : NSObject <NSCopying, NSSecureCoding> {
     FCFeedCursor * _bottom;
     FCFeedCursor * _top;
 }
@@ -19,6 +19,7 @@
 + (id)feedRangeFromDateRange:(id)arg1;
 + (id)feedRangeWithMaxOrder:(unsigned long long)arg1 minOrder:(unsigned long long)arg2;
 + (id)feedRangeWithTop:(id)arg1 bottom:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bottom;

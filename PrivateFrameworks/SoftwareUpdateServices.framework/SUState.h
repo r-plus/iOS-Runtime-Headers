@@ -15,6 +15,7 @@
     NSString * _lastReleaseType;
     SUDescriptor * _lastScannedDescriptor;
     NSDate * _lastScannedDescriptorTime;
+    NSDictionary * _mandatoryUpdateDict;
     bool  _manifestSubmitted;
     SUManagedDeviceUpdateDelay * _mdmDelay;
     NSDate * _scheduledAutodownloadPolicyChangeTime;
@@ -39,6 +40,7 @@
 @property (nonatomic, retain) NSString *lastReleaseType;
 @property (nonatomic, copy) SUDescriptor *lastScannedDescriptor;
 @property (nonatomic, retain) NSDate *lastScannedDescriptorTime;
+@property (nonatomic, retain) NSDictionary *mandatoryUpdateDict;
 @property (nonatomic) bool manifestSubmitted;
 @property (nonatomic, retain) SUManagedDeviceUpdateDelay *mdmDelay;
 @property (nonatomic, retain) NSDate *scheduledAutodownloadPolicyChangeTime;
@@ -68,6 +70,7 @@
 - (id)lastScannedDescriptor;
 - (id)lastScannedDescriptorTime;
 - (void)load;
+- (id)mandatoryUpdateDict;
 - (bool)manifestSubmitted;
 - (id)mdmDelay;
 - (void)resetAllHistory;
@@ -88,6 +91,7 @@
 - (void)setLastReleaseType:(id)arg1;
 - (void)setLastScannedDescriptor:(id)arg1;
 - (void)setLastScannedDescriptorTime:(id)arg1;
+- (void)setMandatoryUpdateDict:(id)arg1;
 - (void)setManifestSubmitted:(bool)arg1;
 - (void)setMdmDelay:(id)arg1;
 - (void)setScheduledAutodownloadPolicyChangeTime:(id)arg1;

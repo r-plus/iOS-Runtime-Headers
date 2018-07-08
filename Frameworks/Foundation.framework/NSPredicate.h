@@ -38,6 +38,10 @@
 - (id)predicateFormat;
 - (id)predicateWithSubstitutionVariables:(id)arg1;
 
+// Image: /System/Library/Frameworks/ClassKit.framework/ClassKit
+
+- (id)cls_normalizedPredicate:(id)arg1 error:(id*)arg2;
+
 // Image: /System/Library/Frameworks/CoreData.framework/CoreData
 
 - (id)minimalFormInContext:(id)arg1;
@@ -77,6 +81,10 @@
 + (id)predicateWithSortedCKDPQueryFilters:(id)arg1 translator:(id)arg2;
 
 - (id)CKDPQueryFiltersWithTranslator:(id)arg1 error:(id*)arg2;
+
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
++ (id)geo_predicateForItemsMatchingMapItemIdentifiers:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 

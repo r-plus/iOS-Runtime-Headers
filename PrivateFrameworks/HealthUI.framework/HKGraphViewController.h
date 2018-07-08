@@ -4,12 +4,14 @@
 
 @interface HKGraphViewController : HKViewController <HKGraphViewDelegate> {
     long long  _dateZoom;
+    <HKGraphViewControllerDelegate> * _delegate;
     HKGraphView * _graphView;
     <HKGraphViewDelegate> * _graphViewDelegateProxy;
 }
 
 @property (nonatomic, readonly) long long dateZoom;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <HKGraphViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) HKGraphView *graphView;
 @property (nonatomic) <HKGraphViewDelegate> *graphViewDelegateProxy;
@@ -18,6 +20,7 @@
 
 - (void).cxx_destruct;
 - (long long)dateZoom;
+- (id)delegate;
 - (id)graphView;
 - (void)graphView:(id)arg1 didFinishUserScrollingToValueRange:(id)arg2;
 - (void)graphView:(id)arg1 didUpdateAnnotationViewContentWithContexts:(id)arg2;
@@ -35,6 +38,7 @@
 - (void)graphViewSizeChanged:(id)arg1;
 - (id)initWithGraphView:(id)arg1 dateZoom:(long long)arg2;
 - (id)seriesSelectionLineColorForGraphView:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setDetailView:(id)arg1;
 - (void)setGraphViewDelegateProxy:(id)arg1;
 - (long long)stackCountForGraphView:(id)arg1;

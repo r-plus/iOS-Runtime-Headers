@@ -12,7 +12,7 @@
     NSObject<OS_dispatch_queue> * _waitUntilHistoryHasLoadedQueue;
 }
 
-@property (nonatomic, readonly) NSArray *allItems;
+@property (readonly) NSArray *allItems;
 @property (nonatomic) unsigned long long cachedNumberOfDevicesInSyncCircle;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -59,6 +59,7 @@
 - (void)_sendNotification:(id)arg1 withItems:(id)arg2;
 - (void)_setAttributes:(unsigned long long)arg1 forVisit:(id)arg2;
 - (void)_startLoading;
+- (void)_unload;
 - (void)_waitUntilHistoryHasLoadedMainThread;
 - (void)addAttributes:(unsigned long long)arg1 toVisit:(id)arg2;
 - (void)addAutocompleteTrigger:(id)arg1 forURLString:(id)arg2;
@@ -70,6 +71,7 @@
 - (void)clearHistoryVisitsAddedAfterDate:(id)arg1 beforeDate:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)clearHistoryWithCompletionHandler:(id /* block */)arg1;
 - (void)close;
+- (void)closeWithCompletionHandler:(id /* block */)arg1;
 - (void)enumerateItemsAsynchronouslyUsingBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
 - (void)enumerateItemsUsingBlock:(id /* block */)arg1;
 - (id)fetchThrottlerData;

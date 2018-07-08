@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCFeedViewportBookmark : NSObject <NSCoding, NSCopying> {
+@interface FCFeedViewportBookmark : NSObject <NSCopying, NSSecureCoding> {
     NSString * _articleID;
     NSString * _externalGroupID;
     NSString * _internalGroupID;
@@ -11,6 +11,8 @@
 @property (nonatomic, readonly, copy) NSString *articleID;
 @property (nonatomic, readonly, copy) NSString *externalGroupID;
 @property (nonatomic, readonly, copy) NSString *internalGroupID;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)articleID;

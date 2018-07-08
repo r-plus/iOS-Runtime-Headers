@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface _SFNavigationBar : UIView <UIDragInteractionDelegate, UIDragInteractionDelegate_Private, UIDropInteractionDelegate, UIDropInteractionDelegate_Private, UIGestureRecognizerDelegate, _SFFluidProgressViewDelegate, _SFNavigationBarURLButtonDelegate, _UIBasicAnimationFactory> {
+@interface _SFNavigationBar : UIView <UIDragInteractionDelegate_Private, UIDropInteractionDelegate_Private, UIGestureRecognizerDelegate, _SFFluidProgressViewDelegate, _SFNavigationBarURLButtonDelegate, _UIBasicAnimationFactory> {
     NSArray * _URLAccessoryItems;
     UIView * _URLContainer;
     UIImageView * _URLFadeOut;
@@ -65,10 +65,13 @@
     unsigned long long  _tintStyle;
     _SFToolbar * _toolbar;
     bool  _unifiedFieldShowsProgressView;
+    bool  _urlLabelShowsNotSecureAnnotation;
+    bool  _usesLiftedAppearance;
     bool  _usesNarrowLayout;
     bool  _usesUnscaledBackdrop;
     bool  _usingLightControls;
-    long long  _visibleRightButtonType;
+    long long  _visibleTrailingButtonType;
+    SFWebsiteNotSecureMessageView * _websiteNotSecureMessageView;
 }
 
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } URLOutlineFrameInNavigationBarSpace;
@@ -93,9 +96,9 @@
 @property (nonatomic) double minimumBackdropHeight;
 @property (nonatomic, retain) UIColor *preferredBarTintColor;
 @property (nonatomic, retain) UIColor *preferredControlsTintColor;
-@property (nonatomic, readonly) UIButton *readerAppearanceButton;
-@property (nonatomic, readonly) UIButton *readerButton;
-@property (nonatomic, readonly) UIButton *reloadButton;
+@property (nonatomic, readonly) <_SFPopoverSourceInfo> *readerAppearanceButtonPopoverSourceInfo;
+@property (nonatomic, readonly) <_SFPopoverSourceInfo> *readerButtonPopoverSourceInfo;
+@property (nonatomic, readonly) <_SFPopoverSourceInfo> *reloadButtonPopoverSourceInfo;
 @property (readonly) Class superclass;
 @property (nonatomic) bool suppressesBlur;
 @property (nonatomic, readonly) UITextField *textField;
@@ -117,20 +120,21 @@
 - (void).cxx_destruct;
 - (double)URLFieldHorizontalMargin;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })URLOutlineFrameInNavigationBarSpace;
+- (id)URLOutlinePopoverSourceInfo;
 - (id)_EVCertLockAndTextColor;
 - (id)_URLControlsColor;
 - (double)_URLFieldHorizontalMargin;
+- (id)_URLLabelFont;
 - (void)_URLTapped:(id)arg1;
 - (id)_URLTextColor;
 - (void)_adjustLabelRectForLeadingButtonWithDelay:(double)arg1;
-- (id)_api_dragInteraction:(id)arg1 previewForLiftingItem:(id)arg2 session:(id)arg3;
-- (id)_api_dropInteraction:(id)arg1 sessionDidUpdate:(id)arg2;
+- (id)_attributedStringByInsertingNotSecureAnnotationInURL:(id)arg1 annotationOffset:(double*)arg2;
 - (id)_backdropInputSettings;
 - (void)_barMetricsDidChange;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
 - (void)_cancelButtonTapped:(id)arg1;
 - (void)_compressedBarTapped;
-- (void)_configureNavigationBarRightButtonTintedImages;
+- (void)_configureNavigationBarTrailingButtonTintedImages;
 - (double)_controlsAlpha;
 - (double)_customButtonHorizontalPadding;
 - (id)_dimmingButtonWithAction:(SEL)arg1;
@@ -142,15 +146,17 @@
 - (double)_editingScaleFactor;
 - (id)_expandedURLLabelParagraphStyle;
 - (id)_fadeOutImageWithSize:(struct CGSize { double x1; double x2; })arg1 opaquePoint:(struct CGPoint { double x1; double x2; })arg2 transparentPoint:(struct CGPoint { double x1; double x2; })arg3 leftCapWidth:(double)arg4 topCapWidth:(double)arg5;
+- (void)_hideNotSecureWebsiteMessage;
 - (void)_hideReaderAvailabilityLabelAnimated:(bool)arg1;
 - (void)_hideReaderAvailabilityLabelNow;
 - (void)_hideReaderAvailabilityLabelSoon;
 - (id)_hitTestCandidateViews;
-- (long long)_inferredNavigationBarRightButtonType;
+- (long long)_inferredNavigationBarTrailingButtonType;
+- (bool)_isURLLabelAnnotatedWithAttributedString;
 - (id)_lockImageUsingMiniatureVersion:(bool)arg1;
 - (void)_mediaCaptureMuteButtonTapped:(id)arg1;
 - (double)_minimumXForLabelOfWidth:(double)arg1 centeredInOutlineOfWidth:(double)arg2 leftAlignedToMinimumX:(double)arg3 maximumX:(double)arg4;
-- (id)_navigationBarRightButtonWithType:(long long)arg1;
+- (id)_navigationBarTrailingButtonWithType:(long long)arg1;
 - (id)_newNavigationButtonWithImage:(id)arg1 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2 action:(SEL)arg3;
 - (id)_placeholderColor;
 - (id)_placeholderText;
@@ -160,14 +166,18 @@
 - (void)_readerButtonTapped:(id)arg1;
 - (void)_reloadButtonLongPressed:(id)arg1;
 - (void)_reloadButtonPressed;
+- (void)_setUpWebsiteNotSecureMessageIconAndLabelIfNeeded;
 - (bool)_shouldShowPreferredBarTintColor;
 - (bool)_shouldUpdateBackdropStyleForTransitionFromItem:(id)arg1 toItem:(id)arg2;
+- (void)_showNotSecureWebsiteMessage;
 - (double)_squishTransformFactor;
 - (void)_stopButtonPressed;
 - (double)_textFieldTopMargin;
 - (id)_timingFunctionForAnimation;
 - (id)_tintForLockImage:(bool)arg1;
+- (id)_tintForWarningImage;
 - (void)_transitionFromView:(id)arg1 toView:(id)arg2 animated:(bool)arg3;
+- (void)_unsecuredWarningTransition:(id)arg1 toView:(id)arg2;
 - (void)_updateActiveURLLabelAccessory;
 - (void)_updateBackdropFrame;
 - (void)_updateBackdropGroupName;
@@ -181,9 +191,10 @@
 - (void)_updateMediaCaptureMuteButton;
 - (void)_updateNavigationBarLeadingButtonsAlpha;
 - (void)_updateNavigationBarLeadingButtonsVisibility;
-- (void)_updateNavigationBarRightButtonType;
-- (void)_updateNavigationBarRightButtonsAlpha;
-- (void)_updateNavigationBarRightButtonsVisibility;
+- (void)_updateNavigationBarTrailingButtonType;
+- (void)_updateNavigationBarTrailingButtonsAlpha;
+- (void)_updateNavigationBarTrailingButtonsVisibility;
+- (void)_updateNotSecureWarningsVisibility;
 - (void)_updatePlaceholderText;
 - (void)_updateProgressView;
 - (void)_updateProgressViewCornerRadius;
@@ -216,9 +227,12 @@
 - (double)dismissButtonPadding;
 - (struct CGSize { double x1; double x2; })dismissButtonSize;
 - (id)dragInteraction:(id)arg1 itemsForBeginningSession:(id)arg2;
+- (id)dragInteraction:(id)arg1 previewForLiftingItem:(id)arg2 session:(id)arg3;
 - (void)dragInteraction:(id)arg1 sessionWillBegin:(id)arg2;
+- (void)dragInteraction:(id)arg1 willAnimateLiftWithAnimator:(id)arg2 session:(id)arg3;
 - (bool)dropInteraction:(id)arg1 canHandleSession:(id)arg2;
 - (void)dropInteraction:(id)arg1 performDrop:(id)arg2;
+- (id)dropInteraction:(id)arg1 sessionDidUpdate:(id)arg2;
 - (void)fluidProgressViewDidShowProgress:(id)arg1;
 - (void)fluidProgressViewWillShowProgress:(id)arg1;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
@@ -245,8 +259,9 @@
 - (id)preferredBarTintColor;
 - (id)preferredControlsTintColor;
 - (id)readerAppearanceButton;
-- (id)readerButton;
-- (id)reloadButton;
+- (id)readerAppearanceButtonPopoverSourceInfo;
+- (id)readerButtonPopoverSourceInfo;
+- (id)reloadButtonPopoverSourceInfo;
 - (void)setBackdropGroupDisabled:(bool)arg1;
 - (void)setBackdropGroupName:(id)arg1;
 - (void)setContentUnderStatusBarHeight:(double)arg1;

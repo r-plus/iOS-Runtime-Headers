@@ -12,6 +12,8 @@
 @property (nonatomic, copy) NSString *primaryLanguage;
 @property (nonatomic, copy) NSString *storeFrontID;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)DSID;
 - (void)encodeWithCoder:(id)arg1;

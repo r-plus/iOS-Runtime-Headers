@@ -33,7 +33,7 @@
 - (void)didExpressModeStateChange:(unsigned int)arg1;
 - (void)didFailDeferredAuthorization;
 - (void)didFelicaStateChange:(id)arg1;
-- (void)didReceiveActivityTimeout;
+- (void)didReceiveActivityTimeout:(id)arg1;
 - (void)didReceiveButtonPressForApplet:(id)arg1;
 - (void)didReceivePendingServerRequest;
 - (void)didSelectApplet:(id)arg1;
@@ -56,5 +56,6 @@
 - (bool)startHostCardEmulation:(id*)arg1;
 - (bool)stopCardEmulation;
 - (bool)stopCardEmulation:(id*)arg1;
+- (id)transitAppletState:(id)arg1 error:(id*)arg2;
 
 @end

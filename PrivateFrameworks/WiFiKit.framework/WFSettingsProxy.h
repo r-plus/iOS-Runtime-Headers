@@ -6,6 +6,7 @@
     bool  _authenticated;
     NSString * _autoConfigureURL;
     bool  _autoConfigured;
+    bool  _autoDiscoveryEnabled;
     bool  _customProxy;
     NSDictionary * _items;
     NSString * _password;
@@ -17,6 +18,8 @@
 @property (nonatomic) bool authenticated;
 @property (nonatomic, copy) NSString *autoConfigureURL;
 @property (nonatomic) bool autoConfigured;
+@property (nonatomic) bool autoDiscoveryEnabled;
+@property (getter=isAutomatic, nonatomic, readonly) bool automatic;
 @property (nonatomic) bool customProxy;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -35,12 +38,14 @@
 - (bool)authenticated;
 - (id)autoConfigureURL;
 - (bool)autoConfigured;
+- (bool)autoDiscoveryEnabled;
 - (bool)customProxy;
 - (id)description;
 - (id)initDefaultConfig;
 - (id)initWithAutoConfigureURL:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithManualServer:(id)arg1 port:(id)arg2 username:(id)arg3 password:(id)arg4;
+- (bool)isAutomatic;
 - (id)items;
 - (id)password;
 - (id)port;
@@ -49,6 +54,7 @@
 - (void)setAuthenticated:(bool)arg1;
 - (void)setAutoConfigureURL:(id)arg1;
 - (void)setAutoConfigured:(bool)arg1;
+- (void)setAutoDiscoveryEnabled:(bool)arg1;
 - (void)setCustomProxy:(bool)arg1;
 - (void)setItems:(id)arg1;
 - (void)setPassword:(id)arg1;

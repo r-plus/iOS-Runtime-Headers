@@ -21,7 +21,7 @@
     NSDate * _photoCreationDate;
     unsigned long long  _protocolFileSize;
     NSString * _type;
-    <NSCoding> * _userInfo;
+    id  _userInfo;
 }
 
 @property (nonatomic, retain) NSString *GUID;
@@ -52,7 +52,7 @@
 @property (nonatomic) unsigned long long protocolFileSize;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *type;
-@property (nonatomic, retain) <NSCoding> *userInfo;
+@property (nonatomic, retain) id userInfo;
 
 + (id)MSASPAssetFromProtocolDictionary:(id)arg1;
 + (id)asset;

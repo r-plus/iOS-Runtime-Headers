@@ -5,6 +5,7 @@
 @interface HMDeviceSetupOperation : NSOperation <HMDeviceSetupSessionDelegate, HMFLogging> {
     HMAccessory * _accessory;
     NSObject<OS_dispatch_queue> * _clientQueue;
+    NSError * _error;
     bool  _executing;
     bool  _finished;
     NSObject<OS_dispatch_queue> * _propertyQueue;
@@ -16,6 +17,7 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (readonly) NSError *error;
 @property (getter=isExecuting) bool executing;
 @property (getter=isFinished) bool finished;
 @property (readonly) unsigned long long hash;
@@ -31,7 +33,9 @@
 - (void)_reallyStart;
 - (id)accessory;
 - (void)cancel;
+- (void)cancelWithError:(id)arg1;
 - (id)clientQueue;
+- (id)error;
 - (void)finish;
 - (id)init;
 - (id)initWithSession:(id)arg1;
@@ -42,6 +46,7 @@
 - (id)propertyQueue;
 - (id)session;
 - (void)setAccessory:(id)arg1;
+- (void)setError:(id)arg1;
 - (void)setExecuting:(bool)arg1;
 - (void)setFinished:(bool)arg1;
 - (id)setupSession;

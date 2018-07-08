@@ -25,7 +25,6 @@
 - (void).cxx_destruct;
 - (bool)_allAccountsAreDeactivated;
 - (void)_clearMessagesAppExtensionSalt;
-- (id)_formattedStringFromLastSyncDate:(id)arg1;
 - (bool)_isMadridAccountOperational;
 - (bool)_isMadridSwitchOn;
 - (bool)_isRaiseGestureSupported;
@@ -33,7 +32,6 @@
 - (id)_madridSettingsController;
 - (void)_setupAccountHandlers;
 - (void)_setupAccountHandlersForDisabling;
-- (bool)_shouldShowLastSyncLabel:(id*)arg1;
 - (void)_showAuthKitSignInIfNecessary;
 - (void)_showMadridSetupIfNecessary;
 - (void)_showMadridSetupIfNecessary:(bool)arg1;
@@ -56,7 +54,6 @@
 - (id)bundle;
 - (id)characterCountSpecifierIdentifiers;
 - (id)ckExtension;
-- (void)cloudKitEventNotificationManager:(id)arg1 syncStateDidChange:(id)arg2;
 - (id)contactPhotoSettingsSpecifierIdentifiers;
 - (id)controllerForSpecifier:(id)arg1;
 - (void)dealloc;
@@ -72,7 +69,6 @@
 - (id)getPreviewTranscodingEnabled:(id)arg1;
 - (id)getRaiseToListenEnabled:(id)arg1;
 - (id)getSMSRelayDevicesSummary:(id)arg1;
-- (id)iCloudSettingsSpecificerIdentifiers;
 - (id)iMessageFilteringSpecifierIdentifiers;
 - (id)init;
 - (id)isConversationListFilteringEnabled:(id)arg1;
@@ -81,7 +77,6 @@
 - (id)isMadridEnabled:(id)arg1;
 - (bool)isPersonalCompanionEnabled;
 - (id)isSiriToneNotificationEnabled:(id)arg1;
-- (id)lastSyncDateStringForSpecifier:(id)arg1;
 - (id)logName;
 - (id)madridAccountsSpecifierIdentifiers;
 - (id)madridSigninButtonTextForSpecifier:(id)arg1;
@@ -124,7 +119,6 @@
 - (bool)shouldShowSMSRelaySettings;
 - (bool)shouldShowSendAsSMS;
 - (bool)shouldShowSiriSettings;
-- (bool)shouldShowiCloudSettings;
 - (bool)shouldShowiMessageFilteringSettings:(id)arg1;
 - (id)siriSettingsIdentifiers;
 - (id)smsRelaySettingsSpecifierIdentifiers;

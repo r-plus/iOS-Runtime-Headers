@@ -5,6 +5,7 @@
 @interface HDCodableNanoSyncChange : PBCodable <HDNanoSyncDescription, HDSyncChange, NSCopying> {
     bool  _complete;
     long long  _endAnchor;
+    HDCodableEntityIdentifier * _entityIdentifier;
     struct { 
         unsigned int endAnchor : 1; 
         unsigned int sequence : 1; 
@@ -26,8 +27,10 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool done;
 @property (nonatomic) long long endAnchor;
+@property (nonatomic, retain) HDCodableEntityIdentifier *entityIdentifier;
 @property (nonatomic) bool hasComplete;
 @property (nonatomic) bool hasEndAnchor;
+@property (nonatomic, readonly) bool hasEntityIdentifier;
 @property (nonatomic) bool hasObjectType;
 @property (nonatomic) bool hasSequence;
 @property (nonatomic) bool hasSpeculative;
@@ -50,7 +53,6 @@
 
 - (void).cxx_destruct;
 - (int)StringAsObjectType:(id)arg1;
-- (Class)_syncEntityClass;
 - (void)addObjectData:(id)arg1;
 - (void)addRequiredAnchors:(id)arg1;
 - (void)clearObjectDatas;
@@ -58,13 +60,15 @@
 - (bool)complete;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)decodedObjects;
+- (id)decodedObjectsForProfile:(id)arg1 error:(id*)arg2;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)done;
 - (long long)endAnchor;
+- (id)entityIdentifier;
 - (bool)hasComplete;
 - (bool)hasEndAnchor;
+- (bool)hasEntityIdentifier;
 - (bool)hasObjectType;
 - (bool)hasSequence;
 - (bool)hasSpeculative;
@@ -74,14 +78,13 @@
 - (bool)isSpeculative;
 - (void)mergeFrom:(id)arg1;
 - (id)nanoSyncDescription;
-- (Class)nanoSyncEntityClass;
 - (id)objectDataAtIndex:(unsigned long long)arg1;
 - (id)objectDatas;
 - (unsigned long long)objectDatasCount;
 - (int)objectType;
 - (id)objectTypeAsString:(int)arg1;
 - (bool)readFrom:(id)arg1;
-- (id)requiredAnchorMapWithError:(id*)arg1;
+- (id)requiredAnchorMapWithProfile:(id)arg1 error:(id*)arg2;
 - (id)requiredAnchors;
 - (id)requiredAnchorsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)requiredAnchorsCount;
@@ -89,6 +92,7 @@
 - (id)sequenceNumber;
 - (void)setComplete:(bool)arg1;
 - (void)setEndAnchor:(long long)arg1;
+- (void)setEntityIdentifier:(id)arg1;
 - (void)setHasComplete:(bool)arg1;
 - (void)setHasEndAnchor:(bool)arg1;
 - (void)setHasObjectType:(bool)arg1;
@@ -107,7 +111,8 @@
 - (id)speculativeCopy;
 - (long long)startAnchor;
 - (struct HDSyncAnchorRange { long long x1; long long x2; })syncAnchorRange;
-- (Class)syncEntityClass;
+- (Class)syncEntityClassForProfile:(id)arg1;
+- (id)syncEntityIdentifier;
 - (void)writeTo:(id)arg1;
 
 @end

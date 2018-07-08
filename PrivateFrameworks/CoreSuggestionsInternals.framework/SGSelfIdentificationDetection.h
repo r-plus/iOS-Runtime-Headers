@@ -11,9 +11,9 @@
     NSString * _name;
 }
 
-@property (nonatomic, retain) NSString *context;
+@property (nonatomic, copy) NSString *context;
 @property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } contextRange;
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, copy) NSString *name;
 
 - (void).cxx_destruct;
 - (id)context;

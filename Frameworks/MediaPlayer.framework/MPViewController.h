@@ -46,7 +46,6 @@
 - (void)endIgnoringChangeTypes:(unsigned long long)arg1;
 - (void)endTransitionOverlayHidingWithTransferedOverlayView:(id)arg1;
 - (bool)idleTimerDisabled;
-- (void)incrementAggregateStatisticsDisplayCount;
 - (id)init;
 - (bool)isAppearing;
 - (id)item;

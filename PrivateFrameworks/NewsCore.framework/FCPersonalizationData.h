@@ -50,7 +50,7 @@
 - (void)_applicationDidEnterBackground;
 - (void)_closeOpenChangeGroup;
 - (id)_instanceIdentifier;
-- (void)_reloadTreatmentWithReliablyFetchedAppConfig:(bool)arg1;
+- (void)_reloadTreatmentWithReliablyFetchedCoreConfig:(bool)arg1 feldsparID:(id)arg2;
 - (void)_updateWithRemoteRecord:(id)arg1 profile:(id)arg2;
 - (void)_writeToLocalStoreWithCompletionHandler:(id /* block */)arg1;
 - (void)activityObservingApplicationDidEnterBackground;

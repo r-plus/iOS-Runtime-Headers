@@ -29,6 +29,7 @@
 @property (getter=isReadOnly, nonatomic, readonly) bool isReadOnly;
 @property (nonatomic) unsigned long long objectChangeType;
 @property (nonatomic, retain) NSUUID *parentUUID;
+@property (getter=isReplayable, nonatomic, readonly) bool replayable;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSUUID *uuid;
 
@@ -76,6 +77,7 @@
 - (bool)isEqual:(id)arg1;
 - (bool)isGenericRepresentation;
 - (bool)isReadOnly;
+- (bool)isReplayable;
 - (id)logIdentifier;
 - (id)merge:(id)arg1;
 - (id)merge:(id)arg1 from:(unsigned long long)arg2;

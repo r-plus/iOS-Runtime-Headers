@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface PFUbiquityKnowledgeVector : NSObject <NSCoding, NSCopying> {
+@interface PFUbiquityKnowledgeVector : NSObject <NSCoding, NSCopying, NSSecureCoding> {
     unsigned long long  _hash;
     NSDictionary * _kv;
     NSDictionary * _storeKVDict;
@@ -13,6 +13,7 @@
 
 + (id)createKnowledgeVectorDictionaryFromString:(id)arg1;
 + (id)createSetOfAllPeerIDsInKnowledgeVectors:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void)_updateHash;
 - (id)allPeerIDs;

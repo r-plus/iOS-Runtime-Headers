@@ -58,8 +58,6 @@
 @property (readonly) Class superclass;
 @property (nonatomic) double upArrowWidth;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 + (double)defaultCandidateWidth;
 + (double)defaultPagingDistanceThreshold;
 + (double)defaultPagingVelocityThreshold;
@@ -103,10 +101,6 @@
 - (void)_updateCandidateViews;
 - (void)_updateCorners;
 - (double)_widthOfItemAtIndex:(unsigned long long)arg1 inSection:(long long)arg2;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)adjustSelectionToNearestVisibleCandidate;
 - (bool)canExtend;
 - (void)candidateAcceptedAtIndex:(unsigned long long)arg1;
@@ -130,6 +124,7 @@
 - (id)currentCandidateView;
 - (unsigned long long)currentCandidateViewIndex;
 - (unsigned long long)currentIndex;
+- (void)dealloc;
 - (id)delegate;
 - (void)dimKeys:(id)arg1;
 - (id)dragStartNextPageIndexPath;

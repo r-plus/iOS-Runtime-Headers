@@ -20,6 +20,7 @@
     LPCaptionBarPresentationProperties * _mediaBottomCaptionBar;
     LPCaptionBarPresentationProperties * _mediaTopCaptionBar;
     LPLinkMetadata * _metadata;
+    LPPointUnit * _minimumRootHeight;
     DOMDocument * _parentDocument;
     LPMetadataProvider * _pendingMetadataProvider;
     NSString * _quotedText;
@@ -49,7 +50,9 @@
 @property (nonatomic, readonly) bool hasTallMedia;
 @property (nonatomic, readonly) bool isPreliminary;
 @property (nonatomic, copy) LPLinkMetadata *metadata;
+@property (nonatomic, readonly) LPPointUnit *minimumRootHeight;
 @property (nonatomic, readonly) DOMDocument *parentDocument;
+@property (nonatomic, readonly) LPPointUnit *rootWidth;
 @property (nonatomic, readonly) long long style;
 @property (nonatomic, readonly) LPTheme *theme;
 @property (nonatomic, readonly) bool useFlexibleWidth;
@@ -97,7 +100,9 @@
 - (void)injectCSSIfNeeded;
 - (bool)isPreliminary;
 - (id)metadata;
+- (id)minimumRootHeight;
 - (id)parentDocument;
+- (id)rootWidth;
 - (void)setApplyCornerRadiusToLink:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setGenerateEmailCompatibleMarkup:(bool)arg1;

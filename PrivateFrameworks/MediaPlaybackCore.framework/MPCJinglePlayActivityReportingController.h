@@ -6,6 +6,7 @@
     NSObject<OS_dispatch_queue> * _accessSerialQueue;
     double  _nonCatalogAggregatePlayDuration;
     double  _nonCatalogAggregateStartTime;
+    NSString * _nonCatalogBuildVersion;
     NSString * _nonCatalogDeviceName;
     bool  _nonCatalogOffline;
     bool  _nonCatalogSBEnabled;

@@ -6,10 +6,10 @@
     IKAppContext * _appContext;
     IKAppDataStorage * _appLocalStorage;
     _TVMLKitApplication * _application;
+    _TVApplicationInspector * _applicationInspector;
     TVApplicationControllerContext * _context;
     <TVApplicationControllerDelegate> * _delegate;
     bool  _doLaunchOpenURLHandling;
-    _TVInspectorHighlightView * _inspectorView;
     long long  _interfaceOrientation;
     <UITraitEnvironment> * _keyTraitEnvironment;
     NSDictionary * _launchOpenURLOptions;
@@ -45,6 +45,7 @@
 + (void)initialize;
 
 - (void).cxx_destruct;
+- (id)_appContext;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)_applicationWillResignActiveNotification:(id)arg1;
@@ -58,11 +59,13 @@
 - (void)_reloadControllerDidDisplay:(id)arg1;
 - (bool)_shouldReloadOnResume;
 - (void)_statusBarOrientationDidChange:(id)arg1;
+- (void)appContext:(id)arg1 didChangeInspectElementMode:(bool)arg2;
 - (void)appContext:(id)arg1 didFailWithError:(id)arg2;
 - (void)appContext:(id)arg1 didStartWithOptions:(id)arg2;
 - (void)appContext:(id)arg1 didStopWithOptions:(id)arg2;
 - (void)appContext:(id)arg1 evaluateAppJavaScriptInContext:(id)arg2;
 - (bool)appContext:(id)arg1 highlightViewForElement:(id)arg2 contentColor:(id)arg3 paddingColor:(id)arg4 borderColor:(id)arg5 marginColor:(id)arg6;
+- (bool)appContext:(id)arg1 highlightViewsForElements:(id)arg2 contentColor:(id)arg3 paddingColor:(id)arg4 borderColor:(id)arg5 marginColor:(id)arg6;
 - (void)appContext:(id)arg1 needsReloadWithUrgency:(unsigned long long)arg2 options:(id)arg3;
 - (bool)appContext:(id)arg1 validateDOMDocument:(id)arg2 inContext:(id)arg3 error:(id*)arg4;
 - (bool)appNavigationController:(id)arg1 shouldDismissShroudForDocument:(id)arg2;

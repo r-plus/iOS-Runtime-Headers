@@ -11,6 +11,7 @@
 - (bool)URLIsValidForImportedHyperlink:(id)arg1 targetDocumentRoot:(id)arg2;
 - (id)appChartPropertyOverrides;
 - (void)applicationDidFinishLaunching;
+- (id)applicationDisplayName;
 - (id)applicationName;
 - (id)applicationTemplateVariantsForLocale:(struct __CFLocale { }*)arg1;
 - (unsigned long long)applicationType;
@@ -34,13 +35,12 @@
 - (id)previewImageNameForNativeDocument;
 - (void)registerAllowedElementKinds;
 - (void)registerClassTypeMappings;
+- (void)registerSOSClassTypeMappings;
 - (id)sharedAlertMessageWithUserName:(id)arg1;
 - (id)sharedReadOnlyAlertMessageWithUserName:(id)arg1;
 - (bool)sidebarPositionRespectsUserInterfaceLayoutDirection;
 - (id)stringForApplicationUpdateError;
-- (id)stringForBoxCollaborationOptInLearnMoreURL;
 - (id)stringForBoxCollaborationOptInMessage;
-- (id)stringForBoxCollaborationOptInTermsOfServiceURL;
 - (id)stringForCloseDocument;
 - (id)stringForCloseDocumentConfirmationAlertMessage;
 - (id)stringForCloseDocumentConfirmationWillContinueToUpdateInformativeText;
@@ -58,6 +58,9 @@
 - (id)stringForDocumentUpdatedByOwnerDetails;
 - (id)stringForDocumentUpdatedByOwnerWithKeepDetails;
 - (id)stringForDocumentUpdatedTitle;
+- (id)stringForDocumentViewOnly;
+- (id)stringForDocumentViewOnlyMessage;
+- (id)stringForDocumentViewOnlyTitle;
 - (id)stringForGenericServerUnreachable;
 - (id)stringForICloudUnreachable;
 - (id)stringForLearnMoreSharingURL;
@@ -72,7 +75,7 @@
 - (id)stringForRemoveSelfAlertConfirmationTitle;
 - (id)stringForStopSharingAlertConfirmationMessage;
 - (id)stringForStopSharingAlertConfirmationTitle;
-- (id)stringForUpdatingDocument;
+- (id)stringForUpdatingDocumentWithoutServiceType;
 - (bool)supportsPastingIntoGroups;
 - (bool)supportsRTL;
 - (bool)supportsShrinkTextToFit;

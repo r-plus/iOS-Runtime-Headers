@@ -5,14 +5,18 @@
 @interface CSXPCConnection : NSObject {
     NSObject<OS_xpc_object> * _connection;
     bool  _listener;
-    NSString * _machServiceName;
+    bool  _machService;
     NSObject<OS_dispatch_queue> * _queue;
+    NSString * _serviceName;
+    NSString * _uuid;
 }
 
 @property (nonatomic, retain) NSObject<OS_xpc_object> *connection;
 @property (nonatomic, readonly) bool listener;
-@property (nonatomic, readonly) NSString *machServiceName;
+@property (nonatomic, readonly) bool machService;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, readonly) NSString *serviceName;
+@property (nonatomic, readonly) NSString *uuid;
 
 + (id)appIdentifierFromTeamAppTuple:(id)arg1;
 + (id)copyNSStringArrayFromXPCArray:(id)arg1;
@@ -24,24 +28,30 @@
 + (void)initialize;
 
 - (void).cxx_destruct;
-- (void)_handleMessage:(id)arg1 type:(struct _xpc_type_s { }*)arg2 connection:(id)arg3;
 - (void)_lostClientConnection:(id)arg1 error:(id)arg2;
-- (bool)allowClientConnection:(id)arg1;
+- (bool)addClientConnectionIfAllowedForConfiguration:(id)arg1;
+- (bool)addClientConnectionIfAllowedForConnection:(id)arg1;
 - (id)connection;
 - (bool)handleCommand:(const char *)arg1 info:(id)arg2 connection:(id)arg3;
 - (void)handleError:(id)arg1;
 - (bool)handleMessage:(id)arg1 type:(struct _xpc_type_s { }*)arg2 connection:(id)arg3;
 - (void)handleReply:(id)arg1;
-- (id)initListenerWithMachServiceName:(id)arg1;
+- (id)initListenerWithName:(id)arg1;
+- (id)initMachServiceListenerWithName:(id)arg1;
 - (id)initWithMachServiceName:(id)arg1;
+- (id)initWithServiceName:(id)arg1;
+- (id)initWithServiceName:(id)arg1 machService:(bool)arg2;
+- (id)initWithServiceName:(id)arg1 machService:(bool)arg2 uuid:(id)arg3;
 - (bool)listener;
 - (bool)lostClientConnection:(id)arg1 error:(id)arg2;
-- (id)machServiceName;
+- (bool)machService;
 - (id)queue;
 - (void)sendMessageAsync:(id)arg1;
 - (void)sendMessageAsync:(id)arg1 completion:(id /* block */)arg2;
+- (id)serviceName;
 - (void)setConnection:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)startListener;
+- (id)uuid;
 
 @end

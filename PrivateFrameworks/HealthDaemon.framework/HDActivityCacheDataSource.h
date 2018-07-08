@@ -18,7 +18,7 @@
         struct HDActivityCacheStatisticsBuilderSample {} *__begin_; 
         struct HDActivityCacheStatisticsBuilderSample {} *__end_; 
         struct __compressed_pair<HDActivityCacheStatisticsBuilderSample *, std::__1::allocator<HDActivityCacheStatisticsBuilderSample> > { 
-            struct HDActivityCacheStatisticsBuilderSample {} *__first_; 
+            struct HDActivityCacheStatisticsBuilderSample {} *__value_; 
         } __end_cap_; 
     }  _previousWatchActivationLogEntryVector;
     HDProfile * _profile;

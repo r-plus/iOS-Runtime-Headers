@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@interface MCAggregateLogProfilePayloadKey : MCAggregateLogProfileKey {
+@interface MCAggregateLogProfilePayloadKey : MCAggregateLogKey {
     NSString * _nameSuffix;
     Class  _payloadClass;
 }

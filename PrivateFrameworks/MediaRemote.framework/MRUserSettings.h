@@ -10,8 +10,7 @@
 @property (nonatomic, readonly) double airPlayOutputContextInitTimeoutDuration;
 @property (nonatomic, readonly) double bluetoothDeviceResumeDuration;
 @property (nonatomic, readonly) double broadcastCommandWaitDuration;
-@property (nonatomic) NSArray *connectedClientPIDs;
-@property (nonatomic, readonly) bool deviceSupportsExternalRemoteControl;
+@property (nonatomic, retain) NSArray *connectedClientPIDs;
 @property (nonatomic, readonly) double externalDeviceDisconnectSleepDuration;
 @property (nonatomic, readonly) double externalDeviceDisconnectWaitDuration;
 @property (nonatomic, readonly) double externalDeviceNowPlayingInfoArtworkCoalesceDuration;
@@ -24,6 +23,7 @@
 @property (nonatomic, readonly) long long maxTransactionMemorySize;
 @property (nonatomic, readonly) bool shouldInitializeGenericBonjourService;
 @property (nonatomic, readonly) bool shouldInitializeTelevisionBonjourService;
+@property (nonatomic, readonly) bool shouldLogArtwork;
 @property (nonatomic, readonly) bool shouldLogPairingSetupCode;
 @property (nonatomic, readonly) double transactionWaitDurationOnNetworkSend;
 @property (nonatomic, readonly) double transactionWaitDurationOnOutOfMemory;
@@ -37,6 +37,7 @@
 
 + (id)currentSettings;
 
+- (void).cxx_destruct;
 - (bool)_boolValueForKey:(id)arg1 usingDefaultValue:(bool)arg2;
 - (double)_doubleValueForKey:(id)arg1 usingDefaultValue:(double)arg2;
 - (long long)_integerValueForKey:(id)arg1 usingDefaultValue:(long long)arg2;
@@ -45,8 +46,6 @@
 - (double)bluetoothDeviceResumeDuration;
 - (double)broadcastCommandWaitDuration;
 - (id)connectedClientPIDs;
-- (void)dealloc;
-- (bool)deviceSupportsExternalRemoteControl;
 - (double)externalDeviceDisconnectSleepDuration;
 - (double)externalDeviceDisconnectWaitDuration;
 - (double)externalDeviceNowPlayingInfoArtworkCoalesceDuration;
@@ -62,6 +61,7 @@
 - (void)setExternalDevicePairingAllowed:(bool)arg1;
 - (bool)shouldInitializeGenericBonjourService;
 - (bool)shouldInitializeTelevisionBonjourService;
+- (bool)shouldLogArtwork;
 - (bool)shouldLogPairingSetupCode;
 - (double)transactionWaitDurationOnNetworkSend;
 - (double)transactionWaitDurationOnOutOfMemory;

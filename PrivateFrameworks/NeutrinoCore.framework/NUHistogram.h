@@ -5,7 +5,7 @@
 @interface NUHistogram : NSObject <NSCopying, NSMutableCopying> {
     struct unique_ptr<NU::Histogram<long, double>, std::__1::default_delete<NU::Histogram<long, double> > > { 
         struct __compressed_pair<NU::Histogram<long, double> *, std::__1::default_delete<NU::Histogram<long, double> > > { 
-            struct Histogram<long, double> {} *__first_; 
+            struct Histogram<long, double> {} *__value_; 
         } __ptr_; 
     }  _histogram;
 }

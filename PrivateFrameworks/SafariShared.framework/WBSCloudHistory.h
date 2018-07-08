@@ -11,7 +11,7 @@
     bool  _fetchChangesWhenHistoryLoads;
     struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
         struct __compressed_pair<SafariShared::SuddenTerminationDisabler *, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
-            struct SuddenTerminationDisabler {} *__first_; 
+            struct SuddenTerminationDisabler {} *__value_; 
         } __ptr_; 
     }  _fetchOperationSuddenTerminationDisabler;
     <NSObject> * _historyWasLoadedObserver;
@@ -22,7 +22,7 @@
     bool  _replayLongLivedSaveOperationHasBeenPerformed;
     struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
         struct __compressed_pair<SafariShared::SuddenTerminationDisabler *, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
-            struct SuddenTerminationDisabler {} *__first_; 
+            struct SuddenTerminationDisabler {} *__value_; 
         } __ptr_; 
     }  _replayLongLivedSaveOperationSuddenTerminationDisabler;
     WBSCloudKitThrottler * _saveChangesThrottler;
@@ -30,7 +30,7 @@
     bool  _saveChangesWhenHistoryLoads;
     struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
         struct __compressed_pair<SafariShared::SuddenTerminationDisabler *, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
-            struct SuddenTerminationDisabler {} *__first_; 
+            struct SuddenTerminationDisabler {} *__value_; 
         } __ptr_; 
     }  _saveOperationSuddenTerminationDisabler;
     NSTimer * _serverBackoffTimer;

@@ -7,7 +7,7 @@
         struct CGRect {} *__begin_; 
         struct CGRect {} *__end_; 
         struct __compressed_pair<CGRect *, std::__1::allocator<CGRect> > { 
-            struct CGRect {} *__first_; 
+            struct CGRect {} *__value_; 
         } __end_cap_; 
     }  mRectList;
 }

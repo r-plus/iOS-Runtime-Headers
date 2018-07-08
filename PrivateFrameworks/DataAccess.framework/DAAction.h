@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@interface DAAction : NSObject <NSCoding> {
+@interface DAAction : NSObject <NSSecureCoding> {
     int  _changeId;
     id  _changedItem;
     id  _forwardedAttendeeUUIDs;
@@ -21,6 +21,8 @@
 @property (nonatomic, retain) id serverId;
 
 // Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_setChangedItem:(id)arg1;

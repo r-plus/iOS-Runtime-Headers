@@ -287,6 +287,7 @@
 - (id)muted;
 - (id)pl_aggregateKeysForPreviousPhotoEditModel:(id)arg1;
 - (id)pl_aggregateNameForEffectFilter;
+- (id)pl_aggregateNameForPortraitFilter;
 - (id)portraitEffectFilterName;
 - (long long)portraitEffectFilterVersion;
 - (id)portraitEffectSettings;

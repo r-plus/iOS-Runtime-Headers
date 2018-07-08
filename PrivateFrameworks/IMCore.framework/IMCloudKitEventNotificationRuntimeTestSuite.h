@@ -4,6 +4,9 @@
 
 @interface IMCloudKitEventNotificationRuntimeTestSuite : IMRuntimeTestSuite
 
++ (void)runTestSuiteWithRepeat:(bool)arg1;
++ (void)runTestsIfNeededWithRepeat:(bool)arg1;
+
 - (id)init;
 
 @end

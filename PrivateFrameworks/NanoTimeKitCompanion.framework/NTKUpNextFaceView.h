@@ -68,7 +68,10 @@
 - (bool)_applyShowIdealizedContent;
 - (void)_applyShowsCanonicalContent;
 - (void)_applyShowsLockedUI;
+- (void)_becameActiveFace;
+- (void)_becameInactiveFace;
 - (void)_cleanupAfterSettingViewMode:(long long)arg1 scroll:(bool)arg2 targetOffset:(struct CGPoint { double x1; double x2; })arg3 needsLayout:(bool)arg4;
+- (void)_cleanupAfterTransitionComplicationSlot:(id)arg1;
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (void)_configureForTransitionFraction:(double)arg1 fromEditMode:(long long)arg2 toEditMode:(long long)arg3;
 - (struct CGPoint { double x1; double x2; })_defaultPointForDefaultMode;
@@ -101,6 +104,7 @@
 - (void)_unloadSnapshotContentViews;
 - (void)_updateApplicationIdentifiers;
 - (void)_updateCrownInvertedSetting;
+- (void)_updateDisabledDataSources;
 - (bool)_usesCustomZoom;
 - (double)_verticalPaddingForStatusBar;
 - (bool)_wantsStatusBarHidden;
@@ -126,6 +130,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
+- (bool)presentedViewControllerShouldBecomeFirstResponder:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)setViewMode:(long long)arg1;
 - (void)upNextElementAction:(id)arg1 didFinishTask:(bool)arg2;

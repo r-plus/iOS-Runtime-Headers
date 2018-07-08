@@ -82,6 +82,7 @@
 - (id)cd_recipients;
 - (bool)cd_saveToKnowledgeStore;
 - (bool)cd_saveToPeopleStore;
+- (id)contextMetadata;
 
 // Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
 

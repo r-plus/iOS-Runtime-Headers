@@ -6,7 +6,9 @@
     CKAccountOverrideInfo * _accountInfoOverride;
     bool  _bypassPCSEncryption;
     bool  _captureResponseHTTPHeaders;
+    NSString * _encryptionServiceName;
     bool  _enforceNamedOperationGroups;
+    bool  _forceEnableReadOnlyManatee;
     bool  _returnPCSMetadata;
     bool  _useMMCSEncryptionV2;
     bool  _useZoneWidePCS;
@@ -16,7 +18,9 @@
 @property (nonatomic, copy) CKAccountOverrideInfo *accountInfoOverride;
 @property (nonatomic) bool bypassPCSEncryption;
 @property (nonatomic) bool captureResponseHTTPHeaders;
+@property (nonatomic, retain) NSString *encryptionServiceName;
 @property (nonatomic) bool enforceNamedOperationGroups;
+@property (nonatomic) bool forceEnableReadOnlyManatee;
 @property (nonatomic) bool returnPCSMetadata;
 @property (nonatomic) bool useMMCSEncryptionV2;
 @property (nonatomic) bool useZoneWidePCS;
@@ -26,12 +30,16 @@
 - (id)accountInfoOverride;
 - (bool)bypassPCSEncryption;
 - (bool)captureResponseHTTPHeaders;
+- (id)encryptionServiceName;
 - (bool)enforceNamedOperationGroups;
+- (bool)forceEnableReadOnlyManatee;
 - (bool)returnPCSMetadata;
 - (void)setAccountInfoOverride:(id)arg1;
 - (void)setBypassPCSEncryption:(bool)arg1;
 - (void)setCaptureResponseHTTPHeaders:(bool)arg1;
+- (void)setEncryptionServiceName:(id)arg1;
 - (void)setEnforceNamedOperationGroups:(bool)arg1;
+- (void)setForceEnableReadOnlyManatee:(bool)arg1;
 - (void)setReturnPCSMetadata:(bool)arg1;
 - (void)setUseMMCSEncryptionV2:(bool)arg1;
 - (void)setUseZoneWidePCS:(bool)arg1;

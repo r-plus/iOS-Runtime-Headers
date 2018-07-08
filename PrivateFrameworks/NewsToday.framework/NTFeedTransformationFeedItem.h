@@ -20,9 +20,11 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly) bool needsFeedItemHeadlinesFetch;
+@property (nonatomic, readonly) unsigned long long preferredDynamicSlotAllocation;
 @property (nonatomic, readonly, copy) SFSearchResult *searchResult;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned long long todayItemType;
+@property (nonatomic, readonly) bool usesDynamicSlotAllocation;
 
 - (void).cxx_destruct;
 - (id)cacheCutoffTimeRelativeDate;
@@ -42,5 +44,6 @@
 - (id)protoitemWithFetchedFeedItemHeadline:(id)arg1;
 - (id)searchResult;
 - (unsigned long long)todayItemType;
+- (bool)usesDynamicSlotAllocation;
 
 @end

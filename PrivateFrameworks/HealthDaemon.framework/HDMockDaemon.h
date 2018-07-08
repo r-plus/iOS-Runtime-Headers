@@ -29,6 +29,8 @@
 - (id)backgroundTaskScheduler;
 - (id)behavior;
 - (id)createXPCListenerWithMachServiceName:(id)arg1;
+- (id)daemonExtensionWithIdentifier:(id)arg1;
+- (id)daemonExtensionsConformingToProtocol:(id)arg1;
 - (id)init;
 - (id)mockPrimaryProfile;
 - (id)pluginManager;

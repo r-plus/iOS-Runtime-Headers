@@ -34,6 +34,7 @@
     }  _mutex;
     unsigned long long  _numEncoders;
     unsigned long long  _numThisCommandBuffer;
+    bool  _ownedByParallelEncoder;
     id /* block */  _perfSampleHandlerBlock;
     bool  _profilingEnabled;
     NSDictionary * _profilingResults;
@@ -63,6 +64,7 @@
 @property (getter=getListIndex, nonatomic) unsigned long long listIndex;
 @property (nonatomic) unsigned long long numEncoders;
 @property (nonatomic) unsigned long long numThisCommandBuffer;
+@property (nonatomic) bool ownedByParallelEncoder;
 @property (getter=isProfilingEnabled) bool profilingEnabled;
 @property (readonly) NSDictionary *profilingResults;
 @property (readonly) bool retainedReferences;
@@ -102,6 +104,7 @@
 - (id)label;
 - (unsigned long long)numEncoders;
 - (unsigned long long)numThisCommandBuffer;
+- (bool)ownedByParallelEncoder;
 - (void)popDebugGroup;
 - (void)presentDrawable:(id)arg1;
 - (void)presentDrawable:(id)arg1 afterMinimumDuration:(double)arg2;
@@ -116,6 +119,7 @@
 - (void)setListIndex:(unsigned long long)arg1;
 - (void)setNumEncoders:(unsigned long long)arg1;
 - (void)setNumThisCommandBuffer:(unsigned long long)arg1;
+- (void)setOwnedByParallelEncoder:(bool)arg1;
 - (void)setProfilingEnabled:(bool)arg1;
 - (void)setStatEnabled:(bool)arg1;
 - (bool)skipRender;

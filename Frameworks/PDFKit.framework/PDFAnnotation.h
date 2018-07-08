@@ -78,7 +78,9 @@
 - (void)_generateFormFieldName;
 - (bool)_isValidAnnotationKey:(id)arg1;
 - (void)_printDictionary:(id)arg1 atDepth:(int)arg2;
+- (void)_restorePropertiesAfterSetBounds;
 - (void*)_sanitizeValue:(id)arg1 forKey:(id)arg2;
+- (void)_savePropertiesBeforeSetBounds;
 - (bool)_setArray:(id)arg1 forAnnotationKey:(id)arg2;
 - (void)_setBoolValue:(bool)arg1 forAnnotationFlag:(unsigned long long)arg2;
 - (void)_setBoolValue:(bool)arg1 forWidgetFieldFlag:(unsigned long long)arg2;

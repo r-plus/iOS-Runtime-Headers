@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SiriTasks.framework/SiriTasks
  */
 
-@interface STGenericIntentLocation : NSObject <NSCoding> {
+@interface STGenericIntentLocation : NSObject <NSSecureCoding> {
     bool  _isLatLong;
     double  _latitude;
     double  _longitude;
@@ -13,6 +13,8 @@
 @property (nonatomic) double latitude;
 @property (nonatomic) double longitude;
 @property (nonatomic, copy) NSString *name;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

@@ -309,6 +309,7 @@
 - (id)_fileURLForMetadataWithExtension:(id)arg1;
 - (id)_imageRequestOptionsForBaseVersion:(long long)arg1 options:(id)arg2 progressEstimateForImageProgress:(id /* block */)arg3;
 - (void)_renderTemporaryVideoForObjectBuilder:(id)arg1 resultHandler:(id /* block */)arg2;
+- (void)_reportUsage;
 - (void)_requestRenderedVideoForVideoURL:(id)arg1 adjustmentData:(id)arg2 canHandleAdjustmentData:(bool)arg3 resultHandler:(id /* block */)arg4;
 - (id)_unfetchedPropertySetsFromPropertySets:(id)arg1;
 - (id)_videoRequestOptionsForBaseVersion:(long long)arg1 options:(id)arg2 progressEstimateForVideoProgress:(id /* block */)arg3;
@@ -649,6 +650,7 @@
 // Image: /System/Library/PrivateFrameworks/NanoPhotosUICompanion.framework/NanoPhotosUICompanion
 
 + (void)_nptoArchiveLivePhotoWithDictionary:(id)arg1 toURL:(id)arg2 completionHandler:(id /* block */)arg3;
++ (void)_nptoSetUsesLegacyExportFormat:(bool)arg1;
 
 - (void)_nptoExportLivePhotoToURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_nptoExportPairedVideoToURL:(id)arg1 completionHandler:(id /* block */)arg2;

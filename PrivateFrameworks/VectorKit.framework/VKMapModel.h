@@ -71,7 +71,7 @@
             struct FeatureAttributePair {} *__begin_; 
             struct FeatureAttributePair {} *__end_; 
             struct __compressed_pair<gss::FeatureAttributePair *, std::__1::allocator<gss::FeatureAttributePair> > { 
-                struct FeatureAttributePair {} *__first_; 
+                struct FeatureAttributePair {} *__value_; 
             } __end_cap_; 
         } _attributes; 
     }  _mapFeatureStyleAttributes;
@@ -91,10 +91,10 @@
             struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<VKPolylineGroupOverlay *, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
-                } __first_; 
+                } __value_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::less<VKPolylineGroupOverlay *> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __pair3_; 
         } __tree_; 
     }  _observedOverlays;
@@ -104,10 +104,10 @@
             struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<geo::_retain_ptr<VKOverlay *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
-                } __first_; 
+                } __value_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::less<geo::_retain_ptr<VKOverlay *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> > > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __pair3_; 
         } __tree_; 
     }  _overlays;
@@ -161,7 +161,7 @@
     bool  _trafficIncidentsEnabled;
     struct unique_ptr<md::TrafficSharedResources, std::__1::default_delete<md::TrafficSharedResources> > { 
         struct __compressed_pair<md::TrafficSharedResources *, std::__1::default_delete<md::TrafficSharedResources> > { 
-            struct TrafficSharedResources {} *__first_; 
+            struct TrafficSharedResources {} *__value_; 
         } __ptr_; 
     }  _trafficSharedResources;
     VKTrafficTileSource * _trafficSource;
@@ -235,6 +235,8 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_beginNavMapModeTransitionToMode:(unsigned char)arg1;
+- (void)_createTrafficTileSourceAtIndex:(unsigned int)arg1 roadTileSource:(id)arg2 origin:(unsigned char)arg3 sharedResources:(id)arg4;
+- (void)_createTrafficTileSourcesIfNecessary:(id)arg1 sharedResources:(id)arg2;
 - (void)_forceLayout;
 - (void)_localeChanged:(id)arg1;
 - (void)_mapConfigurationDidChange;
@@ -274,7 +276,6 @@
 - (double)contentScale;
 - (id)createSourceForLayer:(unsigned char)arg1 tileSet:(id)arg2 useAdditionalManifest:(bool)arg3;
 - (id)createSourceForLayer:(unsigned char)arg1 useAdditionalManifest:(bool)arg2;
-- (void)createTrafficTileSourceIfNecessary:(id)arg1;
 - (long long)currentMapMode;
 - (float)currentRoadSignOffset;
 - (void)dealloc;
@@ -283,7 +284,7 @@
 - (id)debugLabelString:(bool)arg1;
 - (id)delegate;
 - (void)deselectTransitLineMarker;
-- (void)destroyRenderer;
+- (void)destroyRendererStopObserving;
 - (id)detailedDescription;
 - (id)detailedDescriptionDictionaryRepresentation;
 - (void)didBeginTransitionToNavigation;

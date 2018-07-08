@@ -24,7 +24,7 @@
         int *__begin_; 
         int *__end_; 
         struct __compressed_pair<int *, std::__1::allocator<int> > { 
-            int *__first_; 
+            int *__value_; 
         } __end_cap_; 
     }  _dominantColorIndex;
     int  _endHeight;
@@ -39,7 +39,7 @@
         int *__begin_; 
         int *__end_; 
         struct __compressed_pair<int *, std::__1::allocator<int> > { 
-            int *__first_; 
+            int *__value_; 
         } __end_cap_; 
     }  _popupColorIndex;
     int  _startHeight;

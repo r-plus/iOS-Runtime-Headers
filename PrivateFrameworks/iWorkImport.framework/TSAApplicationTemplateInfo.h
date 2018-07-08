@@ -25,10 +25,10 @@
 + (id)localizationBundleURLForTemplateName:(id)arg1;
 + (void)setBundledTemplatesDirectoryURL:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)assetName;
 - (id)bundledDocumentContainerURL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)documentURL;
 - (id)documentVariant;

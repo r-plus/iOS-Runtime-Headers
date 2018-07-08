@@ -34,6 +34,7 @@
         unsigned long long _opaque_1; 
         unsigned long long _opaque_2; 
     }  _symbolicator;
+    bool  _targetProcessContainsMallocStackLoggingLiteZone;
     VMUNonOverlappingRangeArray * _targetProcessVMranges;
     bool  _targetUsesObjc2runtime;
     unsigned int  _task;
@@ -50,10 +51,12 @@
 - (unsigned long long)ObjCclassCount;
 - (unsigned long long)SwiftClassCount;
 - (id)_classInfoWithNonobjectType:(id)arg1 binaryPath:(id)arg2;
+- (id)_classInfoWithPthreadType:(id)arg1;
 - (void*)_dlopenLibSwiftRemoteMirrorFromDir:(id)arg1;
 - (void*)_dlopenLibSwiftRemoteMirrorNearLibSwiftCoreWithSymbolicator:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg1 avoidSystem:(bool)arg2;
 - (void*)_dlopenLibSwiftRemoteMirrorWithSymbolicator:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)_faultClass:(unsigned long long)arg1 ofType:(int)arg2;
+- (bool)_isValidInstanceLength:(unsigned long long)arg1 expectedLength:(unsigned long long)arg2;
 - (void)_populateSwiftDebugVariables:(struct libSwiftRemoteMirrorWrapper { struct SwiftReflectionContext {} *x1; unsigned short x2; int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); unsigned long long x17; unsigned long long x18; unsigned long long x19; bool x20; unsigned long long x21; unsigned long long x22; unsigned long long x23; unsigned char x24; unsigned char x25; }*)arg1;
 - (int)_populateSwiftReflectionInfo:(struct libSwiftRemoteMirrorWrapper { struct SwiftReflectionContext {} *x1; unsigned short x2; int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); unsigned long long x17; unsigned long long x18; unsigned long long x19; bool x20; unsigned long long x21; unsigned long long x22; unsigned long long x23; unsigned char x24; unsigned char x25; }*)arg1;
 - (id)_returnFaultedClass:(unsigned long long)arg1 ofType:(int)arg2;
@@ -74,13 +77,16 @@
 - (id)initWithTask:(unsigned int)arg1;
 - (id)initWithTask:(unsigned int)arg1 symbolicator:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg2;
 - (id)initWithTask:(unsigned int)arg1 symbolicator:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg2 scanner:(id)arg3;
+- (id)labelForCFBundle:(void*)arg1;
 - (id)labelForItemCount:(long long)arg1;
 - (id)labelForMallocBlock:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)labelForMallocBlock:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 usingHandlerBlock:(id /* block */)arg2;
 - (id)labelForMemory:(void*)arg1 length:(unsigned long long)arg2;
 - (id)labelForMemory:(void*)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
+- (id)labelForMemory:(void*)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3 expectedClassName:(id)arg4;
 - (id)labelForMemory:(void*)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3 usingHandlerBlock:(id /* block */)arg4;
 - (id)labelForNSArray:(void*)arg1;
+- (id)labelForNSBundle:(void*)arg1;
 - (id)labelForNSCFDictionary:(void*)arg1;
 - (id)labelForNSCFSet:(void*)arg1;
 - (id)labelForNSCFStringAtRemoteAddress:(unsigned long long)arg1 printDetail:(bool)arg2;
@@ -104,6 +110,7 @@
 - (id)labelForOSDispatchQueue:(void*)arg1;
 - (id)labelForOSTransaction:(void*)arg1;
 - (id)labelForOSXPCConnection:(void*)arg1;
+- (id)labelForObjectOfClass:(id)arg1 atOffset:(unsigned int)arg2 ofObject:(void*)arg3;
 - (id)labelForProtocol:(void*)arg1;
 - (id)labelForTaggedPointer:(void*)arg1;
 - (id)labelFor__NSMallocBlock__:(void*)arg1;

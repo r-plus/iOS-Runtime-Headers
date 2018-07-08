@@ -14,7 +14,6 @@
 - (void).cxx_destruct;
 - (id)attestation;
 - (id)generatePayload;
-- (void)sealWithSigner:(id /* block */)arg1 error:(id*)arg2;
 - (void)setAttestation:(id)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CVML.framework/CVML
  */
 
-@interface CVMLFaceObservation : CVMLDetectedObject <NSCoding> {
+@interface CVMLFaceObservation : CVMLDetectedObject <NSSecureCoding> {
     struct _Geometry2D_rect2D_ { 
         struct _Geometry2D_point2D_ { 
             float x; 
@@ -50,6 +50,7 @@
 + (bool)computeYawPitchRollFromPoseMatrix:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg1 outputYaw:(float*)arg2 outputPitch:(float*)arg3 outputRoll:(float*)arg4;
 + (id)observationWithBoundingBox:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 + (id)observationWithBoundingBox:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 andAlignedBoundingBox:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (struct _Geometry2D_rect2D_ { struct _Geometry2D_point2D_ { float x_1_1_1; float x_1_1_2; } x1; struct _Geometry2D_size2D_ { float x_2_1_1; float x_2_1_2; } x2; })alignedBoundingBox;

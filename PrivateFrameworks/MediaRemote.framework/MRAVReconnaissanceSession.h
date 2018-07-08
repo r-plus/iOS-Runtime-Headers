@@ -8,9 +8,11 @@
     id  _discoverySessionCallbackToken;
     unsigned int  _endpointFeatures;
     NSMutableSet * _matchingDevicesFound;
+    NSString * _matchingOutputDeviceGroupID;
     NSSet * _matchingOutputDeviceUIDsSet;
     bool  _searchInProgress;
     NSTimer * _timeoutTimer;
+    double  _timeoutTimerTimeout;
     MRAVEndpoint * _unanimousEndpoint;
     bool  _useWeakMatching;
 }
@@ -20,6 +22,7 @@
 @property (nonatomic, retain) id discoverySessionCallbackToken;
 @property (nonatomic, readonly) unsigned int endpointFeatures;
 @property (nonatomic, retain) NSMutableSet *matchingDevicesFound;
+@property (nonatomic, retain) NSString *matchingOutputDeviceGroupID;
 @property (nonatomic, readonly) NSArray *matchingOutputDeviceUIDs;
 @property (nonatomic, retain) NSSet *matchingOutputDeviceUIDsSet;
 @property (nonatomic) bool searchInProgress;
@@ -27,6 +30,7 @@
 @property (nonatomic, retain) MRAVEndpoint *unanimousEndpoint;
 @property (nonatomic) bool useWeakMatching;
 
+- (void).cxx_destruct;
 - (void)_concludeSearch;
 - (void)_discoverySessionEndpointsChangedCallback:(id)arg1;
 - (void)_endSearch;
@@ -38,8 +42,9 @@
 - (id)discoverySession;
 - (id)discoverySessionCallbackToken;
 - (unsigned int)endpointFeatures;
-- (id)initWithOutputDeviceUIDs:(id)arg1 features:(unsigned int)arg2;
+- (id)initWithOutputDeviceUIDs:(id)arg1 outputDeviceGroupID:(id)arg2 features:(unsigned int)arg3;
 - (id)matchingDevicesFound;
+- (id)matchingOutputDeviceGroupID;
 - (id)matchingOutputDeviceUIDs;
 - (id)matchingOutputDeviceUIDsSet;
 - (bool)searchInProgress;
@@ -47,6 +52,7 @@
 - (void)setDiscoverySession:(id)arg1;
 - (void)setDiscoverySessionCallbackToken:(id)arg1;
 - (void)setMatchingDevicesFound:(id)arg1;
+- (void)setMatchingOutputDeviceGroupID:(id)arg1;
 - (void)setMatchingOutputDeviceUIDsSet:(id)arg1;
 - (void)setSearchInProgress:(bool)arg1;
 - (void)setTimeoutTimer:(id)arg1;

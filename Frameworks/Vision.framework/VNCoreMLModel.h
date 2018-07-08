@@ -11,6 +11,7 @@
     int  _modelType;
     NSString * _predictedFeatureKey;
     NSString * _predictedProbabilitiesKey;
+    NSString * _uuidStringForCacheIdentifier;
 }
 
 @property (readonly) unsigned int inputImageFormat;

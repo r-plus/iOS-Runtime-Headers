@@ -7,6 +7,7 @@
 
 - (void)addMomentToFront:(id <PLMomentData>)arg1;
 - (void)addMoments:(NSOrderedSet *)arg1;
+- (NSArray *)batchedMoments;
 - (void)delete;
 - (NSDate *)endDate;
 - (short)generationType;

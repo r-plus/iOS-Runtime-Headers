@@ -31,6 +31,7 @@
 - (void).cxx_destruct;
 - (id)aggregatedPayloadData;
 - (id)createSummaryEventForSession;
+- (void)dealloc;
 - (id)defaults;
 - (void)end;
 - (void)endSync:(bool)arg1;

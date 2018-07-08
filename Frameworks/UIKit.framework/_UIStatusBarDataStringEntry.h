@@ -9,6 +9,7 @@
 @property (nonatomic, copy) NSString *stringValue;
 
 + (id)entryWithStringValue:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_ui_descriptionBuilder;

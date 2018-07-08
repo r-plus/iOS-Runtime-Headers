@@ -42,6 +42,7 @@
 - (double)_expandedBoundWidthForCount:(long long)arg1;
 - (unsigned long long)_itemCount;
 - (long long)_pancakeCount;
+- (void)_setupBannerLayout;
 - (void)_setupExpandedLayout;
 - (void)_setupPancakeLayout;
 - (bool)_shouldShowContactNames;

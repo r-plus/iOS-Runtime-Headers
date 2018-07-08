@@ -26,6 +26,7 @@
 @property (nonatomic, readonly) NSArray *relatedSearchSuggestions;
 @property (nonatomic, readonly) double requestResponseTime;
 @property (nonatomic, readonly) NSString *resultDisplayHeader;
+@property (nonatomic, readonly) NSArray *retainedSearchMetadata;
 @property (nonatomic, readonly) int searchResultType;
 @property (nonatomic, readonly) NSString *sectionHeader;
 @property (nonatomic, readonly) bool shouldEnableRedoSearch;
@@ -53,6 +54,7 @@
 - (id)relatedSearchSuggestions;
 - (double)requestResponseTime;
 - (id)resultDisplayHeader;
+- (id)retainedSearchMetadata;
 - (int)searchResultType;
 - (id)sectionHeader;
 - (bool)shouldEnableRedoSearch;

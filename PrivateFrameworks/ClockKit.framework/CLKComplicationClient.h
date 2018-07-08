@@ -12,6 +12,7 @@
     bool  _invalidated;
     id /* block */  _invalidationHandler;
     NSHashTable * _invalidationObservers;
+    NSLock * _invalidationObserversLock;
     NSNumber * _pid;
 }
 

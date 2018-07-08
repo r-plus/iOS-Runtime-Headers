@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIBarButtonItem : UIBarItem <DebugHierarchyObject, MFPopoverPresentationSource, NSCoding, UISpringLoadedInteractionSupporting> {
+@interface UIBarButtonItem : UIBarItem <MFPopoverPresentationSource, NSCoding, UISpringLoadedInteractionSupporting> {
     id /* block */  __autoValidationHandler;
     NSArray * __backButtonAlternateTitles;
     bool  __hidden;
@@ -276,11 +276,6 @@
 - (double)width;
 - (id)window;
 
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
-- (id)debugHierarchyValueForPropertyWithName:(id)arg1;
-
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
 - (void)mf_setAsSourceForPopoverPresentationController:(id)arg1;
@@ -289,6 +284,10 @@
 - (void)mf_setLandscapeImagePhoneOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)mf_setLandscapeImagePhoneVerticalOffset:(double)arg1;
 
+// Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
+
+- (id)ql_copySystemItem;
+
 // Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
 
 + (double)_sf_longPressAllowableMovement;
@@ -296,6 +295,7 @@
 - (bool)_sf_longPressEnabled;
 - (void)_sf_setLongPressEnabled:(bool)arg1;
 - (void)_sf_setLongPressTarget:(id)arg1 action:(SEL)arg2;
+- (void)_sf_test_simulateLongPressInvocation;
 
 // Image: /System/Library/Frameworks/UIKit.framework/Frameworks/DocumentManager.framework/DocumentManager
 
@@ -308,6 +308,11 @@
 + (id)ckDoneBarButtonItem;
 + (id)ckEditBarButtonItem;
 + (id)ckEditDoneButtonPossibleItemVariations;
+
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
+
++ (id)hk_backButtonForDate:(id)arg1;
++ (id)hk_backButtonWithTitle:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
 

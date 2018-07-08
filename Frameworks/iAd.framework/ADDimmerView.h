@@ -14,6 +14,7 @@
 @property (nonatomic, retain) ADTapGestureRecognizer *gestureRecognizer;
 
 - (void)_tapRecognized:(id)arg1;
+- (void)addADTapGestureRecognizer;
 - (void)dealloc;
 - (id)delegate;
 - (bool)dimmed;

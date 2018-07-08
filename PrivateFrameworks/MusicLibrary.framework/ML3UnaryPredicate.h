@@ -9,6 +9,7 @@
 @property (nonatomic, retain) ML3Predicate *predicate;
 
 + (id)predicateWithPredicate:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)SQLJoinClausesForClass:(Class)arg1;

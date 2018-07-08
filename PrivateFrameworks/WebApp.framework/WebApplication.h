@@ -3,7 +3,8 @@
  */
 
 @interface WebApplication : UIApplication <UIApplicationDelegate> {
-    WebAppController * _webApp;
+    WebAppViewController * _webApp;
+    UIWindow * _window;
 }
 
 @property (readonly, copy) NSString *debugDescription;

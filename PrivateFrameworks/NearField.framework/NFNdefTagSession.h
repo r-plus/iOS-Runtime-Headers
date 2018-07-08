@@ -35,8 +35,12 @@
 - (bool)startBluetoothLESecureConnectionWithOOBData:(id)arg1;
 - (bool)startEmulation:(id)arg1;
 - (bool)startEmulation:(id)arg1 error:(id*)arg2;
+- (bool)startEmulation:(id)arg1 withMessageType:(unsigned int)arg2;
+- (bool)startEmulation:(id)arg1 withMessageType:(unsigned int)arg2 error:(id*)arg3;
 - (bool)startEmulationWithNdefMessage:(id)arg1;
 - (bool)startEmulationWithNdefMessage:(id)arg1 error:(id*)arg2;
+- (bool)startEmulationWithNdefMessage:(id)arg1 withMessageType:(unsigned int)arg2;
+- (bool)startEmulationWithNdefMessage:(id)arg1 withMessageType:(unsigned int)arg2 error:(id*)arg3;
 - (bool)stopEmulation;
 - (bool)stopEmulationWithError:(id*)arg1;
 

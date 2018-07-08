@@ -21,7 +21,7 @@
         struct CGPoint {} *__begin_; 
         struct CGPoint {} *__end_; 
         struct __compressed_pair<CGPoint *, std::__1::allocator<CGPoint> > { 
-            struct CGPoint {} *__first_; 
+            struct CGPoint {} *__value_; 
         } __end_cap_; 
     }  _convexHull;
     double  _curvature;

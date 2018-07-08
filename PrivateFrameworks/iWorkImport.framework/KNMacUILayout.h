@@ -3,15 +3,15 @@
  */
 
 @interface KNMacUILayout : NSObject <NSCopying, NSMutableCopying> {
-    bool  mInspectorPaneAutoHidden;
-    long long  mInspectorPaneViewMode;
-    bool  mShowingElementList;
-    bool  mShowingInspectorPane;
-    bool  mShowingLightTable;
-    bool  mShowingMasterSlides;
-    bool  mShowingNavigatorViewInSidebar;
-    bool  mShowingPresenterNotes;
-    bool  mShowingSidebar;
+    bool  _inspectorPaneAutoHidden;
+    long long  _inspectorPaneViewMode;
+    bool  _showingElementList;
+    bool  _showingInspectorPane;
+    bool  _showingLightTable;
+    bool  _showingMasterSlides;
+    bool  _showingNavigatorViewInSidebar;
+    bool  _showingPresenterNotes;
+    bool  _showingSidebar;
 }
 
 @property (nonatomic, readonly) long long inspectorPaneHiddenState;

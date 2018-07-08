@@ -3,6 +3,7 @@
  */
 
 @interface HFAccessorySettingManagedConfigurationAdapter : HFAccessorySettingAdapter <HFAccessorySettingAdapterDisplayArbitrating, MCProfileConnectionObserver> {
+    bool  _isSettingUp;
     MCProfileConnection * _profileConnectionForSynchronization;
     NSHashTable * _profileObservers;
 }
@@ -10,6 +11,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) bool isSettingUp;
 @property (nonatomic, readonly) unsigned long long numberOfProfiles;
 @property (nonatomic, readonly) MCProfileConnection *profileConnectionForSynchronization;
 @property (nonatomic, retain) NSHashTable *profileObservers;
@@ -31,6 +33,7 @@
 - (id)initWithMediaProfileContainer:(id)arg1 keyPaths:(id)arg2 mode:(unsigned long long)arg3 updateHandler:(id /* block */)arg4;
 - (id)initWithMediaProfileContainer:(id)arg1 keyPaths:(id)arg2 updateHandler:(id /* block */)arg3;
 - (id)initWithMediaProfileContainer:(id)arg1 mode:(unsigned long long)arg2;
+- (bool)isSettingUp;
 - (unsigned long long)numberOfProfiles;
 - (void)profileConnectionDidReceiveProfileListChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (id)profileConnectionForSynchronization;
@@ -40,6 +43,7 @@
 - (id)removeProfileDataFromHomeKit:(id)arg1;
 - (id)removeProfileFromHomeKit:(id)arg1;
 - (void)removeProfileObserver:(id)arg1;
+- (void)setIsSettingUp:(bool)arg1;
 - (void)setProfileObservers:(id)arg1;
 - (bool)shouldShowSettingsEntity:(id)arg1;
 

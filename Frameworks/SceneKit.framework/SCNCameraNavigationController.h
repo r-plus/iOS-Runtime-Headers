@@ -47,10 +47,10 @@
                 struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<unsigned short, void *> > > { 
                     struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                         struct __tree_node_base<void *> {} *__left_; 
-                    } __first_; 
+                    } __value_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::less<unsigned short> > { 
-                    unsigned long long __first_; 
+                    unsigned long long __value_; 
                 } __pair3_; 
             } __tree_; 
         } keyDown; 
@@ -58,28 +58,28 @@
             unsigned short *__begin_; 
             unsigned short *__end_; 
             struct __compressed_pair<unsigned short *, std::__1::allocator<unsigned short> > { 
-                unsigned short *__first_; 
+                unsigned short *__value_; 
             } __end_cap_; 
         } forward; 
         struct vector<unsigned short, std::__1::allocator<unsigned short> > { 
             unsigned short *__begin_; 
             unsigned short *__end_; 
             struct __compressed_pair<unsigned short *, std::__1::allocator<unsigned short> > { 
-                unsigned short *__first_; 
+                unsigned short *__value_; 
             } __end_cap_; 
         } backward; 
         struct vector<unsigned short, std::__1::allocator<unsigned short> > { 
             unsigned short *__begin_; 
             unsigned short *__end_; 
             struct __compressed_pair<unsigned short *, std::__1::allocator<unsigned short> > { 
-                unsigned short *__first_; 
+                unsigned short *__value_; 
             } __end_cap_; 
         } left; 
         struct vector<unsigned short, std::__1::allocator<unsigned short> > { 
             unsigned short *__begin_; 
             unsigned short *__end_; 
             struct __compressed_pair<unsigned short *, std::__1::allocator<unsigned short> > { 
-                unsigned short *__first_; 
+                unsigned short *__value_; 
             } __end_cap_; 
         } right; 
     }  _keyboard;

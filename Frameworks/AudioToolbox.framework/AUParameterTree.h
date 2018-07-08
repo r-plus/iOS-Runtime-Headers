@@ -10,7 +10,7 @@
         struct AddressToParameter {} *__begin_; 
         struct AddressToParameter {} *__end_; 
         struct __compressed_pair<AddressToParameter *, std::__1::allocator<AddressToParameter> > { 
-            struct AddressToParameter {} *__first_; 
+            struct AddressToParameter {} *__value_; 
         } __end_cap_; 
     }  _addrToParamIndex;
     int  _numRecorders;

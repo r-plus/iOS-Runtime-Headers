@@ -5,9 +5,9 @@
 
 @required
 
-- (double)autoAppearanceTimeInterval;
 - (void)hide:(bool)arg1 withAnimationCoordinator:(id <SXVideoControlItemAnimating>)arg2;
 - (bool)hideable;
 - (bool)isVisible;
+- (bool)supportsAutoAppearance;
 
 @end

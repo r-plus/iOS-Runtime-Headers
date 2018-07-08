@@ -3,15 +3,15 @@
  */
 
 @interface IDSCurrentServerTimePair : NSObject {
-    unsigned long long  _initialProcessTime;
+    unsigned long long  _initialProcessMachTime;
     unsigned long long  _initialServerTimeInNanoSeconds;
 }
 
-@property (nonatomic, readonly) unsigned long long initialProcessTime;
+@property (nonatomic, readonly) unsigned long long initialProcessMachTime;
 @property (nonatomic, readonly) unsigned long long initialServerTimeInNanoSeconds;
 
-- (id)initWithInitialProcessTime:(unsigned long long)arg1 initialServerTimeInNanoSeconds:(unsigned long long)arg2;
-- (unsigned long long)initialProcessTime;
+- (id)initWithInitialProcessMachTime:(unsigned long long)arg1 initialServerTimeInNanoSeconds:(unsigned long long)arg2;
+- (unsigned long long)initialProcessMachTime;
 - (unsigned long long)initialServerTimeInNanoSeconds;
 
 @end

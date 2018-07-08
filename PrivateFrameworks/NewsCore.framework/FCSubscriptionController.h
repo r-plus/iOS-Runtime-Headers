@@ -57,6 +57,7 @@
 - (void)fetchAllTagsWithCallbackQueue:(id)arg1 maximumCachedAge:(double)arg2 qualityOfService:(long long)arg3 completion:(id /* block */)arg4;
 - (void)fetchSubscribedTagsWithCallbackQueue:(id)arg1 preferCache:(bool)arg2 completion:(id /* block */)arg3;
 - (id)groupableTagIDs;
+- (bool)hasAutoFavoriteSubscriptionForTagID:(id)arg1;
 - (bool)hasIgnoredSubscriptionForTagID:(id)arg1;
 - (bool)hasMutedSubscriptionForTagID:(id)arg1;
 - (bool)hasNotificationsEnabledForTag:(id)arg1;
@@ -72,7 +73,8 @@
 - (id)observers;
 - (id)purchaseController;
 - (void)refreshSubscriptionTags;
-- (void)removeAllAutofavoriteSubscriptions:(id /* block */)arg1;
+- (void)removeAllAutoFavoriteSubscriptions:(id /* block */)arg1;
+- (void)removeAutoFavoriteSubscriptionToTag:(id)arg1 eventInitiationLevel:(long long)arg2;
 - (void)removeObserver:(id)arg1;
 - (void)removeSubscriptionForTagID:(id)arg1 type:(unsigned long long)arg2 eventInitiationLevel:(long long)arg3;
 - (void)removeSubscriptionToTag:(id)arg1 eventInitiationLevel:(long long)arg2;

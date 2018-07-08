@@ -8,7 +8,7 @@
         struct HGRef<PVRenderJob> {} *__begin_; 
         struct HGRef<PVRenderJob> {} *__end_; 
         struct __compressed_pair<HGRef<PVRenderJob> *, std::__1::allocator<HGRef<PVRenderJob> > > { 
-            struct HGRef<PVRenderJob> {} *__first_; 
+            struct HGRef<PVRenderJob> {} *__value_; 
         } __end_cap_; 
     }  _inFlightRenderJobs;
     NSLock * _inFlightRenderJobsLock;

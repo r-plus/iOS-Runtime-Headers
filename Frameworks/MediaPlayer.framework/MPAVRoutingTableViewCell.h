@@ -4,7 +4,6 @@
 
 @interface MPAVRoutingTableViewCell : UITableViewCell <MPAVRoutingThemeableCellView> {
     <MPAVRoutingTableViewCellDelegate> * _delegate;
-    UIStackView * _detailStackView;
     UIImageView * _iconImageView;
     unsigned long long  _iconStyle;
     bool  _isDisplayedAsPicked;
@@ -20,7 +19,6 @@
     NSTimer * _subtitleTextUpdateTimer;
     double  _subtitleViewAlpha;
     bool  _useSmartAudioCheckmarkStyle;
-    MPVolumeSlider * _volumeSlider;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -81,6 +79,5 @@
 - (id)titleView;
 - (void)updateForEndpoint:(id)arg1 route:(id)arg2 inferLocalizedModelName:(bool)arg3;
 - (bool)useSmartAudioCheckmarkStyle;
-- (id)volumeView;
 
 @end

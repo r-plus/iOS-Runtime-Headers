@@ -24,6 +24,7 @@
     unsigned int  _qos;
     NSMutableArray * _running;
     bool  _subclassImplementsTileEdition;
+    NSObject<OS_voucher> * _voucher;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
@@ -73,7 +74,7 @@
 - (id)localizationURLForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (id)mergeBaseTile:(id)arg1 withLocalizationTile:(id)arg2;
 - (id)mergeBaseTileEtag:(id)arg1 withLocalizationTileEtag:(id)arg2;
-- (id)newRequestWithType:(int)arg1 URL:(id)arg2 xpcRequest:(id)arg3 entityTag:(id)arg4 cachedData:(id)arg5 allowedRequestMode:(BOOL)arg6;
+- (id)newRequestWithType:(int)arg1 URL:(id)arg2 xpcRequest:(id)arg3 entityTag:(id)arg4 cachedData:(id)arg5 allowedRequestMode:(BOOL)arg6 requestCounterTicket:(id)arg7;
 - (id)newXPCDataRequestForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (void)operationFailed:(id)arg1 error:(id)arg2;
 - (void)operationFinished:(id)arg1;

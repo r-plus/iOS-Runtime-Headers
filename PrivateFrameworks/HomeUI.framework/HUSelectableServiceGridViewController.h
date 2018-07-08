@@ -30,6 +30,7 @@
 - (void)_setSelected:(bool)arg1 forItemsInSection:(long long)arg2;
 - (void)_updateSelectionState:(bool)arg1 forCell:(id)arg2;
 - (void)_updateToggleStateForSection:(long long)arg1 headerView:(id)arg2;
+- (bool)_wantsToggleButtonForSection:(unsigned long long)arg1;
 - (void)addItemToSelection:(id)arg1;
 - (bool)allowsEmptySelection;
 - (bool)allowsMultipleSelection;

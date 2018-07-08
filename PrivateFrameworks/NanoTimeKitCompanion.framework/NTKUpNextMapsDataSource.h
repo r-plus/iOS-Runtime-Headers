@@ -20,6 +20,7 @@
 - (void)pause;
 - (id)proxy;
 - (void)resume;
+- (void)setAllowsLocationUse:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setRunning:(bool)arg1;
 - (void)setState:(unsigned long long)arg1;

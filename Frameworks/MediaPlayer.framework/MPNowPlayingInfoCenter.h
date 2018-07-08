@@ -64,14 +64,14 @@
 
 - (void).cxx_destruct;
 - (id)_artworkCatalogForContentItem:(id)arg1;
+- (void)_audioSessionRoutingContextDidChangeNotification:(id)arg1;
 - (void)_becomeActiveWithCompletion:(id /* block */)arg1;
-- (id)_childContentItemForContentItem:(id)arg1 indexPath:(id)arg2;
+- (id)_childContentItemForContentItem:(id)arg1 index:(long long)arg2;
 - (void)_contentItemChangedNotification:(id)arg1;
 - (id)_contentItemForIdentifier:(id)arg1;
 - (id)_contentItemForIdentifier:(id)arg1 alreadyOnDataSourceQueue:(bool)arg2;
 - (id)_contentItemIDsInRange:(struct { long long x1; long long x2; })arg1 itemsRange:(struct { long long x1; long long x2; }*)arg2;
 - (void*)_createPlaybackQueueForRequest:(void*)arg1;
-- (void)_getInfoForRequest:(void*)arg1 item:(id)arg2 returnItem:(id)arg3 completion:(id /* block */)arg4;
 - (void)_getMetadataForContentItem:(id)arg1 completion:(id /* block */)arg2;
 - (void)_initializeNowPlayingInfo;
 - (void)_invalidatePlaybackQueueImmediately;
@@ -82,6 +82,7 @@
 - (void)_onQueue_pushNowPlayingInfoAndRetry:(bool)arg1;
 - (void)_onQueue_registerLyricsDelegateCallbacks:(id)arg1;
 - (void)_onQueue_registerPlaybackQueueDataSourceCallbacks:(id)arg1;
+- (void)_updatePlayerAudioSessionProperties;
 - (void)becomeActive;
 - (id)dataSourceQueue;
 - (void)dealloc;

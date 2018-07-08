@@ -7,6 +7,7 @@
 }
 
 + (id)falsePredicate;
++ (bool)supportsSecureCoding;
 + (id)truePredicate;
 
 - (id)_predicateString;

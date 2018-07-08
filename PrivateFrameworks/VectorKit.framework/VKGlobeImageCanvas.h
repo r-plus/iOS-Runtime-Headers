@@ -5,7 +5,7 @@
 @interface VKGlobeImageCanvas : VKImageCanvas <MDSnapshotMap> {
     struct unique_ptr<md::GlobeAdapter, std::__1::default_delete<md::GlobeAdapter> > { 
         struct __compressed_pair<md::GlobeAdapter *, std::__1::default_delete<md::GlobeAdapter> > { 
-            struct GlobeAdapter {} *__first_; 
+            struct GlobeAdapter {} *__value_; 
         } __ptr_; 
     }  _globeAdapter;
     struct shared_ptr<md::VKGlobeStylesheet> { 

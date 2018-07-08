@@ -16,6 +16,7 @@
 - (id)_remoteObjectProxyWithSemaphore:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (void)performDeviceRegistrationForReason:(id)arg1 completion:(id /* block */)arg2;
 - (void)performDeviceRegistrationWithCompletion:(id /* block */)arg1;
 
 @end

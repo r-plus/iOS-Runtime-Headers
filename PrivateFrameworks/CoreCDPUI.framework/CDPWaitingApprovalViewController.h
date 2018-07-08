@@ -25,6 +25,6 @@
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
-- (void)viewWillLayoutSubviews;
+- (void)viewDidLayoutSubviews;
 
 @end

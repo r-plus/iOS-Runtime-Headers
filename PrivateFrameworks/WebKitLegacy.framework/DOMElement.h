@@ -110,7 +110,6 @@
 - (id)tagName;
 - (id)uiactions;
 - (bool)webkitMatchesSelector:(id)arg1;
-- (id)webkitRegionOverset;
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 

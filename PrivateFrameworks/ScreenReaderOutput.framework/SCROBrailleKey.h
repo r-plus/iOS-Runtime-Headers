@@ -2,8 +2,8 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutput.framework/ScreenReaderOutput
  */
 
-@interface SCROBrailleKey : NSObject <NSCoding> {
-    id  _appToken;
+@interface SCROBrailleKey : NSObject <NSSecureCoding> {
+    <NSSecureCoding> * _appToken;
     int  _displayMode;
     int  _displayToken;
     bool  _hasRouterInfo;
@@ -13,6 +13,8 @@
     long long  _routerLocation;
     long long  _routerToken;
 }
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)addKeyMask:(unsigned int)arg1;

@@ -4,6 +4,8 @@
 
 @interface RWIProtocolDOMEventListener : RWIProtocolJSONObject
 
+@property (nonatomic) bool disabled;
+@property (nonatomic) int eventListenerId;
 @property (nonatomic, retain) RWIProtocolRuntimeRemoteObject *handler;
 @property (nonatomic, copy) NSString *handlerBody;
 @property (nonatomic) bool isAttribute;
@@ -15,14 +17,20 @@
 @property (nonatomic, copy) NSString *type;
 @property (nonatomic) bool useCapture;
 
+// Image: /System/Library/PrivateFrameworks/WebInspector.framework/WebInspector
+
+- (bool)disabled;
+- (int)eventListenerId;
 - (id)handler;
 - (id)handlerBody;
-- (id)initWithType:(id)arg1 useCapture:(bool)arg2 isAttribute:(bool)arg3 nodeId:(int)arg4 handlerBody:(id)arg5;
+- (id)initWithEventListenerId:(int)arg1 type:(id)arg2 useCapture:(bool)arg3 isAttribute:(bool)arg4 nodeId:(int)arg5 handlerBody:(id)arg6;
 - (bool)isAttribute;
 - (id)location;
 - (int)nodeId;
 - (bool)once;
 - (bool)passive;
+- (void)setDisabled:(bool)arg1;
+- (void)setEventListenerId:(int)arg1;
 - (void)setHandler:(id)arg1;
 - (void)setHandlerBody:(id)arg1;
 - (void)setIsAttribute:(bool)arg1;
@@ -36,5 +44,9 @@
 - (id)sourceName;
 - (id)type;
 - (bool)useCapture;
+
+// Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
+
++ (id)safe_initWithEventListenerId:(int)arg1 type:(id)arg2 useCapture:(bool)arg3 isAttribute:(bool)arg4 nodeId:(int)arg5 handlerBody:(id)arg6;
 
 @end

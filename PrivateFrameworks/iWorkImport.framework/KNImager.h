@@ -11,6 +11,7 @@
     KNBodyPlaceholderInfo * _replacementBodyPlaceholder;
     KNTitlePlaceholderInfo * _replacementTitlePlaceholder;
     bool  _shouldShowInstructionalText;
+    bool  _shouldTintWhiteImages;
     KNAbstractSlide * _slide;
     unsigned long long  _slideNumber;
 }
@@ -25,6 +26,7 @@
 @property (nonatomic, retain) KNBodyPlaceholderInfo *replacementBodyPlaceholder;
 @property (nonatomic, retain) KNTitlePlaceholderInfo *replacementTitlePlaceholder;
 @property (nonatomic) bool shouldShowInstructionalText;
+@property (nonatomic) bool shouldTintWhiteImages;
 @property (nonatomic) KNAbstractSlide *slide;
 @property (nonatomic) unsigned long long slideNumber;
 @property (readonly) Class superclass;
@@ -47,9 +49,11 @@
 - (void)setReplacementBodyPlaceholder:(id)arg1;
 - (void)setReplacementTitlePlaceholder:(id)arg1;
 - (void)setShouldShowInstructionalText:(bool)arg1;
+- (void)setShouldTintWhiteImages:(bool)arg1;
 - (void)setSlide:(id)arg1;
 - (void)setSlideNumber:(unsigned long long)arg1;
 - (bool)shouldShowInstructionalText;
+- (bool)shouldTintWhiteImages;
 - (id)slide;
 - (unsigned long long)slideNumber;
 

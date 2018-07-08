@@ -6,6 +6,7 @@
     bool  _attemptingConnection;
     _KSCloudKitManager * _cloudKitManager;
     _KSControlFileController * _controlFile;
+    _KSRequestThrottle * _identityThrottle;
     NSArray * _languagesIfOffline;
     bool  _needRetry;
     _KSSystemTask * _pushTask;

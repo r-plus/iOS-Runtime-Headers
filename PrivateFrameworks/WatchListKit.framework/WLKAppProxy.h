@@ -17,6 +17,7 @@
 @property (nonatomic, readonly) bool isBetaApp;
 @property (nonatomic, readonly) bool isEntitled;
 @property (nonatomic, readonly) bool isSystemApp;
+@property (nonatomic, readonly) bool isTVApp;
 @property (nonatomic, readonly, copy) NSNumber *itemID;
 @property (nonatomic, readonly, copy) NSString *subscriptionInfo;
 @property (nonatomic, readonly) bool supportsTVApp;
@@ -34,6 +35,7 @@
 - (bool)isBetaApp;
 - (bool)isEntitled;
 - (bool)isSystemApp;
+- (bool)isTVApp;
 - (id)itemID;
 - (id)subscriptionInfo;
 - (bool)supportsTVApp;

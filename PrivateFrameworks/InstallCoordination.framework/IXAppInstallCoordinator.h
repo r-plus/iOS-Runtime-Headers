@@ -6,6 +6,7 @@
     bool  _complete;
     NSError * _error;
     unsigned long long  _errorSourceIdentifier;
+    NSObject<OS_dispatch_queue> * _internalQueue;
     <IXAppInstallCoordinatorObserver> * _observer;
     NSObject<OS_dispatch_queue> * _observerCalloutQueue;
     unsigned long long  _observersCalled;
@@ -27,6 +28,7 @@
 @property (nonatomic, readonly) bool hasPlaceholderPromise;
 @property (nonatomic, readonly) bool hasUserDataPromise;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *internalQueue;
 @property (nonatomic, readonly) NSString *localDescription;
 @property (nonatomic) <IXAppInstallCoordinatorObserver> *observer;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *observerCalloutQueue;
@@ -48,6 +50,7 @@
 + (Class)classForIntent:(unsigned long long)arg1;
 + (bool)coordinationIsEnabled;
 + (id)coordinatorForAppWithBundleID:(id)arg1 withClientID:(unsigned long long)arg2 createIfNotExisting:(bool)arg3 created:(bool*)arg4 error:(id*)arg5;
++ (int)daemonPid;
 + (bool)demoteAppToPlaceholderWithBundleID:(id)arg1 forReason:(unsigned long long)arg2 error:(id*)arg3;
 + (void)enumerateCoordinatorsUsingBlock:(id /* block */)arg1;
 + (bool)enumerateCoordinatorsWithBlock:(id /* block */)arg1 error:(id*)arg2;
@@ -64,7 +67,7 @@
 + (void)resumeCoordinatorForAppWithBundleID:(id)arg1 completion:(id /* block */)arg2;
 + (bool)resumeCoordinatorForAppWithBundleID:(id)arg1 error:(id*)arg2;
 + (void)setRemovability:(unsigned long long)arg1 forAppWithBundleID:(id)arg2 completion:(id /* block */)arg3;
-+ (bool)setTestModeForBundleWithPrefix:(id)arg1 testMode:(unsigned long long)arg2;
++ (bool)setTestModeForIdentifierPrefix:(id)arg1 testMode:(unsigned long long)arg2;
 + (bool)setTestingEnabled:(bool)arg1;
 + (bool)uninstallAppWithBundleID:(id)arg1 error:(id*)arg2;
 + (void)uninstallAppWithBundleID:(id)arg1 requestUserConfirmation:(bool)arg2 completion:(id /* block */)arg3;
@@ -102,6 +105,7 @@
 - (id)initWithBundleID:(id)arg1 creator:(unsigned long long)arg2 intent:(unsigned long long)arg3;
 - (id)initWithSeed:(id)arg1;
 - (id)initialODRAssetPromisesWithError:(id*)arg1;
+- (id)internalQueue;
 - (bool)isComplete;
 - (bool)isEqual:(id)arg1;
 - (bool)isPaused:(bool*)arg1 withError:(id*)arg2;

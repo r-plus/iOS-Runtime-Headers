@@ -10,7 +10,7 @@
 - (int)deprecated3DBevelEdgesSpecificProperty;
 - (int)deprecated3DShadowSpecificProperty;
 - (id)genericToSpecificPropertyMap;
-- (id)initialSceneWithChartInfo:(id)arg1 layoutSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; long long x7; unsigned long long x8; })arg2;
+- (id)initialSceneWithChartInfo:(id)arg1 layoutSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; long long x8; unsigned long long x9; })arg2;
 - (bool)isHorizontal;
 - (int)labelOrientation;
 - (double)maxDepthRatio;

@@ -5,7 +5,7 @@
 @interface TSCH3DChartElementSceneObject : TSCH3DSceneObject
 
 + (bool)isHorizontalChart;
-+ (struct TSCH3DScenePart { id x1; })partWithEnumerator:(id)arg1 layoutSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; long long x7; unsigned long long x8; })arg2;
++ (struct TSCH3DScenePart { id x1; })partWithEnumerator:(id)arg1 layoutSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; long long x8; unsigned long long x9; })arg2;
 + (id)resetSeriesStorage:(id)arg1 forSeries:(id)arg2;
 + (id)scenePropertiesKey;
 + (void)setLowDetailedGeometriesForScene:(id)arg1;

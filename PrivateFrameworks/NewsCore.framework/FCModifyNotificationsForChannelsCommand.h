@@ -18,6 +18,8 @@
 @property (nonatomic, copy) NSString *storefrontID;
 @property (nonatomic, copy) NSString *userID;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (bool)canCoalesceWithCommand:(id)arg1;
 - (id)channelIDsToAdd;

@@ -61,6 +61,7 @@
 - (bool)canHelpRestoreZoneName:(id)arg1;
 - (id)groupableTagIDs;
 - (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordIDs:(id)arg2;
+- (bool)hasAutoFavoriteSubscriptionForTagID:(id)arg1;
 - (bool)hasIgnoredSubscriptionForTagID:(id)arg1;
 - (bool)hasMutedSubscriptionForTagID:(id)arg1;
 - (bool)hasNotificationsEnabledForTagID:(id)arg1;

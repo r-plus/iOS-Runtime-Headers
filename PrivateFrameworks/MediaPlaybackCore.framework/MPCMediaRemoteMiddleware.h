@@ -8,6 +8,8 @@
     long long  _playerState;
     NSIndexPath * _playingIndexPath;
     MPSectionedCollection * _queueContentItems;
+    NSString * _queueIdentifier;
+    MPSectionedCollection * _queueModelObjects;
     <MPCSupportedCommands> * _supportedCommands;
 }
 
@@ -19,14 +21,13 @@
 @property (nonatomic) long long playerState;
 @property (nonatomic, copy) NSIndexPath *playingIndexPath;
 @property (nonatomic, retain) MPSectionedCollection *queueContentItems;
+@property (nonatomic, copy) NSString *queueIdentifier;
+@property (nonatomic, retain) MPSectionedCollection *queueModelObjects;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) <MPCSupportedCommands> *supportedCommands;
 
 - (void).cxx_destruct;
-- (id)_genericObjectPropertySetForContentItem:(id)arg1 preferredRelationships:(id)arg2 propertySet:(id)arg3;
-- (id)_itemGenericObjectPropertySetForContentItem:(id)arg1 propertySet:(id)arg2;
 - (float)_playbackRateForContentItem:(id)arg1;
-- (id)_sectionGenericObjectPropertySetForContentItem:(id)arg1 propertySet:(id)arg2;
 - (id)_supportedCommands:(unsigned int)arg1 infoValueForKey:(id)arg2;
 - (id)controller;
 - (id)controller:(id)arg1 chain:(id)arg2;
@@ -54,12 +55,17 @@
 - (id)playerVideoView:(id)arg1 chain:(id)arg2;
 - (id)playingIndexPath;
 - (id)queueContentItems;
+- (id)queueIdentifier;
+- (id)queueModelObjects;
 - (void)setController:(id)arg1;
 - (void)setInvalidationObservers:(id)arg1;
 - (void)setPlayerState:(long long)arg1;
 - (void)setPlayingIndexPath:(id)arg1;
 - (void)setQueueContentItems:(id)arg1;
+- (void)setQueueIdentifier:(id)arg1;
+- (void)setQueueModelObjects:(id)arg1;
 - (void)setSupportedCommands:(id)arg1;
 - (id)supportedCommands;
+- (id)tracklistUniqueIdentifier:(id)arg1 chain:(id)arg2;
 
 @end

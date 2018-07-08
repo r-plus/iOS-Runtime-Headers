@@ -8,7 +8,10 @@
 @property (nonatomic, readonly) unsigned long long value;
 
 + (unsigned long long)bucket;
++ (id)bucketSpecificKeys:(unsigned long long)arg1;
++ (id)debugKeys;
 + (id)keys;
++ (id)keysForAllBuckets;
 
 - (id)name;
 - (unsigned long long)value;

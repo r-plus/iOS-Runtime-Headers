@@ -6,6 +6,7 @@
 @required
 
 - (NSArray *)allowedStorefrontIDs;
+- (NSString *)articleRecirculationConfigJSON;
 - (<FCChannelProviding> *)asChannel;
 - (<FCSectionProviding> *)asSection;
 - (<FCTopicProviding> *)asTopic;
@@ -16,6 +17,7 @@
 - (FCAssetHandle *)coverImageAssetHandle;
 - (NSString *)feedIDForBin:(long long)arg1;
 - (NSString *)freeFeedIDForBin:(long long)arg1;
+- (FCColor *)groupTitleColor;
 - (unsigned long long)groupingEligibility;
 - (bool)hideAccessoryText;
 - (NSArray *)iAdCategories;
@@ -53,12 +55,15 @@
 - (NSString *)publisherPaidVerificationURL;
 - (bool)publisherPaidWebAccessOptIn;
 - (NSString *)publisherPaidWebAccessURL;
+- (NSArray *)publisherSpecifiedArticleIDs;
+- (NSDate *)publisherSpecifiedArticleIDsModifiedDate;
 - (NSArray *)relatedChannelIDs;
 - (NSArray *)relatedChannelIDsForOnboarding;
 - (NSArray *)relatedTopicIDs;
 - (NSArray *)relatedTopicIDsForOnboarding;
 - (NSString *)replacementID;
 - (long long)score;
+- (NSString *)subtitle;
 - (unsigned long long)tagType;
 - (<FCFeedTheming> *)theme;
 - (NSString *)versionKey;

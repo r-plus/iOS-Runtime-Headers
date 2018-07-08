@@ -115,8 +115,6 @@
 @property (nonatomic, readonly) UIStackView *verticalStackView;
 @property (nonatomic, readonly) bool visible;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 + (void)_releaseSharedInstance;
 + (id)activeCalloutBar;
 + (void)fadeSharedCalloutBar;
@@ -132,10 +130,6 @@
 - (void)_showPreviousItems:(id)arg1;
 - (bool)_touchesInsideShouldHideCalloutBar;
 - (bool)_updateVisibleItemsAnimated:(bool)arg1;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)addRectToEvade:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)addVerticalSeparatorAfterButton:(id)arg1;
 - (void)adjustFrameToAvoidDividerOnArrow;
@@ -155,6 +149,7 @@
 - (void)configureButtonsForVerticalView:(double)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })controlFrame;
 - (id)currentAppearOrFadeContext;
+- (void)dealloc;
 - (id)delegate;
 - (id)extraItems;
 - (void)fade;

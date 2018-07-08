@@ -10,6 +10,7 @@
 
 + (id)predicateWithProperty:(id)arg1 valueSet:(id)arg2;
 + (id)predicateWithProperty:(id)arg1 values:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;

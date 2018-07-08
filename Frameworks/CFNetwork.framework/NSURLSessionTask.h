@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@interface NSURLSessionTask : NSObject <FCOperationPrioritizing, NSCopying, NSProgressReporting> {
+@interface NSURLSessionTask : NSObject <FCOperationIdentifying, FCOperationPrioritizing, NSCopying, NSProgressReporting> {
     bool  __extractorFinishedDecoding;
     bool  __extractorPreparedForExtraction;
     double  __loadingPriority;
@@ -10,6 +10,7 @@
     float  _priority;
 }
 
+@property (nonatomic, copy) NSString *_APSRelayTopic;
 @property (copy) NSDictionary *_DuetActivityProperties;
 @property (copy) NSData *_TCPConnectionMetadata;
 @property (readonly) unsigned short _TLSNegotiatedCipherSuite;
@@ -162,7 +163,9 @@
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
+- (id)longOperationDescription;
 - (long long)relativePriority;
 - (void)setRelativePriority:(long long)arg1;
+- (id)shortOperationDescription;
 
 @end

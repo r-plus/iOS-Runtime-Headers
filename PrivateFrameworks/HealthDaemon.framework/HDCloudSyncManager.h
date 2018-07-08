@@ -19,13 +19,13 @@
 - (void)_cloudSyncContainersForProfile:(id)arg1 completion:(id /* block */)arg2;
 - (void)_containerIdentifiersForCurrentAccountWithCompletion:(id /* block */)arg1;
 - (id)_containerWithIdentifier:(id)arg1 error:(id*)arg2;
-- (id)_getPrimaryLastPushForwardProgressDate;
 - (id)disableAndDeleteAllSyncDataWithTaskTree:(id)arg1;
 - (void)disableSyncLocallyWithTaskTree:(id)arg1;
 - (id)fetchDescriptionWithOptions:(unsigned long long)arg1 reason:(long long)arg2 taskTree:(id)arg3 resultHandler:(id /* block */)arg4;
 - (void)fetchSyncStatusWithCompletion:(id /* block */)arg1;
 - (long long)inProgressSyncCount;
 - (id)initWithProfile:(id)arg1;
+- (id)lastPushForwardProgressDate;
 - (id)profile;
 - (id)queue;
 - (void)queue_cloudSyncContainersWithCompletion:(id /* block */)arg1;

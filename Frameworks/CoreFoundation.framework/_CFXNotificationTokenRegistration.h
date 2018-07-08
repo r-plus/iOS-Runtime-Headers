@@ -19,9 +19,7 @@
 @property (readonly) unsigned long long token;
 
 + (id)createTokenRegistration:(int)arg1 token:(unsigned long long)arg2 connection:(id)arg3 notifyToken:(int)arg4 options:(unsigned long long)arg5 queue:(id)arg6 handler:(id /* block */)arg7;
-+ (id)find:(unsigned long long)arg1;
 + (const struct { long long x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); }*)keyCallbacks;
-+ (void)remove:(unsigned long long)arg1;
 
 - (void)_invalidate;
 - (void)_removeFromParent;

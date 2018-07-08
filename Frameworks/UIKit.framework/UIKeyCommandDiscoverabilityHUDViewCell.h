@@ -14,12 +14,7 @@
 @property (nonatomic, retain) UIKeyCommandDiscoverabilityHUDColumnView *leftColumnView;
 @property (nonatomic, retain) UIKeyCommandDiscoverabilityHUDColumnView *rightColumnView;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 - (void).cxx_destruct;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)constraints;
 - (bool)constraintsForTwoColumns;
 - (id)leftColumnView;

@@ -36,6 +36,8 @@
 @property (nonatomic, readonly) bool isSlottedCandidate;
 @property (nonatomic, readonly) NSString *label;
 @property (nonatomic, readonly, retain) TIProactiveTrigger *proactiveTrigger;
+@property (getter=isPunctuationCompletionCandidate, nonatomic, readonly) bool punctuationCompletionCandidate;
+@property (getter=isPunctuationKeyCandidate, nonatomic, readonly) bool punctuationKeyCandidate;
 @property (getter=isRegionalCandidate, nonatomic, readonly) bool regionalCandidate;
 @property (getter=isSecureContentCandidate, nonatomic, readonly) bool secureContentCandidate;
 @property (nonatomic) unsigned int slotID;
@@ -75,6 +77,9 @@
 - (bool)isFullwidthCandidate;
 - (bool)isInlineCompletionCandidate;
 - (bool)isOTAWordListCandidate;
+- (bool)isPunctuation;
+- (bool)isPunctuationCompletionCandidate;
+- (bool)isPunctuationKeyCandidate;
 - (bool)isRegionalCandidate;
 - (bool)isSecureContentCandidate;
 - (bool)isSendCurrentLocation;

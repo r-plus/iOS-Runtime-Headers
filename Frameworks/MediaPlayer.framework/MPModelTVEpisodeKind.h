@@ -11,6 +11,7 @@
 @property (nonatomic, readonly) unsigned long long variants;
 
 + (id)kindWithVariants:(unsigned long long)arg1 options:(unsigned long long)arg2;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -3,6 +3,7 @@
  */
 
 @interface ATDeviceSettings : NSObject {
+    NSString * _bundleIdentifier;
     NSObject<OS_dispatch_queue> * _queue;
     NSUserDefaults * _userDefaults;
 }

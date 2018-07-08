@@ -57,6 +57,7 @@
     id /* block */  _responseProgressBlock;
     long long  _responseStatusCode;
     NSString * _serverProvidedAutoBugCaptureReason;
+    NSString * _serverProvidedAutoSysdiagnoseCollectionReason;
     CKDTapToRadarRequest * _serverProvidedTapToRadarRequest;
     CKDProtobufStreamWriter * _streamWriter;
     CKTimeLogger * _timeLogger;
@@ -146,10 +147,10 @@
 @property (nonatomic, readonly) long long responseStatusCode;
 @property (nonatomic, readonly) NSString *sectionID;
 @property (nonatomic, copy) NSString *serverProvidedAutoBugCaptureReason;
+@property (nonatomic, retain) NSString *serverProvidedAutoSysdiagnoseCollectionReason;
 @property (nonatomic, retain) CKDTapToRadarRequest *serverProvidedTapToRadarRequest;
 @property (nonatomic, readonly) long long serverType;
 @property (nonatomic, readonly) bool shouldCompressBody;
-@property (nonatomic, readonly) bool shouldSendKeyIDs;
 @property (nonatomic, readonly) NSString *sourceApplicationBundleIdentifier;
 @property (nonatomic, readonly) NSString *sourceApplicationSecondaryIdentifier;
 @property (nonatomic, readonly) CKDProtobufStreamWriter *streamWriter;
@@ -222,7 +223,6 @@
 - (id)c2RequestOptions;
 - (long long)cachedPartitionType;
 - (long long)cachedServerType;
-- (bool)canSendKeyIDs;
 - (void)cancel;
 - (id)ckShortDescription;
 - (id)clientProvidedAdditionalHeaderValues;
@@ -320,6 +320,7 @@
 - (id)sectionID;
 - (bool)sendRequestAnonymously;
 - (id)serverProvidedAutoBugCaptureReason;
+- (id)serverProvidedAutoSysdiagnoseCollectionReason;
 - (id)serverProvidedTapToRadarRequest;
 - (long long)serverType;
 - (void)setAccountInfoProvider:(id)arg1;
@@ -361,6 +362,7 @@
 - (void)setResponseObjectUUIDs:(id)arg1;
 - (void)setResponseProgressBlock:(id /* block */)arg1;
 - (void)setServerProvidedAutoBugCaptureReason:(id)arg1;
+- (void)setServerProvidedAutoSysdiagnoseCollectionReason:(id)arg1;
 - (void)setServerProvidedTapToRadarRequest:(id)arg1;
 - (void)setTimeLogger:(id)arg1;
 - (void)setTimingData:(id)arg1;
@@ -371,7 +373,6 @@
 - (void)setVoucher:(id)arg1;
 - (bool)shouldCompressBody;
 - (bool)shouldLogResponseBody;
-- (bool)shouldSendKeyIDs;
 - (id)sourceApplicationBundleIdentifier;
 - (id)sourceApplicationSecondaryIdentifier;
 - (id)statusReportWithIndent:(unsigned long long)arg1;

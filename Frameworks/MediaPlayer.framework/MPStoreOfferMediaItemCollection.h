@@ -24,6 +24,7 @@
 + (id)mediaValueForStoreLookupCollectionPropertyValues:(id)arg1 mediaProperty:(id)arg2;
 + (id)offerDictionariesForLookupCollectionPropertyValues:(id)arg1;
 + (long long)offerPassTypeForLookupCollectionPropertyValues:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (bool)_checkIsUsableOffer;

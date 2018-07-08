@@ -4,7 +4,7 @@
 
 @interface MRNowPlayingPlayerClient : NSObject <MRNowPlayingClientState, MRTransactionSourceDelegate> {
     NSMutableDictionary * _cachedContentItemUpdates;
-    void * _capabilities;
+    unsigned long long  _capabilities;
     MRNowPlayingPlayerClientCallbacks * _clientCallbacks;
     bool  _coalescingInvalidations;
     bool  _coalescingRequests;
@@ -12,61 +12,63 @@
     double  _invalidatationTimestamp;
     MRNowPlayingArtwork * _nowPlayingArtwork;
     NSDictionary * _nowPlayingInfo;
-    void * _playbackQueue;
+    _MRPlaybackQueueProtobuf * _playbackQueue;
     MRPlaybackQueuePlayerClient * _playbackQueueClient;
     unsigned int  _playbackState;
     double  _playbackStateSetToPlayTimestamp;
-    void * _playerPath;
+    _MRNowPlayingPlayerPathProtobuf * _playerPath;
     NSObject<OS_dispatch_queue> * _serialQueue;
     NSArray * _supportedCommands;
     NSMutableArray * _transactionSources;
     bool  _triggerInvalidation;
 }
 
-@property (nonatomic) void*capabilities;
+@property (nonatomic) unsigned long long capabilities;
 @property (nonatomic, readonly) MRNowPlayingPlayerClientCallbacks *clientCallbacks;
 @property (nonatomic) double invalidatationTimestamp;
 @property (nonatomic, retain) MRNowPlayingArtwork *nowPlayingArtwork;
-@property (nonatomic, readonly) void*nowPlayingContentItem;
+@property (nonatomic, readonly) _MRContentItemProtobuf *nowPlayingContentItem;
 @property (nonatomic, copy) NSDictionary *nowPlayingInfo;
-@property (nonatomic) void*playbackQueue;
+@property (nonatomic, retain) _MRPlaybackQueueProtobuf *playbackQueue;
 @property (nonatomic, readonly) MRPlaybackQueuePlayerClient *playbackQueueClient;
 @property (nonatomic) unsigned int playbackState;
-@property (nonatomic, readonly) void*playerPath;
+@property (nonatomic, retain) _MRNowPlayingPlayerPathProtobuf *playerPath;
 @property (nonatomic, copy) NSArray *supportedCommands;
 
-- (void*)_onQueue_nowPlayingContentItem;
+- (void).cxx_destruct;
+- (id)_onQueue_nowPlayingContentItem;
 - (void)_onQueue_sendTransaction:(unsigned long long)arg1 withPackets:(id)arg2;
-- (void)addPendingRequest:(void*)arg1;
+- (void)addPendingRequest:(id)arg1;
 - (void)beginSendingTransactions;
 - (void)cacheContentItemUpdates:(id)arg1;
-- (void*)capabilities;
+- (unsigned long long)capabilities;
 - (void)clearCachedContentItemArtworkForItems:(id)arg1;
 - (id)clientCallbacks;
-- (void)dealloc;
+- (id)debugDescription;
 - (id)description;
 - (void)endSendingTransactions;
-- (id)initWithPlayerPath:(void*)arg1;
+- (id)initWithPlayerPath:(id)arg1;
 - (double)invalidatationTimestamp;
 - (id)nowPlayingArtwork;
-- (void*)nowPlayingContentItem;
+- (id)nowPlayingContentItem;
 - (id)nowPlayingInfo;
-- (void*)playbackQueue;
+- (id)playbackQueue;
 - (id)playbackQueueClient;
 - (unsigned int)playbackState;
-- (void*)playerPath;
-- (void)preProcessChangePlaybackRateCommandWithOptions:(struct __CFDictionary { }*)arg1;
-- (void)preProcessCommand:(unsigned int)arg1 options:(struct __CFDictionary { }*)arg2;
+- (id)playerPath;
+- (void)preProcessChangePlaybackRateCommandWithOptions:(id)arg1;
+- (void)preProcessCommand:(unsigned int)arg1 options:(id)arg2;
 - (void)restoreNowPlayingClientState;
 - (void)sendTransaction:(unsigned long long)arg1 withPackets:(id)arg2;
-- (void)setCapabilities:(void*)arg1;
+- (void)setCapabilities:(unsigned long long)arg1;
 - (void)setInvalidatationTimestamp:(double)arg1;
 - (void)setNowPlayingArtwork:(id)arg1;
 - (void)setNowPlayingInfo:(id)arg1;
-- (void)setPlaybackQueue:(void*)arg1;
+- (void)setPlaybackQueue:(id)arg1;
 - (void)setPlaybackState:(unsigned int)arg1;
+- (void)setPlayerPath:(id)arg1;
 - (void)setSupportedCommands:(id)arg1;
-- (void)startCachingContentItemUpdatesForItem:(void*)arg1 forPendingRequest:(void*)arg2;
+- (void)startCachingContentItemUpdatesForItem:(id)arg1 forPendingRequest:(id)arg2;
 - (id)supportedCommands;
 - (bool)testAndSetCoalescingInvalidations;
 - (bool)testAndSetCoalescingRequests;
@@ -74,8 +76,9 @@
 - (void)unsetCoalescingInvalidations;
 - (bool)unsetCoalescingRequests;
 - (void)updateCacheWithContentItems:(id)arg1;
-- (void)updateCacheWithItem:(void*)arg1;
-- (void)updateCacheWithPlaybackQueue:(void*)arg1;
-- (void)updatePlaybackQueueWithCachedUpdates:(void*)arg1 forPendingRequest:(void*)arg2;
+- (void)updateCacheWithItem:(id)arg1;
+- (void)updateCacheWithPlaybackQueue:(id)arg1;
+- (void)updatePlaybackQueueWithCachedUpdates:(id)arg1 forPendingRequest:(id)arg2;
+- (void)updatePlayer:(id)arg1;
 
 @end

@@ -31,7 +31,6 @@
 - (void)invalidate;
 - (id)queue;
 - (id)remoteInterface;
-- (void)remote_fetchPluginServiceEndpointWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)remote_serverForConfiguration:(id)arg1 completion:(id /* block */)arg2;
 - (id)server;
 

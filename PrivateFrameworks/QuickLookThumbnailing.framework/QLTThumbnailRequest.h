@@ -8,6 +8,7 @@
     bool  _iconMode;
     double  _minimumSize;
     double  _scale;
+    long long  _sequenceNumber;
     struct CGSize { 
         double width; 
         double height; 
@@ -20,6 +21,7 @@
 @property (readonly) float maximumPixelSize;
 @property (readonly) double minimumSize;
 @property (readonly) double scale;
+@property long long sequenceNumber;
 @property struct CGSize { double x1; double x2; } size;
 
 + (bool)supportsSecureCoding;
@@ -42,7 +44,9 @@
 - (float)maximumPixelSize;
 - (double)minimumSize;
 - (double)scale;
+- (long long)sequenceNumber;
 - (void)setCancelled:(bool)arg1;
+- (void)setSequenceNumber:(long long)arg1;
 - (void)setSize:(struct CGSize { double x1; double x2; })arg1;
 - (struct CGSize { double x1; double x2; })size;
 

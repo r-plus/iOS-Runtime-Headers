@@ -46,7 +46,7 @@
 - (void)setLoadingString:(id)arg1;
 - (void)setRequest:(id)arg1;
 - (void)setSourceIsManaged:(bool)arg1;
-- (void)startTransitionWithSourceViewProvider:(id)arg1 transitionController:(id)arg2 presenting:(bool)arg3 completionHandler:(id /* block */)arg4;
+- (void)startTransitionWithSourceViewProvider:(id)arg1 transitionController:(id)arg2 presenting:(bool)arg3 useInteractiveTransition:(bool)arg4 completionHandler:(id /* block */)arg5;
 - (void)tearDownTransition:(bool)arg1;
 - (void)toolbarButtonPressedWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)toolbarButtonsForTraitCollection:(id)arg1 withCompletionHandler:(id /* block */)arg2;

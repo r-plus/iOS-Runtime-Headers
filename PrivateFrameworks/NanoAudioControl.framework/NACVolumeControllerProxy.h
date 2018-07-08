@@ -4,7 +4,6 @@
 
 @interface NACVolumeControllerProxy : NSObject <NACVolumeController> {
     float  _EUVolumeLimit;
-    NSString * _category;
     <NACVolumeControllerDelegate> * _delegate;
     NSNumber * _hapticIntensity;
     NACEventThrottler * _hapticThrottler;
@@ -18,6 +17,7 @@
     NSObject<OS_dispatch_source> * _setProminentHapticTimer;
     NSObject<OS_dispatch_source> * _setVolumeTimer;
     bool  _systemMuted;
+    NACProxyVolumeControlTarget * _target;
     bool  _volumeControlAvailable;
     NACEventThrottler * _volumeThrottler;
     NSNumber * _volumeValue;
@@ -64,13 +64,14 @@
 - (void)_volumeTimout;
 - (void)_volumeValueDidChange;
 - (void)_volumeWarningDidChange;
+- (void)beginObservingHaptics;
 - (void)beginObservingVolume;
 - (void)dealloc;
 - (id)delegate;
+- (void)endObservingHaptics;
 - (void)endObservingVolume;
 - (float)hapticIntensity;
-- (id)init;
-- (id)initWithAudioCategory:(id)arg1;
+- (id)initWithVolumeControlTarget:(id)arg1;
 - (bool)isMuted;
 - (bool)isProminentHapticEnabled;
 - (bool)isSystemMuted;

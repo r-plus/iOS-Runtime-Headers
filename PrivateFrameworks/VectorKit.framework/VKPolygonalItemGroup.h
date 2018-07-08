@@ -21,24 +21,24 @@
         struct __hash_table<unsigned long long, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<unsigned long long> > { 
             struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<unsigned long long, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<unsigned long long, void *> *> *> > > { 
                 struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<unsigned long long, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<unsigned long long, void *> *> *> > > { 
-                    struct __hash_node_base<std::__1::__hash_node<unsigned long long, void *> *> {} **__first_; 
+                    struct __hash_node_base<std::__1::__hash_node<unsigned long long, void *> *> {} **__value_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<unsigned long long, void *> *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<unsigned long long, void *> *> *> > { 
-                            unsigned long long __first_; 
+                            unsigned long long __value_; 
                         } __data_; 
-                    } __second_; 
+                    } __value_; 
                 } __ptr_; 
             } __bucket_list_; 
             struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<unsigned long long, void *> *>, std::__1::allocator<std::__1::__hash_node<unsigned long long, void *> > > { 
                 struct __hash_node_base<std::__1::__hash_node<unsigned long long, void *> *> { 
                     struct __hash_node_base<std::__1::__hash_node<unsigned long long, void *> *> {} *__next_; 
-                } __first_; 
+                } __value_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::hash<unsigned long long> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::equal_to<unsigned long long> > { 
-                float __first_; 
+                float __value_; 
             } __p3_; 
         } __table_; 
     }  _featureIds;
@@ -46,7 +46,7 @@
         struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__begin_; 
         struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__end_; 
         struct __compressed_pair<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > *, std::__1::allocator<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > > > { 
-            struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__first_; 
+            struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__value_; 
         } __end_cap_; 
     }  _fillCullingGroups;
     struct optional<md::MeshSet<ggl::PolygonBase::CompressedMeshMesh, ggl::PolygonBase::CompressedVbo> > { 
@@ -58,14 +58,14 @@
                     struct pair<unsigned short, unsigned int> {} *__begin_; 
                     struct pair<unsigned short, unsigned int> {} *__end_; 
                     struct __compressed_pair<std::__1::pair<unsigned short, unsigned int> *, std::__1::allocator<std::__1::pair<unsigned short, unsigned int> > > { 
-                        struct pair<unsigned short, unsigned int> {} *__first_; 
+                        struct pair<unsigned short, unsigned int> {} *__value_; 
                     } __end_cap_; 
                 } _vertexAndIndexCounts; 
                 struct vector<std::__1::shared_ptr<ggl::PolygonBase::CompressedMeshMesh>, std::__1::allocator<std::__1::shared_ptr<ggl::PolygonBase::CompressedMeshMesh> > > { 
                     struct shared_ptr<ggl::PolygonBase::CompressedMeshMesh> {} *__begin_; 
                     struct shared_ptr<ggl::PolygonBase::CompressedMeshMesh> {} *__end_; 
                     struct __compressed_pair<std::__1::shared_ptr<ggl::PolygonBase::CompressedMeshMesh> *, std::__1::allocator<std::__1::shared_ptr<ggl::PolygonBase::CompressedMeshMesh> > > { 
-                        struct shared_ptr<ggl::PolygonBase::CompressedMeshMesh> {} *__first_; 
+                        struct shared_ptr<ggl::PolygonBase::CompressedMeshMesh> {} *__value_; 
                     } __end_cap_; 
                 } _meshes; 
                 struct DataWrite<ggl::PolygonBase::CompressedVbo> { 
@@ -104,14 +104,14 @@
         struct shared_ptr<ggl::PolygonBase::CompressedMeshMesh> {} *__begin_; 
         struct shared_ptr<ggl::PolygonBase::CompressedMeshMesh> {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<ggl::PolygonBase::CompressedMeshMesh> *, std::__1::allocator<std::__1::shared_ptr<ggl::PolygonBase::CompressedMeshMesh> > > { 
-            struct shared_ptr<ggl::PolygonBase::CompressedMeshMesh> {} *__first_; 
+            struct shared_ptr<ggl::PolygonBase::CompressedMeshMesh> {} *__value_; 
         } __end_cap_; 
     }  _fillMeshes;
     struct vector<ggl::Batcher, std::__1::allocator<ggl::Batcher> > { 
         struct Batcher {} *__begin_; 
         struct Batcher {} *__end_; 
         struct __compressed_pair<ggl::Batcher *, std::__1::allocator<ggl::Batcher> > { 
-            struct Batcher {} *__first_; 
+            struct Batcher {} *__value_; 
         } __end_cap_; 
     }  _fillRenderItemBatchers;
     bool  _hasRouteAttributes;
@@ -120,24 +120,24 @@
         struct __hash_table<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, std::__1::__unordered_map_hasher<std::__1::pair<void *, unsigned long>, std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, std::__1::hash<SectionKey>, true>, std::__1::__unordered_map_equal<std::__1::pair<void *, unsigned long>, std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, std::__1::equal_to<std::__1::pair<void *, unsigned long> >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > > > > { 
             struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *> *> > > { 
                 struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *> *> > > { 
-                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *> {} **__first_; 
+                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *> {} **__value_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *> *> > { 
-                            unsigned long long __first_; 
+                            unsigned long long __value_; 
                         } __data_; 
-                    } __second_; 
+                    } __value_; 
                 } __ptr_; 
             } __bucket_list_; 
             struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> > > { 
                 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *> { 
                     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *> {} *__next_; 
-                } __first_; 
+                } __value_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<std::__1::pair<void *, unsigned long>, std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, std::__1::hash<SectionKey>, true> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<std::__1::pair<void *, unsigned long>, std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, std::__1::equal_to<std::__1::pair<void *, unsigned long> >, true> > { 
-                float __first_; 
+                float __value_; 
             } __p3_; 
         } __table_; 
     }  _polygonEdges;
@@ -150,21 +150,21 @@
         struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *__begin_; 
         struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> > *, std::__1::allocator<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> > > > { 
-            struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *__first_; 
+            struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *__value_; 
         } __end_cap_; 
     }  _selectedStyleQueries;
     struct vector<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > >, std::__1::allocator<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > > > { 
         struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__begin_; 
         struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__end_; 
         struct __compressed_pair<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > *, std::__1::allocator<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > > > { 
-            struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__first_; 
+            struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__value_; 
         } __end_cap_; 
     }  _strokeCullingGroups;
     struct vector<ggl::Batcher, std::__1::allocator<ggl::Batcher> > { 
         struct Batcher {} *__begin_; 
         struct Batcher {} *__end_; 
         struct __compressed_pair<ggl::Batcher *, std::__1::allocator<ggl::Batcher> > { 
-            struct Batcher {} *__first_; 
+            struct Batcher {} *__value_; 
         } __end_cap_; 
     }  _strokeRenderItemBatchers;
     struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { 
@@ -175,7 +175,7 @@
         struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *__begin_; 
         struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> > *, std::__1::allocator<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> > > > { 
-            struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *__first_; 
+            struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *__value_; 
         } __end_cap_; 
     }  _styleQueries;
     bool  _stylesUpToDate;
@@ -184,28 +184,28 @@
         struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__begin_; 
         struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__end_; 
         struct __compressed_pair<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > *, std::__1::allocator<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > > > { 
-            struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__first_; 
+            struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__value_; 
         } __end_cap_; 
     }  _venueCullingGroups;
     struct vector<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > >, std::__1::allocator<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > > > { 
         struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__begin_; 
         struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__end_; 
         struct __compressed_pair<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > *, std::__1::allocator<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > > > { 
-            struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__first_; 
+            struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__value_; 
         } __end_cap_; 
     }  _venueEndCapCullingGroups;
     struct vector<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > >, std::__1::allocator<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > > > { 
         struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__begin_; 
         struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__end_; 
         struct __compressed_pair<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > *, std::__1::allocator<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > > > { 
-            struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__first_; 
+            struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__value_; 
         } __end_cap_; 
     }  _venueWallHorizontalStrokeCullingGroups;
     struct vector<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > >, std::__1::allocator<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > > > { 
         struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__begin_; 
         struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__end_; 
         struct __compressed_pair<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > *, std::__1::allocator<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > > > { 
-            struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__first_; 
+            struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__value_; 
         } __end_cap_; 
     }  _venueWallVerticalStrokeCullingGroups;
 }

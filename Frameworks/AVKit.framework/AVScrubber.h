@@ -13,7 +13,7 @@
         double width; 
         double height; 
     }  _extrinsicContentSize;
-    UISelectionFeedbackGenerator * _feedbackBehavior;
+    UISelectionFeedbackGenerator * _feedbackGenerator;
     bool  _hasAlternateAppearance;
     bool  _hasFullScreenAppearance;
     struct NSDirectionalEdgeInsets { 
@@ -48,6 +48,7 @@
 @property (nonatomic) <AVScrubberDelegate> *delegate;
 @property (nonatomic) float estimatedFrameRate;
 @property (nonatomic) struct CGSize { double x1; double x2; } extrinsicContentSize;
+@property (nonatomic, readonly) UISelectionFeedbackGenerator *feedbackGenerator;
 @property (nonatomic) bool hasAlternateAppearance;
 @property (nonatomic) bool hasFullScreenAppearance;
 @property (nonatomic) struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; } hitRectInsets;
@@ -82,11 +83,13 @@
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (float)estimatedFrameRate;
 - (struct CGSize { double x1; double x2; })extrinsicContentSize;
+- (id)feedbackGenerator;
 - (bool)hasAlternateAppearance;
 - (bool)hasFullScreenAppearance;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })hitRect;
 - (struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })hitRectInsets;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (bool)isCollapsed;
 - (bool)isCollapsedOrExcluded;
 - (bool)isIncluded;
@@ -127,5 +130,6 @@
 - (double)timestampWhenTrackingEnded;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })trackRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)updateSlowKnobMovementDetectedTimer;
+- (void)willMoveToWindow:(id)arg1;
 
 @end

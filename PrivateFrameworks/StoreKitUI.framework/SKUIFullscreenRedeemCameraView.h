@@ -18,6 +18,7 @@
     UIView * _overlay;
     UIView * _redeemerView;
     SKUIRedeemTextField * _textField;
+    _UIBackdropView * _textFieldSafeAreaBackdrop;
 }
 
 @property (readonly, copy) NSString *debugDescription;

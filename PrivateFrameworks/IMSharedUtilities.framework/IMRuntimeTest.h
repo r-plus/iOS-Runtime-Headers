@@ -14,6 +14,7 @@
 - (id /* block */)completion;
 - (void)dispatchAfter:(double)arg1 block:(id /* block */)arg2;
 - (void)finishTest;
+- (void)finishTestAfterInterval:(double)arg1;
 - (void)runTest:(id /* block */)arg1;
 - (void)setCompletion:(id /* block */)arg1;
 - (void)setTestRun:(id)arg1;

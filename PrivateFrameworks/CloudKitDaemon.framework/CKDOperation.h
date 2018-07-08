@@ -30,6 +30,7 @@
     unsigned long long  _state;
     NSObject<OS_dispatch_group> * _stateTransitionGroup;
     CKTimeLogger * _timeLogger;
+    bool  _useClearAssetEncryption;
     bool  _useEncryption;
     UMUserSyncTask * _userSyncTask;
 }
@@ -87,6 +88,7 @@
 @property (nonatomic, readonly) double timeoutIntervalForRequest;
 @property (nonatomic, readonly) double timeoutIntervalForResource;
 @property (nonatomic, readonly) CKDOperation *topmostParentOperation;
+@property (nonatomic) bool useClearAssetEncryption;
 @property (nonatomic) bool useEncryption;
 @property (nonatomic, retain) UMUserSyncTask *userSyncTask;
 @property (nonatomic, readonly) bool usesBackgroundSession;
@@ -210,6 +212,7 @@
 - (void)setState:(unsigned long long)arg1;
 - (void)setStateTransitionGroup:(id)arg1;
 - (void)setTimeLogger:(id)arg1;
+- (void)setUseClearAssetEncryption:(bool)arg1;
 - (void)setUseEncryption:(bool)arg1;
 - (void)setUserSyncTask:(id)arg1;
 - (bool)shouldCheckAppVersion;
@@ -229,6 +232,7 @@
 - (double)timeoutIntervalForRequest;
 - (double)timeoutIntervalForResource;
 - (id)topmostParentOperation;
+- (bool)useClearAssetEncryption;
 - (bool)useEncryption;
 - (id)userSyncTask;
 - (bool)usesBackgroundSession;

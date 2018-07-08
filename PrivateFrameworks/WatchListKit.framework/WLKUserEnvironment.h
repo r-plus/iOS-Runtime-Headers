@@ -8,6 +8,7 @@
     NSArray * _consentedBrands;
     NSDictionary * _entitlements;
     NSString * _localeIdentifier;
+    NSDictionary * _location;
     unsigned long long  _protocolVersion;
     NSString * _restrictions;
     NSString * _storeFrontIdentifier;
@@ -18,6 +19,7 @@
 @property (nonatomic, retain) NSArray *consentedBrands;
 @property (nonatomic, retain) NSDictionary *entitlements;
 @property (nonatomic, retain) NSString *localeIdentifier;
+@property (nonatomic, readonly) NSDictionary *location;
 @property (nonatomic) unsigned long long protocolVersion;
 @property (nonatomic, retain) NSString *restrictions;
 @property (nonatomic, retain) NSString *storeFrontIdentifier;
@@ -37,6 +39,7 @@
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToEnvironment:(id)arg1;
 - (id)localeIdentifier;
+- (id)location;
 - (unsigned long long)protocolVersion;
 - (id)restrictions;
 - (void)setConsented:(bool)arg1;

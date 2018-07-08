@@ -32,6 +32,7 @@
 - (id)eligibleActionsForItems:(id)arg1;
 - (void)extendBookmarkForItem:(id)arg1 receivingBundleID:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)fetchDefaultLocationForApplication:(id)arg1 defaultProvider:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)fetchIndexPropertiesForItemAtURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)fetchItemForURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)fetchParentForItem:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)fetchRootItemForProvider:(id)arg1 completionHandler:(id /* block */)arg2;

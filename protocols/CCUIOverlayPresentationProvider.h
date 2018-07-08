@@ -7,6 +7,7 @@
 
 - (bool)allowHotPocketDuringTransition;
 - (CCUIAnimationBatch *)animationBatchForTransitionState:(CCUIOverlayTransitionState *)arg1 previousTransitionState:(CCUIOverlayTransitionState *)arg2;
+- (bool)backdropViewShouldUseAlphaTransformer;
 - (unsigned long long)backgroundMaterialOptions;
 - (unsigned long long)finalTransitionTypeForState:(CCUIOverlayTransitionState *)arg1 gestureTranslation:(struct CGPoint { double x1; double x2; })arg2 gestureVelocity:(struct CGPoint { double x1; double x2; })arg3;
 - (bool)isPanDismissalAvailable;
@@ -21,6 +22,7 @@
 @optional
 
 - (CCUIAnimationBatch *)cleanupForDismissal;
+- (id /* block */)customBackdropScaleAdjustment:(void *)arg1; // needs 1 arg types, found 5: id /* block */, double, void*, id, SEL
 - (<CCUIOverlayFlickGestureBehavior> *)flickGestureBehavior;
 - (unsigned long long)headerMode;
 - (CCUIAnimationBatch *)prepareForPresentation;

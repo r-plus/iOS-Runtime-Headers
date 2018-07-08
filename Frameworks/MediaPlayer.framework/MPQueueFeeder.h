@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPQueueFeeder : NSObject <MPQueueBehaviorManaging, MusicEntityValueProviding, NSCoding> {
+@interface MPQueueFeeder : NSObject <MPQueueBehaviorManaging, MusicEntityValueProviding, NSSecureCoding> {
     long long  _activeShuffleType;
     <MPQueueFeederDelegate> * _delegate;
     MPMutableBidirectionalDictionary * _exportableItemIDs;
@@ -58,6 +58,7 @@
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
++ (bool)supportsSecureCoding;
 + (bool)supportsStateRestoration;
 
 - (void).cxx_destruct;

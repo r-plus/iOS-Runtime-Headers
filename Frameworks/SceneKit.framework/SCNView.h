@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@interface SCNView : UIView <DebugHierarchyObject, SCNSceneRenderer, SCNTechniqueSupport> {
+@interface SCNView : UIView <SCNSceneRenderer, SCNTechniqueSupport> {
     unsigned long long  __ibPreferredRenderingAPI;
     NSString * __ibSceneName;
     unsigned int  _appIsDeactivated;
@@ -71,8 +71,6 @@
 @property (nonatomic, readonly) unsigned long long stencilPixelFormat;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) SCNTechnique *technique;
-
-// Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
 
 + (bool)_isMetalSupported;
 + (id)_kvoKeysForwardedToRenderer;
@@ -249,12 +247,5 @@
 - (void)unlock;
 - (struct SCNVector3 { float x1; float x2; float x3; })unprojectPoint:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
 - (void)willMoveToWindow:(id)arg1;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)__dbg_pointOfViewIndexPath;
-- (id)debugHierarchyAdditionalGroupingIDs;
-- (id)debugHierarchyObjectsInGroupWithID:(id)arg1 outOptions:(id*)arg2;
-- (id)debugHierarchyPropertyDescriptions;
 
 @end

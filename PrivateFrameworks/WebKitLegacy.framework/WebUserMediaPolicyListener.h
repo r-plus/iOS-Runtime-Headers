@@ -3,7 +3,7 @@
  */
 
 @interface WebUserMediaPolicyListener : NSObject <WebAllowDenyPolicyListener> {
-    struct RefPtr<WebCore::UserMediaRequest> { 
+    struct RefPtr<WebCore::UserMediaRequest, WTF::DumbPtrTraits<WebCore::UserMediaRequest> > { 
         struct UserMediaRequest {} *m_ptr; 
     }  _request;
 }
@@ -19,7 +19,7 @@
 - (void)cancelUserMediaAccessRequest;
 - (void)deny;
 - (void)denyOnlyThisRequest;
-- (id)initWithUserMediaRequest:(struct Ref<WebCore::UserMediaRequest> { struct UserMediaRequest {} *x1; }*)arg1;
+- (id)initWithUserMediaRequest:(struct Ref<WebCore::UserMediaRequest, WTF::DumbPtrTraits<WebCore::UserMediaRequest> > { struct UserMediaRequest {} *x1; }*)arg1;
 - (bool)shouldClearCache;
 
 @end

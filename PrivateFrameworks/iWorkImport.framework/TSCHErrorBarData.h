@@ -26,6 +26,7 @@
 + (bool)hasErrorBarsForSeries:(id)arg1;
 + (int)p_errorBarSettingForSeries:(id)arg1 useXAxis:(bool)arg2 axisID:(id)arg3;
 
+- (void).cxx_destruct;
 - (void)clearParent;
 - (bool)hasErrorDataForAxisID:(id)arg1 valueIndex:(unsigned long long)arg2 chartVertical:(bool)arg3 barVertical:(bool*)arg4 unitValue:(struct CGPoint { double x1; double x2; }*)arg5 unitPositive:(struct CGPoint { double x1; double x2; }*)arg6 unitNegative:(struct CGPoint { double x1; double x2; }*)arg7;
 - (id)initWithSeries:(id)arg1;

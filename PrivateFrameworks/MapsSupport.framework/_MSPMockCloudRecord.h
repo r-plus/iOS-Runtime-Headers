@@ -18,6 +18,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *type;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)cloudRecordModificationDate;
 - (id)cloudRecordName;

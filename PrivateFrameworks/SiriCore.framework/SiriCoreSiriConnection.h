@@ -14,6 +14,7 @@
     <SiriCoreSiriConnectionDelegate> * _delegate;
     bool  _deviceIsInWalkaboutExperimentGroup;
     NWPathEvaluator * _evaluator;
+    bool  _forceReconnect;
     bool  _imposePolicyBan;
     bool  _isCanceled;
     bool  _isCanceledInternal;
@@ -47,6 +48,7 @@
 @property (nonatomic) <SiriCoreSiriConnectionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool deviceIsInWalkaboutExperimentGroup;
+@property (nonatomic) bool forceReconnect;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool imposePolicyBan;
 @property (nonatomic, copy) NSString *languageCode;
@@ -69,12 +71,12 @@
 - (void)_accessPotentiallyActiveConnections:(id /* block */)arg1;
 - (id)_activeOrAnyPendingConnection;
 - (void)_cancelSynchronously:(id /* block */)arg1;
-- (id)_connectionInfoForRoute:(id)arg1;
+- (id)_connectionInfoForRoute:(id)arg1 policy:(id)arg2;
 - (void)_handleLastEventFromBackgroundConnection:(id)arg1 pendingConnectionExhaustionHandler:(id /* block */)arg2;
 - (id)_pathEvaluator:(id)arg1 port:(id)arg2;
 - (void)_recordConnectionMethodForMetrics:(id)arg1;
-- (void)_scheduleBackgroundConnectionWithRoute:(id)arg1 delay:(double)arg2;
-- (void)_startBackgroundConnectionWithRoute:(id)arg1;
+- (void)_scheduleBackgroundConnectionWithRoute:(id)arg1 delay:(double)arg2 policy:(id)arg3;
+- (void)_startBackgroundConnectionWithRoute:(id)arg1 policy:(id)arg2;
 - (void)_waitForActiveConnection:(id /* block */)arg1;
 - (id)aceHost;
 - (id)analysisInfo;
@@ -86,6 +88,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (bool)deviceIsInWalkaboutExperimentGroup;
+- (bool)forceReconnect;
 - (void)getAnalysisInfo:(id /* block */)arg1;
 - (void)getConnectionMetricsSynchronously:(bool)arg1 completion:(id /* block */)arg2;
 - (bool)imposePolicyBan;
@@ -107,6 +110,7 @@
 - (void)setConnectionPolicy:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDeviceIsInWalkaboutExperimentGroup:(bool)arg1;
+- (void)setForceReconnect:(bool)arg1;
 - (void)setImposePolicyBan:(bool)arg1;
 - (void)setLanguageCode:(id)arg1;
 - (void)setPeerAssistantIdentifier:(id)arg1;

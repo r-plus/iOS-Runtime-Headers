@@ -46,12 +46,15 @@
 - (double)_calculateNextTransitionTime;
 - (void)_clearTimer;
 - (void)_continueUpdateRequests;
+- (double)_currentTime;
+- (int)_requestModeForRequest:(id)arg1;
 - (void)_sendRequest:(id)arg1 shouldCallWillSendCallback:(bool)arg2;
 - (bool)_shouldStartConditionalETARequest;
 - (void)_startConditionalConnectionETARequest;
 - (void)_startStateWaitingForBestTimeStart:(id)arg1;
 - (bool)_updateETAResponse:(id)arg1 withRemainingDistanceFromRequest:(id)arg2;
 - (void)_updateRequest:(id)arg1;
+- (void)_updateRequestModeForRequest:(id)arg1 withResponse:(id)arg2;
 - (bool)_updateRouteWithETATrafficUpdateResponse:(id)arg1;
 - (bool)allowRequests;
 - (id)auditToken;

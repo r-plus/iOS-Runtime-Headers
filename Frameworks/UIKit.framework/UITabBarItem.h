@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITabBarItem : UIBarItem <DebugHierarchyObject, UISpringLoadedInteractionSupporting> {
+@interface UITabBarItem : UIBarItem <UISpringLoadedInteractionSupporting> {
     long long  __barMetrics;
     long long  __imageStyle;
     UIColor * __tintColor;
@@ -146,11 +146,6 @@
 - (id)titleTextAttributesForState:(unsigned long long)arg1;
 - (id)unselectedImage;
 - (id)view;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
-- (id)debugHierarchyValueForPropertyWithName:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
 

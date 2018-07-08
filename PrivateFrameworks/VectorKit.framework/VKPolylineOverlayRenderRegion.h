@@ -7,14 +7,14 @@
         struct Box<double, 2> {} *__begin_; 
         struct Box<double, 2> {} *__end_; 
         struct __compressed_pair<gm::Box<double, 2> *, std::__1::allocator<gm::Box<double, 2> > > { 
-            struct Box<double, 2> {} *__first_; 
+            struct Box<double, 2> {} *__value_; 
         } __end_cap_; 
     }  _rectsForSnapping;
     struct vector<VKTileKey, std::__1::allocator<VKTileKey> > { 
         struct VKTileKey {} *__begin_; 
         struct VKTileKey {} *__end_; 
         struct __compressed_pair<VKTileKey *, std::__1::allocator<VKTileKey> > { 
-            struct VKTileKey {} *__first_; 
+            struct VKTileKey {} *__value_; 
         } __end_cap_; 
     }  _snappedTileKeys;
     struct Box<double, 2> { 

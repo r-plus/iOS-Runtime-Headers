@@ -16,6 +16,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIView *detailCalloutAccessoryView;
+@property (nonatomic, readonly) MKMapItemIdentifier *flyoverTourIdentifier;
 @property (nonatomic, readonly) bool hasRoutingIncidentBadge;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <GEOTransitIconDataSource> *iconDataSource;
@@ -118,6 +119,7 @@
 - (long long)artworkSourceType;
 - (long long)artworkUseType;
 - (id)detailCalloutAccessoryView;
+- (id)flyoverTourIdentifier;
 - (bool)hasRoutingIncidentBadge;
 - (id)iconDataSource;
 - (id)iconFallbackShieldDataSource;

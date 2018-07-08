@@ -38,6 +38,10 @@
         unsigned int isNativeAd : 1; 
         unsigned int isUserSubscribedToFeed : 1; 
     }  _has;
+    NSString * _iadNativeAd;
+    NSString * _iadNativeCampaign;
+    NSString * _iadNativeCampaignAd;
+    NSString * _iadNativeLine;
     bool  _isDigitalReplicaAd;
     bool  _isNativeAd;
     bool  _isUserSubscribedToFeed;
@@ -92,6 +96,10 @@
 @property (nonatomic) bool hasGalleryImageCount;
 @property (nonatomic) bool hasGalleryType;
 @property (nonatomic, readonly) bool hasGalleryViewingSessionId;
+@property (nonatomic, readonly) bool hasIadNativeAd;
+@property (nonatomic, readonly) bool hasIadNativeCampaign;
+@property (nonatomic, readonly) bool hasIadNativeCampaignAd;
+@property (nonatomic, readonly) bool hasIadNativeLine;
 @property (nonatomic) bool hasIsDigitalReplicaAd;
 @property (nonatomic) bool hasIsNativeAd;
 @property (nonatomic) bool hasIsUserSubscribedToFeed;
@@ -111,6 +119,10 @@
 @property (nonatomic, readonly) bool hasSurfacedBySectionId;
 @property (nonatomic, readonly) bool hasSurfacedByTopicId;
 @property (nonatomic, readonly) bool hasWidgetEngagement;
+@property (nonatomic, retain) NSString *iadNativeAd;
+@property (nonatomic, retain) NSString *iadNativeCampaign;
+@property (nonatomic, retain) NSString *iadNativeCampaignAd;
+@property (nonatomic, retain) NSString *iadNativeLine;
 @property (nonatomic) bool isDigitalReplicaAd;
 @property (nonatomic) bool isNativeAd;
 @property (nonatomic) bool isUserSubscribedToFeed;
@@ -191,6 +203,10 @@
 - (bool)hasGalleryImageCount;
 - (bool)hasGalleryType;
 - (bool)hasGalleryViewingSessionId;
+- (bool)hasIadNativeAd;
+- (bool)hasIadNativeCampaign;
+- (bool)hasIadNativeCampaignAd;
+- (bool)hasIadNativeLine;
 - (bool)hasIsDigitalReplicaAd;
 - (bool)hasIsNativeAd;
 - (bool)hasIsUserSubscribedToFeed;
@@ -211,6 +227,10 @@
 - (bool)hasSurfacedByTopicId;
 - (bool)hasWidgetEngagement;
 - (unsigned long long)hash;
+- (id)iadNativeAd;
+- (id)iadNativeCampaign;
+- (id)iadNativeCampaignAd;
+- (id)iadNativeLine;
 - (bool)isDigitalReplicaAd;
 - (bool)isEqual:(id)arg1;
 - (bool)isNativeAd;
@@ -265,6 +285,10 @@
 - (void)setHasPreviousArticlePublisherArticleVersion:(bool)arg1;
 - (void)setHasPublisherArticleVersion:(bool)arg1;
 - (void)setHasPublisherArticleVersionInt64:(bool)arg1;
+- (void)setIadNativeAd:(id)arg1;
+- (void)setIadNativeCampaign:(id)arg1;
+- (void)setIadNativeCampaignAd:(id)arg1;
+- (void)setIadNativeLine:(id)arg1;
 - (void)setIsDigitalReplicaAd:(bool)arg1;
 - (void)setIsNativeAd:(bool)arg1;
 - (void)setIsUserSubscribedToFeed:(bool)arg1;

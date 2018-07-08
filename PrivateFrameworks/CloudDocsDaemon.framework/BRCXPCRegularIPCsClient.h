@@ -137,6 +137,7 @@
 - (void)startDownloadItemsAtURLs:(id)arg1 options:(unsigned long long)arg2 reply:(id /* block */)arg3;
 - (void)startOperation:(id)arg1 toCleanShareSubitemsAtURL:(id)arg2 reply:(id /* block */)arg3;
 - (void)startOperation:(id)arg1 toCopyAvailableQuotaWithReply:(id /* block */)arg2;
+- (void)startOperation:(id)arg1 toCopyDocumentURLForRecordID:(id)arg2 syncIfNeeded:(bool)arg3 reply:(id /* block */)arg4;
 - (void)startOperation:(id)arg1 toCopyEtagAtURL:(id)arg2 reply:(id /* block */)arg3;
 - (void)startOperation:(id)arg1 toCopyParticipantTokenAtURL:(id)arg2 reply:(id /* block */)arg3;
 - (void)startOperation:(id)arg1 toCopyShareInfoAtURL:(id)arg2 reply:(id /* block */)arg3;

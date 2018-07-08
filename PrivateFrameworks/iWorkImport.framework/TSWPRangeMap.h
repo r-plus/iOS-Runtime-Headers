@@ -7,7 +7,7 @@
         struct _TSWPCharIndexAndAffinity {} *__begin_; 
         struct _TSWPCharIndexAndAffinity {} *__end_; 
         struct __compressed_pair<_TSWPCharIndexAndAffinity *, std::__1::allocator<_TSWPCharIndexAndAffinity> > { 
-            struct _TSWPCharIndexAndAffinity {} *__first_; 
+            struct _TSWPCharIndexAndAffinity {} *__value_; 
         } __end_cap_; 
     }  _mappedIndexes;
     struct _NSRange { 
@@ -18,7 +18,7 @@
         struct _TSWPCharIndexAndAffinity {} *__begin_; 
         struct _TSWPCharIndexAndAffinity {} *__end_; 
         struct __compressed_pair<_TSWPCharIndexAndAffinity *, std::__1::allocator<_TSWPCharIndexAndAffinity> > { 
-            struct _TSWPCharIndexAndAffinity {} *__first_; 
+            struct _TSWPCharIndexAndAffinity {} *__value_; 
         } __end_cap_; 
     }  _unmappedIndexes;
 }

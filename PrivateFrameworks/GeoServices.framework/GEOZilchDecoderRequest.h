@@ -9,7 +9,7 @@
     NSError * _firstTileLoadingError;
     struct unique_ptr<geo::ZilchMapModel, std::__1::default_delete<geo::ZilchMapModel> > { 
         struct __compressed_pair<geo::ZilchMapModel *, std::__1::default_delete<geo::ZilchMapModel> > { 
-            struct ZilchMapModel {} *__first_; 
+            struct ZilchMapModel {} *__value_; 
         } __ptr_; 
     }  _mapModel;
     struct shared_ptr<zilch::Message> { 

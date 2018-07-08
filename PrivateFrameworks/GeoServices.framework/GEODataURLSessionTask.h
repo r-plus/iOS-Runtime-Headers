@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEODataURLSessionTask : NSObject <GEODataSessionTask, GEOStateCapturing> {
+@interface GEODataURLSessionTask : NSObject <GEODataSessionTask, GEODataSessionUpdatableTask, GEOStateCapturing> {
     NSObject<OS_os_activity> * _activity;
     NSURLSessionDataTask * _backingTask;
     bool  _backingTaskNeedsResume;
@@ -10,8 +10,9 @@
     <GEODataSessionTaskDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
     double  _endTime;
-    NSError * _error;
     bool  _finished;
+    NSError * _nonBackingTaskError;
+    <NSObject> * _parsedResponse;
     float  _priority;
     unsigned int  _qos;
     NSMutableData * _receivedData;
@@ -24,6 +25,7 @@
     unsigned int  _taskIdentifier;
     GEODataURLSessionTaskQueue * _taskQueue;
     NSURLSessionTaskMetrics * _urlTaskMetrics;
+    NSObject<OS_voucher> * _voucher;
 }
 
 @property (nonatomic, readonly) long long HTTPStatusCode;
@@ -40,7 +42,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) double elapsedTime;
 @property (nonatomic, readonly) NSString *entityTag;
-@property (nonatomic, readonly) NSError *error;
+@property (nonatomic, retain) NSError *error;
 @property (nonatomic, readonly) bool failedDueToCancel;
 @property (readonly) bool failedDueToCancel;
 @property (nonatomic, readonly) bool finished;
@@ -49,11 +51,13 @@
 @property (nonatomic, readonly) NSURL *originalRequestURL;
 @property (nonatomic, readonly) NSURLRequest *originalURLRequest;
 @property (nonatomic, readonly) unsigned long long outgoingPayloadSize;
+@property (nonatomic, readonly) <NSObject> *parsedResponse;
 @property float priority;
 @property (nonatomic, readonly) bool protocolBufferHasPreamble;
 @property (nonatomic, readonly) NSData *receivedData;
 @property (nonatomic, readonly) NSString *remoteAddressAndPort;
 @property (nonatomic, readonly) GEODataRequest *request;
+@property (nonatomic, readonly) <GEORequestCounterTicket> *requestCounterTicket;
 @property (nonatomic, readonly) int requestKind;
 @property (nonatomic, readonly) NSHTTPURLResponse *response;
 @property (nonatomic) unsigned int sessionIdentifier;
@@ -102,15 +106,19 @@
 - (id)originalRequestURL;
 - (id)originalURLRequest;
 - (unsigned long long)outgoingPayloadSize;
+- (id)parsedResponse;
 - (float)priority;
 - (bool)protocolBufferHasPreamble;
 - (id)receivedData;
 - (id)remoteAddressAndPort;
 - (id)request;
+- (id)requestCounterTicket;
 - (int)requestKind;
 - (id)response;
 - (unsigned int)sessionIdentifier;
 - (void)setCachedData:(id)arg1;
+- (void)setError:(id)arg1;
+- (void)setParsedResponse:(id)arg1;
 - (void)setPriority:(float)arg1;
 - (void)setSessionIdentifier:(unsigned int)arg1;
 - (void)setTaskQueue:(id)arg1;

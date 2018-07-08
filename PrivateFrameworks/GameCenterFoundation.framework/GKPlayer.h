@@ -12,6 +12,7 @@
 @property (nonatomic, readonly) NSString *cacheKey;
 @property (nonatomic, readonly) NSString *displayName;
 @property (nonatomic, readonly) NSString *firstName;
+@property (nonatomic, readonly) NSString *friendLevel;
 @property (nonatomic, retain) NSArray *friends;
 @property (nonatomic, readonly) NSString *guestIdentifier;
 @property (nonatomic, readonly) bool hasPhoto;
@@ -64,6 +65,7 @@
 - (id)emails;
 - (void)encodeWithCoder:(id)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
+- (id)friendLevel;
 - (id)friends;
 - (bool)hasPhoto;
 - (unsigned long long)hash;
@@ -89,6 +91,7 @@
 - (void)postChangeNotification;
 - (id)referenceKey;
 - (bool)respondsToSelector:(SEL)arg1;
+- (void)setFriendLevel:(id)arg1;
 - (void)setFriends:(id)arg1;
 - (void)setInternal:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
@@ -104,11 +107,13 @@
 + (long long)sizeForPhotoSize:(long long)arg1;
 
 - (void)_loadPhotoForSize:(long long)arg1 withCompletionHandler:(id /* block */)arg2;
+- (id)cacheKeyForType:(unsigned char)arg1;
 - (id)imageSourceForPlaceholders;
 - (id)imageURLForPhotoSizeList;
 - (void)loadPhotoForSize:(long long)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)photoURLForSize:(long long)arg1;
 - (id)placeholderImage;
 - (id)placeholderImageForType:(unsigned char)arg1;
+- (id)placeholderImageSelected;
 
 @end

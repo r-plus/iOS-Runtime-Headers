@@ -304,14 +304,18 @@
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
++ (bool)_getColorComponent:(double*)arg1 fromSubString:(id)arg2;
 + (id)_mapkit_colorForTransitLine:(id)arg1;
 + (id)_mapkit_userLocationAccuracyRingFillColor;
 + (id)_mapkit_userLocationAccuracyRingStrokeColor;
 + (id)_mapkit_userLocationAccuracyRingStrokeColorSatellite;
++ (id)_maps_colorFromHexString:(id)arg1;
++ (bool)_maps_getRed:(out double*)arg1 green:(out double*)arg2 blue:(out double*)arg3 fromHue:(double)arg4 saturation:(double)arg5 value:(double)arg6;
 
 - (id)_mapkit_blendedColorWithFraction:(double)arg1 ofColor:(id)arg2;
 - (bool)_mapkit_getRed:(double*)arg1 green:(double*)arg2 blue:(double*)arg3 alpha:(double*)arg4;
 - (bool)_mapkit_isWhite;
+- (id)_maps_hexString;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
@@ -409,6 +413,14 @@
 
 + (id)ak_colorWithServerRGBRepresentation:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/AvatarKit.framework/AvatarKit
+
++ (id)AVTColorWithColor4:(const struct { float x1[4]; }*)arg1;
+
+- (bool)AVTColorToColor4:(struct { float x1[4]; }*)arg1;
+- (struct UIColor { Class x1; }*)AVTDarkerColor;
+- (bool)avt_isAlmostEqualToColor:(struct UIColor { Class x1; }*)arg1;
+
 // Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
 
 + (id)CertUIVerifiedColor;
@@ -435,6 +447,10 @@
 + (id)cc_reducedTransparencyControlBackgroundColor;
 
 - (id)ccuiAccessibilityDarkColorVariant;
+
+// Image: /System/Library/PrivateFrameworks/DiagnosticsKit.framework/DiagnosticsKit
+
++ (id)colorWithHexValue:(id)arg1 error:(id*)arg2;
 
 // Image: /System/Library/PrivateFrameworks/DiagnosticsSupport.framework/DiagnosticsSupport
 
@@ -476,6 +492,11 @@
 + (id)fu_systemTextGreyColor;
 + (id)fu_systemYellowColor;
 
+// Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
+
++ (id)_gkSelectedCellBackgroundColor;
++ (id)_gkSpeechViewTintColor;
+
 // Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
 
 - (double)_gkLuminance;
@@ -500,6 +521,10 @@
 + (id)hk_activityStandGoalMetGradientTopColor;
 + (id)hk_activityStandGoalMissedGradientBottomColor;
 + (id)hk_activityStandGoalMissedGradientTopColor;
++ (id)hk_allergiesClinicalGradientBottomColor;
++ (id)hk_allergiesClinicalGradientTopColor;
++ (id)hk_allergiesClinicalKeyColor;
++ (id)hk_appErrorColor;
 + (id)hk_appKeyColor;
 + (id)hk_bodyMeasurementsGradientBottomColor;
 + (id)hk_bodyMeasurementsGradientTopColor;
@@ -509,6 +534,12 @@
 + (id)hk_chartDefaultCurrentValueColor;
 + (id)hk_chartLightGrayGraphColor;
 + (id)hk_chartLightGrayTextColor;
++ (id)hk_clinicalRecordSeparatorColor;
++ (id)hk_clinicalRecordShowMoreBackgroundColor;
++ (id)hk_clinicalRecordValueColor;
++ (id)hk_conditionsClinicalGradientBottomColor;
++ (id)hk_conditionsClinicalGradientTopColor;
++ (id)hk_conditionsClinicalKeyColor;
 + (id)hk_darkInfoButtonBackgroundColor;
 + (id)hk_darkInfoButtonGlyphColor;
 + (id)hk_defaultGradientBottomColor;
@@ -517,12 +548,24 @@
 + (id)hk_defaultInfoButtonGlyphColor;
 + (id)hk_defaultPrimaryTextColor;
 + (id)hk_defaultSecondaryTextColor;
++ (id)hk_immunizationsClinicalGradientBottomColor;
++ (id)hk_immunizationsClinicalGradientTopColor;
++ (id)hk_immunizationsClinicalKeyColor;
++ (id)hk_labResultsClinicalGradientBottomColor;
++ (id)hk_labResultsClinicalGradientTopColor;
++ (id)hk_labResultsClinicalKeyColor;
++ (id)hk_medicationsClinicalGradientBottomColor;
++ (id)hk_medicationsClinicalGradientTopColor;
++ (id)hk_medicationsClinicalKeyColor;
 + (id)hk_mindfulnessGradientBottomColor;
 + (id)hk_mindfulnessGradientTopColor;
 + (id)hk_mindfulnessKeyColor;
 + (id)hk_nutritionGradientBottomColor;
 + (id)hk_nutritionGradientTopColor;
 + (id)hk_nutritionKeyColor;
++ (id)hk_proceduresClinicalGradientBottomColor;
++ (id)hk_proceduresClinicalGradientTopColor;
++ (id)hk_proceduresClinicalKeyColor;
 + (id)hk_randomColor;
 + (id)hk_reproductiveHealthGradientBottomColor;
 + (id)hk_reproductiveHealthGradientTopColor;
@@ -535,6 +578,12 @@
 + (id)hk_sleepGradientBottomColor;
 + (id)hk_sleepGradientTopColor;
 + (id)hk_sleepKeyColor;
++ (id)hk_unknownCategoryClinicalGradientBottomColor;
++ (id)hk_unknownCategoryClinicalGradientTopColor;
++ (id)hk_unknownCategoryClinicalKeyColor;
++ (id)hk_vitalsClinicalGradientBottomColor;
++ (id)hk_vitalsClinicalGradientTopColor;
++ (id)hk_vitalsClinicalKeyColor;
 + (id)hk_vitalsGradientBottomColor;
 + (id)hk_vitalsGradientTopColor;
 + (id)hk_vitalsKeyColor;
@@ -940,6 +989,10 @@
 + (id)tsu_keynoteNavigatorBackgroundColor;
 + (id)tsu_keynoteNavigatorDividerColor;
 + (id)tsu_lightToolbarBackgroundColor;
++ (id)tsu_mediaBrowserChickletDarkColor;
++ (id)tsu_mediaBrowserChickletLightColor;
++ (id)tsu_mediaBrowserChickletTitleDarkColor;
++ (id)tsu_mediaBrowserChickletTitleLightColor;
 + (id)tsu_mediaBrowserNavigationBarTintColor;
 + (id)tsu_mediaBrowserNavigationBarTitleColor;
 + (id)tsu_mediaBrowserPrimaryContentColor;

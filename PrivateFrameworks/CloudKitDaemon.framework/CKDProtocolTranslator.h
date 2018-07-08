@@ -8,6 +8,7 @@
     long long  _databaseScope;
     bool  _dontCreateValidatingParentReferences;
     <CKDProtocolTranslatorIdentityDelegate> * _identityDelegate;
+    NSString * _orgAdminUserID;
     NSString * _overriddenContainerScopedUserID;
 }
 
@@ -16,13 +17,14 @@
 @property (nonatomic, readonly) long long databaseScope;
 @property (nonatomic) bool dontCreateValidatingParentReferences;
 @property (nonatomic) <CKDProtocolTranslatorIdentityDelegate> *identityDelegate;
+@property (nonatomic, copy) NSString *orgAdminUserID;
 @property (nonatomic, copy) NSString *overriddenContainerScopedUserID;
 @property (nonatomic, readonly) CKDPIdentifier *pUserID;
 
 + (id)translatorIgnoringUserIDsWithDatabaseScope:(long long)arg1;
 
 - (void).cxx_destruct;
-- (id)_initWithContainerScopedUserID:(id)arg1 bundleIdentifier:(id)arg2 databaseScope:(long long)arg3;
+- (id)_initWithContainerScopedUserID:(id)arg1 orgAdminUserID:(id)arg2 bundleIdentifier:(id)arg3 databaseScope:(long long)arg4;
 - (bool)_isDefaultUserNameFromClient:(id)arg1;
 - (bool)_isDefaultUserNameFromServer:(id)arg1;
 - (id)_pRecordFromRecordSansValues:(id)arg1 forCache:(bool)arg2;
@@ -45,11 +47,12 @@
 - (int)fieldValueTypeFromObject:(id)arg1;
 - (id)identityDelegate;
 - (id)identityFromPUser:(id)arg1;
-- (id)initWithContainerScopedUserID:(id)arg1 bundleIdentifier:(id)arg2 databaseScope:(long long)arg3;
+- (id)initWithContainerScopedUserID:(id)arg1 orgAdminUserID:(id)arg2 bundleIdentifier:(id)arg3 databaseScope:(long long)arg4;
 - (id)locationFieldValueWithLatitude:(double)arg1 longitude:(double)arg2;
 - (id)notificationFromPPushMessage:(id)arg1;
 - (bool)objectIsAnEncryptedType:(id)arg1;
 - (id)objectRepresentationFromFieldValue:(id)arg1;
+- (id)orgAdminUserID;
 - (id)overriddenContainerScopedUserID;
 - (id)pAliasWithEmailAddress:(id)arg1;
 - (id)pAliasWithHashedStringID:(id)arg1 type:(int)arg2;
@@ -88,6 +91,7 @@
 - (void)setContainerScopedUserID:(id)arg1;
 - (void)setDontCreateValidatingParentReferences:(bool)arg1;
 - (void)setIdentityDelegate:(id)arg1;
+- (void)setOrgAdminUserID:(id)arg1;
 - (void)setOverriddenContainerScopedUserID:(id)arg1;
 - (id)shareFromPShare:(id)arg1 error:(id*)arg2;
 - (id)shareParticipantFromPParticipant:(id)arg1 error:(id*)arg2;

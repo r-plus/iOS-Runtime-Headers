@@ -19,9 +19,11 @@
     NSNumber * _dnsResolutionTime;
     NSNumber * _firstTxByteDelay;
     NSDictionary * _flowNetworkInterfaceType;
+    NSNumber * _isCaptive;
     NSNumber * _meanPing;
     NSNumber * _metricsCount;
     NSNumber * _pingCount;
+    NSString * _policyId;
     NSString * _primarySubflowInterfaceName;
     NSString * _providerStyle;
     SiriCoreConnectionMetrics * _remoteMetrics;
@@ -35,6 +37,7 @@
     NSNumber * _timeUntilFirstByteRead;
     NSNumber * _timeUntilOpen;
     NSNumber * _tlsHandshakeTimeMsec;
+    NSString * _tlsVersion;
     NSNumber * _unacknowledgedPingCount;
     NSString * _wifiChannelInfo;
     NSString * _wifiPhyMode;
@@ -56,9 +59,11 @@
 @property (nonatomic, copy) NSNumber *dnsResolutionTime;
 @property (nonatomic, copy) NSNumber *firstTxByteDelay;
 @property (nonatomic, copy) NSDictionary *flowNetworkInterfaceType;
+@property (nonatomic, copy) NSNumber *isCaptive;
 @property (nonatomic, copy) NSNumber *meanPing;
 @property (nonatomic, copy) NSNumber *metricsCount;
 @property (nonatomic, copy) NSNumber *pingCount;
+@property (nonatomic, copy) NSString *policyId;
 @property (nonatomic, copy) NSString *primarySubflowInterfaceName;
 @property (nonatomic, copy) NSString *providerStyle;
 @property (nonatomic, retain) SiriCoreConnectionMetrics *remoteMetrics;
@@ -72,6 +77,7 @@
 @property (nonatomic, copy) NSNumber *timeUntilFirstByteRead;
 @property (nonatomic, copy) NSNumber *timeUntilOpen;
 @property (nonatomic, copy) NSNumber *tlsHandshakeTimeMsec;
+@property (nonatomic, copy) NSString *tlsVersion;
 @property (nonatomic, copy) NSNumber *unacknowledgedPingCount;
 @property (nonatomic, copy) NSString *wifiChannelInfo;
 @property (nonatomic, copy) NSString *wifiPhyMode;
@@ -96,9 +102,11 @@
 - (id)firstTxByteDelay;
 - (id)flowNetworkInterfaceType;
 - (id)getConnectionMetricsDescription;
+- (id)isCaptive;
 - (id)meanPing;
 - (id)metricsCount;
 - (id)pingCount;
+- (id)policyId;
 - (id)primarySubflowInterfaceName;
 - (id)providerStyle;
 - (id)remoteMetrics;
@@ -125,9 +133,11 @@
 - (void)setDnsResolutionTime:(id)arg1;
 - (void)setFirstTxByteDelay:(id)arg1;
 - (void)setFlowNetworkInterfaceType:(id)arg1;
+- (void)setIsCaptive:(id)arg1;
 - (void)setMeanPing:(id)arg1;
 - (void)setMetricsCount:(id)arg1;
 - (void)setPingCount:(id)arg1;
+- (void)setPolicyId:(id)arg1;
 - (void)setPrimarySubflowInterfaceName:(id)arg1;
 - (void)setProviderStyle:(id)arg1;
 - (void)setRemoteMetrics:(id)arg1;
@@ -141,6 +151,7 @@
 - (void)setTimeUntilFirstByteRead:(id)arg1;
 - (void)setTimeUntilOpen:(id)arg1;
 - (void)setTlsHandshakeTimeMsec:(id)arg1;
+- (void)setTlsVersion:(id)arg1;
 - (void)setUnacknowledgedPingCount:(id)arg1;
 - (void)setWifiChannelInfo:(id)arg1;
 - (void)setWifiPhyMode:(id)arg1;
@@ -153,6 +164,7 @@
 - (id)timeUntilFirstByteRead;
 - (id)timeUntilOpen;
 - (id)tlsHandshakeTimeMsec;
+- (id)tlsVersion;
 - (id)unacknowledgedPingCount;
 - (id)wifiChannelInfo;
 - (id)wifiPhyMode;

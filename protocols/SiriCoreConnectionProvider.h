@@ -11,7 +11,7 @@
 - (void)close;
 - (SiriCoreConnectionType *)connectionType;
 - (bool)hasActiveConnection;
-- (NSObject<OS_dispatch_data> *)headerData;
+- (NSObject<OS_dispatch_data> *)headerDataWithForceReconnect:(bool)arg1;
 - (id)initWithQueue:(NSObject<OS_dispatch_queue> *)arg1;
 - (bool)isCanceled;
 - (bool)isEstablishing;
@@ -29,6 +29,7 @@
 - (void)setEnforceExtendedValidation:(bool)arg1;
 - (void)setPolicyRoute:(SAConnectionPolicyRoute *)arg1;
 - (void)setPrefersWWAN:(bool)arg1;
+- (void)setProviderConnectionPolicy:(SAConnectionPolicy *)arg1;
 - (bool)shouldFallbackFromError:(NSError *)arg1;
 - (bool)shouldFallbackQuickly;
 - (bool)supportsInitialPayload;

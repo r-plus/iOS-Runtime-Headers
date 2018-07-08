@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@interface AVFigRoutingContextRouteChangeOperation : AVOperation {
+@interface AVFigRoutingContextRouteChangeOperation : AVOperation <AVDestinationChangeResultSource> {
     bool  _actOnRouteChangeNotifications;
     NSObject<OS_dispatch_queue> * _notificationManagementQueue;
     AVOutputContextDestinationChange * _result;
@@ -13,7 +13,11 @@
     AVWeakReference * _weakObserver;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) AVOutputContextDestinationChange *result;
+@property (readonly) Class superclass;
 
 + (void)initialize;
 

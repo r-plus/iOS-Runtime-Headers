@@ -6,6 +6,7 @@
 
 + (id /* block */)comparatorWithSortedClasses:(id)arg1 secondaryComparator:(id /* block */)arg2;
 + (id /* block */)comparatorWithSortedObjects:(id)arg1;
++ (id)deviceAirDropIdentifier;
 + (bool)isHorseman;
 + (bool)isInternalInstall;
 + (bool)openSensitiveURL:(id)arg1 withOptions:(id)arg2;

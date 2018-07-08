@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@interface BLBrushStroke : AutoEncodeDecodeObject {
+@interface BLBrushStroke : AutoEncodeDecodeObject <NSSecureCoding> {
     int  _destinationWidth;
     bool  _erase;
     struct CGPoint { 
@@ -46,6 +46,8 @@
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } strokeRect;
 @property (nonatomic) double timestamp;
 @property (nonatomic) int type;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)addPoint:(struct CGPoint { double x1; double x2; })arg1;

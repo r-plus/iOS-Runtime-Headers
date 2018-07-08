@@ -8,6 +8,8 @@
     NSString * _bluetoothString;
     bool  _bluetoothValueIsClean;
     PSSpecifier * _carrierSelectionSpecifier;
+    PSSpecifier * _classKitSpecifier;
+    PSUIClassKitVisibilityArbitrator * _classKitVisibilityArbitrator;
     PSSpecifier * _classroomSpecifier;
     PSUIClassroomVisibilityArbitrator * _classroomVisibilityArbitrator;
     bool  _didFirstLoad;
@@ -15,9 +17,9 @@
     PSSpecifier * _ethernetSpecifier;
     PSSpecifier * _faceTimeSpecifier;
     FLPreferencesController * _followupController;
+    NSArray * _followupSpecifiers;
     PSSpecifier * _gameCenterSpecifier;
     PSSpecifier * _healthKitSpecifier;
-    PSUIHealthKitVisibilityArbitrator * _healthKitVisibilityArbitrator;
     PSSpecifier * _homeKitSpecifier;
     HFHomeSettingsVisibilityArbitrator * _homeKitVisibilityArbitrator;
     NSDictionary * _iconCache;
@@ -43,6 +45,7 @@
     PSSpotlightSearchResultsController * _spotlightResultsController;
     PSKeyboardNavigationSearchController * _spotlightSearchController;
     NSArray * _thirdPartySpecifiers;
+    PSSpecifier * _tvSpecifier;
     VSAccountStore * _videoSubscriberAccountStore;
     PSSpecifier * _videoSubscriberGroupSpecifier;
     PSSpecifier * _videoSubscriberSpecifier;
@@ -55,6 +58,7 @@
 @property (nonatomic, readonly) UIViewController<PSController> *categoryController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSArray *followupSpecifiers;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CSSearchQuery *searchQuery;
 @property (nonatomic) bool skipSelectingGeneralOnLaunch;
@@ -86,7 +90,9 @@
 - (void)_setAirplaneMode:(bool)arg1;
 - (void)_setupAppleAccountSpecifier:(id)arg1;
 - (void)_setupAppleAccountSpecifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)_setupAppleAccountSpecifier:(id)arg1 title:(id)arg2;
 - (void)_setupAppleAccountSpecifierAsync:(id)arg1;
+- (void)_setupAppleAccountSpecifierForLogin:(id)arg1;
 - (bool)_showCarrier;
 - (void)_showControllerFromSpecifier:(id)arg1;
 - (void)_showDetailTargetDidChange:(id)arg1;
@@ -100,6 +106,8 @@
 - (void)_videoSubscriberAccountAvailabilityDidChange:(id)arg1;
 - (void)_videoSubscriberAccountStoreDidChange:(id)arg1;
 - (void)airplaneModeChanged;
+- (id)appleAccountIconLocalCacheURLForKey:(id)arg1;
+- (void)appleAccountSpecifierWasTappedWhileInCachedState:(id)arg1;
 - (void)appleAccountsDidChange;
 - (void)bluetoothPowerChanged:(id)arg1;
 - (id)bluetoothString;
@@ -123,6 +131,7 @@
 - (void)dismissPopover;
 - (void)displayIdentifiersChanged;
 - (id)dndGlobalState:(id)arg1;
+- (id)followupSpecifiers;
 - (id)generalViewController;
 - (id)getAirplaneMode:(id)arg1;
 - (id)getAllSpecifiers;
@@ -147,6 +156,7 @@
 - (id)phoneStatusForSpecifier:(id)arg1;
 - (void)popToRoot;
 - (void)refresh3rdPartyBundles;
+- (void)reloadAsyncSpecifiers;
 - (void)reloadCellularRelatedSpecifiers;
 - (void)reloadSpecifiers;
 - (void)removeAndReload3rdPartyBundles;
@@ -163,6 +173,7 @@
 - (void)setAirplaneMode:(id)arg1 specifier:(id)arg2;
 - (void)setBluetoothString:(id)arg1;
 - (void)setDesiredVerticalContentOffsetItemNamed:(id)arg1;
+- (void)setFollowupSpecifiers:(id)arg1;
 - (void)setSearchQuery:(id)arg1;
 - (void)setShowsCarrierSettingsMenu:(bool)arg1;
 - (void)setSkipSelectingGeneralOnLaunch:(bool)arg1;
@@ -170,9 +181,12 @@
 - (void)setSpotlightResultsController:(id)arg1;
 - (void)setSpotlightSearchController:(id)arg1;
 - (void)setWifiString:(id)arg1;
+- (void)setupDaemonsIfNeeded;
 - (void)setupPrimaryAppleAccountGroup:(id)arg1;
 - (bool)shouldDeferPushForSpecifierID:(id)arg1;
 - (bool)shouldReloadSpecifiersOnResume;
+- (bool)shouldShowClassKitSpecifier;
+- (bool)shouldShowClassroomSpecifier;
 - (bool)shouldShowEthernetSpecifier;
 - (void)showDeviceSupervisionInfo;
 - (void)showPINSheet:(id)arg1;
@@ -188,10 +202,12 @@
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
+- (void)testSpecifierCountAfterBlock:(id /* block */)arg1;
 - (void)updateAccountSpecifiers;
+- (void)updateClassKitSpecifier;
 - (void)updateClassroomSpecifier;
 - (void)updateEthernet;
-- (void)updateHealthKitSpecifier;
+- (void)updateFollowupSpecifiers;
 - (void)updateHomeKitSpecifier;
 - (void)updatePersonalHotspotWithState:(int)arg1 andReason:(int)arg2;
 - (void)updateRestrictedSettings;
@@ -200,9 +216,8 @@
 - (void)updateWifi;
 - (id)videoSubscriberAccountValue:(id)arg1;
 - (void)viewDidAppear:(bool)arg1;
-- (void)wifiGetCurrentWiFiNetwork:(id)arg1;
+- (void)wifiGetCurrentWiFiNetwork;
 - (id)wifiNetwork:(id)arg1;
-- (void)wifiNetworkFetch:(id)arg1;
 - (id)wifiString;
 - (void)willBecomeActive;
 - (void)willEnterForeground;

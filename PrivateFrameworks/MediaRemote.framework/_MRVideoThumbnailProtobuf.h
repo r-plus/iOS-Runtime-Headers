@@ -15,9 +15,9 @@
 @property (nonatomic, retain) NSData *imageData;
 @property (nonatomic) double time;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasImageData;

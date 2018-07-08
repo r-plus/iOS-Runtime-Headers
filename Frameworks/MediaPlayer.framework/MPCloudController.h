@@ -7,7 +7,10 @@
     NSObject<HSCloudAvailability> * _cloudAvailabilityController;
     HSCloudClient * _cloudClient;
     bool  _isCloudEnabled;
-    bool  _isInitialImport;
+    bool  _isCloudLibraryInitialImport;
+    bool  _isCloudLibraryUpdateInProgress;
+    bool  _isJaliscoInitialImport;
+    bool  _isJaliscoUpdateInProgress;
     bool  _isUpdateInProgress;
     bool  _jaliscoGeniusEnabled;
     int  _preferencesChangedNotifyToken;
@@ -24,8 +27,12 @@
 @property (nonatomic, readonly) bool hasCloudLockerAccount;
 @property (nonatomic, readonly) bool hasPurchaseHistoryAccount;
 @property (nonatomic, readonly) bool isCloudEnabled;
+@property (nonatomic, readonly) bool isCloudLibraryInitialImport;
+@property (nonatomic, readonly) bool isCloudLibraryUpdateInProgress;
 @property (nonatomic, readonly) bool isGeniusEnabled;
 @property (nonatomic, readonly) bool isInitialImport;
+@property (nonatomic, readonly) bool isJaliscoInitialImport;
+@property (nonatomic, readonly) bool isJaliscoUpdateInProgress;
 @property (nonatomic, readonly) bool isUpdateInProgress;
 @property (getter=isJaliscoGeniusEnabled, nonatomic, readonly) bool jaliscoGeniusEnabled;
 
@@ -73,14 +80,20 @@
 - (bool)isCellularDataRestrictedForVideos;
 - (bool)isCloudEnabled;
 - (bool)isCloudLibraryEnabled;
+- (bool)isCloudLibraryInitialImport;
+- (bool)isCloudLibraryUpdateInProgress;
 - (bool)isGeniusEnabled;
 - (bool)isInitialImport;
 - (bool)isJaliscoGeniusEnabled;
+- (bool)isJaliscoInitialImport;
+- (bool)isJaliscoUpdateInProgress;
 - (bool)isUpdateInProgress;
 - (void)loadArtworkForEntityPersistentID:(long long)arg1 entityType:(long long)arg2 artworkType:(long long)arg3 artworkSourceType:(long long)arg4 completionHandler:(id /* block */)arg5;
 - (void)loadArtworkInfoForEntityPersistentID:(long long)arg1 entityType:(long long)arg2 artworkType:(long long)arg3 artworkSourceType:(long long)arg4 completionHandler:(id /* block */)arg5;
+- (void)loadCloudMusicLibraryUpdateProgressWithCompletionHandler:(id /* block */)arg1;
 - (void)loadGeniusItemsForSagaID:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)loadJaliscoGeniusTermsAndConditionsWithCompletionHandler:(id /* block */)arg1;
+- (void)loadJaliscoLibraryUpdateProgressWithCompletionHandler:(id /* block */)arg1;
 - (void)loadUpdateProgressWithCompletionHandler:(id /* block */)arg1;
 - (void)publishPlaylistWithSagaID:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)removeItemsWithSagaIDs:(id)arg1 completionHandler:(id /* block */)arg2;

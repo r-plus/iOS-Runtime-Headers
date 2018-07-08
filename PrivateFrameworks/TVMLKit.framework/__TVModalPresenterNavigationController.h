@@ -23,6 +23,7 @@
 - (void).cxx_destruct;
 - (void)_dismissForLastViewController;
 - (void)_dismissForLastViewController:(bool)arg1;
+- (void)_ensureNavigationBarHiddenSafelyForViewSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)childViewControllerForHomeIndicatorAutoHidden;
 - (void)didShowViewController:(id)arg1 animated:(bool)arg2;
 - (id /* block */)dismissalBlock;
@@ -39,6 +40,7 @@
 - (void)updatePreferredFocusedViewStateForFocus:(bool)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 

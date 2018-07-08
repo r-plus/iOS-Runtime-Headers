@@ -9,6 +9,8 @@
 @property (nonatomic, copy) NSString *sourceURL;
 @property (nonatomic, copy) NSString *text;
 
+// Image: /System/Library/PrivateFrameworks/WebInspector.framework/WebInspector
+
 - (id)initWithText:(id)arg1 source:(long long)arg2;
 - (void)setSource:(long long)arg1;
 - (void)setSourceLine:(int)arg1;
@@ -18,5 +20,9 @@
 - (int)sourceLine;
 - (id)sourceURL;
 - (id)text;
+
+// Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
+
++ (id)safe_initWithText:(id)arg1 source:(long long)arg2;
 
 @end

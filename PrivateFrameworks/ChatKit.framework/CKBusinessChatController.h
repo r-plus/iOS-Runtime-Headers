@@ -10,6 +10,7 @@
 
 - (void).cxx_destruct;
 - (void)cleanUpBizNavBarIfNecessary;
+- (void)dealloc;
 - (void)loadView;
 - (id)navbarCanvasViewController;
 - (long long)preferredStatusBarStyle;

@@ -18,11 +18,11 @@
 - (void).cxx_destruct;
 - (void)_adoptSentinel:(id)arg1 secureSentinel:(id)arg2 forDatabase:(id)arg3 completion:(id /* block */)arg4;
 - (void)_createSentinelsIfNeededForDatabase:(id)arg1 completion:(id /* block */)arg2;
-- (bool)_deleteAfterMigration;
+- (void)_deleteOldDataIfDesiredWithSentinel:(id)arg1 secureSentinel:(id)arg2 database:(id)arg3 completion:(id /* block */)arg4;
+- (void)_deleteOldDataWithSentinel:(id)arg1 secureSentinel:(id)arg2 database:(id)arg3 completion:(id /* block */)arg4;
 - (void)_fetchSentinelsWithDatabase:(id)arg1 completion:(id /* block */)arg2;
 - (void)_handleIdentityLossWithDatabase:(id)arg1 sentinel:(id)arg2 secureSentinel:(id)arg3 completion:(id /* block */)arg4;
 - (void)_migrateWithSentinel:(id)arg1 secureSentinel:(id)arg2 database:(id)arg3 completion:(id /* block */)arg4;
-- (void)_postMigrationDeleteZoneIDs:(id)arg1 recordIDs:(id)arg2 withSentinel:(id)arg3 secureSentinel:(id)arg4 database:(id)arg5 completion:(id /* block */)arg6;
 - (bool)_shouldFailGracefullyWithSentinel:(id)arg1 secureSentinel:(id)arg2 error:(id)arg3;
 - (bool)_shouldHandleIdentityLossWithSentinel:(id)arg1 secureSentinel:(id)arg2 error:(id)arg3;
 - (void)_tryToEnableEncryptionForDatabase:(id)arg1 completion:(id /* block */)arg2;

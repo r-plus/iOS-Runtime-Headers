@@ -27,7 +27,7 @@
         NSObject<OS_dispatch_queue> *m_ptr; 
     }  _internalQueue;
     bool  _invalidated;
-    struct RefPtr<WebCore::PlatformMediaResourceLoader> { 
+    struct RefPtr<WebCore::PlatformMediaResourceLoader, WTF::DumbPtrTraits<WebCore::PlatformMediaResourceLoader> > { 
         struct PlatformMediaResourceLoader {} *m_ptr; 
     }  _loader;
     unsigned long long  _nextTaskIdentifier;
@@ -46,7 +46,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)addDelegateOperation:(id /* block */)arg1;
+- (void)addDelegateOperation:(struct Function<void ()>={unique_ptr<WTF::Function<void ()>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void ()>::CallableWrapperBase> >={__compressed_pair<WTF::Function<void ()>::CallableWrapperBase *, std::__1::default_delete<WTF::Function<void ()>::CallableWrapperBase> >=^{CallableWrapperBase {}*)arg1;
 - (id)configuration;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataTaskWithRequest:(id)arg1;

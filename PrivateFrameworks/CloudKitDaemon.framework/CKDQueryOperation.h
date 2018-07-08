@@ -49,6 +49,7 @@
 - (void)_handleQueryRequestFinishedWithSchedulerInfo:(id)arg1;
 - (void)_handleRecordResponse:(id)arg1 perRequestSchedulerInfo:(id)arg2;
 - (void)_sendQueryRequestWithCursor:(id)arg1 previousRequestSchedulerInfo:(id)arg2;
+- (id)_wrapError:(id)arg1 format:(id)arg2;
 - (id)activityCreate;
 - (id)assetTransferOptionsByKey;
 - (id)cursor;

@@ -30,6 +30,9 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithURL:(id)arg1 statusCode:(long long)arg2 HTTPVersion:(id)arg3 headerFields:(id)arg4;
 - (id)initWithURL:(id)arg1 statusCode:(long long)arg2 headerFields:(id)arg3 requestTime:(double)arg4;
+
+// Image: /Library/TweakInject/Activator.dylib
+
 - (long long)statusCode;
 
 // Image: /System/Library/Frameworks/Social.framework/Social

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface _SFBookmarkInfoViewController : _SFPopoverSizingTableViewController <UITableViewDataSource, UITableViewDelegate, _SFBookmarkTextEntryTableViewControllerDelegate> {
+@interface _SFBookmarkInfoViewController : _SFPopoverSizingTableViewController <UITableViewDataSource, UITableViewDelegate, _SFBookmarkInfoViewControllerDelegate, _SFBookmarkTextEntryTableViewControllerDelegate> {
     bool  _addingBookmark;
     bool  _addingToFavorites;
     _SFBookmarkTextEntryTableViewCell * _addressCell;
@@ -11,6 +11,7 @@
     <_SFBookmarkInfoViewControllerDelegate> * _delegate;
     bool  _didSelectFolder;
     unsigned long long  _editingField;
+    bool  _enableAddFolder;
     bool  _folderPickerExpanded;
     NSArray * _folders;
     _SFSiteIconView * _iconImageView;
@@ -32,13 +33,20 @@
 - (void)_addActionsForTextFields;
 - (void)_bookmarksDidReload:(id)arg1;
 - (bool)_canEditFieldsInCurrentViewController;
+- (id)_cellForExpandedFolderAtIndex:(long long)arg1 withTableView:(id)arg2;
+- (id)_cellForNewFolderRowWithTableView:(id)arg1;
+- (id)_cellForParentBookmarkWithTableView:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_cellInset;
 - (struct CGPoint { double x1; double x2; })_centerForIconView;
 - (void)_createCellsIfNeeded;
+- (void)_createNewFolder;
+- (id)_dequeueFolderPickerCellFromTableView:(id)arg1;
 - (void)_didBeginEditingTextField:(id)arg1;
 - (void)_didChangeEditingTextField:(id)arg1;
 - (void)_editField:(unsigned long long)arg1;
 - (id)_iconForViewCellGivenBookmark:(id)arg1;
+- (bool)_isIndexPathForNewFolderRow:(id)arg1;
+- (long long)_numberOfExpandedFolderPickerRows;
 - (void)_reloadFolderInfoForced:(bool)arg1;
 - (void)_removeActionsForTextFields;
 - (void)_returnWasPressedInTextField:(id)arg1;
@@ -51,6 +59,9 @@
 - (void)_valuesChanged;
 - (id)backgroundColorUsingTranslucentAppearance:(bool)arg1;
 - (id)bookmark;
+- (void)bookmarkInfoViewController:(id)arg1 didFinishWithResult:(bool)arg2;
+- (bool)bookmarkInfoViewControllerCanSaveBookmarkChanges:(id)arg1;
+- (bool)bookmarkInfoViewControllerShouldUseTranslucentAppearance:(id)arg1;
 - (void)bookmarkTextEntryTableViewController:(id)arg1 dismissedWithText:(id)arg2;
 - (bool)bookmarkTextEntryTableViewControllerShouldUseTranslucentAppearance:(id)arg1;
 - (bool)canSaveChanges;

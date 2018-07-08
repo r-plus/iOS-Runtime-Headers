@@ -14,6 +14,7 @@
     NSMutableArray * _fitnessFriendWorkouts;
     HDCodableGeneratedObjectCollection * _generatedObjectCollection;
     NSMutableArray * _locationSeries;
+    NSMutableArray * _medicalRecords;
     HDCodableProvenance * _provenance;
     NSMutableArray * _quantitySamples;
     HDCodableSource * _source;
@@ -36,6 +37,7 @@
 @property (nonatomic, readonly) bool hasSource;
 @property (nonatomic, readonly) bool hasSourceBundleIdentifier;
 @property (nonatomic, retain) NSMutableArray *locationSeries;
+@property (nonatomic, retain) NSMutableArray *medicalRecords;
 @property (nonatomic, retain) HDCodableProvenance *provenance;
 @property (nonatomic, retain) NSMutableArray *quantitySamples;
 @property (nonatomic, retain) HDCodableSource *source;
@@ -52,6 +54,7 @@
 + (Class)fitnessFriendActivitySnapshotsType;
 + (Class)fitnessFriendWorkoutsType;
 + (Class)locationSeriesType;
++ (Class)medicalRecordsType;
 + (Class)quantitySamplesType;
 + (Class)workoutsType;
 
@@ -59,17 +62,29 @@
 - (id)activityCaches;
 - (id)activityCachesAtIndex:(unsigned long long)arg1;
 - (unsigned long long)activityCachesCount;
+- (void)addAccountOwner:(id)arg1;
 - (void)addActivityCaches:(id)arg1;
+- (void)addAllergyRecord:(id)arg1;
 - (void)addBinarySamples:(id)arg1;
 - (void)addCategorySamples:(id)arg1;
 - (void)addCdaDocumentSamples:(id)arg1;
+- (void)addConditionRecord:(id)arg1;
 - (void)addCorrelations:(id)arg1;
 - (void)addDeletedSamples:(id)arg1;
+- (void)addDiagnosticTestReport:(id)arg1;
+- (void)addDiagnosticTestResult:(id)arg1;
 - (void)addFitnessFriendAchievements:(id)arg1;
 - (void)addFitnessFriendActivitySnapshots:(id)arg1;
 - (void)addFitnessFriendWorkouts:(id)arg1;
 - (void)addLocationSeries:(id)arg1;
+- (void)addMedicalRecords:(id)arg1;
+- (void)addMedicationDispenseRecord:(id)arg1;
+- (void)addMedicationOrder:(id)arg1;
+- (void)addMedicationRecord:(id)arg1;
+- (void)addProcedureRecord:(id)arg1;
 - (void)addQuantitySamples:(id)arg1;
+- (void)addUnknownRecord:(id)arg1;
+- (void)addVaccinationRecord:(id)arg1;
 - (void)addWorkouts:(id)arg1;
 - (id)binarySamples;
 - (id)binarySamplesAtIndex:(unsigned long long)arg1;
@@ -90,6 +105,7 @@
 - (void)clearFitnessFriendActivitySnapshots;
 - (void)clearFitnessFriendWorkouts;
 - (void)clearLocationSeries;
+- (void)clearMedicalRecords;
 - (void)clearQuantitySamples;
 - (void)clearWorkouts;
 - (void)copyTo:(id)arg1;
@@ -123,6 +139,9 @@
 - (id)locationSeries;
 - (id)locationSeriesAtIndex:(unsigned long long)arg1;
 - (unsigned long long)locationSeriesCount;
+- (id)medicalRecords;
+- (id)medicalRecordsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)medicalRecordsCount;
 - (void)mergeFrom:(id)arg1;
 - (id)provenance;
 - (id)quantitySamples;
@@ -140,6 +159,7 @@
 - (void)setFitnessFriendWorkouts:(id)arg1;
 - (void)setGeneratedObjectCollection:(id)arg1;
 - (void)setLocationSeries:(id)arg1;
+- (void)setMedicalRecords:(id)arg1;
 - (void)setProvenance:(id)arg1;
 - (void)setQuantitySamples:(id)arg1;
 - (void)setSource:(id)arg1;

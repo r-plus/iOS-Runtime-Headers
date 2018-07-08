@@ -83,6 +83,7 @@
 @property (getter=isFirstPartyApp, nonatomic, readonly) bool firstPartyApp;
 @property (nonatomic, readonly) bool hasNowPlayingInfo;
 @property (nonatomic, readonly) bool hasSupportedFeedbackCommands;
+@property (nonatomic, readonly) bool isPlayingRadio;
 @property (nonatomic, copy) NSNumber *itemAlbumPersistentID;
 @property (nonatomic, copy) NSNumber *itemCompanionPersistentID;
 @property (nonatomic, copy) NSNumber *itemPersistentID;
@@ -187,6 +188,7 @@
 - (bool)isLikedActive;
 - (bool)isPlaybackRateCommandSupported;
 - (bool)isPlaying;
+- (bool)isPlayingRadio;
 - (bool)isRepeatModeCommandSupported;
 - (bool)isShuffleModeCommandSupported;
 - (bool)isSkipBackwardCommandEnabled;

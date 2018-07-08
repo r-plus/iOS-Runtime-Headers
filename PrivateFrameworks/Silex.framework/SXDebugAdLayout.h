@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXDebugAdLayout : NSObject <SXDynamicAdLayout> {
+@interface SXDebugAdLayout : NSObject <SXAutoPlacementLayout> {
     <SXEdgeSpacing> * _margin;
 }
 

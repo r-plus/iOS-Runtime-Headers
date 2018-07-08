@@ -5,7 +5,6 @@
 @interface NARApplication : NSObject <NSSecureCoding> {
     NARApplicationState * _appState;
     NSArray * _appTags;
-    NARGlance * _glance;
     NSDictionary * _iTunesPlistStrings;
     NSDictionary * _infoPlist;
     NSString * _launchServicesBundleType;
@@ -19,7 +18,7 @@
 @property (nonatomic, readonly) NSString *applicationIdentifier;
 @property (nonatomic, readonly) NSString *bundleName;
 @property (nonatomic, readonly) NSString *bundleVersion;
-@property (nonatomic, retain) NARGlance *glance;
+@property (nonatomic, readonly) NARGlance *glance;
 @property (nonatomic, retain) NSDictionary *iTunesPlistStrings;
 @property (nonatomic, retain) NSDictionary *infoPlist;
 @property (nonatomic, readonly) bool isHidden;
@@ -63,7 +62,6 @@
 - (unsigned long long)sequenceNumber;
 - (void)setAppState:(id)arg1;
 - (void)setAppTags:(id)arg1;
-- (void)setGlance:(id)arg1;
 - (void)setITunesPlistStrings:(id)arg1;
 - (void)setInfoPlist:(id)arg1;
 - (void)setLaunchServicesBundleType:(id)arg1;

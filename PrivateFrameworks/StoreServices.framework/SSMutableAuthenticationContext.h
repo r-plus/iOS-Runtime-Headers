@@ -38,6 +38,7 @@
 @property (nonatomic) bool shouldCreateNewSession;
 @property (nonatomic) bool shouldFollowAccountButtons;
 @property (nonatomic) bool shouldIgnoreProtocol;
+@property (nonatomic) bool shouldPersonalizeResponseActions;
 @property (nonatomic) bool shouldSuppressDialogs;
 @property (nonatomic, copy) NSDictionary *signupRequestParameters;
 @property (readonly) Class superclass;
@@ -78,6 +79,7 @@
 - (void)setShouldCreateNewSession:(bool)arg1;
 - (void)setShouldFollowAccountButtons:(bool)arg1;
 - (void)setShouldIgnoreProtocol:(bool)arg1;
+- (void)setShouldPersonalizeResponseActions:(bool)arg1;
 - (void)setShouldSuppressDialogs:(bool)arg1;
 - (void)setSignupRequestParameters:(id)arg1;
 - (void)setTokenType:(long long)arg1;

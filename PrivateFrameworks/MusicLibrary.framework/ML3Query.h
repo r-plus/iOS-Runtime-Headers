@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@interface ML3Query : NSObject <NSCoding, NSCopying> {
+@interface ML3Query : NSObject <NSCopying, NSSecureCoding> {
     Class  _entityClass;
     bool  _filtersOnDynamicProperties;
     ML3MusicLibrary * _library;
@@ -35,6 +35,8 @@
 @property (nonatomic, readonly) NSString *selectCountSQL;
 @property (nonatomic, readonly) NSString *selectPersistentIDsSQL;
 @property (nonatomic, readonly) bool usingSections;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (long long)anyEntityPersistentID;

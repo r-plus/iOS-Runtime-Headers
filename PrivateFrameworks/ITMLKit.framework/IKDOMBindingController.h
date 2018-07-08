@@ -11,8 +11,8 @@
     struct { 
         bool hasDidLoadBinding; 
         bool hasShouldResolveData; 
-        bool hasDoKeysAffectingChildren; 
-        bool hasDoKeysAffectingSubtree; 
+        bool hasDoKeysAffectChildren; 
+        bool hasDoKeysAffectSubtree; 
         bool hasAdditionalKeysToResolve; 
         bool hasApplyValueForKey; 
         bool hasDidResolveKeys; 

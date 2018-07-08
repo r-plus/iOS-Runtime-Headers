@@ -249,8 +249,8 @@
 - (void)setState:(unsigned long long)arg1;
 - (void)setUnpairedIdentifyCompletionBlock:(id /* block */)arg1;
 - (void)setUnpairedIdentifyRequested:(bool)arg1;
-- (void)startPairing;
 - (bool)startPairingRequested;
+- (void)startPairingWithConsentRequired:(bool)arg1;
 - (unsigned long long)state;
 - (bool)stopPairingWithError:(id*)arg1;
 - (bool)tryPairingPassword:(id)arg1 error:(id*)arg2;

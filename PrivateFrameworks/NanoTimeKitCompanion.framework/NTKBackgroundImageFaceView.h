@@ -3,10 +3,10 @@
  */
 
 @interface NTKBackgroundImageFaceView : NTKDigitalFaceView <UIGestureRecognizerDelegate> {
-    UIImageView * _animationMaskImageView;
-    UIView * _animationView;
+    UIView * _backgroundContainerView;
     UIView * _borrowedCircleView;
     UIView * _borrowedTimeView;
+    double  _breathScaleModifier;
     NTKEditOption * _editOptionFrom;
     NTKEditOption * _editOptionTo;
     struct CGRect { 
@@ -19,6 +19,7 @@
             double height; 
         } size; 
     }  _maskZoomStartingBounds;
+    double  _rubberBandScaleModifier;
     UIView * _selectedContentView;
     bool  _shouldAdjustLayoutForTimeTravel;
     NTKDigitalTimeLabel * _timeLabel;
@@ -27,6 +28,7 @@
         double x; 
         double y; 
     }  _timeViewZoomEndingCenter;
+    UIView * _transitionDimmingView;
     UIView * _transitionViewFrom;
     UIView * _transitionViewTo;
     struct CGRect { 
@@ -43,6 +45,7 @@
     UIImageView * _zoomVignette;
 }
 
+@property (nonatomic, readonly) UIView *backgroundContainerView;
 @property (nonatomic, retain) UIView *borrowedCircleView;
 @property (nonatomic, retain) UIView *borrowedTimeView;
 @property (readonly, copy) NSString *debugDescription;
@@ -61,6 +64,7 @@
 - (void)_applyBreathingFraction:(double)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
 - (void)_applyForegroundZoomAlpha:(double)arg1;
 - (void)_applyRubberBandingFraction:(double)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
+- (void)_applyScaleTransform:(id)arg1;
 - (void)_applyShowContentForUnadornedSnapshot;
 - (void)_applyTransitionFraction:(double)arg1 fromOption:(id)arg2 toOption:(id)arg3 forCustomEditMode:(long long)arg4 slot:(id)arg5;
 - (double)_backgroundImageAlphaForEditMode:(long long)arg1;
@@ -106,6 +110,7 @@
 - (bool)_usesCustomZoom;
 - (id)_viewForEditOption:(id)arg1;
 - (bool)_wantsTimeTravelStatusModule;
+- (id)backgroundContainerView;
 - (id)borrowedCircleView;
 - (id)borrowedTimeView;
 - (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;

@@ -2,17 +2,22 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@interface RUILoader : RUIHTTPRequest {
+@interface RUILoader : RUIHTTPRequest <NSURLSessionTaskDelegate> {
     bool  _allowNonSecureHTTP;
     RUIParser * _parser;
     <RUIParserDelegate> * _parserDelegate;
+    _RUILoaderSessionDelegateAdapter * _sessionDelegateAdapter;
     RUIStyle * _style;
     NSURL * _url;
 }
 
 @property (nonatomic) bool allowNonSecureHTTP;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) <RUIParserDelegate> *parserDelegate;
 @property (nonatomic, retain) RUIStyle *style;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)URL;
@@ -39,6 +44,7 @@
 - (void)setParserDelegate:(id)arg1;
 - (void)setStyle:(id)arg1;
 - (id)style;
+- (id)urlSessionDelegate;
 - (void)webViewFinishedLoading;
 
 @end

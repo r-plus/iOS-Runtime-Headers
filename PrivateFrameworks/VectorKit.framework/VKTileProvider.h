@@ -14,7 +14,7 @@
         struct TileExclusionArea {} *__begin_; 
         struct TileExclusionArea {} *__end_; 
         struct __compressed_pair<md::TileExclusionArea *, std::__1::allocator<md::TileExclusionArea> > { 
-            struct TileExclusionArea {} *__first_; 
+            struct TileExclusionArea {} *__value_; 
         } __end_cap_; 
     }  _exclusionAreas;
     unsigned char  _fallbackFunction;
@@ -80,7 +80,7 @@
     unsigned long long  _tileReserveLimit;
     struct unique_ptr<md::TileSelector, std::__1::default_delete<md::TileSelector> > { 
         struct __compressed_pair<md::TileSelector *, std::__1::default_delete<md::TileSelector> > { 
-            struct TileSelector {} *__first_; 
+            struct TileSelector {} *__value_; 
         } __ptr_; 
     }  _tileSelector;
     bool  _tilesChanged;

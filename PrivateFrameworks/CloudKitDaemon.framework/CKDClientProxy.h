@@ -132,7 +132,6 @@
 - (id)context;
 - (void)currentDeviceIDWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)currentUserBoundaryKeyWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)currentUserIDWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (bool)darkWakeEnabledEntitlement;
 - (void)dataclassEnabled:(id)arg1 withSetupInfo:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)dealloc;
@@ -169,6 +168,7 @@
 - (long long)hasTCCAuthorizationTernary;
 - (bool)hasZoneProtectionDataEntitlement;
 - (bool)holdAllOperations;
+- (void)importantUserIDsWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)initWithConnection:(id)arg1;
 - (bool)isLongLived;
 - (bool)isSandboxed;

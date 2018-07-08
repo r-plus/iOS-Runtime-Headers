@@ -40,6 +40,7 @@
 - (void)remote_startLocationSeriesQueryWithUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 handler:(id /* block */)arg4;
 - (void)remote_startObserverQueryWithUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 handler:(id /* block */)arg4;
 - (void)remote_startQueryWithUUID:(id)arg1 serverDataObject:(id)arg2 queryClass:(Class)arg3 client:(id)arg4 handler:(id /* block */)arg5;
+- (void)remote_startSampleCountQueryWithUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 handler:(id /* block */)arg4;
 - (void)remote_startSampleQueryWithUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 handler:(id /* block */)arg4;
 - (void)remote_startSampleTypesQueryWithUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 handler:(id /* block */)arg4;
 - (void)remote_startSourceQueryWithUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 handler:(id /* block */)arg4;

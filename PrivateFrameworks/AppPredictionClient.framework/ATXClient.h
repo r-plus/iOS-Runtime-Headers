@@ -21,7 +21,7 @@
 - (id)appPredictionsForConsumerSubType:(unsigned char)arg1 limit:(int)arg2;
 - (id)appPredictionsWithLimit:(int)arg1;
 - (void)dealloc;
-- (bool)forceCacheUpdateForConsumerSubType:(unsigned char)arg1 intent:(id)arg2 candidateBundleIdentifiers:(id)arg3;
+- (bool)forceCacheUpdateForConsumerSubType:(unsigned char)arg1 intent:(id)arg2 candidateBundleIdentifiers:(id)arg3 candidateIntentTypeIdentifiers:(id)arg4;
 - (id)getAppPredictorAssetMappingDescription;
 - (id)init;
 - (id)initWithConsumerType:(unsigned long long)arg1 cacheBasePath:(id)arg2;

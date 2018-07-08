@@ -25,7 +25,6 @@
 
 - (void).cxx_destruct;
 - (id)_decryptScores:(id)arg1 error:(id*)arg2;
-- (id)_defaultParamForIdentity:(id)arg1;
 - (void)_safeCallbackWithMessage:(id)arg1 uuid:(id)arg2 error:(id)arg3;
 - (id)callback_queue;
 - (id)context;

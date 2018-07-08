@@ -34,6 +34,7 @@
     bool  _longPressEnabled;
     NSTimer * _longPressTimer;
     AVMicaPackage * _micaPackage;
+    NSString * _micaPackageStateName;
     bool  _showsHighlightedAppearance;
     long long  _trackingState;
     struct CGPoint { 
@@ -60,12 +61,14 @@
 @property (getter=isLongPressEnabled, nonatomic) bool longPressEnabled;
 @property (nonatomic) NSTimer *longPressTimer;
 @property (nonatomic, retain) AVMicaPackage *micaPackage;
+@property (nonatomic, retain) NSString *micaPackageStateName;
 @property (nonatomic) bool showsHighlightedAppearance;
 @property (readonly) Class superclass;
 @property (nonatomic) long long trackingState;
 @property (nonatomic) struct CGPoint { double x1; double x2; } translationOfPanFromPreviousTouch;
 
 - (void).cxx_destruct;
+- (void)_updateMicaPackage:(id)arg1;
 - (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
@@ -86,11 +89,12 @@
 - (bool)isCollapsedOrExcluded;
 - (bool)isIncluded;
 - (bool)isLongPressEnabled;
-- (void)layoutSubviews;
 - (struct CGPoint { double x1; double x2; })locationOfTouchInWindow;
 - (id)longPressTimer;
 - (id)micaPackage;
+- (id)micaPackageStateName;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setCollapsed:(bool)arg1;
 - (void)setCumulativeTranslationSincePanningBegan:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setExtrinsicContentSize:(struct CGSize { double x1; double x2; })arg1;
@@ -104,6 +108,7 @@
 - (void)setLongPressEnabled:(bool)arg1;
 - (void)setLongPressTimer:(id)arg1;
 - (void)setMicaPackage:(id)arg1;
+- (void)setMicaPackageStateName:(id)arg1;
 - (void)setShowsHighlightedAppearance:(bool)arg1;
 - (void)setTrackingState:(long long)arg1;
 - (void)setTranslationOfPanFromPreviousTouch:(struct CGPoint { double x1; double x2; })arg1;
@@ -111,5 +116,6 @@
 - (long long)trackingState;
 - (struct CGPoint { double x1; double x2; })translationOfPanFromPreviousTouch;
 - (void)triggerSelectionChangedFeedback;
+- (void)willMoveToWindow:(id)arg1;
 
 @end

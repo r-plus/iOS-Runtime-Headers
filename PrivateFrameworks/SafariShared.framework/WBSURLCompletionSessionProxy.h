@@ -8,9 +8,6 @@
     WBSHistoryConnectionProxy * _historyConnectionProxy;
 }
 
-+ (id)_cannedMatchesWithTypedString:(id)arg1;
-+ (bool)_shouldReturnCannedMatches;
-
 - (void).cxx_destruct;
 - (void)_completionSessionWithCompletionHandler:(id /* block */)arg1;
 - (void)getBestMatchesForTypedString:(id)arg1 limit:(unsigned long long)arg2 completionHandler:(id /* block */)arg3;

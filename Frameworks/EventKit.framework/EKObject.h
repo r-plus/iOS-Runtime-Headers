@@ -67,7 +67,7 @@
 - (void)_markAsSavedCommon;
 - (void)_markAsUndeletedCommon;
 - (id)_multiRelationshipKeysToCheckForChanges;
-- (void)_performBlockOnOwnedRelatedObjects:(id /* block */)arg1;
+- (void)_performBlockOnOwnedCachedRelatedObjects:(id /* block */)arg1;
 - (void)_performWithReadLock:(id /* block */)arg1;
 - (void)_performWithWriteLock:(id /* block */)arg1;
 - (id)_previousValueForKey:(id)arg1;

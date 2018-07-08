@@ -39,6 +39,7 @@
 @property (nonatomic, copy) NSNumber *lastFullySentAssetSyncPlaylistPersistentID;
 @property (nonatomic, copy) NSNumber *lastFullySentAssetSyncPlaylistVersion;
 @property (nonatomic, copy) NSDate *lastMusicAppActiveDate;
+@property (nonatomic, copy) NSDate *lastSiriFaceActiveDate;
 @property (nonatomic, copy) NSArray *libraryRecommendationAlbums;
 @property (nonatomic, copy) NSArray *libraryRecommendationPlaylists;
 @property (nonatomic, readonly) NSDate *modificationDate;
@@ -103,6 +104,7 @@
 - (id)lastFullySentAssetSyncPlaylistPersistentID;
 - (id)lastFullySentAssetSyncPlaylistVersion;
 - (id)lastMusicAppActiveDate;
+- (id)lastSiriFaceActiveDate;
 - (id)libraryRecommendationAlbums;
 - (id)libraryRecommendationPlaylists;
 - (id)modificationDate;
@@ -121,6 +123,7 @@
 - (void)setLastFullySentAssetSyncPlaylistPersistentID:(id)arg1;
 - (void)setLastFullySentAssetSyncPlaylistVersion:(id)arg1;
 - (void)setLastMusicAppActiveDate:(id)arg1;
+- (void)setLastSiriFaceActiveDate:(id)arg1;
 - (void)setLibraryRecommendationAlbums:(id)arg1;
 - (void)setLibraryRecommendationPlaylists:(id)arg1;
 - (void)setMusicRecommendationDict:(id)arg1;

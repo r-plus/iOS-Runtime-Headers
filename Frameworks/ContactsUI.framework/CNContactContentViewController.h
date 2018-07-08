@@ -86,6 +86,7 @@
     double  _keyboardVerticalOverlap;
     CNPropertyLinkedCardsAction * _linkedCardsAction;
     NSDictionary * _linkedPoliciesByContactIdentifier;
+    CNManagedConfiguration * _managedConfiguration;
     CNMedicalIDAction * _medicalIDAction;
     NSString * _message;
     long long  _mode;
@@ -213,6 +214,7 @@
 @property (nonatomic) double keyboardVerticalOverlap;
 @property (nonatomic, retain) CNPropertyLinkedCardsAction *linkedCardsAction;
 @property (nonatomic, retain) NSDictionary *linkedPoliciesByContactIdentifier;
+@property (nonatomic, retain) CNManagedConfiguration *managedConfiguration;
 @property (nonatomic, retain) CNMedicalIDAction *medicalIDAction;
 @property (nonatomic, retain) NSString *message;
 @property (nonatomic) long long mode;
@@ -480,6 +482,7 @@
 - (void)loadContactViewControllerViews;
 - (void)loadView;
 - (void)localeDidChange:(id)arg1;
+- (id)managedConfiguration;
 - (id)medicalIDAction;
 - (id)message;
 - (long long)mode;
@@ -611,6 +614,7 @@
 - (void)setKeyboardVerticalOverlap:(double)arg1;
 - (void)setLinkedCardsAction:(id)arg1;
 - (void)setLinkedPoliciesByContactIdentifier:(id)arg1;
+- (void)setManagedConfiguration:(id)arg1;
 - (void)setMedicalIDAction:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMode:(long long)arg1;

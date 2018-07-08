@@ -3,6 +3,7 @@
  */
 
 @interface _MPCLeaseManager : NSObject {
+    bool  _isPreparingForImminentPlaybackIntent;
     MPCPlaybackEngine * _playbackEngine;
 }
 
@@ -13,5 +14,6 @@
 - (void)dealloc;
 - (id)initWithPlaybackEngine:(id)arg1;
 - (id)playbackEngine;
+- (void)prepareForPlayback;
 
 @end

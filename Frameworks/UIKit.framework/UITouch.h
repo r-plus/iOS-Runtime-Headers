@@ -110,6 +110,7 @@
 @property (nonatomic, readonly) double maximumPossibleForce;
 @property (nonatomic) long long phase;
 @property (nonatomic) bool sentTouchesEnded;
+@property (getter=isStartedFromSpaceKeySC, nonatomic) bool startedFromSpaceKeySC;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned long long tapCount;
 @property (nonatomic) double timestamp;
@@ -251,6 +252,11 @@
 - (id)view;
 - (id)warpedIntoView;
 - (id)window;
+
+// Image: /Library/TweakInject/SlideCut.dylib
+
+- (bool)isStartedFromSpaceKeySC;
+- (void)setStartedFromSpaceKeySC:(bool)arg1;
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 

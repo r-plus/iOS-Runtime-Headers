@@ -45,6 +45,7 @@
 - (void)_teardownCachedOfferAndNotify:(bool)arg1;
 - (void)_teardownCachedOffersAndNotify:(bool)arg1;
 - (void)_updateOffer:(id)arg1 buttonId:(id)arg2 info:(id)arg3 account:(id)arg4 accountStore:(id)arg5 completion:(id /* block */)arg6;
+- (void)_updateQuotaForAccount:(id)arg1 withServerDictionary:(id)arg2;
 - (bool)_useFetchOffersDataDirectly;
 - (void)clearFollowupsWithCompletion:(id /* block */)arg1;
 - (void)daemonBuddyOfferDictionaryForAccount:(id)arg1 completion:(id /* block */)arg2;

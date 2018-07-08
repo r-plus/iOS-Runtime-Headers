@@ -16,6 +16,7 @@
 @property unsigned long long loginStatus;
 
 + (id)secureCodedPropertyKeys;
++ (bool)supportsSecureCoding;
 
 - (id)accountName;
 - (void)dealloc;

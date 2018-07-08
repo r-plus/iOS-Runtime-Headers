@@ -41,11 +41,13 @@
 @property (nonatomic, readonly) long long randomNumberSeed;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) bool supportsBounce;
+@property (nonatomic, readonly) bool supportsColor;
 @property (nonatomic, readonly) bool supportsCustomEffectTimingCurve1;
 @property (nonatomic, readonly) bool supportsCustomEffectTimingCurve2;
 @property (nonatomic, readonly) bool supportsCustomEffectTimingCurve3;
 @property (nonatomic, readonly) bool supportsDirection;
 @property (nonatomic, readonly) bool supportsDuration;
+@property (nonatomic, readonly) bool supportsTwist;
 
 + (id)attributeKeyForBindingKeyPath:(id)arg1;
 + (id)bindingKeyPathForAttributeKey:(id)arg1;
@@ -94,6 +96,7 @@
 - (void)saveToArchive:(struct TransitionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct TransitionAttributesArchive {} *x5; }*)arg1 archiver:(id)arg2;
 - (void)setAttributes:(id)arg1;
 - (bool)supportsBounce;
+- (bool)supportsColor;
 - (bool)supportsCustomEffectTimingCurve1;
 - (bool)supportsCustomEffectTimingCurve2;
 - (bool)supportsCustomEffectTimingCurve3;
@@ -101,5 +104,6 @@
 - (bool)supportsDuration;
 - (bool)supportsRandomNumberSeedInspection;
 - (bool)supportsTimingCurves;
+- (bool)supportsTwist;
 
 @end

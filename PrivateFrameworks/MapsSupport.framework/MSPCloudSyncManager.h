@@ -46,6 +46,7 @@
 - (void)_setNeedsMergeForUserObservableChange:(bool)arg1 completion:(id /* block */)arg2;
 - (id)_taskPerformingCachedFetchWithExpectedMergeSize:(long long)arg1 processingBlock:(id /* block */)arg2;
 - (void)container:(id)arg1 didEditWithNewContents:(id)arg2 orderedEdits:(id)arg3 cause:(long long)arg4 context:(id)arg5;
+- (void)containerDidEraseContents:(id)arg1 fromStorageTypes:(unsigned long long)arg2;
 - (id)currentSyncClientRegistrationIdentifier;
 - (void)dealloc;
 - (void)getEditedRecords:(out id*)arg1 recordNamesToDelete:(out id*)arg2 fromExistingCloudRecords:(id)arg3 withReplica:(id)arg4 mergingWithReplica:(id)arg5 knownSyncDateForLeastRecentlySyncedClientIfAny:(id)arg6 creatingRecordsUsingAccess:(id)arg7;

@@ -16,6 +16,7 @@
 @property (nonatomic, retain) NSDictionary *bagValues;
 @property (nonatomic, readonly) bool canPostKeybagSyncData;
 @property (nonatomic, retain) NSMutableDictionary *convertedActionsCache;
+@property (nonatomic, readonly) ICURLBagLibraryDAAPConfiguration *libraryDAAPConfiguration;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, readonly) ICURLBagRadioConfiguration *radioConfiguration;
 @property (nonatomic, readonly, copy) NSString *storefrontHeaderSuffix;
@@ -32,6 +33,7 @@
 - (bool)hasValueForBagKey:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (long long)int64ValueForBagKey:(id)arg1;
+- (id)libraryDAAPConfiguration;
 - (id)mescalConfigurationForRequestURL:(id)arg1;
 - (id)mescalConfigurationForResponseURL:(id)arg1;
 - (id)queue;

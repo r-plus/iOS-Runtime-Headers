@@ -24,6 +24,7 @@
 
 - (void).cxx_destruct;
 - (id)_overriddenSectionInfoForSectionID:(id)arg1;
+- (void)connect;
 - (id)connection;
 - (void)dealloc;
 - (void)disableStandaloneTestMode;

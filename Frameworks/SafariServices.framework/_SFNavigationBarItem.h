@@ -11,6 +11,8 @@
     _SFFluidProgressView * _progressView;
     bool  _readerButtonSelected;
     bool  _showsLockIcon;
+    bool  _showsNotSecureAnnotation;
+    bool  _showsNotSecureMessage;
     bool  _showsReaderAvailabilityText;
     bool  _showsReaderButton;
     bool  _showsSearchIndicator;
@@ -30,6 +32,8 @@
 @property (nonatomic, retain) _SFFluidProgressView *progressView;
 @property (nonatomic) bool readerButtonSelected;
 @property (nonatomic) bool showsLockIcon;
+@property (nonatomic) bool showsNotSecureAnnotation;
+@property (nonatomic) bool showsNotSecureMessage;
 @property (nonatomic, readonly) bool showsReaderAvailabilityText;
 @property (nonatomic) bool showsReaderButton;
 @property (nonatomic) bool showsSearchIndicator;
@@ -57,6 +61,9 @@
 - (void)setProgressView:(id)arg1;
 - (void)setReaderButtonSelected:(bool)arg1;
 - (void)setShowsLockIcon:(bool)arg1;
+- (void)setShowsNotSecureAnnotation:(bool)arg1;
+- (void)setShowsNotSecureAnnotation:(bool)arg1 showsNotSecureMessage:(bool)arg2;
+- (void)setShowsNotSecureMessage:(bool)arg1;
 - (void)setShowsReaderButton:(bool)arg1;
 - (void)setShowsReaderButton:(bool)arg1 showsAvailabilityText:(bool)arg2;
 - (void)setShowsSearchIndicator:(bool)arg1;
@@ -65,6 +72,8 @@
 - (void)setText:(id)arg1 textWhenExpanded:(id)arg2 startIndex:(unsigned long long)arg3;
 - (void)setTextHasEVCertificateTint:(bool)arg1;
 - (bool)showsLockIcon;
+- (bool)showsNotSecureAnnotation;
+- (bool)showsNotSecureMessage;
 - (bool)showsReaderAvailabilityText;
 - (bool)showsReaderButton;
 - (bool)showsSearchIndicator;

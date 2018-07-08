@@ -42,6 +42,7 @@
 - (bool)isOpenForClient:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)navigationServiceProxy:(id)arg1 didChangeFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
+- (void)navigationServiceProxy:(id)arg1 didUpdateNavigationDetails:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 willChangeFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
 - (void)navigationServiceReconnector:(id)arg1 didReconnectWithDetails:(id)arg2;
 - (void)openForClient:(id)arg1;

@@ -29,7 +29,8 @@
 - (void)_cleanUpAndDismissWithSuccess:(bool)arg1 agreeURL:(id)arg2;
 - (void)_cleanupRUILoader;
 - (void)_displayConnectionErrorAndDismiss;
-- (void)_loadRequestPreferingPassword:(bool)arg1;
+- (bool)_isUnauthorizedError:(id)arg1;
+- (void)_loadRequestPreferringPassword:(bool)arg1;
 - (void)_popObjectModelAnimated:(bool)arg1;
 - (id)account;
 - (id)accountStore;

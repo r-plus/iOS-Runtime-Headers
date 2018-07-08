@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutput.framework/ScreenReaderOutput
  */
 
-@interface SCROCallback : NSObject <NSCoding> {
+@interface SCROCallback : NSObject <NSSecureCoding> {
     bool  _isAtomic;
     int  _key;
-    id  _object;
+    <NSSecureCoding> * _object;
 }
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

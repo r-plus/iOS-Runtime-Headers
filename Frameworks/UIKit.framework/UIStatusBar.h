@@ -48,6 +48,7 @@
         unsigned int shouldShowEmergencyOnlyStatus : 1; 
     }  _currentRawData;
     NSMutableSet * _disableRasterizationReasons;
+    bool  _disablesRasterization;
     UILabel * _doubleHeightLabel;
     UIView * _doubleHeightLabelContainer;
     UIStatusBarForegroundView * _foregroundView;
@@ -76,8 +77,6 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (getter=isTimeHidden, nonatomic) bool timeHidden;
-
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (double)_heightForStyle:(long long)arg1 orientation:(long long)arg2 forStatusBarFrame:(bool)arg3;
 + (bool)_isLightContentStyle:(long long)arg1;
@@ -124,6 +123,7 @@
 - (id)_prepareToSetStyle:(id)arg1 animation:(int)arg2 forced:(bool)arg3;
 - (bool)_rectIntersectsTimeItem:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_requestStyle:(long long)arg1 animationParameters:(id)arg2 forced:(bool)arg3;
+- (void)_setDisablesRasterization:(bool)arg1;
 - (void)_setDoubleHeightStatusString:(id)arg1;
 - (void)_setFrameForStyle:(id)arg1;
 - (void)_setOverrideHeight:(double)arg1;
@@ -147,10 +147,6 @@
 - (void)_updateShouldRasterize;
 - (void)_updateUIWithStyleAttributes:(id)arg1 animationParameters:(id)arg2;
 - (void)_updateUIWithStyleAttributes:(id)arg1 animationParameters:(id)arg2 forced:(bool)arg3;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)actionForPartWithIdentifier:(id)arg1;
 - (id)activeTintColor;
 - (void)animateUnlock;
@@ -158,8 +154,10 @@
 - (id)currentDoubleHeightLabelText;
 - (long long)currentStyle;
 - (id)currentStyleRequestForStyle:(long long)arg1;
+- (void)dealloc;
 - (double)defaultDoubleHeight;
 - (double)defaultHeight;
+- (bool)disablesRasterization;
 - (void)forceUpdate:(bool)arg1;
 - (void)forceUpdateData:(bool)arg1;
 - (void)forceUpdateDoubleHeightStatus;

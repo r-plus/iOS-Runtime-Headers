@@ -3,9 +3,9 @@
  */
 
 @interface FCFeedViewportExpandGapOperation : FCOperation {
-    <FCAppConfiguration> * _appConfiguration;
     FCFeedViewportBookmark * _bookmark;
     bool  _cachedOnly;
+    <FCCoreConfiguration> * _configuration;
     FCCloudContext * _context;
     unsigned long long  _desiredHeadlineCount;
     id /* block */  _expandGapCompletionHandler;
@@ -20,9 +20,9 @@
     FCFeedViewport * _viewport;
 }
 
-@property (nonatomic, copy) <FCAppConfiguration> *appConfiguration;
 @property (nonatomic, copy) FCFeedViewportBookmark *bookmark;
 @property (nonatomic) bool cachedOnly;
+@property (nonatomic, copy) <FCCoreConfiguration> *configuration;
 @property (nonatomic, retain) FCCloudContext *context;
 @property (nonatomic) unsigned long long desiredHeadlineCount;
 @property (nonatomic, copy) id /* block */ expandGapCompletionHandler;
@@ -38,9 +38,9 @@
 
 - (void).cxx_destruct;
 - (id)_groupEmitterWithIdentifier:(id)arg1;
-- (id)appConfiguration;
 - (id)bookmark;
 - (bool)cachedOnly;
+- (id)configuration;
 - (id)context;
 - (unsigned long long)desiredHeadlineCount;
 - (id /* block */)expandGapCompletionHandler;
@@ -55,9 +55,9 @@
 - (void)performOperation;
 - (id)resultDiff;
 - (id)resultViewport;
-- (void)setAppConfiguration:(id)arg1;
 - (void)setBookmark:(id)arg1;
 - (void)setCachedOnly:(bool)arg1;
+- (void)setConfiguration:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDesiredHeadlineCount:(unsigned long long)arg1;
 - (void)setExpandGapCompletionHandler:(id /* block */)arg1;

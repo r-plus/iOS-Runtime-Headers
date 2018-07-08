@@ -40,8 +40,6 @@
 @property (getter=_useLiveMasking, setter=_setUseLiveMasking:, nonatomic) bool useLiveMasking;
 @property (getter=_useReducedTransparencyForContentEffects, setter=_setUseReducedTransparencyForContentEffects:, nonatomic) bool useReducedTransparencyForContentEffects;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -104,13 +102,10 @@
 - (bool)_useLiveMasking;
 - (bool)_useReducedTransparencyForContentEffects;
 - (id)_whatsWrongWithThisEffect;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)backgroundEffects;
 - (id)contentEffects;
 - (id)contentView;
+- (void)dealloc;
 - (id)effect;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

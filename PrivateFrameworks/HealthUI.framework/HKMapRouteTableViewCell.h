@@ -21,6 +21,6 @@
 - (id)mapView:(id)arg1 viewForAnnotation:(id)arg2;
 - (void)setMapView:(id)arg1;
 - (void)setUpConstraints;
-- (void)setUpSubviews;
+- (void)setupSubviews;
 
 @end

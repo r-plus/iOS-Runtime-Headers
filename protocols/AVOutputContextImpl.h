@@ -35,6 +35,7 @@
 - (void)setOutputDevices:(NSArray *)arg1;
 - (void)setParentOutputContext:(AVOutputContext *)arg1;
 - (void)setVolume:(float)arg1;
+- (bool)supportsMultipleOutputDevices;
 - (float)volume;
 
 @end

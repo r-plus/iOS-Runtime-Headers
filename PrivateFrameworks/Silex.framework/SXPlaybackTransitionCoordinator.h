@@ -2,22 +2,30 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXPlaybackTransitionCoordinator : NSObject {
-    SXPlaybackTransitionContext * _context;
-    <SXPlaybackTransitionCoordinatorDelegate> * _delegate;
+@interface SXPlaybackTransitionCoordinator : NSObject <SXInteractivePlaybackTransitioning, SXPlaybackTransitionCoordinator> {
+    NSMutableArray * _completionBlocks;
+    <SXPlaybackTransitionContext> * _context;
+    NSMutableArray * _transitionAlongsideBlocks;
 }
 
-@property (nonatomic, readonly) SXPlaybackTransitionContext *context;
-@property (nonatomic) <SXPlaybackTransitionCoordinatorDelegate> *delegate;
+@property (nonatomic, readonly) NSMutableArray *completionBlocks;
+@property (nonatomic, retain) <SXPlaybackTransitionContext> *context;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSMutableArray *transitionAlongsideBlocks;
 
 - (void).cxx_destruct;
-- (void)addObserversToCoordinator:(id)arg1;
+- (void)cancelInteractiveTransition;
+- (id)completionBlocks;
 - (id)context;
-- (id)delegate;
-- (id)initWithTransitionContext:(id)arg1;
-- (void)removeObserversFromCoordinator:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)transitionAnimated:(bool)arg1 completionBlock:(id /* block */)arg2;
-- (double)translationForTransitionDirection:(unsigned long long)arg1;
+- (void)finishInteractiveTransition;
+- (id)init;
+- (void)setContext:(id)arg1;
+- (void)startInteractiveTransitionWithContext:(id)arg1;
+- (void)transitionAlongside:(id /* block */)arg1 withCompletionBlock:(id /* block */)arg2;
+- (id)transitionAlongsideBlocks;
+- (void)updateInteractiveTransition:(double)arg1;
 
 @end

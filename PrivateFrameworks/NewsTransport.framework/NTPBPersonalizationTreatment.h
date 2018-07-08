@@ -43,7 +43,9 @@
     double  _baselineArticleScore;
     double  _baselineImpressionPrior;
     double  _baselineRatePrior;
+    double  _channelTopicDiversificationInitialPenalty;
     double  _channelTopicDiversificationPenalty;
+    double  _channelTopicDiversificationPenaltyHalfLife;
     double  _cohortMembershipBaselineCtrWeight;
     double  _cohortMembershipCtrCeiling;
     double  _cohortMembershipCurvature;
@@ -69,7 +71,9 @@
     double  _dislikeClickValueBaseline;
     double  _dislikeImpressionValue;
     double  _dislikeImpressionValueBaseline;
+    double  _diversificationInitialPenalty;
     double  _diversificationPenalty;
+    double  _diversificationPenaltyHalfLife;
     unsigned int  _dynamicMaxArticleSetSizeIPad;
     unsigned int  _dynamicMaxArticleSetSizeIPhone;
     unsigned int  _dynamicMaxClusterSizeIPad;
@@ -159,7 +163,9 @@
         unsigned int baselineArticleScore : 1; 
         unsigned int baselineImpressionPrior : 1; 
         unsigned int baselineRatePrior : 1; 
+        unsigned int channelTopicDiversificationInitialPenalty : 1; 
         unsigned int channelTopicDiversificationPenalty : 1; 
+        unsigned int channelTopicDiversificationPenaltyHalfLife : 1; 
         unsigned int cohortMembershipBaselineCtrWeight : 1; 
         unsigned int cohortMembershipCtrCeiling : 1; 
         unsigned int cohortMembershipCurvature : 1; 
@@ -184,7 +190,9 @@
         unsigned int dislikeClickValueBaseline : 1; 
         unsigned int dislikeImpressionValue : 1; 
         unsigned int dislikeImpressionValueBaseline : 1; 
+        unsigned int diversificationInitialPenalty : 1; 
         unsigned int diversificationPenalty : 1; 
+        unsigned int diversificationPenaltyHalfLife : 1; 
         unsigned int existingSubscriptionClickValue : 1; 
         unsigned int existingSubscriptionClickValueBaseline : 1; 
         unsigned int existingSubscriptionImpressionValue : 1; 
@@ -254,6 +262,8 @@
         unsigned int metaGroupingSubscribedTopicMultiplier : 1; 
         unsigned int metaGroupingTopicScoreWeight : 1; 
         unsigned int minClusterSize : 1; 
+        unsigned int minimumGlobalScoreThreshold : 1; 
+        unsigned int minimumGlobalScoreThresholdForSubscribedChannel : 1; 
         unsigned int moveAboutnessNoiseStdIPad : 1; 
         unsigned int moveAboutnessNoiseStdIPhone : 1; 
         unsigned int moveAboutnessWeightRatioIPad : 1; 
@@ -301,7 +311,10 @@
         unsigned int presentationClickValueBaseline : 1; 
         unsigned int presentationImpressionValue : 1; 
         unsigned int presentationImpressionValueBaseline : 1; 
+        unsigned int publisherAggregateWeight : 1; 
+        unsigned int publisherDiversificationInitialPenalty : 1; 
         unsigned int publisherDiversificationPenalty : 1; 
+        unsigned int publisherDiversificationPenaltyHalfLife : 1; 
         unsigned int publisherDiversityMaxArticleCount : 1; 
         unsigned int publisherDiversityMaxArticleFilter : 1; 
         unsigned int publisherDiversityMinArticleCount : 1; 
@@ -524,6 +537,8 @@
     unsigned int  _minIdealClusterSizeIPadAutoFavorite;
     unsigned int  _minIdealClusterSizeIPhone;
     unsigned int  _minIdealClusterSizeIPhoneAutoFavorite;
+    double  _minimumGlobalScoreThreshold;
+    double  _minimumGlobalScoreThresholdForSubscribedChannel;
     double  _moveAboutnessNoiseStdIPad;
     double  _moveAboutnessNoiseStdIPhone;
     double  _moveAboutnessWeightRatioIPad;
@@ -578,7 +593,10 @@
     double  _presentationClickValueBaseline;
     double  _presentationImpressionValue;
     double  _presentationImpressionValueBaseline;
+    double  _publisherAggregateWeight;
+    double  _publisherDiversificationInitialPenalty;
     double  _publisherDiversificationPenalty;
+    double  _publisherDiversificationPenaltyHalfLife;
     double  _publisherDiversityMaxArticleCount;
     double  _publisherDiversityMaxArticleFilter;
     unsigned int  _publisherDiversityMaxPublisherCount;
@@ -741,7 +759,9 @@
 @property (nonatomic) double baselineArticleScore;
 @property (nonatomic) double baselineImpressionPrior;
 @property (nonatomic) double baselineRatePrior;
+@property (nonatomic) double channelTopicDiversificationInitialPenalty;
 @property (nonatomic) double channelTopicDiversificationPenalty;
+@property (nonatomic) double channelTopicDiversificationPenaltyHalfLife;
 @property (nonatomic) double cohortMembershipBaselineCtrWeight;
 @property (nonatomic) double cohortMembershipCtrCeiling;
 @property (nonatomic) double cohortMembershipCurvature;
@@ -767,7 +787,9 @@
 @property (nonatomic) double dislikeClickValueBaseline;
 @property (nonatomic) double dislikeImpressionValue;
 @property (nonatomic) double dislikeImpressionValueBaseline;
+@property (nonatomic) double diversificationInitialPenalty;
 @property (nonatomic) double diversificationPenalty;
+@property (nonatomic) double diversificationPenaltyHalfLife;
 @property (nonatomic) unsigned int dynamicMaxArticleSetSizeIPad;
 @property (nonatomic) unsigned int dynamicMaxArticleSetSizeIPhone;
 @property (nonatomic) unsigned int dynamicMaxClusterSizeIPad;
@@ -857,7 +879,9 @@
 @property (nonatomic) bool hasBaselineArticleScore;
 @property (nonatomic) bool hasBaselineImpressionPrior;
 @property (nonatomic) bool hasBaselineRatePrior;
+@property (nonatomic) bool hasChannelTopicDiversificationInitialPenalty;
 @property (nonatomic) bool hasChannelTopicDiversificationPenalty;
+@property (nonatomic) bool hasChannelTopicDiversificationPenaltyHalfLife;
 @property (nonatomic) bool hasCohortMembershipBaselineCtrWeight;
 @property (nonatomic) bool hasCohortMembershipCtrCeiling;
 @property (nonatomic) bool hasCohortMembershipCurvature;
@@ -883,7 +907,9 @@
 @property (nonatomic) bool hasDislikeClickValueBaseline;
 @property (nonatomic) bool hasDislikeImpressionValue;
 @property (nonatomic) bool hasDislikeImpressionValueBaseline;
+@property (nonatomic) bool hasDiversificationInitialPenalty;
 @property (nonatomic) bool hasDiversificationPenalty;
+@property (nonatomic) bool hasDiversificationPenaltyHalfLife;
 @property (nonatomic) bool hasDynamicMaxArticleSetSizeIPad;
 @property (nonatomic) bool hasDynamicMaxArticleSetSizeIPhone;
 @property (nonatomic) bool hasDynamicMaxClusterSizeIPad;
@@ -990,6 +1016,8 @@
 @property (nonatomic) bool hasMinIdealClusterSizeIPadAutoFavorite;
 @property (nonatomic) bool hasMinIdealClusterSizeIPhone;
 @property (nonatomic) bool hasMinIdealClusterSizeIPhoneAutoFavorite;
+@property (nonatomic) bool hasMinimumGlobalScoreThreshold;
+@property (nonatomic) bool hasMinimumGlobalScoreThresholdForSubscribedChannel;
 @property (nonatomic) bool hasMoveAboutnessNoiseStdIPad;
 @property (nonatomic) bool hasMoveAboutnessNoiseStdIPhone;
 @property (nonatomic) bool hasMoveAboutnessWeightRatioIPad;
@@ -1043,7 +1071,10 @@
 @property (nonatomic) bool hasPresentationClickValueBaseline;
 @property (nonatomic) bool hasPresentationImpressionValue;
 @property (nonatomic) bool hasPresentationImpressionValueBaseline;
+@property (nonatomic) bool hasPublisherAggregateWeight;
+@property (nonatomic) bool hasPublisherDiversificationInitialPenalty;
 @property (nonatomic) bool hasPublisherDiversificationPenalty;
+@property (nonatomic) bool hasPublisherDiversificationPenaltyHalfLife;
 @property (nonatomic) bool hasPublisherDiversityMaxArticleCount;
 @property (nonatomic) bool hasPublisherDiversityMaxArticleFilter;
 @property (nonatomic) bool hasPublisherDiversityMaxPublisherCount;
@@ -1220,6 +1251,8 @@
 @property (nonatomic) unsigned int minIdealClusterSizeIPadAutoFavorite;
 @property (nonatomic) unsigned int minIdealClusterSizeIPhone;
 @property (nonatomic) unsigned int minIdealClusterSizeIPhoneAutoFavorite;
+@property (nonatomic) double minimumGlobalScoreThreshold;
+@property (nonatomic) double minimumGlobalScoreThresholdForSubscribedChannel;
 @property (nonatomic) double moveAboutnessNoiseStdIPad;
 @property (nonatomic) double moveAboutnessNoiseStdIPhone;
 @property (nonatomic) double moveAboutnessWeightRatioIPad;
@@ -1274,7 +1307,10 @@
 @property (nonatomic) double presentationClickValueBaseline;
 @property (nonatomic) double presentationImpressionValue;
 @property (nonatomic) double presentationImpressionValueBaseline;
+@property (nonatomic) double publisherAggregateWeight;
+@property (nonatomic) double publisherDiversificationInitialPenalty;
 @property (nonatomic) double publisherDiversificationPenalty;
+@property (nonatomic) double publisherDiversificationPenaltyHalfLife;
 @property (nonatomic) double publisherDiversityMaxArticleCount;
 @property (nonatomic) double publisherDiversityMaxArticleFilter;
 @property (nonatomic) unsigned int publisherDiversityMaxPublisherCount;
@@ -1442,7 +1478,9 @@
 - (double)baselineArticleScore;
 - (double)baselineImpressionPrior;
 - (double)baselineRatePrior;
+- (double)channelTopicDiversificationInitialPenalty;
 - (double)channelTopicDiversificationPenalty;
+- (double)channelTopicDiversificationPenaltyHalfLife;
 - (void)clearPortraitTagThresholds;
 - (void)clearRealTimeUserFeedbackTagCoefficients;
 - (double)cohortMembershipBaselineCtrWeight;
@@ -1473,7 +1511,9 @@
 - (double)dislikeClickValueBaseline;
 - (double)dislikeImpressionValue;
 - (double)dislikeImpressionValueBaseline;
+- (double)diversificationInitialPenalty;
 - (double)diversificationPenalty;
+- (double)diversificationPenaltyHalfLife;
 - (unsigned int)dynamicMaxArticleSetSizeIPad;
 - (unsigned int)dynamicMaxArticleSetSizeIPhone;
 - (unsigned int)dynamicMaxClusterSizeIPad;
@@ -1563,7 +1603,9 @@
 - (bool)hasBaselineArticleScore;
 - (bool)hasBaselineImpressionPrior;
 - (bool)hasBaselineRatePrior;
+- (bool)hasChannelTopicDiversificationInitialPenalty;
 - (bool)hasChannelTopicDiversificationPenalty;
+- (bool)hasChannelTopicDiversificationPenaltyHalfLife;
 - (bool)hasCohortMembershipBaselineCtrWeight;
 - (bool)hasCohortMembershipCtrCeiling;
 - (bool)hasCohortMembershipCurvature;
@@ -1589,7 +1631,9 @@
 - (bool)hasDislikeClickValueBaseline;
 - (bool)hasDislikeImpressionValue;
 - (bool)hasDislikeImpressionValueBaseline;
+- (bool)hasDiversificationInitialPenalty;
 - (bool)hasDiversificationPenalty;
+- (bool)hasDiversificationPenaltyHalfLife;
 - (bool)hasDynamicMaxArticleSetSizeIPad;
 - (bool)hasDynamicMaxArticleSetSizeIPhone;
 - (bool)hasDynamicMaxClusterSizeIPad;
@@ -1696,6 +1740,8 @@
 - (bool)hasMinIdealClusterSizeIPadAutoFavorite;
 - (bool)hasMinIdealClusterSizeIPhone;
 - (bool)hasMinIdealClusterSizeIPhoneAutoFavorite;
+- (bool)hasMinimumGlobalScoreThreshold;
+- (bool)hasMinimumGlobalScoreThresholdForSubscribedChannel;
 - (bool)hasMoveAboutnessNoiseStdIPad;
 - (bool)hasMoveAboutnessNoiseStdIPhone;
 - (bool)hasMoveAboutnessWeightRatioIPad;
@@ -1749,7 +1795,10 @@
 - (bool)hasPresentationClickValueBaseline;
 - (bool)hasPresentationImpressionValue;
 - (bool)hasPresentationImpressionValueBaseline;
+- (bool)hasPublisherAggregateWeight;
+- (bool)hasPublisherDiversificationInitialPenalty;
 - (bool)hasPublisherDiversificationPenalty;
+- (bool)hasPublisherDiversificationPenaltyHalfLife;
 - (bool)hasPublisherDiversityMaxArticleCount;
 - (bool)hasPublisherDiversityMaxArticleFilter;
 - (bool)hasPublisherDiversityMaxPublisherCount;
@@ -1929,6 +1978,8 @@
 - (unsigned int)minIdealClusterSizeIPadAutoFavorite;
 - (unsigned int)minIdealClusterSizeIPhone;
 - (unsigned int)minIdealClusterSizeIPhoneAutoFavorite;
+- (double)minimumGlobalScoreThreshold;
+- (double)minimumGlobalScoreThresholdForSubscribedChannel;
 - (double)moveAboutnessNoiseStdIPad;
 - (double)moveAboutnessNoiseStdIPhone;
 - (double)moveAboutnessWeightRatioIPad;
@@ -1985,7 +2036,10 @@
 - (double)presentationClickValueBaseline;
 - (double)presentationImpressionValue;
 - (double)presentationImpressionValueBaseline;
+- (double)publisherAggregateWeight;
+- (double)publisherDiversificationInitialPenalty;
 - (double)publisherDiversificationPenalty;
+- (double)publisherDiversificationPenaltyHalfLife;
 - (double)publisherDiversityMaxArticleCount;
 - (double)publisherDiversityMaxArticleFilter;
 - (unsigned int)publisherDiversityMaxPublisherCount;
@@ -2071,7 +2125,9 @@
 - (void)setBaselineArticleScore:(double)arg1;
 - (void)setBaselineImpressionPrior:(double)arg1;
 - (void)setBaselineRatePrior:(double)arg1;
+- (void)setChannelTopicDiversificationInitialPenalty:(double)arg1;
 - (void)setChannelTopicDiversificationPenalty:(double)arg1;
+- (void)setChannelTopicDiversificationPenaltyHalfLife:(double)arg1;
 - (void)setCohortMembershipBaselineCtrWeight:(double)arg1;
 - (void)setCohortMembershipCtrCeiling:(double)arg1;
 - (void)setCohortMembershipCurvature:(double)arg1;
@@ -2097,7 +2153,9 @@
 - (void)setDislikeClickValueBaseline:(double)arg1;
 - (void)setDislikeImpressionValue:(double)arg1;
 - (void)setDislikeImpressionValueBaseline:(double)arg1;
+- (void)setDiversificationInitialPenalty:(double)arg1;
 - (void)setDiversificationPenalty:(double)arg1;
+- (void)setDiversificationPenaltyHalfLife:(double)arg1;
 - (void)setDynamicMaxArticleSetSizeIPad:(unsigned int)arg1;
 - (void)setDynamicMaxArticleSetSizeIPhone:(unsigned int)arg1;
 - (void)setDynamicMaxClusterSizeIPad:(unsigned int)arg1;
@@ -2187,7 +2245,9 @@
 - (void)setHasBaselineArticleScore:(bool)arg1;
 - (void)setHasBaselineImpressionPrior:(bool)arg1;
 - (void)setHasBaselineRatePrior:(bool)arg1;
+- (void)setHasChannelTopicDiversificationInitialPenalty:(bool)arg1;
 - (void)setHasChannelTopicDiversificationPenalty:(bool)arg1;
+- (void)setHasChannelTopicDiversificationPenaltyHalfLife:(bool)arg1;
 - (void)setHasCohortMembershipBaselineCtrWeight:(bool)arg1;
 - (void)setHasCohortMembershipCtrCeiling:(bool)arg1;
 - (void)setHasCohortMembershipCurvature:(bool)arg1;
@@ -2213,7 +2273,9 @@
 - (void)setHasDislikeClickValueBaseline:(bool)arg1;
 - (void)setHasDislikeImpressionValue:(bool)arg1;
 - (void)setHasDislikeImpressionValueBaseline:(bool)arg1;
+- (void)setHasDiversificationInitialPenalty:(bool)arg1;
 - (void)setHasDiversificationPenalty:(bool)arg1;
+- (void)setHasDiversificationPenaltyHalfLife:(bool)arg1;
 - (void)setHasDynamicMaxArticleSetSizeIPad:(bool)arg1;
 - (void)setHasDynamicMaxArticleSetSizeIPhone:(bool)arg1;
 - (void)setHasDynamicMaxClusterSizeIPad:(bool)arg1;
@@ -2320,6 +2382,8 @@
 - (void)setHasMinIdealClusterSizeIPadAutoFavorite:(bool)arg1;
 - (void)setHasMinIdealClusterSizeIPhone:(bool)arg1;
 - (void)setHasMinIdealClusterSizeIPhoneAutoFavorite:(bool)arg1;
+- (void)setHasMinimumGlobalScoreThreshold:(bool)arg1;
+- (void)setHasMinimumGlobalScoreThresholdForSubscribedChannel:(bool)arg1;
 - (void)setHasMoveAboutnessNoiseStdIPad:(bool)arg1;
 - (void)setHasMoveAboutnessNoiseStdIPhone:(bool)arg1;
 - (void)setHasMoveAboutnessWeightRatioIPad:(bool)arg1;
@@ -2373,7 +2437,10 @@
 - (void)setHasPresentationClickValueBaseline:(bool)arg1;
 - (void)setHasPresentationImpressionValue:(bool)arg1;
 - (void)setHasPresentationImpressionValueBaseline:(bool)arg1;
+- (void)setHasPublisherAggregateWeight:(bool)arg1;
+- (void)setHasPublisherDiversificationInitialPenalty:(bool)arg1;
 - (void)setHasPublisherDiversificationPenalty:(bool)arg1;
+- (void)setHasPublisherDiversificationPenaltyHalfLife:(bool)arg1;
 - (void)setHasPublisherDiversityMaxArticleCount:(bool)arg1;
 - (void)setHasPublisherDiversityMaxArticleFilter:(bool)arg1;
 - (void)setHasPublisherDiversityMaxPublisherCount:(bool)arg1;
@@ -2550,6 +2617,8 @@
 - (void)setMinIdealClusterSizeIPadAutoFavorite:(unsigned int)arg1;
 - (void)setMinIdealClusterSizeIPhone:(unsigned int)arg1;
 - (void)setMinIdealClusterSizeIPhoneAutoFavorite:(unsigned int)arg1;
+- (void)setMinimumGlobalScoreThreshold:(double)arg1;
+- (void)setMinimumGlobalScoreThresholdForSubscribedChannel:(double)arg1;
 - (void)setMoveAboutnessNoiseStdIPad:(double)arg1;
 - (void)setMoveAboutnessNoiseStdIPhone:(double)arg1;
 - (void)setMoveAboutnessWeightRatioIPad:(double)arg1;
@@ -2604,7 +2673,10 @@
 - (void)setPresentationClickValueBaseline:(double)arg1;
 - (void)setPresentationImpressionValue:(double)arg1;
 - (void)setPresentationImpressionValueBaseline:(double)arg1;
+- (void)setPublisherAggregateWeight:(double)arg1;
+- (void)setPublisherDiversificationInitialPenalty:(double)arg1;
 - (void)setPublisherDiversificationPenalty:(double)arg1;
+- (void)setPublisherDiversificationPenaltyHalfLife:(double)arg1;
 - (void)setPublisherDiversityMaxArticleCount:(double)arg1;
 - (void)setPublisherDiversityMaxArticleFilter:(double)arg1;
 - (void)setPublisherDiversityMaxPublisherCount:(unsigned int)arg1;

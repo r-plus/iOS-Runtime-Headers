@@ -22,14 +22,14 @@
                     struct pair<unsigned short, unsigned int> {} *__begin_; 
                     struct pair<unsigned short, unsigned int> {} *__end_; 
                     struct __compressed_pair<std::__1::pair<unsigned short, unsigned int> *, std::__1::allocator<std::__1::pair<unsigned short, unsigned int> > > { 
-                        struct pair<unsigned short, unsigned int> {} *__first_; 
+                        struct pair<unsigned short, unsigned int> {} *__value_; 
                     } __end_cap_; 
                 } _vertexAndIndexCounts; 
                 struct vector<std::__1::shared_ptr<ggl::PolygonCommonStroke::MeshMesh>, std::__1::allocator<std::__1::shared_ptr<ggl::PolygonCommonStroke::MeshMesh> > > { 
                     struct shared_ptr<ggl::PolygonCommonStroke::MeshMesh> {} *__begin_; 
                     struct shared_ptr<ggl::PolygonCommonStroke::MeshMesh> {} *__end_; 
                     struct __compressed_pair<std::__1::shared_ptr<ggl::PolygonCommonStroke::MeshMesh> *, std::__1::allocator<std::__1::shared_ptr<ggl::PolygonCommonStroke::MeshMesh> > > { 
-                        struct shared_ptr<ggl::PolygonCommonStroke::MeshMesh> {} *__first_; 
+                        struct shared_ptr<ggl::PolygonCommonStroke::MeshMesh> {} *__value_; 
                     } __end_cap_; 
                 } _meshes; 
                 struct DataWrite<ggl::PolygonCommonStroke::DefaultVbo> { 
@@ -68,7 +68,7 @@
         struct shared_ptr<ggl::PolygonCommonStroke::MeshMesh> {} *__begin_; 
         struct shared_ptr<ggl::PolygonCommonStroke::MeshMesh> {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<ggl::PolygonCommonStroke::MeshMesh> *, std::__1::allocator<std::__1::shared_ptr<ggl::PolygonCommonStroke::MeshMesh> > > { 
-            struct shared_ptr<ggl::PolygonCommonStroke::MeshMesh> {} *__first_; 
+            struct shared_ptr<ggl::PolygonCommonStroke::MeshMesh> {} *__value_; 
         } __end_cap_; 
     }  _strokeMeshes;
     struct shared_ptr<ggl::Texture2D> { 

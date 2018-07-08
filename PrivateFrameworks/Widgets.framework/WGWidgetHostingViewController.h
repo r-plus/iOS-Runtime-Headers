@@ -235,7 +235,6 @@
 - (void)managingContainerWillAppear:(id)arg1;
 - (unsigned long long)maskedCorners;
 - (void)maximumSizeDidChangeForDisplayMode:(long long)arg1;
-- (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)setActiveDisplayMode:(long long)arg1;
 - (void)setAppBundleID:(id)arg1;
 - (void)setCornerRadius:(double)arg1;

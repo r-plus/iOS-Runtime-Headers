@@ -8,9 +8,7 @@
 - (NSString *)actionTitle;
 - (NSURL *)actionURL;
 - (NSString *)backgroundGradientColor;
-- (NSString *)discoverMoreVideosSubtitle;
-- (NSString *)discoverMoreVideosTitle;
-- (NSURL *)discoverMoreVideosURL;
+- (NTPBDiscoverMoreVideosInfo *)discoverMoreVideosInfo;
 - (bool)displaysAsVideoPlaylist;
 - (NSString *)name;
 - (NSString *)nameColor;

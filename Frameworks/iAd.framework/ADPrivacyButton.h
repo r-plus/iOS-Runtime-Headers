@@ -13,7 +13,9 @@
 @property (nonatomic, retain) UIImageView *iconImageView;
 
 + (id)highlightedIconImage;
++ (id)highlightedIconImageForVideo;
 + (id)iconImage;
++ (id)iconImageForVideo;
 
 - (void)dealloc;
 - (id)highlightedIconImage;
@@ -21,9 +23,11 @@
 - (id)iconImageView;
 - (id)init;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (void)resetIconImagesForVideo;
 - (void)setHighlighted:(bool)arg1;
 - (void)setHighlightedIconImage:(id)arg1;
 - (void)setIconImage:(id)arg1;
+- (void)setIconImageSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setIconImageView:(id)arg1;
 
 @end

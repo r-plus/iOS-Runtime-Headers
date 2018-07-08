@@ -13,5 +13,7 @@
 
 - (id)createDetailsViewController;
 - (id)createInteractionCoordinator;
+- (id)secondaryQuickControlPresentationStyle;
+- (bool)shouldShowControlWhenUnreachable;
 
 @end

@@ -6,8 +6,17 @@
     NSObject<OS_dispatch_queue> * _accountQueue;
     ACAccountStore * _accountStore;
     ACAccountType * _appleIDAccountType;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _appleIDAccountTypeLock;
     ACAccountType * _authKitAccountType;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _authKitAccountTypeLock;
     ACAccountType * _iCloudAccountType;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _iCloudAccountTypeLock;
 }
 
 @property (nonatomic, readonly) ACAccountType *appleIDAccountType;
@@ -38,6 +47,7 @@
 - (id)authKitAccountWithAltDSID:(id)arg1;
 - (id)authKitAccountWithAppleID:(id)arg1;
 - (id)authKitAccountWithDSID:(id)arg1;
+- (unsigned long long)authenticationModeForAccount:(id)arg1;
 - (id)continuationTokenForAccount:(id)arg1;
 - (id)continuationTokenForAccount:(id)arg1 error:(id*)arg2;
 - (bool)hasPrimaryiCloudAccountForAltDSID:(id)arg1;
@@ -64,6 +74,7 @@
 - (void)setAccount:(id)arg1 inUse:(bool)arg2 byService:(long long)arg3;
 - (void)setAliases:(id)arg1 forAccount:(id)arg2;
 - (void)setAltDSID:(id)arg1 forAccount:(id)arg2;
+- (void)setAuthenticationMode:(unsigned long long)arg1 forAccount:(id)arg2;
 - (void)setDSID:(id)arg1 forAccount:(id)arg2;
 - (void)setSecurityLevel:(unsigned long long)arg1 forAccount:(id)arg2;
 - (void)setStore:(id)arg1;

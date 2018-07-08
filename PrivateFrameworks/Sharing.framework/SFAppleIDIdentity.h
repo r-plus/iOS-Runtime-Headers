@@ -3,6 +3,7 @@
  */
 
 @interface SFAppleIDIdentity : NSObject <NSSecureCoding> {
+    NSString * _accountIdentifier;
     NSString * _altDSID;
     NSString * _appleID;
     NSDate * _certificateExpirationDate;
@@ -17,6 +18,7 @@
     NSString * _serialNumber;
 }
 
+@property (nonatomic, retain) NSString *accountIdentifier;
 @property (nonatomic, readonly) NSString *altDSID;
 @property (nonatomic, readonly) NSString *appleID;
 @property (nonatomic, retain) NSDate *certificateExpirationDate;
@@ -34,6 +36,7 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)accountIdentifier;
 - (id)altDSID;
 - (id)appleID;
 - (id)certificateExpirationDate;
@@ -61,6 +64,7 @@
 - (id)privateKeyPersistentReference;
 - (void)removeFromKeychain;
 - (id)serialNumber;
+- (void)setAccountIdentifier:(id)arg1;
 - (void)setCertificateExpirationDate:(id)arg1;
 - (void)setCertificatePersistentReference:(id)arg1;
 - (void)setIntermediateCertificatePersistentReference:(id)arg1;

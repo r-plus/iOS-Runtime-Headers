@@ -10,14 +10,19 @@
         unsigned int _os_unfair_lock_opaque; 
     }  mInterestLock;
     int  mLoadState;
-    int  mOwnerCount;
-    int  mRetainCount;
+    struct atomic<int> { 
+        int __a_; 
+    }  mOwnerCount;
+    struct atomic<int> { 
+        int __a_; 
+    }  mRetainCount;
 }
 
 @property (nonatomic, readonly) unsigned long long imageGamut;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
+- (id).cxx_construct;
 - (void)addInterest;
 - (void)addOwner;
 - (void)dealloc;

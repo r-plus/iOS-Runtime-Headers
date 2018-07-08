@@ -15,6 +15,10 @@
     struct __CFDictionary { } * dictionaryRef;
     struct CGPDFForm { } * downAppearance;
     struct CGPDFForm { } * downOffAppearance;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  endPoint;
     bool  export;
     bool  isFullyConstructed;
     bool  isHighlighted;
@@ -32,12 +36,19 @@
     struct CGPDFDictionary { } * popupDictionary;
     bool  popupDrawCloseWidget;
     bool  popupDrawText;
+    NSArray * quadPoints;
+    bool  restoreLinePoints;
+    bool  restoreQuadPoints;
     struct CGPDFForm { } * rolloverAppearance;
     struct CGPDFForm { } * rolloverOffAppearance;
     bool  saveAppearance;
     double  scaleFactor;
     bool  shouldBurnIn;
     struct CGPDFDictionary { } * sourceDictionary;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  startPoint;
     NSString * widgetOnStateString;
 }
 

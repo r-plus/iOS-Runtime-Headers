@@ -6,7 +6,7 @@
     NSMutableArray * _autocompleteTriggers;
     float  _cachedTopSitesURLPenalty;
     float  _cachedTopSitesVisitScore;
-    struct Vector<int, 0, WTF::CrashOnOverflow, 16> { 
+    struct Vector<int, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { 
         int *m_buffer; 
         unsigned int m_capacity; 
         unsigned int m_size; 
@@ -24,7 +24,7 @@
     unsigned long long  _visitCountScore;
     NSMutableArray * _visits;
     NSMutableSet * _visitsPendingWriteToDataStore;
-    struct Vector<int, 0, WTF::CrashOnOverflow, 16> { 
+    struct Vector<int, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { 
         int *m_buffer; 
         unsigned int m_capacity; 
         unsigned int m_size; 
@@ -80,9 +80,9 @@
 - (id)_autocompleteTriggersFromSynchronizationQueue;
 - (void)_collapseDailyVisitsToWeekly;
 - (void)_padDailyCountsForNewVisitAtTime:(double)arg1 indexOfNewVisit:(int*)arg2;
-- (struct Vector<double, 0, WTF::CrashOnOverflow, 16> { double *x1; unsigned int x2; unsigned int x3; unsigned int x4; })_timesForSynthesizedVisitsPreceedingDailyAndWeeklyRange:(unsigned long long)arg1;
-- (struct Vector<double, 0, WTF::CrashOnOverflow, 16> { double *x1; unsigned int x2; unsigned int x3; unsigned int x4; })_timesForVisits:(unsigned long long)arg1 toSynthesizeBetweenStartTime:(double)arg2 endTime:(double)arg3;
-- (struct Vector<double, 0, WTF::CrashOnOverflow, 16> { double *x1; unsigned int x2; unsigned int x3; unsigned int x4; })_timesOfVisitsToSynthesizeFromDailyCounts:(const struct Vector<int, 0, WTF::CrashOnOverflow, 16> { int *x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg1 weeklyCounts:(const struct Vector<int, 0, WTF::CrashOnOverflow, 16> { int *x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg2;
+- (struct Vector<double, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { double *x1; unsigned int x2; unsigned int x3; unsigned int x4; })_timesForSynthesizedVisitsPreceedingDailyAndWeeklyRange:(unsigned long long)arg1;
+- (struct Vector<double, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { double *x1; unsigned int x2; unsigned int x3; unsigned int x4; })_timesForVisits:(unsigned long long)arg1 toSynthesizeBetweenStartTime:(double)arg2 endTime:(double)arg3;
+- (struct Vector<double, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { double *x1; unsigned int x2; unsigned int x3; unsigned int x4; })_timesOfVisitsToSynthesizeFromDailyCounts:(const struct Vector<int, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { int *x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg1 weeklyCounts:(const struct Vector<int, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> { int *x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg2;
 - (void)_wasVisitedOnSynchronizationQueue:(id)arg1;
 - (bool)addAutocompleteTrigger:(id)arg1;
 - (void)addRedirectSourceItemFromSynchronizationQueue:(id)arg1;

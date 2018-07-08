@@ -8,7 +8,7 @@
     ASDStreamFormat * _readFormat;
     struct unique_ptr<AudioRingBuffer, std::__1::default_delete<AudioRingBuffer> > { 
         struct __compressed_pair<AudioRingBuffer *, std::__1::default_delete<AudioRingBuffer> > { 
-            struct AudioRingBuffer {} *__first_; 
+            struct AudioRingBuffer {} *__value_; 
         } __ptr_; 
     }  _ringBuffer;
     ASDStreamFormat * _writeFormat;

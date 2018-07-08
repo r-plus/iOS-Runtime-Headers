@@ -2,9 +2,10 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMAccessory : NSObject <HFFavoritable, HFPrettyDescription, HFReorderableHomeKitObject, HFStateDumpSerializable, HMAccessorySettingsContainer, HMFLogging, HMFMessageReceiver, HMMutableApplicationData, HMObjectMerge, NSSecureCoding> {
+@interface HMAccessory : NSObject <HFFavoritable, HFHomeKitObject, HFPrettyDescription, HFReorderableHomeKitObject, HFRoomContextProviding, HFStateDumpSerializable, HMAccessorySettingsContainer, HMControllable, HMFLogging, HMFMessageReceiver, HMMutableApplicationData, HMObjectMerge, NSSecureCoding> {
     NSNumber * _accessoryFlags;
     HMThreadSafeMutableArrayCollection * _accessoryProfiles;
+    unsigned long long  _accessoryReprovisionState;
     NSUUID * _accountIdentifier;
     unsigned long long  _additionalSetupStatus;
     HMApplicationData * _applicationData;
@@ -22,6 +23,7 @@
     <HMAccessoryDelegate> * _delegate;
     HMDelegateCaller * _delegateCaller;
     HMDevice * _device;
+    NSString * _deviceIdentifier;
     bool  _firmwareUpdateAvailable;
     NSString * _firmwareVersion;
     HMHome * _home;
@@ -29,6 +31,7 @@
     NSString * _model;
     HMFMessageDispatcher * _msgDispatcher;
     NSString * _name;
+    bool  _needsReprovisioning;
     bool  _paired;
     HMFPairingIdentity * _pairingIdentity;
     NSObject<OS_dispatch_queue> * _propertyQueue;
@@ -41,6 +44,8 @@
     HMSoftwareUpdateController * _softwareUpdateController;
     HMFSoftwareVersion * _softwareVersion;
     NSString * _storeID;
+    bool  _supportsIdentify;
+    bool  _supportsMediaAccessControl;
     HMSymptomsHandler * _symptomsHandler;
     unsigned long long  _transportTypes;
     NSUUID * _uniqueIdentifier;
@@ -50,6 +55,7 @@
 
 @property (nonatomic, retain) NSNumber *accessoryFlags;
 @property (nonatomic, retain) HMThreadSafeMutableArrayCollection *accessoryProfiles;
+@property (nonatomic) unsigned long long accessoryReprovisionState;
 @property (copy) NSUUID *accountIdentifier;
 @property (nonatomic) unsigned long long additionalSetupStatus;
 @property (nonatomic, readonly) HMApplicationData *applicationData;
@@ -64,12 +70,13 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
 @property (nonatomic, copy) NSString *configuredName;
 @property (readonly) HMHome *containerHome;
-@property (getter=isControllable, nonatomic, readonly) bool controllable;
+@property (getter=isControllable, readonly) bool controllable;
 @property (nonatomic, copy) HMThreadSafeMutableArrayCollection *currentServices;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HMAccessoryDelegate> *delegate;
 @property (nonatomic, retain) HMDelegateCaller *delegateCaller;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *deviceIdentifier;
 @property (nonatomic) bool firmwareUpdateAvailable;
 @property (nonatomic, copy) NSString *firmwareVersion;
 @property (readonly) unsigned long long hash;
@@ -78,7 +85,18 @@
 @property (nonatomic, readonly, copy) NSString *hf_defaultName;
 @property (nonatomic, readonly, copy) NSString *hf_displayName;
 @property (nonatomic, readonly, copy) NSSet *hf_displayNamesForVisibleTiles;
-@property (nonatomic, readonly) NSString *hf_editingNameForMediaAccessories;
+@property (nonatomic, readonly) NSString *hf_editingName;
+@property (nonatomic, readonly) NSSet *hf_fakeDebugSymptoms;
+@property (nonatomic, readonly) bool hf_fakeGeneralFixSymptom;
+@property (nonatomic, readonly) bool hf_fakeHardwareFixSymptom;
+@property (nonatomic, readonly) bool hf_fakeHomeKitSymptom;
+@property (nonatomic, readonly) bool hf_fakeICloudSymptom;
+@property (nonatomic, readonly) bool hf_fakeITunesSymptom;
+@property (nonatomic, readonly) bool hf_fakeInternetFixSymptom;
+@property (nonatomic, readonly) bool hf_fakeShouldDisplayManualFixOption;
+@property (nonatomic, readonly) bool hf_fakeUnreachableError;
+@property (nonatomic, readonly) bool hf_fakeWiFiPerformanceSymptom;
+@property (nonatomic, readonly) bool hf_fakeWiFiSymptom;
 @property (nonatomic, readonly) bool hf_hasSetFavorite;
 @property (nonatomic, readonly) bool hf_isAirPortExtremeSpeaker;
 @property (nonatomic, readonly) bool hf_isAppleTV;
@@ -91,8 +109,11 @@
 @property (nonatomic, readonly) bool hf_isProgrammableSwitch;
 @property (nonatomic, readonly) bool hf_isVisibleAsBridge;
 @property (nonatomic, readonly) HMResidentDevice *hf_linkedResidentDevice;
+@property (nonatomic, readonly) bool hf_needsReprovisioningCheck;
+@property (nonatomic, readonly) bool hf_needsSoftwareUpdateToSupportBeingAddedToMediaSystem;
 @property (nonatomic, readonly) unsigned long long hf_numberOfProgrammableSwitches;
 @property (nonatomic, readonly) HMAccessory *hf_owningBridgeAccessory;
+@property (nonatomic, readonly) HMRoom *hf_parentRoom;
 @property (nonatomic, readonly) NSSet *hf_programmableSwitchNamespaceServices;
 @property (nonatomic, readonly) bool hf_requiresFirmwareUpdate;
 @property (nonatomic, readonly) HFServiceNameComponents *hf_serviceNameComponents;
@@ -110,6 +131,7 @@
 @property (nonatomic, copy) NSString *model;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic) bool needsReprovisioning;
 @property (nonatomic) bool paired;
 @property (copy) HMFPairingIdentity *pairingIdentity;
 @property (readonly, copy) NSArray *profiles;
@@ -124,6 +146,8 @@
 @property (copy) HMFSoftwareVersion *softwareVersion;
 @property (copy) NSString *storeID;
 @property (readonly) Class superclass;
+@property (readonly) bool supportsIdentify;
+@property (nonatomic) bool supportsMediaAccessControl;
 @property (copy) HMSymptomsHandler *symptomsHandler;
 @property (nonatomic) unsigned long long transportTypes;
 @property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
@@ -191,6 +215,7 @@
 - (void)_writeValue:(id)arg1 forCharacteristic:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)accessoryFlags;
 - (id)accessoryProfiles;
+- (unsigned long long)accessoryReprovisionState;
 - (id)accountIdentifier;
 - (unsigned long long)additionalSetupStatus;
 - (id)applicationData;
@@ -203,12 +228,14 @@
 - (id)clientQueue;
 - (id)configuredName;
 - (id)containerHome;
+- (id)context;
 - (id)currentServices;
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateCaller;
 - (id)description;
 - (id)device;
+- (id)deviceIdentifier;
 - (void)encodeWithCoder:(id)arg1;
 - (bool)firmwareUpdateAvailable;
 - (id)firmwareVersion;
@@ -234,6 +261,7 @@
 - (id)model;
 - (id)msgDispatcher;
 - (id)name;
+- (bool)needsReprovisioning;
 - (void)notifyDelegateOfAppDataUpdateForService:(id)arg1;
 - (bool)paired;
 - (id)pairingIdentity;
@@ -247,6 +275,7 @@
 - (id)services;
 - (void)setAccessoryFlags:(id)arg1;
 - (void)setAccessoryProfiles:(id)arg1;
+- (void)setAccessoryReprovisionState:(unsigned long long)arg1;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setAdditionalSetupStatus:(unsigned long long)arg1;
 - (void)setApplicationData:(id)arg1;
@@ -264,6 +293,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDelegateCaller:(id)arg1;
 - (void)setDevice:(id)arg1;
+- (void)setDeviceIdentifier:(id)arg1;
 - (void)setFirmwareUpdateAvailable:(bool)arg1;
 - (void)setFirmwareVersion:(id)arg1;
 - (void)setHome:(id)arg1;
@@ -271,6 +301,7 @@
 - (void)setModel:(id)arg1;
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setName:(id)arg1;
+- (void)setNeedsReprovisioning:(bool)arg1;
 - (void)setPaired:(bool)arg1;
 - (void)setPairingIdentity:(id)arg1;
 - (void)setPropertyQueue:(id)arg1;
@@ -283,6 +314,8 @@
 - (void)setSoftwareUpdateController:(id)arg1;
 - (void)setSoftwareVersion:(id)arg1;
 - (void)setStoreID:(id)arg1;
+- (void)setSupportsIdentify:(bool)arg1;
+- (void)setSupportsMediaAccessControl:(bool)arg1;
 - (void)setSymptomsHandler:(id)arg1;
 - (void)setTransportTypes:(unsigned long long)arg1;
 - (void)setUniqueIdentifiersForBridgedAccessories:(id)arg1;
@@ -291,6 +324,8 @@
 - (id)softwareUpdateController;
 - (id)softwareVersion;
 - (id)storeID;
+- (bool)supportsIdentify;
+- (bool)supportsMediaAccessControl;
 - (id)symptomsHandler;
 - (unsigned long long)transportTypes;
 - (id)uniqueIdentifier;
@@ -309,9 +344,20 @@
 - (id)hf_defaultName;
 - (id)hf_displayName;
 - (id)hf_displayNamesForVisibleTiles;
-- (id)hf_editingNameForMediaAccessories;
-- (id)hf_fixSymptom;
+- (id)hf_editingName;
+- (id)hf_fakeDebugSymptoms;
+- (bool)hf_fakeGeneralFixSymptom;
+- (bool)hf_fakeHardwareFixSymptom;
+- (bool)hf_fakeHomeKitSymptom;
+- (bool)hf_fakeICloudSymptom;
+- (bool)hf_fakeITunesSymptom;
+- (bool)hf_fakeInternetFixSymptom;
+- (bool)hf_fakeShouldDisplayManualFixOption;
+- (bool)hf_fakeUnreachableError;
+- (bool)hf_fakeWiFiPerformanceSymptom;
+- (bool)hf_fakeWiFiSymptom;
 - (bool)hf_hasSetFavorite;
+- (id)hf_identifyHomePod;
 - (bool)hf_isAirPortExtremeSpeaker;
 - (bool)hf_isAppleTV;
 - (bool)hf_isBridge;
@@ -321,8 +367,11 @@
 - (bool)hf_isHomePod;
 - (bool)hf_isMediaAccessory;
 - (bool)hf_isProgrammableSwitch;
+- (bool)hf_isValidObject;
 - (bool)hf_isVisibleAsBridge;
 - (id)hf_linkedResidentDevice;
+- (bool)hf_needsReprovisioningCheck;
+- (bool)hf_needsSoftwareUpdateToSupportBeingAddedToMediaSystem;
 - (unsigned long long)hf_numberOfProgrammableSwitches;
 - (id)hf_owningBridgeAccessory;
 - (id)hf_parentRoom;
@@ -333,7 +382,6 @@
 - (id)hf_serviceNameComponents;
 - (id)hf_serviceOfType:(id)arg1;
 - (id)hf_servicesBehindBridge;
-- (bool)hf_shouldAutoFixSymptom:(id)arg1;
 - (bool)hf_shouldDisplayManualFixOption;
 - (bool)hf_shouldShowInFavorites;
 - (bool)hf_shouldShowSoftwareUpdateInfo;

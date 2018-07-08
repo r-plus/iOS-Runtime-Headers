@@ -83,6 +83,8 @@
 - (void)_animateSolarDiskToRestPercentageIfNeeded;
 - (void)_applyDataMode;
 - (void)_applyShowContentForUnadornedSnapshot;
+- (void)_becameActiveFace;
+- (void)_becameInactiveFace;
 - (void)_beginAnimatingForReason:(id)arg1;
 - (void)_buttonPressTimerFired;
 - (bool)_canEnterInteractiveMode;

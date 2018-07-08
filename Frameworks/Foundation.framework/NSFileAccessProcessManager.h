@@ -15,8 +15,6 @@
 @property (copy) NSArray *URLs;
 @property (copy) id /* block */ suspensionHandler;
 
-+ (id)_addAssertionForPID:(int)arg1 name:(id)arg2;
-+ (void)_removeAssertionWithToken:(id)arg1;
 + (bool)needToManageConnection:(id)arg1 forURLs:(id)arg2;
 
 - (id)URLs;

@@ -12,6 +12,8 @@
 @property (nonatomic, readonly) const double*scoreInputs;
 @property (nonatomic, readonly) double totalScore;
 
++ (id)feedbackItemsForChunks:(id)arg1;
++ (id)feedbackItemsForIntentResponse:(id)arg1;
 + (id)feedbackItemsForResponse:(id)arg1;
 
 - (void).cxx_destruct;

@@ -3,10 +3,12 @@
  */
 
 @interface MTLToolsFunction : MTLToolsObject <MTLFunctionSPI> {
+    MTLToolsPointerArray * _argumentEncoders;
     MTLToolsPointerArray * _functions;
     MTLToolsPointerArray * _indirectArgumentEncoders;
 }
 
+@property (nonatomic, readonly) MTLToolsPointerArray *argumentEncoders;
 @property (readonly) NSArray *arguments;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -27,6 +29,7 @@
 @property (readonly) NSArray *vertexAttributes;
 
 - (void)acceptVisitor:(id)arg1;
+- (id)argumentEncoders;
 - (id)arguments;
 - (const struct { unsigned char x1[32]; }*)bitCodeHash;
 - (void)dealloc;

@@ -14,7 +14,6 @@
 @property (nonatomic, readonly) long long style;
 @property (nonatomic, readonly) double valueLeftMargin;
 
-- (void)applyTraitCollection:(id)arg1;
 - (double)contentHorizontalMargin;
 - (double)glyphDimension;
 - (id)initWithStyle:(long long)arg1;

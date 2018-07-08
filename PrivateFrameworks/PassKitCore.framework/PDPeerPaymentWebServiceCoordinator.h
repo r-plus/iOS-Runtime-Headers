@@ -40,10 +40,10 @@
 - (unsigned long long)_peerPaymentErrorStateForRegistrationResponse:(id)arg1 error:(id)arg2;
 - (bool)_peerPaymentPassExists;
 - (void)_performPeerPaymentPassDownloadActivity;
-- (void)_performPeerPaymentReregisterActivity;
+- (void)_performPeerPaymentReregisterActivityForReason:(id)arg1;
 - (void)_registerWithPeerPaymentWebService:(id)arg1 registerURL:(id)arg2 pushToken:(id)arg3 completion:(id /* block */)arg4;
 - (void)_schedulePeerPaymentCoordinatorActivities;
-- (void)_schedulePeerPaymentReregisterActivity;
+- (void)_schedulePeerPaymentReregisterActivityForReason:(id)arg1;
 - (bool)_shouldAttemptBackgroundPeerPaymentPassDownload;
 - (void)_updateAccountWithCompletion:(id /* block */)arg1;
 - (void)_updateSharedCacheWithAccount:(id)arg1;
@@ -66,7 +66,7 @@
 - (void)initalizeCloudStoreIfNecessaryWithCompletion:(id /* block */)arg1;
 - (void)initalizeCloudStoreIfNecessaryWithHandler:(id /* block */)arg1;
 - (id)paymentWebService;
-- (void)performScheduledActivityWithIdentifier:(id)arg1 activityCriteria:(id)arg2 activityContext:(id)arg3;
+- (void)performScheduledActivityWithIdentifier:(id)arg1 activityCriteria:(id)arg2;
 - (id)pushNotificationTopics;
 - (void)registerDeviceWithCompletion:(id /* block */)arg1;
 - (void)registerDeviceWithRegistrationURL:(id)arg1 pushToken:(id)arg2 completion:(id /* block */)arg3;

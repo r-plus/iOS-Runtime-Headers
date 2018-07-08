@@ -11,12 +11,12 @@
             int **__begin_; 
             int **__end_; 
             struct __compressed_pair<int **, std::__1::allocator<int *> > { 
-                int **__first_; 
+                int **__value_; 
             } __end_cap_; 
         } __map_; 
         unsigned long long __start_; 
         struct __compressed_pair<unsigned long, std::__1::allocator<int> > { 
-            unsigned long long __first_; 
+            unsigned long long __value_; 
         } __size_; 
     }  _dropFrameTracker;
     bool  _droppedResolution;
@@ -28,7 +28,7 @@
         struct HGRef<PVRenderJob> {} *__begin_; 
         struct HGRef<PVRenderJob> {} *__end_; 
         struct __compressed_pair<HGRef<PVRenderJob> *, std::__1::allocator<HGRef<PVRenderJob> > > { 
-            struct HGRef<PVRenderJob> {} *__first_; 
+            struct HGRef<PVRenderJob> {} *__value_; 
         } __end_cap_; 
     }  _inFlightRenderJobs;
     NSLock * _inFlightRenderJobsLock;

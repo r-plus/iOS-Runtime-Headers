@@ -4,7 +4,7 @@
 
 @interface IKJSInspectorNetworkAgent : NSObject <RWIProtocolNetworkDomainHandler> {
     IKJSInspectorController * _controller;
-    NSMutableSet * _requestRecords;
+    NSMutableDictionary * _loaders;
 }
 
 @property (nonatomic, readonly) IKJSInspectorController *controller;
@@ -21,10 +21,10 @@
 - (void)getResponseBodyWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 requestId:(id)arg3;
 - (id)initWithInspectorController:(id)arg1;
 - (void)loadResourceWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 frameId:(id)arg3 url:(id)arg4;
-- (id)registerNetworkRequestLoader:(id)arg1;
+- (id)registerLoaderWithIdentifier:(id)arg1;
 - (void)resolveWebSocketWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 requestId:(id)arg3 objectGroup:(id*)arg4;
-- (void)setCacheDisabledWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 cacheDisabled:(bool)arg3;
 - (void)setExtraHTTPHeadersWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 headers:(id)arg3;
 - (void)setResourceCachingDisabledWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 disabled:(bool)arg3;
+- (void)unregisterLoaderWithIdentifier:(id)arg1;
 
 @end

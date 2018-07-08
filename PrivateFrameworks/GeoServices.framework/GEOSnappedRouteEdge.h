@@ -24,14 +24,14 @@
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<GEOVectorTilePoint *, std::__1::allocator<GEOVectorTilePoint> > { 
-            struct { /* ? */ } *__first_; 
+            struct { /* ? */ } *__value_; 
         } __end_cap_; 
     }  _points;
     struct vector<geo::PolylineCoordinate, std::__1::allocator<geo::PolylineCoordinate> > { 
         struct PolylineCoordinate {} *__begin_; 
         struct PolylineCoordinate {} *__end_; 
         struct __compressed_pair<geo::PolylineCoordinate *, std::__1::allocator<geo::PolylineCoordinate> > { 
-            struct PolylineCoordinate {} *__first_; 
+            struct PolylineCoordinate {} *__value_; 
         } __end_cap_; 
     }  _routeOffsets;
 }

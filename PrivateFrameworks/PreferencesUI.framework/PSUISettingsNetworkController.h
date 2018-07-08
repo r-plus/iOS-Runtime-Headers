@@ -60,6 +60,7 @@
 - (id)isMobileDataEnabled:(id)arg1;
 - (id)lifetimeCallTime:(id)arg1;
 - (void)newCarrierNotification;
+- (void)prefetchResourcesFor:(id)arg1;
 - (void)setAppUsageGroupController:(id)arg1;
 - (void)setCallHistoryManager:(id)arg1;
 - (void)setCarrierSpace:(id)arg1;

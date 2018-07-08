@@ -14,11 +14,11 @@
 @property (nonatomic, readonly, copy) AFAudioPlaybackRequest *tapToSiriAudioPlaybackRequest;
 @property (nonatomic, readonly, copy) AFAudioPlaybackRequest *twoShotAudioPlaybackRequest;
 
++ (id)newWithBuilder:(id /* block */)arg1;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_descriptionWithIndent:(unsigned long long)arg1;
-- (id)builder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -28,6 +28,7 @@
 - (bool)isDeviceInCarDNDMode;
 - (bool)isDeviceInSetupFlow;
 - (bool)isEqual:(id)arg1;
+- (id)mutatedCopyWithMutator:(id /* block */)arg1;
 - (id)tapToSiriAudioPlaybackRequest;
 - (id)twoShotAudioPlaybackRequest;
 

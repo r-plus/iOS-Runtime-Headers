@@ -14,9 +14,6 @@
 - (id)browserLabelColor;
 - (id)businessDescriptionViewControllerBackgroundColor;
 - (id)businessInfoViewDescriptionTextColor;
-- (id)businessNavBarTintColor;
-- (id)businessNavTintColor;
-- (long long)businessStatusBarStyle;
 - (id)contactCellTextColor;
 - (id)contactStyle;
 - (id)contactTableViewCellBackgroundColor;

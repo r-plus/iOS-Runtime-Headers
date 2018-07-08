@@ -10,6 +10,7 @@
 - (bool)canAccessRemoteAssets;
 - (bool)canBeGroupLeader;
 - (bool)canBeGrouped;
+- (bool)canRelayCommunicationChannel;
 - (bool)canSetVolume;
 - (NSNumber *)caseBatteryLevel;
 - (void)configureUsingBlock:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 13: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <AVOutputDeviceConfigurationModification> *, void*, id /* block */, void*, void, id /* block */, <AVOutputDeviceConfigurationRetrieval> *, NSError *, void*
@@ -29,6 +30,7 @@
 - (NSString *)modelID;
 - (NSString *)name;
 - (AVOutputDevice *)parentOutputDevice;
+- (bool)participatesInGroupPlayback;
 - (bool)requiresAuthorization;
 - (NSNumber *)rightBatteryLevel;
 - (NSString *)serialNumber;

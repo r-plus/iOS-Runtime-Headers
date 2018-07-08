@@ -86,11 +86,18 @@
 
 // Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
 
++ (id)ik_nodeFromDOMNode:(id)arg1;
++ (id)ik_nodeFromDOMNode:(id)arg1 depth:(int)arg2;
++ (id)safe_initWithNodeId:(int)arg1 nodeType:(int)arg2 nodeName:(id)arg3 localName:(id)arg4 nodeValue:(id)arg5;
+
 - (id)ik_attributesDictionary;
 - (id)ik_description;
 - (void)ik_insertChild:(id)arg1 before:(id)arg2;
+- (id)ik_nodeWithNodeId:(int)arg1;
 - (void)ik_removeAttributeNamed:(id)arg1;
 - (void)ik_removeChildWithId:(int)arg1;
 - (void)ik_setAttributeValue:(id)arg1 name:(id)arg2;
+- (void)ik_updateWithDOMNode:(id)arg1 dispatcher:(id)arg2;
+- (void)ik_updateWithDOMNode:(id)arg1 fullfillChildren:(bool)arg2 dispatcher:(id)arg3;
 
 @end

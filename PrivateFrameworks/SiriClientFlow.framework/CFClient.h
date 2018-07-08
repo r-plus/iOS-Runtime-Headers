@@ -22,7 +22,6 @@
 - (void)setCommandQueuer:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setServiceHelper:(id)arg1;
-- (void)warmUp;
-- (void)warmUpWithScriptHint:(id)arg1;
+- (void)warmUpWithSignal:(id)arg1 completion:(id /* block */)arg2;
 
 @end

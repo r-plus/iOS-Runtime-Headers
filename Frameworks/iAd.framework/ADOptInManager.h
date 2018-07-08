@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@interface ADOptInManager : NSObject <ADAdSheetConnectionDelegate, ADAdSheetProxyDelegate> {
+@interface ADOptInManager : NSObject <ADAdSheetConnectionDelegate> {
     ADAdSheetConnection * _connection;
 }
 
@@ -16,7 +16,6 @@
 
 - (void)adSheetConnectionInterrupted;
 - (id)adSheetMachServiceName;
-- (id)additionalAdSheetLaunchOptions;
 - (void)configureConnection:(id)arg1;
 - (id)connection;
 - (void)dealloc;
@@ -29,6 +28,5 @@
 - (void)refreshOptInStatusRefreshingWeakToken:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)setConnection:(id)arg1;
 - (void)setOptInStatus:(bool)arg1 completionHandler:(id /* block */)arg2;
-- (bool)shouldLaunchAdSheet;
 
 @end

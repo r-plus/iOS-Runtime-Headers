@@ -10,6 +10,7 @@
 @property (nonatomic, retain) GKPlayerInternal *hostPlayerInternal;
 
 + (id)secureCodedPropertyKeys;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (id)guestIdentifier;

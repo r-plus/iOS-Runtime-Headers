@@ -30,13 +30,13 @@
 - (void).cxx_destruct;
 - (void)_close;
 - (id)_enclosingViewForExposedRectComputation;
-- (struct __SecTrust { }*)_serverTrust;
 - (void)_setObscuredInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)_updateNavigationGesturesAllowed;
 - (bool)becomeFirstResponder;
 - (id)clippingView;
 - (void)dealloc;
 - (id)delegate;
+- (void)didEndFormControlInteraction;
 - (void)dismissDialogView:(id)arg1 withAdditionalAnimations:(id /* block */)arg2 forDialogController:(id)arg3;
 - (id)evOrganizationName;
 - (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;

@@ -6,6 +6,7 @@
     NSArray * _accountsCache;
     NSObject<OS_dispatch_queue> * _accountsCacheAccessQueue;
     ACAccountStore * _backingAccountStore;
+    NSObject<OS_dispatch_queue> * _fetchAccountsQueue;
     bool  _inProcessCacheDisabled;
     SSKeyValueStore * _keyValueStore;
     NSObject<OS_dispatch_queue> * _metricsQueue;
@@ -24,6 +25,7 @@
 @property (nonatomic, readonly) SSAccount *demoAccount;
 @property (readonly, copy) NSString *description;
 @property (getter=isExpired, readonly) bool expired;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *fetchAccountsQueue;
 @property (readonly) unsigned long long hash;
 @property (getter=isInProcessCacheDisabled, nonatomic) bool inProcessCacheDisabled;
 @property (nonatomic, retain) SSKeyValueStore *keyValueStore;
@@ -32,6 +34,7 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *notificationQueue;
 @property (readonly) Class superclass;
 
++ (bool)URLResponseAllowsSilentAuthentication:(id)arg1;
 + (bool)_accountDictionaryRepresentsActiveAccount:(id)arg1 inKeyValueStore:(id)arg2;
 + (bool)_accountDictionaryRepresentsActiveLockerAccount:(id)arg1 inKeyValueStore:(id)arg2;
 + (void)_addAccountToUnitTestStore:(id)arg1;
@@ -71,16 +74,19 @@
 
 - (void).cxx_destruct;
 - (id)_buyParamsForBuyParamsString:(id)arg1;
+- (id)_cachedAccounts;
 - (id)_convertPasswordToPET:(id)arg1 forAccount:(id)arg2 options:(id)arg3;
 - (id)_createLocalAccountPromise;
 - (id)_lookupLocalAccountPromise;
 - (id)_optionsForProxiedAuthenticationWithVerifyCredentialsOptions:(id)arg1;
 - (id)_passwordEquivalentTokenFromAlternateAccountWithAltDSID:(id)arg1 DSID:(id)arg2 username:(id)arg3;
 - (void)_postAccountStoreChangeNotification;
+- (void)_postActiveAccountChangedNotification;
 - (void)_postAuthenticationActivityNotification;
 - (void)_recordAnalyticsForMetricsDialogEvent:(id)arg1 withTopic:(id)arg2;
 - (id)_saveAccount:(id)arg1 verifyCredentials:(bool)arg2;
 - (id)_saveAccountInUnitTestMode:(id)arg1 ignoreValidationErrors:(bool)arg2;
+- (void)_setCachedAccounts:(id)arg1;
 - (id)_shouldCreateNewAccountForAccount:(id)arg1 options:(id)arg2;
 - (id)_updateAccountWithAuthKitViaPromptAuth:(id)arg1 store:(id)arg2 options:(id)arg3;
 - (id)_updateAccountWithAuthKitViaSilentAuth:(id)arg1 options:(id)arg2;
@@ -107,6 +113,7 @@
 - (void)clearCachedAccounts;
 - (void)dealloc;
 - (id)demoAccount;
+- (id)fetchAccountsQueue;
 - (void)getDefaultAccountNameUsingBlock:(id /* block */)arg1;
 - (id)iTunesStoreAccountType;
 - (id)iTunesStoreAccountTypePromise;
@@ -127,6 +134,7 @@
 - (bool)repairAccountWithBrokenDSID:(id)arg1;
 - (void)resetExpiration;
 - (void)resetExpirationForTokenType:(long long)arg1;
+- (void)resetLocalAccount;
 - (void)saveAccount:(id)arg1 completion:(id /* block */)arg2;
 - (bool)saveAccount:(id)arg1 error:(id*)arg2;
 - (void)saveAccount:(id)arg1 verifyCredentials:(bool)arg2 completion:(id /* block */)arg3;
@@ -137,6 +145,7 @@
 - (id)setActiveAccount:(id)arg1;
 - (id)setActiveLockerAccount:(id)arg1;
 - (void)setDefaultAccountName:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)setFetchAccountsQueue:(id)arg1;
 - (void)setInProcessCacheDisabled:(bool)arg1;
 - (void)setKeyValueStore:(id)arg1;
 - (void)setMetricsQueue:(id)arg1;

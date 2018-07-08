@@ -6,8 +6,8 @@
     ASTAuthInfoResult * _authInfo;
     id /* block */  _authInfoHandler;
     id /* block */  _completion;
+    ASTIdentity * _identity;
     ASTProfileResult * _profile;
-    NSString * _serialNumber;
     ASTSession * _session;
     NSDictionary * _tests;
 }
@@ -18,13 +18,15 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) ASTIdentity *identity;
 @property (nonatomic, retain) ASTProfileResult *profile;
-@property (nonatomic, retain) NSString *serialNumber;
 @property (nonatomic, retain) ASTSession *session;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSDictionary *tests;
 
++ (void)sessionExistsForIdentities:(id)arg1 ticketNumber:(id)arg2 completionHandler:(id /* block */)arg3;
 + (void)sessionExistsForSerialNumbers:(id)arg1 ticketNumber:(id)arg2 completionHandler:(id /* block */)arg3;
++ (id)sessionWithIdentity:(id)arg1 profile:(id)arg2 tests:(id)arg3 authInfoHandler:(id /* block */)arg4;
 + (id)sessionWithSerialNumber:(id)arg1 profile:(id)arg2 tests:(id)arg3 authInfoHandler:(id /* block */)arg4;
 
 - (void).cxx_destruct;
@@ -33,9 +35,9 @@
 - (id /* block */)completion;
 - (void)end;
 - (void)executeWithCompletion:(id /* block */)arg1;
-- (id)initWithSerialNumber:(id)arg1 profile:(id)arg2 tests:(id)arg3 authInfoHandler:(id /* block */)arg4;
+- (id)identity;
+- (id)initWithIdentity:(id)arg1 profile:(id)arg2 tests:(id)arg3 authInfoHandler:(id /* block */)arg4;
 - (id)profile;
-- (id)serialNumber;
 - (id)session;
 - (void)session:(id)arg1 cancelTest:(id)arg2;
 - (void)session:(id)arg1 didEndWithError:(id)arg2;
@@ -45,8 +47,8 @@
 - (void)setAuthInfo:(id)arg1;
 - (void)setAuthInfoHandler:(id /* block */)arg1;
 - (void)setCompletion:(id /* block */)arg1;
+- (void)setIdentity:(id)arg1;
 - (void)setProfile:(id)arg1;
-- (void)setSerialNumber:(id)arg1;
 - (void)setSession:(id)arg1;
 - (void)setTests:(id)arg1;
 - (id)tests;

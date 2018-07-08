@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FoundInAppsPlugins.framework/FoundInAppsPlugins
  */
 
-@interface FIAPHistoricalDataRequest : NSObject {
+@interface FIAPHistoricalDataRequest : NSObject <NSSecureCoding> {
     NSDate * _endDate;
     NSString * _personHandle;
     NSString * _pluginIdentifier;

@@ -10,6 +10,8 @@
 @property (nonatomic) bool didGenerateMindfulnessMinute;
 @property (nonatomic) double nextMindfulSessionSampleTime;
 
++ (bool)supportsSecureCoding;
+
 - (id)_heartRatesFromMindfulSessionSample:(id)arg1 demoPerson:(id)arg2 atTime:(double)arg3;
 - (id)_mindfulSessionSampleForDemoPerson:(id)arg1 atTime:(double)arg2 startDate:(id)arg3;
 - (bool)didGenerateMindfulnessMinute;

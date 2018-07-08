@@ -3,7 +3,6 @@
  */
 
 @interface ARImageData : NSObject <ARSensorData, NSCopying, NSSecureCoding> {
-    float  _ISO;
     struct { 
         /* Warning: Unrecognized filer type: ']' using 'void*' */ void*columns[3]; 
     }  _cameraIntrinsics;
@@ -15,16 +14,17 @@
     double  _exposureDuration;
     float  _exposureTargetOffset;
     ARFaceData * _faceData;
+    unsigned long long  _lensType;
+    bool  _mirrored;
     struct __CVBuffer { } * _pixelBuffer;
-    bool  _pixelBufferIsMirrored;
+    void _radialDistortion;
     long long  _renderFramesPerSecond;
     bool  _shouldRestrictFrameRate;
+    void _tangentialDistortion;
     float  _temperature;
     double  _timestamp;
-    float  _tint;
 }
 
-@property (nonatomic) float ISO;
 @property (nonatomic) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[3]; } cameraIntrinsics;
 @property (nonatomic) long long cameraPosition;
 @property (nonatomic, retain) NSDate *captureDate;
@@ -38,20 +38,23 @@
 @property (nonatomic, retain) ARFaceData *faceData;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } imageResolution;
+@property (nonatomic) unsigned long long lensType;
+@property (getter=isMirrored, nonatomic) bool mirrored;
+@property (nonatomic, readonly) ARImageData *originalImage;
 @property (nonatomic) struct __CVBuffer { }*pixelBuffer;
-@property (nonatomic) bool pixelBufferIsMirrored;
+@property (nonatomic) void radialDistortion;
 @property (nonatomic) long long renderFramesPerSecond;
 @property (nonatomic) bool shouldRestrictFrameRate;
 @property (readonly) Class superclass;
+@property (nonatomic) void tangentialDistortion;
 @property (nonatomic) float temperature;
 @property (nonatomic) double timestamp;
-@property (nonatomic) float tint;
 
 + (id)captureDateFromPresentationTimestamp:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 session:(id)arg2;
++ (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[3]; })intrinsicsFromDeviceFormat:(id)arg1;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (float)ISO;
 - (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[3]; })cameraIntrinsics;
 - (long long)cameraPosition;
 - (id)captureDate;
@@ -66,9 +69,13 @@
 - (id)faceData;
 - (struct CGSize { double x1; double x2; })imageResolution;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithImageData:(id)arg1;
 - (id)initWithSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 captureFramePerSecond:(long long)arg2 renderFramePerSecond:(long long)arg3 captureDevice:(id)arg4 captureSession:(id)arg5;
+- (bool)isMirrored;
+- (unsigned long long)lensType;
+- (id)originalImage;
 - (struct __CVBuffer { }*)pixelBuffer;
-- (bool)pixelBufferIsMirrored;
+- (void)radialDistortion;
 - (long long)renderFramesPerSecond;
 - (void)setCameraIntrinsics:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[3]; })arg1;
 - (void)setCameraPosition:(long long)arg1;
@@ -79,17 +86,18 @@
 - (void)setExposureDuration:(double)arg1;
 - (void)setExposureTargetOffset:(float)arg1;
 - (void)setFaceData:(id)arg1;
-- (void)setISO:(float)arg1;
+- (void)setLensType:(unsigned long long)arg1;
+- (void)setMirrored:(bool)arg1;
 - (void)setPixelBuffer:(struct __CVBuffer { }*)arg1;
-- (void)setPixelBufferIsMirrored:(bool)arg1;
+- (void)setRadialDistortion;
 - (void)setRenderFramesPerSecond:(long long)arg1;
 - (void)setShouldRestrictFrameRate:(bool)arg1;
+- (void)setTangentialDistortion;
 - (void)setTemperature:(float)arg1;
 - (void)setTimestamp:(double)arg1;
-- (void)setTint:(float)arg1;
 - (bool)shouldRestrictFrameRate;
+- (void)tangentialDistortion;
 - (float)temperature;
 - (double)timestamp;
-- (float)tint;
 
 @end

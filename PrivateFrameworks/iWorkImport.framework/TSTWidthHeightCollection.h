@@ -7,14 +7,14 @@
         struct pair<TSUCellCoord, double> {} *__begin_; 
         struct pair<TSUCellCoord, double> {} *__end_; 
         struct __compressed_pair<std::__1::pair<TSUCellCoord, double> *, std::__1::allocator<std::__1::pair<TSUCellCoord, double> > > { 
-            struct pair<TSUCellCoord, double> {} *__first_; 
+            struct pair<TSUCellCoord, double> {} *__value_; 
         } __end_cap_; 
     }  mFittingHeights;
     struct vector<TSUCellCoord, std::__1::allocator<TSUCellCoord> > { 
         struct TSUCellCoord {} *__begin_; 
         struct TSUCellCoord {} *__end_; 
         struct __compressed_pair<TSUCellCoord *, std::__1::allocator<TSUCellCoord> > { 
-            struct TSUCellCoord {} *__first_; 
+            struct TSUCellCoord {} *__value_; 
         } __end_cap_; 
     }  mResetHeights;
 }

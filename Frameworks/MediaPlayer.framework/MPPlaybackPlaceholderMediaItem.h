@@ -9,6 +9,8 @@
 
 @property (nonatomic, copy) NSString *placeholderTitle;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;

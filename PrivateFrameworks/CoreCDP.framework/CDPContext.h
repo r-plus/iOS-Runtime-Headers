@@ -19,6 +19,7 @@
     bool  _guestMode;
     bool  _idmsMasterKeyRecovery;
     bool  _idmsRecovery;
+    bool  _isFederatedAccount;
     bool  _isHSA2Account;
     NSString * _password;
     NSString * _passwordEquivToken;
@@ -44,6 +45,7 @@
 @property (nonatomic) bool guestMode;
 @property (nonatomic) bool idmsMasterKeyRecovery;
 @property (nonatomic) bool idmsRecovery;
+@property (nonatomic) bool isFederatedAccount;
 @property (nonatomic) bool isHSA2Account;
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, copy) NSString *passwordEquivToken;
@@ -80,6 +82,7 @@
 - (id)init;
 - (id)initWithAuthenticationResults:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (bool)isFederatedAccount;
 - (bool)isHSA2Account;
 - (id)password;
 - (id)passwordEquivToken;
@@ -97,6 +100,7 @@
 - (void)setGuestMode:(bool)arg1;
 - (void)setIdmsMasterKeyRecovery:(bool)arg1;
 - (void)setIdmsRecovery:(bool)arg1;
+- (void)setIsFederatedAccount:(bool)arg1;
 - (void)setIsHSA2Account:(bool)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setPasswordEquivToken:(id)arg1;

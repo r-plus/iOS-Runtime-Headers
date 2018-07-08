@@ -57,6 +57,7 @@
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
+- (long long)hk_countLines;
 - (void)hk_readLinesInFile:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/AppleServiceToolkit.framework/AppleServiceToolkit

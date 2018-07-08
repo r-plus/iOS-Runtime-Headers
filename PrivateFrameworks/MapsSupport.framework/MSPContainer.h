@@ -64,6 +64,7 @@
 - (void)editObjectsWithIdentifiers:(id)arg1 usingBarrierBlock:(id /* block */)arg2 completionQueue:(id)arg3 completion:(id /* block */)arg4;
 - (void)editObjectsWithIdentifiers:(id)arg1 usingBarrierBlock:(id /* block */)arg2 context:(id)arg3 completionQueue:(id)arg4 completion:(id /* block */)arg5;
 - (id)entireContentsQuerySource;
+- (void)eraseFromStorageTypes:(unsigned long long)arg1 withCompletionQueue:(id)arg2 completion:(id /* block */)arg3;
 - (void)eraseWithCompletionQueue:(id)arg1 completion:(id /* block */)arg2;
 - (id)init;
 - (id)initWithPersister:(id)arg1;

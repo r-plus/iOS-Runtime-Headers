@@ -10,7 +10,7 @@
     HMHome * _homeForUser;
     HFItem * _localAccessItem;
     HFItem * _pendingAccessoriesItem;
-    HUPersonalRequestsDevicesItemModule * _personalRequestsDevicesModule;
+    HFItem * _personalRequestsItem;
     HFItem * _removeItem;
 }
 
@@ -24,7 +24,7 @@
 @property (nonatomic, retain) HMHome *homeForUser;
 @property (nonatomic, retain) HFItem *localAccessItem;
 @property (nonatomic, retain) HFItem *pendingAccessoriesItem;
-@property (nonatomic, readonly) HUPersonalRequestsDevicesItemModule *personalRequestsDevicesModule;
+@property (nonatomic, retain) HFItem *personalRequestsItem;
 @property (nonatomic, retain) HFItem *removeItem;
 @property (nonatomic, retain) HFUserItem *sourceItem;
 @property (readonly) Class superclass;
@@ -42,8 +42,6 @@
 - (id)_isPersonalRequestsEnabledForUser;
 - (bool)_isRemoteAccessAllowedForUser:(id)arg1;
 - (bool)_isUserOwner:(id)arg1;
-- (void)_registerForExternalUpdates;
-- (void)_unregisterForExternalUpdates;
 - (id)allowEditingFooterItem;
 - (id)allowEditingItem;
 - (id)allowRemoteAccessFooterItem;
@@ -53,7 +51,7 @@
 - (id)initWithHome:(id)arg1 userItem:(id)arg2 delegate:(id)arg3;
 - (id)localAccessItem;
 - (id)pendingAccessoriesItem;
-- (id)personalRequestsDevicesModule;
+- (id)personalRequestsItem;
 - (id)removeItem;
 - (id)reuseIdentifierForFooterViewInSection:(unsigned long long)arg1;
 - (void)setAllowEditingFooterItem:(id)arg1;
@@ -63,6 +61,7 @@
 - (void)setHomeForUser:(id)arg1;
 - (void)setLocalAccessItem:(id)arg1;
 - (void)setPendingAccessoriesItem:(id)arg1;
+- (void)setPersonalRequestsItem:(id)arg1;
 - (void)setRemoveItem:(id)arg1;
 - (id)user;
 

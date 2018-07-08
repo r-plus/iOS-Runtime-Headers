@@ -20,14 +20,14 @@
 @property (nonatomic, readonly) bool supportsSeparateLabelsRenderPass;
 @property (nonatomic, readonly) double viewScale;
 
-- (void)addSelection:(id)arg1 toCGPath:(struct CGPath { }*)arg2;
+- (void).cxx_destruct;
+- (void)addSelection:(id)arg1 toCGPath:(struct CGPath { }*)arg2 useWrapWidth:(bool)arg3;
 - (bool)canEditTextForSelectionPath:(id)arg1;
 - (bool)canRenderSelectionPath:(id)arg1;
 - (id)chartInfo;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })chartLayoutSpaceRenderingRect;
 - (id)chartRep;
 - (int)chunkPlane;
-- (void)dealloc;
 - (struct CGColor { }*)debugColor;
 - (bool)debugLayout;
 - (void)drawErrorBarsInContext:(struct CGContext { }*)arg1 chartVertical:(bool)arg2 elementRenderClass:(Class)arg3;

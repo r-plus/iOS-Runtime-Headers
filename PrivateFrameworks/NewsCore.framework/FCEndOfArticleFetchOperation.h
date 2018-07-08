@@ -35,8 +35,9 @@
 - (void).cxx_destruct;
 - (void)_fetchThumbnailsForHeadlines:(id)arg1 callbackQueue:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)_filterHeadlines:(id)arg1 completion:(id /* block */)arg2;
-- (void)_streamingHeadlinesForArticleIDs:(id)arg1 endOfArticleTransform:(id)arg2 callbackQueue:(id)arg3 minimumResultCount:(unsigned long long)arg4 completion:(id /* block */)arg5;
-- (id)_streamingHeadlinesForFeedItems:(id)arg1 tagsByID:(id)arg2;
+- (void)_headlinesForArticleIDs:(id)arg1 endOfArticleTransform:(id)arg2 callbackQueue:(id)arg3 minimumResultCount:(unsigned long long)arg4 completion:(id /* block */)arg5;
+- (void)_headlinesForFeedItems:(id)arg1 configuration:(id)arg2 tagsByID:(id)arg3 completion:(id /* block */)arg4;
+- (void)_performOperationWithConfiguration:(id)arg1;
 - (id)context;
 - (id)feedPersonalizer;
 - (bool)fetchAllTopics;

@@ -9,6 +9,8 @@
     bool  _confirmInstallation;
     NSArray * _deviceAttributes;
     NSData * _enrollmentIdentityPersistentID;
+    NSArray * _supportedDeviceIdentities;
+    bool  _supportedServerVersion;
 }
 
 @property (nonatomic, retain) NSString *URLString;
@@ -16,6 +18,8 @@
 @property (nonatomic, readonly) bool confirmInstallation;
 @property (nonatomic, readonly, retain) NSArray *deviceAttributes;
 @property (nonatomic, retain) NSData *enrollmentIdentityPersistentID;
+@property (nonatomic, readonly, retain) NSArray *supportedDeviceIdentities;
+@property (nonatomic, readonly) bool supportedServerVersion;
 
 - (void).cxx_destruct;
 - (id)URLString;
@@ -34,5 +38,7 @@
 - (void)setEnrollmentIdentityPersistentID:(id)arg1;
 - (void)setURLString:(id)arg1;
 - (id)stubDictionary;
+- (id)supportedDeviceIdentities;
+- (bool)supportedServerVersion;
 
 @end

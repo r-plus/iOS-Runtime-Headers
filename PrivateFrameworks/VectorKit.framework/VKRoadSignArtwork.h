@@ -252,6 +252,12 @@
         } _middleRightStretchedPartRect; 
     }  _generatedMetrics;
     struct CGImage { } * _glyph;
+    struct mutex { 
+        struct _opaque_pthread_mutex_t { 
+            long long __sig; 
+            BOOL __opaque[56]; 
+        } __m_; 
+    }  _imageLock;
     struct __CTLine { } * _line;
     struct RoadSignColoring { 
         bool _hasFillColor; 
@@ -319,7 +325,7 @@
                             unsigned long long __words[3]; 
                         } __r; 
                     } ; 
-                } __first_; 
+                } __value_; 
             } __r_; 
         } _fontFamily; 
         double _textDrawWidth; 

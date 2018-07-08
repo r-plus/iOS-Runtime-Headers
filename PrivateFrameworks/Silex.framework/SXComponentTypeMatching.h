@@ -3,14 +3,16 @@
  */
 
 @interface SXComponentTypeMatching : NSObject {
-    NSArray * _descriptions;
+    NSMutableArray * _descriptions;
 }
 
-@property (nonatomic, readonly) NSArray *descriptions;
+@property (nonatomic, readonly) NSMutableArray *descriptions;
 
 - (void).cxx_destruct;
+- (void)addDescription:(id)arg1;
 - (id)descriptions;
-- (id)initWithDescriptions:(id)arg1;
+- (id)init;
 - (id)match:(id)arg1;
+- (void)removeDescription:(id)arg1;
 
 @end

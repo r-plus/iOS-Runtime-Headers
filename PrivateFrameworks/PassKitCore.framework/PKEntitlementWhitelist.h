@@ -56,6 +56,7 @@
 - (bool)inAppPayments;
 - (bool)inAppPaymentsPrivate;
 - (id)initWithConnection:(id)arg1;
+- (bool)isEntitledForMerchantSession:(id)arg1;
 - (bool)isEntitledForPaymentRequest:(id)arg1;
 - (id)merchantIdentifiers;
 - (bool)passPresentationSuppression;

@@ -35,6 +35,7 @@
 
 - (bool)hf_hasSetFavorite;
 - (bool)hf_isFavorite;
+- (bool)hf_isValidObject;
 - (id)hf_parentRoom;
 - (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
 - (id)hf_serializedStateDumpRepresentation;

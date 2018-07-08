@@ -421,7 +421,9 @@
 - (unsigned long long)sfu_pathUsage:(id)arg1;
 - (bool)sfu_setAttributes:(id)arg1 ofItemAtURL:(id)arg2 recursively:(bool)arg3 error:(id*)arg4;
 - (bool)sfup_setAttributes:(id)arg1 ofItemAtURL:(id)arg2 recursively:(bool)arg3 error:(id*)arg4 shouldUpdateAttributesHandler:(id /* block */)arg5;
+- (bool)tsu_canCloneItemAtURL:(id)arg1 toURL:(id)arg2;
 - (bool)tsu_grantUserWritePosixPermissionAtPath:(id)arg1 error:(id*)arg2;
 - (bool)tsu_linkOrCopyItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
+- (bool)tsu_replaceItemAtURL:(id)arg1 withItemAtURL:(id)arg2 backupItemName:(id)arg3 options:(unsigned long long)arg4 resultingItemURL:(id*)arg5 error:(id*)arg6;
 
 @end

@@ -70,6 +70,7 @@
 - (void).cxx_destruct;
 - (void)_ascertainLastFocusedIndexPathInView;
 - (void)_cancelImpressionsUpdate;
+- (id)_closestIndexPathToIndexPath:(id)arg1;
 - (void)_confirmationPreviewInteractionControllerShouldBegin;
 - (void)_doUpdateViewLayoutAnimated:(bool)arg1 relayout:(bool)arg2;
 - (void)_recordImpressionsForVisibleView;

@@ -72,8 +72,6 @@
 @property (nonatomic, readonly) UIView *textInputView;
 @property (nonatomic, readonly) <UITextInputTokenizer> *tokenizer;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 - (void).cxx_destruct;
 - (void)_addShortcut:(id)arg1;
 - (unsigned long long)_allowedLinkTypes;
@@ -99,10 +97,6 @@
 - (void)_showTextStyleOptions:(id)arg1;
 - (void)_sizeChanged;
 - (void)_transliterateChinese:(id)arg1;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)allowsEditingTextAttributes;
 - (id)attributedText;
 - (id)automaticallySelectedOverlay;
@@ -133,6 +127,7 @@
 - (void)copy:(id)arg1;
 - (void)cut:(id)arg1;
 - (unsigned long long)dataDetectorTypes;
+- (void)dealloc;
 - (void)decreaseSize:(id)arg1;
 - (id)delegate;
 - (void)deleteBackward;

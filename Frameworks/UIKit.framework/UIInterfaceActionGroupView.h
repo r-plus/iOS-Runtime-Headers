@@ -33,6 +33,7 @@
     UIView * _topLevelItemsView;
     NSArray * _topLevelViewArrangementConstraints;
     UIInterfaceActionVisualStyle * _visualStyle;
+    UIInterfaceActionHighlightAttributes * _visualStyleOverrideActionHighlightAttributes;
     UIInterfaceActionSeparatorAttributes * _visualStyleOverrideSeparatorAttributes;
     UIFont * _visualStyleOverrideTitleLabelFont;
     <UIInterfaceActionVisualStyleProviding> * _visualStyleProvider;
@@ -68,6 +69,7 @@
 @property (nonatomic, readonly) UIView *topLevelItemsView;
 @property (nonatomic, readonly) NSArray *topLevelViewArrangementConstraints;
 @property (nonatomic, retain) UIInterfaceActionVisualStyle *visualStyle;
+@property (setter=_setVisualStyleOverrideActionHighlightAttributes:, nonatomic, retain) UIInterfaceActionHighlightAttributes *visualStyleOverrideActionHighlightAttributes;
 @property (getter=_visualStyleOverrideSeparatorAttributes, setter=_setVisualStyleOverrideSeparatorAttributes:, nonatomic, retain) UIInterfaceActionSeparatorAttributes *visualStyleOverrideSeparatorAttributes;
 @property (getter=_visualStyleOverrideTitleLabelFont, setter=_setVisualStyleOverrideTitleLabelFont:, nonatomic, retain) UIFont *visualStyleOverrideTitleLabelFont;
 @property (nonatomic) <UIInterfaceActionVisualStyleProviding> *visualStyleProvider;
@@ -127,6 +129,7 @@
 - (void)_setNeedsUpdateTopLevelViewsArrangement;
 - (void)_setSelectionHighlightContinuousCornerRadius:(double)arg1;
 - (void)_setUsAsThePresentingViewControllerForAllActions;
+- (void)_setVisualStyleOverrideActionHighlightAttributes:(id)arg1;
 - (void)_setVisualStyleOverrideSeparatorAttributes:(id)arg1;
 - (void)_setVisualStyleOverrideTitleLabelFont:(id)arg1;
 - (bool)_shouldAllowPassthroughToLayersBehindUsForTouches:(id)arg1;
@@ -143,10 +146,6 @@
 - (id)_visualStyleOverrideSeparatorAttributes;
 - (id)_visualStyleOverrideTitleLabelFont;
 - (id)_widthAnchoredToContentGuideConstraintForTopLevelView:(id)arg1;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)actionGroup;
 - (id)actionHandlerInvocationDelegate;
 - (long long)actionLayoutAxis;
@@ -165,6 +164,7 @@
 - (void)configureForDismissAlongsideTransitionCoordinator:(id)arg1;
 - (void)configureForPresentAlongsideTransitionCoordinator:(id)arg1;
 - (id)contentGuide;
+- (void)dealloc;
 - (id)defaultVisualStyleForTraitCollection:(id)arg1 presentationStyle:(long long)arg2;
 - (id)initWithActionGroup:(id)arg1 actionHandlerInvocationDelegate:(id)arg2;
 - (void)insertArrangedHeaderView:(id)arg1 atIndex:(unsigned long long)arg2 scrollable:(bool)arg3;
@@ -206,6 +206,7 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateConstraints;
 - (id)visualStyle;
+- (id)visualStyleOverrideActionHighlightAttributes;
 - (id)visualStyleProvider;
 - (id)weakSimultaneouslyPresentedGroupViews;
 

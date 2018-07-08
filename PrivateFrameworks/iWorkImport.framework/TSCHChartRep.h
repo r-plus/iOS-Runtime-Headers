@@ -18,7 +18,6 @@
     bool  mDrawingSearchReference;
     TSCHLegendMoveKnob * mDynamicLegendKnob;
     bool  mEditorIsEditingInfo;
-    bool  mFinishedBecomingSelected;
     bool  mForceSeparateLegendLayer;
     unsigned long long  mInDynamicStandinLayoutOperation;
     unsigned long long  mInDynamicStandinOperation;
@@ -32,10 +31,7 @@
         double y; 
     }  mLastSubselectionLayerRelativeReferencePosition;
     CAShapeLayer * mLegendBorderHaloLayer;
-    bool  mLegendBorderHaloLayerPathValid;
-    TSCHRendererLayer * mLegendLayer;
     CAShapeLayer * mMediatorEditingHaloLayer;
-    bool  mMediatorEditingHaloLayerPathValid;
     int  mRenderPassChunkPhase;
     NSArray * mRenderers;
     NSMutableArray * mRenderersWaitingForDownload;
@@ -72,6 +68,7 @@
 
 + (double)magicMoveAttributeMatchPercentBetweenOutgoingObject:(id)arg1 incomingObject:(id)arg2 mixingTypeContext:(id)arg3;
 
+- (void).cxx_destruct;
 - (id)activeTextEditingPath;
 - (id)animationFilter;
 - (bool)buildShouldUseRenderer:(id)arg1;

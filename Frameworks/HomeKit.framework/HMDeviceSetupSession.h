@@ -32,6 +32,7 @@
 + (id)logCategory;
 
 - (void).cxx_destruct;
+- (void)__closeWithError:(id)arg1;
 - (void)__handleClose:(id)arg1;
 - (void)__handleReceivedExchangeData:(id)arg1;
 - (void)__registerForMessages;

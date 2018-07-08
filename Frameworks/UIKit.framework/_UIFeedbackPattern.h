@@ -23,6 +23,7 @@
 
 + (Class)_parametersClass;
 + (id)feedbackPattern;
++ (bool)supportsSecureCoding;
 + (id)type;
 
 - (void).cxx_destruct;

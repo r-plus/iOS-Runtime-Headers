@@ -40,6 +40,7 @@
 + (void)_addAnimations:(id)arg1 toDispatchGroup:(id)arg2;
 + (void)_addAnimations:(id)arg1 toPreparingAnimations:(id)arg2 exclusiveAnimations:(id)arg3 visitedDisplayItemIdentifiers:(id)arg4;
 + (id)animationWithBlock:(id /* block */)arg1;
++ (void)initialize;
 + (void)prepareAnimations:(id)arg1 forStatusBar:(id)arg2;
 
 - (void).cxx_destruct;

@@ -19,6 +19,7 @@
 - (double)_adjustmentForBottomTimeLayout;
 - (void)_applyDataMode;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
+- (void)_backlightDidTurnOff;
 - (void)_backlightWillTurnOff;
 - (void)_cleanupAfterEditing;
 - (id)_complicationDisplayWrapperForTouch:(id)arg1;
@@ -52,10 +53,12 @@
 - (double)_timeLabelAlphaForEditMode:(long long)arg1;
 - (void)_unloadSnapshotContentViews;
 - (void)_updateComplicationWithColor:(id)arg1 animated:(bool)arg2;
+- (void)_updateComplicationWithColor:(id)arg1 animated:(bool)arg2 useComplicationFlickerWorkaround:(bool)arg3;
 - (void)_updatePaused;
 - (void)_updateReviewLabel;
 - (id)_viewForEditOption:(id)arg1;
 - (bool)_wantsTimeTravelStatusModule;
+- (void)dealloc;
 - (void)didAddSubview:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;

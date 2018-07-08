@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCDerivedPersonalizationData : NSObject <FCDerivedPersonalizationData, NSCoding, NSCopying> {
+@interface FCDerivedPersonalizationData : NSObject <FCDerivedPersonalizationData, NSCopying, NSSecureCoding> {
     NSDictionary * _aggregatesByFeatureKey;
     NTPBPersonalizationProfile * _profile;
 }
@@ -13,6 +13,8 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NTPBPersonalizationProfile *profile;
 @property (readonly) Class superclass;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)aggregateForFeatureKey:(id)arg1;

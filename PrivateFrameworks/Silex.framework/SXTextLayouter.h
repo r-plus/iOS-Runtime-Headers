@@ -13,6 +13,7 @@
 @property (nonatomic, retain) STTextTangierDocumentRoot *documentRoot;
 @property (nonatomic, retain) NSSet *exclusionPaths;
 @property (nonatomic, retain) TSDLayoutController *layoutController;
+@property (nonatomic, readonly) NSArray *paragraphRanges;
 @property (nonatomic, retain) STTextTangierContainerInfo *textInfo;
 @property (nonatomic, retain) SXTextSource *textSource;
 
@@ -31,6 +32,7 @@
 - (id)initWithTextSource:(id)arg1 andDocumentRoot:(id)arg2;
 - (void)invalidate;
 - (id)layoutController;
+- (id)paragraphRanges;
 - (void)removeAllExclusionPaths;
 - (void)reset;
 - (void)setDocumentRoot:(id)arg1;
@@ -42,6 +44,7 @@
 - (id)textLayout;
 - (id)textSource;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })validAnchorRangeForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (double)verticalLocationOfCharacterAtIndex:(unsigned long long)arg1;
 - (id)wpLayout;
 - (id)wpStorage;
 

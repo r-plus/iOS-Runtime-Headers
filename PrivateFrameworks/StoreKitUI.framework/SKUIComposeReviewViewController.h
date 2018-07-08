@@ -7,6 +7,7 @@
     SKUIComposeReviewFormViewController * _formViewController;
     NSString * _nickname;
     UIAlertAction * _nicknameOKAction;
+    bool  _nicknameShouldResetOnError;
     SUPlaceholderViewController * _placeholderViewController;
     SKUIWriteAReviewTemplateViewElement * _templateViewElement;
 }
@@ -31,6 +32,7 @@
 - (void)_sendDidCancel;
 - (void)_sendDidSubmit;
 - (void)_setNickname:(id)arg1;
+- (void)_setNicknameShouldResetOnError:(bool)arg1;
 - (void)composeReviewFormDidCancel:(id)arg1;
 - (void)composeReviewFormDidSubmit:(id)arg1;
 - (void)dealloc;

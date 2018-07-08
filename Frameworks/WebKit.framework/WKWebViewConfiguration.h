@@ -2,11 +2,10 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@interface WKWebViewConfiguration : NSObject <NSCoding, NSCopying> {
+@interface WKWebViewConfiguration : NSObject <NSCopying, NSSecureCoding> {
     bool  _allowMediaContentTypesRequiringHardwareSupportAsFallback;
     bool  _allowUniversalAccessFromFileURLs;
     bool  _allowsAirPlayForMediaPlayback;
-    bool  _allowsBlockSelection;
     bool  _allowsInlineMediaPlayback;
     bool  _allowsInlineMediaPlaybackAfterFullscreen;
     bool  _allowsJavaScriptMarkup;
@@ -17,6 +16,9 @@
     }  _alternateWebViewForNavigationGestures;
     bool  _alwaysRunsAtForegroundPriority;
     bool  _applePayEnabled;
+    struct RetainPtr<_WKApplicationManifest> { 
+        void *m_ptr; 
+    }  _applicationManifest;
     struct LazyInitialized<WTF::RetainPtr<NSString> > { 
         bool m_isInitialized; 
         struct RetainPtr<NSString> { 
@@ -102,13 +104,13 @@
 
 @property (setter=_setAllowMediaContentTypesRequiringHardwareSupportAsFallback:, nonatomic) bool _allowMediaContentTypesRequiringHardwareSupportAsFallback;
 @property (setter=_setAllowUniversalAccessFromFileURLs:, nonatomic) bool _allowUniversalAccessFromFileURLs;
-@property (setter=_setAllowsBlockSelection:, nonatomic) bool _allowsBlockSelection;
 @property (setter=_setAllowsInlineMediaPlaybackAfterFullscreen:, nonatomic) bool _allowsInlineMediaPlaybackAfterFullscreen;
 @property (setter=_setAllowsJavaScriptMarkup:, nonatomic) bool _allowsJavaScriptMarkup;
 @property (setter=_setAllowsMetaRefresh:, nonatomic) bool _allowsMetaRefresh;
 @property (setter=_setAlternateWebViewForNavigationGestures:, nonatomic) WKWebView *_alternateWebViewForNavigationGestures;
 @property (setter=_setAlwaysRunsAtForegroundPriority:, nonatomic) bool _alwaysRunsAtForegroundPriority;
 @property (setter=_setApplePayEnabled:, nonatomic) bool _applePayEnabled;
+@property (setter=_setApplicationManifest:, nonatomic) _WKApplicationManifest *_applicationManifest;
 @property (setter=_setAttachmentElementEnabled:, nonatomic) bool _attachmentElementEnabled;
 @property (setter=_setContentProviderRegistry:, nonatomic) WKWebViewContentProviderRegistry *_contentProviderRegistry;
 @property (getter=_isControlledByAutomation, setter=_setControlledByAutomation:, nonatomic) bool _controlledByAutomation;
@@ -154,17 +156,19 @@
 
 // Image: /System/Library/Frameworks/WebKit.framework/WebKit
 
++ (bool)supportsSecureCoding;
+
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (bool)_allowMediaContentTypesRequiringHardwareSupportAsFallback;
 - (bool)_allowUniversalAccessFromFileURLs;
-- (bool)_allowsBlockSelection;
 - (bool)_allowsInlineMediaPlaybackAfterFullscreen;
 - (bool)_allowsJavaScriptMarkup;
 - (bool)_allowsMetaRefresh;
 - (id)_alternateWebViewForNavigationGestures;
 - (bool)_alwaysRunsAtForegroundPriority;
 - (bool)_applePayEnabled;
+- (id)_applicationManifest;
 - (bool)_attachmentElementEnabled;
 - (id)_contentProviderRegistry;
 - (bool)_convertsPositionStyleOnCopy;
@@ -188,13 +192,13 @@
 - (bool)_respectsImageOrientation;
 - (void)_setAllowMediaContentTypesRequiringHardwareSupportAsFallback:(bool)arg1;
 - (void)_setAllowUniversalAccessFromFileURLs:(bool)arg1;
-- (void)_setAllowsBlockSelection:(bool)arg1;
 - (void)_setAllowsInlineMediaPlaybackAfterFullscreen:(bool)arg1;
 - (void)_setAllowsJavaScriptMarkup:(bool)arg1;
 - (void)_setAllowsMetaRefresh:(bool)arg1;
 - (void)_setAlternateWebViewForNavigationGestures:(id)arg1;
 - (void)_setAlwaysRunsAtForegroundPriority:(bool)arg1;
 - (void)_setApplePayEnabled:(bool)arg1;
+- (void)_setApplicationManifest:(id)arg1;
 - (void)_setAttachmentElementEnabled:(bool)arg1;
 - (void)_setContentProviderRegistry:(id)arg1;
 - (void)_setControlledByAutomation:(bool)arg1;
@@ -223,7 +227,6 @@
 - (void)_setWebsiteDataStore:(id)arg1;
 - (bool)_treatsSHA1SignedCertificatesAsInsecure;
 - (id)_urlSchemeHandlers;
-- (void)_validate;
 - (id)_visitedLinkProvider;
 - (id)_visitedLinkStore;
 - (bool)_waitsForPaintAfterViewDidMoveToWindow;
@@ -270,7 +273,9 @@
 
 // Image: /System/Library/Frameworks/iAd.framework/iAd
 
++ (id)_createSharedConfiguration:(bool)arg1 forVideo:(bool)arg2;
 + (bool)excludeCustomJavaScript;
 + (id)sharedAdvertisingConfiguration:(bool)arg1;
++ (id)sharedAdvertisingConfigurationForVideo:(bool)arg1;
 
 @end

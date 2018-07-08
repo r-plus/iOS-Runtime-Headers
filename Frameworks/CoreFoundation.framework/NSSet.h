@@ -5,6 +5,7 @@
 @interface NSSet : NSObject <HFPrettyDescription, HFStateDumpSerializable, NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable>
 
 @property (readonly) unsigned long long count;
+@property (nonatomic, readonly, copy) NSString *crk_stableDescription;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -86,6 +87,10 @@
 - (id)setByAddingObjectsFromSet:(id)arg1;
 - (id)sortedArrayUsingComparator:(id /* block */)arg1;
 - (id)sortedArrayWithOptions:(unsigned long long)arg1 usingComparator:(id /* block */)arg2;
+
+// Image: /System/Library/Frameworks/ClassKit.framework/ClassKit
+
++ (id)setWithUnionOfSets:(id)arg1;
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
@@ -172,7 +177,9 @@
 // Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
 
 - (id)crk_mapUsingBlock:(id /* block */)arg1;
+- (id)crk_setByAddingSet:(id)arg1;
 - (id)crk_setBySubtractingSet:(id)arg1;
+- (id)crk_stableDescription;
 
 // Image: /System/Library/PrivateFrameworks/ContactsFoundation.framework/ContactsFoundation
 
@@ -382,6 +389,8 @@
 + (bool)tsu_set:(id)arg1 isEqualToSet:(id)arg2;
 + (id)tsu_setWithSelectors:(SEL)arg1;
 
+- (id)tsp_initWithProtobufStringArray:(const struct RepeatedPtrField<std::__1::basic_string<char> > { void **x1; int x2; int x3; int x4; }*)arg1;
+- (void)tsp_saveToProtobufStringArray:(struct RepeatedPtrField<std::__1::basic_string<char> > { void **x1; int x2; int x3; int x4; }*)arg1;
 - (bool)tss_containsStyleOrVariationOfStyle:(id)arg1;
 - (bool)tss_hasVariations;
 - (bool)tsu_containsObjectIdenticalTo:(id)arg1;

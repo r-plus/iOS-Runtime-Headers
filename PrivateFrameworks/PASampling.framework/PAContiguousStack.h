@@ -4,6 +4,8 @@
 
 @interface PAContiguousStack : NSObject {
     unsigned long long  _firstTimestampIndex;
+    unsigned long long  _previousCpuCycles;
+    unsigned long long  _previousCpuInstructions;
     unsigned long long  _previousCpuTimeNs;
     NSMutableArray * _threads;
 }
@@ -14,12 +16,14 @@
 - (void).cxx_destruct;
 - (void)addSampleThread:(id)arg1 atTimestampIndex:(unsigned long long)arg2;
 - (unsigned long long)count;
+- (unsigned long long)cpuCycles;
+- (unsigned long long)cpuInstructions;
 - (unsigned long long)cpuTimeNs;
 - (id)debugDescription;
 - (unsigned long long)dispatchQueueId;
 - (unsigned long long)firstTimestampIndex;
 - (bool)hasSingleName:(id*)arg1;
-- (id)initWithTimestampIndex:(unsigned long long)arg1 andPreviousCpuTimeNs:(unsigned long long)arg2;
+- (id)initWithTimestampIndex:(unsigned long long)arg1 andPreviousCpuTimeNs:(unsigned long long)arg2 andPreviousCpuInstructions:(unsigned long long)arg3 andPreviousCpuCycles:(unsigned long long)arg4;
 - (bool)isGlobalForcedIdleThread;
 - (bool)isIdleWorkQueueThread;
 - (bool)isProcessorIdleThread;

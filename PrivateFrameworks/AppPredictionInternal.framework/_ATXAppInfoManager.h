@@ -7,6 +7,8 @@
     _ATXDataStore * _dataStore;
     NSMutableArray * _installDeltaLog;
     _ATXInternalInstallNotification * _installNotificationListener;
+    NSString * _lastAppIntentLaunch;
+    NSDate * _lastAppIntentLaunchDate;
     NSString * _lastLaunch;
     NSDate * _lastLaunchDate;
     NSDate * _lastUnlockDate;
@@ -34,6 +36,7 @@
 - (void)addSpotlightLaunchForBundleId:(id)arg1 date:(id)arg2;
 - (id)allApps;
 - (id)allAppsWithInstallDate;
+- (id)app2VecClusterForBundleId:(id)arg1;
 - (id)appInfoForBundleId:(id)arg1;
 - (void)clearAppInstallInfo;
 - (void)clearAppLaunchInfo;
@@ -43,6 +46,8 @@
 - (id)init;
 - (id)initWithDataStore:(id)arg1;
 - (id)initWithInMemoryStore;
+- (id)lastAppIntentLaunch;
+- (id)lastAppIntentLaunchDate;
 - (id)lastAppLaunch;
 - (id)lastAppLaunchDate;
 - (id)lastAppLaunchWithHistory:(id)arg1;
@@ -54,6 +59,8 @@
 - (void)startInstallDeltaRecording;
 - (id)stopInstallDeltaRecording;
 - (id)subGenreIdsForBundleId:(id)arg1;
+- (void)updateApp2VecClusterForBundleId:(id)arg1 app2VecCluster:(id)arg2;
+- (void)updateApp2VecClustersForAllApps;
 - (void)updateGenreIdsForAllApps;
 - (void)updateGenreIdsForBundleId:(id)arg1 genreId:(id)arg2 subGenreIds:(id)arg3;
 

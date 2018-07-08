@@ -36,24 +36,24 @@
         struct __hash_table<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, std::__1::hash<std::__1::basic_string<char> >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, std::__1::equal_to<std::__1::basic_string<char> >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > > > > { 
             struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, void *> *> *> > > { 
                 struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, void *> *> *> > > { 
-                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, void *> *> {} **__first_; 
+                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, void *> *> {} **__value_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, void *> *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, void *> *> *> > { 
-                            unsigned long long __first_; 
+                            unsigned long long __value_; 
                         } __data_; 
-                    } __second_; 
+                    } __value_; 
                 } __ptr_; 
             } __bucket_list_; 
             struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, void *> > > { 
                 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, void *> *> { 
                     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, void *> *> {} *__next_; 
-                } __first_; 
+                } __value_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, std::__1::hash<std::__1::basic_string<char> >, true> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::shared_ptr<md::ObjectGroup>, std::__1::allocator<std::__1::shared_ptr<md::ObjectGroup> > > >, std::__1::equal_to<std::__1::basic_string<char> >, true> > { 
-                float __first_; 
+                float __value_; 
             } __p3_; 
         } __table_; 
     }  _customLandmarks;
@@ -81,11 +81,15 @@
     bool  _enableARDebugConsole;
     bool  _enableAROmniTileLoader;
     bool  _enableEtaLabelDebugging;
+    bool  _enableEtaLabelRectDebugging;
     bool  _enableLoggingInLockScreen;
     bool  _enableRouteIntersectionTesting;
+    bool  _enableRouteShareSectionDebugging;
     bool  _enableShieldsOnRouteLine;
     bool  _enableSignPostEvents;
     bool  _enableTrafficCameraLabelDebugging;
+    unsigned int  _etaLabelDebugOrientationMask;
+    unsigned long long  _etaLabelDebugScore;
     bool  _etaLabelsAvoidScreenEdges;
     bool  _expandedPerformanceHUD;
     NSMutableArray * _footprintsToSuppress;
@@ -162,6 +166,7 @@
     bool  _showTrafficCasing;
     bool  _suppressFootprints;
     bool  _texturedTrafficCasing;
+    bool  _traceEtaDebugLog;
     bool  _trackingCameraZoomFurther;
     bool  _trafficCameraLabelCollideOutExternal;
     bool  _trafficCameraLabelCollideWithExternal;
@@ -224,11 +229,15 @@
 @property (nonatomic) bool enableARDebugConsole;
 @property (nonatomic) bool enableAROmniTileLoader;
 @property (nonatomic) bool enableEtaLabelDebugging;
+@property (nonatomic) bool enableEtaLabelRectDebugging;
 @property (nonatomic) bool enableLoggingInLockScreen;
 @property (nonatomic) bool enableRouteIntersectionTesting;
+@property (nonatomic) bool enableRouteShareSectionDebugging;
 @property (nonatomic) bool enableShieldsOnRouteLine;
 @property (nonatomic) bool enableSignPostEvents;
 @property (nonatomic) bool enableTrafficCameraLabelDebugging;
+@property (nonatomic) unsigned int etaLabelDebugOrientationMask;
+@property (nonatomic) unsigned long long etaLabelDebugScore;
 @property (nonatomic) bool etaLabelsAvoidScreenEdges;
 @property (nonatomic) bool expandedPerformanceHUD;
 @property (nonatomic, retain) NSMutableArray *footprintsToSuppress;
@@ -299,6 +308,7 @@
 @property (nonatomic) bool showTrafficCasing;
 @property (nonatomic) bool suppressFootprints;
 @property (nonatomic) bool texturedTrafficCasing;
+@property (nonatomic) bool traceEtaDebugLog;
 @property (nonatomic) bool trackingCameraZoomFurther;
 @property (nonatomic) bool trafficCameraLabelCollideOutExternal;
 @property (nonatomic) bool trafficCameraLabelCollideWithExternal;
@@ -368,11 +378,15 @@
 - (bool)enableARDebugConsole;
 - (bool)enableAROmniTileLoader;
 - (bool)enableEtaLabelDebugging;
+- (bool)enableEtaLabelRectDebugging;
 - (bool)enableLoggingInLockScreen;
 - (bool)enableRouteIntersectionTesting;
+- (bool)enableRouteShareSectionDebugging;
 - (bool)enableShieldsOnRouteLine;
 - (bool)enableSignPostEvents;
 - (bool)enableTrafficCameraLabelDebugging;
+- (unsigned int)etaLabelDebugOrientationMask;
+- (unsigned long long)etaLabelDebugScore;
 - (bool)etaLabelsAvoidScreenEdges;
 - (bool)expandedPerformanceHUD;
 - (id)footprintsToSuppress;
@@ -491,11 +505,15 @@
 - (void)setEnableARDebugConsole:(bool)arg1;
 - (void)setEnableAROmniTileLoader:(bool)arg1;
 - (void)setEnableEtaLabelDebugging:(bool)arg1;
+- (void)setEnableEtaLabelRectDebugging:(bool)arg1;
 - (void)setEnableLoggingInLockScreen:(bool)arg1;
 - (void)setEnableRouteIntersectionTesting:(bool)arg1;
+- (void)setEnableRouteShareSectionDebugging:(bool)arg1;
 - (void)setEnableShieldsOnRouteLine:(bool)arg1;
 - (void)setEnableSignPostEvents:(bool)arg1;
 - (void)setEnableTrafficCameraLabelDebugging:(bool)arg1;
+- (void)setEtaLabelDebugOrientationMask:(unsigned int)arg1;
+- (void)setEtaLabelDebugScore:(unsigned long long)arg1;
 - (void)setEtaLabelsAvoidScreenEdges:(bool)arg1;
 - (void)setExpandedPerformanceHUD:(bool)arg1;
 - (void)setFootprintsToSuppress:(id)arg1;
@@ -566,6 +584,7 @@
 - (void)setShowTrafficCasing:(bool)arg1;
 - (void)setSuppressFootprints:(bool)arg1;
 - (void)setTexturedTrafficCasing:(bool)arg1;
+- (void)setTraceEtaDebugLog:(bool)arg1;
 - (void)setTrackingCameraZoomFurther:(bool)arg1;
 - (void)setTrafficCameraLabelCollideOutExternal:(bool)arg1;
 - (void)setTrafficCameraLabelCollideWithExternal:(bool)arg1;
@@ -589,6 +608,7 @@
 - (bool)showTrafficCasing;
 - (bool)suppressFootprints;
 - (bool)texturedTrafficCasing;
+- (bool)traceEtaDebugLog;
 - (bool)trackingCameraZoomFurther;
 - (bool)trafficCameraLabelCollideOutExternal;
 - (bool)trafficCameraLabelCollideWithExternal;

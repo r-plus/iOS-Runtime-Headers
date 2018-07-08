@@ -4,6 +4,7 @@
 
 @interface NMRNowPlayingController : NSObject <NMROriginObserverDelegate> {
     NMROrigin * _activeNowPlayingOrigin;
+    NSString * _activeNowPlayingOriginExplanationLog;
     <NMRNowPlayingControllerDelegate> * _delegate;
     unsigned long long  _filteringOptions;
     NSArray * _nowPlayingOrigins;
@@ -46,6 +47,7 @@
 - (void)endObservingOrigins;
 - (unsigned long long)filteringOptions;
 - (id)initWithOptions:(unsigned long long)arg1;
+- (id)launchNowPlayingURLForOrigin:(id)arg1;
 - (id)nowPlayingOrigins;
 - (id)nowPlayingStateForOrigin:(id)arg1;
 - (void)originObserver:(id)arg1 didUpdateElapsedTimeForOrigin:(id)arg2;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TVRemoteCore.framework/TVRemoteCore
  */
 
-@interface TVRCVoiceRecorder : NSObject {
+@interface TVRCVoiceRecorder : NSObject <AVVoiceControllerRecordDelegate> {
     struct AudioStreamBasicDescription { 
         double mSampleRate; 
         unsigned int mFormatID; 
@@ -14,24 +14,24 @@
         unsigned int mBitsPerChannel; 
         unsigned int mReserved; 
     }  _audioFormat;
-    struct AudioQueueBuffer {} * _buffers;
+    AVAudioFormat * _avAudioFormat;
     <TVRCVoiceRecorderDelegate> * _delegate;
-    struct OpaqueAudioQueue { } * _queue;
     bool  _recordsAutomatically;
     long long  _state;
+    AVVoiceController * _voiceController;
 }
 
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <TVRCVoiceRecorderDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) bool recordsAutomatically;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (unsigned int)_audioBufferSizeForDuration:(double)arg1;
-- (bool)_createAudioBuffers;
-- (bool)_createAudioQueue;
 - (id)_init;
-- (bool)_startAudioQueue;
+- (void)_processAudioBufferOnMainQueue:(id)arg1;
 - (bool)_startAudioSession;
-- (void)_stopAndDisposeAudioQueue;
 - (void)_stopAudioSession;
 - (id)audioFormatSettings;
 - (void)dealloc;
@@ -41,5 +41,8 @@
 - (void)setRecordsAutomatically:(bool)arg1;
 - (void)start;
 - (void)stop;
+- (void)voiceControllerDidStopRecording:(id)arg1 forReason:(long long)arg2;
+- (void)voiceControllerEncoderErrorDidOccur:(id)arg1 error:(id)arg2;
+- (void)voiceControllerRecordBufferAvailable:(id)arg1 buffer:(id)arg2;
 
 @end

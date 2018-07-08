@@ -6,6 +6,7 @@
     NSObject<OS_nw_endpoint> * _internalEndpoint;
 }
 
+@property (nonatomic) unsigned short alternatePort;
 @property (nonatomic, retain) NWInterface *interface;
 @property (nonatomic, retain) NSObject<OS_nw_endpoint> *internalEndpoint;
 @property (nonatomic, retain) NSString *parentEndpointDomain;
@@ -21,6 +22,7 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (unsigned short)alternatePort;
 - (id)copyCEndpoint;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)createProtocolBufferObject;
@@ -38,6 +40,7 @@
 - (id)parentEndpointDomain;
 - (id)privateDescription;
 - (void)resolveEndpointWithCompletionHandler:(id /* block */)arg1;
+- (void)setAlternatePort:(unsigned short)arg1;
 - (void)setInterface:(id)arg1;
 - (void)setInternalEndpoint:(id)arg1;
 - (void)setParentEndpointDomain:(id)arg1;

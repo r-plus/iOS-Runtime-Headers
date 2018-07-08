@@ -22,7 +22,7 @@
 - (void)addDynamicTransitUIContainer:(id)arg1;
 - (id)referenceDate;
 - (void)removeDynamicTransitUIContainer:(id)arg1;
-- (bool)updateTransitLineItemIfNeeded:(id)arg1 completion:(id /* block */)arg2;
-- (bool)updateTransitMapItemIfNeeded:(id)arg1 updateForIncidents:(bool)arg2 completion:(id /* block */)arg3;
+- (bool)updateTransitLineItemIfNeeded:(id)arg1 traits:(id)arg2 completion:(id /* block */)arg3;
+- (bool)updateTransitMapItemIfNeeded:(id)arg1 updateForIncidents:(bool)arg2 traits:(id)arg3 completion:(id /* block */)arg4;
 
 @end

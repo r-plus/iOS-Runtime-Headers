@@ -85,7 +85,7 @@
 - (void)_fallBackToNextConnectionMethod:(long long)arg1 fromError:(id)arg2 afterDelay:(double)arg3;
 - (void)_fallBackToNextConnectionMethodWithError:(id)arg1 orElse:(id /* block */)arg2;
 - (void)_getCellularMetrics:(id)arg1;
-- (id)_getInitialPayloadWithBufferedLength:(unsigned long long*)arg1;
+- (id)_getInitialPayloadWithBufferedLength:(unsigned long long*)arg1 forceReconnect:(bool)arg2;
 - (void)_getWifiMetrics:(id)arg1;
 - (void)_handleAceEnd;
 - (void)_handleAceNop;
@@ -104,7 +104,7 @@
 - (long long)_nextConnectionMethod;
 - (long long)_normalizeSNR:(int)arg1;
 - (void)_pingTimerFired;
-- (void)_prepareProviderHeader;
+- (void)_prepareProviderHeaderWithForceReconnect:(bool)arg1;
 - (Class)_providerClass;
 - (void)_resumePingTimer;
 - (void)_scheduleAceHeaderTimeoutTimerWithInterval:(double)arg1;
@@ -121,7 +121,7 @@
 - (bool)_tryReadingHTTPHeaderData:(id)arg1 withMessage:(struct __CFHTTPMessage { }*)arg2 bytesRead:(unsigned long long*)arg3 error:(id*)arg4;
 - (bool)_tryReadingParsedDataFromBytes:(const void*)arg1 length:(unsigned long long)arg2 packet:(struct { unsigned char x1; unsigned int x2; }*)arg3 object:(id*)arg4 bytesParsed:(unsigned long long*)arg5 error:(id*)arg6;
 - (void)_tryToWriteBufferedOutputData;
-- (void)_updateBuffersForInitialPayload:(id)arg1 bufferedLength:(unsigned long long)arg2;
+- (void)_updateBuffersForInitialPayload:(id)arg1 bufferedLength:(unsigned long long)arg2 forceReconnect:(bool)arg3;
 - (bool)_usingFlorence;
 - (bool)_usingNetwork;
 - (bool)_usingPOP;

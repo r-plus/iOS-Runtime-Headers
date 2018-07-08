@@ -2,16 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPModelRadioStation : MPModelObject {
-    bool  _allowsItemLiking;
-    id /* block */  _artworkCatalogBlock;
-    bool  _beats1;
-    NSString * _editorNotes;
-    bool  _hasExplicitContent;
-    NSString * _name;
-    NSString * _shortEditorNotes;
-    long long  _type;
-}
+@interface MPModelRadioStation : MPModelObject
 
 @property (nonatomic) bool allowsItemLiking;
 @property (nonatomic, copy) id /* block */ artworkCatalogBlock;
@@ -22,43 +13,17 @@
 @property (nonatomic, copy) NSString *shortEditorNotes;
 @property (nonatomic) long long type;
 
-+ (id)__MPModelPropertyRadioStationAllowsItemLiking__PROPERTY;
-+ (id)__MPModelPropertyRadioStationArtwork__PROPERTY;
-+ (id)__MPModelPropertyRadioStationBeats1__PROPERTY;
-+ (id)__MPModelPropertyRadioStationEditorNotes__PROPERTY;
-+ (id)__MPModelPropertyRadioStationHasExplicitContent__PROPERTY;
-+ (id)__MPModelPropertyRadioStationName__PROPERTY;
-+ (id)__MPModelPropertyRadioStationShortEditorNotes__PROPERTY;
-+ (id)__MPModelPropertyRadioStationType__PROPERTY;
-+ (id)__allowsItemLiking__KEY;
-+ (id)__artworkCatalogBlock__KEY;
-+ (id)__beats1__KEY;
-+ (id)__editorNotes__KEY;
-+ (id)__hasExplicitContent__KEY;
-+ (id)__name__KEY;
-+ (id)__shortEditorNotes__KEY;
-+ (id)__type__KEY;
++ (id)__allowsItemLiking_KEY;
++ (id)__artworkCatalogBlock_KEY;
++ (id)__beats1_KEY;
++ (id)__editorNotes_KEY;
++ (id)__hasExplicitContent_KEY;
++ (id)__name_KEY;
++ (id)__shortEditorNotes_KEY;
++ (id)__type_KEY;
 + (id)storeItemMetadataRequestItemIdentifierForIdentifiers:(id)arg1;
 
-- (void).cxx_destruct;
-- (bool)allowsItemLiking;
 - (id)artworkCatalog;
-- (id /* block */)artworkCatalogBlock;
 - (id)contentItemCollectionInfo;
-- (id)descriptionWithType:(long long)arg1;
-- (id)editorNotes;
-- (bool)hasExplicitContent;
-- (bool)isBeats1;
-- (id)name;
-- (void)setAllowsItemLiking:(bool)arg1;
-- (void)setArtworkCatalogBlock:(id /* block */)arg1;
-- (void)setBeats1:(bool)arg1;
-- (void)setEditorNotes:(id)arg1;
-- (void)setHasExplicitContent:(bool)arg1;
-- (void)setName:(id)arg1;
-- (void)setShortEditorNotes:(id)arg1;
-- (void)setType:(long long)arg1;
-- (id)shortEditorNotes;
-- (long long)type;
 
 @end

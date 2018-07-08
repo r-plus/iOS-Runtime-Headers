@@ -29,6 +29,7 @@
 - (bool)disableShowingButtons;
 - (bool)editItemShouldBeAskedForInjectableViewController;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 event:(id)arg2 overriddenEventStartDate:(id)arg3 overriddenEventEndDate:(id)arg4;
+- (bool)prefersToBePresentedFromUINavigationController;
 - (bool)presentModally;
 - (void)setAppendOnly:(bool)arg1;
 - (void)setAttendees:(id)arg1;

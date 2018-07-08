@@ -3,9 +3,11 @@
  */
 
 @interface LPYouTubePlayerView : UIView <UIScrollViewDelegate> {
+    NSMutableArray * _commandsPendingPlayerReadiness;
     <LPYouTubePlayerDelegate> * _delegate;
     double  _endTime;
     bool  _muted;
+    bool  _ready;
     LPYouTubePlayerScriptMessageHandler * _scriptMessageHandler;
     bool  _showsControls;
     double  _startTime;
@@ -35,6 +37,7 @@
 - (void)dispatchErrorForInvalidURL;
 - (double)endTime;
 - (void)enterFullScreen;
+- (void)evaluatePlayerCommand:(id)arg1;
 - (void)exitFullScreen;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)isMuted;

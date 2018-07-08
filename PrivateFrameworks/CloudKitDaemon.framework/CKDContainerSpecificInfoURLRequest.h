@@ -5,12 +5,12 @@
 @interface CKDContainerSpecificInfoURLRequest : CKDURLRequest {
     NSString * _containerIdentifier;
     CKDContainerInfo * _containerInfo;
-    bool  _needUserID;
+    bool  _requireUserIDs;
 }
 
 @property (nonatomic) NSString *containerIdentifier;
 @property (nonatomic, copy) CKDContainerInfo *containerInfo;
-@property (nonatomic) bool needUserID;
+@property (nonatomic) bool requireUserIDs;
 
 - (void).cxx_destruct;
 - (bool)allowsAnonymousAccount;
@@ -19,16 +19,16 @@
 - (id)containerInfo;
 - (bool)hasRequestBody;
 - (id)initWithContainerIdentifier:(id)arg1;
-- (bool)needUserID;
 - (long long)partitionType;
 - (void)requestDidParseJSONObject:(id)arg1;
+- (bool)requireUserIDs;
 - (bool)requiresConfiguration;
 - (bool)requiresDeviceID;
 - (bool)requiresSignature;
 - (long long)serverType;
 - (void)setContainerIdentifier:(id)arg1;
 - (void)setContainerInfo:(id)arg1;
-- (void)setNeedUserID:(bool)arg1;
+- (void)setRequireUserIDs:(bool)arg1;
 - (id)url;
 - (bool)usesCloudKitAuthToken;
 - (bool)usesiCloudAuthToken;

@@ -52,11 +52,11 @@
 @property (nonatomic, readonly) long long restoreState;
 @property (readonly, copy) NSString *sourceBundleIdentifier;
 @property (readonly) Class superclass;
+@property (readonly) long long syncStoreType;
 
-+ (id)_allOrderedNanoSyncEntities;
 + (id)_observedDeviceProperties;
 + (id)nanoSyncStoreWithProfile:(id)arg1 device:(id)arg2 delegate:(id)arg3;
-+ (id)orderedSyncEntitiesForProtocolVersion:(int)arg1 companion:(bool)arg2;
++ (id)orderedSyncEntitiesForProfile:(id)arg1 protocolVersion:(int)arg2 companion:(bool)arg3;
 
 - (void).cxx_destruct;
 - (id)_initWithIdentityServicesDevice:(id)arg1 nanoRegistryDevice:(id)arg2 pairingEntity:(id)arg3 protocolVersion:(int)arg4 delegate:(id)arg5 profile:(id)arg6;
@@ -69,6 +69,7 @@
 - (bool)canRecieveSyncObjectsForEntityClass:(Class)arg1;
 - (void)configureOutgoingResponse:(id)arg1;
 - (id)createRequestWithMessageID:(unsigned short)arg1;
+- (id)databaseIdentifier;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
@@ -120,7 +121,7 @@
 - (long long)syncProvenance;
 - (id)syncStoreDefaultSourceBundleIdentifier;
 - (id)syncStoreIdentifier;
-- (id)syncStoreTypeIdentifier;
+- (long long)syncStoreType;
 - (bool)validatePairingUUIDsWithIncomingMessage:(id)arg1;
 - (bool)validateVersionWithIncomingMessage:(id)arg1;
 

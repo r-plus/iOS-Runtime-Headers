@@ -79,6 +79,7 @@
 - (bool)migratePersistentStoreAtURL:(id)arg1 toManagedObjectModel:(id)arg2 protectionClass:(id)arg3 startVersion:(unsigned long long)arg4 endVersion:(unsigned long long)arg5 error:(id*)arg6;
 - (id)mirroringDelegate;
 - (id)modelURL;
+- (long long)modelVersionForStoreAtURL:(id)arg1 error:(id*)arg2;
 - (id)persistentStoreCoordinatorFor:(id)arg1;
 - (bool)readOnly;
 - (void)removeManagedObjectContextForKey:(id)arg1;

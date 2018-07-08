@@ -13,7 +13,7 @@
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<PKInputPoint *, std::__1::allocator<PKInputPoint> > { 
-            struct { /* ? */ } *__first_; 
+            struct { /* ? */ } *__value_; 
         } __end_cap_; 
     }  _drawPoints;
     bool  _drawingEndedButNotFinished;
@@ -40,7 +40,7 @@
         struct _PKStrokePoint {} *__begin_; 
         struct _PKStrokePoint {} *__end_; 
         struct __compressed_pair<_PKStrokePoint *, std::__1::allocator<_PKStrokePoint> > { 
-            struct _PKStrokePoint {} *__first_; 
+            struct _PKStrokePoint {} *__value_; 
         } __end_cap_; 
     }  _outputPoints;
     NSObject<OS_dispatch_queue> * _outputQueue;
@@ -64,7 +64,7 @@
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<PKInputPoint *, std::__1::allocator<PKInputPoint> > { 
-            struct { /* ? */ } *__first_; 
+            struct { /* ? */ } *__value_; 
         } __end_cap_; 
     }  _updatedDrawPoints;
     bool  _useRuler;

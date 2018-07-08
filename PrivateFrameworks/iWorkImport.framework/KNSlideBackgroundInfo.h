@@ -3,11 +3,10 @@
  */
 
 @interface KNSlideBackgroundInfo : NSObject <TSDChangeableInfo, TSKDocumentObject, TSKTransformableObject> {
-    TSSPropertySetChangeDetails * mChanges;
-    TSDInfoGeometry * mGeometry;
-    NSObject<TSDContainerInfo> * mParentInfo;
-    KNAbstractSlide * mSlide;
-    TSSStylesheet * mStylesheet;
+    TSSPropertySetChangeDetails * _changes;
+    TSDInfoGeometry * _geometry;
+    NSObject<TSDContainerInfo> * _parentInfo;
+    KNAbstractSlide * _slide;
 }
 
 @property (getter=isAnchoredToText, nonatomic, readonly) bool anchoredToText;
@@ -29,11 +28,11 @@
 
 + (id)backgroundWithSlide:(id)arg1 andGeometry:(id)arg2;
 
+- (void).cxx_destruct;
 - (void)beginCollectingChanges;
 - (void)clearBackPointerToParentInfoIfNeeded:(id)arg1;
 - (id)commandForTransformingByTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 context:(id)arg2 transformedObjects:(id)arg3 inBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
 - (id)copyWithContext:(id)arg1;
-- (void)dealloc;
 - (id)endCollectingChanges;
 - (id)fill;
 - (id)geometry;

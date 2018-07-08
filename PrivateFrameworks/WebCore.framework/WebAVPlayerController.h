@@ -18,7 +18,7 @@
     double  _contentDurationWithinEndTimes;
     WebAVMediaSelectionOption * _currentAudioMediaSelectionOption;
     WebAVMediaSelectionOption * _currentLegibleMediaSelectionOption;
-    struct WebPlaybackSessionModel { int (**x1)(); } * _delegate;
+    struct PlaybackSessionModel { int (**x1)(); } * _delegate;
     bool  _externalPlaybackActive;
     NSString * _externalPlaybackAirPlayDeviceLocalizedName;
     long long  _externalPlaybackType;
@@ -34,7 +34,7 @@
     bool  _muted;
     bool  _pictureInPictureInterrupted;
     bool  _pictureInPicturePossible;
-    struct WebPlaybackSessionInterfaceAVKit { int (**x1)(); int (**x2)(); unsigned int x3; struct RetainPtr<WebAVPlayerController> { void *x_4_1_1; } x4; struct WebPlaybackSessionModel {} *x5; } * _playbackSessionInterface;
+    struct PlaybackSessionInterfaceAVKit { int (**x1)(); int (**x2)(); unsigned int x3; struct RetainPtr<WebAVPlayerController> { void *x_4_1_1; } x4; struct PlaybackSessionModel {} *x5; } * _playbackSessionInterface;
     AVPlayerController * _playerControllerProxy;
     bool  _playingOnSecondScreen;
     double  _rate;
@@ -59,7 +59,7 @@
 @property double contentDurationWithinEndTimes;
 @property (retain) WebAVMediaSelectionOption *currentAudioMediaSelectionOption;
 @property (retain) WebAVMediaSelectionOption *currentLegibleMediaSelectionOption;
-@property struct WebPlaybackSessionModel { int (**x1)(); }*delegate;
+@property struct PlaybackSessionModel { int (**x1)(); }*delegate;
 @property (getter=isExternalPlaybackActive) bool externalPlaybackActive;
 @property (retain) NSString *externalPlaybackAirPlayDeviceLocalizedName;
 @property long long externalPlaybackType;
@@ -79,7 +79,7 @@
 @property (getter=isMuted) bool muted;
 @property (getter=isPictureInPictureInterrupted) bool pictureInPictureInterrupted;
 @property (getter=isPictureInPicturePossible) bool pictureInPicturePossible;
-@property struct WebPlaybackSessionInterfaceAVKit { int (**x1)(); int (**x2)(); unsigned int x3; struct RetainPtr<WebAVPlayerController> { void *x_4_1_1; } x4; struct WebPlaybackSessionModel {} *x5; }*playbackSessionInterface;
+@property struct PlaybackSessionInterfaceAVKit { int (**x1)(); int (**x2)(); unsigned int x3; struct RetainPtr<WebAVPlayerController> { void *x_4_1_1; } x4; struct PlaybackSessionModel {} *x5; }*playbackSessionInterface;
 @property (retain) AVPlayerController *playerControllerProxy;
 @property (getter=isPlaying) bool playing;
 @property (getter=isPlayingOnExternalScreen, readonly) bool playingOnExternalScreen;
@@ -124,7 +124,7 @@
 - (id)currentLegibleMediaSelectionOption;
 - (double)currentTimeWithinEndTimes;
 - (void)dealloc;
-- (struct WebPlaybackSessionModel { int (**x1)(); }*)delegate;
+- (struct PlaybackSessionModel { int (**x1)(); }*)delegate;
 - (void)endScanningBackward:(id)arg1;
 - (void)endScanningForward:(id)arg1;
 - (void)endScrubbing:(id)arg1;
@@ -158,16 +158,19 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)pause:(id)arg1;
 - (void)play:(id)arg1;
-- (struct WebPlaybackSessionInterfaceAVKit { int (**x1)(); int (**x2)(); unsigned int x3; struct RetainPtr<WebAVPlayerController> { void *x_4_1_1; } x4; struct WebPlaybackSessionModel {} *x5; }*)playbackSessionInterface;
+- (struct PlaybackSessionInterfaceAVKit { int (**x1)(); int (**x2)(); unsigned int x3; struct RetainPtr<WebAVPlayerController> { void *x_4_1_1; } x4; struct PlaybackSessionModel {} *x5; }*)playbackSessionInterface;
 - (id)player;
 - (id)playerControllerProxy;
 - (double)rate;
 - (void)resetMediaState;
+- (void)seekByTimeInterval:(double)arg1;
+- (void)seekByTimeInterval:(double)arg1 toleranceBefore:(double)arg2 toleranceAfter:(double)arg3;
 - (void)seekChapterBackward:(id)arg1;
 - (void)seekChapterForward:(id)arg1;
 - (void)seekToBeginning:(id)arg1;
 - (void)seekToEnd:(id)arg1;
 - (void)seekToTime:(double)arg1;
+- (void)seekToTime:(double)arg1 toleranceBefore:(double)arg2 toleranceAfter:(double)arg3;
 - (id)seekableTimeRanges;
 - (double)seekableTimeRangesLastModifiedTime;
 - (void)setAllowsExternalPlayback:(bool)arg1;
@@ -183,7 +186,7 @@
 - (void)setCurrentAudioMediaSelectionOption:(id)arg1;
 - (void)setCurrentLegibleMediaSelectionOption:(id)arg1;
 - (void)setCurrentTimeWithinEndTimes:(double)arg1;
-- (void)setDelegate:(struct WebPlaybackSessionModel { int (**x1)(); }*)arg1;
+- (void)setDelegate:(struct PlaybackSessionModel { int (**x1)(); }*)arg1;
 - (void)setExternalPlaybackActive:(bool)arg1;
 - (void)setExternalPlaybackAirPlayDeviceLocalizedName:(id)arg1;
 - (void)setExternalPlaybackType:(long long)arg1;
@@ -198,7 +201,7 @@
 - (void)setMuted:(bool)arg1;
 - (void)setPictureInPictureInterrupted:(bool)arg1;
 - (void)setPictureInPicturePossible:(bool)arg1;
-- (void)setPlaybackSessionInterface:(struct WebPlaybackSessionInterfaceAVKit { int (**x1)(); int (**x2)(); unsigned int x3; struct RetainPtr<WebAVPlayerController> { void *x_4_1_1; } x4; struct WebPlaybackSessionModel {} *x5; }*)arg1;
+- (void)setPlaybackSessionInterface:(struct PlaybackSessionInterfaceAVKit { int (**x1)(); int (**x2)(); unsigned int x3; struct RetainPtr<WebAVPlayerController> { void *x_4_1_1; } x4; struct PlaybackSessionModel {} *x5; }*)arg1;
 - (void)setPlayerControllerProxy:(id)arg1;
 - (void)setPlaying:(bool)arg1;
 - (void)setRate:(double)arg1;

@@ -80,6 +80,7 @@
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 
 + (id)safari_lockRelatedEmojiCharacterSet;
++ (id)safari_obscuredPasswordCharacterSets;
 
 // Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
 
@@ -133,6 +134,7 @@
 + (id)tswp_lineBreakingCharacterSet;
 + (id)tswp_postSmartSet;
 + (id)tswp_preSmartSet;
++ (id)tswp_sentenceDelimiterCharacterSet;
 + (id)tswp_singleLeftQuoteCharacterSet;
 + (id)tswp_singleRightQuoteCharacterSet;
 + (id)tswp_smartSingleQuotesCharacterSet;

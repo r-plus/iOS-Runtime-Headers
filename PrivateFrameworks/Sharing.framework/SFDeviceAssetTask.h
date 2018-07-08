@@ -9,7 +9,9 @@
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     NSError * _error;
     NSBundle * _fallbackAssetBundle;
+    bool  _fallbackIsCachedResult;
     NSObject<OS_dispatch_source> * _timer;
+    bool  _useProcessLocalCache;
 }
 
 @property (nonatomic, readonly) NSBundle *assetBundle;
@@ -18,12 +20,14 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (nonatomic, readonly) NSError *error;
 @property (nonatomic, readonly) NSBundle *fallbackAssetBundle;
+@property (nonatomic, readonly) bool fallbackIsCachedResult;
 @property (nonatomic, readonly) NSObject<OS_dispatch_source> *timer;
+@property (nonatomic, readonly) bool useProcessLocalCache;
 
 - (void).cxx_destruct;
 - (id)assetBundle;
 - (id)bundleAtURL:(id)arg1 error:(id*)arg2;
-- (id)bundleFromAsset:(id)arg1;
+- (id)bundleURLFromAssetURL:(id)arg1;
 - (void)cancelTimeout;
 - (void)complete;
 - (id /* block */)completionHandler;
@@ -31,8 +35,13 @@
 - (id)dispatchQueue;
 - (id)error;
 - (id)fallbackAssetBundle;
-- (id)initWithDeviceQuery:(id)arg1 dispatchQueue:(id)arg2 timeout:(double)arg3 withCompletionHandler:(id /* block */)arg4;
+- (bool)fallbackIsCachedResult;
+- (id)initWithDeviceQuery:(id)arg1 dispatchQueue:(id)arg2 useProcessLocalCache:(bool)arg3 timeout:(double)arg4 withCompletionHandler:(id /* block */)arg5;
+- (bool)processCanAccessURL:(id)arg1 error:(id*)arg2;
 - (id)timer;
-- (bool)updateTaskWithAsset:(id)arg1 error:(id)arg2 isFallback:(bool)arg3;
+- (bool)updateTaskWithAssetBundleURL:(id)arg1 error:(id)arg2 isFallback:(bool)arg3 isCached:(bool)arg4;
+- (bool)updateTaskWithAssetURL:(id)arg1 error:(id)arg2 isFallback:(bool)arg3 isCached:(bool)arg4;
+- (bool)updateTaskWithBundle:(id)arg1 error:(id)arg2 isFallback:(bool)arg3 isCached:(bool)arg4;
+- (bool)useProcessLocalCache;
 
 @end

@@ -12,6 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool lastLineIsEmptyAndHasListLabel;
 @property (nonatomic, readonly) unsigned long long nextWidowPullsDownFromCharIndex;
 @property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } range;
 @property (readonly) Class superclass;
@@ -20,6 +21,7 @@
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })anchoredRange;
 - (id)initWithPageIndex:(unsigned long long)arg1 pageController:(id)arg2;
 - (id)initWithPageIndex:(unsigned long long)arg1 pageController:(id)arg2 flowInfo:(id)arg3;
+- (bool)lastLineIsEmptyAndHasListLabel;
 - (unsigned long long)nextWidowPullsDownFromCharIndex;
 - (id)p_targetFirstHint;
 - (id)p_targetLastHint;

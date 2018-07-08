@@ -21,6 +21,7 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_semaphore> *semaphore;
 
 - (void).cxx_destruct;
+- (id)allComponents;
 - (id)childLayoutDataProviders;
 - (id)componentAtIndex:(unsigned long long)arg1;
 - (id)componentForIdentifier:(id)arg1;

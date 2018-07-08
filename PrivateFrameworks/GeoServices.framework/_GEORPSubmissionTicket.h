@@ -10,6 +10,7 @@
     NSData * _pushToken;
     NSData * _resubmissionData;
     bool  _started;
+    GEORPUserCredentials * _userCredentials;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,7 +21,7 @@
 
 - (void).cxx_destruct;
 - (void)cancel;
-- (id)initWithProblem:(id)arg1 placeForProblemContext:(id)arg2 pushToken:(id)arg3 allowContactBackAtEmailAddress:(id)arg4 traits:(id)arg5;
+- (id)initWithProblem:(id)arg1 placeForProblemContext:(id)arg2 userCredentials:(id)arg3 pushToken:(id)arg4 allowContactBackAtEmailAddress:(id)arg5 traits:(id)arg6;
 - (id)initWithResubmissionData:(id)arg1 traits:(id)arg2;
 - (void)submitWithHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
 

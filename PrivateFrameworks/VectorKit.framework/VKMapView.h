@@ -51,7 +51,7 @@
     VKTimedAnimation * _mapDisplayStyleAnimation;
     struct unique_ptr<md::MapEngine, std::__1::default_delete<md::MapEngine> > { 
         struct __compressed_pair<md::MapEngine *, std::__1::default_delete<md::MapEngine> > { 
-            struct MapEngine {} *__first_; 
+            struct MapEngine {} *__value_; 
         } __ptr_; 
     }  _mapEngine;
     long long  _mapType;

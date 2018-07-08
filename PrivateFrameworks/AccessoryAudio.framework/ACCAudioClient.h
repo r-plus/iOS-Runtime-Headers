@@ -17,6 +17,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (bool)allowBackgroundAudioForClient:(id)arg1;
 - (void)connectToServer;
 - (void)dealloc;
 - (id)delegate;

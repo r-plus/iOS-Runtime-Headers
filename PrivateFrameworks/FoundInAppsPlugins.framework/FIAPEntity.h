@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FoundInAppsPlugins.framework/FoundInAppsPlugins
  */
 
-@interface FIAPEntity : NSObject {
+@interface FIAPEntity : NSObject <NSSecureCoding> {
     NSString * _activityType;
     NSString * _bundleIdentifier;
     NSDate * _contentCreationDate;

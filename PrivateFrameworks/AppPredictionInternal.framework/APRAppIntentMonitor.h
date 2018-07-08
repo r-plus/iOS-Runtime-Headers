@@ -3,13 +3,25 @@
  */
 
 @interface APRAppIntentMonitor : NSObject <APRIntentStreamUpdateInterface, NSXPCListenerDelegate> {
+    _ATXAppInfoManager * _appInfoManager;
     NSObject<OS_dispatch_queue> * _appIntentHistoryQueue;
+    _ATXAppLaunchSequenceManager * _appIntentLaunchSequenceManager;
     _ATXAppLaunchHistogramManager * _appLaunchHistogramManager;
+    _ATXInternalAppSessionNotification * _appSessionEndNotificationListener;
+    _ATXInternalAppSessionNotification * _appSessionStartNotificationListener;
     <_CDLocalContext> * _context;
+    NSString * _currentAppSessionBundleId;
+    NSObject<OS_dispatch_queue> * _donationQueue;
     _ATXDuetHelper * _duetHelper;
     NSXPCListener * _listener;
+    struct _opaque_pthread_mutex_t { 
+        long long __sig; 
+        BOOL __opaque[56]; 
+    }  _lock;
     _APRParzenModel * _nonSiriKitParzenModel;
-    _CDContextualChangeRegistration * _registration;
+    bool  _pendingNSUA;
+    bool  _pendingNonSirikitIntent;
+    NSMutableSet * _registrations;
     _APRParzenModel * _siriKitParzenModel;
 }
 
@@ -20,21 +32,36 @@
 
 - (void).cxx_destruct;
 - (void)_syncForTests;
+- (id)adjustedEndDateForFiveSecondFlooringWithAppSessionEndDate:(id)arg1;
+- (id)adjustedStartDateForFiveSecondFlooringWithAppSessionStartDate:(id)arg1;
+- (id)appIntentLaunchSequenceManager;
+- (id)currentAppSessionBundleId;
 - (void)dealloc;
+- (void)endAppSession:(id)arg1;
 - (void)handleIntentDonationWithType:(id)arg1 bundleId:(id)arg2 startDate:(id)arg3 intentSource:(long long)arg4;
 - (void)handleNonSiriKitIntentDonationWithType:(id)arg1 bundleId:(id)arg2 startDate:(id)arg3;
 - (void)handleSiriKitIntentDonationWithType:(id)arg1 bundleId:(id)arg2 startDate:(id)arg3;
 - (id)init;
-- (id)initWithAppLaunchHistogramManager:(id)arg1 siriKitParzenModel:(id)arg2 nonSiriKitParzenModel:(id)arg3;
-- (id)initWithAppLaunchHistogramManager:(id)arg1 siriKitParzenModel:(id)arg2 nonSiriKitParzenModel:(id)arg3 duetHelper:(id)arg4;
+- (id)initWithAppLaunchHistogramManager:(id)arg1 siriKitParzenModel:(id)arg2 nonSiriKitParzenModel:(id)arg3 appInfoManager:(id)arg4;
+- (id)initWithAppLaunchHistogramManager:(id)arg1 siriKitParzenModel:(id)arg2 nonSiriKitParzenModel:(id)arg3 appInfoManager:(id)arg4 duetHelper:(id)arg5;
+- (void)listenToActivityStream;
+- (void)listenToAppSessionEnds;
+- (void)listenToAppSessionStarts;
 - (void)listenToIntentStream;
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)logIntentPredictionsForIntentEvent:(id)arg1;
 - (void)logSirikitIntentWithDKUUIDKey:(id)arg1 bundleId:(id)arg2;
 - (void)notifyAboutIntentStreamChangeWithReply:(id /* block */)arg1;
 - (void)recordIntentDonationWithType:(id)arg1 intentSource:(long long)arg2 bundleId:(id)arg3 startDate:(id)arg4;
 - (void)retrainParzenModelForIntentSource:(long long)arg1;
+- (void)setCurrentAppSessionBundleId:(id)arg1;
+- (void)setPendingNSUAStatus:(bool)arg1;
+- (void)setPendingNonSirikitIntentStatus:(bool)arg1;
 - (void)start;
+- (void)startAppSession:(id)arg1;
 - (void)stop;
+- (void)updateIntentPredictionHistogramsForAppSession:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
+- (void)updateIntentPredictionHistogramsForIntentEvent:(id)arg1 weight:(float)arg2;
 - (void)updateLaunchHistoryFromDuet;
 - (void)updateLaunchHistoryFromDuet:(double)arg1 intentSource:(long long)arg2;
 - (void)updateLaunchHistoryFromDuetForInterval:(double)arg1;

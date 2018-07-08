@@ -3,14 +3,14 @@
  */
 
 @interface FCCoverArticlesOperation : FCOperation {
-    <FCAppConfiguration> * _appConfiguration;
+    <FCCoreConfiguration> * _configuration;
     FCCloudContext * _context;
     NSError * _error;
     NSArray * _headlines;
     NSArray * _supplementalHeadlines;
 }
 
-@property (nonatomic, copy) <FCAppConfiguration> *appConfiguration;
+@property (nonatomic, copy) <FCCoreConfiguration> *configuration;
 @property (nonatomic, retain) FCCloudContext *context;
 @property (retain) NSError *error;
 @property (copy) NSArray *headlines;
@@ -18,12 +18,12 @@
 
 - (void).cxx_destruct;
 - (id)_supplementalCoverArticleListIDs;
-- (id)appConfiguration;
+- (id)configuration;
 - (id)context;
 - (id)error;
 - (id)headlines;
 - (void)performOperation;
-- (void)setAppConfiguration:(id)arg1;
+- (void)setConfiguration:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setHeadlines:(id)arg1;

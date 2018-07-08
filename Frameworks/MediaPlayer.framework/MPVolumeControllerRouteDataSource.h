@@ -38,6 +38,7 @@
 - (void)_pickedRouteVolumeControlAvailabilityChanged:(id)arg1;
 - (void)_routeConnectionVolumeDidChangeNotification:(id)arg1;
 - (void)_setPendingVolumeIfNeeded;
+- (void)adjustVolumeValue:(float)arg1;
 - (bool)applicationShouldOverrideHardwareVolumeBehavior;
 - (void)dealloc;
 - (id)delegate;

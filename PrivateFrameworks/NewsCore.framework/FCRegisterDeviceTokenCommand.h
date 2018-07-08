@@ -12,6 +12,8 @@
 @property (nonatomic, copy) NSString *storefrontID;
 @property (nonatomic, copy) NSString *userID;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)deviceToken;
 - (void)encodeWithCoder:(id)arg1;

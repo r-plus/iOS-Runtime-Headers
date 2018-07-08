@@ -8,13 +8,18 @@
     SXPlaybackCoordinator * _coordinator;
     <SXVideoPlayerViewControllerDataSource> * _dataSource;
     <SXVideoPlayerViewControllerDelegate> * _delegate;
+    bool  _fullscreen;
     unsigned long long  _fullscreenBehavior;
     SXAutomaticFullscreenVideoPlaybackBehaviorManager * _fullscreenBehaviorManager;
     SXLearnMoreButton * _learnMoreButton;
+    unsigned long long  _mode;
     AVPlayerViewController * _playerViewController;
     SXVideoPlaybackQueue * _queue;
     SXVideoAdSkipButton * _skipButton;
+    SXTouchForwardingView * _touchForwardingView;
     SXKeyValueObserver * _videoBoundsObserver;
+    SXVideoVolumeObserver * _volumeObserver;
+    <SXVolumeReporting> * _volumeReporter;
 }
 
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;
@@ -24,18 +29,21 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SXVideoPlayerViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (getter=isFullscreen, nonatomic, readonly) bool fullscreen;
+@property (getter=isFullscreen, nonatomic) bool fullscreen;
 @property (nonatomic) unsigned long long fullscreenBehavior;
 @property (nonatomic, readonly) SXAutomaticFullscreenVideoPlaybackBehaviorManager *fullscreenBehaviorManager;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SXLearnMoreButton *learnMoreButton;
-@property (nonatomic, readonly) unsigned long long mode;
+@property (nonatomic) unsigned long long mode;
 @property (nonatomic, retain) AVPlayerViewController *playerViewController;
 @property (getter=isPlaying, nonatomic, readonly) bool playing;
 @property (nonatomic, retain) SXVideoPlaybackQueue *queue;
 @property (nonatomic, retain) SXVideoAdSkipButton *skipButton;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) SXTouchForwardingView *touchForwardingView;
 @property (nonatomic, retain) SXKeyValueObserver *videoBoundsObserver;
+@property (nonatomic, retain) SXVideoVolumeObserver *volumeObserver;
+@property (nonatomic, readonly) <SXVolumeReporting> *volumeReporter;
 
 - (void).cxx_destruct;
 - (id)activityIndicatorView;
@@ -53,7 +61,7 @@
 - (unsigned long long)fullscreenBehavior;
 - (id)fullscreenBehaviorManager;
 - (void)fullscreenBehaviorManagerRequiresFullscreenPlayback:(id)arg1;
-- (id)init;
+- (id)initWithVolumeReporter:(id)arg1;
 - (bool)isFullscreen;
 - (bool)isPlaying;
 - (id)learnMoreButton;
@@ -71,6 +79,7 @@
 - (void)playbackCoordinatorStartedPlayback:(id)arg1;
 - (void)playbackCoordinatorStateChanged:(id)arg1;
 - (id)playerViewController;
+- (void)playerViewController:(id)arg1 metricsCollectionEventOccured:(long long)arg2;
 - (bool)playerViewController:(id)arg1 shouldExitFullScreenWithReason:(long long)arg2;
 - (id)queue;
 - (void)refreshControlsForPlaybackCoordinator:(id)arg1;
@@ -79,19 +88,25 @@
 - (void)setCoordinator:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setFullscreen:(bool)arg1;
 - (void)setFullscreenBehavior:(unsigned long long)arg1;
 - (void)setLearnMoreButton:(id)arg1;
+- (void)setMode:(unsigned long long)arg1;
 - (void)setPlayerViewController:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setSkipButton:(id)arg1;
 - (void)setVideoBoundsObserver:(id)arg1;
+- (void)setVolumeObserver:(id)arg1;
 - (void)setupQueueIfNeeded;
 - (id)skipButton;
 - (void)startPlaybackForCoordinatorIfAllowed:(id)arg1;
+- (id)touchForwardingView;
 - (void)transitionToCoordinator:(id)arg1;
 - (void)updateSkipButtonWithThreshold:(unsigned long long)arg1 time:(double)arg2;
 - (void)updateViewConstraints;
 - (id)videoBoundsObserver;
 - (void)viewDidLoad;
+- (id)volumeObserver;
+- (id)volumeReporter;
 
 @end

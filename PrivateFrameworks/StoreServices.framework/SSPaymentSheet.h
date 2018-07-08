@@ -13,11 +13,13 @@
     NSAttributedString * _displayPriceLabel;
     NSString * _explanation;
     NSArray * _flexList;
+    NSArray * _inlineImages;
     NSLock * _lock;
     NSString * _message;
     long long  _payeeType;
     NSString * _paymentSummary;
     NSNumber * _price;
+    NSArray * _priceSectionItems;
     NSString * _ratingHeader;
     NSString * _ratingValue;
     long long  _salableIconType;
@@ -44,10 +46,12 @@
 @property (copy) NSString *explanation;
 @property (readonly) NSArray *flexList;
 @property (readonly) unsigned long long hash;
+@property (readonly, copy) NSArray *inlineImages;
 @property (copy) NSString *message;
 @property long long payeeType;
 @property (copy) NSString *paymentSummary;
 @property (copy) NSNumber *price;
+@property (copy) NSArray *priceSectionItems;
 @property (copy) NSString *ratingHeader;
 @property (copy) NSString *ratingValue;
 @property long long salableIconType;
@@ -99,10 +103,12 @@
 - (id)initWithServerResponse:(id)arg1;
 - (id)initWithServerResponse:(id)arg1 buyParams:(id)arg2;
 - (id)initWithXPCEncoding:(id)arg1;
+- (id)inlineImages;
 - (id)message;
 - (long long)payeeType;
 - (id)paymentSummary;
 - (id)price;
+- (id)priceSectionItems;
 - (id)ratingHeader;
 - (id)ratingValue;
 - (long long)salableIconType;
@@ -121,6 +127,7 @@
 - (void)setPayeeType:(long long)arg1;
 - (void)setPaymentSummary:(id)arg1;
 - (void)setPrice:(id)arg1;
+- (void)setPriceSectionItems:(id)arg1;
 - (void)setRatingHeader:(id)arg1;
 - (void)setRatingValue:(id)arg1;
 - (void)setSalableIconType:(long long)arg1;

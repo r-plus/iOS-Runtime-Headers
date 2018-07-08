@@ -9,6 +9,7 @@
     <CNEncodedFetchCursor> * _cursor;
     CNContactsEnvironment * _environment;
     <CNContactsLogger> * _logger;
+    CNManagedConfiguration * _managedConfiguration;
 }
 
 @property (nonatomic, readonly) void*addressBook;
@@ -20,6 +21,7 @@
 @property (nonatomic, readonly) CNContactsEnvironment *environment;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <CNContactsLogger> *logger;
+@property (nonatomic, retain) CNManagedConfiguration *managedConfiguration;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -32,7 +34,9 @@
 - (id)environment;
 - (bool)fetchEncodedPeopleWithError:(id*)arg1 cancelationToken:(id)arg2 batchHandler:(id /* block */)arg3;
 - (void)fetchNextBatchWithReply:(id /* block */)arg1;
-- (id)initWithFetchRequest:(id)arg1 addressBook:(void*)arg2 completionHandler:(id /* block */)arg3 environment:(id)arg4;
+- (id)initWithFetchRequest:(id)arg1 addressBook:(void*)arg2 managedConfiguration:(id)arg3 completionHandler:(id /* block */)arg4 environment:(id)arg5;
 - (id)logger;
+- (id)managedConfiguration;
+- (void)setManagedConfiguration:(id)arg1;
 
 @end

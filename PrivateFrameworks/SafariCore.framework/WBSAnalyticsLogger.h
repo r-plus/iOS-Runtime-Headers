@@ -39,12 +39,15 @@
 - (void)submitAutomaticReaderActivation:(int)arg1;
 - (void)submitVersioningMetricWithVersion:(id)arg1 variant:(int)arg2;
 - (void)unableToSilentlyMigrateToCKBookmarksWithReason:(int)arg1;
+- (void)userDidParticipateInPasswordAutoFillWithInteraction:(int)arg1;
 - (void)userTappedAutoFillQuickTypeSuggestionWithCategory:(int)arg1 formProperty:(id)arg2;
 
 // Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
 
+- (void)_sf_activatedHomeScreenQuickAction:(int)arg1;
 - (void)_sf_authenticatedForAutoFillWithCategory:(int)arg1 onPageLoad:(bool)arg2 status:(int)arg3 client:(int)arg4;
 - (void)_sf_authenticatedForAutoFillWithCategory:(int)arg1 onPageLoad:(bool)arg2 status:(int)arg3 error:(id)arg4 client:(int)arg5;
+- (void)_sf_didTerminateWebProcessBeforeNavigationForReason:(int)arg1;
 - (void)_sf_enteredTwoUpUsingMethod:(int)arg1;
 - (void)_sf_launchedOrResumedSafariWhileInPrivateBrowsing:(bool)arg1;
 - (void)_sf_longTappedOnSafariToolbarButton:(int)arg1;

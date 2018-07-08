@@ -12,6 +12,8 @@
 @property (nonatomic) long long displayValue;
 @property (nonatomic) long long rawValue;
 
++ (bool)supportsSecureCoding;
+
 - (id)_ui_descriptionBuilder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (bool)displayRawValue;

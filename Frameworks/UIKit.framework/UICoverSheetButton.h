@@ -9,6 +9,7 @@
     UIClickInteraction * _clickInteraction;
     UIView * _containerView;
     UIImageView * _contentView;
+    bool  _didActivateDuringInteraction;
     struct UIEdgeInsets { 
         double top; 
         double left; 
@@ -19,11 +20,13 @@
     bool  _interactive;
     double  _interactiveHighlightMagnitude;
     NSString * _localizedAccessoryTitle;
+    double  _maxForceDuringInteraction;
     bool  _prefersDarkUserInterfaceStyle;
     bool  _pronounced;
     NSArray * _selectedBackgroundEffects;
     UIImage * _selectedImage;
     UIColor * _selectedTintColor;
+    NSString * _statisticsIdentifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -37,16 +40,17 @@
 @property (getter=isPronounced, nonatomic) bool pronounced;
 @property (nonatomic, retain) UIImage *selectedImage;
 @property (nonatomic, retain) UIColor *selectedTintColor;
+@property (nonatomic, copy) NSString *statisticsIdentifier;
 @property (readonly) Class superclass;
-
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (void).cxx_destruct;
 - (id)_backgroundEffectsWithBrightness:(double)arg1;
+- (id)_firstActivationDurationStat;
 - (void)_highlightForInteraction:(id)arg1 fractionComplete:(double)arg2 ended:(bool)arg3;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
+- (id)_interactionCountStatWithActivation:(bool)arg1;
+- (id)_interactionDurationStat;
+- (id)_maxForceStatWithActivation:(bool)arg1;
+- (void)clickInteraction:(id)arg1 didObserveForce:(double)arg2;
 - (void)clickInteractionDidBegin:(id)arg1;
 - (void)clickInteractionDidEnd:(id)arg1;
 - (bool)clickInteractionShouldInvokeAction:(id)arg1;
@@ -70,6 +74,8 @@
 - (void)setSelected:(bool)arg1;
 - (void)setSelectedImage:(id)arg1;
 - (void)setSelectedTintColor:(id)arg1;
+- (void)setStatisticsIdentifier:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)statisticsIdentifier;
 
 @end

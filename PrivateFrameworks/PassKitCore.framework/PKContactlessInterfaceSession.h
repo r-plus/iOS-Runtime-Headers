@@ -29,13 +29,15 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKContactlessInterfaceSessionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) PKFelicaAppletHistory *felicaAppletState;
 @property (nonatomic, readonly) bool fieldPresent;
 @property (nonatomic, readonly) PKFieldProperties *fieldProperties;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool persistentCardEmulationQueued;
 @property (nonatomic, readonly) unsigned long long state;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) PKTransitAppletHistory *transitAppletState;
+
++ (id)transitAppletStateFromPaymentSession:(id)arg1 withPaymentApplication:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)_appletForPaymentApplication:(id)arg1;
@@ -56,7 +58,6 @@
 - (bool)authorizeAndStartCardEmulationWithCredential:(id)arg1;
 - (bool)authorizeAndStartCardEmulationWithCredential:(id)arg1 deferAuthorization:(bool)arg2;
 - (id)delegate;
-- (id)felicaAppletState;
 - (bool)fieldPresent;
 - (id)fieldProperties;
 - (id)initWithInternalSession:(id)arg1 targetQueue:(id)arg2;
@@ -75,6 +76,7 @@
 - (void)loyaltyAndPaymentSessionDidEndUnexpectedly:(id)arg1;
 - (void)loyaltyAndPaymentSessionDidReceiveActivityTimeout:(id)arg1;
 - (void)loyaltyAndPaymentSessionHasPendingServerRequest:(id)arg1;
+- (bool)paymentApplicationSupportsAutomaticAuthorization:(id)arg1;
 - (bool)persistentCardEmulationQueued;
 - (bool)queuePersistentCardEmulation;
 - (void)resetExpressState;
@@ -83,5 +85,6 @@
 - (void)setState:(unsigned long long)arg1;
 - (unsigned long long)state;
 - (bool)stopCardEmulation;
+- (id)transitAppletState;
 
 @end

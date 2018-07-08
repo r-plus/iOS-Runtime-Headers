@@ -25,6 +25,7 @@
         } span; 
     }  _region;
     NSArray * _results;
+    GEORetainedSearchMetadata * _retainedSearchMetadata;
     bool  _shouldDisplayNoResults;
     <MKLocationManagerOperation> * _singleLocationUpdate;
     int  _source;
@@ -48,6 +49,7 @@
 @property (nonatomic, copy) NSString *queryFragment;
 @property (nonatomic) struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } region;
 @property (nonatomic, readonly) NSArray *results;
+@property (nonatomic, retain) GEORetainedSearchMetadata *retainedSearchMetadata;
 @property (getter=isSearching, nonatomic, readonly) bool searching;
 @property (getter=_shouldDisplayNoResults, nonatomic, readonly) bool shouldDisplayNoResults;
 @property (nonatomic) double timeSinceLastInBoundingRegion;
@@ -81,6 +83,7 @@
 - (struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })region;
 - (id)results;
 - (bool)resultsAreCurrent;
+- (id)retainedSearchMetadata;
 - (void)retry;
 - (void)setBoundingRegion:(struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setCategoryFilter:(id)arg1;
@@ -95,6 +98,7 @@
 - (void)setMapType:(unsigned long long)arg1;
 - (void)setQueryFragment:(id)arg1;
 - (void)setRegion:(struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setRetainedSearchMetadata:(id)arg1;
 - (void)setSource:(int)arg1;
 - (void)setTimeSinceLastInBoundingRegion:(double)arg1;
 - (void)setTraits:(id)arg1;

@@ -5,15 +5,18 @@
 @interface BCSURLActionPickerItem : BCSActionPickerItem {
     LSAppLink * _appLink;
     LSApplicationProxy * _applicationProxy;
+    <BCSCodePayload> * _codePayload;
     NSURL * _url;
 }
 
 @property (nonatomic, readonly) LSAppLink *appLink;
+@property (nonatomic, readonly) <BCSCodePayload> *codePayload;
 
 - (void).cxx_destruct;
 - (id)actionURL;
 - (id)appLink;
-- (id)initWithLabel:(id)arg1 action:(id)arg2 appLink:(id)arg3;
+- (id)codePayload;
+- (id)initWithLabel:(id)arg1 action:(id)arg2 appLink:(id)arg3 codePayload:(id)arg4;
 - (id)initWithLabel:(id)arg1 action:(id)arg2 url:(id)arg3 applicationProxy:(id)arg4;
 - (void)performAction;
 - (void)performActionWithFBOptions:(id)arg1;

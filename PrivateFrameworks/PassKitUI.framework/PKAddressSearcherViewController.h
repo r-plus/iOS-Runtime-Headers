@@ -3,6 +3,8 @@
  */
 
 @interface PKAddressSearcherViewController : UIViewController <PKAddressEditorViewControllerDelegate, PKAddressSearchModelDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate> {
+    NSArray * _completionSearchResults;
+    NSArray * _contactsSearchResults;
     <PKAddressSearcherViewControllerDelegate> * _delegate;
     _UINavigationControllerPalette * _palette;
     NSArray * _requiredKeys;
@@ -13,6 +15,8 @@
     UITableView * _tableView;
 }
 
+@property (nonatomic, retain) NSArray *completionSearchResults;
+@property (nonatomic, retain) NSArray *contactsSearchResults;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKAddressSearcherViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -31,6 +35,8 @@
 - (void)addressEditorViewController:(id)arg1 selectedContact:(id)arg2;
 - (void)addressEditorViewControllerDidCancel:(id)arg1;
 - (void)cancel;
+- (id)completionSearchResults;
+- (id)contactsSearchResults;
 - (void)contactsSearchUpdated:(id)arg1;
 - (id)delegate;
 - (id)initWithStyle:(long long)arg1;
@@ -45,6 +51,8 @@
 - (id)searchModel;
 - (id)selectedAddress;
 - (void)selectedAddress:(id)arg1 withError:(id)arg2;
+- (void)setCompletionSearchResults:(id)arg1;
+- (void)setContactsSearchResults:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPalette:(id)arg1;
 - (void)setRequiredKeys:(id)arg1;

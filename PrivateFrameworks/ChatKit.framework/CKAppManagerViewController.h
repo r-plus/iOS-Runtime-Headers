@@ -23,7 +23,9 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (bool)allowEnablingDisabledApps;
 - (void)appCell:(id)arg1 wasToggledOn:(bool)arg2;
+- (id)balloonPluginManager;
 - (id)delegate;
 - (void)didDismissSearchController:(id)arg1;
 - (void)doneButtonTapped:(id)arg1;
@@ -57,6 +59,7 @@
 - (bool)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 targetIndexPathForMoveFromRowAtIndexPath:(id)arg2 toProposedIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
+- (bool)togglePluginAtIndex:(unsigned long long)arg1 enabled:(bool)arg2;
 - (void)updateEditDoneButton;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;

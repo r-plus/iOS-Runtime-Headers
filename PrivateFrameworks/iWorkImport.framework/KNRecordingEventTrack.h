@@ -3,14 +3,14 @@
  */
 
 @interface KNRecordingEventTrack : TSPObject {
-    NSArray * mEvents;
-    NSString * mType;
+    NSArray * _events;
+    NSString * _type;
 }
 
 @property (nonatomic, readonly) NSArray *events;
 @property (nonatomic, readonly) NSString *type;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)eventTrackByReplacingSegmentAfterTime:(double)arg1 withEventTrack:(id)arg2;
 - (id)events;
 - (id)initWithContext:(id)arg1;

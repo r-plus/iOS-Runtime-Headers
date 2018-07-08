@@ -20,6 +20,7 @@
 
 + (Class)queueFeederClass;
 + (id)requiredPropertiesForStaticMediaClips;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)assetStoreFronts;

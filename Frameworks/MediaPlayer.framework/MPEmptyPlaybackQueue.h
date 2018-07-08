@@ -4,6 +4,8 @@
 
 @interface MPEmptyPlaybackQueue : MPRemotePlaybackQueue
 
++ (bool)supportsSecureCoding;
+
 - (id)description;
 - (id)init;
 

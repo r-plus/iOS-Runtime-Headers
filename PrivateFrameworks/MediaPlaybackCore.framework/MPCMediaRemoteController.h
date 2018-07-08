@@ -25,6 +25,9 @@
     long long  _playingIdentifierCacheState;
     NSString * _playingItemIdentifier;
     MPCFuture * _playingItemIdentifierFuture;
+    NSString * _queueIdentifier;
+    long long  _queueIdentifierCacheState;
+    MPCFuture * _queueIdentifierFuture;
     <MPArtworkDataSource> * _remotePlayerArtworkDataSource;
     MPCPlayerPath * _resolvedPlayerPath;
     long long  _supportedCommandsCacheState;
@@ -42,6 +45,8 @@
 @property (nonatomic, readonly) long long playbackStateCacheState;
 @property (nonatomic, readonly) MPCFuture *playingIdentifier;
 @property (nonatomic, readonly) long long playingIdentifierCacheState;
+@property (nonatomic, readonly) MPCFuture *queueIdentifier;
+@property (nonatomic, readonly) long long queueIdentifierCacheState;
 @property (nonatomic, readonly) <MPArtworkDataSource> *remotePlayerArtworkDataSource;
 @property (nonatomic, retain) MPCPlayerPath *resolvedPlayerPath;
 @property (readonly) Class superclass;
@@ -63,6 +68,7 @@
 - (void)_onQueue_setOptimisticPlaybackPositionWithOptions:(id)arg1;
 - (void)_onQueue_setOptimisticPlaybackState:(unsigned int)arg1 withOptions:(id)arg2;
 - (void)_onQueue_updateOptimisticElapsedTimeForContentItem:(id)arg1 elapsedTime:(double)arg2 rate:(float)arg3;
+- (void)_onQueue_updateOptimisticReorderedPlaybackQueueWithMovingContentItemIdentifier:(id)arg1 afterContentItemIdentifier:(id)arg2;
 - (void)_onQueue_updateOptimisticStateForCommand:(unsigned int)arg1 options:(id)arg2;
 - (void)_playbackQueueChangedNotification:(id)arg1;
 - (void)_playbackQueueContentItemsChangedNotification:(id)arg1;
@@ -88,6 +94,8 @@
 - (long long)playbackStateCacheState;
 - (id)playingIdentifier;
 - (long long)playingIdentifierCacheState;
+- (id)queueIdentifier;
+- (long long)queueIdentifierCacheState;
 - (id)remotePlayerArtworkDataSource;
 - (id)resolvedPlayerPath;
 - (void)sendCommand:(unsigned int)arg1 options:(id)arg2 completion:(id /* block */)arg3;
@@ -97,5 +105,6 @@
 - (void)setResolvedPlayerPath:(id)arg1;
 - (id)supportedCommands;
 - (long long)supportedCommandsCacheState;
+- (void)updateOptimisticStateForCommand:(unsigned int)arg1 options:(id)arg2;
 
 @end

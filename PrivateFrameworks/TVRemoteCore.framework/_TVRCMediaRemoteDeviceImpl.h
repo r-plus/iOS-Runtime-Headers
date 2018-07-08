@@ -47,6 +47,7 @@
 - (void)_beginObservingNowPlaying;
 - (void)_connectionRequestedPairing:(struct { unsigned int x1; unsigned long long x2; })arg1 continuation:(id /* block */)arg2;
 - (void)_connectionStateChanged:(unsigned int)arg1 error:(id)arg2;
+- (void)_drainAndClearAudioBufferQueue;
 - (void)_enableVolumeButtons:(bool)arg1;
 - (void)_gameControllerInputModeChanged:(unsigned int)arg1;
 - (bool)_isSystemVersionSupported;
@@ -67,6 +68,7 @@
 - (void)_teardownVolumeControls;
 - (void)_unregisterGameControllerID;
 - (void)_unregisterGameControllerInputModeHandler;
+- (void)_voiceRecorderStateChanged:(unsigned int)arg1;
 - (void)_volumeControlsDidUpdate:(id)arg1;
 - (void)connect;
 - (id)createBufferWithSettings:(id)arg1 packetCapacity:(unsigned long long)arg2 maxPacketSize:(unsigned long long)arg3;

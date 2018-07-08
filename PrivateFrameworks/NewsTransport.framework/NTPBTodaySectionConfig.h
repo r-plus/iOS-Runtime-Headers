@@ -8,9 +8,7 @@
     NSString * _backgroundGradientColor;
     unsigned long long  _cachedResultCutoffTime;
     NSString * _compactName;
-    NSString * _discoverMoreVideosSubtitle;
-    NSString * _discoverMoreVideosTitle;
-    NSString * _discoverMoreVideosUrl;
+    NTPBDiscoverMoreVideosInfo * _discoverMoreVideosInfo;
     bool  _displaysAsVideoPlaylist;
     unsigned long long  _fallbackOrder;
     NTPBForYouTodaySectionSpecificConfig * _forYouTodaySectionConfig;
@@ -33,6 +31,7 @@
         unsigned int seenArticlesFilterMethod : 1; 
         unsigned int displaysAsVideoPlaylist : 1; 
         unsigned int glanceable : 1; 
+        unsigned int openVideoPlaylistInApp : 1; 
         unsigned int presenceDeterminedByPersonalization : 1; 
         unsigned int shownInFavoritesOnlyMode : 1; 
         unsigned int useNameColorInWidget : 1; 
@@ -47,6 +46,7 @@
     unsigned long long  _minimumStoriesAllocation;
     NSString * _name;
     NSString * _nameColor;
+    bool  _openVideoPlaylistInApp;
     NSString * _personalizationFeatureID;
     NTPBPersonalizedSectionPresenceConfig * _personalizedPresenceConfig;
     unsigned long long  _personalizedPresenceFeatureClickPrior;
@@ -74,9 +74,7 @@
 @property (nonatomic, retain) NSString *backgroundGradientColor;
 @property (nonatomic) unsigned long long cachedResultCutoffTime;
 @property (nonatomic, retain) NSString *compactName;
-@property (nonatomic, retain) NSString *discoverMoreVideosSubtitle;
-@property (nonatomic, retain) NSString *discoverMoreVideosTitle;
-@property (nonatomic, retain) NSString *discoverMoreVideosUrl;
+@property (nonatomic, retain) NTPBDiscoverMoreVideosInfo *discoverMoreVideosInfo;
 @property (nonatomic) bool displaysAsVideoPlaylist;
 @property (nonatomic) unsigned long long fallbackOrder;
 @property (nonatomic, retain) NTPBForYouTodaySectionSpecificConfig *forYouTodaySectionConfig;
@@ -88,9 +86,7 @@
 @property (nonatomic, readonly) bool hasBackgroundGradientColor;
 @property (nonatomic) bool hasCachedResultCutoffTime;
 @property (nonatomic, readonly) bool hasCompactName;
-@property (nonatomic, readonly) bool hasDiscoverMoreVideosSubtitle;
-@property (nonatomic, readonly) bool hasDiscoverMoreVideosTitle;
-@property (nonatomic, readonly) bool hasDiscoverMoreVideosUrl;
+@property (nonatomic, readonly) bool hasDiscoverMoreVideosInfo;
 @property (nonatomic) bool hasDisplaysAsVideoPlaylist;
 @property (nonatomic) bool hasFallbackOrder;
 @property (nonatomic, readonly) bool hasForYouTodaySectionConfig;
@@ -106,6 +102,7 @@
 @property (nonatomic) bool hasMinimumStoriesAllocation;
 @property (nonatomic, readonly) bool hasName;
 @property (nonatomic, readonly) bool hasNameColor;
+@property (nonatomic) bool hasOpenVideoPlaylistInApp;
 @property (nonatomic, readonly) bool hasPersonalizationFeatureID;
 @property (nonatomic, readonly) bool hasPersonalizedPresenceConfig;
 @property (nonatomic) bool hasPersonalizedPresenceFeatureClickPrior;
@@ -130,6 +127,7 @@
 @property (nonatomic) unsigned long long minimumStoriesAllocation;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *nameColor;
+@property (nonatomic) bool openVideoPlaylistInApp;
 @property (nonatomic, retain) NSString *personalizationFeatureID;
 @property (nonatomic, retain) NTPBPersonalizedSectionPresenceConfig *personalizedPresenceConfig;
 @property (nonatomic) unsigned long long personalizedPresenceFeatureClickPrior;
@@ -161,9 +159,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)discoverMoreVideosSubtitle;
-- (id)discoverMoreVideosTitle;
-- (id)discoverMoreVideosUrl;
+- (id)discoverMoreVideosInfo;
 - (bool)displaysAsVideoPlaylist;
 - (unsigned long long)fallbackOrder;
 - (id)forYouTodaySectionConfig;
@@ -175,9 +171,7 @@
 - (bool)hasBackgroundGradientColor;
 - (bool)hasCachedResultCutoffTime;
 - (bool)hasCompactName;
-- (bool)hasDiscoverMoreVideosSubtitle;
-- (bool)hasDiscoverMoreVideosTitle;
-- (bool)hasDiscoverMoreVideosUrl;
+- (bool)hasDiscoverMoreVideosInfo;
 - (bool)hasDisplaysAsVideoPlaylist;
 - (bool)hasFallbackOrder;
 - (bool)hasForYouTodaySectionConfig;
@@ -193,6 +187,7 @@
 - (bool)hasMinimumStoriesAllocation;
 - (bool)hasName;
 - (bool)hasNameColor;
+- (bool)hasOpenVideoPlaylistInApp;
 - (bool)hasPersonalizationFeatureID;
 - (bool)hasPersonalizedPresenceConfig;
 - (bool)hasPersonalizedPresenceFeatureClickPrior;
@@ -220,6 +215,7 @@
 - (unsigned long long)minimumStoriesAllocation;
 - (id)name;
 - (id)nameColor;
+- (bool)openVideoPlaylistInApp;
 - (id)personalizationFeatureID;
 - (id)personalizedPresenceConfig;
 - (unsigned long long)personalizedPresenceFeatureClickPrior;
@@ -241,9 +237,7 @@
 - (void)setBackgroundGradientColor:(id)arg1;
 - (void)setCachedResultCutoffTime:(unsigned long long)arg1;
 - (void)setCompactName:(id)arg1;
-- (void)setDiscoverMoreVideosSubtitle:(id)arg1;
-- (void)setDiscoverMoreVideosTitle:(id)arg1;
-- (void)setDiscoverMoreVideosUrl:(id)arg1;
+- (void)setDiscoverMoreVideosInfo:(id)arg1;
 - (void)setDisplaysAsVideoPlaylist:(bool)arg1;
 - (void)setFallbackOrder:(unsigned long long)arg1;
 - (void)setForYouTodaySectionConfig:(id)arg1;
@@ -259,6 +253,7 @@
 - (void)setHasLeadingCellPromotionPolicy:(bool)arg1;
 - (void)setHasMaximumStoriesAllocation:(bool)arg1;
 - (void)setHasMinimumStoriesAllocation:(bool)arg1;
+- (void)setHasOpenVideoPlaylistInApp:(bool)arg1;
 - (void)setHasPersonalizedPresenceFeatureClickPrior:(bool)arg1;
 - (void)setHasPersonalizedPresenceFeatureImpressionPrior:(bool)arg1;
 - (void)setHasPresenceDeterminedByPersonalization:(bool)arg1;
@@ -278,6 +273,7 @@
 - (void)setMinimumStoriesAllocation:(unsigned long long)arg1;
 - (void)setName:(id)arg1;
 - (void)setNameColor:(id)arg1;
+- (void)setOpenVideoPlaylistInApp:(bool)arg1;
 - (void)setPersonalizationFeatureID:(id)arg1;
 - (void)setPersonalizedPresenceConfig:(id)arg1;
 - (void)setPersonalizedPresenceFeatureClickPrior:(unsigned long long)arg1;

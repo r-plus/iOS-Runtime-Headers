@@ -4,7 +4,7 @@
 
 @interface EAEmailAddressParser : NSObject
 
-+ (void)_componentsForFullAddress:(id)arg1 rawAddressRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg2 localPartRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg3 domainRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg4;
++ (void)_componentsForFullAddress:(id)arg1 rawAddressIndexes:(id*)arg2 localPartIndexes:(id*)arg3 domainIndexes:(id*)arg4;
 + (id)addressDomainFromAddress:(id)arg1;
 + (bool)addressIsEmptyGroup:(id)arg1;
 + (id)displayNameFromAddress:(id)arg1;

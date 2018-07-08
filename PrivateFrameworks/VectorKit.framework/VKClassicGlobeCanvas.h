@@ -68,6 +68,11 @@
         bool mapHasLabels; 
     }  _mapDisplayStyle;
     long long  _mapType;
+    struct unique_ptr<md::FlyoverPolylineOverlayCache, std::__1::default_delete<md::FlyoverPolylineOverlayCache> > { 
+        struct __compressed_pair<md::FlyoverPolylineOverlayCache *, std::__1::default_delete<md::FlyoverPolylineOverlayCache> > { 
+            struct FlyoverPolylineOverlayCache {} *__value_; 
+        } __ptr_; 
+    }  _overlayCache;
     struct shared_ptr<md::GlobeOverlayContainer> { 
         struct GlobeOverlayContainer {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 

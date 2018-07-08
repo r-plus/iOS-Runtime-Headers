@@ -20,8 +20,6 @@
 @property (nonatomic) long long idiom;
 @property (nonatomic, readonly) UIStatusBar *statusBar;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 - (void).cxx_destruct;
 - (id)_accessibilityHUDGestureManager:(id)arg1 HUDItemForPoint:(struct CGPoint { double x1; double x2; })arg2;
 - (void)_accessibilityHUDGestureManager:(id)arg1 gestureLiftedAtPoint:(struct CGPoint { double x1; double x2; })arg2;
@@ -38,11 +36,8 @@
 - (id)_statusBarItemViewAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)_statusBarWindowForAccessibilityHUD;
 - (bool)_tryToPlaceItem:(id)arg1 inItemArray:(id)arg2 layoutManager:(id)arg3 roomRemaining:(double*)arg4 allowSwap:(bool)arg5 swappedItem:(id*)arg6;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)animateUnlock;
+- (void)dealloc;
 - (void)didMoveToWindow;
 - (double)edgePadding;
 - (id)foregroundStyle;

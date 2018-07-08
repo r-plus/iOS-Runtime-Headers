@@ -47,8 +47,6 @@
 @property (nonatomic) unsigned long long visualCornerPosition;
 @property (nonatomic, readonly) UIInterfaceActionVisualStyle *visualStyle;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 - (void).cxx_destruct;
 - (id)__fittingContentSizingViewAllowingSelf;
 - (id)__fittingContentSizingViewIfNotSelf;
@@ -84,16 +82,13 @@
 - (void)_updateHighlightAndPressedFeedback;
 - (void)_updateLoadedContentsHierarchyByInsertingOrRemovingIfNecessary;
 - (id)_viewDisplayingBackground;
-- (void)dealloc;
-- (id)description;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)action;
 - (id)actionViewStateContext;
 - (id)backgroundHighlightView;
 - (bool)canBecomeFocused;
 - (bool)canRemoveContentFromHierarchyWhenNotVisible;
+- (void)dealloc;
+- (id)description;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (bool)hasLayoutHeightConstraintsIdenticalToRepresentationView:(id)arg1;
 - (id)initWithAction:(id)arg1;

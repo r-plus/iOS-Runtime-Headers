@@ -6,6 +6,7 @@
 
 - (id)defaultDataFileName;
 - (bool)drawValueLabelsForZero;
+- (bool)editableFormatForValueStrings;
 - (id)genericToSpecificPropertyMap;
 - (double)maxDepthRatio;
 - (Class)presetImagerClass;

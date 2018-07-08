@@ -27,6 +27,7 @@
 - (id)accessibilityName;
 - (id)baseKeywords;
 - (id)baseName;
+- (id)description;
 - (unsigned long long)hash;
 - (id)initWithShapeType:(int)arg1 position:(unsigned long long)arg2;
 - (bool)isEqual:(id)arg1;

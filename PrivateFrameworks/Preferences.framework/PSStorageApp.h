@@ -15,9 +15,7 @@
     bool  _isUsageApp;
     bool  _isUserApp;
     NSArray * _mediaTypes;
-    bool  _purgeableCalculated;
     long long  _purgeableSize;
-    bool  _specialCalculated;
     long long  _specialSize;
     PSUsageBundleApp * _usageBundleApp;
 }
@@ -45,9 +43,7 @@
 @property (nonatomic, readonly) NSDate *lastUsedDate;
 @property (nonatomic, retain) NSArray *mediaTypes;
 @property (nonatomic, readonly) NSString *name;
-@property bool purgeableCalculated;
 @property (nonatomic, readonly) long long purgeableSize;
-@property bool specialCalculated;
 @property (nonatomic, readonly) long long specialSize;
 @property (nonatomic, readonly) long long staticSize;
 @property (nonatomic, readonly) long long totalSize;
@@ -82,7 +78,6 @@
 - (id)lastUsedDate;
 - (id)mediaTypes;
 - (id)name;
-- (bool)purgeableCalculated;
 - (long long)purgeableSize;
 - (void)reloadProxy;
 - (void)setAppProxy:(id)arg1;
@@ -91,14 +86,8 @@
 - (void)setIsUsageApp:(bool)arg1;
 - (void)setIsUserApp:(bool)arg1;
 - (void)setMediaTypes:(id)arg1;
-- (void)setNeedsPurgeableSizeUpdate;
-- (void)setNeedsSpecialSizeUpdate;
-- (void)setPurgeableCalculated:(bool)arg1;
-- (void)setSpecialCalculated:(bool)arg1;
 - (void)setUsageBundleApp:(id)arg1;
-- (bool)specialCalculated;
 - (long long)specialSize;
-- (long long)specialStorageUsageForBundleID:(id)arg1;
 - (long long)staticSize;
 - (long long)totalSize;
 - (id)usageBundleApp;

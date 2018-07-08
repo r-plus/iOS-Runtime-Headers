@@ -3,18 +3,34 @@
  */
 
 @interface IMDCKAbstractSyncController : NSObject {
+    bool  _busy;
     bool  _isSyncing;
 }
 
+@property (getter=isBusy, nonatomic) bool busy;
 @property (nonatomic) bool isSyncing;
+@property (nonatomic, readonly) bool isUsingStingRay;
+@property (nonatomic, readonly) IMDCKSyncState *syncState;
 
 - (void)addSyncDebuggingInfoToDictionary:(id)arg1;
 - (id)ckUtilities;
+- (bool)isBusy;
 - (bool)isSyncing;
+- (bool)isUsingStingRay;
 - (id)prefsWriter;
 - (bool)readPersistentBoolForKey:(id)arg1;
 - (id)readPersistentValueForKey:(id)arg1;
+- (void)setBusy:(bool)arg1;
 - (void)setIsSyncing:(bool)arg1;
+- (void)setStartingInitialSync;
+- (void)setStartingPeriodicSync;
+- (void)setSyncStateToDeleting;
+- (void)setSyncStateToDownloading;
+- (void)setSyncStateToFinished;
+- (void)setSyncStateToPreparing;
+- (void)setSyncStateToUploading;
+- (long long)syncControllerRecordType;
+- (id)syncState;
 - (id)syncStateDebuggingInfo:(id)arg1;
 - (void)writePersistentBool:(bool)arg1 forKey:(id)arg2;
 - (void)writePersistentValue:(id)arg1 forKey:(id)arg2;

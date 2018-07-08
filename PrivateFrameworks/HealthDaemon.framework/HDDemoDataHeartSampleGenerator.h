@@ -14,6 +14,8 @@
 @property (nonatomic) double nextRestingHeartRateSampleTime;
 @property (nonatomic) double nextWalkingHeartRateAverageSampleTime;
 
++ (bool)supportsSecureCoding;
+
 - (double)_computeRestingHeartRateForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (double)_computeWalkingHeartRateAverageForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (void)encodeWithCoder:(id)arg1;

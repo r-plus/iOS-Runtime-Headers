@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UINavigationBarContentView : _UIBarContentView <_UIBarButtonItemViewOwner, _UINavigationBarTitleViewDataSource, _UINavigationBarTransitionContextParticipant> {
+@interface _UINavigationBarContentView : _UIBarContentView <_UIBarButtonItemViewOwner, _UIButtonBarButtonChangeObserver, _UINavigationBarTitleViewDataSource, _UINavigationBarTransitionContextParticipant> {
     bool  _backButtonHidden;
     UIBarButtonItem * _backButtonItem;
     double  _backButtonMargin;
@@ -95,6 +95,7 @@
 - (id)backButtonItem;
 - (double)backButtonMargin;
 - (double)backButtonMaximumWidth;
+- (void)backButtonTitleDidChange;
 - (id)backIndicatorImage;
 - (long long)barMetrics;
 - (long long)barType;
@@ -104,6 +105,7 @@
 - (id)defaultFontDescriptor;
 - (id)delegate;
 - (unsigned long long)edgesPaddingBarButtonItem:(id)arg1;
+- (void)ensureBackButtonTruncationOccursWithContext:(id)arg1;
 - (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;

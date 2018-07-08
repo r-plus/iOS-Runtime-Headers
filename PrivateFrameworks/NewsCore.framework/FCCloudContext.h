@@ -95,6 +95,7 @@
 - (id)feedManager;
 - (id)feedPersonalizer;
 - (id)fetchEndOfArticleDataForHeadline:(id)arg1 initialRelatedHeadlineCount:(unsigned long long)arg2 initialPublisherHeadlineCount:(unsigned long long)arg3 totalRelatedHeadlineCount:(unsigned long long)arg4 totalPublisherHeadlineCount:(unsigned long long)arg5 fetchRelatedHeadline:(bool)arg6 fetchPublisherHeadlines:(bool)arg7 fetchAllTopics:(bool)arg8 screenScale:(double)arg9 completion:(id /* block */)arg10;
+- (void)fetchOriginalDataShouldBeDeletedAfterMigrationForDatabase:(id)arg1 completion:(id /* block */)arg2;
 - (void)fetchPrivateDataEncryptionIsAllowedForDatabase:(id)arg1 completion:(id /* block */)arg2;
 - (void)fetchPrivateDataEncryptionMigrationIsDesiredForDatabase:(id)arg1 completion:(id /* block */)arg2;
 - (id)flintHelper;

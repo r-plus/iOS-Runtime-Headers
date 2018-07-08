@@ -10,8 +10,8 @@
 @property (nonatomic, readonly) NSUUID *outOfSyncToken;
 @property (getter=isRecordingOutOfSync, nonatomic, readonly) bool recordingOutOfSync;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)init;
 - (id)initWithArchive:(const struct RecordingSyncState { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct UUID {} *x5; bool x6; }*)arg1 unarchiver:(id)arg2;

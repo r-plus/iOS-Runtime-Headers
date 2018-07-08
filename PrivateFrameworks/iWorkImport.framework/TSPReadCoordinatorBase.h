@@ -3,6 +3,7 @@
  */
 
 @interface TSPReadCoordinatorBase : NSObject <TSPLazyReferenceDelegate, TSPReaderDelegate> {
+    TSPCancellationState * _cancellationState;
     NSError * _error;
     NSObject<OS_dispatch_queue> * _errorQueue;
     NSObject<OS_dispatch_queue> * _externalReferenceQueue;
@@ -10,24 +11,24 @@
         struct __hash_table<std::__1::__hash_value_type<long long, TSP::ExternalReferenceInfo>, std::__1::__unordered_map_hasher<long long, std::__1::__hash_value_type<long long, TSP::ExternalReferenceInfo>, TSP::ObjectIdentifierHash, true>, std::__1::__unordered_map_equal<long long, std::__1::__hash_value_type<long long, TSP::ExternalReferenceInfo>, std::__1::equal_to<long long>, true>, std::__1::allocator<std::__1::__hash_value_type<long long, TSP::ExternalReferenceInfo> > > { 
             struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, TSP::ExternalReferenceInfo>, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, TSP::ExternalReferenceInfo>, void *> *> *> > > { 
                 struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, TSP::ExternalReferenceInfo>, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, TSP::ExternalReferenceInfo>, void *> *> *> > > { 
-                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, TSP::ExternalReferenceInfo>, void *> *> {} **__first_; 
+                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, TSP::ExternalReferenceInfo>, void *> *> {} **__value_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, TSP::ExternalReferenceInfo>, void *> *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, TSP::ExternalReferenceInfo>, void *> *> *> > { 
-                            unsigned long long __first_; 
+                            unsigned long long __value_; 
                         } __data_; 
-                    } __second_; 
+                    } __value_; 
                 } __ptr_; 
             } __bucket_list_; 
             struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, TSP::ExternalReferenceInfo>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<long long, TSP::ExternalReferenceInfo>, void *> > > { 
                 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, TSP::ExternalReferenceInfo>, void *> *> { 
                     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, TSP::ExternalReferenceInfo>, void *> *> {} *__next_; 
-                } __first_; 
+                } __value_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<long long, std::__1::__hash_value_type<long long, TSP::ExternalReferenceInfo>, TSP::ObjectIdentifierHash, true> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<long long, std::__1::__hash_value_type<long long, TSP::ExternalReferenceInfo>, std::__1::equal_to<long long>, true> > { 
-                float __first_; 
+                float __value_; 
             } __p3_; 
         } __table_; 
     }  _externalReferences;
@@ -39,7 +40,7 @@
         struct RepeatedExternalReferenceCompletionInfo {} *__begin_; 
         struct RepeatedExternalReferenceCompletionInfo {} *__end_; 
         struct __compressed_pair<TSP::RepeatedExternalReferenceCompletionInfo *, std::__1::allocator<TSP::RepeatedExternalReferenceCompletionInfo> > { 
-            struct RepeatedExternalReferenceCompletionInfo {} *__first_; 
+            struct RepeatedExternalReferenceCompletionInfo {} *__value_; 
         } __end_cap_; 
     }  _repeatedExternalReferences;
     bool  _success;
@@ -47,6 +48,7 @@
 
 @property (nonatomic, readonly) NSUUID *baseObjectUUID;
 @property (nonatomic, readonly) bool canRetainObjectReferencedByWeakLazyReference;
+@property (nonatomic, retain) TSPCancellationState *cancellationState;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (retain) NSError *error;
@@ -66,6 +68,8 @@
 - (void)addLoadObserver:(id)arg1 action:(SEL)arg2 forLazyReference:(id)arg3;
 - (id)baseObjectUUID;
 - (bool)canRetainObjectReferencedByWeakLazyReference;
+- (id)cancellationState;
+- (id)cancellationStateForReader:(id)arg1;
 - (id)context;
 - (id)contextForReader:(id)arg1;
 - (void)didReferenceExternalObject:(id)arg1 withIdentifier:(long long)arg2;
@@ -89,6 +93,7 @@
 - (id)reader:(id)arg1 wantsDataForIdentifier:(long long)arg2;
 - (long long)reader:(id)arg1 wantsObjectIdentifierForUUID:(id)arg2;
 - (bool)resolveExternalReferences;
+- (void)setCancellationState:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setLazyReferencesDelegateToObjectContext;
 - (long long)sourceType;

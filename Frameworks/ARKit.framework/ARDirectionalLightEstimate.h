@@ -10,12 +10,14 @@
         float coefficients[9]; 
     }  _sphericalHarmonicIntensity;
     NSData * _sphericalHarmonicsCoefficients;
+    double  _timestamp;
 }
 
 @property (nonatomic) double confidenceRating;
 @property (nonatomic, readonly) void primaryLightDirection;
 @property (nonatomic, readonly) double primaryLightIntensity;
 @property (nonatomic, readonly, copy) NSData *sphericalHarmonicsCoefficients;
+@property (nonatomic) double timestamp;
 
 - (void).cxx_destruct;
 - (double)confidenceRating;
@@ -23,9 +25,12 @@
 - (id)description;
 - (id)initWithDirectionalLightEstimate:(id)arg1;
 - (id)initWithSphericalHarmonics:(struct { float x1[9]; })arg1 temperature:(double)arg2;
+- (id)lightEstimateByApplyingRotation:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[3]; })arg1;
 - (void)primaryLightDirection;
 - (double)primaryLightIntensity;
 - (void)setConfidenceRating:(double)arg1;
+- (void)setTimestamp:(double)arg1;
 - (id)sphericalHarmonicsCoefficients;
+- (double)timestamp;
 
 @end

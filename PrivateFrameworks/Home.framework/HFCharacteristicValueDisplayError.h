@@ -17,6 +17,7 @@
 
 + (id)errorWithUnderlyingError:(id)arg1 readTraits:(id)arg2 contextProvider:(id)arg3;
 + (id)errorWithUnderlyingSymptom:(id)arg1 isFixingCurrently:(bool)arg2 contextProvider:(id)arg3;
++ (id)mostEgregiousError:(id)arg1;
 
 - (void).cxx_destruct;
 - (unsigned long long)category;

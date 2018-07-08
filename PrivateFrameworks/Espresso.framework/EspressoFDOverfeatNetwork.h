@@ -25,7 +25,7 @@
         struct shared_ptr<Espresso::blob<float, 3> > {} *__begin_; 
         struct shared_ptr<Espresso::blob<float, 3> > {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<Espresso::blob<float, 3> > *, std::__1::allocator<std::__1::shared_ptr<Espresso::blob<float, 3> > > > { 
-            struct shared_ptr<Espresso::blob<float, 3> > {} *__first_; 
+            struct shared_ptr<Espresso::blob<float, 3> > {} *__value_; 
         } __end_cap_; 
     }  boxBlobs;
     struct CGColorSpace { } * colorSpace;
@@ -39,21 +39,21 @@
         struct shared_ptr<Espresso::net> {} *__begin_; 
         struct shared_ptr<Espresso::net> {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<Espresso::net> *, std::__1::allocator<std::__1::shared_ptr<Espresso::net> > > { 
-            struct shared_ptr<Espresso::net> {} *__first_; 
+            struct shared_ptr<Espresso::net> {} *__value_; 
         } __end_cap_; 
     }  ecpu_nets;
     struct vector<std::__1::pair<unsigned long long, unsigned long long>, std::__1::allocator<std::__1::pair<unsigned long long, unsigned long long> > > { 
         struct pair<unsigned long long, unsigned long long> {} *__begin_; 
         struct pair<unsigned long long, unsigned long long> {} *__end_; 
         struct __compressed_pair<std::__1::pair<unsigned long long, unsigned long long> *, std::__1::allocator<std::__1::pair<unsigned long long, unsigned long long> > > { 
-            struct pair<unsigned long long, unsigned long long> {} *__first_; 
+            struct pair<unsigned long long, unsigned long long> {} *__value_; 
         } __end_cap_; 
     }  full_scales;
     struct vector<std::__1::shared_ptr<Espresso::net>, std::__1::allocator<std::__1::shared_ptr<Espresso::net> > > { 
         struct shared_ptr<Espresso::net> {} *__begin_; 
         struct shared_ptr<Espresso::net> {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<Espresso::net> *, std::__1::allocator<std::__1::shared_ptr<Espresso::net> > > { 
-            struct shared_ptr<Espresso::net> {} *__first_; 
+            struct shared_ptr<Espresso::net> {} *__value_; 
         } __end_cap_; 
     }  gpu_nets;
     int  n_resizers_for_batching;
@@ -61,28 +61,28 @@
         struct pair<unsigned long long, unsigned long long> {} *__begin_; 
         struct pair<unsigned long long, unsigned long long> {} *__end_; 
         struct __compressed_pair<std::__1::pair<unsigned long long, unsigned long long> *, std::__1::allocator<std::__1::pair<unsigned long long, unsigned long long> > > { 
-            struct pair<unsigned long long, unsigned long long> {} *__first_; 
+            struct pair<unsigned long long, unsigned long long> {} *__value_; 
         } __end_cap_; 
     }  net_scales;
     struct vector<std::__1::shared_ptr<Espresso::blob<float, 3> >, std::__1::allocator<std::__1::shared_ptr<Espresso::blob<float, 3> > > > { 
         struct shared_ptr<Espresso::blob<float, 3> > {} *__begin_; 
         struct shared_ptr<Espresso::blob<float, 3> > {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<Espresso::blob<float, 3> > *, std::__1::allocator<std::__1::shared_ptr<Espresso::blob<float, 3> > > > { 
-            struct shared_ptr<Espresso::blob<float, 3> > {} *__first_; 
+            struct shared_ptr<Espresso::blob<float, 3> > {} *__value_; 
         } __end_cap_; 
     }  probBlobs;
     struct vector<std::__1::shared_ptr<Espresso::fast_pyramid_resizer>, std::__1::allocator<std::__1::shared_ptr<Espresso::fast_pyramid_resizer> > > { 
         struct shared_ptr<Espresso::fast_pyramid_resizer> {} *__begin_; 
         struct shared_ptr<Espresso::fast_pyramid_resizer> {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<Espresso::fast_pyramid_resizer> *, std::__1::allocator<std::__1::shared_ptr<Espresso::fast_pyramid_resizer> > > { 
-            struct shared_ptr<Espresso::fast_pyramid_resizer> {} *__first_; 
+            struct shared_ptr<Espresso::fast_pyramid_resizer> {} *__value_; 
         } __end_cap_; 
     }  resizers_for_batching;
     struct vector<int, std::__1::allocator<int> > { 
         int *__begin_; 
         int *__end_; 
         struct __compressed_pair<int *, std::__1::allocator<int> > { 
-            int *__first_; 
+            int *__value_; 
         } __end_cap_; 
     }  retile_n_outputs_v;
     int  retile_stride;
@@ -91,7 +91,7 @@
         double *__begin_; 
         double *__end_; 
         struct __compressed_pair<double *, std::__1::allocator<double> > { 
-            double *__first_; 
+            double *__value_; 
         } __end_cap_; 
     }  scalesc;
     struct net_strides_configuration { 
@@ -100,21 +100,21 @@
             int *__begin_; 
             int *__end_; 
             struct __compressed_pair<int *, std::__1::allocator<int> > { 
-                int *__first_; 
+                int *__value_; 
             } __end_cap_; 
         } kernel_size; 
         struct vector<int, std::__1::allocator<int> > { 
             int *__begin_; 
             int *__end_; 
             struct __compressed_pair<int *, std::__1::allocator<int> > { 
-                int *__first_; 
+                int *__value_; 
             } __end_cap_; 
         } stride; 
         struct vector<int, std::__1::allocator<int> > { 
             int *__begin_; 
             int *__end_; 
             struct __compressed_pair<int *, std::__1::allocator<int> > { 
-                int *__first_; 
+                int *__value_; 
             } __end_cap_; 
         } pad; 
     }  strideConf;

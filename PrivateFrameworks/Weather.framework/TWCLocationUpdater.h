@@ -31,6 +31,6 @@
 - (void)updateWeatherForCities:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)updateWeatherForCity:(id)arg1;
 - (void)updateWeatherForLocation:(id)arg1 city:(id)arg2;
-- (void)updateWeatherForLocation:(id)arg1 city:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)updateWeatherForLocation:(id)arg1 city:(id)arg2 isFromFrameworkClient:(bool)arg3 withCompletionHandler:(id /* block */)arg4;
 
 @end

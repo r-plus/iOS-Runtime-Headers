@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DiagnosticExtensionsDaemon.framework/DiagnosticExtensionsDaemon
  */
 
-@interface DEDIDSOutbound : NSObject <DEDClientProtocol, DEDWorkerProtocol> {
+@interface DEDIDSOutbound : NSObject <DEDClientProtocol, DEDSecureArchiving, DEDWorkerProtocol> {
     DEDIDSConnection * _connection;
     NSString * _deviceAddress;
     NSObject<OS_os_log> * _log;
@@ -18,6 +18,7 @@
 @property (retain) NSString *sessionID;
 @property (readonly) Class superclass;
 
++ (id)archivedClasses;
 + (id)sessionWithID:(id)arg1 withDeviceAtAddress:(id)arg2 connection:(id)arg3;
 
 - (void).cxx_destruct;

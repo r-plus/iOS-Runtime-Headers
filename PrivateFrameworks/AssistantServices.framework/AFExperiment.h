@@ -23,11 +23,11 @@
 @property (nonatomic, readonly) bool playsTwoShotSoundForSiriVOXSounds;
 @property (readonly) Class superclass;
 
++ (id)newWithBuilder:(id /* block */)arg1;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_descriptionWithIndent:(unsigned long long)arg1;
-- (id)builder;
 - (id)configurationIdentifier;
 - (id)configurationVersion;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -42,6 +42,7 @@
 - (bool)isEqual:(id)arg1;
 - (void)logExperimentExposureForSiriVOXSounds;
 - (void)logExperimentExposureForTapToSiriBehavior;
+- (id)mutatedCopyWithMutator:(id /* block */)arg1;
 - (bool)playsSessionInactiveSoundForSiriVOXSounds;
 - (bool)playsSound;
 - (bool)playsTwoShotSoundForSiriVOXSounds;

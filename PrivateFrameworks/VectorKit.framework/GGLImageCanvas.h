@@ -17,13 +17,13 @@
     bool  _canMakeImage;
     struct unique_ptr<ggl::Texture, std::__1::default_delete<ggl::Texture> > { 
         struct __compressed_pair<ggl::Texture *, std::__1::default_delete<ggl::Texture> > { 
-            struct Texture {} *__first_; 
+            struct Texture {} *__value_; 
         } __ptr_; 
     }  _colorBuffer;
     double  _contentScale;
     struct unique_ptr<ggl::RenderBuffer, std::__1::default_delete<ggl::RenderBuffer> > { 
         struct __compressed_pair<ggl::RenderBuffer *, std::__1::default_delete<ggl::RenderBuffer> > { 
-            struct RenderBuffer {} *__first_; 
+            struct RenderBuffer {} *__value_; 
         } __ptr_; 
     }  _depthStencilBuffer;
     struct shared_ptr<ggl::Device> { 
@@ -32,12 +32,12 @@
     }  _device;
     struct unique_ptr<ggl::RenderTarget, std::__1::default_delete<ggl::RenderTarget> > { 
         struct __compressed_pair<ggl::RenderTarget *, std::__1::default_delete<ggl::RenderTarget> > { 
-            struct RenderTarget {} *__first_; 
+            struct RenderTarget {} *__value_; 
         } __ptr_; 
     }  _flippedRenderTarget;
     struct unique_ptr<ggl::IOSurfaceTexture, std::__1::default_delete<ggl::IOSurfaceTexture> > { 
         struct __compressed_pair<ggl::IOSurfaceTexture *, std::__1::default_delete<ggl::IOSurfaceTexture> > { 
-            struct IOSurfaceTexture {} *__first_; 
+            struct IOSurfaceTexture {} *__value_; 
         } __ptr_; 
     }  _flippedSurfaceTexture;
     struct RenderTargetFormat { 
@@ -48,14 +48,14 @@
     }  _format;
     struct unique_ptr<ggl::Texture, std::__1::default_delete<ggl::Texture> > { 
         struct __compressed_pair<ggl::Texture *, std::__1::default_delete<ggl::Texture> > { 
-            struct Texture {} *__first_; 
+            struct Texture {} *__value_; 
         } __ptr_; 
     }  _msaaResolveBuffer;
     bool  _recreateRenderTarget;
     <GGLRenderQueueSource> * _renderSource;
     struct unique_ptr<ggl::RenderTarget, std::__1::default_delete<ggl::RenderTarget> > { 
         struct __compressed_pair<ggl::RenderTarget *, std::__1::default_delete<ggl::RenderTarget> > { 
-            struct RenderTarget {} *__first_; 
+            struct RenderTarget {} *__value_; 
         } __ptr_; 
     }  _renderTarget;
     struct Renderer { int (**x1)(); struct Device {} *x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; bool x6; float x7; struct vector<std::__1::shared_ptr<ggl::DebugRenderer>, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_8_1_1; struct shared_ptr<ggl::DebugRenderer> {} *x_8_1_2; struct __compressed_pair<std::__1::shared_ptr<ggl::DebugRenderer> *, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_3_2_1; } x_8_1_3; } x8; struct unique_ptr<ggl::RenderQueue, std::__1::default_delete<ggl::RenderQueue> > { struct __compressed_pair<ggl::RenderQueue *, std::__1::default_delete<ggl::RenderQueue> > { struct RenderQueue {} *x_1_2_1; } x_9_1_1; } x9; struct shared_ptr<ggl::CommonLibrary> { struct CommonLibrary {} *x_10_1_1; struct __shared_weak_count {} *x_10_1_2; } x10; struct unique_ptr<ggl::RenderResourceFences, std::__1::default_delete<ggl::RenderResourceFences> > { struct __compressed_pair<ggl::RenderResourceFences *, std::__1::default_delete<ggl::RenderResourceFences> > { struct RenderResourceFences {} *x_1_2_1; } x_11_1_1; } x11; } * _renderer;
@@ -70,7 +70,7 @@
         double height; 
     }  _size;
     bool  _useMultisampling;
-    struct unique_ptr<(anonymous namespace)::YFlipPass, std::__1::default_delete<(anonymous namespace)::YFlipPass> >="__ptr_"{__compressed_pair<(anonymous namespace)::YFlipPass *, std::__1::default_delete<(anonymous namespace)::YFlipPass> >="__first_"^{YFlipPass {}  _yFlipPass;
+    struct unique_ptr<(anonymous namespace)::YFlipPass, std::__1::default_delete<(anonymous namespace)::YFlipPass> >="__ptr_"{__compressed_pair<(anonymous namespace)::YFlipPass *, std::__1::default_delete<(anonymous namespace)::YFlipPass> >="__value_"^{YFlipPass {}  _yFlipPass;
 }
 
 @property (nonatomic) bool allowAlpha;

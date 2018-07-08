@@ -13,6 +13,7 @@
     UIColor * _maskColor;
     LPPadding * _padding;
     LPSize * _size;
+    long long  _verticalAlignment;
 }
 
 @property (nonatomic, retain) UIColor *backgroundColor;
@@ -25,6 +26,7 @@
 @property (nonatomic, retain) UIColor *maskColor;
 @property (nonatomic, readonly, retain) LPPadding *padding;
 @property (nonatomic, retain) LPSize *size;
+@property (nonatomic) long long verticalAlignment;
 
 - (void).cxx_destruct;
 - (id)backgroundColor;
@@ -47,6 +49,8 @@
 - (void)setForegroundOpacity:(double)arg1;
 - (void)setMaskColor:(id)arg1;
 - (void)setSize:(id)arg1;
+- (void)setVerticalAlignment:(long long)arg1;
 - (id)size;
+- (long long)verticalAlignment;
 
 @end

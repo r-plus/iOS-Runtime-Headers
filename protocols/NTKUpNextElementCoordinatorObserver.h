@@ -5,6 +5,7 @@
 
 @required
 
+- (bool)allowsLocationUse;
 - (NSSet *)disabledDataSources;
 - (void)elementCoordinator:(NTKUpNextElementCoordinator *)arg1 didInsertElement:(NTKUpNextElement *)arg2 atIndexPath:(NSIndexPath *)arg3;
 - (void)elementCoordinator:(NTKUpNextElementCoordinator *)arg1 didMoveElement:(NTKUpNextElement *)arg2 fromIndexPath:(NSIndexPath *)arg3 toIndexPath:(NSIndexPath *)arg4;

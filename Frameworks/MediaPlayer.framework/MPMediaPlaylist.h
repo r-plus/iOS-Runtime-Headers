@@ -19,6 +19,7 @@
 + (void)_createFilterableDictionary;
 + (bool)_isValidPlaylistProperty:(id)arg1;
 + (bool)canFilterByProperty:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)addItemWithProductID:(id)arg1 completionHandler:(id /* block */)arg2;

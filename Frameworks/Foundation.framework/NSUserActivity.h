@@ -32,9 +32,11 @@
 @property (readonly, copy) NSString *activityType;
 @property (nonatomic, readonly, copy) NSString *cacheIdentifier;
 @property (copy) CSSearchableItemAttributeSet *contentAttributeSet;
+@property (nonatomic, readonly) NSArray *contextIdentifierPath;
 @property (readonly, copy) NSString *debugDescription;
 @property <NSUserActivityDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) CIBarcodeDescriptor *detectedBarcodeDescriptor;
 @property (getter=isEligibleForHandoff) bool eligibleForHandoff;
 @property (getter=isEligibleForPublicIndexing) bool eligibleForPublicIndexing;
 @property (getter=isEligibleForSearch) bool eligibleForSearch;
@@ -42,6 +44,7 @@
 @property (nonatomic, copy) NSString *externalMediaContentIdentifier;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) INInteraction *interaction;
+@property (nonatomic, readonly) bool isClassKitDeepLink;
 @property (copy) NSSet *keywords;
 @property (nonatomic, retain) MKMapItem *mapItem;
 @property bool needsSave;
@@ -172,6 +175,16 @@
 - (id)webPageURL;
 - (id)webpageURL;
 - (void)willSynchronizeActivity;
+
+// Image: /System/Library/Frameworks/ClassKit.framework/ClassKit
+
+- (id)contextIdentifierPath;
+- (bool)isClassKitDeepLink;
+
+// Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
+
+- (id)detectedBarcodeDescriptor;
+- (void)setDetectedCode:(id)arg1;
 
 // Image: /System/Library/Frameworks/Intents.framework/Intents
 

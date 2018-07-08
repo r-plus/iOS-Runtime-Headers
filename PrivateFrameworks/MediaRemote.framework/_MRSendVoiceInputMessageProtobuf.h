@@ -9,10 +9,10 @@
 @property (nonatomic, retain) _MRAudioDataBlockProtobuf *dataBlock;
 @property (nonatomic, readonly) bool hasDataBlock;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataBlock;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasDataBlock;

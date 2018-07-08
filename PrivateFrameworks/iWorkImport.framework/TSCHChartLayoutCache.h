@@ -11,8 +11,8 @@
 
 + (id)cacheWithCacheItem:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)accessWithCacheItemBlock:(id /* block */)arg1 calculateBlock:(id /* block */)arg2;
-- (void)dealloc;
 - (bool)ignoreInvalidation;
 - (id)init;
 - (id)initWithCacheItem:(id)arg1;

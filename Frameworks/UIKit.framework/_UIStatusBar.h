@@ -26,6 +26,7 @@
 @property (nonatomic, retain) UIAccessibilityHUDGestureManager *accessibilityHUDGestureManager;
 @property (nonatomic, retain) _UIStatusBarAction *action;
 @property (nonatomic, readonly) UIGestureRecognizer *actionGestureRecognizer;
+@property (nonatomic, readonly) unsigned int animationContextId;
 @property (getter=areAnimationsEnabled, nonatomic, readonly) bool animationsEnabled;
 @property (nonatomic, readonly) UIView *containerView;
 @property (nonatomic, readonly) _UIStatusBarData *currentAggregatedData;
@@ -63,6 +64,7 @@
 - (void)_delayUpdatesWithKeys:(id)arg1 fromAnimation:(id)arg2;
 - (void)_dismissAccessibilityHUDForGestureManager:(id)arg1;
 - (id)_displayItemsForPartWithIdentifier:(id)arg1;
+- (void)_fixupDisplayItemAttributes;
 - (bool)_forceLayoutEngineSolutionInRationalEdges;
 - (bool)_gestureRecognizer:(id)arg1 isInsideRegion:(id)arg2;
 - (void)_performAnimations:(id)arg1;
@@ -81,6 +83,7 @@
 - (id)action;
 - (id)actionForPartWithIdentifier:(id)arg1;
 - (id)actionGestureRecognizer;
+- (unsigned int)animationContextId;
 - (bool)areAnimationsEnabled;
 - (id)containerView;
 - (id)currentAggregatedData;

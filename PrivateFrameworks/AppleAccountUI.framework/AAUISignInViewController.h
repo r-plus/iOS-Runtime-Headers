@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@interface AAUISignInViewController : UIViewController <RemoteUIControllerDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UITextViewDelegate> {
+@interface AAUISignInViewController : UIViewController <AKAppleIDAuthenticationInAppContextPasswordDelegate, RemoteUIControllerDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UITextViewDelegate> {
     AAUIHeaderView * _accountsHeaderView;
     long long  _akServiceType;
     bool  _allowsAccountCreation;
@@ -10,6 +10,7 @@
     <AAUISignInViewControllerDelegate> * _delegate;
     NSArray * _expandedConstraints;
     UITableViewCell * _passwordCell;
+    id /* block */  _passwordHandler;
     bool  _shouldAnticipatePiggybacking;
     bool  _showServiceIcons;
     UITableViewHeaderFooterView * _tableFooterView;
@@ -39,13 +40,13 @@
 - (long long)_akServiceType;
 - (void)_attemptAuthentication;
 - (void)_attemptAuthenticationWithContext:(id)arg1;
-- (id)_attributedStringForFooter;
 - (id)_authorizationValueForAuthenticationResults:(id)arg1;
 - (void)_beginObservingKeyboardWillShowNotifications;
 - (void)_beginObservingSizeCategoryNotification;
 - (void)_beginObservingTextFieldDidChangeNotifications;
 - (id)_cancelBarButtonItem;
 - (void)_cancelButtonSelected:(id)arg1;
+- (void)_cancelPasswordDelegateIfNecessary;
 - (void)_delegate_signInViewControllerDidCancel;
 - (void)_delegate_signInViewControllerDidCompleteWithAuthenticationResults:(id)arg1;
 - (void)_endObservingKeyboardWillShowNotifications;
@@ -53,19 +54,24 @@
 - (void)_endObservingTextFieldDidChangeNotifications;
 - (bool)_hasValidCredentials;
 - (bool)_isGreenTeaCapable;
+- (bool)_isPasswordFieldVisible;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
 - (id)_nextBarButtonItem;
 - (void)_nextButtonSelected:(id)arg1;
 - (id)_passwordCell;
+- (id)_passwordFieldIndexPath;
 - (void)_presentAppleIDPrivacyInformationPane;
 - (void)_presentCreateAppleIDPane;
 - (void)_presentForgotAppleIDPane;
 - (void)_repairCloudAccountWithAuthenticationResults:(id)arg1;
 - (void)_setAkServiceType:(long long)arg1;
 - (void)_setEnabled:(bool)arg1;
+- (void)_setPasswordFieldHidden:(bool)arg1;
 - (void)_setShouldAnticipatePiggybacking:(bool)arg1;
+- (void)_setUsernameCellWaiting:(bool)arg1;
 - (bool)_shouldAnticipatePiggybacking;
+- (id)_stringForFooter;
 - (id)_tableFooterView;
 - (id)_tableHeaderView;
 - (id)_tableView;
@@ -76,6 +82,7 @@
 - (bool)allowsAccountCreation;
 - (id)authenticationContext;
 - (void)constrainView:(id)arg1 toFillHeaderFooterView:(id)arg2;
+- (void)context:(id)arg1 needsPasswordWithCompletion:(id /* block */)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithCoder:(id)arg1;
@@ -96,11 +103,13 @@
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementString:(id)arg3;
 - (bool)textFieldShouldReturn:(id)arg1;
 - (bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 interaction:(long long)arg4;
 - (id)titleLabel;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
 

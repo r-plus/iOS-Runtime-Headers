@@ -15,9 +15,9 @@
 @property (nonatomic, readonly) MRProtocolMessage *message;
 @property (nonatomic) long long readPosition;
 
+- (void).cxx_destruct;
 - (bool)canPurge;
 - (id)data;
-- (void)dealloc;
 - (id)initWithMessage:(id)arg1 createDataBlock:(id /* block */)arg2;
 - (bool)isFinished;
 - (id)message;

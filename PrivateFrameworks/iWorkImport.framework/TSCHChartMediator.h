@@ -16,6 +16,7 @@
 
 + (id)propertiesThatInvalidateMediator;
 
+- (void).cxx_destruct;
 - (id)categoryLabelFormulas;
 - (id)chartInfo;
 - (void)clearParent;

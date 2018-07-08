@@ -19,8 +19,10 @@
 - (void).cxx_destruct;
 - (id)_formattedValueWithFont:(id)arg1;
 - (void)_updateFormattedValueIncludingFont:(bool)arg1;
+- (void)_updateFormattedValueObservation;
 - (void)_updatePreferredFontIncludingValue:(bool)arg1;
 - (id)defaultAttributes;
+- (void)didMoveToWindow;
 - (id)dynamicFormattingValue;
 - (id)formattedValueObservationCancellationToken;
 - (void)layoutSubviews;

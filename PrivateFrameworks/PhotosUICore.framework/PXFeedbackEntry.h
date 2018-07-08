@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
  */
 
-@interface PXFeedbackEntry : NSObject <NSCoding> {
+@interface PXFeedbackEntry : NSObject <NSSecureCoding> {
     bool  _alreadyCollected;
     NSString * _appVersion;
     NSDictionary * _feedbackItemDetails;
@@ -29,6 +29,7 @@
 + (id)positiveFeedbackForImageQualityKeys;
 + (id)positiveFeedbackForMemoriesKeys;
 + (id)positiveFeedbackForMemoryDetailsKeys;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (bool)alreadyCollected;

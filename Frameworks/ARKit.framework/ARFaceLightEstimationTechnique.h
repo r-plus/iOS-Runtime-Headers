@@ -26,14 +26,14 @@
             int *__begin_; 
             int *__end_; 
             struct __compressed_pair<int *, std::__1::allocator<int> > { 
-                int *__first_; 
+                int *__value_; 
             } __end_cap_; 
         } m_validChromaSampleIDS; 
         struct vector<int, std::__1::allocator<int> > { 
             int *__begin_; 
             int *__end_; 
             struct __compressed_pair<int *, std::__1::allocator<int> > { 
-                int *__first_; 
+                int *__value_; 
             } __end_cap_; 
         } m_sampleIndices_all; 
         struct Matrix<float, 0, 0> { 
@@ -50,7 +50,7 @@
         struct Optional<cva::Matrix<float, 9, 1>, void> { 
             struct unique_ptr<cva::Matrix<float, 9, 1>, std::__1::default_delete<cva::Matrix<float, 9, 1> > > { 
                 struct __compressed_pair<cva::Matrix<float, 9, 1> *, std::__1::default_delete<cva::Matrix<float, 9, 1> > > { 
-                    struct Matrix<float, 9, 1> {} *__first_; 
+                    struct Matrix<float, 9, 1> {} *__value_; 
                 } __ptr_; 
             } m_value; 
         } m_averageSHCoeff; 
@@ -58,7 +58,7 @@
             unsigned long long *__begin_; 
             unsigned long long *__end_; 
             struct __compressed_pair<unsigned long *, std::__1::allocator<unsigned long> > { 
-                unsigned long long *__first_; 
+                unsigned long long *__value_; 
             } __end_cap_; 
         } m_inliers; 
     }  _faceLightEstimator;

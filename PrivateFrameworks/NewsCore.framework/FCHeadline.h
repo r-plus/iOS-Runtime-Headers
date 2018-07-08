@@ -6,9 +6,11 @@
     NSString * _accessoryText;
     NSArray * _allowedStorefrontIDs;
     NSString * _articleID;
+    NSString * _articleRecirculationConfigJSON;
     <FCNativeAdProviding> * _associatedAd;
     long long  _backendArticleVersion;
     NSArray * _blockedStorefrontIDs;
+    bool  _boundToContext;
     bool  _canBePurchased;
     NSString * _clusterID;
     unsigned long long  _contentType;
@@ -25,6 +27,7 @@
     double  _globalUserFeedback;
     bool  _hasThumbnail;
     NSURL * _headlineURL;
+    bool  _hiddenFromFeeds;
     NSArray * _iAdCategories;
     NSArray * _iAdKeywords;
     NSArray * _iAdSectionIDs;
@@ -42,6 +45,7 @@
     NSDate * _publishDate;
     long long  _publisherArticleVersion;
     COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort * _publisherCohort;
+    NSArray * _publisherSpecifiedArticleIDs;
     NSString * _referencedArticleID;
     NSArray * _relatedArticleIDs;
     FCFeedPersonalizedArticleScoreProfile * _scoreProfile;
@@ -83,6 +87,8 @@
     NSArray * _topicIDs;
     NSArray * _topics;
     bool  _usesImageOnTopLayout;
+    NSString * _videoCallToActionTitle;
+    NSURL * _videoCallToActionURL;
     double  _videoDuration;
     NSURL * _videoURL;
 }
@@ -91,10 +97,12 @@
 @property (nonatomic, readonly, copy) NSArray *allowedStorefrontIDs;
 @property (nonatomic, readonly) unsigned long long articleContentType;
 @property (nonatomic, copy) NSString *articleID;
+@property (nonatomic, readonly) NSString *articleRecirculationConfigJSON;
 @property (nonatomic, retain) <FCNativeAdProviding> *associatedAd;
 @property (nonatomic, readonly) long long backendArticleVersion;
 @property (nonatomic, readonly) NSData *backingArticleRecordData;
 @property (nonatomic, readonly, copy) NSArray *blockedStorefrontIDs;
+@property (getter=isBoundToContext, nonatomic, readonly) bool boundToContext;
 @property (nonatomic, readonly) bool canBePurchased;
 @property (nonatomic, readonly, copy) NSString *clusterID;
 @property (nonatomic) unsigned long long contentType;
@@ -122,6 +130,7 @@
 @property (nonatomic, readonly) bool hasVideo;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSURL *headlineURL;
+@property (getter=isHiddenFromFeeds, nonatomic, readonly) bool hiddenFromFeeds;
 @property (nonatomic, readonly, copy) NSArray *iAdCategories;
 @property (nonatomic, readonly, copy) NSArray *iAdKeywords;
 @property (nonatomic, readonly, copy) NSArray *iAdSectionIDs;
@@ -143,6 +152,7 @@
 @property (nonatomic, readonly) long long publisherArticleVersion;
 @property (nonatomic, readonly) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort *publisherCohort;
 @property (nonatomic, readonly, copy) NSString *publisherID;
+@property (nonatomic, readonly) NSArray *publisherSpecifiedArticleIDs;
 @property (nonatomic, readonly, copy) NSString *referencedArticleID;
 @property (nonatomic, readonly, copy) NSArray *relatedArticleIDs;
 @property (nonatomic, retain) FCFeedPersonalizedArticleScoreProfile *scoreProfile;
@@ -180,16 +190,19 @@
 @property (nonatomic, readonly, copy) NSArray *topics;
 @property (nonatomic) bool usesImageOnTopLayout;
 @property (nonatomic, readonly, copy) NSString *versionIdentifier;
+@property (nonatomic, readonly, copy) NSString *videoCallToActionTitle;
+@property (nonatomic, readonly, copy) NSURL *videoCallToActionURL;
 @property (nonatomic, readonly) double videoDuration;
 @property (nonatomic, readonly) NSURL *videoURL;
 
 - (void).cxx_destruct;
 - (id)accessoryText;
 - (id)allowedStorefrontIDs;
-- (void)applyHeadlineMetadata:(id)arg1 appConfig:(id)arg2;
+- (void)applyHeadlineMetadata:(id)arg1 coreConfiguration:(id)arg2;
 - (unsigned long long)articleContentType;
 - (id)articleID;
-- (void)assignStoryType:(unsigned long long)arg1 withAppConfig:(id)arg2;
+- (id)articleRecirculationConfigJSON;
+- (void)assignStoryType:(unsigned long long)arg1 withCoreConfiguration:(id)arg2;
 - (id)associatedAd;
 - (long long)backendArticleVersion;
 - (id)blockedStorefrontIDs;
@@ -222,6 +235,7 @@
 - (id)iAdSectionIDs;
 - (id)identifier;
 - (bool)isBlockedExplicitContent;
+- (bool)isBoundToContext;
 - (bool)isDeleted;
 - (bool)isDisplayingAsNativeAd;
 - (bool)isDraft;
@@ -230,6 +244,7 @@
 - (bool)isFeatureCandidate;
 - (bool)isFromBlockedStorefront;
 - (bool)isGap;
+- (bool)isHiddenFromFeeds;
 - (bool)isPaid;
 - (bool)isSponsored;
 - (bool)isTopStory;
@@ -247,6 +262,7 @@
 - (long long)publisherArticleVersion;
 - (id)publisherCohort;
 - (id)publisherID;
+- (id)publisherSpecifiedArticleIDs;
 - (id)referencedArticleID;
 - (id)relatedArticleIDs;
 - (id)scoreProfile;
@@ -322,6 +338,8 @@
 - (id)topics;
 - (bool)usesImageOnTopLayout;
 - (id)versionIdentifier;
+- (id)videoCallToActionTitle;
+- (id)videoCallToActionURL;
 - (double)videoDuration;
 - (id)videoURL;
 

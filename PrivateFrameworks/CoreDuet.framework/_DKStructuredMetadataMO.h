@@ -22,6 +22,8 @@
 @property (nonatomic, copy) NSURL *_DKApplicationActivityMetadataKey__itemRelatedContentURL;
 @property (nonatomic, copy) NSString *_DKApplicationActivityMetadataKey__itemRelatedUniqueIdentifier;
 @property (nonatomic, copy) NSString *_DKApplicationActivityMetadataKey__title;
+@property (nonatomic, copy) NSString *_DKApplicationActivityMetadataKey__userActivityRequiredString;
+@property (nonatomic, copy) NSString *_DKApplicationActivityMetadataKey__userActivityUUID;
 @property (nonatomic, copy) NSString *_DKApplicationMetadataKey__backboardState;
 @property (nonatomic, copy) NSString *_DKApplicationMetadataKey__extensionContainingBundleIdentifier;
 @property (nonatomic, copy) NSString *_DKApplicationMetadataKey__extensionHostIdentifier;

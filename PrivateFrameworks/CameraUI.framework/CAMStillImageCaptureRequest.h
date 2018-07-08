@@ -22,6 +22,7 @@
     long long  _lightingEffectType;
     NSURL * _localVideoDestinationURL;
     double  _loggingVideoZoomFactor;
+    long long  _loggingZoomInteractionType;
     unsigned long long  _maximumBurstLength;
     NSArray * _originalFilters;
     NSString * _timelapseIdentifier;
@@ -54,6 +55,7 @@
 @property (nonatomic, readonly) long long lightingEffectType;
 @property (nonatomic, readonly, copy) NSURL *localVideoDestinationURL;
 @property (nonatomic, readonly) double loggingVideoZoomFactor;
+@property (nonatomic, readonly) long long loggingZoomInteractionType;
 @property (nonatomic, readonly) unsigned long long maximumBurstLength;
 @property (nonatomic, readonly) NSArray *originalFilters;
 @property (readonly) Class superclass;
@@ -93,6 +95,7 @@
 - (long long)lightingEffectType;
 - (id)localVideoDestinationURL;
 - (double)loggingVideoZoomFactor;
+- (long long)loggingZoomInteractionType;
 - (unsigned long long)maximumBurstLength;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)originalFilters;

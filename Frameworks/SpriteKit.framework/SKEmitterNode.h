@@ -72,6 +72,7 @@
 - (unsigned int)activeParticleCount;
 - (void)addSubEmitterNode:(id)arg1;
 - (void)advanceSimulationTime:(double)arg1;
+- (void)commonInit;
 - (void)copyParticlePropertiesToNode:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

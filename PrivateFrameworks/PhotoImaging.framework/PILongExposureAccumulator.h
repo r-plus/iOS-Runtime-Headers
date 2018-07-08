@@ -48,12 +48,11 @@
 - (bool)isReadyForMoreData;
 - (void)markAsFinished;
 - (id)nextInputFrame;
-- (id)outputColorSpace;
 - (void)set_accumError:(id)arg1;
 - (bool)start:(out id*)arg1;
 - (void)waitUntilDone;
 - (id)workingColorSpace;
-- (bool)writeLongExposureImage:(id)arg1 UTI:(id)arg2 error:(out id*)arg3;
+- (bool)writeLongExposureImage:(id)arg1 UTI:(id)arg2 colorSpace:(id)arg3 error:(out id*)arg4;
 - (bool)writeMaskImage:(id)arg1 UTI:(id)arg2 error:(out id*)arg3;
 
 @end

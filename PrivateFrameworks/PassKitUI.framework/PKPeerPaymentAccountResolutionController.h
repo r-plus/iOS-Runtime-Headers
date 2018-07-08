@@ -9,7 +9,6 @@
     <PKPassLibraryDataProvider> * _passLibraryDataProvider;
     PKPeerPaymentPerformActionViewController * _peerPaymentActionViewController;
     <PKPaymentSetupDelegate> * _setupDelegate;
-    <PKPaymentSetupViewControllerDelegate> * _setupViewControllerDelegate;
     PKPeerPaymentWebService * _webService;
 }
 

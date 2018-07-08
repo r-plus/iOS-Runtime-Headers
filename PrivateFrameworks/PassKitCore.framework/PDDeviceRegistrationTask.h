@@ -3,13 +3,18 @@
  */
 
 @interface PDDeviceRegistrationTask : NSObject {
-    id /* block */  _registrationCompletion;
+    NSMutableArray * _completionHandlers;
+    NSString * _reason;
 }
 
-@property (nonatomic, copy) id /* block */ registrationCompletion;
+@property (nonatomic, retain) NSMutableArray *completionHandlers;
+@property (nonatomic, copy) NSString *reason;
 
 - (void).cxx_destruct;
-- (id /* block */)registrationCompletion;
-- (void)setRegistrationCompletion:(id /* block */)arg1;
+- (id)completionHandlers;
+- (id)init;
+- (id)reason;
+- (void)setCompletionHandlers:(id)arg1;
+- (void)setReason:(id)arg1;
 
 @end

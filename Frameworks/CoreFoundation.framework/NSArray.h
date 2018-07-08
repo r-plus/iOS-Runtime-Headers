@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSArray : NSObject <AFSecurityDigestibleChunksProviding, CKLParsedObject, CKRecordValue, CSCoderEncoder, FCOrderedCollectionAdditions, HFPrettyDescription, HFPropertyListConvertible, HFStateDumpSerializable, INCacheableContainer, INIntentResolutionResultDataProviding, MPTracklistIdentifierPair, NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable>
+@interface NSArray : NSObject <AFSecurityDigestibleChunksProviding, ATXScoreLogSerializable, CKLParsedObject, CKRecordValue, CSCoderEncoder, FCOrderedCollectionAdditions, HFPrettyDescription, HFPropertyListConvertible, HFStateDumpSerializable, INCacheableContainer, INIntentResolutionResultDataProviding, MPSectionedIdentifierListIdentifierPair, NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable>
 
 @property (nonatomic, readonly) IMMessageItem *__imLastMessageItem;
 @property (nonatomic, readonly) NSDictionary *bw_builtInMicRouteDictionary;
@@ -236,7 +236,11 @@
 - (id)hk_firstObjectPassingTest:(id /* block */)arg1;
 - (id)hk_firstObjectWithMaximumValueUsingEvaluationBlock:(id /* block */)arg1;
 - (id)hk_firstObjectWithMinimumValueUsingEvaluationBlock:(id /* block */)arg1;
+- (id)hk_foldRightFrom:(id)arg1 with:(id /* block */)arg2;
 - (id)hk_map:(id /* block */)arg1;
+- (id)hk_map:(id /* block */)arg1 error:(out id*)arg2;
+- (id)hk_mapToDictionary:(id /* block */)arg1;
+- (id)hk_mapToSet:(id /* block */)arg1;
 - (id)hk_orPredicateWithPredicateBlock:(id /* block */)arg1;
 - (void)hk_partitionArrayWithPartitionSetupBlock:(id /* block */)arg1 partitionMembershipCheckBlock:(id /* block */)arg2 partitionExtendBlock:(id /* block */)arg3 partitionFinalizeBlock:(id /* block */)arg4;
 - (double)hk_sumUsingEvaulationBlock:(id /* block */)arg1;
@@ -363,8 +367,13 @@
 - (id)axUniqueArrayWithPredicate:(id /* block */)arg1;
 - (id)firstPath;
 
+// Image: /System/Library/PrivateFrameworks/AccessoryCommunications.framework/AccessoryCommunications
+
+- (id)truncatedArray:(unsigned long long)arg1;
+
 // Image: /System/Library/PrivateFrameworks/AdCore.framework/AdCore
 
+- (id)arrayCappedToMaxItems:(unsigned long long)arg1;
 - (id)arrayForJSON;
 - (id)jsonString;
 - (id)jsonStringWithPrettyPrint:(bool)arg1;
@@ -372,6 +381,10 @@
 // Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
 
 - (id)assetForIdentifier:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
+
+- (void)atx_writeToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
 
@@ -492,7 +505,10 @@
 // Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
 
 - (id)crk_arrayByRemovingObject:(id)arg1;
+- (bool)crk_isSortedByComparator:(id /* block */)arg1;
 - (id)crk_mapUsingBlock:(id /* block */)arg1;
+- (id)crk_sortedArrayForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 usingComparator:(id /* block */)arg2;
+- (id)crk_sortedSubarrayWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 comparator:(id /* block */)arg2;
 
 // Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
 
@@ -597,8 +613,8 @@
 
 // Image: /System/Library/PrivateFrameworks/CoreSpeech.framework/CoreSpeech
 
-- (id)initWithXPCObject:(id)arg1;
-- (id)xpcObject;
+- (id)_cs_initWithXPCObject:(id)arg1;
+- (id)_cs_xpcObject;
 
 // Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
 
@@ -756,6 +772,7 @@
 // Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/IMSharedUtilities
 
 - (id)__im_canonicalIDSIDsFromAddresses;
+- (bool)isArchivable_im;
 
 // Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
 
@@ -1106,6 +1123,7 @@
 
 - (id)_safari_computeLengthsOfLongestSubsequencesCommonWithArray:(id)arg1;
 - (id)_safari_generateDiffWithLongestCommonSubsequenceLengths:(id)arg1 array:(id)arg2 indexIntoSelf:(unsigned long long)arg3 indexIntoArray:(unsigned long long)arg4;
+- (id)safari_URLAtIndex:(unsigned long long)arg1;
 - (id)safari_arrayAtIndex:(unsigned long long)arg1;
 - (bool)safari_containsObjectPassingTest:(id /* block */)arg1;
 - (id)safari_dictionaryAtIndex:(unsigned long long)arg1;
@@ -1137,10 +1155,6 @@
 - (id)sp_copyForFeedback;
 - (id)sp_mapNonEmpty:(id /* block */)arg1;
 
-// Image: /System/Library/PrivateFrameworks/SearchAds.framework/SearchAds
-
-- (id)arrayCappedToMaxItems:(unsigned long long)arg1;
-
 // Image: /System/Library/PrivateFrameworks/SetupAssistant.framework/SetupAssistant
 
 - (id)by_actionsByRemovingAction:(id)arg1;
@@ -1170,6 +1184,7 @@
 - (bool)_ss_any:(id /* block */)arg1;
 - (id)_ss_arrayByRemovingObjectsPassingTest:(id /* block */)arg1;
 - (id)_ss_firstObjectPassingTest:(id /* block */)arg1;
+- (id)_ss_index:(id /* block */)arg1;
 - (id)_ss_map:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/TSReading.framework/TSReading

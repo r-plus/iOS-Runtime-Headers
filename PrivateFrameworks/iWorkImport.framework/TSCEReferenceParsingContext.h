@@ -16,6 +16,7 @@
     unsigned char  _stickyBits;
     NSString * _tableName;
     NSString * _tableNameUnquoted;
+    bool  _trimNames;
 }
 
 @property (nonatomic, retain) TSCEAbortObject *abortObject;
@@ -31,6 +32,7 @@
 @property (nonatomic) unsigned char stickyBits;
 @property (nonatomic, retain) NSString *tableName;
 @property (nonatomic, retain) NSString *tableNameUnquoted;
+@property (nonatomic) bool trimNames;
 
 - (void).cxx_destruct;
 - (id)abortObject;
@@ -57,10 +59,12 @@
 - (void)setStickyBits:(unsigned char)arg1;
 - (void)setTableName:(id)arg1;
 - (void)setTableNameUnquoted:(id)arg1;
+- (void)setTrimNames:(bool)arg1;
 - (id)sheetName;
 - (id)sheetNameUnquoted;
 - (unsigned char)stickyBits;
 - (id)tableName;
 - (id)tableNameUnquoted;
+- (bool)trimNames;
 
 @end

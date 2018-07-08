@@ -18,6 +18,7 @@
 @property (readonly) unsigned long long numberOfColumns;
 @property (readonly) unsigned long long numberOfRows;
 
+- (void).cxx_destruct;
 - (void)clearParent;
 - (void)dealloc;
 - (id)initWithLegendModelCache:(id)arg1 legendWidth:(double)arg2;

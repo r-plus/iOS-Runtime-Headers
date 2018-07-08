@@ -64,6 +64,7 @@
 - (id)initWithName:(id)arg1 type:(id)arg2 scan:(unsigned int)arg3 offset:(unsigned int)arg4 size:(unsigned int)arg5;
 - (id)initWithObjcIvar:(struct objc_ivar { }*)arg1 size:(unsigned int)arg2 isARC:(bool)arg3 is64Bit:(bool)arg4;
 - (id)initWithSerializer:(id)arg1 classMap:(id)arg2 version:(unsigned int)arg3;
+- (id)initWithSerializer:(id)arg1 classMap:(id)arg2 version:(unsigned int)arg3 returnedDestinationLayoutClassInfoIndex:(unsigned int*)arg4;
 - (bool)isArrayEntries;
 - (bool)isArraySize;
 - (bool)isByref;

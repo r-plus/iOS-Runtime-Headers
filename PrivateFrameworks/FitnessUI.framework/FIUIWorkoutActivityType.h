@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@interface FIUIWorkoutActivityType : NSObject <NSCoding> {
+@interface FIUIWorkoutActivityType : NSObject <NSSecureCoding> {
     unsigned long long  _auxiliaryTypeIdentifier;
     unsigned long long  _identifier;
     bool  _isIndoor;
@@ -24,6 +24,7 @@
 + (id)activityTypeWithWorkout:(id)arg1;
 + (id)possibleActivityTypesForIdentifier:(unsigned long long)arg1 locationType:(long long)arg2 swimmingLocationType:(long long)arg3 wheelchairUser:(bool)arg4;
 + (id)supportedActivityTypesWithIsWheelchairUser:(bool)arg1;
++ (bool)supportsSecureCoding;
 + (id)wheelchairActivityTypes;
 
 - (void).cxx_destruct;

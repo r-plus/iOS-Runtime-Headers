@@ -12,6 +12,8 @@
 @property (nonatomic) long long type;
 @property (nonatomic, copy) NSString *url;
 
+// Image: /System/Library/PrivateFrameworks/WebInspector.framework/WebInspector
+
 - (bool)canceled;
 - (bool)failed;
 - (id)initWithUrl:(id)arg1 type:(long long)arg2 mimeType:(id)arg3;
@@ -27,5 +29,9 @@
 - (id)targetId;
 - (long long)type;
 - (id)url;
+
+// Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
+
++ (id)safe_initWithUrl:(id)arg1 type:(long long)arg2 mimeType:(id)arg3;
 
 @end

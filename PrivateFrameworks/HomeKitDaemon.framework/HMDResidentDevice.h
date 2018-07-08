@@ -29,6 +29,7 @@
 @property (nonatomic) HMDResidentDeviceManager *residentDeviceManager;
 @property (nonatomic, readonly) unsigned long long status;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) bool supportsMediaSystem;
 @property (nonatomic, readonly) bool supportsSharedEventTriggerActivation;
 
 + (id)batteryStateAsString:(long long)arg1;
@@ -76,6 +77,7 @@
 - (void)setResidentDeviceManager:(id)arg1;
 - (id)shortDescription;
 - (unsigned long long)status;
+- (bool)supportsMediaSystem;
 - (bool)supportsSharedEventTriggerActivation;
 - (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
 - (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;

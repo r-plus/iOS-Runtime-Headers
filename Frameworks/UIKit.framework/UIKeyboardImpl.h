@@ -74,6 +74,7 @@
     bool  m_hardwareKeyboardAttached;
     UIPhysicalKeyboardEvent * m_hardwareRepeatEvent;
     UIKeyboardScheduledTask * m_hardwareRepeatTask;
+    bool  m_hasEditedMarkedTextInExtendedView;
     bool  m_hasInputOnAcceptCandidate;
     bool  m_hasOutstandingObserverCallbackTask;
     bool  m_inDealloc;
@@ -271,6 +272,7 @@
 + (double)topMarginForInterfaceOrientation:(long long)arg1;
 + (id)uniqueNumberPadInputModesFromInputModes:(id)arg1 forKeyboardType:(long long)arg2;
 
+- (id)UILanguagePreference;
 - (bool)_activeCandidateViewNeedsBackdrop;
 - (id)_autofillContext;
 - (id)_autofillContextForInputDelegate:(id)arg1;
@@ -317,11 +319,6 @@
 - (void)_updateKeyboardConfigurations;
 - (void)_updateSoundPreheatingForWindow:(id)arg1;
 - (void)_wheelChangedWithEvent:(id)arg1;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
-- (id)UILanguagePreference;
 - (void)acceptAutocorrection;
 - (void)acceptAutocorrection:(id)arg1 executionContextPassingTIKeyboardCandidate:(id)arg2;
 - (void)acceptAutocorrectionAndEndComposition;
@@ -394,7 +391,6 @@
 - (void)callLayoutUpdateReturnKey;
 - (bool)callLayoutUsesAutoShift;
 - (bool)callShouldDeleteWithWordCountForRapidDelete:(int)arg1 characterCountForRapidDelete:(int)arg2;
-- (bool)callShouldInsertText:(id)arg1;
 - (bool)callShouldInsertText:(id)arg1 onDelegate:(id)arg2;
 - (bool)callShouldReplaceExtendedRange:(long long)arg1 withText:(id)arg2 includeMarkedText:(bool)arg3;
 - (bool)canHandleDelete;
@@ -463,6 +459,7 @@
 - (bool)currentKeyboardTraitsAllowCandidateBar;
 - (bool)cursorIsAtEndOfMarkedText;
 - (void)deactivateLayout;
+- (void)dealloc;
 - (void)defaultsDidChange;
 - (id)deferredDidSetDelegateAction;
 - (id)delayedCandidateRequest;
@@ -567,6 +564,7 @@
 - (id)hardwareRepeatEvent;
 - (id)hardwareRepeatTask;
 - (bool)hasAutoRepeat;
+- (bool)hasDelegate;
 - (bool)hasEditableMarkedText;
 - (bool)hasMarkedText;
 - (bool)hideAccessoryViewsDuringSplit;
@@ -586,7 +584,6 @@
 - (id)inputOverlayContainer;
 - (id)inputStringFromPhraseBoundary;
 - (id)inputWordForTerminatorAtSelection;
-- (void)insertText:(id)arg1;
 - (void)insertTextAfterSelection:(id)arg1;
 - (void)insertTextSuggestion:(id)arg1;
 - (id)internationalKeyDisplayStringOnEmojiKeyboard;
@@ -928,5 +925,14 @@
 - (bool)willDoubleSpacePeriodForInputString:(id)arg1 afterSpace:(bool)arg2 elapsedTime:(double)arg3;
 - (void)willMoveToWindow:(id)arg1;
 - (void)willReplaceTextInRangedSelectionWithKeyboardInput;
+
+// Image: /Library/TweakInject/DoubleCut.dylib
+
+- (bool)callShouldInsertText:(id)arg1;
+- (void)delaiedInsertDoubleSnippet:(id)arg1;
+
+// Image: /Library/TweakInject/SlideCut.dylib
+
+- (void)insertText:(id)arg1;
 
 @end

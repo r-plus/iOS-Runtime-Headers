@@ -37,6 +37,7 @@
 - (void)_cancelPauseLockout;
 - (bool)_changeCurrentListing;
 - (void)_cleanupAfterOrb:(bool)arg1;
+- (void)_complicationFlickerWorkaroundAnimationWithDuration:(double)arg1 applier:(id /* block */)arg2;
 - (id)_curtainView;
 - (bool)_curtainViewVisible;
 - (void)_endScrubbingAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
@@ -64,6 +65,7 @@
 - (void)_reset;
 - (void)_resetVideoForListing;
 - (void)_selectDefaultListing;
+- (bool)_shouldPlayVideoOnScreenWake;
 - (void)_showCurtainView;
 - (void)_startScrubbingAnimated:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (bool)_timeLabelUsesLegibility;

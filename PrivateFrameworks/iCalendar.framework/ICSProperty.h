@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@interface ICSProperty : NSObject <ICSWriting, NSCoding> {
+@interface ICSProperty : NSObject <ICSWriting, NSSecureCoding> {
     NSMutableDictionary * _parameters;
     unsigned long long  _type;
     id  _value;
 }
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)ICSStringWithOptions:(unsigned long long)arg1;

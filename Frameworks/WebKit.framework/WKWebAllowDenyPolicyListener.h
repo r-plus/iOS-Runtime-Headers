@@ -3,9 +3,7 @@
  */
 
 @interface WKWebAllowDenyPolicyListener : NSObject <WebAllowDenyPolicyListener> {
-    struct RefPtr<WebKit::GeolocationPermissionRequestProxy> { 
-        struct GeolocationPermissionRequestProxy {} *m_ptr; 
-    }  _permissionRequestProxy;
+    struct Function<void (bool)>="m_callableWrapper"{unique_ptr<WTF::Function<void (bool)>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void (bool)>::CallableWrapperBase> >="__ptr_"{__compressed_pair<WTF::Function<void (bool)>::CallableWrapperBase *, std::__1::default_delete<WTF::Function<void (bool)>::CallableWrapperBase> >="__value_"^{CallableWrapperBase {}  _completionHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -18,7 +16,7 @@
 - (void)allow;
 - (void)deny;
 - (void)denyOnlyThisRequest;
-- (id)initWithPermissionRequestProxy:(struct RefPtr<WebKit::GeolocationPermissionRequestProxy> { struct GeolocationPermissionRequestProxy {} *x1; }*)arg1;
+- (id)initWithCompletionHandler:(struct Function<void (bool)>={unique_ptr<WTF::Function<void (bool)>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void (bool)>::CallableWrapperBase> >={__compressed_pair<WTF::Function<void (bool)>::CallableWrapperBase *, std::__1::default_delete<WTF::Function<void (bool)>::CallableWrapperBase> >=^{CallableWrapperBase {}*)arg1;
 - (bool)shouldClearCache;
 
 @end

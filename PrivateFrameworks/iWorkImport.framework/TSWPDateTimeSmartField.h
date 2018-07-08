@@ -23,10 +23,10 @@
 + (id)dateStringFromTime:(double)arg1 withFormat:(id)arg2 localeIdentifier:(id)arg3 dateStyle:(long long)arg4 timeStyle:(long long)arg5;
 + (id)newDateFormatWithLocaleIdentifier:(id)arg1 dateStyle:(long long)arg2 timeStyle:(long long)arg3;
 
+- (void).cxx_destruct;
 - (id)copyWithContext:(id)arg1;
 - (id)date;
 - (long long)dateStyle;
-- (void)dealloc;
 - (id)format;
 - (id)generateInlineText;
 - (id)initWithLocaleIdentifier:(id)arg1 dateStyle:(long long)arg2 timeStyle:(long long)arg3 autoUpdate:(bool)arg4 context:(id)arg5;

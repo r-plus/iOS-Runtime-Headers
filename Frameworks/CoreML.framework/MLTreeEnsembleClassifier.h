@@ -7,7 +7,7 @@
         char *__begin_; 
         char *__end_; 
         struct __compressed_pair<unsigned char *, std::__1::allocator<unsigned char> > { 
-            char *__first_; 
+            char *__value_; 
         } __end_cap_; 
     }  _cached_model;
     long long  _class_type;
@@ -16,14 +16,14 @@
         long long *__begin_; 
         long long *__end_; 
         struct __compressed_pair<long long *, std::__1::allocator<long long> > { 
-            long long *__first_; 
+            long long *__value_; 
         } __end_cap_; 
     }  _classes_by_int64_t;
     struct vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char> > > { 
         struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *__begin_; 
         struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *__end_; 
         struct __compressed_pair<std::__1::basic_string<char> *, std::__1::allocator<std::__1::basic_string<char> > > { 
-            struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *__first_; 
+            struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *__value_; 
         } __end_cap_; 
     }  _classes_by_string;
     struct shared_ptr<Archiver::MMappedFile> { 

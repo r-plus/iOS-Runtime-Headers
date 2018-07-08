@@ -7,13 +7,12 @@
     double  _time;
 }
 
-@property (nonatomic, copy) id /* block */ block;
-@property (nonatomic) double time;
+@property (nonatomic, readonly) id /* block */ block;
+@property (nonatomic, readonly) double time;
 
 - (void).cxx_destruct;
 - (id /* block */)block;
-- (void)setBlock:(id /* block */)arg1;
-- (void)setTime:(double)arg1;
+- (id)initWithTime:(double)arg1 block:(id /* block */)arg2;
 - (double)time;
 
 @end

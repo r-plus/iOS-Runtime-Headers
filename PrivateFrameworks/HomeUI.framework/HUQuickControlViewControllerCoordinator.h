@@ -25,6 +25,7 @@
 @property (nonatomic, readonly) HUQuickControlViewController *activeController;
 @property (nonatomic) unsigned long long activeControllerType;
 @property (nonatomic, readonly) NSArray *allControllers;
+@property (nonatomic, readonly) HUQuickControlViewController *alternateController;
 @property (nonatomic, readonly) HUQuickControlViewController *alternateViewController;
 @property (nonatomic, readonly) HUQuickControlContentCharacteristicWritingUpdateAdapter *characteristicWritingAdapter;
 @property (nonatomic) <HUQuickControlContentHosting> *controlHost;
@@ -58,6 +59,7 @@
 - (id)activeController;
 - (unsigned long long)activeControllerType;
 - (id)allControllers;
+- (id)alternateController;
 - (id)alternateViewController;
 - (id)characteristicWritingAdapter;
 - (id)controlHost;

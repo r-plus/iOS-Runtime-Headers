@@ -20,7 +20,7 @@
 - (void)setDetailLabel:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
 - (void)setUpConstraints;
-- (void)setUpSubViews;
+- (void)setupSubviews;
 - (id)titleLabel;
 
 @end

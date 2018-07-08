@@ -5,10 +5,19 @@
 @interface _WKWebsiteDataStoreConfiguration : NSObject {
     struct RetainPtr<NSURL> { 
         void *m_ptr; 
+    }  _cacheStorageDirectoryURL;
+    struct RetainPtr<NSURL> { 
+        void *m_ptr; 
     }  _cookieStorageFileURL;
     struct RetainPtr<NSURL> { 
         void *m_ptr; 
     }  _indexedDBDatabaseDirectoryURL;
+    struct RetainPtr<NSURL> { 
+        void *m_ptr; 
+    }  _resourceLoadStatisticsDirectoryURL;
+    struct RetainPtr<NSURL> { 
+        void *m_ptr; 
+    }  _serviceWorkerRegistrationDirectoryURL;
     struct RetainPtr<NSURL> { 
         void *m_ptr; 
     }  _webSQLDatabaseDirectoryURL;
@@ -17,17 +26,26 @@
     }  _webStorageDirectoryURL;
 }
 
+@property (setter=_setCacheStorageDirectory:, nonatomic, copy) NSURL *_cacheStorageDirectory;
 @property (setter=_setCookieStorageFile:, nonatomic, copy) NSURL *_cookieStorageFile;
 @property (setter=_setIndexedDBDatabaseDirectory:, nonatomic, copy) NSURL *_indexedDBDatabaseDirectory;
+@property (setter=_setResourceLoadStatisticsDirectory:, nonatomic, copy) NSURL *_resourceLoadStatisticsDirectory;
+@property (setter=_setServiceWorkerRegistrationDirectory:, nonatomic, copy) NSURL *_serviceWorkerRegistrationDirectory;
 @property (setter=_setWebSQLDatabaseDirectory:, nonatomic, copy) NSURL *_webSQLDatabaseDirectory;
 @property (setter=_setWebStorageDirectory:, nonatomic, copy) NSURL *_webStorageDirectory;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)_cacheStorageDirectory;
 - (id)_cookieStorageFile;
 - (id)_indexedDBDatabaseDirectory;
+- (id)_resourceLoadStatisticsDirectory;
+- (id)_serviceWorkerRegistrationDirectory;
+- (void)_setCacheStorageDirectory:(id)arg1;
 - (void)_setCookieStorageFile:(id)arg1;
 - (void)_setIndexedDBDatabaseDirectory:(id)arg1;
+- (void)_setResourceLoadStatisticsDirectory:(id)arg1;
+- (void)_setServiceWorkerRegistrationDirectory:(id)arg1;
 - (void)_setWebSQLDatabaseDirectory:(id)arg1;
 - (void)_setWebStorageDirectory:(id)arg1;
 - (id)_webSQLDatabaseDirectory;

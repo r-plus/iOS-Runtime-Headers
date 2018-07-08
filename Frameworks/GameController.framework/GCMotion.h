@@ -27,6 +27,7 @@
     bool  _motionLite;
     CMMotionManager * _motionMgr;
     bool  _motionUpdatedEnabled;
+    bool  _paused;
     struct GCQuaternion { 
         double x; 
         double y; 

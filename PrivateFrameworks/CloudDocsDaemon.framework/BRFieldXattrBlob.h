@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) NSMutableArray *xattrs;
 
-+ (bool)loadXattrsFromFD:(int)arg1 structuralBlob:(id*)arg2 contentBlob:(id*)arg3 withMaximumSize:(unsigned long long)arg4 error:(id*)arg5;
++ (bool)loadXattrsFromFD:(int)arg1 structuralBlob:(id*)arg2 contentBlob:(id*)arg3 localBlob:(id*)arg4 withMaximumSize:(unsigned long long)arg5 error:(id*)arg6;
 + (id)loadXattrsFromFD:(int)arg1 withMaximumSize:(unsigned long long)arg2 error:(id*)arg3;
 + (bool)removeXattrsOnFD:(int)arg1 includingContentRelated:(bool)arg2 error:(id*)arg3;
 + (Class)xattrsType;

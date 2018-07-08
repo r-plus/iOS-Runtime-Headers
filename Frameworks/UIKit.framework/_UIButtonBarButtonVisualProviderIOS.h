@@ -3,7 +3,7 @@
  */
 
 @interface _UIButtonBarButtonVisualProviderIOS : _UIButtonBarButtonVisualProvider {
-    <_UIButtonBarAppearanceDelegate> * _appearanceDelegate;
+    <_UIButtonBarAppearanceDelegate><NSObject> * _appearanceDelegate;
     NSLayoutConstraint * _backButtonContentLeadingConstraint;
     NSLayoutConstraint * _backButtonContentTrailingContraint;
     NSLayoutConstraint * _backButtonTitleMaxWidthConstraint;

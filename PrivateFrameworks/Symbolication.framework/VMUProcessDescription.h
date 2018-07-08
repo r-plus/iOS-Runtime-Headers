@@ -20,6 +20,8 @@
     NSDictionary * _osVersionDictionary;
     NSString * _parentExecutablePath;
     NSString * _parentProcessName;
+    unsigned long long  _physicalFootprint;
+    unsigned long long  _physicalFootprintPeak;
     int  _pid;
     int  _ppid;
     struct timeval { 
@@ -37,6 +39,9 @@
     bool  _taskIsCorpse;
     NSArray * _unreadableBinaryImagePaths;
 }
+
+@property (nonatomic, readonly) unsigned long long physicalFootprint;
+@property (nonatomic, readonly) unsigned long long physicalFootprintPeak;
 
 + (id)parseBinaryImagesDescription:(id)arg1;
 + (struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })symbolicatorFromBinaryImagesDescription:(id)arg1;
@@ -67,14 +72,18 @@
 - (id)executablePath;
 - (bool)initFromCorpse;
 - (void)initFromLiveProcess;
+- (id)initWithPid:(int)arg1 orTask:(unsigned int)arg2;
 - (id)initWithTask:(unsigned int)arg1 getBinariesList:(bool)arg2;
 - (bool)is64Bit;
 - (bool)isAppleApplication;
 - (id)parentProcessName;
+- (unsigned long long)physicalFootprint;
+- (unsigned long long)physicalFootprintPeak;
 - (int)pid;
 - (id)processDescriptionHeader;
 - (id)processIdentifier;
 - (id)processName;
+- (id)processStatisticsDescription;
 - (id)processVersion;
 - (id)processVersionDictionary;
 - (void)setCrashReporterInfo;

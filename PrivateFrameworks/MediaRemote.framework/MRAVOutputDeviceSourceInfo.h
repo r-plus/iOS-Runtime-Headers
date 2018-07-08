@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) bool multipleBuiltInDevices;
 @property (nonatomic, readonly) NSString *routingContextUID;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)initWithRoutingContextUID:(id)arg1 multipleBuiltInDevices:(bool)arg2;
 - (bool)isEqual:(id)arg1;

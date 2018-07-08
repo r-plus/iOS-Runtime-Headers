@@ -12,6 +12,8 @@
 @property (nonatomic) <PKNumberPadSuggestionsViewDelegate> *delegate;
 @property (nonatomic, copy) NSArray *suggestions;
 
++ (struct CGSize { double x1; double x2; })defaultSize;
+
 - (void).cxx_destruct;
 - (void)_selectedSuggestion:(id)arg1;
 - (id)buttonTextColor;

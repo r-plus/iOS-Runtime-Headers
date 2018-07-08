@@ -11,6 +11,7 @@
 @property (nonatomic) bool isGuest;
 
 + (bool)isDeviceURI:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

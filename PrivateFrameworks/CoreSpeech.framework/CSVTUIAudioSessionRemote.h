@@ -16,6 +16,8 @@
 
 - (void).cxx_destruct;
 - (id)_audioRecorder;
+- (void)audioRecorder:(id)arg1 didSetAudioSessionActive:(bool)arg2;
+- (void)audioRecorder:(id)arg1 willSetAudioSessionActive:(bool)arg2;
 - (void)audioRecorderBeginRecordInterruption:(id)arg1;
 - (void)audioRecorderBeginRecordInterruption:(id)arg1 withContext:(id)arg2;
 - (void)audioRecorderBufferAvailable:(id)arg1 buffer:(id)arg2;

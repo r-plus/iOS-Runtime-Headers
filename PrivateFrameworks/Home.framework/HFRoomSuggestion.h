@@ -12,6 +12,7 @@
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly) long long priority;
 
++ (id /* block */)priorityComparator;
 + (id)suggestionWithName:(id)arg1 priority:(long long)arg2;
 + (id)suggestionWithName:(id)arg1 priority:(long long)arg2 aliases:(id)arg3;
 

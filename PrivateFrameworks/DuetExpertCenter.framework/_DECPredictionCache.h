@@ -17,9 +17,11 @@
 - (void)cachePredictions:(id)arg1 consumer:(unsigned long long)arg2;
 - (void)clearCacheForCategory:(unsigned long long)arg1 consumer:(unsigned long long)arg2;
 - (id)description;
+- (bool)deserialize:(id)arg1;
 - (id)init;
 - (id)initWithRestorationPath:(id)arg1;
 - (bool)isDiskBacked;
 - (id)predictionsForCategories:(unsigned long long)arg1 consumer:(unsigned long long)arg2;
+- (id)serialize;
 
 @end

@@ -4,7 +4,6 @@
 
 @interface VTPreferences : NSObject
 
-+ (void)initialize;
 + (id)sharedPreferences;
 
 - (id)_VTSATBasePath;
@@ -28,6 +27,7 @@
 - (id)getSATEnrollmentPath;
 - (bool)hasExplicitlySetVoiceTriggerEnabled;
 - (bool)hasVoiceProfileIniCloudForLanguageCode:(id)arg1;
+- (id)init;
 - (bool)isLocalVoiceTriggerAvailable;
 - (bool)isRemoteVoiceTriggerAvailable;
 - (bool)isSATAvailable;

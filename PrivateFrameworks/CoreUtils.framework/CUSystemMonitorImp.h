@@ -4,6 +4,11 @@
 
 @interface CUSystemMonitorImp : NSObject <CXCallObserverDelegate, FMFSessionDelegate> {
     int  _activeCallCount;
+    struct { 
+        unsigned char bytes[6]; 
+    }  _bluetoothAddress48;
+    NSData * _bluetoothAddressData;
+    CUBluetoothClient * _bluetoothClient;
     CXCallObserver * _callObserver;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     int  _fmfDevicesChangedToken;
@@ -11,6 +16,7 @@
     NSString * _meDeviceFMFDeviceID;
     NSString * _meDeviceIDSDeviceID;
     NSString * _meDeviceName;
+    int  _meDeviceRetryToken;
     bool  _meDeviceValid;
     struct NSMutableSet { Class x1; } * _monitors;
     int  _powerSourceToken;
@@ -34,6 +40,8 @@
 
 - (void).cxx_destruct;
 - (int)_activeCallCountUnached;
+- (void)_bluetoothAddressMonitorStart;
+- (void)_bluetoothAddressMonitorStop;
 - (void)_callMonitorStart;
 - (void)_callMonitorStop;
 - (bool)_hasMonitorPassingTest:(id /* block */)arg1;

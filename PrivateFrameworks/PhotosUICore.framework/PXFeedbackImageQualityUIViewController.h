@@ -8,8 +8,6 @@
     NSArray * _imageQualityDiagnosticFileURLs;
     UINavigationController * _navigationController;
     NSDictionary * _negativeFeedback;
-    NSDictionary * _positiveFeedback;
-    bool  _userLikedIt;
 }
 
 @property (nonatomic, retain) NSArray *assets;
@@ -20,15 +18,17 @@
 @property (nonatomic, retain) NSArray *imageQualityDiagnosticFileURLs;
 @property (nonatomic, retain) UINavigationController *navigationController;
 @property (nonatomic, retain) NSDictionary *negativeFeedback;
-@property (nonatomic, retain) NSDictionary *positiveFeedback;
 @property (readonly) Class superclass;
-@property (nonatomic) bool userLikedIt;
 
 - (void).cxx_destruct;
+- (id)_componentIDForComponent:(long long)arg1;
+- (id)_componentNameForComponent:(long long)arg1;
 - (void)_fileRadarWithAssets:(id)arg1 positiveFeedback:(id)arg2 negativeFeedback:(id)arg3 customFeedback:(id)arg4;
 - (void)_generateResourceFilesForAssets:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)_generateTitleForFeedback:(id)arg1;
 - (id)_generateURLForAssetDBGFiles:(id)arg1;
 - (id)_generateURLsForAssetsDBGFiles:(id)arg1;
+- (long long)_radarComponentForFeedback:(id)arg1;
 - (id)assets;
 - (id)feedbackController;
 - (id)imageQualityDiagnosticFileURLs;
@@ -37,23 +37,20 @@
 - (id)navigationController;
 - (id)negativeFeedback;
 - (id)negativeFeedbackKeys;
-- (id)positiveFeedback;
 - (id)positiveFeedbackKeys;
 - (void)setAssets:(id)arg1;
 - (void)setFeedbackController:(id)arg1;
 - (void)setImageQualityDiagnosticFileURLs:(id)arg1;
 - (void)setNavigationController:(id)arg1;
 - (void)setNegativeFeedback:(id)arg1;
-- (void)setPositiveFeedback:(id)arg1;
-- (void)setUserLikedIt:(bool)arg1;
 - (bool)shouldContinuePresentingFormAfterFeedback;
 - (bool)shouldDisplaySecondaryFeedbackButtons;
 - (void)userIndicatedDislike;
 - (void)userIndicatedLike;
-- (bool)userLikedIt;
 - (void)userSentPositiveFeedback:(id)arg1 negativeFeedback:(id)arg2 customFeedback:(id)arg3;
 - (void)viewDidLoad;
 - (id)viewTitleForRadar;
 - (bool)wantsCustomFeedbackSection;
+- (bool)wantsPositiveFeedbackSection;
 
 @end

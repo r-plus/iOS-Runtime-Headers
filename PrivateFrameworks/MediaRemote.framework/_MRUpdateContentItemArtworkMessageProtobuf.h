@@ -13,6 +13,7 @@
 
 + (Class)contentItemsType;
 
+- (void).cxx_destruct;
 - (void)addContentItems:(id)arg1;
 - (void)clearContentItems;
 - (id)contentItems;
@@ -20,7 +21,6 @@
 - (unsigned long long)contentItemsCount;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasPlayerPath;

@@ -2,7 +2,9 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCCommand : NSObject <NSCoding>
+@interface FCCommand : NSObject <NSSecureCoding>
+
++ (bool)supportsSecureCoding;
 
 - (bool)canCoalesceWithCommand:(id)arg1;
 - (void)coalesceWithCommand:(id)arg1;

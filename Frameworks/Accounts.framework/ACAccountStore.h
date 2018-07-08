@@ -46,7 +46,9 @@
 - (void)accountsWithAccountType:(id)arg1 options:(unsigned long long)arg2 completion:(id /* block */)arg3;
 - (id)accountsWithAccountType:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
 - (void)accountsWithAccountTypeIdentifiers:(id)arg1 completion:(id /* block */)arg2;
+- (id)accountsWithAccountTypeIdentifiers:(id)arg1 error:(id*)arg2;
 - (void)accountsWithAccountTypeIdentifiers:(id)arg1 preloadedProperties:(id)arg2 completion:(id /* block */)arg3;
+- (id)accountsWithAccountTypeIdentifiers:(id)arg1 preloadedProperties:(id)arg2 error:(id*)arg3;
 - (bool)addClientToken:(id)arg1 forAccount:(id)arg2;
 - (id)allAccountTypes;
 - (id)allCredentialItems;
@@ -100,6 +102,7 @@
 - (id)parentAccountForAccount:(id)arg1;
 - (id)parentAccountForAccount:(id)arg1 error:(id*)arg2;
 - (bool)permissionForAccountType:(id)arg1;
+- (void)preloadDataclassOwnersWithCompletion:(id /* block */)arg1;
 - (id)provisionedDataclassesForAccount:(id)arg1;
 - (id)remoteAccountStoreSession;
 - (void)removeAccount:(id)arg1 withCompletionHandler:(id /* block */)arg2;
@@ -136,6 +139,10 @@
 - (void)verifyCredentialsForAccount:(id)arg1 saveWhenAuthorized:(bool)arg2 withHandler:(id /* block */)arg3;
 - (void)verifyCredentialsForAccount:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)visibleTopLevelAccountsWithAccountTypeIdentifiers:(id)arg1 completion:(id /* block */)arg2;
+
+// Image: /System/Library/Frameworks/ClassKit.framework/ClassKit
+
++ (bool)cls_hasEligibleAccount;
 
 // Image: /System/Library/Frameworks/Social.framework/Social
 
@@ -229,6 +236,7 @@
 - (id)_ss_accountTypeWithIdentifier:(id)arg1 error:(id*)arg2;
 - (id)_ss_appleAuthenticationAccountForAccount:(id)arg1 error:(id*)arg2;
 - (id)_ss_iCloudAccountForAccount:(id)arg1 error:(id*)arg2;
+- (id)_ss_iTunesAccountForAccount:(id)arg1 error:(id*)arg2;
 
 // Image: /System/Library/PrivateFrameworks/iTunesCloud.framework/iTunesCloud
 
@@ -236,11 +244,19 @@
 
 - (id)_ic_storeAccountType;
 - (id)ic_activeLockerAccount;
+- (void)ic_activeLockerAccountWithCompletion:(id /* block */)arg1;
 - (id)ic_activeStoreAccount;
+- (void)ic_activeStoreAccountWithCompletion:(id /* block */)arg1;
 - (id)ic_allStoreAccounts;
+- (void)ic_allStoreAccountsWithCompletion:(id /* block */)arg1;
 - (id)ic_primaryAppleAccount;
+- (void)ic_primaryAppleAccountWithCompletion:(id /* block */)arg1;
 - (void)ic_setActiveLockerAccount:(id)arg1;
+- (void)ic_setActiveLockerAccount:(id)arg1 completion:(id /* block */)arg2;
 - (void)ic_setActiveStoreAccount:(id)arg1;
+- (void)ic_setActiveStoreAccount:(id)arg1 completion:(id /* block */)arg2;
 - (id)ic_storeAccountForStoreAccountID:(id)arg1;
+- (void)ic_storeAccountForStoreAccountID:(id)arg1 completion:(id /* block */)arg2;
+- (void)ic_storeAccountTypeWithCompletion:(id /* block */)arg1;
 
 @end

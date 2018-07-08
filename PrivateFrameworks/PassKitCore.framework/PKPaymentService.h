@@ -5,6 +5,7 @@
 @interface PKPaymentService : NSObject <PKPaymentServiceExportedInterface, PKXPCServiceDelegate> {
     bool  _cachedFieldPropertiesValid;
     <PKPaymentServiceDelegate> * _delegate;
+    bool  _forceConnectionOnResume;
     bool  _hasPaymentDeviceFieldProperties;
     unsigned long long  _interfaceType;
     PKXPCService * _remoteService;
@@ -22,6 +23,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_accessDelegate:(id /* block */)arg1;
 - (void)_defaultPaymentPassUniqueIdentifier:(id /* block */)arg1;
 - (id)_existingRemoteObjectProxy;
 - (id)_extendedRemoteObjectProxy;
@@ -39,7 +41,9 @@
 - (void)_transactionsAppLaunchTokenForPassWithUniqueIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)archiveMessageWithIdentifier:(id)arg1;
 - (void)consistencyCheck;
+- (void)dealloc;
 - (id)defaultExpressFelicaTransitPassIdentifier;
+- (id)defaultExpressTransitPassIdentifier;
 - (id)defaultPaymentApplicationForPassUniqueIdentifier:(id)arg1;
 - (id)defaultPaymentPassUniqueIdentifier;
 - (id)delegate;
@@ -50,7 +54,6 @@
 - (void)downloadAllPaymentPasses;
 - (id)expressPassInformationForMode:(id)arg1;
 - (id)expressPassesInformation;
-- (void)felicaStateWithPassUniqueIdentifier:(id)arg1 paymentApplication:(id)arg2 completion:(id /* block */)arg3;
 - (bool)hasPaymentDeviceFieldProperties;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
@@ -73,8 +76,8 @@
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveMessage:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didRemoveTransactionWithIdentifier:(id)arg2;
-- (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithFelicaPassProperties:(id)arg2;
-- (void)processFelicaTransitTransactionEventWithHistory:(id)arg1 transactionDate:(id)arg2 forPaymentApplication:(id)arg3 withPassUniqueIdentifier:(id)arg4;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithTransitPassProperties:(id)arg2;
+- (void)processTransitTransactionEventWithHistory:(id)arg1 transactionDate:(id)arg2 forPaymentApplication:(id)arg3 withPassUniqueIdentifier:(id)arg4 expressTransactionState:(id)arg5;
 - (void)remoteService:(id)arg1 didEstablishConnection:(id)arg2;
 - (void)remoteService:(id)arg1 didInterruptConnection:(id)arg2;
 - (void)remoteServiceDidSuspend:(id)arg1;
@@ -82,6 +85,7 @@
 - (void)scheduleAutomaticPresentationAvailableNotificationForPassWithUniqueIdentifier:(id)arg1 handler:(id /* block */)arg2;
 - (void)scheduleSetupReminders;
 - (void)setDefaultExpressFelicaTransitPassIdentifier:(id)arg1 withCredential:(id)arg2 completion:(id /* block */)arg3;
+- (void)setDefaultExpressTransitPassIdentifier:(id)arg1 withCredential:(id)arg2 completion:(id /* block */)arg3;
 - (void)setDefaultPaymentApplication:(id)arg1 forPassUniqueIdentifier:(id)arg2 completion:(id /* block */)arg3;
 - (void)setDefaultPaymentPassUniqueIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -89,7 +93,7 @@
 - (void)setSharedPaymentWebServiceContext:(id)arg1;
 - (id)sharedPaymentWebServiceContext;
 - (void)sharedPaymentWebServiceContextWithCompletion:(id /* block */)arg1;
-- (void)simulateDefaultExpressTransitPassIdentifier:(id)arg1;
+- (void)simulateDefaultExpressTransitPassIdentifier:(id)arg1 forExpressMode:(id)arg2;
 - (void)simulatePaymentPush;
 - (void)startBackgroundVerificationObserverForPass:(id)arg1 verificationMethod:(id)arg2;
 - (void)submitVerificationCode:(id)arg1 verificationData:(id)arg2 forDPANIdentifier:(id)arg3;
@@ -101,6 +105,7 @@
 - (void)transactionsForPaymentPassWithUniqueIdentifier:(id)arg1 withTransactionSource:(unsigned long long)arg2 withBackingData:(unsigned long long)arg3 limit:(long long)arg4 completion:(id /* block */)arg5;
 - (void)transactionsForPaymentPassWithUniqueIdentifier:(id)arg1 withTransactionSource:(unsigned long long)arg2 withBackingData:(unsigned long long)arg3 startDate:(id)arg4 endDate:(id)arg5 limit:(long long)arg6 completion:(id /* block */)arg7;
 - (void)transactionsWithTransactionSource:(unsigned long long)arg1 withBackingData:(unsigned long long)arg2 limit:(long long)arg3 completion:(id /* block */)arg4;
+- (void)transitStateWithPassUniqueIdentifier:(id)arg1 paymentApplication:(id)arg2 completion:(id /* block */)arg3;
 - (void)valueAddedServiceTransactionsForPassWithUniqueIdentifier:(id)arg1 limit:(long long)arg2 completion:(id /* block */)arg3;
 - (void)valueAddedServiceTransactionsForPaymentTransaction:(id)arg1 limit:(long long)arg2 completion:(id /* block */)arg3;
 

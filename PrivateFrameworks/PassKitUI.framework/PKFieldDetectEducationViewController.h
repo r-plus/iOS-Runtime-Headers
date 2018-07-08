@@ -7,13 +7,13 @@
     PKContinuousButton * _continueButton;
     id /* block */  _continueHandler;
     UILabel * _instructionLabel;
+    bool  _invalidated;
     PKMobileAssetManager * _mobileAssetManager;
     UIImageView * _passSnapshot;
     PKPaymentPass * _paymentPass;
     AVPlayer * _player;
     AVPlayerItem * _playerItem;
     bool  _playerStarted;
-    bool  _playerWasRemoved;
     PKTableHeaderView * _subheader;
     AVPlayerLayer * _video;
 }
@@ -33,6 +33,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithPaymentPass:(id)arg1;
+- (void)invalidate;
 - (void)loadView;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)performContinue;

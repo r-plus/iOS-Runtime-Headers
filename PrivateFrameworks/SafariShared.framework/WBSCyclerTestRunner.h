@@ -3,7 +3,6 @@
  */
 
 @interface WBSCyclerTestRunner : NSObject {
-    WBSCyclerDeviceCoordinator * _deviceCoordinator;
     NSMutableArray * _pendingRequestCompletionHandlerQueue;
     NSMutableArray * _pendingRequestQueue;
     bool  _running;
@@ -12,7 +11,6 @@
     <WBSCyclerTestSuite> * _testSuite;
 }
 
-@property (nonatomic, readonly) WBSCyclerDeviceCoordinator *deviceCoordinator;
 @property (getter=isRunning, nonatomic, readonly) bool running;
 @property (nonatomic, readonly) <WBSCyclerTestTarget> *target;
 @property (nonatomic, readonly) <WBSCyclerTestSuite> *testSuite;
@@ -24,10 +22,9 @@
 - (void)_performNextIterationWithCompletionHandler:(id /* block */)arg1;
 - (void)_stop;
 - (void)dealloc;
-- (id)deviceCoordinator;
 - (void)handleRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)init;
-- (id)initWithTestSuite:(id)arg1 target:(id)arg2 deviceCoordinator:(id)arg3;
+- (id)initWithTestSuite:(id)arg1 target:(id)arg2;
 - (bool)isRunning;
 - (void)requestStop;
 - (void)runWithCompletionHandler:(id /* block */)arg1;

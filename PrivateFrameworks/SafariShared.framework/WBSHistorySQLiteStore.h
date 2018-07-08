@@ -37,7 +37,7 @@
     WBSSQLiteStatementCache * _statements;
     struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
         struct __compressed_pair<SafariShared::SuddenTerminationDisabler *, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
-            struct SuddenTerminationDisabler {} *__first_; 
+            struct SuddenTerminationDisabler {} *__value_; 
         } __ptr_; 
     }  _suddenTerminationDisabler;
     NSData * _syncCircleSizeRetrievalThrottlerData;
@@ -55,6 +55,7 @@
 @property (nonatomic, copy) NSData *fetchThrottlerData;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) double historyAgeLimit;
+@property (nonatomic, readonly) bool isUsingInMemoryDatabase;
 @property (nonatomic) bool pushNotificationsAreInitialized;
 @property (nonatomic, copy) NSData *pushThrottlerData;
 @property (nonatomic, readonly) NSData *salt;
@@ -144,6 +145,7 @@
 - (void)historyLoader:(id)arg1 didLoadItems:(id)arg2 discardedItems:(id)arg3 stringsForUserTypeDomainExpansion:(id)arg4;
 - (void)historyLoaderDidFinishLoading:(id)arg1;
 - (id)initWithURL:(id)arg1 itemCountLimit:(unsigned long long)arg2 historyAgeLimit:(double)arg3 historyItemClass:(Class)arg4;
+- (bool)isUsingInMemoryDatabase;
 - (void)itemWasReplaced:(id)arg1 byItem:(id)arg2;
 - (void)itemsWereAdded:(id)arg1 byUserInitiatedAction:(bool)arg2;
 - (void)itemsWereModified:(id)arg1 byUserInitiatedAction:(bool)arg2;

@@ -13,7 +13,7 @@
         struct OZChannelBlindData {} **__begin_; 
         struct OZChannelBlindData {} **__end_; 
         struct __compressed_pair<OZChannelBlindData **, std::__1::allocator<OZChannelBlindData *> > { 
-            struct OZChannelBlindData {} **__first_; 
+            struct OZChannelBlindData {} **__value_; 
         } __end_cap_; 
     }  _customParameterList;
     bool  _filmSpace;
@@ -47,10 +47,10 @@
                 struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<_opaque_pthread_t *, std::__1::stack<OZFxPlugRenderContext *, std::__1::deque<OZFxPlugRenderContext *, std::__1::allocator<OZFxPlugRenderContext *> > > >, void *> > > { 
                     struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                         struct __tree_node_base<void *> {} *__left_; 
-                    } __first_; 
+                    } __value_; 
                 } __pair1_; 
                 struct __compressed_pair<unsigned long, std::__1::__map_value_compare<_opaque_pthread_t *, std::__1::__value_type<_opaque_pthread_t *, std::__1::stack<OZFxPlugRenderContext *, std::__1::deque<OZFxPlugRenderContext *, std::__1::allocator<OZFxPlugRenderContext *> > > >, std::__1::less<_opaque_pthread_t *>, true> > { 
-                    unsigned long long __first_; 
+                    unsigned long long __value_; 
                 } __pair3_; 
             } __tree_; 
         } _contexts; 

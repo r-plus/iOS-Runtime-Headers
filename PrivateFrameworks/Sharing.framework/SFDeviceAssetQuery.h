@@ -12,6 +12,7 @@
     NSString * _mappedProductType;
     NSString * _marketingProductNumber;
     NSString * _productType;
+    struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; char *x15; struct LogCategoryPrivate {} *x16; } * _ucat;
     unsigned long long  _version;
 }
 
@@ -24,6 +25,8 @@
 @property (nonatomic, retain) NSString *mappedProductType;
 @property (nonatomic, readonly) NSString *marketingProductNumber;
 @property (nonatomic, readonly) NSString *productType;
+@property (nonatomic, readonly) NSString *stringIdentifier;
+@property (nonatomic, readonly) struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; char *x15; struct LogCategoryPrivate {} *x16; }*ucat;
 @property (nonatomic, readonly) unsigned long long version;
 
 + (bool)deviceWantsLegacyFormats;
@@ -49,6 +52,8 @@
 - (id)marketingProductNumber;
 - (id)productType;
 - (void)setMappedProductType:(id)arg1;
+- (id)stringIdentifier;
+- (struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; char *x15; struct LogCategoryPrivate {} *x16; }*)ucat;
 - (unsigned long long)version;
 
 @end

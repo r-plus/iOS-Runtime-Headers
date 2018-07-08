@@ -14,7 +14,8 @@
 + (id)searchAgent;
 
 - (void).cxx_destruct;
-- (bool)allowClientConnection:(id)arg1;
+- (bool)addClientConnectionIfAllowedForConfiguration:(id)arg1;
+- (bool)addClientConnectionIfAllowedForConnection:(id)arg1;
 - (void)cancelQuery:(id)arg1;
 - (void)cancelSimpleQuery:(id)arg1;
 - (bool)handleCommand:(const char *)arg1 info:(id)arg2 connection:(id)arg3;

@@ -21,8 +21,11 @@
 - (void)_checkForExistingAccounts;
 - (void)_checkForPersonalizedChannelsWithResponse:(id)arg1 identityProvider:(id)arg2;
 - (void)_checkForSupportedAppsButton;
+- (void)_checkForSupportedAppsButtonWithFlow:(id)arg1;
 - (void)_checkForSupportedAppsFromProvider:(id)arg1;
 - (void)_checkPreferences;
+- (void)_fetchAllProviders;
+- (void)_fetchAllProvidersIfNeeded;
 - (void)_fetchProviderForAccount:(id)arg1;
 - (void)_findBundleIDsForAdamIDs:(id)arg1 withFlow:(id)arg2;
 - (void)_finishWithError:(id)arg1;

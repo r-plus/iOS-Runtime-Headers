@@ -6,7 +6,7 @@
     NSObject<OS_dispatch_queue> * _accessQueue;
     struct unique_ptr<CSStore2::Store, std::__1::default_delete<CSStore2::Store> > { 
         struct __compressed_pair<CSStore2::Store *, std::__1::default_delete<CSStore2::Store> > { 
-            struct Store {} *__first_; 
+            struct Store {} *__value_; 
         } __ptr_; 
     }  _store;
 }

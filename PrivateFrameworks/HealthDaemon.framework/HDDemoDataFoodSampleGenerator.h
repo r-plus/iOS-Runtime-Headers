@@ -40,12 +40,16 @@
 @property (nonatomic) double nextSnackTime;
 @property (nonatomic) double nextWaterConsumedSampleTime;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (double)_computeBloodGlucoseForDemoPerson:(id)arg1 atTime:(double)arg2 weight:(double)arg3;
 - (double)_computeMealTimeForDemoPerson:(id)arg1 fromTime:(double)arg2 mealTimeType:(long long)arg3 timeMean:(double)arg4 stdDev:(double)arg5;
 - (double)_computeNutrientForDemoPerson:(id)arg1 atTime:(double)arg2 mealItem:(id)arg3 quantityType:(id)arg4;
+- (void)_generateRandomLastMeal;
 - (bool)_isDemoPersonConsumingCaffeine:(id)arg1 atTime:(double)arg2;
 - (bool)_isTypicalNutritionTrackingQuantityType:(id)arg1;
+- (id)_lastMeal;
 - (id)_mealForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (double)_nextMealTimeForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (double)basalInsulinDeliveryForTotalDailyInsulinInUnits:(double)arg1 timeInterval:(double)arg2;

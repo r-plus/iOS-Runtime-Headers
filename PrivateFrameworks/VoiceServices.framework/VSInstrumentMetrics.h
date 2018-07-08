@@ -8,6 +8,7 @@
     unsigned long long  _eagerRequestCreatedTimeStampDiffs;
     bool  _isCacheHitFromDisk;
     bool  _isCacheHitFromMemory;
+    bool  _isServerTTS;
     bool  _isSpeechRequest;
     bool  _isWarmStart;
     unsigned long long  _requestCreatedTimestamp;
@@ -26,6 +27,7 @@
 @property unsigned long long eagerRequestCreatedTimeStampDiffs;
 @property bool isCacheHitFromDisk;
 @property bool isCacheHitFromMemory;
+@property bool isServerTTS;
 @property bool isSpeechRequest;
 @property bool isWarmStart;
 @property unsigned long long requestCreatedTimestamp;
@@ -52,6 +54,7 @@
 - (id)initWithCoder:(id)arg1;
 - (bool)isCacheHitFromDisk;
 - (bool)isCacheHitFromMemory;
+- (bool)isServerTTS;
 - (bool)isSpeechRequest;
 - (bool)isSynthesisCached;
 - (bool)isWarmStart;
@@ -61,6 +64,7 @@
 - (void)setEagerRequestCreatedTimeStampDiffs:(unsigned long long)arg1;
 - (void)setIsCacheHitFromDisk:(bool)arg1;
 - (void)setIsCacheHitFromMemory:(bool)arg1;
+- (void)setIsServerTTS:(bool)arg1;
 - (void)setIsSpeechRequest:(bool)arg1;
 - (void)setIsWarmStart:(bool)arg1;
 - (void)setRequestCreatedTimestamp:(unsigned long long)arg1;

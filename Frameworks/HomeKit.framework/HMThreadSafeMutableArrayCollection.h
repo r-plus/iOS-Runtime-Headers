@@ -17,6 +17,7 @@
 
 - (void).cxx_destruct;
 - (void)addObject:(id)arg1;
+- (void)addObjectIfNotPresent:(id)arg1;
 - (void)addObjectsFromArray:(id)arg1;
 - (id)array;
 - (bool)containsObject:(id)arg1;

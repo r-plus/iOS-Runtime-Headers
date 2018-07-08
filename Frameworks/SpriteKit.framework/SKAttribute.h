@@ -23,7 +23,7 @@
                         unsigned long long __words[3]; 
                     } __r; 
                 } ; 
-            } __first_; 
+            } __value_; 
         } __r_; 
     }  _nameString;
     long long  _type;

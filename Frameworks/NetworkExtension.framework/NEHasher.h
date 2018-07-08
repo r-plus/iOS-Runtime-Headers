@@ -3,14 +3,19 @@
  */
 
 @interface NEHasher : NSCoder {
+    NSArray * _classPrefixWhitelist;
     struct CC_SHA1state_st { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8[16]; int x9; } * _sha1Context;
 }
 
+@property (retain) NSArray *classPrefixWhitelist;
 @property struct CC_SHA1state_st { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8[16]; int x9; }*sha1Context;
 
 + (id)hashObject:(id)arg1;
++ (id)hashObject:(id)arg1 withClassPrefixWhitelist:(id)arg2;
 
+- (void).cxx_destruct;
 - (bool)allowsKeyedCoding;
+- (id)classPrefixWhitelist;
 - (bool)containsValueForKey:(id)arg1;
 - (void)dealloc;
 - (bool)decodeBoolForKey:(id)arg1;
@@ -42,6 +47,7 @@
 - (void)encodeValueOfObjCType:(const char *)arg1 at:(const void*)arg2;
 - (id)finishHashing;
 - (id)init;
+- (void)setClassPrefixWhitelist:(id)arg1;
 - (void)setSha1Context:(struct CC_SHA1state_st { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8[16]; int x9; }*)arg1;
 - (struct CC_SHA1state_st { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8[16]; int x9; }*)sha1Context;
 - (long long)versionForClassName:(id)arg1;

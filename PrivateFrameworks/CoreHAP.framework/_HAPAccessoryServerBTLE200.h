@@ -2,8 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface _HAPAccessoryServerBTLE200 : HAPAccessoryServerBTLE <CBPeripheralDelegate, HAPBTLEControlOutputStreamDelegate, HAPPairSetupSessionClientDelegate, HAPSecuritySessionDelegate, HMFLogging, HMFTimerDelegate> {
+@interface _HAPAccessoryServerBTLE200 : HAPAccessoryServerBTLE <CBPeripheralDelegate, HAPAuthSessionDelegate, HAPBTLEControlOutputStreamDelegate, HAPPairSetupSessionClientDelegate, HAPSecuritySessionDelegate, HMFLogging, HMFTimerDelegate> {
     HAPBLEAccessoryCache * _accessoryCache;
+    HAPAuthSession * _authSession;
+    bool  _authenticated;
+    HAPAccessoryProtocolInfo * _authenticatedProtocolInfo;
     bool  _badPairSetupCode;
     NSMapTable * _characteristicEnableEventCompletionHandlers;
     NSMapTable * _characteristicWriteCompletionHandlers;
@@ -12,6 +15,7 @@
     HMFTimer * _connectionIdleTimer;
     long long  _connectionState;
     _HAPBTLEDiscoveryContext * _discoveryContext;
+    unsigned char  _featureFlags;
     bool  _hasValidCache;
     HAPCharacteristic * _identifyCharacteristic;
     double  _pairSetupBackoffTimeInterval;
@@ -27,11 +31,13 @@
     NSOperationQueue * _requestOperationQueue;
     HAPSecuritySession * _securitySession;
     id /* block */  _setupCodeCompletionHandler;
-    bool  _supportsMFiPairSetup;
     bool  _verified;
 }
 
 @property (retain) HAPBLEAccessoryCache *accessoryCache;
+@property (nonatomic, retain) HAPAuthSession *authSession;
+@property (nonatomic) bool authenticated;
+@property (nonatomic, retain) HAPAccessoryProtocolInfo *authenticatedProtocolInfo;
 @property (getter=isBadSetupCode, nonatomic) bool badPairSetupCode;
 @property (nonatomic, readonly) NSMapTable *characteristicEnableEventCompletionHandlers;
 @property (nonatomic, readonly) NSMapTable *characteristicWriteCompletionHandlers;
@@ -42,6 +48,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) _HAPBTLEDiscoveryContext *discoveryContext;
+@property (nonatomic) unsigned char featureFlags;
 @property bool hasValidCache;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) HAPCharacteristic *identifyCharacteristic;
@@ -59,7 +66,6 @@
 @property (nonatomic, retain) HAPSecuritySession *securitySession;
 @property (nonatomic, copy) id /* block */ setupCodeCompletionHandler;
 @property (readonly) Class superclass;
-@property (nonatomic) bool supportsMFiPairSetup;
 @property (getter=isVerified, nonatomic) bool verified;
 
 + (id)configurationRequestForCharacteristic:(id)arg1 isBroadcasted:(bool)arg2 interval:(unsigned long long)arg3 error:(id*)arg4;
@@ -86,7 +92,7 @@
 - (void)_cancelConnectionWithError:(id)arg1;
 - (bool)_cancelDiscoveryWithError:(id)arg1;
 - (id)_characteristicForCBCharacteristic:(id)arg1;
-- (void)_checkForAuthPrompt;
+- (void)_checkForAuthPrompt:(bool)arg1;
 - (void)_configureBroadcastKeyGeneration:(unsigned char)arg1 service:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)_configureCharacteristics:(id)arg1 queue:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)_createPrimaryAccessoryFromAdvertisementData;
@@ -108,6 +114,7 @@
 - (id)_getCBService:(id)arg1 instanceOrder:(unsigned long long)arg2;
 - (id)_getCachedService:(id)arg1;
 - (id)_getCharacteristicInstanceID:(id)arg1 error:(id*)arg2;
+- (unsigned long long)_getPairSetupType;
 - (void)_getPairingFeaturesWithCompletionHandler:(id /* block */)arg1;
 - (id)_getProtocolInfoService;
 - (id)_getServiceInstanceID:(id)arg1;
@@ -140,7 +147,7 @@
 - (unsigned long long)_outstandingRequests;
 - (void)_pairingCompletedWithError:(id)arg1;
 - (id)_parseCharacteristic:(id)arg1 error:(id*)arg2;
-- (bool)_parsePairingFeaturesCharacteristic:(id)arg1 supportsMFiPairSetup:(bool*)arg2 error:(id*)arg3;
+- (bool)_parsePairingFeaturesCharacteristic:(id)arg1 authMethod:(unsigned long long*)arg2 error:(id*)arg3;
 - (id)_parseService:(id)arg1 error:(id*)arg2;
 - (id)_pendingRequestForCharacteristic:(id)arg1;
 - (id)_pendingResponseForRequest:(id)arg1;
@@ -166,15 +173,26 @@
 - (void)_sendControlPacket:(id)arg1 forRequest:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_sendData:(id)arg1 toCharacteristic:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_sendPairingRequestData:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_sendProtocolInfoServiceExchangeData:(id)arg1 completion:(id /* block */)arg2;
 - (void)_sendRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)_serviceCacheFromHAPService:(id)arg1 serviceOrder:(unsigned long long)arg2;
 - (id)_serviceForCBService:(id)arg1;
 - (void)_suspendAllOperations;
 - (void)_suspendConnectionIdleTimer;
 - (void)_updateConnectionIdleTime:(unsigned char)arg1;
+- (bool)_validateProtocolInfo:(id)arg1;
 - (void)_writeValue:(id)arg1 toCharacteristic:(id)arg2 authorizationData:(id)arg3 options:(long long)arg4 completionHandler:(id /* block */)arg5;
 - (id)accessoryCache;
 - (void)addPairing:(id)arg1 completionQueue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id)authSession;
+- (void)authSession:(id)arg1 authComplete:(id)arg2;
+- (void)authSession:(id)arg1 authenticateUUID:(id)arg2 token:(id)arg3;
+- (void)authSession:(id)arg1 confirmUUID:(id)arg2 token:(id)arg3;
+- (void)authSession:(id)arg1 sendAuthExchangeData:(id)arg2;
+- (void)authSession:(id)arg1 validateUUID:(id)arg2 token:(id)arg3;
+- (void)authenticateAccessory;
+- (bool)authenticated;
+- (id)authenticatedProtocolInfo;
 - (id)characteristicEnableEventCompletionHandlers;
 - (id)characteristicWriteCompletionHandlers;
 - (id)clientOperationQueue;
@@ -183,6 +201,7 @@
 - (id /* block */)connectionCompletionHandler;
 - (id)connectionIdleTimer;
 - (long long)connectionState;
+- (void)continueAuthAfterValidation:(bool)arg1;
 - (void)continuePairingAfterAuthPrompt;
 - (void)controlOutputStream:(id)arg1 didCloseWithError:(id)arg2;
 - (void)controlOutputStream:(id)arg1 didReceiveRequestToSendControlPacket:(id)arg2 completionHandler:(id /* block */)arg3;
@@ -196,7 +215,9 @@
 - (void)discoverAccessories;
 - (id)discoveryContext;
 - (void)enableEvents:(bool)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(id /* block */)arg3 queue:(id)arg4;
+- (unsigned char)featureFlags;
 - (void)generateBroadcastKey:(unsigned char)arg1 queue:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)getAccessoryInfo:(id /* block */)arg1;
 - (id)getLocalPairingIdentityWithError:(id*)arg1;
 - (void)handleConnectionWithPeripheral:(id)arg1 withError:(id)arg2;
 - (void)handleDisconnectionWithError:(id)arg1 completionQueue:(id)arg2 completionHandler:(id /* block */)arg3;
@@ -236,6 +257,8 @@
 - (void)peripheral:(id)arg1 didUpdateValueForCharacteristic:(id)arg2 error:(id)arg3;
 - (void)peripheral:(id)arg1 didUpdateValueForDescriptor:(id)arg2 error:(id)arg3;
 - (void)peripheral:(id)arg1 didWriteValueForCharacteristic:(id)arg2 error:(id)arg3;
+- (id)protocolInfoServiceSignatureCharacteristics;
+- (void)provisionToken:(id)arg1;
 - (void)readCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)removePairing:(id)arg1 completionQueue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (bool)removePairingForCurrentControllerOnQueue:(id)arg1 completion:(id /* block */)arg2;
@@ -248,11 +271,15 @@
 - (void)securitySessionDidOpen:(id)arg1;
 - (void)securitySessionIsOpening:(id)arg1;
 - (void)setAccessoryCache:(id)arg1;
+- (void)setAuthSession:(id)arg1;
+- (void)setAuthenticated:(bool)arg1;
+- (void)setAuthenticatedProtocolInfo:(id)arg1;
 - (void)setBadPairSetupCode:(bool)arg1;
 - (void)setConnectionCompletionHandler:(id /* block */)arg1;
 - (void)setConnectionIdleTimer:(id)arg1;
 - (void)setConnectionState:(long long)arg1;
 - (void)setDiscoveryContext:(id)arg1;
+- (void)setFeatureFlags:(unsigned char)arg1;
 - (void)setHasValidCache:(bool)arg1;
 - (void)setIdentifyCharacteristic:(id)arg1;
 - (void)setPairSetupBackoffTimeInterval:(double)arg1;
@@ -265,15 +292,14 @@
 - (void)setSecuritySession:(id)arg1;
 - (void)setSecuritySessionOpen:(bool)arg1;
 - (void)setSetupCodeCompletionHandler:(id /* block */)arg1;
-- (void)setSupportsMFiPairSetup:(bool)arg1;
 - (void)setVerified:(bool)arg1;
 - (id /* block */)setupCodeCompletionHandler;
 - (id)shortDescription;
 - (bool)shouldVerifyHAPCharacteristic:(id)arg1;
 - (bool)shouldVerifyHAPService:(id)arg1;
-- (void)startPairing;
+- (void)startPairingWithConsentRequired:(bool)arg1;
 - (bool)stopPairingWithError:(id*)arg1;
-- (bool)supportsMFiPairSetup;
+- (void)tearDownSessionOnAuthCompletion;
 - (void)timerDidFire:(id)arg1;
 - (bool)tryPairingPassword:(id)arg1 error:(id*)arg2;
 - (void)updateConnectionIdleTime:(unsigned char)arg1;

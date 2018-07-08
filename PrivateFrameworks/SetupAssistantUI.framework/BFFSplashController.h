@@ -88,8 +88,8 @@
 - (void)updateBleedColor;
 - (bool)usesTwoButtonLayout;
 - (void)viewDidAppear:(bool)arg1;
-- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

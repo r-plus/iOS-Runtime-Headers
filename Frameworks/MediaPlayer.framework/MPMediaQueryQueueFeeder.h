@@ -16,7 +16,7 @@
         long long *__begin_; 
         long long *__end_; 
         struct __compressed_pair<long long *, std::__1::allocator<long long> > { 
-            long long *__first_; 
+            long long *__value_; 
         } __end_cap_; 
     }  _itemPIDs;
     MPMediaQuery * _query;
@@ -39,6 +39,7 @@
 + (id)_itemsForQuery:(id)arg1 shuffleType:(long long)arg2;
 + (id)audioSessionModeForMediaType:(unsigned long long)arg1;
 + (Class)playbackItemMetadataClass;
++ (bool)supportsSecureCoding;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

@@ -8,6 +8,7 @@
     NSMutableArray * _zoomAttributeListeners;
 }
 
+@property (nonatomic) bool inCheckerBoardMode;
 @property (nonatomic) bool inPreboardMode;
 @property (nonatomic) bool invertColorsEnabled;
 @property (nonatomic) bool sessionIsLoginSession;
@@ -22,6 +23,7 @@
 - (bool)_shouldDispatchLocally;
 - (id)_springboardParametersForGuidedAccessAvailability;
 - (void)_willClearServer;
+- (int)accessibilityAssistiveTouchPID;
 - (int)accessibilityUIServicePID;
 - (bool)adaptationEnabled;
 - (void)adjustSystemZoom:(int)arg1;
@@ -40,6 +42,7 @@
 - (id)guidedAccessEffectiveAppBundleIdentifier;
 - (id)guidedAccessIgnoredRegions;
 - (void)homeClickSwallowedForGuidedAccess;
+- (bool)inCheckerBoardMode;
 - (bool)inPreboardMode;
 - (id)init;
 - (bool)invertColorsEnabled;
@@ -65,6 +68,7 @@
 - (void)setAccessibilityPreferenceAsMobile:(id)arg1 value:(id)arg2 notification:(id)arg3;
 - (void)setCapsLockLightOn:(bool)arg1;
 - (void)setHearingAidControlIsVisible:(bool)arg1;
+- (void)setInCheckerBoardMode:(bool)arg1;
 - (void)setInPreboardMode:(bool)arg1;
 - (void)setInvertColorsEnabled:(bool)arg1;
 - (void)setLockScreenDimTimerEnabled:(bool)arg1;

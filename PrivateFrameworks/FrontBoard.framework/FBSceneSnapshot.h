@@ -13,6 +13,7 @@
 @property (nonatomic, readonly, retain) UIImage *UIImage;
 @property (nonatomic, readonly, retain) FBSceneSnapshotContext *context;
 @property (getter=isDataLoaded, nonatomic, readonly) bool dataLoaded;
+@property (nonatomic, readonly) struct __IOSurface { }*fallbackIOSurface;
 
 - (struct CGImage { }*)CGImage;
 - (struct __IOSurface { }*)IOSurface;
@@ -22,6 +23,7 @@
 - (bool)capture;
 - (id)context;
 - (void)dealloc;
+- (struct __IOSurface { }*)fallbackIOSurface;
 - (id)initWithScene:(id)arg1 snapshotContext:(id)arg2;
 - (bool)isDataLoaded;
 

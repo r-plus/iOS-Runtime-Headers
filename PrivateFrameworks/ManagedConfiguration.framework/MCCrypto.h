@@ -14,7 +14,7 @@
 + (bool)isValidPKCS12Data:(id)arg1;
 + (id)objectFromEncryptedData:(id)arg1 outCertificate:(struct __SecCertificate {}**)arg2 outError:(id*)arg3;
 + (id)storeActivationLockBypassCode:(id)arg1 hash:(id)arg2;
-+ (id)storedActivationLockBypassCode;
 + (id)storedActivationLockBypassCodeHash;
++ (id)storedActivationLockBypassCodeWithOutError:(id*)arg1;
 
 @end

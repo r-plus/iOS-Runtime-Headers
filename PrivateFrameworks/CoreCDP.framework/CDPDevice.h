@@ -20,9 +20,11 @@
     unsigned long long  _platform;
     NSDate * _recordDate;
     NSString * _recordID;
+    NSDictionary * _recordInfo;
     unsigned long long  _recoveryStatus;
     unsigned long long  _remainingAttempts;
     NSString * _serialNumber;
+    NSData * _simplePublicKey;
 }
 
 @property (nonatomic, retain) NSNumber *coolOffPeriod;
@@ -46,9 +48,11 @@
 @property (nonatomic) unsigned long long platform;
 @property (nonatomic, copy) NSDate *recordDate;
 @property (nonatomic, copy) NSString *recordID;
+@property (nonatomic, copy) NSDictionary *recordInfo;
 @property (nonatomic) unsigned long long recoveryStatus;
 @property (nonatomic) unsigned long long remainingAttempts;
 @property (nonatomic, copy) NSString *serialNumber;
+@property (nonatomic, copy) NSData *simplePublicKey;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/PrivateFrameworks/CoreCDP.framework/CoreCDP
@@ -78,6 +82,7 @@
 - (unsigned long long)platform;
 - (id)recordDate;
 - (id)recordID;
+- (id)recordInfo;
 - (unsigned long long)recoveryStatus;
 - (unsigned long long)remainingAttempts;
 - (id)serialNumber;
@@ -98,9 +103,12 @@
 - (void)setPlatform:(unsigned long long)arg1;
 - (void)setRecordDate:(id)arg1;
 - (void)setRecordID:(id)arg1;
+- (void)setRecordInfo:(id)arg1;
 - (void)setRecoveryStatus:(unsigned long long)arg1;
 - (void)setRemainingAttempts:(unsigned long long)arg1;
 - (void)setSerialNumber:(id)arg1;
+- (void)setSimplePublicKey:(id)arg1;
+- (id)simplePublicKey;
 
 // Image: /System/Library/PrivateFrameworks/CoreCDPInternal.framework/CoreCDPInternal
 

@@ -71,6 +71,8 @@
 @property (nonatomic, readonly) bool hasExpiredComponents;
 @property (getter=_hasFeatureLink, nonatomic, readonly) bool hasFeatureLink;
 @property (getter=_hasFlyover, nonatomic, readonly) bool hasFlyover;
+@property (getter=_hasGenderNeutralRestroom, nonatomic, readonly) bool hasGenderNeutralRestroom;
+@property (getter=_hasGenderNeutralRestroomAmenity, nonatomic, readonly) bool hasGenderNeutralRestroomAmenity;
 @property (getter=_hasGoodForKidsAmenity, nonatomic, readonly) bool hasGoodForKidsAmenity;
 @property (nonatomic, readonly) bool hasInternalDetourInfo;
 @property (getter=_hasMUID, nonatomic, readonly) bool hasMUID;
@@ -181,7 +183,8 @@
 - (id)_asPlaceInfo;
 - (id)_associatedApp;
 - (id)_attribution;
-- (id)_bestBrandIconURLForSize:(struct CGSize { double x1; double x2; })arg1 allowSmaller:(bool)arg2;
+- (id)_bestAvatarBrandIconURLForSize:(struct CGSize { double x1; double x2; })arg1 allowSmaller:(bool)arg2;
+- (id)_bestNavbarBrandIconURLForSize:(struct CGSize { double x1; double x2; })arg1 allowSmaller:(bool)arg2;
 - (id)_browseCategories;
 - (id)_businessClaim;
 - (id)_businessURL;
@@ -208,6 +211,8 @@
 - (bool)_hasEncyclopedicInfo;
 - (bool)_hasFeatureLink;
 - (bool)_hasFlyover;
+- (bool)_hasGenderNeutralRestroom;
+- (bool)_hasGenderNeutralRestroomAmenity;
 - (bool)_hasGoodForKidsAmenity;
 - (bool)_hasLocalizedCategoryNamesForType:(unsigned int)arg1;
 - (bool)_hasMUID;

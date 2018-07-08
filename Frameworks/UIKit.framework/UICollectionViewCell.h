@@ -85,16 +85,13 @@
 - (void)_updateGhostedAppearance;
 - (void)_updateHighlightColorsForAnimationHalfwayPoint;
 - (void)_updateHighlightColorsForView:(id)arg1 highlight:(bool)arg2;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)backgroundView;
 - (bool)canBecomeFocused;
 - (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (id)contentView;
 - (void)copy:(id)arg1;
 - (void)cut:(id)arg1;
+- (void)dealloc;
 - (void)dragStateDidChange:(long long)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

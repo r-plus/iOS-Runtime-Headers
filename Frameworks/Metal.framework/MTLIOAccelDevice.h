@@ -77,7 +77,6 @@
 - (unsigned int)initialKernelCommandShmemSize;
 - (unsigned int)initialSegmentListShmemSize;
 - (id)newCommandQueueWithDescriptor:(id)arg1;
-- (id)newCommandQueueWithMaxCommandBufferCount:(unsigned long long)arg1;
 - (id)newFence;
 - (id)newIndirectArgumentBufferLayoutWithStructType:(id)arg1;
 - (id)newIndirectArgumentEncoderWithLayout:(id)arg1;

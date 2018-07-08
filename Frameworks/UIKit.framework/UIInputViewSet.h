@@ -68,6 +68,7 @@
 - (bool)_actLikeInputAccessoryViewSupportsSplit;
 - (void)_beginSplitTransitionIfNeeded;
 - (void)_endSplitTransitionIfNeeded;
+- (void)_forceRestoreUsingBecomeFirstResponder:(bool)arg1;
 - (bool)_inputAccessoryViewSupportsSplit;
 - (bool)_inputViewIsSplit;
 - (bool)_inputViewIsVisible;

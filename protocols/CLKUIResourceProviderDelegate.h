@@ -5,7 +5,7 @@
 
 @required
 
-- (void)addResourceUuidsToKeep:(NSMutableSet *)arg1;
-- (CLKUITextureBacking *)provideTextureBacking:(NSString *)arg1;
+- (CLKUIAtlasBacking *)provideAtlasBacking:(NSString *)arg1;
+- (CLKUIResourceProviderKey *)resourceProviderKey;
 
 @end

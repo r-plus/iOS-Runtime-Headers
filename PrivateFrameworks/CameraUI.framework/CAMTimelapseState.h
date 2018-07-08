@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
  */
 
-@interface CAMTimelapseState : NSObject <NSCoding, NSCopying> {
+@interface CAMTimelapseState : NSObject <NSCopying, NSSecureCoding> {
     bool  _allFramesWritten;
     long long  _captureDevice;
     int  _captureOrientation;
@@ -44,6 +44,7 @@
 
 + (double)maxTimeToWaitForWrittenFrameAfterStop;
 + (id)stateWithContentsOfFile:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (bool)_commonCAMTimelapseStateInitWithCoder:(id)arg1;

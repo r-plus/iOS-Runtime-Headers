@@ -11,7 +11,7 @@
         struct Document_DocObject {} **__begin_; 
         struct Document_DocObject {} **__end_; 
         struct __compressed_pair<CRDT::Document_DocObject **, std::__1::allocator<CRDT::Document_DocObject *> > { 
-            struct Document_DocObject {} **__first_; 
+            struct Document_DocObject {} **__value_; 
         } __end_cap_; 
     }  currentDocObjectEncodingStack;
 }

@@ -8,7 +8,7 @@
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<CMTime *, std::__1::allocator<CMTime> > { 
-            struct { /* ? */ } *__first_; 
+            struct { /* ? */ } *__value_; 
         } __end_cap_; 
     }  mFrameTimes;
     unsigned int  numFrames;

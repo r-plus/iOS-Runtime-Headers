@@ -188,6 +188,7 @@
 - (void)_quietlySetCanUseNetworkResourcesForLiveStreamingWhilePaused:(bool)arg1;
 - (void)_quietlySetContinuesPlayingDuringPrerollForRateChange:(bool)arg1;
 - (void)_quietlySetContinuesPlayingDuringPrerollForSeek:(bool)arg1;
+- (void)_quietlySetDecodesAllFramesDuringOrdinaryPlayback:(bool)arg1;
 - (void)_quietlySetEQPreset:(int)arg1;
 - (void)_quietlySetFigTimePitchAlgorithm:(struct __CFString { }*)arg1;
 - (void)_quietlySetForwardPlaybackEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
@@ -310,6 +311,7 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })currentTime;
 - (id)customVideoCompositor;
 - (void)dealloc;
+- (bool)decodesAllFramesDuringOrdinaryPlayback;
 - (id)delegate;
 - (id)description;
 - (void)didChangeValueForKey:(id)arg1;
@@ -390,6 +392,7 @@
 - (void)setCanUseNetworkResourcesForLiveStreamingWhilePaused:(bool)arg1;
 - (void)setContinuesPlayingDuringPrerollForRateChange:(bool)arg1;
 - (void)setContinuesPlayingDuringPrerollForSeek:(bool)arg1;
+- (void)setDecodesAllFramesDuringOrdinaryPlayback:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setForwardPlaybackEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setGaplessInfo:(id)arg1;

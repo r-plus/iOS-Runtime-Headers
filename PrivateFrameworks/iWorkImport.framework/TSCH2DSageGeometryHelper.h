@@ -266,7 +266,6 @@
 - (double)fontHeight:(id)arg1;
 - (bool)isArea;
 - (bool)isLine;
-- (bool)isPie;
 - (bool)isScatter;
 - (bool)isVertical;
 - (bool)leftAxisLabelsVisible;

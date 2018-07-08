@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UISearchBar : UIView <DebugHierarchyObject, UIBarPositioning, UIStatusBarTinting, UITextInputTraits, UITextInputTraits_Private, _UIBarPositioningInternal, _UINavigationBarAugmentedTitleView> {
+@interface UISearchBar : UIView <UIBarPositioning, UIStatusBarTinting, UITextInputTraits, UITextInputTraits_Private, _UIBarPositioningInternal, _UINavigationBarAugmentedTitleView> {
     bool  __forceCenteredPlaceholderLayout;
     unsigned long long  __scopeBarPosition;
     UISearchController * __searchController;
@@ -329,16 +329,6 @@
 - (id)_viewForChildViews;
 - (bool)_wantsTwoPartTransition;
 - (bool)_wouldCombineLandscapeBarsForSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)dealloc;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)__dbg_scopeButtonTitles;
-- (id)debugHierarchyPropertyDescriptions;
-- (id)debugHierarchyValueForPropertyWithName:(id)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)backgroundImage;
 - (id)backgroundImageForBarPosition:(long long)arg1 barMetrics:(long long)arg2;
 - (long long)barPosition;
@@ -353,6 +343,7 @@
 - (bool)combinesLandscapeBars;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
 - (id)controller;
+- (void)dealloc;
 - (id)delegate;
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;

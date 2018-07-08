@@ -216,12 +216,12 @@
 - (bool)shouldPreventPlayback;
 - (bool)shouldReportPlayEventsToStore;
 - (bool)shouldShowComposer;
-- (bool)stationAllowsItemLiking;
 - (id)stationHash;
 - (long long)stationID;
 - (long long)stationItemLikedState;
 - (id)stationName;
 - (id)stationStringID;
+- (id)storeFrontIdentifier;
 - (long long)storeItemInt64ID;
 - (long long)storeSubscriptionAdamID;
 - (bool)supportsLikedState;

@@ -12,6 +12,6 @@
 - (id)finish;
 - (id)init;
 - (id)initWithABGroup:(id)arg1 assetVersion:(long long)arg2;
-- (void)recordApp:(id)arg1 totalScore:(double)arg2 scoreInputs:(double*)arg3;
+- (void)recordApp:(id)arg1 totalScore:(float)arg2 scoreInputs:(float*)arg3;
 
 @end

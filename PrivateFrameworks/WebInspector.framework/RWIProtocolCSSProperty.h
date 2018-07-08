@@ -13,6 +13,8 @@
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic, copy) NSString *value;
 
+// Image: /System/Library/PrivateFrameworks/WebInspector.framework/WebInspector
+
 - (bool)implicit;
 - (id)initWithName:(id)arg1 value:(id)arg2;
 - (id)name;
@@ -30,5 +32,9 @@
 - (long long)status;
 - (id)text;
 - (id)value;
+
+// Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
+
++ (id)safe_initWithName:(id)arg1 value:(id)arg2;
 
 @end

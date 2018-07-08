@@ -11,6 +11,7 @@
     HDProfile * _profile;
     long long  _reason;
     NSString * _syncContainerPrefix;
+    NSUUID * _syncIdentifier;
 }
 
 @property (nonatomic, readonly) CKContainer *container;
@@ -21,10 +22,11 @@
 @property (nonatomic, readonly) HDProfile *profile;
 @property (nonatomic, readonly) long long reason;
 @property (nonatomic, readonly, copy) NSString *syncContainerPrefix;
+@property (nonatomic, readonly) NSUUID *syncIdentifier;
 
 - (void).cxx_destruct;
 - (id)container;
-- (id)initWithCKContainer:(id)arg1 operationGroup:(id)arg2 syncContainerPrefix:(id)arg3 ownerIdentifier:(id)arg4 profile:(id)arg5 options:(unsigned long long)arg6 reason:(long long)arg7;
+- (id)initWithCKContainer:(id)arg1 operationGroup:(id)arg2 syncContainerPrefix:(id)arg3 ownerIdentifier:(id)arg4 profile:(id)arg5 options:(unsigned long long)arg6 reason:(long long)arg7 syncIdentifier:(id)arg8;
 - (id)operationGroup;
 - (unsigned long long)options;
 - (id)ownerIdentifier;
@@ -32,5 +34,6 @@
 - (id)profile;
 - (long long)reason;
 - (id)syncContainerPrefix;
+- (id)syncIdentifier;
 
 @end

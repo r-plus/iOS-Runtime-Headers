@@ -6,6 +6,6 @@
 @required
 
 - (_HKAchievementPredicateMonthlyAggregatesEnvironment *)aggregateEnvironmentForMonthOffsetFromNow:(long long)arg1;
-- (NSArray *)dayEnvironmentsInDateInterval:(NSDateInterval *)arg1;
+- (NSDate *)currentDateForMonthlyAggregatesEnvironment;
 
 @end

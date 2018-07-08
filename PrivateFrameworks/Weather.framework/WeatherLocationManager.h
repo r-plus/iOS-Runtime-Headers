@@ -69,11 +69,14 @@
 - (id)effectiveBundleIdentifier;
 - (int)forceLoadingAuthorizationStatus;
 - (void)forceLocationUpdate;
+- (bool)hasCrossedHourBoundary;
 - (id)init;
 - (id)initWithPreferences:(id)arg1;
 - (id)initWithPreferences:(id)arg1 effectiveBundleIdentifier:(id)arg2;
+- (bool)isCacheOutOfDate;
 - (bool)isInternalBuild;
 - (bool)isLocalStaleOrOutOfDate;
+- (bool)isLocationWithInRange:(id)arg1;
 - (float)lastLocationAccuracy;
 - (struct CLLocationCoordinate2D { double x1; double x2; })lastLocationCoord;
 - (id)lastLocationTimeStamp;
@@ -110,7 +113,9 @@
 - (void)setOldestAllowedUpdateTime:(double)arg1;
 - (void)setPreferences:(id)arg1;
 - (void)setUpdateInterval:(unsigned long long)arg1;
+- (void)stopLocationUpdate;
 - (unsigned long long)updateInterval;
 - (void)updateLocation:(id)arg1;
+- (void)updateLocationWithNoConditionCheck;
 
 @end

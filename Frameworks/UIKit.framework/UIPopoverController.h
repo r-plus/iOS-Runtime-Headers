@@ -54,6 +54,7 @@
         unsigned int isInTextEffectsWindow : 1; 
         unsigned int isEmbeddingInView : 1; 
         unsigned int embeddedPresentationBounces : 1; 
+        unsigned int isWaitingToPresentShimmedPopover : 1; 
     }  _popoverControllerFlags;
     long long  _popoverControllerStyle;
     struct UIEdgeInsets { 

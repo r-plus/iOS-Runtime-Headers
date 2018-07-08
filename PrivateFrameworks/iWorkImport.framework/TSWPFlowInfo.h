@@ -10,6 +10,9 @@
 
 @property (getter=isAnchoredToText, nonatomic, readonly) bool anchoredToText;
 @property (getter=isAttachedToBodyText, nonatomic, readonly) bool attachedToBodyText;
+@property (nonatomic, readonly) bool autoListRecognition;
+@property (nonatomic, readonly) bool autoListTermination;
+@property (nonatomic, readonly) NSArray *childInfos;
 @property (nonatomic, readonly) long long contentWritingDirection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -22,7 +25,11 @@
 @property (nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment;
 @property (nonatomic, readonly) TSPObject<TSDOwningAttachment> *owningAttachmentNoRecurse;
 @property (nonatomic) NSObject<TSDContainerInfo> *parentInfo;
+@property (nonatomic, readonly) bool preventsComments;
+@property (nonatomic, readonly) bool storageChangesInvalidateWrap;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) bool textIsLinked;
+@property (nonatomic, readonly) bool textIsVertical;
 @property (nonatomic, retain) TSWPStorage *textStorage;
 @property (nonatomic, retain) NSArray *textboxes;
 @property (nonatomic, readonly) TSUColor *userInterfaceFillColor;
@@ -69,6 +76,7 @@
 - (id)owningAttachmentNoRecurse;
 - (void)pSaveToFlowInfoArchive:(struct FlowInfoArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; unsigned int x7; }*)arg1 archiver:(id)arg2 textBoxes:(id)arg3;
 - (id)parentInfo;
+- (bool)preventsComments;
 - (void)processSelectedStoragesWithStatisticsController:(id)arg1;
 - (Class)repClass;
 - (void)saveToArchiver:(id)arg1;

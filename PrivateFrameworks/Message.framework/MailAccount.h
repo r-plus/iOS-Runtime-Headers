@@ -32,6 +32,7 @@
     MFMailboxUid * _trashMailboxUid;
 }
 
+@property (nonatomic, readonly) NSString *defaultPath;
 @property (nonatomic, readonly, copy) NSString *mailboxPathExtension;
 @property (nonatomic, readonly) bool needsRemoteSearchResultsVerification;
 @property (readonly) bool shouldArchiveByDefault;
@@ -74,8 +75,6 @@
 + (id)defaultDeliveryAccount;
 + (id)defaultMailAccountForDelivery;
 + (id)defaultMailAccountForDeliveryExcludingRestricted;
-+ (id)defaultPathForAccountWithHostname:(id)arg1 username:(id)arg2;
-+ (id)defaultPathNameForAccountWithHostname:(id)arg1 username:(id)arg2;
 + (void)disableMailboxListingNotifications;
 + (void)enableMailboxListingNotifications:(bool)arg1;
 + (id)existingAccountForUniqueID:(id)arg1;
@@ -87,6 +86,8 @@
 + (bool)isPredefinedAccountType;
 + (id)lastMailAccountsReloadDate;
 + (id)lastMailAccountsReloadError;
++ (id)legacyPathForAccountIdentifier:(id)arg1 withHostname:(id)arg2 username:(id)arg3;
++ (id)legacyPathNameForAccountWithHostname:(id)arg1 username:(id)arg2;
 + (id)mailAccounts;
 + (id)mailAccountsWithError:(id*)arg1;
 + (bool)mailboxListingNotificationAreEnabled;
@@ -116,6 +117,7 @@
 
 - (id)URLForMessage:(id)arg1;
 - (id)URLString;
+- (id)URLStringFromLegacyURLString:(id)arg1;
 - (id)_URLForInfo:(id)arg1;
 - (id)_URLScheme;
 - (bool)_assignSpecialMailboxToAppropriateIvar:(id)arg1 forType:(int)arg2;
@@ -187,6 +189,7 @@
 - (id)customSignature;
 - (void)dealloc;
 - (id)defaultEmailAddress;
+- (id)defaultPath;
 - (void)deleteDeliveryAccountIfNeeded;
 - (bool)deleteInPlaceForAllMailboxes;
 - (bool)deleteInPlaceForMailbox:(id)arg1;
@@ -235,6 +238,7 @@
 - (bool)isSpecialMailbox:(id)arg1;
 - (bool)isUsernameEquivalentTo:(id)arg1;
 - (id)lastEmailAliasesSyncDate;
+- (id)legacySQLExpressionToMatchAllMailboxes;
 - (id)library;
 - (long long)libraryID;
 - (id)loggingIdentifier;

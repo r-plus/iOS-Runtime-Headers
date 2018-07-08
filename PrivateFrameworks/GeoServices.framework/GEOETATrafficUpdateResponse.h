@@ -4,6 +4,7 @@
 
 @interface GEOETATrafficUpdateResponse : PBCodable <NSCopying> {
     NSMutableArray * _cameras;
+    GEOClientMetrics * _clientMetrics;
     GEOPDDatasetABStatus * _datasetAbStatus;
     unsigned long long  _debugServerLatencyMs;
     GEOETAServiceResponseSummary * _etaServiceSummary;
@@ -18,9 +19,11 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *cameras;
+@property (nonatomic, retain) GEOClientMetrics *clientMetrics;
 @property (nonatomic, retain) GEOPDDatasetABStatus *datasetAbStatus;
 @property (nonatomic) unsigned long long debugServerLatencyMs;
 @property (nonatomic, retain) GEOETAServiceResponseSummary *etaServiceSummary;
+@property (nonatomic, readonly) bool hasClientMetrics;
 @property (nonatomic, readonly) bool hasDatasetAbStatus;
 @property (nonatomic) bool hasDebugServerLatencyMs;
 @property (nonatomic, readonly) bool hasEtaServiceSummary;
@@ -44,6 +47,7 @@
 - (unsigned long long)camerasCount;
 - (void)clearCameras;
 - (void)clearRoutes;
+- (id)clientMetrics;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)datasetAbStatus;
@@ -51,6 +55,7 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)etaServiceSummary;
+- (bool)hasClientMetrics;
 - (bool)hasDatasetAbStatus;
 - (bool)hasDebugServerLatencyMs;
 - (bool)hasEtaServiceSummary;
@@ -67,6 +72,7 @@
 - (unsigned long long)routesCount;
 - (id)sessionState;
 - (void)setCameras:(id)arg1;
+- (void)setClientMetrics:(id)arg1;
 - (void)setDatasetAbStatus:(id)arg1;
 - (void)setDebugServerLatencyMs:(unsigned long long)arg1;
 - (void)setEtaServiceSummary:(id)arg1;

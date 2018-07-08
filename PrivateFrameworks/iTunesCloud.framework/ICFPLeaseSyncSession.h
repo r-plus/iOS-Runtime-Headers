@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (id)_initWithFPLeaseSync:(struct FPLeaseSyncOpaque_ { }*)arg1 leaseID:(id)arg2 accountID:(unsigned long long)arg3 hardwareInfo:(struct FairPlayHWInfo_ { unsigned int x1; unsigned char x2[20]; })arg4 mediaKind:(unsigned int)arg5;
 - (unsigned long long)accountID;
+- (void)dealloc;
 - (bool)endLeaseSyncAndReturnError:(id*)arg1;
 - (bool)getLeaseSyncRenewRequestData:(id*)arg1 error:(id*)arg2;
 - (bool)importLeaseSyncResponseData:(id)arg1 error:(id*)arg2;

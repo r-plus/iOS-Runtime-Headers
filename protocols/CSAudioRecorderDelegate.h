@@ -10,6 +10,8 @@
 
 @optional
 
+- (void)audioRecorder:(CSAudioRecorder *)arg1 didSetAudioSessionActive:(bool)arg2;
+- (void)audioRecorder:(CSAudioRecorder *)arg1 willSetAudioSessionActive:(bool)arg2;
 - (void)audioRecorderBeginRecordInterruption:(CSAudioRecorder *)arg1;
 - (void)audioRecorderBeginRecordInterruption:(CSAudioRecorder *)arg1 withContext:(NSDictionary *)arg2;
 - (void)audioRecorderDidStartRecording:(CSAudioRecorder *)arg1 successfully:(bool)arg2 error:(NSError *)arg3;

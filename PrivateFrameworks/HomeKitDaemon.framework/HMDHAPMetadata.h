@@ -100,6 +100,7 @@
 - (id)hmRequiresDeviceUnlockTuples;
 - (bool)incomplete;
 - (id)initWithDictionary:(id)arg1 hapMetadata:(id)arg2 error:(id*)arg3;
+- (bool)isSecondsDownCounterCharacteristicType:(id)arg1;
 - (bool)isStandardCharacteristicType:(id)arg1;
 - (bool)isStandardServiceType:(id)arg1;
 - (id)mapCharacteristicValueType:(id)arg1;

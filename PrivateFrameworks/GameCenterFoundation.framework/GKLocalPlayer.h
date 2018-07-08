@@ -4,7 +4,9 @@
 
 @interface GKLocalPlayer : GKPlayer <GKLocalPlayerAuthenticationUIPersonality, GKSavedGameListener, NSCoding, NSSecureCoding> {
     GKInvite * _acceptedInvite;
+    double  _authStartTimeStamp;
     bool  _authenticated;
+    unsigned long long  _authenticationType;
     UIAlertView * _currentAlert;
     NSInvocation * _currentFriendRequestInvocation;
     bool  _didAuthenticate;
@@ -23,9 +25,11 @@
 @property (nonatomic, retain) UIViewController *activeViewController;
 @property (nonatomic, readonly) bool allowNearbyMultiplayer;
 @property (nonatomic) bool appIsInBackground;
+@property (nonatomic) double authStartTimeStamp;
 @property (nonatomic, copy) id /* block */ authenticateHandler;
 @property (getter=isAuthenticated, nonatomic) bool authenticated;
 @property (getter=isAuthenticating, nonatomic, readonly) bool authenticating;
+@property (nonatomic) unsigned long long authenticationType;
 @property (nonatomic, readonly) bool canChangePhoto;
 @property (nonatomic) UIAlertView *currentAlert;
 @property (nonatomic, retain) NSInvocation *currentFriendRequestInvocation;
@@ -73,8 +77,10 @@
 - (void)_loadFriendPlayersWithCompletionHandler:(id /* block */)arg1;
 - (id)acceptedInvite;
 - (bool)appIsInBackground;
+- (double)authStartTimeStamp;
 - (id /* block */)authenticateHandler;
 - (void)authenticateWithCompletionHandler:(id /* block */)arg1;
+- (unsigned long long)authenticationType;
 - (void)callAuthHandlerWithError:(id)arg1;
 - (bool)canChangePhoto;
 - (void)cancelGameInvite:(id)arg1;
@@ -111,12 +117,19 @@
 - (void)registerListener:(id)arg1;
 - (void)removeAllFriends:(id)arg1 block:(id /* block */)arg2;
 - (void)removeFriend:(id)arg1 block:(id /* block */)arg2;
+- (void)reportAuthenticatingWithAuthKitInvocation;
+- (void)reportAuthenticatingWithGreenBuddyInvocation;
+- (void)reportAuthenticationErrorNoInternetConnection;
+- (void)reportAuthenticationFailedForPlayer;
+- (void)reportAuthenticationLoginCanceled;
 - (void)resolveConflictingSavedGames:(id)arg1 withData:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)saveGameData:(id)arg1 withName:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setAcceptedInvite:(id)arg1;
 - (void)setAppIsInBackground:(bool)arg1;
+- (void)setAuthStartTimeStamp:(double)arg1;
 - (void)setAuthenticateHandler:(id /* block */)arg1;
 - (void)setAuthenticated:(bool)arg1;
+- (void)setAuthenticationType:(unsigned long long)arg1;
 - (void)setCurrentAlert:(id)arg1;
 - (void)setCurrentFriendRequestInvocation:(id)arg1;
 - (void)setDefaultLeaderboardCategoryID:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -134,6 +147,7 @@
 - (void)setValidateAccountCompletionHandler:(id /* block */)arg1;
 - (void)setValidatingAccount:(bool)arg1;
 - (void)setupForCloudSavedGames;
+- (bool)shouldDisplayWelcomeBannerForPlayer:(id)arg1 lastAuthDate:(id)arg2 remoteUI:(bool)arg3 timeBetweenBanners:(double)arg4;
 - (void)showSettings;
 - (void)signOutWithCompletionHandler:(id /* block */)arg1;
 - (void)unregisterAllListeners;

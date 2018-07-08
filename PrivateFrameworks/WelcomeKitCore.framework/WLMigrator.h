@@ -23,7 +23,8 @@
 @property (nonatomic, retain) <WLDataMigrationDelegate> *delegate;
 @property (nonatomic, readonly, retain) WLSourceDevice *sourceDevice;
 
-+ (id)_aggdStringForStatistics:(id)arg1;
++ (id)_aggdStringForContentTypeToStatsMap:(id)arg1 aggregateStatistics:(id)arg2 metadata:(id)arg3 allowAllFields:(bool)arg4;
++ (id)_aggdStringForStatistics:(id)arg1 allowAllFields:(bool)arg2;
 + (unsigned long long)_bucketedUnsignedInteger:(unsigned long long)arg1;
 + (unsigned long long)_bytesFreeOnDevice;
 + (void)_cleanUpAfterFinalizeMigratableAppsWithCompletion:(id /* block */)arg1;

@@ -17,9 +17,11 @@
         unsigned int acceptedInProcess : 1; 
         unsigned int createdInProcess : 1; 
         unsigned int isInNetwork : 1; 
+        unsigned int isOrgUser : 1; 
     }  _has;
     CKDPIdentifier * _inviterId;
     bool  _isInNetwork;
+    bool  _isOrgUser;
     int  _outOfNetworkKeyType;
     NSData * _outOfNetworkPrivateKey;
     CKDPIdentifier * _participantId;
@@ -42,6 +44,7 @@
 @property (nonatomic) bool hasCreatedInProcess;
 @property (nonatomic, readonly) bool hasInviterId;
 @property (nonatomic) bool hasIsInNetwork;
+@property (nonatomic) bool hasIsOrgUser;
 @property (nonatomic) bool hasOutOfNetworkKeyType;
 @property (nonatomic, readonly) bool hasOutOfNetworkPrivateKey;
 @property (nonatomic, readonly) bool hasParticipantId;
@@ -54,6 +57,7 @@
 @property (nonatomic, readonly) bool hasUserId;
 @property (nonatomic, retain) CKDPIdentifier *inviterId;
 @property (nonatomic) bool isInNetwork;
+@property (nonatomic) bool isOrgUser;
 @property (nonatomic) int outOfNetworkKeyType;
 @property (nonatomic, retain) NSData *outOfNetworkPrivateKey;
 @property (nonatomic, retain) CKDPIdentifier *participantId;
@@ -86,6 +90,7 @@
 - (bool)hasCreatedInProcess;
 - (bool)hasInviterId;
 - (bool)hasIsInNetwork;
+- (bool)hasIsOrgUser;
 - (bool)hasOutOfNetworkKeyType;
 - (bool)hasOutOfNetworkPrivateKey;
 - (bool)hasParticipantId;
@@ -100,6 +105,7 @@
 - (id)inviterId;
 - (bool)isEqual:(id)arg1;
 - (bool)isInNetwork;
+- (bool)isOrgUser;
 - (void)mergeFrom:(id)arg1;
 - (int)outOfNetworkKeyType;
 - (id)outOfNetworkPrivateKey;
@@ -120,6 +126,7 @@
 - (void)setHasAcceptedInProcess:(bool)arg1;
 - (void)setHasCreatedInProcess:(bool)arg1;
 - (void)setHasIsInNetwork:(bool)arg1;
+- (void)setHasIsOrgUser:(bool)arg1;
 - (void)setHasOutOfNetworkKeyType:(bool)arg1;
 - (void)setHasParticipantType:(bool)arg1;
 - (void)setHasPermission:(bool)arg1;
@@ -127,6 +134,7 @@
 - (void)setHasState:(bool)arg1;
 - (void)setInviterId:(id)arg1;
 - (void)setIsInNetwork:(bool)arg1;
+- (void)setIsOrgUser:(bool)arg1;
 - (void)setOutOfNetworkKeyType:(int)arg1;
 - (void)setOutOfNetworkPrivateKey:(id)arg1;
 - (void)setParticipantId:(id)arg1;

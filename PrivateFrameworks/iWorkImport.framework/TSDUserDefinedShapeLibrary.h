@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDUserDefinedShapeLibrary : NSObject {
+@interface TSDUserDefinedShapeLibrary : NSObject <TSDShapeSearchResultProviding> {
     bool  _isWritingDefaultsDatabase;
     NSString * _lastWriterToken;
     NSString * _localWriterToken;
@@ -62,8 +62,8 @@
 - (void)setP_shadowDefaults:(id)arg1;
 - (void)setP_shapeCache:(id)arg1;
 - (void)setP_userDefaults:(id)arg1;
+- (id)shapeFromSearchResult:(id)arg1;
 - (bool)updateShapeAtIndex:(unsigned long long)arg1 withName:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)userDefinedShapeAtIndex:(unsigned long long)arg1;
-- (id)userDefinedShapeForSearchResult:(id)arg1;
 
 @end

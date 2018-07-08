@@ -15,6 +15,8 @@
     NSString * _keyProfile;
     long long  _personalizationStyle;
     id /* block */  _responseBlock;
+    bool  _shouldSuppressCookies;
+    bool  _shouldSuppressUserInfo;
     NSString * _storeFrontSuffix;
     NSNumber * _timeoutInterval;
     NSString * _userAgent;
@@ -27,6 +29,8 @@
 @property (copy) NSString *keyProfile;
 @property long long personalizationStyle;
 @property (copy) id /* block */ responseBlock;
+@property bool shouldSuppressCookies;
+@property bool shouldSuppressUserInfo;
 @property (copy) NSString *storeFrontSuffix;
 @property (copy) NSNumber *timeoutInterval;
 
@@ -57,10 +61,14 @@
 - (void)setKeyProfile:(id)arg1;
 - (void)setPersonalizationStyle:(long long)arg1;
 - (void)setResponseBlock:(id /* block */)arg1;
+- (void)setShouldSuppressCookies:(bool)arg1;
+- (void)setShouldSuppressUserInfo:(bool)arg1;
 - (void)setStoreFrontSuffix:(id)arg1;
 - (void)setTimeoutInterval:(id)arg1;
 - (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
 - (void)setValue:(id)arg1 forRequestParameter:(id)arg2;
+- (bool)shouldSuppressCookies;
+- (bool)shouldSuppressUserInfo;
 - (id)storeFrontSuffix;
 - (id)timeoutInterval;
 - (id)valueForHTTPHeaderField:(id)arg1;

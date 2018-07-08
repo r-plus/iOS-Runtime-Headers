@@ -54,6 +54,7 @@
 - (id)cloudKitContainerName;
 - (id)conn;
 - (bool)enableSQLiteArchivingWithDefaultValue:(bool)arg1;
+- (bool)fixOwnershipOnFileScanWithDefaultValue:(bool)arg1;
 - (bool)flushLogMessages;
 - (id)init;
 - (bool)keepDailySnapshots;

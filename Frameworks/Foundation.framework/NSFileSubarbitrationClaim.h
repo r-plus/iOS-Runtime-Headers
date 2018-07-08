@@ -17,6 +17,7 @@
     NSArray * _writingURLs;
 }
 
+@property (readonly) bool nullified;
 @property (retain) NSXPCConnection *subarbiterConnection;
 
 + (bool)supportsSecureCoding;
@@ -39,6 +40,7 @@
 - (bool)isBlockedByReadingItemAtLocation:(id)arg1 options:(unsigned long long)arg2;
 - (bool)isBlockedByWritingItemAtLocation:(id)arg1 options:(unsigned long long)arg2;
 - (void)itemAtLocation:(id)arg1 wasReplacedByItemAtLocation:(id)arg2;
+- (bool)nullified;
 - (id)relinquishmentForWrite:(bool)arg1 toPresenterForID:(id)arg2;
 - (void)revoked;
 - (void)setSubarbiterConnection:(id)arg1;

@@ -3,16 +3,16 @@
  */
 
 @interface AUPasscodeEncoder : AUAudioUnit {
-    struct map<unsigned int, float, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, float> > > { 
-        struct __tree<std::__1::__value_type<unsigned int, float>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, float>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, float> > > { 
+    struct map<unsigned int, apc::Any, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, apc::Any> > > { 
+        struct __tree<std::__1::__value_type<unsigned int, apc::Any>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, apc::Any>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, apc::Any> > > { 
             struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *__begin_node_; 
-            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, float>, void *> > > { 
+            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, apc::Any>, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
-                } __first_; 
+                } __value_; 
             } __pair1_; 
-            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, float>, std::__1::less<unsigned int>, true> > { 
-                unsigned long long __first_; 
+            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, apc::Any>, std::__1::less<unsigned int>, true> > { 
+                unsigned long long __value_; 
             } __pair3_; 
         } __tree_; 
     }  _apcEncoderConfig;
@@ -25,7 +25,7 @@
     bool  _embedPasscode;
     struct unique_ptr<EOFReachedMessage, std::__1::default_delete<EOFReachedMessage> > { 
         struct __compressed_pair<EOFReachedMessage *, std::__1::default_delete<EOFReachedMessage> > { 
-            struct EOFReachedMessage {} *__first_; 
+            struct EOFReachedMessage {} *__value_; 
         } __ptr_; 
     }  _eofMessage;
     unsigned int  _fadeOutNumSamples;
@@ -41,7 +41,7 @@
     AUAudioUnitBusArray * _inputBusArray;
     struct unique_ptr<APCEncoderBase, std::__1::default_delete<APCEncoderBase> > { 
         struct __compressed_pair<APCEncoderBase *, std::__1::default_delete<APCEncoderBase> > { 
-            struct APCEncoderBase {} *__first_; 
+            struct APCEncoderBase {} *__value_; 
         } __ptr_; 
     }  _kernel;
     unsigned long long  _loopNumber;
@@ -52,7 +52,7 @@
     NSData * _payload;
     struct unique_ptr<RealtimeMessenger, std::__1::default_delete<RealtimeMessenger> > { 
         struct __compressed_pair<RealtimeMessenger *, std::__1::default_delete<RealtimeMessenger> > { 
-            struct RealtimeMessenger {} *__first_; 
+            struct RealtimeMessenger {} *__value_; 
         } __ptr_; 
     }  _rtMessenger;
     bool  _silenceOutputOnNextAssetEnding;

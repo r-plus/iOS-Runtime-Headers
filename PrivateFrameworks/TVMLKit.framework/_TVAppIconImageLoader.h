@@ -14,6 +14,7 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
+- (id)URLForObject:(id)arg1;
 - (id)_createApplicationIconForIdentifier:(id)arg1;
 - (void)cancelLoad:(id)arg1;
 - (id)imageKeyForObject:(id)arg1;

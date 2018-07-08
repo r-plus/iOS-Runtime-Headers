@@ -66,7 +66,7 @@
         struct UUIDData<TSP::UUIDData> {} *__begin_; 
         struct UUIDData<TSP::UUIDData> {} *__end_; 
         struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
-            struct UUIDData<TSP::UUIDData> {} *__first_; 
+            struct UUIDData<TSP::UUIDData> {} *__value_; 
         } __end_cap_; 
     }  _rowOrColumnUuids;
     struct TSCERangeCoordinate { 

@@ -6,6 +6,7 @@
     ACCMediaLibraryUpdateLibraryInfo * _info;
     NSString * _libraryUID;
     bool  _state;
+    bool  _stateInit;
 }
 
 @property (nonatomic, readonly) ACCMediaLibraryUpdateLibraryInfo *info;

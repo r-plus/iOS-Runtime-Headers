@@ -5,6 +5,8 @@
 
 @optional
 
+- (void)assistantConnection:(AFConnection *)arg1 audioSessionDidBecomeActive:(bool)arg2;
+- (void)assistantConnection:(AFConnection *)arg1 audioSessionWillBecomeActive:(bool)arg2;
 - (void)assistantConnection:(AFConnection *)arg1 didChangeAudioSessionID:(unsigned int)arg2;
 - (void)assistantConnection:(AFConnection *)arg1 didFinishAcousticIDRequestWithSuccess:(bool)arg2;
 - (void)assistantConnection:(AFConnection *)arg1 didHandleQuickStopWithAction:(unsigned long long)arg2;

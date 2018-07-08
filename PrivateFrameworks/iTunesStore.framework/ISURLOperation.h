@@ -3,6 +3,7 @@
  */
 
 @interface ISURLOperation : ISOperation <SSURLSessionManagerDelegate> {
+    NSNumber * __accountDSIDOverride;
     NSURLRequest * _activeURLRequest;
     SSAuthenticationContext * _authenticationContext;
     NSMutableData * _dataBuffer;
@@ -26,6 +27,7 @@
 @property (readonly) SSHTTPArchive *HTTPArchive;
 @property (nonatomic, readonly) NSURLCache *URLCache;
 @property (nonatomic, readonly) NSString *URLCacheID;
+@property (setter=_setAccountDSIDOverride:, nonatomic, retain) NSNumber *_accountDSIDOverride;
 @property (getter=_loadsHTTPFailures, setter=_setLoadsHTTPFailures:) bool _loadsHTTPFailures;
 @property (getter=_shouldSetCookies, setter=_setShouldSetCookies:) bool _shouldSetCookies;
 @property (getter=_usesPrivateCookieStore, setter=_setUsesPrivateCookieStore:) bool _usesPrivateCookieStore;
@@ -72,6 +74,7 @@
 - (void)URLSession:(id)arg1 task:(id)arg2 didSendBodyData:(long long)arg3 totalBytesSent:(long long)arg4 totalBytesExpectedToSend:(long long)arg5;
 - (void)URLSession:(id)arg1 task:(id)arg2 needNewBodyStream:(id /* block */)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(id /* block */)arg5;
+- (id)_accountDSIDOverride;
 - (id)_accountIdentifier;
 - (id)_activeURL;
 - (id)_activeURLRequest;
@@ -104,6 +107,7 @@
 - (void)_sendOutputToDelegate:(id)arg1;
 - (void)_sendRequestToDelegate:(id)arg1;
 - (void)_sendResponseToDelegate:(id)arg1;
+- (void)_setAccountDSIDOverride:(id)arg1;
 - (void)_setActiveURLRequest:(id)arg1;
 - (void)_setLoadsHTTPFailures:(bool)arg1;
 - (void)_setShouldSetCookies:(bool)arg1;

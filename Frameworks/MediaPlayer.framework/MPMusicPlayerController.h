@@ -2,67 +2,66 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPMusicPlayerController : NSObject <MPMediaPlayback> {
-    MPMusicPlayerControllerInternal * _internal;
+@interface MPMusicPlayerController : NSObject <MPMediaPlayback, MPRequestResponseControllerDelegate, MPSystemMusicPlayerController, MPVolumeControllerDelegate> {
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    bool  _hasPreparedToPlay;
+    MPMediaItem * _pendingNowPlayingItem;
+    NSObject<OS_dispatch_queue> * _pendingPrepareCalloutQueue;
+    id /* block */  _pendingPrepareCompletion;
+    MPMusicPlayerQueueDescriptor * _pendingQueueDescriptor;
+    NSObject<OS_dispatch_group> * _pendingRequestGroup;
+    MPArtworkCatalog * _previousArtworkCatalog;
+    MPMusicPlayerQueueDescriptor * _queueDescriptor;
+    MPRequestResponseController * _requestController;
+    NSMutableDictionary * _responseValidators;
+    MPVolumeController * _volumeController;
 }
 
 @property (nonatomic) float currentPlaybackRate;
 @property (nonatomic) double currentPlaybackTime;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) unsigned long long indexOfNowPlayingItem;
 @property (nonatomic, readonly) bool isPreparedToPlay;
 @property (nonatomic, copy) MPMediaItem *nowPlayingItem;
 @property (nonatomic, readonly) long long playbackState;
+@property (nonatomic, retain) MPMusicPlayerQueueDescriptor *queueDescriptor;
 @property (nonatomic) long long repeatMode;
+@property (nonatomic, retain) MPRequestResponseController *requestController;
 @property (nonatomic) long long shuffleMode;
+@property (readonly) Class superclass;
 @property (nonatomic) float volume;
+@property (nonatomic, retain) MPVolumeController *volumeController;
 
++ (bool)_isPlayerInstalled;
 + (id)applicationMusicPlayer;
 + (id)applicationQueuePlayer;
 + (id)iPodMusicPlayer;
 + (void)setRunLoopForNotifications:(id)arg1;
++ (id)supportedProperties;
 + (id)systemMusicPlayer;
 
 - (void).cxx_destruct;
-- (void)_cancelExistingPrepareToPlay;
-- (void)_clientCheckInUsingExistencePort:(bool)arg1;
-- (void)_isQueuePreparedDidChange:(bool)arg1;
-- (void)_itemPlaybackDidEnd:(unsigned long long)arg1;
-- (void)_musicPlayerDidLaunch;
-- (bool)_musicPlayerExistencePortIsValid;
-- (void)_nowPlayingItemDidChange:(unsigned long long)arg1;
-- (void)_playbackStateDidChange:(long long)arg1;
-- (void)_queueDidInvalidate;
-- (void)_queuePreparationFailedWithErrorCode:(unsigned char)arg1;
-- (void)_queueRequestDidFinish;
-- (void)_queueUpdateDidFinish;
-- (void)_registerForLaunchNotifications;
-- (void)_repeatModeDidChange:(long long)arg1;
-- (void)_runMigServerOnPort:(unsigned int)arg1;
-- (void)_serverDied:(id)arg1;
-- (void)_setUseApplicationSpecificQueue:(bool)arg1;
-- (void)_shuffleModeDidChange:(long long)arg1;
-- (void)_stopMigServer;
-- (void)_systemVolumeDidChange:(id)arg1;
-- (void)_unregisterForLaunchNotifications;
+- (id)_init;
+- (id)_mediaItemFromSong:(id)arg1;
+- (void)_preflightRequestIfNeeded;
 - (void)appendQueueDescriptor:(id)arg1;
 - (void)beginGeneratingPlaybackNotifications;
 - (void)beginSeekingBackward;
 - (void)beginSeekingForward;
+- (void)controller:(id)arg1 defersResponseReplacement:(id /* block */)arg2;
 - (unsigned long long)currentChapterIndex;
 - (float)currentPlaybackRate;
 - (double)currentPlaybackTime;
-- (void)dealloc;
+- (void)didFinishLoadingRequestForController:(id)arg1;
 - (void)endGeneratingPlaybackNotifications;
 - (void)endSeeking;
-- (void)forwardInvocation:(id)arg1;
 - (unsigned long long)indexOfNowPlayingItem;
-- (id)init;
-- (id)internal;
 - (bool)isGeniusAvailable;
 - (bool)isGeniusAvailableForSeedItems:(id)arg1;
 - (bool)isNowPlayingItemFromGeniusMix;
 - (bool)isPreparedToPlay;
-- (id)methodSignatureForSelector:(SEL)arg1;
 - (id)nowPlayingItem;
 - (id)nowPlayingItemAtIndex:(unsigned long long)arg1;
 - (unsigned long long)numberOfItems;
@@ -70,7 +69,6 @@
 - (void)pause;
 - (void)pauseWithFadeoutDuration:(double)arg1;
 - (void)play;
-- (void)playItem:(id)arg1;
 - (long long)playbackSpeed;
 - (long long)playbackState;
 - (void)prepareQueueForPlayback;
@@ -79,13 +77,14 @@
 - (void)prependQueueDescriptor:(id)arg1;
 - (id)queueAsQuery;
 - (id)queueAsRadioStation;
+- (id)queueDescriptor;
 - (long long)repeatMode;
-- (bool)serverIsAlive;
-- (void)setCurrentChapterIndex:(unsigned long long)arg1;
+- (id)requestController;
 - (void)setCurrentPlaybackRate:(float)arg1;
 - (void)setCurrentPlaybackTime:(double)arg1;
 - (void)setNowPlayingItem:(id)arg1;
 - (void)setPlaybackSpeed:(long long)arg1;
+- (void)setQueueDescriptor:(id)arg1;
 - (void)setQueueWithDescriptor:(id)arg1;
 - (void)setQueueWithGeniusMixPlaylist:(id)arg1;
 - (void)setQueueWithItemCollection:(id)arg1;
@@ -95,21 +94,23 @@
 - (bool)setQueueWithSeedItems:(id)arg1;
 - (void)setQueueWithStoreIDs:(id)arg1;
 - (void)setRepeatMode:(long long)arg1;
+- (void)setRequestController:(id)arg1;
 - (void)setShuffleMode:(long long)arg1;
 - (void)setUserQueueModificationsDisabled:(bool)arg1;
 - (void)setVolume:(float)arg1;
+- (void)setVolumeController:(id)arg1;
 - (void)setVolumePrivate:(float)arg1;
 - (void)shuffle;
 - (long long)shuffleMode;
-- (bool)skipInDirection:(long long)arg1 error:(id*)arg2;
 - (void)skipToBeginning;
 - (void)skipToBeginningOrPreviousItem;
-- (void)skipToNextChapter;
 - (void)skipToNextItem;
-- (void)skipToPreviousChapter;
 - (void)skipToPreviousItem;
 - (void)stop;
 - (bool)userQueueModificationsDisabled;
 - (float)volume;
+- (id)volumeController;
+- (void)volumeController:(id)arg1 volumeValueDidChange:(float)arg2;
+- (void)willBeginLoadingRequestForController:(id)arg1;
 
 @end

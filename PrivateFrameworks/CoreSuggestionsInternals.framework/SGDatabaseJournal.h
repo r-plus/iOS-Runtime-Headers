@@ -14,6 +14,7 @@
 
 @property (nonatomic, readonly) bool journaling;
 
++ (id)_allowedTypesForQueryKeyedArchives;
 + (id /* block */)_binderForDictionary:(id)arg1;
 + (id)journalForInMemoryDb;
 + (id)journalWithName:(id)arg1;

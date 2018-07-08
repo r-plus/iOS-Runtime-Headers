@@ -18,6 +18,7 @@
 - (id)inspectorLocalizedValueLabelsTabName;
 - (id)legalChartLabelPositions;
 - (int)legendBadgeType;
+- (id)seriesFillLabelUIString;
 - (id)supportedValueLabelsAxisCombinations;
 - (bool)supportsCalloutLines;
 - (bool)supportsValueLabelsSeriesName;

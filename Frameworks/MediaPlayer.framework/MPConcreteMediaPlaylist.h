@@ -9,6 +9,8 @@
     NSMutableDictionary * _properties;
 }
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (bool)_allowsEditing;
 - (void)_enumerateItemPersistentIDsUsingBlock:(id /* block */)arg1;

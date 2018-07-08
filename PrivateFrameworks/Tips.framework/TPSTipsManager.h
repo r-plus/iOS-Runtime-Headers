@@ -15,6 +15,7 @@
 - (void).cxx_destruct;
 - (void)_destroyXPCConnection;
 - (void)activateCollectionIdentifier:(id)arg1 context:(id)arg2;
+- (id)cacheCollectionImageFileURLForCollectionIdentifier:(id)arg1;
 - (id)collectionImageDownloadHandlerMap;
 - (id)collectionImageDownloadTasksMap;
 - (void)collectionImageForCollectionIdentifier:(id)arg1 languageCode:(id)arg2 fetchIfNeeded:(bool)arg3 completionHandler:(id /* block */)arg4;
@@ -22,7 +23,7 @@
 - (void)dealloc;
 - (id)init;
 - (id)localizedStringForKey:(id)arg1 localizedStringsFileName:(id)arg2;
-- (id)model;
+- (id)modelWithSeparator:(id)arg1;
 - (id)welcomeInformation;
 - (id)xpcConnection;
 

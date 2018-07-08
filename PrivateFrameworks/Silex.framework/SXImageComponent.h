@@ -14,5 +14,6 @@
 
 - (id)captionWithLocalizedRoleForSpeaking;
 - (bool)shouldBeExposedToAssistiveTechnology;
+- (unsigned long long)traits;
 
 @end

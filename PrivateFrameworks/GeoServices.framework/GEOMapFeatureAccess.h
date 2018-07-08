@@ -47,6 +47,7 @@
 - (void)preloadBuildingTilesNear:(struct { double x1; double x2; })arg1 radius:(double)arg2 completionHandler:(id /* block */)arg3;
 - (void)preloadRoadTilesNear:(struct { double x1; double x2; })arg1 radius:(double)arg2 completionHandler:(id /* block */)arg3;
 - (void)preloadTransitTilesNear:(struct { double x1; double x2; })arg1 radius:(double)arg2 completionHandler:(id /* block */)arg3;
+- (id)roadTileKeysNear:(struct { double x1; double x2; })arg1 radius:(double)arg2;
 - (void)setAllowNetworkTileLoad:(bool)arg1;
 - (void)setFlipNegativeTravelDirectionRoads:(bool)arg1;
 - (void)setVisitDoubleTravelDirectionRoadsTwice:(bool)arg1;

@@ -25,5 +25,6 @@
 - (bool)isObjectTypeCGColor;
 - (id)keyPath;
 - (void)setIsObjectTypeCGColor:(bool)arg1;
+- (id)valueForKeyPath:(id)arg1 atTime:(double)arg2 animationCache:(id)arg3;
 
 @end

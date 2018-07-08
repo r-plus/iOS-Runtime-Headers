@@ -21,7 +21,7 @@
 
 + (NSArray *)customAttributes;
 + (NSDictionary *)customEffectTimingCurveDisplayParametersForAttributes:(NSDictionary *)arg1 layoutStyleOnly:(bool)arg2;
-+ (long long)rendererTypeForCapabilities:(TSDCapabilities *)arg1;
++ (long long)rendererTypeForAnimationContext:(KNAnimationContext *)arg1;
 
 - (NSDictionary *)animationInfoForAnimatedBuild:(KNAnimatedBuild *)arg1;
 

@@ -3,7 +3,7 @@
  */
 
 @interface MRAVDistantExternalDeviceMetadata : NSObject <NSMutableCopying, NSSecureCoding> {
-    void * _deviceInfo;
+    _MRDeviceInfoMessageProtobuf * _deviceInfo;
     NSString * _hostName;
     long long  _hostPort;
     NSString * _name;
@@ -12,7 +12,7 @@
     bool  _usingSystemPairing;
 }
 
-@property (nonatomic, readonly) void*deviceInfo;
+@property (nonatomic, readonly) _MRDeviceInfoMessageProtobuf *deviceInfo;
 @property (nonatomic, readonly) NSString *hostName;
 @property (nonatomic, readonly) long long hostPort;
 @property (nonatomic, readonly) NSString *name;
@@ -22,10 +22,10 @@
 
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)_copyWithZone:(struct _NSZone { }*)arg1 usingConcreteClass:(Class)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (void*)deviceInfo;
+- (id)deviceInfo;
 - (void)encodeWithCoder:(id)arg1;
 - (id)hostName;
 - (long long)hostPort;

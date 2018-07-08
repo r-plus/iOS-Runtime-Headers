@@ -192,6 +192,7 @@
 - (bool)isUsingPageViewController;
 - (unsigned long long)lastPageIndex;
 - (void)layoutDocumentView;
+- (void)layoutSubviews;
 - (double)lineWidthThreshold;
 - (id)longPressGestureRecognizer;
 - (double)maxScaleFactor;

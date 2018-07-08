@@ -39,6 +39,7 @@
         unsigned int avoidsHighways : 1; 
         unsigned int avoidsTolls : 1; 
         unsigned int avoidsTraffic : 1; 
+        unsigned int isOfflineResponse : 1; 
     }  _has;
     unsigned int  _historicTravelTime;
     struct { 
@@ -51,6 +52,7 @@
         unsigned long long count; 
         unsigned long long size; 
     }  _incidentIndices;
+    bool  _isOfflineResponse;
     GEOLaunchAndGoCardText * _launchAndGoCardText;
     NSString * _name;
     NSString * _phoneticName;
@@ -112,6 +114,7 @@
 @property (nonatomic) bool hasDrivingSide;
 @property (nonatomic) bool hasExpectedTime;
 @property (nonatomic) bool hasHistoricTravelTime;
+@property (nonatomic) bool hasIsOfflineResponse;
 @property (nonatomic, readonly) bool hasLaunchAndGoCardText;
 @property (nonatomic, readonly) bool hasName;
 @property (nonatomic, readonly) bool hasPhoneticName;
@@ -131,6 +134,7 @@
 @property (nonatomic, readonly) unsigned long long incidentEndOffsetsInRoutesCount;
 @property (nonatomic, readonly) unsigned int*incidentIndices;
 @property (nonatomic, readonly) unsigned long long incidentIndicesCount;
+@property (nonatomic) bool isOfflineResponse;
 @property (nonatomic, retain) GEOLaunchAndGoCardText *launchAndGoCardText;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *phoneticName;
@@ -248,6 +252,7 @@
 - (bool)hasDrivingSide;
 - (bool)hasExpectedTime;
 - (bool)hasHistoricTravelTime;
+- (bool)hasIsOfflineResponse;
 - (bool)hasLaunchAndGoCardText;
 - (bool)hasName;
 - (bool)hasPhoneticName;
@@ -275,6 +280,7 @@
 - (bool)isContingentRouteFor:(id)arg1 afterPoint:(unsigned int)arg2 mainRoutes:(id)arg3;
 - (bool)isEqual:(id)arg1;
 - (bool)isMainOrAlternateRoute;
+- (bool)isOfflineResponse;
 - (id)launchAndGoCardText;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
@@ -320,6 +326,7 @@
 - (void)setHasDrivingSide:(bool)arg1;
 - (void)setHasExpectedTime:(bool)arg1;
 - (void)setHasHistoricTravelTime:(bool)arg1;
+- (void)setHasIsOfflineResponse:(bool)arg1;
 - (void)setHasRouteType:(bool)arg1;
 - (void)setHasStaticTravelTime:(bool)arg1;
 - (void)setHasTransportType:(bool)arg1;
@@ -328,6 +335,7 @@
 - (void)setHistoricTravelTime:(unsigned int)arg1;
 - (void)setIncidentEndOffsetsInRoutes:(unsigned int*)arg1 count:(unsigned long long)arg2;
 - (void)setIncidentIndices:(unsigned int*)arg1 count:(unsigned long long)arg2;
+- (void)setIsOfflineResponse:(bool)arg1;
 - (void)setLaunchAndGoCardText:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPhoneticName:(id)arg1;

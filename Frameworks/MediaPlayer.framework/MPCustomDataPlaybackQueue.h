@@ -9,6 +9,8 @@
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
++ (bool)supportsSecureCoding;
+
 - (id)data;
 - (id)description;
 - (id)identifier;

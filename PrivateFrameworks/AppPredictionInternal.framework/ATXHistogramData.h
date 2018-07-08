@@ -27,6 +27,7 @@
 - (void)decayWithHalfLife:(float)arg1;
 - (void)deleteWhereA:(unsigned short)arg1 b:(unsigned short)arg2;
 - (void)encodeWithCoder:(id)arg1;
+- (float)entropyWhereA:(unsigned short)arg1 b:(unsigned short)arg2;
 - (void)enumerate:(id /* block */)arg1;
 - (id)init;
 - (id)initWithCategoricalHistogram:(id)arg1;

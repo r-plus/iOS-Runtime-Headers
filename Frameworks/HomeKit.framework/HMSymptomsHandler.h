@@ -77,6 +77,11 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
++ (id /* block */)hf_symptomArraySortComparator;
++ (id)hf_symptomTypesSortedByPriority;
++ (void)load;
+
+- (id)hf_fakeSymptomsImplementationUsedForDebuggingPleaseDontTouchThisItIsFragileSwizzlingIsBadMKay;
 - (bool)hf_isFixingSymptom;
 - (id)hf_symptomsSortedByPriority;
 

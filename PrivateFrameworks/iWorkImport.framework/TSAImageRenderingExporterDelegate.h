@@ -18,8 +18,8 @@
 @property (nonatomic) bool scaleToFit;
 @property (nonatomic) unsigned long long width;
 
+- (void).cxx_destruct;
 - (float)compressionFactor;
-- (void)dealloc;
 - (unsigned long long)height;
 - (id)imageType;
 - (id)initWithRenderingExporter:(id)arg1;

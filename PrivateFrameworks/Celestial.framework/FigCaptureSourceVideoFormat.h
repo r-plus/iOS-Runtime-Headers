@@ -59,6 +59,7 @@
 @property (getter=isZoomSupported, readonly) bool zoomSupported;
 
 + (void)initialize;
++ (bool)supportsSecureCoding;
 
 - (id)AVCaptureSessionPresets;
 - (struct { int x1; int x2; })_maxUseableSensorDimensions;
@@ -80,6 +81,7 @@
 - (bool)hasSensorHDRCompanionIndex;
 - (struct { int x1; int x2; })highResStillImageDimensions;
 - (int)horizontalSensorBinningFactor;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithFigCaptureStreamFormatDictionary:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (bool)isBinned;

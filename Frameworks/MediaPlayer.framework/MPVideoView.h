@@ -69,7 +69,7 @@
 // Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
 
 + (id)keyPathsForValuesAffectingPreferredContentSize;
-+ (id)keyPathsForValuesAffectingReadyForDisplay;
++ (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 
 - (bool)isReadyForDisplay;
 - (struct CGSize { double x1; double x2; })preferredContentSize;

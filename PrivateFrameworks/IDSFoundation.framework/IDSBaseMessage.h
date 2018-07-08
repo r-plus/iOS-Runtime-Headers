@@ -21,7 +21,10 @@
     bool  _httpDoNotDecodeData;
     long long  _importanceLevel;
     unsigned long long  _receivedByteCount;
+    NSDate * _requestEnd;
+    NSDate * _requestStart;
     NSDictionary * _responseAlert;
+    NSDate * _responseReceived;
     NSNumber * _retryCount;
     unsigned long long  _sentByteCount;
     NSString * _service;
@@ -88,9 +91,12 @@
 @property (nonatomic) struct __SecKey { }*pushPublicKey;
 @property (nonatomic, copy) NSData *pushToken;
 @property (nonatomic) unsigned long long receivedByteCount;
+@property (nonatomic, retain) NSDate *requestEnd;
+@property (nonatomic, retain) NSDate *requestStart;
 @property (readonly) NSArray *requiredKeys;
 @property (copy) NSDictionary *responseAlertInfo;
 @property (readonly) long long responseCommand;
+@property (nonatomic, retain) NSDate *responseReceived;
 @property (nonatomic, copy) NSNumber *retryCount;
 @property (readonly) NSString *retryCountKey;
 @property (nonatomic) unsigned long long sentByteCount;
@@ -192,9 +198,12 @@
 - (struct __SecKey { }*)pushPublicKey;
 - (id)pushToken;
 - (unsigned long long)receivedByteCount;
+- (id)requestEnd;
+- (id)requestStart;
 - (id)requiredKeys;
 - (id)responseAlertInfo;
 - (long long)responseCommand;
+- (id)responseReceived;
 - (id)retryCount;
 - (id)retryCountKey;
 - (unsigned long long)sentByteCount;
@@ -224,7 +233,10 @@
 - (void)setPushPublicKey:(struct __SecKey { }*)arg1;
 - (void)setPushToken:(id)arg1;
 - (void)setReceivedByteCount:(unsigned long long)arg1;
+- (void)setRequestEnd:(id)arg1;
+- (void)setRequestStart:(id)arg1;
 - (void)setResponseAlertInfo:(id)arg1;
+- (void)setResponseReceived:(id)arg1;
 - (void)setRetryCount:(id)arg1;
 - (void)setSentByteCount:(unsigned long long)arg1;
 - (void)setServerTimestamp:(id)arg1;
@@ -246,7 +258,6 @@
 - (void)setWantsIntegerUniqueIDs:(bool)arg1;
 - (void)setWantsMultipleResponses:(bool)arg1;
 - (void)setWantsResponse:(bool)arg1;
-- (bool)shouldForceDevicesToCarry;
 - (id)signingSession;
 - (id)subService;
 - (double)timeSent;

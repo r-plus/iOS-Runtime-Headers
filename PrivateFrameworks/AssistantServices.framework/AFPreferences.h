@@ -9,6 +9,7 @@
     bool  _registeredForInternalPrefs;
     bool  _registeredForLanguageCode;
     bool  _registeredForOutputVoice;
+    bool  _registeredForSupportedLanguages;
 }
 
 + (id)sharedPreferences;
@@ -26,10 +27,15 @@
 - (void)_registerForLanguageCodeChangeNotifications;
 - (void)_registerForNavStatusIfNeeded;
 - (void)_registerForOutputVoice;
+- (void)_registerForSupportedLanguageChangeNotifications;
 - (void)_setAssistantIsEnabledLocal:(bool)arg1;
 - (void)_setDictationIsEnabledLocal:(bool)arg1;
 - (void)_setLoggingDefaultValue:(id)arg1 forKey:(id)arg2;
+- (void)_setSupplementalLanguageDictionary:(id)arg1 forProduct:(id)arg2;
+- (void)_setSupplementalLanguages:(id)arg1 forProduct:(id)arg2 forBuildVersion:(id)arg3;
 - (void)_setSuppressDictationOptInLocal:(bool)arg1;
+- (id)_supplementalLanguagesDictionary;
+- (void)_supportedLanguagesDidChangeExternally;
 - (id)activitySummaryReportDate;
 - (id)allSiriLanguageCodesForSystemLanguageCode:(id)arg1 isGoodFit:(bool*)arg2;
 - (bool)applySASToFirstPartyDomains;
@@ -47,7 +53,9 @@
 - (bool)fileLoggingIsEnabled;
 - (void)getOfflineDictationStatusWithCompletion:(id /* block */)arg1;
 - (long long)handsFreeMode;
+- (id)horsemanSupplementalLanguageDictionary;
 - (bool)ignoreServerManualEndpointingThreshold;
+- (id)inProgressOutputVoice;
 - (id)init;
 - (bool)isCurrentLocaleNativelySupported;
 - (bool)isLocaleIdentifierNativelySupported:(id)arg1;
@@ -76,6 +84,7 @@
 - (void)setFileLoggingIsEnabled:(bool)arg1;
 - (void)setHandsFreeMode:(long long)arg1;
 - (void)setIgnoreServerManualEndpointingThreshold:(bool)arg1;
+- (void)setInProgressOutputVoice:(id)arg1;
 - (void)setLanguageCode:(id)arg1;
 - (void)setLimitedAudioLoggingEnabled:(bool)arg1;
 - (void)setManualEndpointingThreshold:(id)arg1;
@@ -106,6 +115,10 @@
 - (bool)siriKitEnabledForNativeMessages;
 - (bool)siriKitEnabledForNativeNotes;
 - (bool)streamingDictationEnabled;
+- (id)supplementalLanguageDictionaryForProduct:(id)arg1;
+- (id)supplementalLanguages;
+- (id)supplementalLanguagesForProduct:(id)arg1 forBuildVersion:(id)arg2;
+- (id)supplementalLanguagesModificationDate;
 - (bool)suppressAssistantOptIn;
 - (bool)suppressDictationOptIn;
 - (void)synchronize;

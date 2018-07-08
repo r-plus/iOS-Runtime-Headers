@@ -22,11 +22,11 @@
 
 + (id)discoverySessionWithEndpointFeatures:(unsigned int)arg1;
 
+- (void).cxx_destruct;
 - (id)_init;
 - (id)addEndpointsChangedCallback:(id /* block */)arg1;
 - (id)addOutputDevicesChangedCallback:(id /* block */)arg1;
 - (bool)alwaysAllowUpdates;
-- (void)dealloc;
 - (id)endpointsChangedCallbacks;
 - (id)outputDevicesChangedCallbacks;
 - (void)removeEndpointsChangedCallback:(id)arg1;

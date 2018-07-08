@@ -59,6 +59,7 @@
 - (void)_markAsDirtyAndNotifyObservers:(bool)arg1;
 - (id)_newSyncState;
 - (void)_notifyObservers;
+- (void)_possiblySimulateCrashWithMessage:(id)arg1;
 - (long long)_qualityOfServiceForFirstSync:(bool)arg1;
 - (long long)_qualityOfServiceForNextSync;
 - (void)_serialSyncWithCompletion:(id /* block */)arg1;
@@ -66,6 +67,7 @@
 - (void)addCommandToCommandQueue:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)addStateObserver:(id)arg1;
+- (void)assertReadyForUse;
 - (bool)canHelpPruneZoneName:(id)arg1;
 - (bool)canHelpRestoreZoneName:(id)arg1;
 - (unsigned long long)changeCount;
@@ -111,6 +113,8 @@
 - (void)setSyncQueue:(id)arg1;
 - (void)setSyncingEnabled:(bool)arg1;
 - (void)setWaitingForFirstSync:(bool)arg1;
+- (double)softMaxRecordAgeWhenMigratingZoneName:(id)arg1;
+- (unsigned long long)softMaxRecordCountWhenMigratingZoneName:(id)arg1;
 - (id)stateObservers;
 - (id)storeDirectory;
 - (id)syncManagers;

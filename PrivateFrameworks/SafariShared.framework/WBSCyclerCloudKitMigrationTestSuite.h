@@ -28,6 +28,6 @@
 - (void)_validateResultsOfMigrationWithTarget:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)init;
 - (bool)isFinished;
-- (void)runWithTarget:(id)arg1 deviceCoordinator:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)runWithTarget:(id)arg1 completionHandler:(id /* block */)arg2;
 
 @end

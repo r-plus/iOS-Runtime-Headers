@@ -15,6 +15,6 @@
 - (unsigned long long)features;
 - (id)initWithFeatures:(unsigned long long)arg1;
 - (bool)isFeatureEnabled:(unsigned long long)arg1;
-- (void)loadPublicContainer:(id)arg1 privateContainer:(id)arg2;
+- (void)loadInRegistry:(id)arg1;
 
 @end

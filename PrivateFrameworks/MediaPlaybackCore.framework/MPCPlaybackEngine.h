@@ -7,7 +7,6 @@
     MPProtocolProxy<MPCPlaybackEngineEventObserving> * _eventObserver;
     MPCPlaybackIntent * _fallbackPlaybackIntent;
     _MPCAVController * _implementation;
-    bool  _isPreparingForImminentPlaybackIntent;
     _MPCLeaseManager * _leaseManager;
     _MPCMediaRemotePublisher * _mediaRemotePublisher;
     bool  _pictureInPictureSupported;
@@ -27,6 +26,7 @@
 @property (nonatomic, readonly) _MPCMediaRemotePublisher *mediaRemotePublisher;
 @property (getter=isPictureInPictureSupported, nonatomic) bool pictureInPictureSupported;
 @property (nonatomic, readonly, copy) NSString *playerID;
+@property (nonatomic, readonly) MPCPlayerPath *playerPath;
 @property (nonatomic, readonly) _MPCReportingController *reportingController;
 @property (getter=hasScheduledPlaybackStatePreservation, nonatomic) bool scheduledPlaybackStatePreservation;
 @property (getter=isStateRestorationSupported, nonatomic) bool stateRestorationSupported;
@@ -37,7 +37,7 @@
 + (void)preheatPlayback;
 
 - (void).cxx_destruct;
-- (id)_playerForMusicPlayerServer;
+- (void)_initializePlaybackStack;
 - (void)_preservePlaybackStateImmediately;
 - (void)_restorePlaybackStateWithCompletion:(id /* block */)arg1;
 - (void)addEngineObserver:(id)arg1;
@@ -56,7 +56,7 @@
 - (id)leaseManager;
 - (id)mediaRemotePublisher;
 - (id)playerID;
-- (void)prepareForImminentPlaybackIntent;
+- (id)playerPath;
 - (void)removeEngineObserver:(id)arg1;
 - (void)removeSupportedSpecializedQueueIdentifier:(id)arg1;
 - (void)reportUserSeekFromTime:(double)arg1 toTime:(double)arg2;

@@ -56,6 +56,7 @@
 - (void)requestGraphRebuildFractionCompletedWithReply:(id /* block */)arg1;
 - (id)requestGraphStatisticsWithOptions:(id)arg1 error:(id*)arg2;
 - (id)requestGraphStatus:(id*)arg1;
+- (void)requestHighlightEstimatesWithReply:(id /* block */)arg1;
 - (bool)requestInvalidatePersistentCaches:(id*)arg1;
 - (bool)requestInvalidateTransientCaches:(id*)arg1;
 - (id)requestMemoryDebugInformationForMemoryWithLocalIdentifier:(id)arg1 precision:(unsigned long long)arg2 error:(id*)arg3;

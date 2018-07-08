@@ -6,7 +6,7 @@
     <SXURLHandling> * _URLHandler;
     <SXURLPreviewing> * _URLPreviewing;
     <SXLinkActionURLQualifier> * _URLQualifier;
-    SXHost * _host;
+    <SXHost> * _host;
 }
 
 @property (nonatomic, readonly) <SXURLHandling> *URLHandler;
@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) SXHost *host;
+@property (nonatomic, readonly) <SXHost> *host;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

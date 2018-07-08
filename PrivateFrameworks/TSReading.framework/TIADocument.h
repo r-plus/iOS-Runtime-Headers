@@ -35,7 +35,7 @@
 @property (readonly) bool documentNeedsDownloadOnRevert;
 @property (nonatomic, copy) NSString *documentPasswordHint;
 @property (readonly) bool documentRevertWasAbandoned;
-@property (nonatomic, readonly) TSADocumentRoot *documentRoot;
+@property (nonatomic, readonly, retain) TSADocumentRoot *documentRoot;
 @property (nonatomic, retain) SFUCryptoKey *encryptionKey;
 @property (nonatomic, readonly) <NSFilePresenter> *filePresenter;
 @property (readonly) bool hasPersistenceErrors;

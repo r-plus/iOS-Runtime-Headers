@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) NSDictionary *userInfo;
 @property (nonatomic, retain) NSObject<OS_xpc_object> *xpcMessage;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithNotification:(id)arg1 userInfo:(id)arg2 queue:(id)arg3;
 - (id)notification;
 - (id)queue;

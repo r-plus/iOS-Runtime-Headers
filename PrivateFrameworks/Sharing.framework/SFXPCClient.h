@@ -18,7 +18,8 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)activate;
+- (void)_activate;
+- (void)_invalidate;
 - (id)connection;
 - (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(bool)arg3;
 - (void)connectionEstablished;
@@ -28,7 +29,6 @@
 - (void)getRemoteObjectProxyOnQueue:(id /* block */)arg1;
 - (id)init;
 - (void)interrupted;
-- (void)invalidate;
 - (void)invalidated;
 - (id)machServiceName;
 - (void)onqueue_activate;

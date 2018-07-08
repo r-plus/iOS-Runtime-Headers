@@ -19,6 +19,7 @@
     NSOperationQueue * _opQueue;
     NSObject<OS_dispatch_source> * _openTimer;
     NSOutputStream * _outputStream;
+    SAConnectionPolicy * _policy;
     bool  _prefersWWAN;
     NSObject<OS_dispatch_queue> * _queue;
     unsigned char  _readBuffer;
@@ -57,7 +58,7 @@
 - (id)connectionType;
 - (id)delegate;
 - (bool)hasActiveConnection;
-- (id)headerData;
+- (id)headerDataWithForceReconnect:(bool)arg1;
 - (id)initWithQueue:(id)arg1;
 - (bool)isCanceled;
 - (bool)isEstablishing;
@@ -75,6 +76,7 @@
 - (void)setEnforceExtendedValidation:(bool)arg1;
 - (void)setPolicyRoute:(id)arg1;
 - (void)setPrefersWWAN:(bool)arg1;
+- (void)setProviderConnectionPolicy:(id)arg1;
 - (bool)shouldFallbackFromError:(id)arg1;
 - (bool)shouldFallbackQuickly;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;

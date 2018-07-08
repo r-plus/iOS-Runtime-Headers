@@ -4,9 +4,11 @@
 
 @interface CSIndexConnection : CSXPCConnection {
     NSMutableDictionary * _indexMap;
+    bool  _previouslyInitialized;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *indexMap;
+@property (nonatomic, readonly) bool previouslyInitialized;
 
 + (id)sharedConnection;
 
@@ -17,5 +19,7 @@
 - (void)handleReply:(id)arg1;
 - (id)indexForID:(unsigned int)arg1;
 - (id)indexMap;
+- (bool)previouslyInitialized;
+- (void)sendMessageAsync:(id)arg1 completion:(id /* block */)arg2;
 
 @end

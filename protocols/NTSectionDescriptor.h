@@ -12,6 +12,7 @@
 - (int)leadingCellPromotionPolicy;
 - (unsigned long long)maximumStoriesAllocation;
 - (unsigned long long)minimumStoriesAllocation;
+- (bool)openVideoPlaylistInApp;
 - (NSString *)personalizationFeatureID;
 - (int)readArticlesFilterMethod;
 - (NSString *)referralBarName;

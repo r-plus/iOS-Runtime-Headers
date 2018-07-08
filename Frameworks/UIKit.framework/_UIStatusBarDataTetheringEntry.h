@@ -8,6 +8,8 @@
 
 @property (nonatomic) long long connectionCount;
 
++ (bool)supportsSecureCoding;
+
 - (id)_ui_descriptionBuilder;
 - (long long)connectionCount;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

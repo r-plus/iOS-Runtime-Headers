@@ -12,6 +12,5 @@
 - (void)_registerTemplateControllers;
 - (id)init;
 - (void)registerProductTemplateURL:(id)arg1 forTemplateName:(id)arg2 includeParentStyleSheets:(bool)arg3;
-- (void)registerTemplateStyleSheets;
 
 @end

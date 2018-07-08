@@ -8,14 +8,14 @@
     bool  mMixedDurationsAndNumbers;
     struct TSCENumberValue { 
         int (**_vptr$TSCEAbstractValue)(); 
-        double mDouble; 
-        int mBaseUnits[1]; 
+        double _double; 
+        int _baseUnits[1]; 
         struct TSCEFormat { 
             int mFormatType; 
             bool mIsImplicitFormat; 
             void *mData; 
-        } mFormat; 
-        bool mIsUnitlessZero; 
+        } _format; 
+        bool _isUnitlessZero; 
     }  mNumberAccumulator;
     double  mSecondsToAdd;
 }

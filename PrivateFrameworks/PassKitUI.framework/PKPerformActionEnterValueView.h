@@ -8,10 +8,11 @@
     NSDecimalNumber * _currentAmount;
     <PKPerformActionViewDelegate> * _delegate;
     PKEnterCurrencyAmountView * _enterCurrencyAmountView;
-    PKFelicaPassProperties * _felicaProperties;
     PKNumericSuggestionLastInput * _lastInput;
-    NSDecimalNumber * _maxAmount;
-    NSDecimalNumber * _minAmount;
+    NSDecimalNumber * _maxLoadAmount;
+    NSDecimalNumber * _maxLoadedBalance;
+    NSDecimalNumber * _minLoadAmount;
+    NSDecimalNumber * _minLoadedBalance;
     PKEnterValueNewBalanceView * _newBalanceView;
     PKPass * _pass;
     <PKPaymentDataProvider> * _paymentServiceDataProvider;
@@ -19,6 +20,7 @@
     PKPeerPaymentService * _peerPaymentService;
     PKNumericSuggestionsEnterValueAlgorithm * _suggestionGenerator;
     PKNumberPadSuggestionsView * _suggestionView;
+    PKTransitPassProperties * _transitProperties;
 }
 
 @property (nonatomic, readonly) UITextField *amountTextField;
@@ -27,8 +29,10 @@
 @property (nonatomic) <PKPerformActionViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, copy) NSDecimalNumber *maxAmount;
-@property (nonatomic, copy) NSDecimalNumber *minAmount;
+@property (nonatomic, copy) NSDecimalNumber *maxLoadAmount;
+@property (nonatomic, copy) NSDecimalNumber *maxLoadedBalance;
+@property (nonatomic, copy) NSDecimalNumber *minLoadAmount;
+@property (nonatomic, copy) NSDecimalNumber *minLoadedBalance;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -40,7 +44,7 @@
 - (void)_readCurrentBalance;
 - (bool)_shouldShakeCard:(id)arg1;
 - (void)_updateCurrentAmount:(id)arg1 shouldGenerateNewSuggestions:(bool)arg2;
-- (void)_updateCurrentBalanceWithUpdatedFelicaProperties;
+- (void)_updateCurrentBalanceWithUpdatedTransitProperties;
 - (void)_updatePeerPaymentAccount;
 - (id)amountTextField;
 - (id)cardBalance;
@@ -51,17 +55,22 @@
 - (id)init;
 - (id)initWithPass:(id)arg1 action:(id)arg2 paymentDataProvider:(id)arg3;
 - (void)layoutSubviews;
-- (id)maxAmount;
-- (id)minAmount;
+- (id)maxLoadAmount;
+- (id)maxLoadedBalance;
+- (id)minLoadAmount;
+- (id)minLoadedBalance;
 - (void)numberPadSuggestionsView:(id)arg1 didSelectSuggestion:(id)arg2;
 - (id)pass;
-- (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithFelicaPassProperties:(id)arg2;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithTransitPassProperties:(id)arg2;
 - (void)saveLastInputValues;
 - (id)serviceProviderData;
 - (void)setCardBalance:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setMaxAmount:(id)arg1;
-- (void)setMinAmount:(id)arg1;
+- (void)setMaxLoadAmount:(id)arg1;
+- (void)setMaxLoadedBalance:(id)arg1;
+- (void)setMinBalance:(id)arg1;
+- (void)setMinLoadAmount:(id)arg1;
+- (void)setMinLoadedBalance:(id)arg1;
 - (id)transactionAmount;
 - (id)transactionCurrency;
 - (void)willDismissViewController;

@@ -8,7 +8,7 @@
         struct vector<TIHandwritingPoint, std::__1::allocator<TIHandwritingPoint> > {} *__begin_; 
         struct vector<TIHandwritingPoint, std::__1::allocator<TIHandwritingPoint> > {} *__end_; 
         struct __compressed_pair<std::__1::vector<TIHandwritingPoint, std::__1::allocator<TIHandwritingPoint> > *, std::__1::allocator<std::__1::vector<TIHandwritingPoint, std::__1::allocator<TIHandwritingPoint> > > > { 
-            struct vector<TIHandwritingPoint, std::__1::allocator<TIHandwritingPoint> > {} *__first_; 
+            struct vector<TIHandwritingPoint, std::__1::allocator<TIHandwritingPoint> > {} *__value_; 
         } __end_cap_; 
     }  _strokes;
 }

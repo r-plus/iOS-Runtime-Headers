@@ -13,6 +13,8 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) CPLPlatformObject *platformObject;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) Class transportGroupClass;
+@property (nonatomic, readonly) Class userIdentifierClass;
 
 + (id)platformImplementationProtocol;
 
@@ -58,6 +60,8 @@
 - (void)setShouldOverride:(bool)arg1 forSystemBudgets:(unsigned long long)arg2;
 - (id)setupTaskCreateLibraryIfNecessary:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)simpleDataForSyncAnchor:(id)arg1;
+- (Class)transportGroupClass;
 - (id)uploadBatchTaskForBatch:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
+- (Class)userIdentifierClass;
 
 @end

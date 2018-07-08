@@ -18,6 +18,7 @@
 
 @optional
 
+- (TSPComponent *)component;
 - (bool)isCrossAppPaste;
 - (bool)isCrossDocumentPaste;
 

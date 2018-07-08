@@ -2,16 +2,18 @@
    Image: /System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
  */
 
-@interface _ACComponentVector : NSObject {
+@interface _ACComponentVector : NSObject <NSSecureCoding> {
     struct AudioComponentVector { 
         struct shared_ptr<APComponent> {} *__begin_; 
         struct shared_ptr<APComponent> {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<APComponent> *, std::__1::allocator<std::__1::shared_ptr<APComponent> > > { 
-            struct shared_ptr<APComponent> {} *__first_; 
+            struct shared_ptr<APComponent> {} *__value_; 
         } __end_cap_; 
         bool mSorted; 
     }  mVector;
 }
+
++ (bool)supportsSecureCoding;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

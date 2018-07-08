@@ -2,20 +2,22 @@
    Image: /System/Library/PrivateFrameworks/Rapport.framework/Rapport
  */
 
-@interface RPDevice : NSObject {
+@interface RPDevice : NSObject <NSSecureCoding> {
     NSData * _authTag;
     NSData * _bleAdvertisementData;
     NSData * _bleDeviceAddress;
-    unsigned int  _blePaired;
+    unsigned int  _blePairState;
     unsigned char  _deviceActionType;
-    unsigned int  _deviceType;
-    NSUUID * _identifier;
+    unsigned int  _flags;
+    NSString * _identifier;
+    NSUUID * _identifierUUID;
     CUMobileDevice * _mobileDevice;
     NSString * _model;
     NSString * _name;
     bool  _needsSetup;
     CUPairedPeer * _pairedPeer;
     NSUUID * _pairingIdentifier;
+    int  _proximity;
     int  _rawRSSI;
     int  _smoothedRSSI;
     unsigned int  _systemPairState;
@@ -35,16 +37,18 @@
 @property (nonatomic, readonly, copy) NSData *authTag;
 @property (nonatomic, readonly, copy) NSData *bleAdvertisementData;
 @property (nonatomic, readonly, copy) NSData *bleDeviceAddress;
-@property (nonatomic, readonly) unsigned int blePaired;
+@property (nonatomic, readonly) unsigned int blePairState;
 @property (nonatomic, readonly) unsigned char deviceActionType;
-@property (nonatomic, readonly) unsigned int deviceType;
-@property (nonatomic, copy) NSUUID *identifier;
+@property (nonatomic, readonly) unsigned int flags;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSUUID *identifierUUID;
 @property (nonatomic, retain) CUMobileDevice *mobileDevice;
-@property (nonatomic, copy) NSString *model;
+@property (nonatomic, readonly, copy) NSString *model;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) bool needsSetup;
 @property (nonatomic, retain) CUPairedPeer *pairedPeer;
 @property (nonatomic, copy) NSUUID *pairingIdentifier;
+@property (nonatomic, readonly) int proximity;
 @property (nonatomic, readonly) int rawRSSI;
 @property (nonatomic, readonly) int smoothedRSSI;
 @property (nonatomic) unsigned int systemPairState;
@@ -60,27 +64,33 @@
 @property (nonatomic, retain) id wifiPlatformObject;
 @property (nonatomic, copy) NSString *wifiSSID;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (void)_updateTXTDictionary:(id)arg1;
 - (id)authTag;
 - (id)bleAdvertisementData;
 - (id)bleDeviceAddress;
-- (unsigned int)blePaired;
+- (unsigned int)blePairState;
 - (id)description;
 - (unsigned char)deviceActionType;
-- (unsigned int)deviceType;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned int)flags;
 - (id)identifier;
+- (id)identifierUUID;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)mobileDevice;
 - (id)model;
 - (id)name;
 - (bool)needsSetup;
 - (id)pairedPeer;
 - (id)pairingIdentifier;
+- (int)proximity;
 - (int)rawRSSI;
 - (void)setIdentifier:(id)arg1;
+- (void)setIdentifierUUID:(id)arg1;
 - (void)setMobileDevice:(id)arg1;
-- (void)setModel:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPairedPeer:(id)arg1;
 - (void)setPairingIdentifier:(id)arg1;
@@ -100,7 +110,7 @@
 - (id)udid;
 - (unsigned int)updateWithBonjourDevice:(id)arg1;
 - (unsigned int)updateWithMobileDevice:(id)arg1;
-- (void)updateWithSFDevice:(id)arg1 changes:(unsigned int)arg2;
+- (unsigned int)updateWithSFDevice:(id)arg1 changes:(unsigned int)arg2;
 - (void)updateWithSystemInfo:(id)arg1;
 - (void)updateWithWiFiDevice:(id)arg1 changes:(unsigned int)arg2;
 - (id)wifiAddress;

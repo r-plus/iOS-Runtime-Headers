@@ -62,7 +62,7 @@
 - (id)defaultSlideNodeForNewSelection;
 - (id)defaultSlideNodeForNewSelectionNearestToIndex:(unsigned long long)arg1;
 - (id)formulaReferenceNameForSlideNode:(id)arg1;
-- (id)i_findDefaultMaster;
+- (id)i_findDefaultMasterDuringArchiving;
 - (unsigned long long)indexOfSlideNode:(id)arg1;
 - (id)initWithContext:(id)arg1 documentStylesheet:(id)arg2;
 - (void)insertMasterSlideNode:(id)arg1 withThumbnails:(id)arg2 atIndex:(unsigned long long)arg3 dolcContext:(id)arg4;
@@ -78,7 +78,7 @@
 - (id)nameForMasterCopyWithName:(id)arg1;
 - (id)orderedSlideNodesInSelection:(id)arg1;
 - (void)p_cacheSlideNodes;
-- (id)p_findDefaultMaster;
+- (id)p_findDefaultMasterWithoutLoadingSlides;
 - (id)p_findSecondMaster;
 - (id)p_mappedMasterForMaster:(id)arg1 scoringHeuristic:(id /* block */)arg2;
 - (int)p_matchScoreForMaster:(id)arg1 toMaster:(id)arg2;

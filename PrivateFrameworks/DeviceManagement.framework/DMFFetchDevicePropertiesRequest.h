@@ -8,7 +8,14 @@
 
 @property (nonatomic, copy) NSArray *propertyKeys;
 
++ (id)allPlatformDevicePropertyKeys;
++ (id)currentPlatformDevicePropertyKeys;
++ (id)iOSDevicePropertyKeys;
++ (id)iOSPlatformDevicePropertyKeys;
++ (id)macOSDevicePropertyKeys;
 + (bool)supportsSecureCoding;
++ (id)tvOSDevicePropertyKeys;
++ (id)watchOSDevicePropertyKeys;
 + (Class)whitelistedClassForResultObject;
 
 - (void).cxx_destruct;

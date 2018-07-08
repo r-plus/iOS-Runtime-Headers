@@ -6,5 +6,6 @@
 @required
 
 - (NSSet *)accessoriesSupportingSoftwareUpdate;
+- (NSSet *)availableSoftwareUpdates;
 
 @end

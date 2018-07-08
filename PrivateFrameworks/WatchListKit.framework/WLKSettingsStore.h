@@ -59,6 +59,7 @@
 - (id)deniedBrands;
 - (id)description;
 - (void)endIgnoringChanges;
+- (void)forceUpdate;
 - (bool)hasOutstandingChanges;
 - (int)ignoreChangesCount;
 - (id)init;

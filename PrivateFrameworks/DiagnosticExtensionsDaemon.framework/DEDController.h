@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DiagnosticExtensionsDaemon.framework/DiagnosticExtensionsDaemon
  */
 
-@interface DEDController : NSObject <DEDPairingProtocol, DEDXPCProtocol> {
+@interface DEDController : NSObject <DEDPairingProtocol, DEDSecureArchiving, DEDXPCProtocol> {
     DEDIDSConnection * __idsConnection;
     DEDSharingConnection * __sharingConnection;
     <DEDClientProtocol> * _clientDelegate;
@@ -57,6 +57,8 @@
 @property (retain) DEDXPCConnector *xpcConnector;
 @property (retain) DEDXPCInbound *xpcInbound;
 @property NSXPCConnection *xpcOutboundConnection;
+
++ (id)archivedClasses;
 
 - (void).cxx_destruct;
 - (void)_didAbortSessionWithID:(id)arg1;

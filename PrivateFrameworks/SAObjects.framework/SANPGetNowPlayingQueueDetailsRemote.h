@@ -8,6 +8,8 @@
 @property (nonatomic, retain) SANPGetNowPlayingQueueDetails *queueDetails;
 @property (nonatomic) double routeTimeout;
 
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+
 + (id)getNowPlayingQueueDetailsRemote;
 + (id)getNowPlayingQueueDetailsRemoteWithDictionary:(id)arg1 context:(id)arg2;
 
@@ -21,5 +23,9 @@
 - (void)setHashedRouteUIDs:(id)arg1;
 - (void)setQueueDetails:(id)arg1;
 - (void)setRouteTimeout:(double)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+
+- (void)af_addEntriesToAnalyticsContext:(id)arg1;
 
 @end

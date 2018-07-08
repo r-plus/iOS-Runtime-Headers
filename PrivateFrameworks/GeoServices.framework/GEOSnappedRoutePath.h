@@ -8,7 +8,7 @@
     bool  _hasCompletedMapMatching;
     struct unique_ptr<geo::RouteMapMatchingSection, std::__1::default_delete<geo::RouteMapMatchingSection> > { 
         struct __compressed_pair<geo::RouteMapMatchingSection *, std::__1::default_delete<geo::RouteMapMatchingSection> > { 
-            struct RouteMapMatchingSection {} *__first_; 
+            struct RouteMapMatchingSection {} *__value_; 
         } __ptr_; 
     }  _mapMatchingSection;
     struct __CFSet { } * _observers;

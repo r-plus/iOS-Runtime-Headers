@@ -116,6 +116,7 @@
 - (bool)isFingerOn;
 - (bool)isTouchIDAvailableWithInfo:(long long*)arg1;
 - (bool)isTouchIDCapable;
+- (void)logEventOrCode:(unsigned long long)arg1;
 - (int)match:(id)arg1;
 - (int)match:(id)arg1 withOptions:(id)arg2;
 - (void)matchResult:(id)arg1 details:(id)arg2 client:(unsigned long long)arg3;

@@ -24,6 +24,7 @@
     NSMutableArray * _resultDetourInfos;
     NSString * _resultDisplayHeader;
     unsigned int  _retainSearchTime;
+    NSMutableArray * _retainSearchs;
     GEOPDSearchClientBehavior * _searchClientBehavior;
     int  _searchResultType;
     bool  _showDymSuggestionCloseButton;
@@ -55,6 +56,7 @@
 @property (nonatomic, retain) NSMutableArray *resultDetourInfos;
 @property (nonatomic, retain) NSString *resultDisplayHeader;
 @property (nonatomic) unsigned int retainSearchTime;
+@property (nonatomic, retain) NSMutableArray *retainSearchs;
 @property (nonatomic, retain) GEOPDSearchClientBehavior *searchClientBehavior;
 @property (nonatomic) int searchResultType;
 @property (nonatomic) bool showDymSuggestionCloseButton;
@@ -64,6 +66,7 @@
 + (Class)displayHeaderSubstituteType;
 + (Class)relatedSearchSuggestionType;
 + (Class)resultDetourInfoType;
++ (Class)retainSearchType;
 
 - (void).cxx_destruct;
 - (int)StringAsSearchResultType:(id)arg1;
@@ -71,10 +74,12 @@
 - (void)addDisplayHeaderSubstitute:(id)arg1;
 - (void)addRelatedSearchSuggestion:(id)arg1;
 - (void)addResultDetourInfo:(id)arg1;
+- (void)addRetainSearch:(id)arg1;
 - (void)clearDisambiguationLabels;
 - (void)clearDisplayHeaderSubstitutes;
 - (void)clearRelatedSearchSuggestions;
 - (void)clearResultDetourInfos;
+- (void)clearRetainSearchs;
 - (id)clientResolvedResult;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -115,7 +120,10 @@
 - (id)resultDetourInfos;
 - (unsigned long long)resultDetourInfosCount;
 - (id)resultDisplayHeader;
+- (id)retainSearchAtIndex:(unsigned long long)arg1;
 - (unsigned int)retainSearchTime;
+- (id)retainSearchs;
+- (unsigned long long)retainSearchsCount;
 - (id)searchClientBehavior;
 - (int)searchResultType;
 - (id)searchResultTypeAsString:(int)arg1;
@@ -138,6 +146,7 @@
 - (void)setResultDetourInfos:(id)arg1;
 - (void)setResultDisplayHeader:(id)arg1;
 - (void)setRetainSearchTime:(unsigned int)arg1;
+- (void)setRetainSearchs:(id)arg1;
 - (void)setSearchClientBehavior:(id)arg1;
 - (void)setSearchResultType:(int)arg1;
 - (void)setShowDymSuggestionCloseButton:(bool)arg1;

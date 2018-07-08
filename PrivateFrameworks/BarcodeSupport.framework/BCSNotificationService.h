@@ -6,6 +6,6 @@
 
 - (void)_cancelNotifications;
 - (void)cancelNotifications;
-- (void)notifyParsedBarcodeWithData:(id)arg1 reply:(id /* block */)arg2;
+- (void)notifyParsedBarcodeWithData:(id)arg1 codePayload:(id)arg2 reply:(id /* block */)arg3;
 
 @end

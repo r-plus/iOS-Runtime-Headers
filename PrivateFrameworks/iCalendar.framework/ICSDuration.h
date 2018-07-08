@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@interface ICSDuration : NSObject <NSCoding> {
+@interface ICSDuration : NSObject <NSSecureCoding> {
     double  _duration;
 }
 
 + (id)durationFromICSString:(id)arg1;
 + (id)durationFromRFC2445UTF8String:(const char *)arg1;
 + (id)generateDurationFromICSString:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (id)ICSStringWithOptions:(unsigned long long)arg1;
 - (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;

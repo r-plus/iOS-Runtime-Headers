@@ -37,6 +37,7 @@
     PKPaymentPreferencesViewController * _shippingMethodPreferencesController;
     bool  _shouldIgnorePhysicalButton;
     PKPaymentAuthorizationStateMachine * _stateMachine;
+    NSLayoutConstraint * _summaryHeightConstraint;
     PKPaymentAuthorizationSummaryItemsView * _summaryItemsView;
     PKPaymentAuthorizationTotalView * _totalView;
     bool  _treatingHostAsBackgrounded;
@@ -96,6 +97,7 @@
 - (Class)_tableViewClassForDataItem:(id)arg1;
 - (long long)_totalViewStyle;
 - (void)_updateBackgroundedState:(bool)arg1;
+- (void)_updateCancelButtonEnabledForState:(unsigned long long)arg1 param:(id)arg2;
 - (void)_updateFooterStateForBiometricMatchMissIfNecessary;
 - (void)_updatePendingTransaction:(id)arg1 withAuthorizationStateParam:(id)arg2;
 - (void)_updatePhysicalButtonInstruction;
@@ -147,6 +149,7 @@
 - (void)setAuthenticator:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFooterState:(long long)arg1 string:(id)arg2 animated:(bool)arg3;
+- (void)setFooterState:(long long)arg1 string:(id)arg2 animated:(bool)arg3 withCompletion:(id /* block */)arg4;
 - (void)setPhysicalButtonView:(id)arg1;
 - (void)setStateMachine:(id)arg1;
 - (bool)shouldIgnorePhysicalButton;

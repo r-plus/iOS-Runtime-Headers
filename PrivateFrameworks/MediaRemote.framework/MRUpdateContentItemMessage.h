@@ -5,11 +5,11 @@
 @interface MRUpdateContentItemMessage : MRProtocolMessage
 
 @property (nonatomic, readonly) NSArray *contentItems;
-@property (nonatomic, readonly) void*playerPath;
+@property (nonatomic, readonly) _MRNowPlayingPlayerPathProtobuf *playerPath;
 
 - (id)contentItems;
-- (id)initWithContentItems:(id)arg1 forPlayerPath:(void*)arg2;
-- (void*)playerPath;
+- (id)initWithContentItems:(id)arg1 forPlayerPath:(id)arg2;
+- (id)playerPath;
 - (unsigned long long)type;
 
 @end

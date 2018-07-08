@@ -2,16 +2,21 @@
    Image: /System/Library/PrivateFrameworks/DiagnosticExtensionsDaemon.framework/DiagnosticExtensionsDaemon
  */
 
-@interface DEDBugSessionOperation : NSObject <NSSecureCoding> {
+@interface DEDBugSessionOperation : NSObject <DEDSecureArchiving, NSSecureCoding> {
     NSString * _identifier;
     NSDictionary * _options;
     long long  _type;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (retain) NSString *identifier;
 @property (retain) NSDictionary *options;
+@property (readonly) Class superclass;
 @property long long type;
 
++ (id)archivedClasses;
 + (id)hashingKeyWithId:(id)arg1 type:(long long)arg2;
 + (bool)supportsSecureCoding;
 

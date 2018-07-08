@@ -13,11 +13,11 @@
 + (id)serializationTypeNumber;
 
 - (void).cxx_destruct;
-- (float)_durationInSec;
 - (id)_eventDescriptions;
 - (id)beginEvent;
 - (id)debugDescription;
 - (unsigned long long)durationMachContinuousTime;
+- (float)durationSeconds;
 - (id)endEvent;
 - (unsigned long long)endMachContinuousTime;
 - (unsigned long long)hash;

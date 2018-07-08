@@ -16,6 +16,7 @@
     NSString * _passwordMailboxName;
     int  _retryIntervalIndex;
     NSArray * _retryIntervals;
+    NSObject<OS_dispatch_queue> * _serialDispatchQueue;
     struct { 
         unsigned int offline : 1; 
         unsigned int subscribed : 1; 
@@ -27,6 +28,8 @@
         unsigned int capabilitiesLoaded : 1; 
     }  _serviceFlags;
     NSString * _serviceIdentifier;
+    NSMutableDictionary * _stateRequestAttemptCount;
+    VMStateRequestController * _stateRequestController;
     VMVoicemailTranscriptionController * _transcriptionController;
     VMVoicemailTranscriptionTask * _transcriptionTask;
     double  _trashCompactionAge;
@@ -39,7 +42,10 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) struct __CFString { }*lastConnectionTypeUsed;
 @property (nonatomic) unsigned long long numFailedAttemptsToSyncOverWifi;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *serialDispatchQueue;
 @property (nonatomic, retain) NSString *serviceIdentifier;
+@property (nonatomic, readonly) NSMutableDictionary *stateRequestAttemptCount;
+@property (nonatomic, readonly) VMStateRequestController *stateRequestController;
 @property (readonly) Class superclass;
 @property (getter=isTranscriptionAvailable, nonatomic, readonly) bool transcriptionAvailable;
 @property (nonatomic, retain) VMVoicemailTranscriptionController *transcriptionController;
@@ -68,7 +74,6 @@
 - (void)_cancelAutomatedTrashCompaction;
 - (void)_cancelIndicatorAction;
 - (void)_carrierBundleChanged;
-- (void)_contextActivationSucceeded:(id)arg1;
 - (void)_dataAvailabilityChanged;
 - (void)_dataRoamingStatusChanged;
 - (void)_deliverFallbackNotification;
@@ -85,6 +90,7 @@
 - (void)_setOnline:(bool)arg1 fallbackMode:(bool)arg2;
 - (void)_updateOnlineStatus;
 - (id)activationError;
+- (long long)attemptCountForStateRequest:(id)arg1;
 - (void)cancelAutomatedTrashCompaction;
 - (void)cancelDelayedSynchronize;
 - (void)cancelNotificationFallback;
@@ -110,6 +116,7 @@
 - (void)handlePasswordRequestCancellation;
 - (void)handleVVServiceDataAvailableNotification:(id)arg1;
 - (bool)headerChangesPending;
+- (void)incrementAttemptCountForStateRequest:(id)arg1;
 - (id)init;
 - (bool)isInSync;
 - (bool)isMessageWaiting;
@@ -140,11 +147,13 @@
 - (id)password;
 - (bool)passwordChangeRequiresEnteringOldPassword;
 - (id)passwordIgnoringSubscription:(bool)arg1;
+- (void)performSynchronousBlock:(id /* block */)arg1;
 - (void)processTranscriptForRecord:(const void*)arg1 priority:(long long)arg2 completion:(id /* block */)arg3;
 - (void)progressiveDataLengthsForRecord:(void*)arg1 expected:(unsigned int*)arg2 current:(unsigned int*)arg3;
 - (id)provisionalPassword;
 - (void)removeAllNonDetachedRecords;
 - (void)removeAllRecords;
+- (void)removeAttemptCountForStateRequest:(id)arg1;
 - (void)reportError:(id)arg1;
 - (void)reportFailedToSyncOverWifi;
 - (void)reportSucessfulSync;
@@ -160,6 +169,7 @@
 - (void)scheduleAutomatedTrashCompaction;
 - (void)scheduleDelayedSynchronize;
 - (void)scheduleImmediateSynchronizeRetryOverCellular;
+- (id)serialDispatchQueue;
 - (id)serviceIdentifier;
 - (void)setGreetingType:(long long)arg1 withData:(id)arg2 duration:(unsigned long long)arg3;
 - (void)setLastConnectionTypeUsed:(struct __CFString { }*)arg1;
@@ -181,6 +191,8 @@
 - (bool)shouldImmediatelyRetrySyncOverCellular;
 - (bool)shouldScheduleAutoTrashOnMailboxUsageChange;
 - (bool)shouldTrashCompactRecord:(void*)arg1;
+- (id)stateRequestAttemptCount;
+- (id)stateRequestController;
 - (bool)synchronizationPending;
 - (void)synchronize:(bool)arg1;
 - (bool)taskOfTypeExists:(long long)arg1;

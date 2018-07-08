@@ -112,6 +112,7 @@
 - (void)noteObjectSharedWithUniqueID:(id)arg1;
 - (void)notifyPassUsed:(id)arg1 fromSource:(long long)arg2;
 - (void)nukeDatabaseAndExit;
+- (void)openDigitalIssuanceSetupForIdentifier:(id)arg1;
 - (void)openPaymentSetup;
 - (void)openPaymentSetupForMerchantIdentifier:(id)arg1 domain:(id)arg2 completion:(id /* block */)arg3;
 - (void)passAdded:(id)arg1;
@@ -157,6 +158,9 @@
 - (bool)setNotificationServiceUpdatesEnabled:(bool)arg1 forPass:(id)arg2;
 - (bool)setShowInLockScreenEnabled:(bool)arg1 forPass:(id)arg2;
 - (void)shuffleGroups:(int)arg1;
+- (void)sortedTransitPassesForAppletDataFormat:(id)arg1 completion:(id /* block */)arg2;
+- (void)supportedPartnersForDigitalIssuance:(id /* block */)arg1;
+- (void)supportedTransitPartnersForDigitalIssuance:(id /* block */)arg1;
 - (void)updateSettings:(unsigned long long)arg1 forObjectWithUniqueID:(id)arg2;
 
 @end

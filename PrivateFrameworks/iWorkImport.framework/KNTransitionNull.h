@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNTransitionNull : KNAnimationEffect <KNTransitionAnimator>
+@interface KNTransitionNull : KNAnimationEffect <KNTransitionCAAnimator>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

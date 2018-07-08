@@ -109,6 +109,7 @@
 - (bool)_delegatePerformAction:(SEL)arg1;
 - (void)_dismissEverythingWithExtremePrejudiceAnimated:(bool)arg1;
 - (bool)_documentNeedsHelpDecompressingArchiveForPreview;
+- (id)_documentProxy;
 - (id)_documentProxySourceIsManaged:(bool)arg1;
 - (void)_fixupFileExtensionIfNeeded;
 - (void)_invalidate;

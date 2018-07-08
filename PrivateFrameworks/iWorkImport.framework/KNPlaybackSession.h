@@ -20,7 +20,10 @@
     NSMutableArray * _eventDurationArray;
     bool  _hasEndShowHandlerBeenCancelled;
     bool  _isExitingShow;
+    bool  _isMetalCapable;
+    bool  _isMetalCapableCheckInitialized;
     bool  _isShowLayerVisible;
+    <MTLDevice> * _metalDevice;
     long long  _playMode;
     TSDGLLayer * _sharedGLLayer;
     bool  _shouldAlwaysSetCurrentGLContextWhenDrawing;
@@ -65,8 +68,12 @@
 @property (nonatomic, retain) NSMutableArray *eventDurationArray;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool isExitingShow;
+@property (nonatomic, readonly) bool isMetalCapable;
+@property (nonatomic, readonly) bool isOffscreenPlayback;
 @property (nonatomic, readonly) bool isPreview;
 @property (nonatomic) bool isShowLayerVisible;
+@property (nonatomic, readonly) bool isWideGamut;
+@property (nonatomic, readonly) <MTLDevice> *metalDevice;
 @property (nonatomic) long long playMode;
 @property (nonatomic, retain) TSDGLLayer *sharedGLLayer;
 @property (nonatomic) bool shouldAlwaysSetCurrentGLContextWhenDrawing;
@@ -86,6 +93,7 @@
 @property (nonatomic) bool shouldUseContentlessLayers;
 @property (nonatomic) bool shouldUseSourceImage;
 @property (nonatomic, readonly) KNShow *show;
+@property (nonatomic, readonly) double showScale;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) KNAnimatedTextureManager *textureManager;
 @property (nonatomic, retain) NSMutableArray *workDurationArray;
@@ -126,11 +134,13 @@
 - (id)init;
 - (id)initWithShow:(id)arg1 viewScale:(double)arg2 showLayer:(id)arg3 canvasDelegate:(id)arg4 endShowHandler:(id /* block */)arg5;
 - (bool)isExitingShow;
+- (bool)isMetalCapable;
 - (bool)isOffscreenPlayback;
-- (bool)isPreCachingOperationActive;
 - (bool)isPreview;
 - (bool)isShowLayerVisible;
+- (bool)isWideGamut;
 - (id)lastSlideNode;
+- (id)metalDevice;
 - (id)nextSlideAfterCurrent;
 - (id)nextSlideNodeAfterCurrent;
 - (id)nextSlideNodeAfterSlideNode:(id)arg1;
@@ -138,6 +148,7 @@
 - (void)p_setCurrentSlideNode:(id)arg1;
 - (long long)playMode;
 - (id)previousSlideNodeBeforeCurrent;
+- (id)previousSlideNodeBeforeSlideNode:(id)arg1;
 - (id)repForInfo:(id)arg1 onCanvas:(id)arg2;
 - (void)setAccessControllerReadTicket:(id)arg1;
 - (void)setAlternateNextSlideNode:(id)arg1;

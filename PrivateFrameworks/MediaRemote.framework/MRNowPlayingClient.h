@@ -3,27 +3,32 @@
  */
 
 @interface MRNowPlayingClient : NSObject <MRNowPlayingClientState> {
-    void * _activePlayer;
-    void * _client;
+    _MRNowPlayingPlayerPathProtobuf * _activePlayer;
+    _MRNowPlayingClientProtobuf * _client;
     NSMutableArray * _playerClients;
-    void * _playerPath;
+    _MRNowPlayingPlayerPathProtobuf * _playerPath;
     NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
-@property (nonatomic) void*activePlayer;
-@property (nonatomic) void*client;
+@property (nonatomic, retain) _MRNowPlayingPlayerPathProtobuf *activePlayer;
+@property (nonatomic, retain) _MRNowPlayingClientProtobuf *client;
 @property (nonatomic, readonly) NSArray *playerClients;
+@property (nonatomic, retain) _MRNowPlayingPlayerPathProtobuf *playerPath;
 
-- (void*)activePlayer;
-- (void*)client;
-- (void)dealloc;
+- (void).cxx_destruct;
+- (id)activePlayer;
+- (id)client;
+- (id)debugDescription;
 - (id)description;
-- (id)initWithPlayerPath:(void*)arg1;
-- (id)nowPlayingPlayerClientForPlayerPath:(void*)arg1;
+- (id)initWithPlayerPath:(id)arg1;
+- (id)nowPlayingPlayerClientForPlayerPath:(id)arg1;
 - (id)playerClients;
-- (void)removePlayer:(void*)arg1;
+- (id)playerPath;
+- (void)removePlayer:(id)arg1;
 - (void)restoreNowPlayingClientState;
-- (void)setActivePlayer:(void*)arg1;
-- (void)setClient:(void*)arg1;
+- (void)setActivePlayer:(id)arg1;
+- (void)setClient:(id)arg1;
+- (void)setPlayerPath:(id)arg1;
+- (void)updateClient:(id)arg1;
 
 @end

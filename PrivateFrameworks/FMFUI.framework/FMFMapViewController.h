@@ -12,7 +12,6 @@
     bool  _alwaysShowAccuracy;
     UIColor * _annotationTintColor;
     UIImageView * _cachedMapView;
-    bool  _canShowNoLocation;
     long long  _currentTrackingMode;
     unsigned long long  _defaultMapType;
     <FMFMapViewControllerDelegate> * _delegate;
@@ -23,8 +22,6 @@
         double bottom; 
         double right; 
     }  _edgeInsets;
-    UIToolbar * _floatingLocationToolbar;
-    UIView * _floatingToolbarView;
     FMFSession * _fmfSession;
     UIBarButtonItem * _infoBarButtonItem;
     bool  _isMapCenteringDisabled;
@@ -39,7 +36,6 @@
     bool  _shouldZoomToFitNewLocations;
     bool  _showFloatingMapLocationButton;
     FMFTitleView * _titleView;
-    UIToolbar * _toolbar;
     _MKUserTrackingButton * _userTrackingButton;
     UIBarButtonItem * _userTrackingButtonItem;
     bool  _viewWillAppearCalled;
@@ -55,7 +51,6 @@
 @property (nonatomic) bool alwaysShowAccuracy;
 @property (nonatomic, copy) UIColor *annotationTintColor;
 @property (nonatomic, retain) UIImageView *cachedMapView;
-@property (nonatomic) bool canShowNoLocation;
 @property (nonatomic) long long currentTrackingMode;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) unsigned long long defaultMapType;
@@ -63,8 +58,6 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIBarButtonItem *directionsBarButtonItem;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } edgeInsets;
-@property (nonatomic, retain) UIToolbar *floatingLocationToolbar;
-@property (nonatomic, retain) UIView *floatingToolbarView;
 @property (nonatomic, retain) FMFSession *fmfSession;
 @property (nonatomic, copy) NSSet *handlesShowingLocations;
 @property (readonly) unsigned long long hash;
@@ -82,7 +75,6 @@
 @property (nonatomic) bool showFloatingMapLocationButton;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) FMFTitleView *titleView;
-@property (nonatomic, retain) UIToolbar *toolbar;
 @property (nonatomic, retain) _MKUserTrackingButton *userTrackingButton;
 @property (nonatomic, retain) UIBarButtonItem *userTrackingButtonItem;
 @property (nonatomic) bool viewWillAppearCalled;
@@ -105,7 +97,6 @@
 - (void)_updateDirectionsButtonEnabled;
 - (void)_updateLocationButtonEnabled;
 - (void)_updateTitleViewLocation:(id)arg1;
-- (void)addFloatingToolbar;
 - (void)addHandlesToSession;
 - (void*)addressBook;
 - (bool)alwaysShowAccuracy;
@@ -134,8 +125,6 @@
 - (id)directionsBarButtonItem;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
 - (void)enablePreloadedHandles;
-- (id)floatingLocationToolbar;
-- (id)floatingToolbarView;
 - (id)fmfSession;
 - (void)getDirections;
 - (id)handlesShowingLocations;
@@ -184,14 +173,11 @@
 - (void)setAlwaysShowAccuracy:(bool)arg1;
 - (void)setAnnotationTintColor:(id)arg1;
 - (void)setCachedMapView:(id)arg1;
-- (void)setCanShowNoLocation:(bool)arg1;
 - (void)setCurrentTrackingMode:(long long)arg1;
 - (void)setDefaultMapType:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDirectionsBarButtonItem:(id)arg1;
 - (void)setEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
-- (void)setFloatingLocationToolbar:(id)arg1;
-- (void)setFloatingToolbarView:(id)arg1;
 - (void)setFmfSession:(id)arg1;
 - (void)setHandlesShowingLocations:(id)arg1;
 - (void)setInfoBarButtonItem:(id)arg1;
@@ -207,7 +193,6 @@
 - (void)setShouldZoomToFitNewLocations:(bool)arg1;
 - (void)setShowFloatingMapLocationButton:(bool)arg1;
 - (void)setTitleView:(id)arg1;
-- (void)setToolbar:(id)arg1;
 - (void)setUserTrackingButton:(id)arg1;
 - (void)setUserTrackingButtonItem:(id)arg1;
 - (void)setViewWillAppearCalled:(bool)arg1;
@@ -227,7 +212,6 @@
 - (void)stopShowingLocationsForHandles:(id)arg1;
 - (id)titleView;
 - (id)titleViewForSelectedHandle;
-- (id)toolbar;
 - (void)updateAllAnnotationsDueToAddressBookUpdate;
 - (void)updateMapWithNewLocation:(id)arg1 animated:(bool)arg2;
 - (void)updateNoLocationView:(bool)arg1;

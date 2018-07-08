@@ -6,6 +6,8 @@
     unsigned char  _deviceIDBytes;
     NSDictionary * _deviceInfo;
     NSUUID * _identifier;
+    NSString * _identifierStr;
+    NSUUID * _identifierUUID;
     NSString * _model;
     NSString * _name;
     NSString * _serviceType;
@@ -15,6 +17,8 @@
 
 @property (nonatomic, copy) NSDictionary *deviceInfo;
 @property (nonatomic, copy) NSUUID *identifier;
+@property (nonatomic, copy) NSString *identifierStr;
+@property (nonatomic, copy) NSUUID *identifierUUID;
 @property (nonatomic, copy) NSString *model;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *serviceType;
@@ -28,11 +32,15 @@
 - (id)descriptionWithLevel:(int)arg1;
 - (id)deviceInfo;
 - (id)identifier;
+- (id)identifierStr;
+- (id)identifierUUID;
 - (id)model;
 - (id)name;
 - (id)serviceType;
 - (void)setDeviceInfo:(id)arg1;
 - (void)setIdentifier:(id)arg1;
+- (void)setIdentifierStr:(id)arg1;
+- (void)setIdentifierUUID:(id)arg1;
 - (void)setModel:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setServiceType:(id)arg1;

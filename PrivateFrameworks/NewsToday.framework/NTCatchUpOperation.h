@@ -3,7 +3,7 @@
  */
 
 @interface NTCatchUpOperation : FCOperation {
-    <FCAppConfiguration> * _appConfiguration;
+    <FCNewsAppConfiguration> * _appConfiguration;
     NSMutableArray * _articleIDsRequests;
     NSMutableArray * _articleListRequests;
     FCCachePolicy * _cachePolicyForArticleLists;
@@ -16,15 +16,12 @@
     NTCatchUpOperationForYouRequest * _forYouRequest;
     NTCatchUpOperationResults * _forYouResults;
     unsigned long long  _maximumCachedAgeForForYou;
-    unsigned long long  _maximumCachedAgeForTrendingByParsec;
     NSDictionary * _resultsByArticleIDsRequestID;
     NSDictionary * _resultsByArticleListID;
     id /* block */  _sessionProvider;
-    bool  _trendingByParsecEnabled;
-    NTCatchUpOperationResults * _trendingByParsecResults;
 }
 
-@property (nonatomic, copy) <FCAppConfiguration> *appConfiguration;
+@property (nonatomic, copy) <FCNewsAppConfiguration> *appConfiguration;
 @property (nonatomic, retain) NSMutableArray *articleIDsRequests;
 @property (nonatomic, retain) NSMutableArray *articleListRequests;
 @property (nonatomic, retain) FCCachePolicy *cachePolicyForArticleLists;
@@ -37,17 +34,13 @@
 @property (nonatomic, copy) NTCatchUpOperationForYouRequest *forYouRequest;
 @property (nonatomic, copy) NTCatchUpOperationResults *forYouResults;
 @property (nonatomic) unsigned long long maximumCachedAgeForForYou;
-@property (nonatomic) unsigned long long maximumCachedAgeForTrendingByParsec;
 @property (nonatomic, copy) NSDictionary *resultsByArticleIDsRequestID;
 @property (nonatomic, copy) NSDictionary *resultsByArticleListID;
 @property (nonatomic, copy) id /* block */ sessionProvider;
-@property (getter=isTrendingByParsecEnabled, nonatomic) bool trendingByParsecEnabled;
-@property (nonatomic, copy) NTCatchUpOperationResults *trendingByParsecResults;
 
 - (void).cxx_destruct;
 - (void)_fetchArticleListAndArticleIDsResultsIfNeededWithCompletion:(id /* block */)arg1;
 - (void)_fetchForYouResultsIfNeededWithCompletion:(id /* block */)arg1;
-- (void)_fetchTrendingByParsecResultsIfNeededWithCompletion:(id /* block */)arg1;
 - (void)addArticleIDsRequest:(id)arg1;
 - (void)addArticleListRequest:(id)arg1;
 - (id)appConfiguration;
@@ -63,9 +56,7 @@
 - (id)forYouResults;
 - (id)init;
 - (bool)isForYouEnabled;
-- (bool)isTrendingByParsecEnabled;
 - (unsigned long long)maximumCachedAgeForForYou;
-- (unsigned long long)maximumCachedAgeForTrendingByParsec;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (void)prepareOperation;
@@ -85,13 +76,9 @@
 - (void)setForYouRequest:(id)arg1;
 - (void)setForYouResults:(id)arg1;
 - (void)setMaximumCachedAgeForForYou:(unsigned long long)arg1;
-- (void)setMaximumCachedAgeForTrendingByParsec:(unsigned long long)arg1;
 - (void)setResultsByArticleIDsRequestID:(id)arg1;
 - (void)setResultsByArticleListID:(id)arg1;
 - (void)setSessionProvider:(id /* block */)arg1;
-- (void)setTrendingByParsecEnabled:(bool)arg1;
-- (void)setTrendingByParsecResults:(id)arg1;
-- (id)trendingByParsecResults;
 - (bool)validateOperation;
 
 @end

@@ -7,14 +7,14 @@
         unsigned long long *__begin_; 
         unsigned long long __size_; 
         struct __compressed_pair<unsigned long, std::__1::allocator<unsigned long> > { 
-            unsigned long long __first_; 
+            unsigned long long __value_; 
         } __cap_alloc_; 
     }  _left;
     struct vector<bool, std::__1::allocator<bool> > { 
         unsigned long long *__begin_; 
         unsigned long long __size_; 
         struct __compressed_pair<unsigned long, std::__1::allocator<unsigned long> > { 
-            unsigned long long __first_; 
+            unsigned long long __value_; 
         } __cap_alloc_; 
     }  _right;
 }

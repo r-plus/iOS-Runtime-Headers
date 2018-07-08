@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MediaControls.framework/MediaControls
  */
 
-@interface MediaControlsEndpointsManager : NSObject <MPAVRoutingControllerDelegate, MediaControlsHomeObserverDelegate> {
+@interface MediaControlsEndpointsManager : NSObject <MPAVOutputDevicePlaybackDataSource, MPAVRoutingControllerDelegate, MediaControlsHomeObserverDelegate> {
     MPAVEndpointRoute * _activeSystemRoute;
     MPMediaControlsConfiguration * _configuration;
     <MediaControlsEndpointsManagerDelegate> * _delegate;
@@ -29,6 +29,7 @@
 
 - (void).cxx_destruct;
 - (void)_activeSystemRouteDidChange:(id)arg1;
+- (id)_endpointControllerContainingOutputDevice:(id)arg1 externalDeviceRef:(void**)arg2;
 - (bool)_homeHasRoute:(id)arg1;
 - (long long)_indexOfActiveRoute;
 - (long long)_indexOfRoute:(id)arg1;
@@ -41,6 +42,7 @@
 - (id)delegate;
 - (long long)discoveryMode;
 - (id)endpointControllerForRoute:(id)arg1;
+- (void)getOutputDeviceIsPlaying:(id)arg1 completion:(id /* block */)arg2;
 - (id)homeObserver;
 - (void)homeObserverDidUpdateKnownUIDs:(id)arg1;
 - (id)initWithConfiguration:(id)arg1;

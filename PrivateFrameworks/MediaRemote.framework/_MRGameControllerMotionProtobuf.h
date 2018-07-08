@@ -18,10 +18,10 @@
 @property (nonatomic, retain) _MRGameControllerAccelerationProtobuf *rotation;
 @property (nonatomic, retain) _MRGameControllerAccelerationProtobuf *userAcceleration;
 
+- (void).cxx_destruct;
 - (id)attitude;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)gravity;

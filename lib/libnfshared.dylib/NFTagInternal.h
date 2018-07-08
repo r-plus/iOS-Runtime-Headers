@@ -51,7 +51,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNFTag:(id)arg1;
-- (id)initWithNFTagForUIDOnly:(id)arg1;
 - (id)tagID;
 - (unsigned int)technology;
 - (unsigned int)type;

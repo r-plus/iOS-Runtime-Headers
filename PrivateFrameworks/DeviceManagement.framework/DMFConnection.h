@@ -4,6 +4,7 @@
 
 @interface DMFConnection : NSObject <CATTaskClientDelegate, DMFTransportProvider> {
     bool  _isConnected;
+    bool  _isDeviceConnection;
     CATOperationQueue * _operationQueue;
     CATTaskClient * _taskClient;
     <DMFTransportProvider> * _transportProvider;
@@ -13,17 +14,26 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool isConnected;
-@property (nonatomic, retain) CATOperationQueue *operationQueue;
+@property (nonatomic) bool isDeviceConnection;
+@property (nonatomic, readonly) CATOperationQueue *operationQueue;
+@property (nonatomic, readonly, copy) NSSet *requestClasses;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) CATTaskClient *taskClient;
-@property (nonatomic) <DMFTransportProvider> *transportProvider;
+@property (nonatomic, readonly) CATTaskClient *taskClient;
+@property (nonatomic, readonly) <DMFTransportProvider> *transportProvider;
 
 // Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
 
++ (id)_deviceOrUserRequestClasses;
++ (id)_deviceRequestClasses;
++ (id)_userRequestClasses;
++ (id)connectionForAppleID:(id)arg1;
++ (id)connectionForUID:(unsigned int)arg1;
 + (id)currentPlatformRequestClasses;
++ (id)currentUserConnection;
 + (id)iOSRequestClasses;
 + (id)macOSRequestClasses;
 + (id)sharedConnection;
++ (id)systemConnection;
 + (id)tvOSRequestClasses;
 + (id)watchOSRequestClasses;
 
@@ -34,19 +44,19 @@
 - (void)clientDidDisconnect:(id)arg1;
 - (void)clientDidInvalidate:(id)arg1;
 - (void)dealloc;
-- (id)init;
-- (id)initWithTransportProvider:(id)arg1;
+- (id)initWithTransportProvider:(id)arg1 userInfo:(id)arg2;
+- (id)initWithUserInfo:(id)arg1;
 - (void)invalidate;
 - (bool)isConnected;
+- (bool)isDeviceConnection;
 - (id)makeNewTransport;
 - (id)operationQueue;
 - (void)performRequest:(id)arg1 completion:(id /* block */)arg2;
 - (id)prepareOperationForRequest:(id)arg1;
 - (id)progressForAllInflightRequests;
+- (id)requestClasses;
 - (void)setIsConnected:(bool)arg1;
-- (void)setOperationQueue:(id)arg1;
-- (void)setTaskClient:(id)arg1;
-- (void)setTransportProvider:(id)arg1;
+- (void)setIsDeviceConnection:(bool)arg1;
 - (id)taskClient;
 - (id)transportProvider;
 

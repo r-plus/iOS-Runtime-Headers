@@ -9,9 +9,9 @@
 @property (nonatomic, readonly) bool hasHidEventData;
 @property (nonatomic, retain) NSData *hidEventData;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasHidEventData;

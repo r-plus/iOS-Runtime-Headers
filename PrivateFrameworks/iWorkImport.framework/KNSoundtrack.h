@@ -14,8 +14,8 @@
 
 + (bool)needsObjectUUID;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)initWithContext:(id)arg1;
 - (id)initWithSoundtrackMedia:(id)arg1 context:(id)arg2;
 - (void)loadFromUnarchiver:(id)arg1;

@@ -14,6 +14,7 @@
     int  _currentRecordID;
     bool  _hasFoundAnyImageDataForCurrentContact;
     struct sqlite3_blob { } * _incompleteBlob;
+    CNManagedConfiguration * _managedConfiguration;
     unsigned long long  _maxBufferSize;
     unsigned long long  _maxContactsPerBatch;
     int  _multivalueEntryKeyColumn;
@@ -40,6 +41,7 @@
 @property (nonatomic) int currentRecordID;
 @property (nonatomic) bool hasFoundAnyImageDataForCurrentContact;
 @property (nonatomic) struct sqlite3_blob { }*incompleteBlob;
+@property (nonatomic, retain) CNManagedConfiguration *managedConfiguration;
 @property (nonatomic) unsigned long long maxBufferSize;
 @property (nonatomic) unsigned long long maxContactsPerBatch;
 @property (nonatomic) int multivalueEntryKeyColumn;
@@ -67,9 +69,10 @@
 - (void)fetchNextBatchWithReply:(id /* block */)arg1;
 - (bool)hasFoundAnyImageDataForCurrentContact;
 - (struct sqlite3_blob { }*)incompleteBlob;
-- (id)initWithAddressBook:(void*)arg1 predicate:(id)arg2 propertyIdentifierSet:(struct __CFSet { }*)arg3 includeLinkedContacts:(bool)arg4 sortOrder:(unsigned int)arg5 suggestedContactsPerBatch:(unsigned long long)arg6;
-- (id)initWithAddressBook:(void*)arg1 query:(id)arg2 queryBinder:(id /* block */)arg3 propertyIdentifierSet:(struct __CFSet { }*)arg4 includeLinkedContacts:(bool)arg5 sortOrder:(unsigned int)arg6 suggestedContactsPerBatch:(unsigned long long)arg7;
-- (id)initWithQuery:(id)arg1 batchSize:(unsigned long long)arg2;
+- (id)initWithAddressBook:(void*)arg1 predicate:(id)arg2 propertyIdentifierSet:(struct __CFSet { }*)arg3 includeLinkedContacts:(bool)arg4 sortOrder:(unsigned int)arg5 suggestedContactsPerBatch:(unsigned long long)arg6 managedConfiguration:(id)arg7;
+- (id)initWithAddressBook:(void*)arg1 query:(id)arg2 queryBinder:(id /* block */)arg3 propertyIdentifierSet:(struct __CFSet { }*)arg4 includeLinkedContacts:(bool)arg5 sortOrder:(unsigned int)arg6 suggestedContactsPerBatch:(unsigned long long)arg7 managedConfiguration:(id)arg8;
+- (id)initWithQuery:(id)arg1 batchSize:(unsigned long long)arg2 managedConfiguration:(id)arg3;
+- (id)managedConfiguration;
 - (unsigned long long)maxBufferSize;
 - (unsigned long long)maxContactsPerBatch;
 - (int)multivalueEntryKeyColumn;
@@ -94,6 +97,7 @@
 - (void)setCurrentRecordID:(int)arg1;
 - (void)setHasFoundAnyImageDataForCurrentContact:(bool)arg1;
 - (void)setIncompleteBlob:(struct sqlite3_blob { }*)arg1;
+- (void)setManagedConfiguration:(id)arg1;
 - (void)setMaxBufferSize:(unsigned long long)arg1;
 - (void)setMaxContactsPerBatch:(unsigned long long)arg1;
 - (void)setMultivalueEntryKeyColumn:(int)arg1;

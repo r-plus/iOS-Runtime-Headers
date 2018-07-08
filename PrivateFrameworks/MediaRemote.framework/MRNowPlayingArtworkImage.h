@@ -10,8 +10,9 @@
 @property (nonatomic, readonly, copy) NSData *imageData;
 @property (nonatomic, readonly, copy) NSString *mimeType;
 
+- (void).cxx_destruct;
 - (id)copyImageData;
-- (void)dealloc;
+- (id)description;
 - (bool)hasArtworkData;
 - (id)imageData;
 - (id)initWithImageData:(id)arg1 mimeType:(id)arg2;

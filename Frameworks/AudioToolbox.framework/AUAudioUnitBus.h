@@ -14,7 +14,7 @@
         struct BusPropertyObserver {} *__begin_; 
         struct BusPropertyObserver {} *__end_; 
         struct __compressed_pair<BusPropertyObserver *, std::__1::allocator<BusPropertyObserver> > { 
-            struct BusPropertyObserver {} *__first_; 
+            struct BusPropertyObserver {} *__value_; 
         } __end_cap_; 
     }  _observers;
     AUAudioUnit * _ownerAudioUnit;

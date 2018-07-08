@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKConversationListController : UITableViewController <CKConversationListCellDelegate, CKConversationResultsControllerDelegate, CKTranscriptPreviewControllerDelegate, UIActionSheetDelegate, UISearchBarDelegate, UISearchControllerDelegate, UITableViewDataSource, UITableViewDelegate, UITableViewDragDestinationDelegate, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private> {
+@interface CKConversationListController : UITableViewController <CKCloudKitSyncProgressViewControllerDelegate, CKConversationListCellDelegate, CKConversationResultsControllerDelegate, CKTranscriptPreviewControllerDelegate, UIActionSheetDelegate, UISearchBarDelegate, UISearchControllerDelegate, UITableViewDataSource, UITableViewDelegate, UITableViewDragDestinationDelegate, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private> {
     UIBarButtonItem * _composeButton;
     double  _conversationCellHeight;
     CKConversation * _conversationChangingPinState;
@@ -58,6 +58,7 @@
 @property (nonatomic, retain) CKScheduledUpdater *updater;
 
 - (void).cxx_destruct;
+- (void)_cancelDeletion:(id /* block */)arg1;
 - (void)_chatItemsDidChange:(id)arg1;
 - (void)_chatParticipantsChangedNotification:(id)arg1;
 - (void)_chatUnreadCountDidChange:(id)arg1;
@@ -104,7 +105,6 @@
 - (void)avatarHeaderWasTappedForConversation:(id)arg1 inCell:(id)arg2;
 - (void)batchDeleteButtonTapped:(id)arg1;
 - (void)beginHoldingConversationListUpdatesForKey:(id)arg1;
-- (void)cloudKitSyncProgressViewController:(id)arg1 actionButtonWasPressed:(long long)arg2 errors:(id)arg3;
 - (void)cloudKitSyncProgressViewControllerDidChangeVisibility:(id)arg1;
 - (id)committedViewControllerForPreviewViewController:(id)arg1;
 - (id)composeButton;
@@ -116,7 +116,7 @@
 - (void)conversationWillBeMarkedRead:(id)arg1;
 - (id)currentEditButtonItem;
 - (void)dealloc;
-- (void)deleteButtonTappedForIndexPath:(id)arg1;
+- (void)deleteButtonTappedForIndexPath:(id)arg1 completionHandler:(id /* block */)arg2 cellToUpdate:(id)arg3;
 - (void)didDismissSearchController:(id)arg1;
 - (void)editButtonTapped:(id)arg1;
 - (void)endHoldingConversationListUpdatesForKey:(id)arg1;
@@ -200,7 +200,7 @@
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (bool)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 targetIndexPathForMoveFromRowAtIndexPath:(id)arg2 toProposedIndexPath:(id)arg3;
-- (id)tableView:(id)arg1 trailingSwipeActionsForRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 trailingSwipeActionsConfigurationForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willBeginEditingRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (double)tableViewSpacingForExtraSeparators:(id)arg1;

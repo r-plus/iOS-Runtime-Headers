@@ -12,8 +12,7 @@
     NSString * _artworkIdentifier;
     NSString * _artworkMIMEType;
     NSString * _artworkURL;
-    bool  _artworkURLTemplateAvailable;
-    NSData * _artworkURLTemplatesDataDeprecated;
+    NSData * _artworkURLTemplatesData;
     NSString * _assetURLString;
     int  _chapterCount;
     NSString * _collectionIdentifier;
@@ -68,7 +67,6 @@
         unsigned int totalTrackCount : 1; 
         unsigned int trackNumber : 1; 
         unsigned int artworkAvailable : 1; 
-        unsigned int artworkURLTemplateAvailable : 1; 
         unsigned int infoAvailable : 1; 
         unsigned int isAlwaysLive : 1; 
         unsigned int isContainer : 1; 
@@ -143,8 +141,7 @@
 @property (nonatomic, retain) NSString *artworkIdentifier;
 @property (nonatomic, retain) NSString *artworkMIMEType;
 @property (nonatomic, retain) NSString *artworkURL;
-@property (nonatomic) bool artworkURLTemplateAvailable;
-@property (nonatomic, retain) NSData *artworkURLTemplatesDataDeprecated;
+@property (nonatomic, retain) NSData *artworkURLTemplatesData;
 @property (nonatomic, retain) NSString *assetURLString;
 @property (nonatomic) int chapterCount;
 @property (nonatomic, retain) NSString *collectionIdentifier;
@@ -173,8 +170,7 @@
 @property (nonatomic, readonly) bool hasArtworkIdentifier;
 @property (nonatomic, readonly) bool hasArtworkMIMEType;
 @property (nonatomic, readonly) bool hasArtworkURL;
-@property (nonatomic) bool hasArtworkURLTemplateAvailable;
-@property (nonatomic, readonly) bool hasArtworkURLTemplatesDataDeprecated;
+@property (nonatomic, readonly) bool hasArtworkURLTemplatesData;
 @property (nonatomic, readonly) bool hasAssetURLString;
 @property (nonatomic) bool hasChapterCount;
 @property (nonatomic, readonly) bool hasCollectionIdentifier;
@@ -293,6 +289,7 @@
 
 + (void)initialize;
 
+- (void).cxx_destruct;
 - (id)_init;
 - (id)_initWithData:(id)arg1;
 - (id)albumArtistName;
@@ -304,8 +301,7 @@
 - (id)artworkIdentifier;
 - (id)artworkMIMEType;
 - (id)artworkURL;
-- (bool)artworkURLTemplateAvailable;
-- (id)artworkURLTemplatesDataDeprecated;
+- (id)artworkURLTemplatesData;
 - (id)assetURLString;
 - (int)chapterCount;
 - (id)collectionIdentifier;
@@ -315,7 +311,6 @@
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currentPlaybackDateData;
-- (void)dealloc;
 - (float)defaultPlaybackRate;
 - (id)description;
 - (id)deviceSpecificUserInfoData;
@@ -339,8 +334,7 @@
 - (bool)hasArtworkIdentifier;
 - (bool)hasArtworkMIMEType;
 - (bool)hasArtworkURL;
-- (bool)hasArtworkURLTemplateAvailable;
-- (bool)hasArtworkURLTemplatesDataDeprecated;
+- (bool)hasArtworkURLTemplatesData;
 - (bool)hasAssetURLString;
 - (bool)hasChapterCount;
 - (bool)hasCollectionIdentifier;
@@ -461,8 +455,7 @@
 - (void)setArtworkIdentifier:(id)arg1;
 - (void)setArtworkMIMEType:(id)arg1;
 - (void)setArtworkURL:(id)arg1;
-- (void)setArtworkURLTemplateAvailable:(bool)arg1;
-- (void)setArtworkURLTemplatesDataDeprecated:(id)arg1;
+- (void)setArtworkURLTemplatesData:(id)arg1;
 - (void)setAssetURLString:(id)arg1;
 - (void)setChapterCount:(int)arg1;
 - (void)setCollectionIdentifier:(id)arg1;
@@ -485,7 +478,6 @@
 - (void)setHasArtworkAvailable:(bool)arg1;
 - (void)setHasArtworkDataHeightDeprecated:(bool)arg1;
 - (void)setHasArtworkDataWidthDeprecated:(bool)arg1;
-- (void)setHasArtworkURLTemplateAvailable:(bool)arg1;
 - (void)setHasChapterCount:(bool)arg1;
 - (void)setHasDefaultPlaybackRate:(bool)arg1;
 - (void)setHasDiscNumber:(bool)arg1;

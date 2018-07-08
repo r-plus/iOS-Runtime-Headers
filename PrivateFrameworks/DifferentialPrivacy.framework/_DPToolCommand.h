@@ -32,6 +32,7 @@
 - (bool)listKeys;
 - (bool)listReportsFor:(id)arg1;
 - (id)queryForKey:(id)arg1;
+- (bool)recordBitValues:(id)arg1 forKey:(id)arg2;
 - (id)recordKey;
 - (bool)recordNumbers:(id)arg1 forKey:(id)arg2;
 - (bool)recordStrings:(id)arg1 forKey:(id)arg2;

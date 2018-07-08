@@ -32,7 +32,6 @@
 - (void)clearRecordCacheWithSetupInfo:(id)arg1 databaseScope:(long long)arg2;
 - (void)currentDeviceIDWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)currentUserBoundaryKeyWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)currentUserIDWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)dataclassEnabled:(id)arg1 withSetupInfo:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)decryptPersonalInfoOnShare:(id)arg1 setupInfo:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)displayInfoOnAccountWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -47,6 +46,7 @@
 - (void)getPCSDiagnosticsForZonesWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)getRecordPCSDiagnosticsForZonesWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)getSandboxExtensionsWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)importantUserIDsWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)initWithConnection:(id)arg1;
 - (void)performAcceptSharesOperation:(id)arg1 withBlock:(id /* block */)arg2;
 - (void)performAggregateZonePCSOperation:(id)arg1 withBlock:(id /* block */)arg2;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@interface CKTimeLogger : NSObject <NSCoding> {
+@interface CKTimeLogger : NSObject <NSSecureCoding> {
     NSMutableArray * _childLoggers;
     NSMutableDictionary * _currentSessions;
     NSMutableDictionary * _logs;
@@ -26,6 +26,7 @@
 @property (nonatomic) double relationTime;
 
 + (id)loggerForObject:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKStatusReportArray;

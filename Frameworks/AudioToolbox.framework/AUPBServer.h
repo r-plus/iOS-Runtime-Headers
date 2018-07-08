@@ -10,10 +10,10 @@
             struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, RemoteAUHandleInfo>, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
-                } __first_; 
+                } __value_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, RemoteAUHandleInfo>, std::__1::less<unsigned int>, true> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __pair3_; 
         } __tree_; 
     }  mAUHandlesToInfo;
@@ -24,10 +24,10 @@
             struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, AUProcessingBlock>, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
-                } __first_; 
+                } __value_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, AUProcessingBlock>, std::__1::less<unsigned int>, true> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __pair3_; 
         } __tree_; 
     }  mBlockHandlesToMethods;
@@ -35,7 +35,7 @@
     NSXPCListener * mListener;
     struct unique_ptr<CAMutex, std::__1::default_delete<CAMutex> > { 
         struct __compressed_pair<CAMutex *, std::__1::default_delete<CAMutex> > { 
-            struct CAMutex {} *__first_; 
+            struct CAMutex {} *__value_; 
         } __ptr_; 
     }  mLock;
     int  mNotifyToken;
@@ -43,7 +43,7 @@
     NSXPCConnection * mRegistrarConnection;
     struct unique_ptr<TestAUProcessingBlock, std::__1::default_delete<TestAUProcessingBlock> > { 
         struct __compressed_pair<TestAUProcessingBlock *, std::__1::default_delete<TestAUProcessingBlock> > { 
-            struct TestAUProcessingBlock {} *__first_; 
+            struct TestAUProcessingBlock {} *__value_; 
         } __ptr_; 
     }  mTestBlock;
     bool  mValidToken;

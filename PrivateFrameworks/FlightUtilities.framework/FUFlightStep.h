@@ -6,6 +6,7 @@
     FUStepTime * _actualTime;
     FUAirport * _airport;
     NSNumber * _delayFromSchedule;
+    bool  _departure;
     FUStepTime * _estimatedTime;
     NSString * _gate;
     long long  _legStatus;
@@ -18,6 +19,7 @@
 @property (retain) FUStepTime *actualTime;
 @property (retain) FUAirport *airport;
 @property (nonatomic, retain) NSNumber *delayFromSchedule;
+@property bool departure;
 @property (retain) FUStepTime *estimatedTime;
 @property (retain) NSString *gate;
 @property long long legStatus;
@@ -25,6 +27,7 @@
 @property (retain) FUStepTime *runwayTime;
 @property (retain) FUStepTime *scheduledTime;
 @property (nonatomic, readonly) unsigned long long status;
+@property (readonly) bool taxiing;
 @property (retain) NSString *terminal;
 @property (readonly) FUStepTime *time;
 
@@ -35,6 +38,7 @@
 - (id)airport;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)delayFromSchedule;
+- (bool)departure;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)estimatedTime;
@@ -48,6 +52,7 @@
 - (void)setActualTime:(id)arg1;
 - (void)setAirport:(id)arg1;
 - (void)setDelayFromSchedule:(id)arg1;
+- (void)setDeparture:(bool)arg1;
 - (void)setEstimatedTime:(id)arg1;
 - (void)setGate:(id)arg1;
 - (void)setLegStatus:(long long)arg1;
@@ -56,6 +61,7 @@
 - (void)setScheduledTime:(id)arg1;
 - (void)setTerminal:(id)arg1;
 - (unsigned long long)status;
+- (bool)taxiing;
 - (id)terminal;
 - (id)time;
 

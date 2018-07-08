@@ -108,8 +108,8 @@
 - (void)performWorkAfterFirstLibraryLoad:(id /* block */)arg1;
 - (id)preferredPaymentApplicationForPaymentPass:(id)arg1;
 - (id)preferredPaymentApplicationsCache;
-- (void)processFelicaTransitAppletState:(id)arg1 forPassUniqueID:(id)arg2;
-- (void)processFelicaTransitHistory:(id)arg1 forPaymentApplication:(id)arg2 withPassUniqueIdentifier:(id)arg3 transactionDate:(id)arg4;
+- (void)processTransitAppletState:(id)arg1 forPassUniqueID:(id)arg2;
+- (void)processTransitHistory:(id)arg1 forPaymentApplication:(id)arg2 withPassUniqueIdentifier:(id)arg3 transactionDate:(id)arg4;
 - (id)relevantPassTuples;
 - (void)requestPeerAccountTermsAndConditionsAcceptance;
 - (bool)serverHasPasses;

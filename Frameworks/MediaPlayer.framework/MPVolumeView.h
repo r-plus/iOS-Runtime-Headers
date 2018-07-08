@@ -2,18 +2,18 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPVolumeView : UIView <MPAVRoutingControllerDelegate, NSCoding> {
+@interface MPVolumeView : UIView <MPAVLightweightRoutingControllerDelegate, NSCoding> {
     bool  _hasNonDefaultMaxVolumeSliderImage;
     bool  _hasNonDefaultMinVolumeSliderImage;
     bool  _hasNonDefaultRouteButtonImages;
     bool  _hidesRouteLabelWhenNoRouteChoice;
+    MPAVLightweightRoutingController * _lightweightRoutingController;
     MPMediaControlsStandaloneViewController * _mediaControlsViewController;
     bool  _pushedRouteDiscoveryModeState;
     UIButton * _routeButton;
     bool  _routeButtonShowsTouchWhenHighlighted;
     bool  _routeDiscoveryEnabled;
     UILabel * _routeLabel;
-    MPAVRoutingController * _routingController;
     bool  _showingButton;
     bool  _showingLabel;
     bool  _showingSlider;
@@ -53,13 +53,13 @@
 - (void)_initWithStyle:(long long)arg1;
 - (void)_loadAudioRoutePickerIfNeeded;
 - (id)_routeButton;
-- (void)_routingControllerDidUpdateVolumeControlState:(id)arg1;
 - (void)_setRouteDiscoveryEnabled:(bool)arg1;
 - (void)_setShowsRouteButton:(bool)arg1 animated:(bool)arg2;
 - (void)_setShowsVolumeSlider:(bool)arg1;
 - (void)_startPrewarmingAudioRoutePicker;
 - (void)_stopPrewarmingAudioRoutePicker;
 - (void)_updateWirelessRouteStatus;
+- (void)_volumeSliderVolumeControlAvailabilityDidChangeNotification:(id)arg1;
 - (bool)areWirelessRoutesAvailable;
 - (void)dealloc;
 - (void)didMoveToSuperview;
@@ -75,14 +75,14 @@
 - (bool)isVisible;
 - (bool)isWirelessRouteActive;
 - (void)layoutSubviews;
+- (void)lightweightRoutingController:(id)arg1 didChangeDevicePresenceDetected:(bool)arg2;
+- (void)lightweightRoutingController:(id)arg1 didChangePickedRoutes:(id)arg2;
 - (id)maximumVolumeSliderImageForState:(unsigned long long)arg1;
 - (id)minimumVolumeSliderImageForState:(unsigned long long)arg1;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)routeButtonImageForState:(unsigned long long)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })routeButtonRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)routeButtonShowsTouchWhenHighlighted;
-- (void)routingController:(id)arg1 volumeControlAvailabilityDidChange:(bool)arg2;
-- (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (void)setAlpha:(double)arg1;
 - (void)setHidden:(bool)arg1;
 - (void)setHidesRouteLabelWhenNoRouteChoice:(bool)arg1;

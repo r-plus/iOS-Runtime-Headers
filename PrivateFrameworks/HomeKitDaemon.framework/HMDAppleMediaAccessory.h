@@ -32,7 +32,6 @@
 
 - (void).cxx_destruct;
 - (void)__updateDeviceWithDeviceIdentifier:(id)arg1;
-- (id)_decodeHashedRouteUID:(id)arg1;
 - (void)_fetchAvailableUpdate:(id)arg1;
 - (void)_registerForMessages;
 - (void)_relayRequestMessage:(id)arg1 responseHandler:(id /* block */)arg2;

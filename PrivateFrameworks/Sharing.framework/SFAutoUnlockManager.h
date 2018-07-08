@@ -33,7 +33,6 @@
 - (void)disableAutoUnlockForDevice:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)eligibleAutoUnlockDevicesWithCompletionHandler:(id /* block */)arg1;
 - (void)enableAutoUnlockWithDevice:(id)arg1 passcode:(id)arg2;
-- (void)enableAutoUnlockWithDevice:(id)arg1 passcode:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)enabledDevice:(id)arg1;
 - (void)failedToEnableDevice:(id)arg1 error:(id)arg2;
 - (void)failedUnlockWithError:(id)arg1;

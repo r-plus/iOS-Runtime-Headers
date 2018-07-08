@@ -3,11 +3,11 @@
  */
 
 @interface KNAnimationInfo : NSObject {
-    Class  mAnimationClass;
-    NSSet * mValidAnimationTypes;
+    Class  _animationClass;
+    NSSet * _validAnimationTypes;
 }
 
-@property (nonatomic, readonly) Class animationClass;
+@property (nonatomic, retain) Class animationClass;
 @property (nonatomic, readonly) NSString *animationFilter;
 @property (nonatomic, readonly) long long category;
 @property (nonatomic, readonly) NSDictionary *customAttributeDefaults;
@@ -19,12 +19,14 @@
 @property (nonatomic, readonly) NSString *localizedActionBuildName;
 @property (nonatomic, readonly) NSString *localizedBuildInName;
 @property (nonatomic, readonly) NSString *localizedBuildOutName;
+@property (nonatomic, readonly) NSString *localizedContentBuildName;
 @property (nonatomic, readonly) NSString *localizedTransitionName;
-@property (nonatomic, readonly) NSSet *validAnimationTypes;
+@property (nonatomic, retain) NSSet *validAnimationTypes;
 
 + (id)effectIdentifiersForAnimationInfos:(id)arg1;
 + (id)localizedEffectNamesForAnimationInfos:(id)arg1 animationType:(long long)arg2;
 
+- (void).cxx_destruct;
 - (Class)animationClass;
 - (id)animationFilter;
 - (long long)category;
@@ -32,7 +34,6 @@
 - (id)customAttributes;
 - (id)customAttributesForAttributeKey:(id)arg1;
 - (id)customEffectTimingCurveDisplayParametersForAttributes:(id)arg1 layoutStyleOnly:(bool)arg2;
-- (void)dealloc;
 - (id)defaultAttributes;
 - (id)description;
 - (unsigned long long)directionType;
@@ -44,8 +45,11 @@
 - (id)localizedActionBuildName;
 - (id)localizedBuildInName;
 - (id)localizedBuildOutName;
+- (id)localizedContentBuildName;
 - (id)localizedNameForType:(long long)arg1;
 - (id)localizedTransitionName;
+- (void)setAnimationClass:(Class)arg1;
+- (void)setValidAnimationTypes:(id)arg1;
 - (bool)supportsAnimationType:(long long)arg1;
 - (id)thumbnailImageNameForType:(long long)arg1;
 - (id)validAnimationTypes;

@@ -13,6 +13,7 @@
     NSURL * _audioFileURL;
     unsigned long long  _bargeInOptions;
     double  _expectedActivationEventTime;
+    bool  _fetchSmartSiriVolume;
     unsigned long long  _homeButtonDownEventMachAbsoluteTime;
     double  _homeButtonDownEventTime;
     NSNumber * _homeButtonUpFromBeep;
@@ -24,8 +25,10 @@
     bool  _releaseAudioSessionOnRecordingCompletion;
     NSString * _serverCommandId;
     NSXPCListenerEndpoint * _speechRecordingEventListeningEndpoint;
+    AFSpeechSynthesisRecord * _speechSynthesisRecord;
+    NSDictionary * _startContext;
+    NSDictionary * _stopContext;
     bool  _suppressStopAlert;
-    bool  _updateSiriOutputVolume;
     bool  _useAutomaticEndpointing;
     bool  _useBorealisBuffer;
     bool  _usePrelisteningMode;
@@ -44,6 +47,7 @@
 @property (nonatomic) unsigned long long bargeInOptions;
 @property (nonatomic, copy) NSString *btDeviceAddress;
 @property (nonatomic) double expectedActivationEventTime;
+@property (nonatomic) bool fetchSmartSiriVolume;
 @property (nonatomic) unsigned long long homeButtonDownEventMachAbsoluteTime;
 @property (nonatomic) double homeButtonDownEventTime;
 @property (nonatomic, copy) NSNumber *homeButtonUpFromBeep;
@@ -55,8 +59,10 @@
 @property (nonatomic) bool releaseAudioSessionOnRecordingCompletion;
 @property (nonatomic, copy) NSString *serverCommandId;
 @property (nonatomic, retain) NSXPCListenerEndpoint *speechRecordingEventListeningEndpoint;
+@property (nonatomic, copy) AFSpeechSynthesisRecord *speechSynthesisRecord;
+@property (nonatomic, copy) NSDictionary *startContext;
+@property (nonatomic, copy) NSDictionary *stopContext;
 @property (nonatomic) bool suppressStopAlert;
-@property (nonatomic) bool updateSiriOutputVolume;
 @property (nonatomic) bool useAutomaticEndpointing;
 @property (nonatomic) bool useBorealisBuffer;
 @property (nonatomic) bool usePrelisteningMode;
@@ -80,6 +86,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (double)expectedActivationEventTime;
+- (bool)fetchSmartSiriVolume;
 - (unsigned long long)homeButtonDownEventMachAbsoluteTime;
 - (double)homeButtonDownEventTime;
 - (id)homeButtonUpFromBeep;
@@ -103,6 +110,7 @@
 - (void)setBargeInOptions:(unsigned long long)arg1;
 - (void)setBtDeviceAddress:(id)arg1;
 - (void)setExpectedActivationEventTime:(double)arg1;
+- (void)setFetchSmartSiriVolume:(bool)arg1;
 - (void)setHomeButtonDownEventMachAbsoluteTime:(unsigned long long)arg1;
 - (void)setHomeButtonDownEventTime:(double)arg1;
 - (void)setHomeButtonUpFromBeep:(id)arg1;
@@ -114,16 +122,20 @@
 - (void)setReleaseAudioSessionOnRecordingCompletion:(bool)arg1;
 - (void)setServerCommandId:(id)arg1;
 - (void)setSpeechRecordingEventListeningEndpoint:(id)arg1;
+- (void)setSpeechSynthesisRecord:(id)arg1;
+- (void)setStartContext:(id)arg1;
+- (void)setStopContext:(id)arg1;
 - (void)setSuppressStopAlert:(bool)arg1;
-- (void)setUpdateSiriOutputVolume:(bool)arg1;
 - (void)setUseAutomaticEndpointing:(bool)arg1;
 - (void)setUseBorealisBuffer:(bool)arg1;
 - (void)setUsePrelisteningMode:(bool)arg1;
 - (void)setUseStreamingDictation:(bool)arg1;
 - (void)setVoiceTriggerEventInfo:(id)arg1;
 - (id)speechRecordingEventListeningEndpoint;
+- (id)speechSynthesisRecord;
+- (id)startContext;
+- (id)stopContext;
 - (bool)suppressStopAlert;
-- (bool)updateSiriOutputVolume;
 - (bool)useAutomaticEndpointing;
 - (bool)useBorealisBuffer;
 - (bool)usePrelisteningMode;

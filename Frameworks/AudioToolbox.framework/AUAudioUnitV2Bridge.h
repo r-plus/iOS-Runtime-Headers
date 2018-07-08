@@ -15,7 +15,7 @@
     bool  _removingObserverWithContext;
     struct unique_ptr<AUAudioUnitV2Bridge_Renderer, std::__1::default_delete<AUAudioUnitV2Bridge_Renderer> > { 
         struct __compressed_pair<AUAudioUnitV2Bridge_Renderer *, std::__1::default_delete<AUAudioUnitV2Bridge_Renderer> > { 
-            struct AUAudioUnitV2Bridge_Renderer {} *__first_; 
+            struct AUAudioUnitV2Bridge_Renderer {} *__value_; 
         } __ptr_; 
     }  _renderer;
 }

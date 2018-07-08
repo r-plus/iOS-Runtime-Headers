@@ -8,6 +8,7 @@
     unsigned long long  _appearanceActions;
     long long  _currentItemIndex;
     bool  _fullScreen;
+    bool  _hasTriggeredInteractiveTransitionAnimation;
     bool  _isAvailable;
     bool  _isEditing;
     bool  _isTransitioningPage;
@@ -41,6 +42,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool fullScreen;
+@property bool hasTriggeredInteractiveTransitionAnimation;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool isAvailable;
 @property (nonatomic) bool isEditing;
@@ -87,6 +89,7 @@
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)gestureTracker;
+- (bool)hasTriggeredInteractiveTransitionAnimation;
 - (void)hostApplicationDidBecomeActive;
 - (void)hostApplicationDidEnterBackground:(bool)arg1;
 - (void)hostViewControlerTransitionToState:(unsigned long long)arg1 animated:(bool)arg2;
@@ -132,6 +135,7 @@
 - (void)setAppearance:(id)arg1 animated:(bool)arg2;
 - (void)setCurrentPreviewItemIndex:(long long)arg1 animated:(bool)arg2;
 - (void)setFullScreen:(bool)arg1;
+- (void)setHasTriggeredInteractiveTransitionAnimation:(bool)arg1;
 - (void)setIsAvailable:(bool)arg1;
 - (void)setIsEditing:(bool)arg1;
 - (void)setIsTransitioningPage:(bool)arg1;
@@ -151,7 +155,7 @@
 - (id)slideGesture;
 - (void)slideToDismissGestureRecognized:(id)arg1;
 - (void)startNonInteractiveTransitionPresenting:(bool)arg1;
-- (void)startTransitionWithSourceViewProvider:(id)arg1 transitionController:(id)arg2 presenting:(bool)arg3 completionHandler:(id /* block */)arg4;
+- (void)startTransitionWithSourceViewProvider:(id)arg1 transitionController:(id)arg2 presenting:(bool)arg3 useInteractiveTransition:(bool)arg4 completionHandler:(id /* block */)arg5;
 - (id)stateManager;
 - (id)swipeDownTracker;
 - (void)tearDownTransition:(bool)arg1;
@@ -160,6 +164,7 @@
 - (id)transitionContext;
 - (id)transitionController;
 - (id)transitionDriver;
+- (void)triggerInteractiveTransitionAnimationIfNeeded;
 - (void)updateCurrentPreviewConfiguration;
 - (void)updateTransitionWithProgress:(double)arg1;
 - (void)viewDidAppear:(bool)arg1;

@@ -5,6 +5,7 @@
 @interface CUSystemMonitor : NSObject {
     bool  _activateCalled;
     bool  _activateCompleted;
+    id /* block */  _bluetoothAddressChangedHandler;
     id /* block */  _callChangedHandler;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     bool  _invalidateCalled;
@@ -20,6 +21,9 @@
 }
 
 @property (readonly) int activeCallCount;
+@property (readonly) struct { unsigned char x1[6]; } bluetoothAddress48;
+@property (copy) id /* block */ bluetoothAddressChangedHandler;
+@property (readonly, copy) NSData *bluetoothAddressData;
 @property (copy) id /* block */ callChangedHandler;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (nonatomic, copy) id /* block */ invalidationHandler;
@@ -45,6 +49,9 @@
 - (void).cxx_destruct;
 - (void)activateWithCompletion:(id /* block */)arg1;
 - (int)activeCallCount;
+- (struct { unsigned char x1[6]; })bluetoothAddress48;
+- (id /* block */)bluetoothAddressChangedHandler;
+- (id)bluetoothAddressData;
 - (id /* block */)callChangedHandler;
 - (id)dispatchQueue;
 - (id)init;
@@ -65,6 +72,7 @@
 - (id /* block */)screenOnChangedHandler;
 - (bool)screenSaverActive;
 - (id /* block */)screenSaverChangedHandler;
+- (void)setBluetoothAddressChangedHandler:(id /* block */)arg1;
 - (void)setCallChangedHandler:(id /* block */)arg1;
 - (void)setDispatchQueue:(id)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;

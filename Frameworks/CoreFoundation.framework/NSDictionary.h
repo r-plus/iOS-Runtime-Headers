@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSDictionary : NSObject <AFSecurityDigestibleChunksProviding, CKLParsedObject, CSCoderEncoder, HFPropertyListConvertible, MPCSupportedCommands, NNSyncableHeadline, NNSyncableResult, NNSyncableSection, NSCopying, NSFastEnumeration, NSFetchRequestResult, NSMutableCopying, NSSecureCoding, PHFetchDictionaryAccessing, PQLBindable, TSPResourceLocalStrategyProvider>
+@interface NSDictionary : NSObject <AFSecurityDigestibleChunksProviding, ATXScoreLogSerializable, CKLParsedObject, CSCoderEncoder, HFPropertyListConvertible, MPCSupportedCommands, NNSyncableHeadline, NNSyncableResult, NNSyncableSection, NSCopying, NSFastEnumeration, NSFetchRequestResult, NSMutableCopying, NSSecureCoding, PHFetchDictionaryAccessing, PQLBindable, TSPResourceLocalStrategyProvider>
 
 @property (nonatomic, readonly) NSNumber *__im_associatedMessageContentType;
 @property (nonatomic, readonly) NSString *__im_associatedMessagePluginBundleID;
@@ -13,6 +13,8 @@
 @property (nonatomic, readonly) NSArray *categories;
 @property (readonly) unsigned long long count;
 @property (nonatomic, readonly) NSString *creator;
+@property (nonatomic, readonly) id crk_keyValueObservingNewObject;
+@property (nonatomic, readonly) id crk_keyValueObservingOldObject;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) unsigned short fileHFSFlags;
@@ -120,13 +122,6 @@
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)objectsForKeys:(id)arg1 notFoundMarker:(id)arg2;
 
-// Image: /Developer/Library/PrivateFrameworks/DebugHierarchyFoundation.framework/DebugHierarchyFoundation
-
-+ (id)dictionaryWithJSONData:(id)arg1 error:(id*)arg2;
-
-- (id)generateJSONDataWithError:(id*)arg1;
-- (id)generateJSONStringWithError:(id*)arg1;
-
 // Image: /System/Library/CoreServices/RawCamera.bundle/RawCamera
 
 - (id)keypathValueDictionary;
@@ -215,6 +210,7 @@
 - (bool)hk_containsKeys:(id)arg1;
 - (id)hk_copyWithoutPrivateMetadataKeys;
 - (id)hk_dictionaryByAddingEntriesFromDictionary:(id)arg1;
+- (id)hk_filterKeysWithBlock:(id /* block */)arg1;
 - (id)hk_sortedKeys;
 - (bool)hk_validateMetadataKeysAndValuesAllowingPrivateMetadataKeys:(bool)arg1 error:(id*)arg2;
 
@@ -327,8 +323,10 @@
 // Image: /System/Library/PrivateFrameworks/AdCore.framework/AdCore
 
 - (id)dictionaryForJSON;
+- (bool)hasObjectForKey:(id)arg1 ofKindOfClass:(Class)arg2;
 - (id)jsonString;
 - (id)jsonStringWithPrettyPrint:(bool)arg1;
+- (id)objectForKey:(id)arg1 ofKindOfClass:(Class)arg2;
 
 // Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
 
@@ -360,6 +358,10 @@
 - (void)setVersionToken:(id)arg1;
 - (id)versionToken;
 
+// Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
+
+- (void)atx_writeToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
+
 // Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
 
 - (id)aaui_map:(id /* block */)arg1;
@@ -380,6 +382,7 @@
 - (id)_ak_truncatedTokensCopy;
 - (id)ak_map:(id /* block */)arg1;
 - (id)ak_redactedCopy;
+- (id)ak_urlQueryString;
 
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
@@ -432,6 +435,8 @@
 // Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
 
 - (id)crk_dictionaryByAddingEntriesFromDictionary:(id)arg1;
+- (id)crk_keyValueObservingNewObject;
+- (id)crk_keyValueObservingOldObject;
 - (id)crk_mapUsingBlock:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
@@ -549,8 +554,8 @@
 
 // Image: /System/Library/PrivateFrameworks/CoreSpeech.framework/CoreSpeech
 
-- (id)initWithXPCObject:(id)arg1;
-- (id)xpcObject;
+- (id)_cs_initWithXPCObject:(id)arg1;
+- (id)_cs_xpcObject;
 
 // Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
 
@@ -582,6 +587,24 @@
 - (id)alwaysGetKey:(id)arg1 ofType:(Class)arg2 default:(id)arg3;
 - (id)alwaysGetNumberForKey:(id)arg1 default:(id)arg2;
 - (id)alwaysGetStringForKey:(id)arg1 default:(id)arg2;
+- (id)dk_arrayFromKey:(id)arg1 inSet:(id)arg2 maxLength:(unsigned long long)arg3 defaultValue:(id)arg4 failed:(bool*)arg5;
+- (id)dk_arrayFromKey:(id)arg1 types:(id)arg2 maxLength:(unsigned long long)arg3 defaultValue:(id)arg4 failed:(bool*)arg5;
+- (id)dk_arrayFromKey:(id)arg1 types:(id)arg2 maxLength:(unsigned long long)arg3 defaultValue:(id)arg4 failed:(bool*)arg5 validator:(id /* block */)arg6;
+- (id)dk_arrayFromRequiredKey:(id)arg1 inSet:(id)arg2 maxLength:(unsigned long long)arg3 failed:(bool*)arg4;
+- (id)dk_arrayFromRequiredKey:(id)arg1 types:(id)arg2 maxLength:(unsigned long long)arg3 failed:(bool*)arg4;
+- (id)dk_arrayFromRequiredKey:(id)arg1 types:(id)arg2 maxLength:(unsigned long long)arg3 failed:(bool*)arg4 validator:(id /* block */)arg5;
+- (bool)dk_boolFromKey:(id)arg1 defaultValue:(bool)arg2 failed:(bool*)arg3;
+- (bool)dk_boolFromRequiredKey:(id)arg1 failed:(bool*)arg2;
+- (id)dk_dictionaryFromKey:(id)arg1 defaultValue:(id)arg2 failed:(bool*)arg3;
+- (id)dk_dictionaryFromKey:(id)arg1 limitedToKeys:(id)arg2 defaultValue:(id)arg3 failed:(bool*)arg4;
+- (id)dk_dictionaryFromRequiredKey:(id)arg1 failed:(bool*)arg2;
+- (id)dk_dictionaryFromRequiredKey:(id)arg1 limitedToKeys:(id)arg2 failed:(bool*)arg3;
+- (id)dk_numberFromKey:(id)arg1 lowerBound:(id)arg2 upperBound:(id)arg3 defaultValue:(id)arg4 failed:(bool*)arg5;
+- (id)dk_numberFromRequiredKey:(id)arg1 lowerBound:(id)arg2 upperBound:(id)arg3 failed:(bool*)arg4;
+- (id)dk_stringFromKey:(id)arg1 inSet:(id)arg2 defaultValue:(id)arg3 failed:(bool*)arg4;
+- (id)dk_stringFromKey:(id)arg1 maxLength:(unsigned long long)arg2 defaultValue:(id)arg3 failed:(bool*)arg4;
+- (id)dk_stringFromRequiredKey:(id)arg1 inSet:(id)arg2 failed:(bool*)arg3;
+- (id)dk_stringFromRequiredKey:(id)arg1 maxLength:(unsigned long long)arg2 failed:(bool*)arg3;
 - (id)getArrayForKey:(id)arg1;
 - (bool)getBoolForKey:(id)arg1;
 - (id)getDictionaryForKey:(id)arg1;
@@ -762,6 +785,7 @@
 - (double)doubleValueForKey:(id)arg1 withDefault:(double)arg2;
 - (float)floatValueForKey:(id)arg1 withDefault:(float)arg2;
 - (long long)integerValueForKey:(id)arg1 withDefault:(long long)arg2;
+- (bool)isArchivable_im;
 - (long long)longLongValueForKey:(id)arg1 withDefault:(long long)arg2;
 - (long long)longValueForKey:(id)arg1 withDefault:(long long)arg2;
 - (unsigned long long)unsignedIntegerValueForKey:(id)arg1 withDefault:(unsigned long long)arg2;
@@ -821,6 +845,10 @@
 
 - (bool)mf_boolForKey:(id)arg1;
 - (int)mf_integerForKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/MobileActivation.framework/MobileActivation
+
+- (id)objectForCaseInsensitiveKey:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
 
@@ -1003,9 +1031,11 @@
 - (id)safari_dictionaryForKey:(id)arg1;
 - (id)safari_diffWithDictionary:(id)arg1;
 - (id)safari_mapAndFilterKeysAndObjectsUsingBlock:(id /* block */)arg1;
+- (id)safari_mapTableForKey:(id)arg1;
 - (id)safari_numberForKey:(id)arg1;
 - (id)safari_setForKey:(id)arg1;
 - (id)safari_stringForKey:(id)arg1;
+- (id)safari_stringForKey:(id)arg1 returningNilIfEmpty:(bool)arg2;
 
 // Image: /System/Library/PrivateFrameworks/SafariSafeBrowsing.framework/SafariSafeBrowsing
 
@@ -1190,6 +1220,7 @@
 - (int)ic_intValueForKey:(id)arg1;
 - (id)ic_numberValueForKey:(id)arg1;
 - (id)ic_stringValueForKey:(id)arg1;
+- (unsigned int)ic_uintValueForKey:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
 

@@ -13,6 +13,7 @@
     PBRequest * _request;
     GEOProtobufSessionTask * _task;
     GEOMapServiceTraits * _traits;
+    id /* block */  _validationHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -28,6 +29,7 @@
 - (void)dealloc;
 - (id)initWithRequest:(id)arg1 auditToken:(id)arg2 config:(id)arg3 timeout:(double)arg4 dataRequestKind:(int)arg5 traits:(id)arg6;
 - (void)protobufSession:(id)arg1 didCompleteTask:(id)arg2;
-- (void)startWithCompletionHandler:(id /* block */)arg1;
+- (id)protobufSession:(id)arg1 validateResponse:(id)arg2;
+- (void)startWithValidationHandler:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
 
 @end

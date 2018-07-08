@@ -25,6 +25,8 @@
 - (bool)_isAccountModificationRestricted;
 - (bool)_isSignInAllowed;
 - (void)_provideDelegateWithAuthResults:(id)arg1 error:(id)arg2;
+- (void)_setPasswordFieldHidden:(bool)arg1 animated:(bool)arg2;
+- (void)_setPasswordFieldHiddenIfNeeded;
 - (void)_startBusyWorkUI;
 - (id)authenticationController;
 - (id)context;
@@ -35,5 +37,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)setUsesDarkMode:(bool)arg1;
 - (bool)usesDarkMode;
+- (void)viewDidAppear:(bool)arg1;
 
 @end

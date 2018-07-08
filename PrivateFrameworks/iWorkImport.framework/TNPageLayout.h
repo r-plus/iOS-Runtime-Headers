@@ -27,6 +27,7 @@
 @property (readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } pageBounds;
 @property TNPageController *pageController;
 @property struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; } pageCoordinate;
+@property (readonly) bool pageLayoutDirectionIsRTL;
 @property (getter=isPlaceholder) bool placeholder;
 @property (retain) TNSheet *sheet;
 @property (nonatomic, readonly) bool shrinkTextToFit;
@@ -64,6 +65,7 @@
 - (id)pageController;
 - (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })pageCoordinate;
 - (unsigned long long)pageCount;
+- (bool)pageLayoutDirectionIsRTL;
 - (unsigned long long)pageNumber;
 - (void)parentDidChange;
 - (void)performBlockForEachHeaderFooterLayout:(id /* block */)arg1;

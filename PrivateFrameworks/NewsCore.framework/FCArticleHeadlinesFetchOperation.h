@@ -4,10 +4,10 @@
 
 @interface FCArticleHeadlinesFetchOperation : FCMultiStepFetchOperation {
     bool  _allowRecordChainFetch;
-    <FCAppConfiguration> * _appConfiguration;
     unsigned long long  _articleCachePolicy;
     NSArray * _articleIDs;
     double  _articleMaximumCachedAge;
+    <FCCoreConfiguration> * _configuration;
     <FCContentContext> * _context;
     NSArray * _headlines;
     FCHeldRecords * _heldArticleRecords;
@@ -20,10 +20,10 @@
 }
 
 @property (nonatomic) bool allowRecordChainFetch;
-@property (nonatomic, copy) <FCAppConfiguration> *appConfiguration;
 @property unsigned long long articleCachePolicy;
 @property (nonatomic, retain) NSArray *articleIDs;
 @property double articleMaximumCachedAge;
+@property (nonatomic, copy) <FCCoreConfiguration> *configuration;
 @property (nonatomic, retain) <FCContentContext> *context;
 @property (nonatomic, retain) NSArray *headlines;
 @property (nonatomic, retain) FCHeldRecords *heldArticleRecords;
@@ -36,17 +36,17 @@
 
 - (void).cxx_destruct;
 - (bool)allowRecordChainFetch;
-- (id)appConfiguration;
 - (unsigned long long)articleCachePolicy;
 - (id)articleIDs;
 - (double)articleMaximumCachedAge;
 - (id)completeFetchOperation;
+- (id)configuration;
 - (id)context;
 - (void)customizeChildOperation:(id)arg1 forFetchStep:(SEL)arg2;
 - (id)determineAppropriateFetchStepsWithCompletion:(id /* block */)arg1;
-- (id)fetchAppConfigWithCompletion:(id /* block */)arg1;
 - (id)fetchArticleAndTagRecordsWithCompletion:(id /* block */)arg1;
 - (id)fetchArticleRecordsWithCompletion:(id /* block */)arg1;
+- (id)fetchConfigWithCompletion:(id /* block */)arg1;
 - (id)fetchTagRecordsWithCompletion:(id /* block */)arg1;
 - (id)headlines;
 - (id)heldArticleRecords;
@@ -56,10 +56,10 @@
 - (bool)overrideArticleCachePolicy;
 - (bool)overrideTagCachePolicy;
 - (void)setAllowRecordChainFetch:(bool)arg1;
-- (void)setAppConfiguration:(id)arg1;
 - (void)setArticleCachePolicy:(unsigned long long)arg1;
 - (void)setArticleIDs:(id)arg1;
 - (void)setArticleMaximumCachedAge:(double)arg1;
+- (void)setConfiguration:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setHeadlines:(id)arg1;
 - (void)setHeldArticleRecords:(id)arg1;

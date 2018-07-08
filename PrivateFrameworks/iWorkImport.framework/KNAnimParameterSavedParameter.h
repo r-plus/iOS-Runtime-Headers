@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNAnimParameterSavedParameter : NSObject <NSCoding> {
+@interface KNAnimParameterSavedParameter : NSObject <NSSecureCoding> {
     bool  _debugOnly;
     double  _doubleValue;
     bool  _hasMaxValue;
@@ -28,7 +28,9 @@
 @property (nonatomic) bool removed;
 @property (nonatomic) unsigned long long type;
 
-- (void)dealloc;
++ (bool)supportsSecureCoding;
+
+- (void).cxx_destruct;
 - (bool)debugOnly;
 - (double)doubleValue;
 - (void)encodeWithCoder:(id)arg1;

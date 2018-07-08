@@ -3,7 +3,7 @@
  */
 
 @interface MRNetServiceTransport : MRExternalDeviceTransport {
-    void * _deviceInfo;
+    _MRDeviceInfoMessageProtobuf * _deviceInfo;
     NSNetService * _netService;
     bool  _requiresCustomPairing;
 }
@@ -11,12 +11,12 @@
 @property (nonatomic, retain) NSNetService *netService;
 @property (nonatomic) bool requiresCustomPairing;
 
-+ (void*)createDeviceInfoFromNetService:(id)arg1;
-+ (void*)createDeviceInfoFromTXTRecord:(id)arg1;
++ (id)createDeviceInfoFromNetService:(id)arg1;
++ (id)createDeviceInfoFromTXTRecord:(id)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
-- (void*)deviceInfo;
+- (id)deviceInfo;
 - (id)error;
 - (bool)getInputStream:(id*)arg1 outputStream:(id*)arg2;
 - (id)hostname;

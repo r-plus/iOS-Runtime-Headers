@@ -22,6 +22,8 @@
     SFCollectionViewLayout * _collectionViewLayout;
     bool  _darkStyleOnLegacyApp;
     NSObject<SFAirDropActivityViewControllerDelegate> * _delegate;
+    UICollectionView * _detailCollectionView;
+    SFCollectionViewLayout * _detailCollectionViewLayout;
     UIButton * _doneButton;
     UIFocusContainerGuide * _fcg;
     long long  _generatedPreviews;
@@ -50,11 +52,13 @@
     NSString * _overriddenNoAWDLText;
     NSString * _overriddenNoWiFIBTText;
     NSString * _overriddenTitleText;
+    unsigned long long  _peopleStartTimestamp;
     NSMutableDictionary * _personToProgress;
     NSMutableDictionary * _personToSharedItemsRequestID;
     NSMutableDictionary * _personToStoredTransferFinalState;
     id  _progressToken;
     SFPersonCollectionViewCell * _prototypeActivityCell;
+    NSMapTable * _realNameToFirstSeenTimestamp;
     UIButton * _reportBugButton;
     NSString * _sendingAppBundleID;
     struct { 
@@ -95,9 +99,13 @@
 - (void).cxx_destruct;
 - (struct CGSize { double x1; double x2; })_cachedPreferredItemSize;
 - (struct CGSize { double x1; double x2; })_cachedPreferredItemSizeForString:(id)arg1;
+- (void)_collectTelemetryForPeople:(id)arg1;
 - (void)_createiOSLayoutConstraints;
 - (void)_createtvOSLayoutConstraints;
+- (void)_emitTelemetryForPerson:(id)arg1;
 - (id)_fontWithStyle:(id)arg1 maxSizeCategory:(id)arg2 traits:(unsigned int)arg3;
+- (void)_startTelemetry;
+- (void)_stopTelemetry;
 - (void)_updateExclusionPathsForTextViews;
 - (void)_updateFontSizes;
 - (bool)addAttributedString:(id)arg1 withAttachmentName:(id)arg2 description:(id)arg3 previewImage:(id)arg4;

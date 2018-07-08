@@ -9,9 +9,9 @@
 @property (nonatomic, retain) _MRVirtualTouchDeviceDescriptorProtobuf *deviceDescriptor;
 @property (nonatomic, readonly) bool hasDeviceDescriptor;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)deviceDescriptor;
 - (id)dictionaryRepresentation;

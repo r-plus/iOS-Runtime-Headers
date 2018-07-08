@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFMailComposeInternalViewController : UIViewController <MFMailComposeRemoteViewControllerDelegate> {
+@interface MFMailComposeInternalViewController : UIViewController <MFMailComposeRemoteViewControllerDelegate, MFMailCompositionUTITypes> {
     NSMutableArray * _attachments;
     id  _autorotationDelegate;
     _UIAsyncInvocation * _cancellationInvocation;
@@ -24,9 +24,11 @@
     MFMailComposeRemoteViewController * _serviceViewController;
 }
 
+@property (nonatomic, copy) NSArray *UTITypes;
 @property (nonatomic) id autorotationDelegate;
 @property (nonatomic) <MFMailComposeViewControllerDelegate> *mailComposeDelegate;
 
+- (id)UTITypes;
 - (void)_beginDelayingCompositionPresenation;
 - (void)_cancelComposition:(id)arg1;
 - (void)_cancelRemoteServiceViewControllerRequest;
@@ -72,6 +74,7 @@
 - (void)setSubject:(id)arg1;
 - (void)setToRecipients:(id)arg1;
 - (void)setURL:(id)arg1;
+- (void)setUTITypes:(id)arg1;
 - (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;

@@ -12,7 +12,7 @@
         unsigned long long *__begin_; 
         unsigned long long *__end_; 
         struct __compressed_pair<unsigned long long *, std::__1::allocator<unsigned long long> > { 
-            unsigned long long *__first_; 
+            unsigned long long *__value_; 
         } __end_cap_; 
     }  _prioritizedDownloadTokens;
     NSOperationQueue * _streamingOperationQueue;

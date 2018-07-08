@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Rapport.framework/Rapport
  */
 
-@interface RPCompanionLinkClient : NSObject <NSSecureCoding, RPCompanionLinkXPCClientInterface> {
+@interface RPCompanionLinkClient : NSObject <NSSecureCoding, RPCompanionLinkXPCClientInterface, RPMessageable> {
     bool  _activateCalled;
     struct NSMutableSet { Class x1; } * _assertions;
     RPCompanionLinkDevice * _destinationDevice;
@@ -20,12 +20,13 @@
     RPCompanionLinkDevice * _localDevice;
     id /* block */  _localDeviceUpdatedHandler;
     NSString * _password;
+    id /* block */  _promptForPasswordHandler;
     struct NSMutableDictionary { Class x1; } * _requestRegistrations;
     NSXPCConnection * _xpcCnx;
 }
 
-@property (nonatomic, readonly, copy) NSArray *activeDevices;
-@property (nonatomic, readonly, copy) RPCompanionLinkDevice *activePersonalCompanion;
+@property (readonly, copy) NSArray *activeDevices;
+@property (readonly) RPCompanionLinkDevice *activePersonalCompanion;
 @property (nonatomic, retain) RPCompanionLinkDevice *destinationDevice;
 @property (nonatomic, copy) id /* block */ deviceChangedHandler;
 @property (nonatomic, copy) id /* block */ deviceFoundHandler;
@@ -34,9 +35,10 @@
 @property (nonatomic) unsigned int flags;
 @property (nonatomic, copy) id /* block */ interruptionHandler;
 @property (nonatomic, copy) id /* block */ invalidationHandler;
-@property (nonatomic, readonly, copy) RPCompanionLinkDevice *localDevice;
+@property (retain) RPCompanionLinkDevice *localDevice;
 @property (nonatomic, copy) id /* block */ localDeviceUpdatedHandler;
 @property (nonatomic, copy) NSString *password;
+@property (nonatomic, copy) id /* block */ promptForPasswordHandler;
 
 + (bool)supportsSecureCoding;
 
@@ -80,6 +82,7 @@
 - (id)localDevice;
 - (id /* block */)localDeviceUpdatedHandler;
 - (id)password;
+- (id /* block */)promptForPasswordHandler;
 - (void)registerEventID:(id)arg1 options:(id)arg2 handler:(id /* block */)arg3;
 - (void)registerRequestID:(id)arg1 options:(id)arg2 handler:(id /* block */)arg3;
 - (void)sendEventID:(id)arg1 event:(id)arg2 destinationID:(id)arg3 options:(id)arg4 completion:(id /* block */)arg5;
@@ -92,7 +95,10 @@
 - (void)setFlags:(unsigned int)arg1;
 - (void)setInterruptionHandler:(id /* block */)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;
+- (void)setLocalDevice:(id)arg1;
 - (void)setLocalDeviceUpdatedHandler:(id /* block */)arg1;
 - (void)setPassword:(id)arg1;
+- (void)setPromptForPasswordHandler:(id /* block */)arg1;
+- (void)tryPassword:(id)arg1;
 
 @end

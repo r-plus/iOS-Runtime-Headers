@@ -6,7 +6,7 @@
     struct MDLAffineTransform { 
         struct vector<std::__1::pair<double, float __attribute__((ext_vector_type(3)))>, std::__1::allocator<std::__1::pair<double, float __attribute__((ext_vector_type(3)))> > >="__begin_"^{pair<double, float __attribute__((ext_vector_type(3)))> {} _keyedTranslation; 
         struct pair<double, float __attribute__((ext_vector_type(3)))> {} *__end_; 
-        struct __compressed_pair<std::__1::pair<double, float __attribute__((ext_vector_type(3)))> *, std::__1::allocator<std::__1::pair<double, float __attribute__((ext_vector_type(3)))> > >="__first_"^{pair<double, float __attribute__((ext_vector_type(3)))> {} __end_cap_; 
+        struct __compressed_pair<std::__1::pair<double, float __attribute__((ext_vector_type(3)))> *, std::__1::allocator<std::__1::pair<double, float __attribute__((ext_vector_type(3)))> > >="__value_"^{pair<double, float __attribute__((ext_vector_type(3)))> {} __end_cap_; 
     }  _transform;
 }
 

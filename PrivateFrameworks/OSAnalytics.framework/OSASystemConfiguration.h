@@ -27,8 +27,7 @@
 - (id)experimentGroup;
 - (id)identifier;
 - (id)internalKey;
-- (bool)isFile:(id)arg1 validForLETransfer:(id)arg2 reasonableSize:(long long)arg3 internalTypes:(id)arg4;
-- (bool)isFile:(id)arg1 validForSubmission:(id)arg2 reasonableSize:(long long)arg3 to:(id)arg4 internalTypes:(id)arg5;
+- (bool)isFile:(id)arg1 validForSubmission:(id)arg2 reasonableSize:(long long)arg3 to:(id)arg4 internalTypes:(id)arg5 result:(const char **)arg6;
 - (bool)isProxy;
 - (id)modelCode;
 - (bool)multiUserMode;

@@ -37,6 +37,7 @@
 - (id)description;
 - (id)initWithContext:(id)arg1 author:(id)arg2;
 - (id)initWithContext:(id)arg1 text:(id)arg2 creationDate:(id)arg3 author:(id)arg4 replies:(id)arg5;
+- (bool)isEqualToCommentStorage:(id)arg1;
 - (bool)isOwner;
 - (bool)isShared;
 - (void)loadFromArchive:(const struct CommentStorageArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct Date {} *x6; struct Reference {} *x7; struct RepeatedPtrField<TSP::Reference> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; }*)arg1 unarchiver:(id)arg2;

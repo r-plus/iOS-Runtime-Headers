@@ -13,11 +13,11 @@
 
 + (Class)supportedFormatsType;
 
+- (void).cxx_destruct;
 - (void)addSupportedFormats:(id)arg1;
 - (void)clearSupportedFormats;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)defaultFormat;
 - (id)description;
 - (id)dictionaryRepresentation;

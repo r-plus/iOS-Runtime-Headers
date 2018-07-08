@@ -4,11 +4,10 @@
 
 @interface HDUnprotectedKeyValueEntity : HDKeyValueEntity
 
-+ (long long)badgeCountForDomain:(long long)arg1 profile:(id)arg2 error:(id*)arg3;
++ (id)badgeForDomain:(long long)arg1 profile:(id)arg2 error:(out id*)arg3;
 + (id)databaseTable;
-+ (id)keyForNotificationDomain:(long long)arg1;
-+ (id)modificationDateForNotificationDomain:(long long)arg1 profile:(id)arg2 error:(id*)arg3;
++ (id)keyForNotificationDomain:(long long)arg1 error:(out id*)arg2;
 + (long long)protectionClass;
-+ (bool)setBadgeCount:(long long)arg1 forDomain:(long long)arg2 profile:(id)arg3 error:(id*)arg4;
++ (bool)setBadge:(id)arg1 forDomain:(long long)arg2 profile:(id)arg3 error:(out id*)arg4;
 
 @end

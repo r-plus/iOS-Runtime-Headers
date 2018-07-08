@@ -14,7 +14,7 @@
     }  _device;
     struct unique_ptr<ggl::RenderBuffer, std::__1::default_delete<ggl::RenderBuffer> > { 
         struct __compressed_pair<ggl::RenderBuffer *, std::__1::default_delete<ggl::RenderBuffer> > { 
-            struct RenderBuffer {} *__first_; 
+            struct RenderBuffer {} *__value_; 
         } __ptr_; 
     }  _texture;
 }

@@ -12,6 +12,7 @@
 @property (nonatomic, readonly) AVOutputContext *outputContext;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (id)initWithData:(id)arg1;

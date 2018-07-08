@@ -31,6 +31,7 @@
     bool  _didAttemptToLoadAsset;
     long long  _exportableArtworkRevision;
     NSString * _externalContentIdentifier;
+    bool  _externalDisplay;
     NSString * _feedUniqueIdentifier;
     MPQueueFeeder * _feeder;
     unsigned int  _handledFinishTime;
@@ -68,6 +69,7 @@
     double  _seekableTimeRangesCacheTime;
     bool  _shouldPreventPlayback;
     float  _soundCheckVolumeNormalization;
+    NSString * _storeFrontIdentifier;
     long long  _storeItemInt64ID;
     long long  _storeSubscriptionAdamID;
     bool  _supportsLikedState;
@@ -136,6 +138,7 @@
 @property (nonatomic, readonly) bool durationIsValid;
 @property (getter=isExplicitTrack, nonatomic, readonly) bool explicitTrack;
 @property (nonatomic, readonly, copy) NSString *externalContentIdentifier;
+@property (getter=hasExternalDisplay, nonatomic) bool externalDisplay;
 @property (nonatomic, copy) NSString *feedUniqueIdentifier;
 @property (nonatomic) MPQueueFeeder *feeder;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } forwardPlaybackEndTime;
@@ -206,6 +209,7 @@
 @property (nonatomic, readonly, copy) NSString *stationStringID;
 @property (nonatomic, readonly) long long status;
 @property (nonatomic, readonly) MPStoreDownload *storeDownload;
+@property (nonatomic, readonly, copy) NSString *storeFrontIdentifier;
 @property (nonatomic, readonly) NSString *storeItemID;
 @property (nonatomic, readonly) long long storeItemInt64ID;
 @property (nonatomic, readonly) long long storePlaybackEndpointType;
@@ -350,6 +354,7 @@
 - (bool)hasAlternatesForTypes:(unsigned long long)arg1;
 - (bool)hasDataForItemArtwork;
 - (bool)hasDisplayableText;
+- (bool)hasExternalDisplay;
 - (bool)hasFinishedDownloading;
 - (bool)hasPerformedErrorResolution;
 - (bool)hasPlayedThisSession;
@@ -426,6 +431,7 @@
 - (void)setClosedCaptionTimeMarkers:(id)arg1;
 - (void)setContentItemID:(id)arg1;
 - (void)setDefaultPlaybackRate:(float)arg1;
+- (void)setExternalDisplay:(bool)arg1;
 - (void)setFeedUniqueIdentifier:(id)arg1;
 - (void)setFeeder:(id)arg1;
 - (void)setForwardPlaybackEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
@@ -466,6 +472,7 @@
 - (id)stationStringID;
 - (long long)status;
 - (id)storeDownload;
+- (id)storeFrontIdentifier;
 - (id)storeItemID;
 - (long long)storeItemInt64ID;
 - (long long)storePlaybackEndpointType;

@@ -18,9 +18,9 @@
 @property (nonatomic, retain) NSString *outputDeviceIdentifier;
 @property (nonatomic) float volume;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)endpointIdentifier;

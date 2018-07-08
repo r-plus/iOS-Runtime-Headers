@@ -7,10 +7,10 @@
     HMApplicationData * _applicationData;
     bool  _automaticSoftwareUpdateEnabled;
     NSObject<OS_dispatch_queue> * _clientQueue;
-    _HMContext * _context;
     HMThreadSafeMutableArrayCollection * _currentAccessories;
     HMThreadSafeMutableArrayCollection * _currentActionSets;
     HMThreadSafeMutableArrayCollection * _currentActions;
+    HMThreadSafeMutableArrayCollection * _currentMediaSystems;
     HMThreadSafeMutableArrayCollection * _currentOutgoingInvitations;
     HMThreadSafeMutableArrayCollection * _currentResidentDevices;
     HMThreadSafeMutableArrayCollection * _currentRooms;
@@ -52,10 +52,11 @@
 @property (getter=isAutomaticSoftwareUpdateEnabled, readonly) bool automaticSoftwareUpdateEnabled;
 @property (getter=isAutomaticSoftwareUpdateEnabled) bool automaticSoftwareUpdateEnabled;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
-@property (nonatomic, retain) _HMContext *context;
+@property (nonatomic, readonly) _HMContext *context;
 @property (nonatomic, retain) HMThreadSafeMutableArrayCollection *currentAccessories;
 @property (nonatomic, retain) HMThreadSafeMutableArrayCollection *currentActionSets;
 @property (nonatomic, retain) HMThreadSafeMutableArrayCollection *currentActions;
+@property (nonatomic, retain) HMThreadSafeMutableArrayCollection *currentMediaSystems;
 @property (nonatomic, retain) HMThreadSafeMutableArrayCollection *currentOutgoingInvitations;
 @property (nonatomic, retain) HMThreadSafeMutableArrayCollection *currentResidentDevices;
 @property (nonatomic, retain) HMThreadSafeMutableArrayCollection *currentRooms;
@@ -109,6 +110,7 @@
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
++ (bool)accessorySupportsMediaAccessControl:(id)arg1;
 + (id)generateMediaPasswordWithError:(id*)arg1;
 + (bool)isValidMediaPassword:(id)arg1 error:(id*)arg2;
 + (bool)supportsSecureCoding;
@@ -117,7 +119,7 @@
 - (void)_acceptInvitation:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_addAccessory:(id)arg1 appID:(id)arg2 password:(id)arg3 setupCodeDeferred:(bool)arg4 completionHandler:(id /* block */)arg5;
 - (void)_addActionSetWithName:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)_addAndSetupAccessoriesWithSetupPayload:(id)arg1 legacyAPI:(bool)arg2 completionHandler:(id /* block */)arg3;
+- (void)_addAndSetupAccessoriesWithSetupPayload:(id)arg1 legacyAPI:(bool)arg2 trustedOrigin:(bool)arg3 completionHandler:(id /* block */)arg4;
 - (void)_addIdentifier:(id)arg1 bridgeUUID:(id)arg2;
 - (void)_addRoomWithName:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_addServiceGroupWithName:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -130,6 +132,7 @@
 - (void)_addUsersWithCompletionHandler:(id /* block */)arg1;
 - (void)_addZoneWithName:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_assignAccessory:(id)arg1 toRoom:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_callProgressHandler:(id /* block */)arg1 updatingAccessoryDescription:(id)arg2 fromMessage:(id)arg3;
 - (void)_cancelInvitation:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_cancelPairingForAccessoryWithDescription:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_cancelPairingForAccessoryWithUUID:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -145,6 +148,8 @@
 - (void)_handleAccessoryAddedNotification:(id)arg1;
 - (void)_handleAccessoryInfoUpdatedNotification:(id)arg1;
 - (void)_handleAccessoryRemovedNotification:(id)arg1;
+- (void)_handleAccessoryReprovisionStateUpdate:(id)arg1;
+- (void)_handleAccessoryReprovisionedNotification:(id)arg1;
 - (void)_handleActionSetAddedNotification:(id)arg1;
 - (void)_handleActionSetRemovedNotification:(id)arg1;
 - (void)_handleAddAccessoryProgressNotification:(id)arg1;
@@ -157,9 +162,12 @@
 - (void)_handleHomeHubStateUpdatedNotification:(id)arg1;
 - (void)_handleHomeLocationUpdateNotificaton:(id)arg1;
 - (void)_handleHomeRenamedNotification:(id)arg1;
+- (void)_handleMediaSystemAddedNotification:(id)arg1;
+- (void)_handleMediaSystemRemovedNotification:(id)arg1;
 - (void)_handleMultipleCharacteristicValuesUpdated:(id)arg1;
 - (void)_handleNotificationsEnabled:(id)arg1;
 - (void)_handlePairedAccessoryErrorNotification:(id)arg1;
+- (void)_handleRegisteredProgressNotification:(id)arg1;
 - (void)_handleRemovedResidentDevice:(id)arg1;
 - (void)_handleRequestAccessorySetupCodeRequestKey:(id)arg1;
 - (void)_handleRoomAddedNotification:(id)arg1;
@@ -183,9 +191,11 @@
 - (void)_invokeDelegateForAppData:(id)arg1;
 - (void)_launchSetupViewController:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_manageUsersWithCompletionHandler:(id /* block */)arg1;
+- (unsigned long long)_mergeAccessoriesForMergeCollection:(id)arg1 currentAccessories:(id)arg2;
 - (unsigned long long)_mergeCurrentHomeAccessoriesWithNewHomeAccessories:(id)arg1 operations:(id)arg2;
 - (unsigned long long)_mergeCurrentHomeActionSetsWithNewHomeActionSets:(id)arg1 operations:(id)arg2;
 - (unsigned long long)_mergeCurrentHomeInvitationsWithNewHomeInvitations:(id)arg1 operations:(id)arg2;
+- (unsigned long long)_mergeCurrentHomeMediaSystemsWithNewMediaSystems:(id)arg1 operations:(id)arg2;
 - (unsigned long long)_mergeCurrentHomeResidentDevicesWithNewHomeResidentDevices:(id)arg1 operations:(id)arg2;
 - (unsigned long long)_mergeCurrentHomeRoomsWithNewHomeRooms:(id)arg1 operations:(id)arg2;
 - (unsigned long long)_mergeCurrentHomeServiceGroupsWithNewHomeServiceGroups:(id)arg1 operations:(id)arg2;
@@ -193,14 +203,17 @@
 - (unsigned long long)_mergeCurrentHomeTriggersWithNewHomeTriggers:(id)arg1 operations:(id)arg2;
 - (unsigned long long)_mergeCurrentHomeUsersWithNewHomeUsers:(id)arg1 operations:(id)arg2;
 - (unsigned long long)_mergeCurrentHomeZonesWithNewHomeZones:(id)arg1 operations:(id)arg2;
+- (unsigned long long)_mergeRoomsForMergeCollection:(id)arg1 currentRooms:(id)arg2;
 - (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)_notifyDelegateOfAccesoryInvitationsUpdateForUser:(id)arg1;
 - (void)_notifyDelegateOfAccessControlUpdateForUser:(id)arg1;
+- (void)_notifyDelegateOfAddedMediaSystem:(id)arg1;
 - (void)_notifyDelegateOfAppDataUpdate;
 - (void)_notifyDelegateOfAppDataUpdateForActionSet:(id)arg1;
 - (void)_notifyDelegateOfAppDataUpdateForRoom:(id)arg1;
 - (void)_notifyDelegateOfAppDataUpdateForServiceGroup:(id)arg1;
 - (void)_notifyDelegateOfHomeHubStateUpdate;
+- (void)_notifyDelegateOfRemovedMediaSystem:(id)arg1;
 - (void)_notifyDelegateOfTriggerAdded:(id)arg1;
 - (void)_notifyDelegateOfTriggerRemoved:(id)arg1;
 - (void)_notifyDelegateOfTriggerUpdated:(id)arg1;
@@ -221,9 +234,11 @@
 - (void)_removeUser:(id)arg1 confirm:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (void)_removeUserWithoutConfirmation:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_removeZone:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_reprovisionAccessory:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_retrieveLocation;
 - (void)_setupBuiltinActionSets:(id)arg1;
 - (void)_startPairingWithAccessoryDescription:(id)arg1 setupRemoteViewController:(id)arg2 progressHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (void)_startSearchForAccessoriesNeedingReprovisioning;
 - (void)_unblockAccessory:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_unconfigureHome;
 - (void)_updateApplicationData:(id)arg1 forAppDataContainerWithUUID:(id)arg2 appDataContainerUUIDKeyName:(id)arg3 completionHandler:(id /* block */)arg4;
@@ -242,6 +257,7 @@
 - (void)addActionSetWithName:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)addAndSetUpNewAccessoriesWithCompletionHandler:(id /* block */)arg1;
 - (void)addAndSetupAccessoriesWithCompletionHandler:(id /* block */)arg1;
+- (void)addAndSetupAccessoriesWithPayload:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)addAndSetupAccessoriesWithSetupPayload:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)addRoomWithName:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)addServiceGroupWithName:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -268,6 +284,7 @@
 - (id)currentAccessories;
 - (id)currentActionSets;
 - (id)currentActions;
+- (id)currentMediaSystems;
 - (id)currentOutgoingInvitations;
 - (id)currentResidentDevices;
 - (id)currentRooms;
@@ -289,6 +306,7 @@
 - (void)executeActionSet:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)handleDaemonInterruptedNotification:(id)arg1;
 - (void)handleRuntimeStateUpdate:(id)arg1;
+- (void)handleStartWithError:(id)arg1 response:(id)arg2;
 - (void)handleUIApplicationWillResignActiveNotification:(id)arg1;
 - (id)homeAccessControlForUser:(id)arg1;
 - (id)homeAsRoom;
@@ -339,6 +357,7 @@
 - (id)propertyQueue;
 - (void)queryRemoteAccessWithCompletionHandler:(id /* block */)arg1;
 - (void)reEnableNotifications;
+- (void)registerSetupProgressHandler:(id /* block */)arg1 forAccessory:(id)arg2;
 - (void)removeAccessory:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)removeActionSet:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)removeMediaSystem:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -349,6 +368,7 @@
 - (void)removeUser:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)removeUserWithoutConfirmation:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)removeZone:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)reprovisionAccessory:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)residentDevices;
 - (id)roomForEntireHome;
 - (id)roomWithName:(id)arg1;
@@ -363,10 +383,10 @@
 - (void)setApplicationData:(id)arg1;
 - (void)setAutomaticSoftwareUpdateEnabled:(bool)arg1;
 - (void)setAutomaticSoftwareUpdateEnabled:(bool)arg1;
-- (void)setContext:(id)arg1;
 - (void)setCurrentAccessories:(id)arg1;
 - (void)setCurrentActionSets:(id)arg1;
 - (void)setCurrentActions:(id)arg1;
+- (void)setCurrentMediaSystems:(id)arg1;
 - (void)setCurrentOutgoingInvitations:(id)arg1;
 - (void)setCurrentResidentDevices:(id)arg1;
 - (void)setCurrentRooms:(id)arg1;
@@ -402,7 +422,9 @@
 - (id)setupRemoteViewController;
 - (id)setupViewController;
 - (void)startPairingWithAccessory:(id)arg1 accessorySetupDescription:(id)arg2 setupRemoteViewController:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)startPairingWithAccessoryDescription:(id)arg1 setupRemoteViewController:(id)arg2 progress:(id /* block */)arg3 completion:(id /* block */)arg4;
 - (void)startPairingWithAccessoryDescription:(id)arg1 setupRemoteViewController:(id)arg2 progressHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (void)startSearchForAccessoriesNeedingReprovisioning;
 - (id)triggerOwnedActionSetWithUUID:(id)arg1;
 - (id)triggerOwnedActionSets;
 - (id)triggerOwnedActionSets;
@@ -427,6 +449,7 @@
 - (void)updateName:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)userDidConfirmExecution:(bool)arg1 ofTrigger:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)userDidConfirmExecution:(bool)arg1 ofTriggerWithIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)userDidRespondToConsentRequestForSetupAccessoryDescription:(id)arg1 withResponse:(long long)arg2;
 - (id)users;
 - (id)uuid;
 - (id)zoneWithName:(id)arg1;
@@ -437,10 +460,12 @@
 
 + (id)_hf_appDataKeyForColorPaletteOfType:(unsigned long long)arg1;
 
+- (id)accessoriesSupportingSoftwareUpdate;
+- (id)availableSoftwareUpdates;
 - (id)hf_accessControlDescriptor;
 - (id)hf_accessoriesMatchingCategoryType:(id)arg1;
-- (id)hf_accessoriesSupportingSoftwareUpdate;
 - (id)hf_accessoryForSymptomsHandler:(id)arg1;
+- (id)hf_accessoryWithDeviceIdentifier:(id)arg1;
 - (id)hf_accessoryWithIdentifier:(id)arg1;
 - (id)hf_actionSetWithUUID:(id)arg1;
 - (id)hf_allBridgeAccessories;
@@ -471,7 +496,9 @@
 - (bool)hf_isUserAtHome;
 - (id)hf_markTermsAndConditionsAsAcceptedForHomePodWithLicenseAgreementVersion:(id)arg1;
 - (id)hf_mediaAccessories;
+- (id)hf_mediaProfileContainerForSymptomsHandler:(id)arg1;
 - (id)hf_mediaSystemForAccessory:(id)arg1;
+- (id)hf_mediaSystemForSymptomsHandler:(id)arg1;
 - (id)hf_notesApplicationData;
 - (id)hf_personalRequestAccessories;
 - (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
@@ -488,6 +515,7 @@
 - (id)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:(bool)arg1;
 - (id)hf_setNotesApplicationData:(id)arg1;
 - (bool)hf_shouldFavoriteHomeKitObjectByDefault:(id)arg1;
+- (void)hf_startReprovisioningAccessory:(id)arg1;
 - (bool)hf_supportsPerUserRemoteAccess;
 - (bool)hf_supportsRemoteAccessRestrictions;
 - (bool)hf_supportsSharedEventAutomation;

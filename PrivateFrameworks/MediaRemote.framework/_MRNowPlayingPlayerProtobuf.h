@@ -3,40 +3,42 @@
  */
 
 @interface _MRNowPlayingPlayerProtobuf : PBCodable <NSCopying> {
+    int  _audioSessionType;
     NSString * _displayName;
     struct { 
-        unsigned int isDefaultPlayer : 1; 
+        unsigned int audioSessionType : 1; 
     }  _has;
     NSString * _identifier;
-    bool  _isDefaultPlayer;
 }
 
+@property (nonatomic) int audioSessionType;
 @property (nonatomic, retain) NSString *displayName;
+@property (nonatomic) bool hasAudioSessionType;
 @property (nonatomic, readonly) bool hasDisplayName;
 @property (nonatomic, readonly) bool hasIdentifier;
-@property (nonatomic) bool hasIsDefaultPlayer;
 @property (nonatomic, retain) NSString *identifier;
-@property (nonatomic) bool isDefaultPlayer;
 
+- (void).cxx_destruct;
+- (int)StringAsAudioSessionType:(id)arg1;
+- (int)audioSessionType;
+- (id)audioSessionTypeAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayName;
+- (bool)hasAudioSessionType;
 - (bool)hasDisplayName;
 - (bool)hasIdentifier;
-- (bool)hasIsDefaultPlayer;
 - (unsigned long long)hash;
 - (id)identifier;
-- (bool)isDefaultPlayer;
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
+- (void)setAudioSessionType:(int)arg1;
 - (void)setDisplayName:(id)arg1;
-- (void)setHasIsDefaultPlayer:(bool)arg1;
+- (void)setHasAudioSessionType:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setIsDefaultPlayer:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

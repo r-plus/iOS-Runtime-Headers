@@ -61,6 +61,7 @@
 // Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
 
 - (void)axSafelyAddObject:(id)arg1;
+- (void)axSafelyAddObjectsFromArray:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 

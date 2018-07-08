@@ -7,7 +7,7 @@
     NSMutableOrderedSet * _packets;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 - (id)mergePacket:(id)arg1;
 

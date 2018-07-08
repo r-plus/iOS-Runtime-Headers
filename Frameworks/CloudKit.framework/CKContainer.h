@@ -21,6 +21,7 @@
     int  _killSwitchToken;
     bool  _masqueradeAsThirdPartyApp;
     CKContainerOptions * _options;
+    CKRecordID * _orgAdminUserID;
     CKDatabase * _organizationCloudDatabase;
     CKDatabase * _privateCloudDatabase;
     CKDatabase * _publicCloudDatabase;
@@ -56,6 +57,7 @@
 @property (nonatomic) int identityUpdateToken;
 @property (nonatomic) int killSwitchToken;
 @property (nonatomic, retain) CKContainerOptions *options;
+@property (nonatomic, retain) CKRecordID *orgAdminUserID;
 @property (nonatomic, retain) CKDatabase *organizationCloudDatabase;
 @property (nonatomic, retain) CKDatabase *privateCloudDatabase;
 @property (nonatomic, retain) CKDatabase *publicCloudDatabase;
@@ -91,11 +93,14 @@
 - (id)_allStatusReports;
 - (void)_cleanupSandboxExtensionHandles:(id)arg1;
 - (void)_discoverUserIdentityWithLookupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_fetchImportantUserRecordIDOfType:(long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)_fetchLongLivedOperationsWithIDs:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)_importantUserRecordIDOfType:(long long)arg1;
 - (id)_initWithContainerIdentifier:(id)arg1;
 - (id)_initWithContainerIdentifier:(id)arg1 environment:(long long)arg2;
 - (void)_prepareForDaemonLaunch;
 - (void)_scheduleConvenienceOperation:(id)arg1;
+- (void)_setImportantUserRecordID:(id)arg1 ofType:(long long)arg2;
 - (void)_setupWithContainerID:(id)arg1 options:(id)arg2;
 - (id)_untrustedContainerEntitlementsForKey:(id)arg1;
 - (void)acceptShareMetadata:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -146,6 +151,7 @@
 - (void)fetchFullNameAndPrimaryEmailOnAccountWithCompletionHandler:(id /* block */)arg1;
 - (void)fetchLongLivedOperationWithID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)fetchLongLivedOperationsWithIDs:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)fetchOrgAdminUserRecordIDWithCompletionHandler:(id /* block */)arg1;
 - (void)fetchServerEnvironment:(id /* block */)arg1;
 - (void)fetchShareMetadataWithURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)fetchShareParticipantWithEmailAddress:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -175,6 +181,7 @@
 - (bool)masqueradeAsThirdPartyApp;
 - (void)openFileWithOpenInfo:(id)arg1 reply:(id /* block */)arg2;
 - (id)options;
+- (id)orgAdminUserID;
 - (id)organizationCloudDatabase;
 - (id)privateCloudDatabase;
 - (id)publicCloudDatabase;
@@ -206,6 +213,7 @@
 - (void)setKillSwitchToken:(int)arg1;
 - (void)setMasqueradeAsThirdPartyApp:(bool)arg1;
 - (void)setOptions:(id)arg1;
+- (void)setOrgAdminUserID:(id)arg1;
 - (void)setOrganizationCloudDatabase:(id)arg1;
 - (void)setPrivateCloudDatabase:(id)arg1;
 - (void)setPublicCloudDatabase:(id)arg1;

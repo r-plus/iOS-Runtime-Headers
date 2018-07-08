@@ -13,6 +13,7 @@
     bool  _operationStalledTimerResumed;
     BKDevicePearl * _pearlDevice;
     BKFaceDetectOperation * _pendingPresenceOperation;
+    bool  _smartCoverClosed;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -36,10 +37,12 @@
 - (void)operation:(id)arg1 stateChanged:(long long)arg2;
 - (void)setDisplayState:(bool)arg1;
 - (void)setDisplayStateFromNotification;
+- (void)setSmartCoverClosed:(bool)arg1;
 - (void)shouldSample:(bool)arg1 withDeadline:(unsigned long long)arg2;
 - (void)triggerFaceDetectWithDeadline:(unsigned long long)arg1;
 - (id)unitTestSampler;
 - (void)updateFaceState:(bool)arg1;
 - (void)updateSamplingDeadline:(unsigned long long)arg1 forClient:(id)arg2;
+- (void)updateSuppressedMaskWithDisplayState:(bool)arg1 smartCoverClosed:(bool)arg2;
 
 @end

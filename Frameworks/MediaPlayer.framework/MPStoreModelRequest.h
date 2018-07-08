@@ -13,6 +13,8 @@
 @property (nonatomic, copy) NSString *clientVersion;
 @property (nonatomic) double timeoutInterval;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)clientIdentifier;
 - (id)clientVersion;

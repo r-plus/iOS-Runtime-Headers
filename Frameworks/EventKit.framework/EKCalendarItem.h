@@ -40,6 +40,7 @@
 - (void)_adjustAfterRebaseForMovingFromOldSource:(id)arg1 toNewSource:(id)arg2 committingItem:(id)arg3;
 - (void)_clearFieldsAfterMovingToNewCalendarOnSameSource;
 - (id)_customObjectForKey:(id)arg1 local:(bool)arg2;
+- (id)_dataFromStructuredDataDictionary:(id)arg1;
 - (void)_deletePersistentItemAndDetachedItems:(id)arg1 forCommittingItem:(id)arg2;
 - (void)_deleteSelfAndDetached;
 - (bool)_excludeAlarmDueToConnectionTrigger:(id)arg1;
@@ -55,6 +56,7 @@
 - (void)_setCalendarRecursively:(id)arg1 forCommittingItem:(id)arg2;
 - (void)_setCustomObject:(id)arg1 forKey:(id)arg2 local:(bool)arg3;
 - (void)_setSelfAttendee:(id)arg1;
+- (id)_structuredDataDictionaryFromData:(id)arg1;
 - (void)_updateHasAttendeesIfNeeded;
 - (void)_updateHasNotesIfNeeded;
 - (void)_updateHasRecurrenceRulesIfNeeded;
@@ -190,7 +192,6 @@
 - (void)setStartTimeZone:(id)arg1;
 - (void)setStartTimeZoneName:(id)arg1;
 - (void)setStructuredData:(id)arg1;
-- (void)setStructuredDataDictionary:(id)arg1 local:(bool)arg2;
 - (void)setStructuredLocation:(id)arg1;
 - (void)setStructuredLocationWithoutPrediction:(id)arg1;
 - (void)setTimeZone:(id)arg1;
@@ -220,7 +221,6 @@
 - (id)startTimeZone;
 - (id)startTimeZoneName;
 - (id)structuredData;
-- (id)structuredDataDictionaryLocal:(bool)arg1;
 - (id)structuredLocation;
 - (id)structuredLocationWithoutPrediction;
 - (id)timeZone;

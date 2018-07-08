@@ -83,6 +83,7 @@
 - (id)remoteRequest;
 - (void)setDelegate:(id)arg1;
 - (void)setProgressState:(long long)arg1 string:(id)arg2 animated:(bool)arg3;
+- (void)setProgressState:(long long)arg1 string:(id)arg2 animated:(bool)arg3 withCompletion:(id /* block */)arg4;
 - (void)updatePaymentWithClientUpdate:(id)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;

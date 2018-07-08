@@ -17,10 +17,10 @@
             struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<int, std::__1::bitset<255> >, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
-                } __first_; 
+                } __value_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, std::__1::__value_type<int, std::__1::bitset<255> >, std::__1::less<int>, true> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __pair3_; 
         } __tree_; 
     }  _processIndexMap;
@@ -42,13 +42,13 @@
 - (void)cleanup;
 - (void)dealloc;
 - (void)decrementInit;
-- (void)decrementPrewarmCountWithDispatchFlag:(bool)arg1 stopAudio:(bool)arg2 stopHaptics:(bool)arg3;
-- (void)decrementRunningCountWithDispatchFlag:(bool)arg1 stopAudio:(bool)arg2 stopHaptics:(bool)arg3;
-- (int)doPrewarm:(struct shared_ptr<ClientEntry> { struct ClientEntry {} *x1; struct __shared_weak_count {} *x2; })arg1 withDispatchFlag:(bool)arg2;
+- (void)decrementPrewarmCountAndStopAudio:(bool)arg1 stopHaptics:(bool)arg2;
+- (void)decrementRunningCountAndStopAudio:(bool)arg1 stopHaptics:(bool)arg2;
+- (int)doPrewarm:(struct shared_ptr<ClientEntry> { struct ClientEntry {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (void)doReleaseClientResources:(struct shared_ptr<ClientEntry> { struct ClientEntry {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (int)doStartRunning:(struct shared_ptr<ClientEntry> { struct ClientEntry {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (void)doStopPrewarm:(struct shared_ptr<ClientEntry> { struct ClientEntry {} *x1; struct __shared_weak_count {} *x2; })arg1;
-- (void)doStopRunning:(struct shared_ptr<ClientEntry> { struct ClientEntry {} *x1; struct __shared_weak_count {} *x2; })arg1 withDispatchFlag:(bool)arg2;
+- (void)doStopRunning:(struct shared_ptr<ClientEntry> { struct ClientEntry {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (struct shared_ptr<ClientEntry> { struct ClientEntry {} *x1; struct __shared_weak_count {} *x2; })entryWithID:(unsigned long long)arg1;
 - (unsigned long long)getChannelID;
 - (bool)incrementInit:(id*)arg1;

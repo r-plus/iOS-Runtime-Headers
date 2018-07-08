@@ -2,9 +2,8 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNMovieRenderer : KNBuildRenderer <TSKMediaPlayerControllerDelegate> {
-    <TSDMovieHUDViewController> * _viewController;
-    KNBuildRenderer * mBuildInRenderer;
+@interface KNMovieRenderer : KNBuildRenderer <KNAmbientBuildRenderer, TSKMediaPlayerControllerDelegate> {
+    TSUWeakReference * _buildInRendererReference;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -14,36 +13,36 @@
             double width; 
             double height; 
         } size; 
-    }  mFrameInContainerView;
-    unsigned int  mHasMoviePlaybackStarted;
-    unsigned int  mHasPendingTogglePlayingControl;
-    unsigned int  mIsObservingVideoLayerReadyForDisplay;
-    unsigned int  mIsTeardownCompletionBlockPending;
-    SEL  mMovieStartCallbackSelector;
-    id  mMovieStartCallbackTarget;
-    unsigned int  mNeedsPlaybackAtStartTime;
-    unsigned int  mNeedsToSendBuildEndCallback;
-    unsigned int  mNeedsToSendMovieStartCallback;
-    unsigned int  mPendingTogglePlayingControlStartsPlaying;
-    double  mPlaybackAtStartTimePauseOffset;
-    double  mPlaybackAtStartTimePauseTime;
-    NSObject<TSKMediaPlayerController> * mPlayerController;
-    unsigned int  mShouldMoviePlaybackEndOnCompletion;
-    double  mStartTime;
-    CALayer * mVideoLayer;
-    unsigned int  mWasMoviePlayingBeforeAnimationPause;
+    }  _frameInContainerView;
+    unsigned int  _hasMoviePlaybackStarted;
+    unsigned int  _hasPendingTogglePlayingControl;
+    unsigned int  _isObservingVideoLayerReadyForDisplay;
+    unsigned int  _isTeardownCompletionBlockPending;
+    SEL  _movieStartCallbackSelector;
+    id  _movieStartCallbackTarget;
+    unsigned int  _needsPlaybackAtStartTime;
+    unsigned int  _needsToSendBuildEndCallback;
+    unsigned int  _needsToSendMovieStartCallback;
+    unsigned int  _pendingTogglePlayingControlStartsPlaying;
+    double  _playbackAtStartTimePauseOffset;
+    double  _playbackAtStartTimePauseTime;
+    NSObject<TSKLayerMediaPlayerController> * _playerController;
+    unsigned int  _shouldMoviePlaybackEndOnCompletion;
+    double  _startTime;
+    CALayer * _videoLayer;
+    unsigned int  _wasMoviePlayingBeforeAnimationPause;
 }
 
 @property (nonatomic) KNBuildRenderer *buildInRenderer;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) bool hasMoviePlaybackStarted;
+@property (nonatomic, readonly) bool hasAmbientBuildStarted;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSObject<NSCopying> *movieTimelineMovieIdentifier;
 @property (nonatomic, readonly) CALayer *offscreenVideoLayer;
 @property (nonatomic, readonly) NSObject<TSKMediaPlayerController> *playerController;
+@property (nonatomic, readonly) bool shouldActionBuildsStopAnimations;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) <TSDMovieHUDViewController> *viewController;
 
 + (id)movieInfoForMovieTimelineMovieIdentifier:(id)arg1;
 + (id)movieTimelineMovieIdentifierForMovieInfo:(id)arg1;
@@ -54,7 +53,7 @@
 - (id)buildInRenderer;
 - (void)dealloc;
 - (void)forceRemoveAnimations;
-- (bool)hasMoviePlaybackStarted;
+- (bool)hasAmbientBuildStarted;
 - (id)initWithAnimatedBuild:(id)arg1 info:(id)arg2 buildStage:(id)arg3 session:(id)arg4 animatedSlideView:(id)arg5;
 - (void)interruptAndReset;
 - (id)movieTimelineMovieIdentifier;
@@ -81,14 +80,13 @@
 - (void)playbackDidStopForPlayerController:(id)arg1;
 - (id)playerController;
 - (void)playerController:(id)arg1 playbackDidFailWithError:(id)arg2;
-- (void)registerForMovieStartCallback:(SEL)arg1 target:(id)arg2;
+- (void)registerForAmbientBuildStartCallback:(SEL)arg1 target:(id)arg2;
 - (void)removeAnimationsAndFinish:(bool)arg1;
 - (void)resumeAnimationsIfPaused;
 - (void)resumeAnimationsIfPausedAtTime:(double)arg1;
 - (void)setBuildInRenderer:(id)arg1;
-- (void)setViewController:(id)arg1;
+- (bool)shouldActionBuildsStopAnimations;
 - (void)stopAnimations;
 - (void)updateAnimationsForLayerTime:(double)arg1;
-- (id)viewController;
 
 @end

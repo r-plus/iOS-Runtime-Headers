@@ -38,6 +38,7 @@
 @property (nonatomic, readonly) bool showTrendLineLegendText;
 @property (nonatomic, readonly) NSString *trendLineLegendText;
 
+- (void).cxx_destruct;
 - (void)clearParent;
 - (void)dealloc;
 - (float)equationTextOpacity;

@@ -3,10 +3,10 @@
  */
 
 @interface KNCanvasSelection : TSDCanvasSelection {
-    NSSet * mBuildChunks;
+    NSSet * _buildChunks;
 }
 
-@property (nonatomic, readonly) NSSet *buildChunks;
+@property (nonatomic, retain) NSSet *buildChunks;
 @property (nonatomic, readonly) bool containsOnlyUnlockedInfosSupportingHyperlinkActions;
 @property (nonatomic, readonly) NSSet *drawableInfos;
 @property (nonatomic, readonly) NSSet *unlockedDrawableInfos;
@@ -15,6 +15,7 @@
 + (Class)archivedSelectionClass;
 + (id)emptySelection;
 
+- (void).cxx_destruct;
 - (id)UUIDDescription;
 - (id)buildChunks;
 - (bool)containsBuildChunksOfAnimationType:(long long)arg1;
@@ -28,6 +29,7 @@
 - (id)initWithPersistableInfos:(id)arg1 drawableToActionGhostIndexPromiseMap:(id)arg2 buildChunks:(id)arg3;
 - (bool)isEqual:(id)arg1;
 - (id)p_drawablesWithoutPromisesInDrawableToActionGhostIndexPromiseMap:(id)arg1;
+- (void)setBuildChunks:(id)arg1;
 - (id)subclassDescription;
 - (id)unlockedDrawableInfos;
 - (id)unlockedInfosSupportingHyperlinkActions;

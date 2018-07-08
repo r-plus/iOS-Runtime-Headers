@@ -3,7 +3,7 @@
  */
 
 @interface TSKCOIdAddress : TSKCOAddress {
-    NSString * mId;
+    NSString * _identifier;
 }
 
 @property (nonatomic, readonly) NSString *identifier;
@@ -15,7 +15,7 @@
 + (id)addressWithUUIDPath:(id)arg1;
 + (id)idFromIdPath:(id)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithParent:(id)arg1 identifier:(id)arg2;

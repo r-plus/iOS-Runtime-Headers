@@ -7,6 +7,8 @@
     NSMutableSet * _concurrentDispatchQueueIds;
     unsigned int  _countSuspended;
     unsigned int  _countTerminated;
+    unsigned long long  _cpuCyclesCached;
+    unsigned long long  _cpuInstructionsCached;
     unsigned long long  _cpuTimeNsCached;
     unsigned long long  _firstTimestampIndex;
     unsigned long long  _mainThreadId;
@@ -64,6 +66,8 @@
 - (unsigned int)count;
 - (unsigned int)countSuspended;
 - (unsigned int)countTerminated;
+- (unsigned long long)cpuCycles;
+- (unsigned long long)cpuInstructions;
 - (unsigned long long)cpuTimeNs;
 - (void)dealloc;
 - (id)debugDescription;

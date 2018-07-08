@@ -32,6 +32,8 @@
     NSString * title;
 }
 
+@property (setter=_sf_setApplicationManifest:, nonatomic, retain) _WKApplicationManifest *_sf_applicationManifest;
+@property (nonatomic, readonly) NSURL *_sf_applicationManifestPath;
 @property bool classicMode;
 @property (nonatomic) <WebClipDelegate> *delegate;
 @property bool fullScreen;
@@ -53,6 +55,8 @@
 @property unsigned long long supportedOrientations;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic) unsigned long long webClipStatusBarStyle;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_contentForMetaName:(id)arg1 inWebDocumentView:(id)arg2;
 + (bool)_webClipFullScreenValueForMetaTagContent:(id)arg1;
@@ -148,5 +152,11 @@
 - (void)updateCustomMediaLocationsWithWebClipLinkTags:(id)arg1 baseURL:(id)arg2;
 - (bool)updateOnDisk;
 - (unsigned long long)webClipStatusBarStyle;
+
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
+
+- (id)_sf_applicationManifest;
+- (id)_sf_applicationManifestPath;
+- (void)_sf_setApplicationManifest:(id)arg1;
 
 @end

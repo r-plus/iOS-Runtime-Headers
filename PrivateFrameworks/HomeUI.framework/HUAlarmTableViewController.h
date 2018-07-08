@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
  */
 
-@interface HUAlarmTableViewController : HUItemTableViewController <HFAccessoryObserver, HFMediaObjectObserver, HUAlarmEditViewControllerDelegate, HUHomePodAlarmItemModuleControllerDelegate, HUPresentationDelegateHost> {
+@interface HUAlarmTableViewController : HUItemTableViewController <HFAccessoryObserver, HFAccessorySettingMobileTimerAdapterObserver, HFMediaObjectObserver, HUAlarmEditViewControllerDelegate, HUHomePodAlarmItemModuleControllerDelegate, HUPresentationDelegateHost> {
     UIBarButtonItem * _addButtonItem;
     HUHomePodAlarmItemModuleController * _alarmModuleController;
     MTAlarm * _alarmToEdit;
     UIBarButtonItem * _doneButtonItem;
     UIBarButtonItem * _editDoneButtonItem;
     bool  _isAccessoryControllable;
+    bool  _isAlarmsSettingReady;
     <HFMediaProfileContainer> * _mediaProfileContainer;
     _UIContentUnavailableView * _noItemsView;
     <HUPresentationDelegate> * _presentationDelegate;
@@ -22,7 +23,8 @@
 @property (nonatomic, retain) UIBarButtonItem *doneButtonItem;
 @property (nonatomic, retain) UIBarButtonItem *editDoneButtonItem;
 @property (readonly) unsigned long long hash;
-@property (nonatomic) bool isAccessoryControllable;
+@property (nonatomic, readonly) bool isAccessoryControllable;
+@property (nonatomic, readonly) bool isAlarmsSettingReady;
 @property (nonatomic, readonly) <HFMediaProfileContainer> *mediaProfileContainer;
 @property (nonatomic, retain) _UIContentUnavailableView *noItemsView;
 @property (nonatomic) <HUPresentationDelegate> *presentationDelegate;
@@ -36,6 +38,7 @@
 - (void)_numberOfItemsDidChangeAnimated:(bool)arg1;
 - (void)_showAddView:(id)arg1;
 - (id)_tableView:(id)arg1 templateLayoutCellForCellsWithReuseIdentifier:(id)arg2;
+- (void)_updateAccessoryControllable:(bool)arg1 alarmsSettingReady:(bool)arg2;
 - (void)_updateNavigationItems:(bool)arg1;
 - (void)accessoryDidUpdateControllable:(id)arg1;
 - (void)accessoryDidUpdateReachability:(id)arg1;
@@ -55,9 +58,11 @@
 - (id)editViewControllerForAlarm:(id)arg1;
 - (id)initWithMediaProfileContainer:(id)arg1;
 - (bool)isAccessoryControllable;
+- (bool)isAlarmsSettingReady;
 - (void)itemManager:(id)arg1 performUpdateRequest:(id)arg2;
 - (id)itemModuleControllers;
 - (id)mediaProfileContainer;
+- (void)mobileTimerAdapterDidUpdateReadiness:(id)arg1;
 - (id)noItemsView;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)presentViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
@@ -68,7 +73,6 @@
 - (void)setDoneButtonItem:(id)arg1;
 - (void)setEditDoneButtonItem:(id)arg1;
 - (void)setEditing:(bool)arg1 animated:(bool)arg2;
-- (void)setIsAccessoryControllable:(bool)arg1;
 - (void)setNoItemsView:(id)arg1;
 - (void)setPresentationDelegate:(id)arg1;
 - (bool)shouldHideHeaderAboveSection:(long long)arg1;

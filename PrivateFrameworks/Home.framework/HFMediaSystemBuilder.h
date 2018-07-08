@@ -3,6 +3,8 @@
  */
 
 @interface HFMediaSystemBuilder : HFItemBuilder <HFServiceLikeBuilder> {
+    HFAppleMusicAccountArbitrator * _accountArbitrator;
+    HMAccessory * _firstSetupSourceAccessory;
     bool  _hasSetRoom;
     HMMediaSystemBuilder * _homeKitMediaSystemBuilder;
     <HFIconDescriptor> * _iconDescriptor;
@@ -11,9 +13,11 @@
     HFRoomBuilder * _roomBuilder;
 }
 
+@property (nonatomic, retain) HFAppleMusicAccountArbitrator *accountArbitrator;
 @property (nonatomic, readonly) NSArray *availableIconDescriptors;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) HMAccessory *firstSetupSourceAccessory;
 @property (nonatomic) bool hasSetRoom;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HMMediaSystemBuilder *homeKitMediaSystemBuilder;
@@ -37,13 +41,15 @@
 - (id)_rooms;
 - (id)_updateAssistantAccessControl;
 - (id)_updateFavorite;
-- (id)_updateRooms;
+- (id)_updateRoomAndName;
 - (id)accessories;
 - (id)accessoryForRole:(id)arg1;
+- (id)accountArbitrator;
 - (void)addAccessory:(id)arg1;
 - (void)addAccessory:(id)arg1 role:(id)arg2;
 - (id)commitItem;
 - (id)description;
+- (id)firstSetupSourceAccessory;
 - (bool)hasSetRoom;
 - (id)homeKitMediaSystemBuilder;
 - (id)iconDescriptor;
@@ -58,6 +64,7 @@
 - (id)roleForAccessory:(id)arg1;
 - (id)room;
 - (id)roomBuilder;
+- (void)setAccountArbitrator:(id)arg1;
 - (void)setHasSetRoom:(bool)arg1;
 - (void)setHomeKitMediaSystemBuilder:(id)arg1;
 - (void)setIconDescriptor:(id)arg1;

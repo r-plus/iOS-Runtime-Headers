@@ -15,6 +15,7 @@
     double  _cornerRadius;
     double  _fontSize;
     double  _strokeSize;
+    unsigned long long  _textAlignmentStyle;
     int  _textBlendMode;
     UIColor * _tintColor;
     NSString * _title;
@@ -27,6 +28,7 @@
 @property (nonatomic) double cornerRadius;
 @property (nonatomic) double fontSize;
 @property (nonatomic) double strokeSize;
+@property (nonatomic) unsigned long long textAlignmentStyle;
 @property (nonatomic) int textBlendMode;
 @property (nonatomic, retain) UIColor *tintColor;
 @property (nonatomic, copy) NSString *title;
@@ -34,6 +36,7 @@
 + (id)attributedTextFromString:(id)arg1 fontColor:(id)arg2 fontSize:(double)arg3;
 
 - (void).cxx_destruct;
+- (struct CGSize { double x1; double x2; })_textSize;
 - (id)attributedTitle;
 - (id)backgroundImage;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })badgeInsets;
@@ -51,11 +54,13 @@
 - (void)setCornerRadius:(double)arg1;
 - (void)setFontSize:(double)arg1;
 - (void)setStrokeSize:(double)arg1;
+- (void)setTextAlignmentStyle:(unsigned long long)arg1;
 - (void)setTextBlendMode:(int)arg1;
 - (void)setTintColor:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (double)strokeSize;
+- (unsigned long long)textAlignmentStyle;
 - (int)textBlendMode;
 - (id)tintColor;
 - (id)title;

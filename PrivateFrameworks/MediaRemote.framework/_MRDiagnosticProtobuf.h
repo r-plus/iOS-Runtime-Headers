@@ -15,10 +15,10 @@
 @property (nonatomic) bool hasDateGenerated;
 @property (nonatomic, readonly) bool hasDiagnosticInfo;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)dateGenerated;
-- (void)dealloc;
 - (id)description;
 - (id)diagnosticInfo;
 - (id)dictionaryRepresentation;

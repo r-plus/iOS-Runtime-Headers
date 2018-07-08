@@ -32,6 +32,7 @@
 - (bool)canAccessRemoteAssets;
 - (bool)canBeGroupLeader;
 - (bool)canBeGrouped;
+- (bool)canRelayCommunicationChannel;
 - (bool)canSetVolume;
 - (void)configureUsingBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
 - (id)connectedPairedDevices;
@@ -62,6 +63,7 @@
 - (id)name;
 - (void)outputDeviceImplDidChangeCanChangeVolume:(id)arg1;
 - (void)outputDeviceImplDidChangeVolume:(id)arg1;
+- (bool)participatesInGroupPlayback;
 - (bool)requiresAuthorization;
 - (id)serialNumber;
 - (void)setSecondDisplayEnabled:(bool)arg1;

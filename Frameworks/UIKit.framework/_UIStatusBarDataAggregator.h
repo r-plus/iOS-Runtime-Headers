@@ -18,6 +18,8 @@
 @property (nonatomic, retain) NSMutableDictionary *pendingUpdates;
 @property (nonatomic, copy) id /* block */ updateBlock;
 
++ (void)initialize;
+
 - (void).cxx_destruct;
 - (void)_coalescedUpdateForEntryKeys:(id)arg1;
 - (void)_updateForCoalescedKeysWithData:(id)arg1;

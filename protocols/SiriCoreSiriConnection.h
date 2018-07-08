@@ -12,6 +12,7 @@
 - (NSString *)connectionId;
 - (<SiriCoreSiriConnectionDelegate> *)delegate;
 - (bool)deviceIsInWalkaboutExperimentGroup;
+- (bool)forceReconnect;
 - (void)getAnalysisInfo:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, SiriCoreAceConnectionAnalysisInfo *, void*
 - (void)getConnectionMetricsSynchronously:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, SiriCoreConnectionMetrics *, void*
 - (bool)imposePolicyBan;
@@ -30,6 +31,7 @@
 - (void)setConnectionId:(NSString *)arg1;
 - (void)setDelegate:(id <SiriCoreSiriConnectionDelegate>)arg1;
 - (void)setDeviceIsInWalkaboutExperimentGroup:(bool)arg1;
+- (void)setForceReconnect:(bool)arg1;
 - (void)setImposePolicyBan:(bool)arg1;
 - (void)setLanguageCode:(NSString *)arg1;
 - (void)setPeerAssistantIdentifier:(NSString *)arg1;

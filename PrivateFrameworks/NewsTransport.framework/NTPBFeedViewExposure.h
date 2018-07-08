@@ -17,6 +17,7 @@
     int  _feedType;
     NSData * _feedViewExposureId;
     int  _groupType;
+    NSData * _groupViewExposureId;
     struct { 
         unsigned int previousArticlePublisherArticleVersion : 1; 
         unsigned int areaPresentationReason : 1; 
@@ -64,6 +65,7 @@
 @property (nonatomic) int feedType;
 @property (nonatomic, retain) NSData *feedViewExposureId;
 @property (nonatomic) int groupType;
+@property (nonatomic, retain) NSData *groupViewExposureId;
 @property (nonatomic) bool hasAdSupportedChannel;
 @property (nonatomic) bool hasAreaPresentationReason;
 @property (nonatomic) bool hasCameFromGroup;
@@ -78,6 +80,7 @@
 @property (nonatomic) bool hasFeedType;
 @property (nonatomic, readonly) bool hasFeedViewExposureId;
 @property (nonatomic) bool hasGroupType;
+@property (nonatomic, readonly) bool hasGroupViewExposureId;
 @property (nonatomic) bool hasIsNewUserToFeed;
 @property (nonatomic) bool hasIsPaidSubscriberToFeed;
 @property (nonatomic) bool hasIsSubscribedToGroupFeed;
@@ -136,6 +139,7 @@
 - (id)feedViewExposureId;
 - (int)groupType;
 - (id)groupTypeAsString:(int)arg1;
+- (id)groupViewExposureId;
 - (bool)hasAdSupportedChannel;
 - (bool)hasAreaPresentationReason;
 - (bool)hasCameFromGroup;
@@ -150,6 +154,7 @@
 - (bool)hasFeedType;
 - (bool)hasFeedViewExposureId;
 - (bool)hasGroupType;
+- (bool)hasGroupViewExposureId;
 - (bool)hasIsNewUserToFeed;
 - (bool)hasIsPaidSubscriberToFeed;
 - (bool)hasIsSubscribedToGroupFeed;
@@ -194,6 +199,7 @@
 - (void)setFeedType:(int)arg1;
 - (void)setFeedViewExposureId:(id)arg1;
 - (void)setGroupType:(int)arg1;
+- (void)setGroupViewExposureId:(id)arg1;
 - (void)setHasAdSupportedChannel:(bool)arg1;
 - (void)setHasAreaPresentationReason:(bool)arg1;
 - (void)setHasCameFromGroup:(bool)arg1;

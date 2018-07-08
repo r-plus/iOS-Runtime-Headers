@@ -4,7 +4,7 @@
 
 @interface SXAudioComponentView : SXMediaComponentView <SXMediaPlaybackDelegate> {
     bool  _audioHasPlayed;
-    SXHost * _host;
+    <SXHost> * _host;
     SXAudioComponentOverlayView * _overlayView;
     SXAVPlayer * _player;
     AVPlayerViewController * _playerViewController;
@@ -16,7 +16,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) SXHost *host;
+@property (nonatomic, readonly) <SXHost> *host;
 @property (nonatomic, readonly) SXAudioComponentOverlayView *overlayView;
 @property (nonatomic, retain) SXAVPlayer *player;
 @property (nonatomic, retain) AVPlayerViewController *playerViewController;

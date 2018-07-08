@@ -22,6 +22,7 @@
 - (GEOMapRegion *)resultBoundingRegion;
 - (NSString *)resultDisplayHeader;
 - (NSString *)resultSectionHeader;
+- (NSArray *)retainedSearchMetadata;
 - (int)searchResultType;
 - (void)setCachePolicy:(unsigned long long)arg1;
 - (bool)shouldEnableRedoSearch;

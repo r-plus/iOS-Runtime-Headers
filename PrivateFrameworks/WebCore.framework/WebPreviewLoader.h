@@ -6,23 +6,23 @@
     struct RetainPtr<NSMutableArray> { 
         void *m_ptr; 
     }  _bufferedDataArray;
-    struct RefPtr<WebCore::PreviewLoaderClient> { 
+    struct RefPtr<WebCore::PreviewLoaderClient, WTF::DumbPtrTraits<WebCore::PreviewLoaderClient> > { 
         struct PreviewLoaderClient {} *m_ptr; 
     }  _client;
     struct unique_ptr<WebCore::PreviewConverter, std::__1::default_delete<WebCore::PreviewConverter> > { 
         struct __compressed_pair<WebCore::PreviewConverter *, std::__1::default_delete<WebCore::PreviewConverter> > { 
-            struct PreviewConverter {} *__first_; 
+            struct PreviewConverter {} *__value_; 
         } __ptr_; 
     }  _converter;
     bool  _hasSentDidReceiveResponse;
-    struct RefPtr<WebCore::ResourceLoader> { 
+    struct RefPtr<WebCore::ResourceLoader, WTF::DumbPtrTraits<WebCore::ResourceLoader> > { 
         struct ResourceLoader {} *m_ptr; 
     }  _resourceLoader;
     struct ResourceResponse { 
         bool m_isNull; 
         struct URL { 
             struct String { 
-                struct RefPtr<WTF::StringImpl> { 
+                struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_string; 
@@ -41,7 +41,7 @@
         } m_url; 
         struct AtomicString { 
             struct String { 
-                struct RefPtr<WTF::StringImpl> { 
+                struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_string; 
@@ -49,21 +49,21 @@
         long long m_expectedContentLength; 
         struct AtomicString { 
             struct String { 
-                struct RefPtr<WTF::StringImpl> { 
+                struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_string; 
         } m_textEncodingName; 
         struct AtomicString { 
             struct String { 
-                struct RefPtr<WTF::StringImpl> { 
+                struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_string; 
         } m_httpStatusText; 
         struct AtomicString { 
             struct String { 
-                struct RefPtr<WTF::StringImpl> { 
+                struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } m_string; 
@@ -115,7 +115,7 @@
             } responseEnd; 
             bool complete; 
             struct String { 
-                struct RefPtr<WTF::StringImpl> { 
+                struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
                     struct StringImpl {} *m_ptr; 
                 } m_impl; 
             } protocol; 
@@ -124,7 +124,7 @@
                 union storage_t<WTF::String> { 
                     unsigned char dummy_; 
                     struct String { 
-                        struct RefPtr<WTF::StringImpl> { 
+                        struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
                             struct StringImpl {} *m_ptr; 
                         } m_impl; 
                     } value_; 
@@ -135,7 +135,7 @@
                 union storage_t<WTF::String> { 
                     unsigned char dummy_; 
                     struct String { 
-                        struct RefPtr<WTF::StringImpl> { 
+                        struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { 
                             struct StringImpl {} *m_ptr; 
                         } m_impl; 
                     } value_; 
@@ -225,45 +225,39 @@
             } storage_; 
         } m_certificateInfo; 
         int m_httpStatusCode; 
-        struct optional<std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000> > > { 
+        struct optional<WTF::Seconds> { 
             bool init_; 
-            union constexpr_storage_t<std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000> > > { 
+            union constexpr_storage_t<WTF::Seconds> { 
                 unsigned char dummy_; 
-                struct duration<long long, std::__1::ratio<1, 1000000> > { 
-                    long long __rep_; 
+                struct Seconds { 
+                    double m_value; 
                 } value_; 
             } storage_; 
         } m_age; 
-        struct optional<std::__1::chrono::time_point<std::__1::chrono::system_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000> > > > { 
+        struct optional<WTF::WallTime> { 
             bool init_; 
-            union constexpr_storage_t<std::__1::chrono::time_point<std::__1::chrono::system_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000> > > > { 
+            union constexpr_storage_t<WTF::WallTime> { 
                 unsigned char dummy_; 
-                struct time_point<std::__1::chrono::system_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000> > > { 
-                    struct duration<long long, std::__1::ratio<1, 1000000> > { 
-                        long long __rep_; 
-                    } __d_; 
+                struct WallTime { 
+                    double m_value; 
                 } value_; 
             } storage_; 
         } m_date; 
-        struct optional<std::__1::chrono::time_point<std::__1::chrono::system_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000> > > > { 
+        struct optional<WTF::WallTime> { 
             bool init_; 
-            union constexpr_storage_t<std::__1::chrono::time_point<std::__1::chrono::system_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000> > > > { 
+            union constexpr_storage_t<WTF::WallTime> { 
                 unsigned char dummy_; 
-                struct time_point<std::__1::chrono::system_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000> > > { 
-                    struct duration<long long, std::__1::ratio<1, 1000000> > { 
-                        long long __rep_; 
-                    } __d_; 
+                struct WallTime { 
+                    double m_value; 
                 } value_; 
             } storage_; 
         } m_expires; 
-        struct optional<std::__1::chrono::time_point<std::__1::chrono::system_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000> > > > { 
+        struct optional<WTF::WallTime> { 
             bool init_; 
-            union constexpr_storage_t<std::__1::chrono::time_point<std::__1::chrono::system_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000> > > > { 
+            union constexpr_storage_t<WTF::WallTime> { 
                 unsigned char dummy_; 
-                struct time_point<std::__1::chrono::system_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000> > > { 
-                    struct duration<long long, std::__1::ratio<1, 1000000> > { 
-                        long long __rep_; 
-                    } __d_; 
+                struct WallTime { 
+                    double m_value; 
                 } value_; 
             } storage_; 
         } m_lastModified; 
@@ -274,21 +268,21 @@
             long long m_instanceLength; 
         } m_contentRange; 
         struct CacheControlDirectives { 
-            struct optional<std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000> > > { 
+            struct optional<WTF::Seconds> { 
                 bool init_; 
-                union constexpr_storage_t<std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000> > > { 
+                union constexpr_storage_t<WTF::Seconds> { 
                     unsigned char dummy_; 
-                    struct duration<long long, std::__1::ratio<1, 1000000> > { 
-                        long long __rep_; 
+                    struct Seconds { 
+                        double m_value; 
                     } value_; 
                 } storage_; 
             } maxAge; 
-            struct optional<std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000> > > { 
+            struct optional<WTF::Seconds> { 
                 bool init_; 
-                union constexpr_storage_t<std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000> > > { 
+                union constexpr_storage_t<WTF::Seconds> { 
                     unsigned char dummy_; 
-                    struct duration<long long, std::__1::ratio<1, 1000000> > { 
-                        long long __rep_; 
+                    struct Seconds { 
+                        double m_value; 
                     } value_; 
                 } storage_; 
             } maxStale; 
@@ -315,6 +309,7 @@
         } m_cacheBodyKey; 
         int m_type; 
         bool m_isRedirected; 
+        int m_tainting; 
         unsigned int m_initLevel : 3; 
         bool m_isQuickLook; 
         struct RetainPtr<NSURLResponse> { 
@@ -332,6 +327,6 @@
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)failed;
 - (void)finishedAppending;
-- (id)initWithResourceLoader:(struct ResourceLoader { int (**x1)(); unsigned int x2; struct RefPtr<WebCore::ResourceHandle> { struct ResourceHandle {} *x_3_1_1; } x3; struct RefPtr<WebCore::Frame> { struct Frame {} *x_4_1_1; } x4; struct RefPtr<WebCore::DocumentLoader> { struct DocumentLoader {} *x_5_1_1; } x5; struct ResourceResponse { bool x_6_1_1; struct URL { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_2_2_1; unsigned int x_2_2_2 : 1; unsigned int x_2_2_3 : 1; unsigned int x_2_2_4 : 1; unsigned int x_2_2_5; unsigned int x_2_2_6; unsigned int x_2_2_7; unsigned int x_2_2_8; unsigned int x_2_2_9; unsigned int x_2_2_10; unsigned int x_2_2_11; unsigned int x_2_2_12; unsigned int x_2_2_13; } x_6_1_2; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_3_2_1; } x_6_1_3; long long x_6_1_4; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_5_2_1; } x_6_1_5; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_6_2_1; } x_6_1_6; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_7_2_1; } x_6_1_7; struct HTTPHeaderMap { struct HashMap<WebCore::HTTPHeaderName, WTF::String, WTF::IntHash<WebCore::HTTPHeaderName>, WTF::StrongEnumHashTraits<WebCore::HTTPHeaderName>, WTF::HashTraits<WTF::String> > { struct HashTable<WebCore::HTTPHeaderName, WTF::KeyValuePair<WebCore::HTTPHeaderName, WTF::String>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<WebCore::HTTPHeaderName, WTF::String> >, WTF::IntHash<WebCore::HTTPHeaderName>, WTF::HashMap<WebCore::HTTPHeaderName, WTF::String, WTF::IntHash<WebCore::HTTPHeaderName>, WTF::StrongEnumHashTraits<WebCore::HTTPHeaderName>, WTF::HashTraits<WTF::String> >::KeyValuePairTraits, WTF::StrongEnumHashTraits<WebCore::HTTPHeaderName> > { struct KeyValuePair<WebCore::HTTPHeaderName, WTF::String> {} *x_1_4_1; unsigned int x_1_4_2; unsigned int x_1_4_3; unsigned int x_1_4_4; unsigned int x_1_4_5; } x_1_3_1; } x_8_2_1; struct HashMap<WTF::String, WTF::String, WTF::ASCIICaseInsensitiveHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::String> > { struct HashTable<WTF::String, WTF::KeyValuePair<WTF::String, WTF::String>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<WTF::String, WTF::String> >, WTF::ASCIICaseInsensitiveHash, WTF::HashMap<WTF::String, WTF::String, WTF::ASCIICaseInsensitiveHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::String> >::KeyValuePairTraits, WTF::HashTraits<WTF::String> > { struct KeyValuePair<WTF::String, WTF::String> {} *x_1_4_1; unsigned int x_1_4_2; unsigned int x_1_4_3; unsigned int x_1_4_4; unsigned int x_1_4_5; } x_2_3_1; } x_8_2_2; } x_6_1_8; } x6; }*)arg1 resourceResponse:(const struct ResourceResponse { bool x1; struct URL { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_2_1_1; unsigned int x_2_1_2 : 1; unsigned int x_2_1_3 : 1; unsigned int x_2_1_4 : 1; unsigned int x_2_1_5; unsigned int x_2_1_6; unsigned int x_2_1_7; unsigned int x_2_1_8; unsigned int x_2_1_9; unsigned int x_2_1_10; unsigned int x_2_1_11; unsigned int x_2_1_12; unsigned int x_2_1_13; } x2; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_3_1_1; } x3; long long x4; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_5_1_1; } x5; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_6_1_1; } x6; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_7_1_1; } x7; struct HTTPHeaderMap { struct HashMap<WebCore::HTTPHeaderName, WTF::String, WTF::IntHash<WebCore::HTTPHeaderName>, WTF::StrongEnumHashTraits<WebCore::HTTPHeaderName>, WTF::HashTraits<WTF::String> > { struct HashTable<WebCore::HTTPHeaderName, WTF::KeyValuePair<WebCore::HTTPHeaderName, WTF::String>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<WebCore::HTTPHeaderName, WTF::String> >, WTF::IntHash<WebCore::HTTPHeaderName>, WTF::HashMap<WebCore::HTTPHeaderName, WTF::String, WTF::IntHash<WebCore::HTTPHeaderName>, WTF::StrongEnumHashTraits<WebCore::HTTPHeaderName>, WTF::HashTraits<WTF::String> >::KeyValuePairTraits, WTF::StrongEnumHashTraits<WebCore::HTTPHeaderName> > { struct KeyValuePair<WebCore::HTTPHeaderName, WTF::String> {} *x_1_3_1; unsigned int x_1_3_2; unsigned int x_1_3_3; unsigned int x_1_3_4; unsigned int x_1_3_5; } x_1_2_1; } x_8_1_1; struct HashMap<WTF::String, WTF::String, WTF::ASCIICaseInsensitiveHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::String> > { struct HashTable<WTF::String, WTF::KeyValuePair<WTF::String, WTF::String>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<WTF::String, WTF::String> >, WTF::ASCIICaseInsensitiveHash, WTF::HashMap<WTF::String, WTF::String, WTF::ASCIICaseInsensitiveHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::String> >::KeyValuePairTraits, WTF::HashTraits<WTF::String> > { struct KeyValuePair<WTF::String, WTF::String> {} *x_1_3_1; unsigned int x_1_3_2; unsigned int x_1_3_3; unsigned int x_1_3_4; unsigned int x_1_3_5; } x_2_2_1; } x_8_1_2; } x8; }*)arg2;
+- (id)initWithResourceLoader:(struct ResourceLoader { int (**x1)(); unsigned int x2; struct RefPtr<WebCore::ResourceHandle, WTF::DumbPtrTraits<WebCore::ResourceHandle> > { struct ResourceHandle {} *x_3_1_1; } x3; struct RefPtr<WebCore::Frame, WTF::DumbPtrTraits<WebCore::Frame> > { struct Frame {} *x_4_1_1; } x4; struct RefPtr<WebCore::DocumentLoader, WTF::DumbPtrTraits<WebCore::DocumentLoader> > { struct DocumentLoader {} *x_5_1_1; } x5; struct ResourceResponse { bool x_6_1_1; struct URL { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_2_2_1; unsigned int x_2_2_2 : 1; unsigned int x_2_2_3 : 1; unsigned int x_2_2_4 : 1; unsigned int x_2_2_5; unsigned int x_2_2_6; unsigned int x_2_2_7; unsigned int x_2_2_8; unsigned int x_2_2_9; unsigned int x_2_2_10; unsigned int x_2_2_11; unsigned int x_2_2_12; unsigned int x_2_2_13; } x_6_1_2; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_3_2_1; } x_6_1_3; long long x_6_1_4; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_5_2_1; } x_6_1_5; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_6_2_1; } x_6_1_6; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_7_2_1; } x_6_1_7; } x6; }*)arg1 resourceResponse:(const struct ResourceResponse { bool x1; struct URL { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_2_1_1; unsigned int x_2_1_2 : 1; unsigned int x_2_1_3 : 1; unsigned int x_2_1_4 : 1; unsigned int x_2_1_5; unsigned int x_2_1_6; unsigned int x_2_1_7; unsigned int x_2_1_8; unsigned int x_2_1_9; unsigned int x_2_1_10; unsigned int x_2_1_11; unsigned int x_2_1_12; unsigned int x_2_1_13; } x2; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_3_1_1; } x3; long long x4; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_5_1_1; } x5; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_6_1_1; } x6; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_7_1_1; } x7; }*)arg2;
 
 @end

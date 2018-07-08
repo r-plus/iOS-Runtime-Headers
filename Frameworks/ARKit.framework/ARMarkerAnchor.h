@@ -14,7 +14,11 @@
 @property (nonatomic, readonly) unsigned long long markerID;
 @property (readonly) Class superclass;
 
++ (bool)supportsSecureCoding;
+
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithMarkerID:(unsigned long long)arg1 transform:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg2 isTracked:(bool)arg3;
 - (bool)isTracked;
 - (unsigned long long)markerID;

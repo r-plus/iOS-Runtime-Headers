@@ -76,6 +76,7 @@
 @property (nonatomic, readonly) struct shared_ptr<mlcore::DeviceLibrary> { struct DeviceLibrary {} *x1; struct __shared_weak_count {} *x2; } _MediaLibrary_coreLibrary;
 @property (nonatomic, readonly) NSString *_syncValidity;
 @property (nonatomic, readonly) NSDate *lastModifiedDate;
+@property (nonatomic, readonly) ML3MusicLibrary *ml3Library;
 @property (nonatomic, readonly) NSURL *protectedContentSupportStorageURL;
 @property (nonatomic) long long removalReason;
 
@@ -239,6 +240,7 @@
 - (id)libraryDataProvider;
 - (id)localizedSectionHeaderForSectionIndex:(unsigned long long)arg1;
 - (id)localizedSectionIndexTitles;
+- (id)ml3Library;
 - (id)multiverseIdentifierForCollectionWithPersistentID:(long long)arg1 groupingType:(long long)arg2;
 - (id)multiverseIdentifierForTrackWithPersistentID:(long long)arg1;
 - (id)name;

@@ -27,11 +27,11 @@
 @property (nonatomic) bool supportsExtendedMotion;
 @property (nonatomic, retain) NSString *vendorName;
 
+- (void).cxx_destruct;
 - (int)StringAsProfile:(id)arg1;
 - (int)buttonAUpDelay;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (bool)hasButtonAUpDelay;

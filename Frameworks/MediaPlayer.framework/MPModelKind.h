@@ -2,13 +2,14 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPModelKind : NSObject <NSCoding> {
+@interface MPModelKind : NSObject <NSCoding, NSSecureCoding> {
     Class  _modelClass;
 }
 
 @property (nonatomic, readonly) Class modelClass;
 
 + (id)kindWithModelClass:(Class)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_init;

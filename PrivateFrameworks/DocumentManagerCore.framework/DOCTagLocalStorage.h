@@ -11,7 +11,7 @@
 @property (nonatomic, retain) NSUserDefaults *userDefaults;
 @property (nonatomic, retain) NSOrderedSet *userTags;
 
-+ (id)sharedInstance;
++ (id)sharedAppGroupStorage;
 
 - (void).cxx_destruct;
 - (id)_unarchivedTagsFromData:(id)arg1;

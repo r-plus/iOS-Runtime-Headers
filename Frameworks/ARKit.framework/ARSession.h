@@ -3,36 +3,41 @@
  */
 
 @interface ARSession : NSObject <ARSensorDelegate, ARTechniqueDelegate, AVCaptureAudioDataOutputSampleBufferDelegate> {
-    NSMutableSet * _anchorsToAdd;
-    NSMutableSet * _anchorsToRemove;
     NSObject<OS_dispatch_queue> * _audioOutputQueue;
     NSArray * _availableSensors;
     ARConfiguration * _configuration;
+    bool  _configuredForWorldTracking;
+    double  _currentTrackingStartingTimestamp;
+    double  _defaultRelocalizationDuration;
     <ARSessionDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
+    long long  _featurePointAccumulationCount;
     ARFrame * _lastProcessedFrame;
     NSObject<OS_dispatch_semaphore> * _lastProcessedFrameSemaphore;
     ARSessionMetrics * _metrics;
     CMMotionManager * _motionManger;
+    ARFrameContext * _nextFrameContext;
+    NSObject<OS_dispatch_semaphore> * _nextFrameContextSemaphore;
     NSHashTable * _observers;
     NSObject<OS_dispatch_semaphore> * _observersSemaphore;
     unsigned long long  _pausedSensors;
     unsigned int  _peakPowerPressureLevel;
     int  _peakPowerPressureToken;
     unsigned long long  _powerUsage;
-    unsigned long long  _runningSensors;
     struct { 
         /* Warning: Unrecognized filer type: ']' using 'void*' */ void*columns[4]; 
-    }  _sessionOriginTransform;
-    bool  _sessionOriginUpdated;
+    }  _rearCameraToDisplayTransform;
+    bool  _relocalizationRequested;
+    NSDate * _relocalizationTimeoutDate;
+    bool  _relocalizing;
+    ARTechnique * _renderingTechnique;
+    unsigned long long  _runningSensors;
     unsigned long long  _state;
     NSObject<OS_dispatch_queue> * _stateQueue;
     ARTechnique * _technique;
     long long  _thermalState;
     id  _thermalStateObserver;
-    bool  _trackingWasReset;
-    bool  _worldOriginInitialized;
-    bool  _worldOriginReset;
+    ARQATracer * _tracer;
     ARWorldTrackingTechnique * _worldTrackingTechnique;
 }
 
@@ -46,15 +51,19 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned long long pausedSensors;
 @property (nonatomic) unsigned long long powerUsage;
+@property bool relocalizing;
 @property (nonatomic) unsigned long long runningSensors;
-@property (nonatomic) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; } sessionOriginTransform;
 @property (nonatomic) unsigned long long state;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) ARQATracer *tracer;
 
++ (void)_applySessionOverrides:(id)arg1;
 + (void)initialize;
 
 - (void).cxx_destruct;
 - (void)_addObserver:(id)arg1;
+- (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })_cameraTransformForResultData:(id)arg1 previousFrame:(id)arg2;
+- (id)_currentFrameContext;
 - (void)_endInterruption;
 - (id)_getObservers;
 - (id)_imageSensorForConfiguration:(id)arg1 existingSensor:(id)arg2;
@@ -67,12 +76,15 @@
 - (void)_sessionDidRemoveAnchors:(id)arg1;
 - (void)_sessionDidUpdateAnchors:(id)arg1;
 - (void)_sessionDidUpdateFrame:(id)arg1;
+- (void)_sessionShouldAttemptRelocalization;
 - (void)_setTechnique:(id)arg1;
 - (void)_startSensorsWithDataTypes:(unsigned long long)arg1;
 - (id)_stateQueue;
 - (void)_stopAllSensors;
 - (void)_stopSensorsWithDataTypes:(unsigned long long)arg1 keepingDataTypes:(unsigned long long)arg2;
-- (void)_updateAnchorsForFrame:(id)arg1 resultDatas:(id)arg2 addedAnchors:(id)arg3 updatedAnchors:(id)arg4 removedAnchors:(id)arg5 worldOriginUpdated:(bool)arg6 reinitializeExistingAnchors:(bool)arg7;
+- (void)_updateAnchorsForFrame:(id)arg1 resultDatas:(id)arg2 context:(id)arg3 addedAnchors:(id)arg4 updatedAnchors:(id)arg5 removedAnchors:(id)arg6;
+- (void)_updateFeaturePointsForFrame:(id)arg1 previousFrame:(id)arg2 context:(id)arg3;
+- (void)_updateOriginTransformForFrame:(id)arg1 previousFrame:(id)arg2 modifiers:(unsigned long long)arg3 context:(id)arg4;
 - (void)_updatePowerPressureLevelWithToken:(int)arg1;
 - (void)_updatePowerUsage;
 - (void)_updateSensorsWithConfiguration:(id)arg1;
@@ -90,9 +102,12 @@
 - (id)delegateQueue;
 - (id)description;
 - (id)init;
+- (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })originTransform;
 - (void)pause;
 - (unsigned long long)pausedSensors;
 - (unsigned long long)powerUsage;
+- (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })predictedDeviceTransformAtTimestamp:(double)arg1;
+- (bool)relocalizing;
 - (void)removeAnchor:(id)arg1;
 - (void)runWithConfiguration:(id)arg1;
 - (void)runWithConfiguration:(id)arg1 options:(unsigned long long)arg2;
@@ -101,19 +116,22 @@
 - (void)sensor:(id)arg1 didOutputSensorData:(id)arg2;
 - (void)sensorDidPause:(id)arg1;
 - (void)sensorDidRestart:(id)arg1;
-- (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })sessionOriginTransform;
 - (void)setAvailableSensors:(id)arg1;
 - (void)setConfiguration:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegateQueue:(id)arg1;
+- (void)setOriginTransform:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg1;
 - (void)setPausedSensors:(unsigned long long)arg1;
 - (void)setPowerUsage:(unsigned long long)arg1;
+- (void)setRelocalizing:(bool)arg1;
 - (void)setRunningSensors:(unsigned long long)arg1;
-- (void)setSessionOriginTransform:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg1;
 - (void)setState:(unsigned long long)arg1;
+- (void)setTracer:(id)arg1;
+- (void)setWorldOrigin:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg1;
 - (unsigned long long)state;
 - (id)technique;
 - (void)technique:(id)arg1 didFailWithError:(id)arg2;
 - (void)technique:(id)arg1 didOutputResultData:(id)arg2 timestamp:(double)arg3 context:(id)arg4;
+- (id)tracer;
 
 @end

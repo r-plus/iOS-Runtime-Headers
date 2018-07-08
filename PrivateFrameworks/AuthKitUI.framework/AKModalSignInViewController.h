@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AuthKitUI.framework/AuthKitUI
  */
 
-@interface AKModalSignInViewController : AKBaseSignInViewController <AKAppleIDAuthenticationInAppContextAlertDelegate, UITextFieldDelegate> {
+@interface AKModalSignInViewController : AKBaseSignInViewController <AKAppleIDAuthenticationInAppContextAlertDelegate, AKAppleIDAuthenticationInAppContextPasswordDelegate, UITextFieldDelegate> {
     UILabel * _bodyLabel;
     UIView * _containerView;
     UIControl * _firstResponder;
@@ -36,6 +36,7 @@
 - (id)bodyLabel;
 - (bool)canBecomeFirstResponder;
 - (id)containerView;
+- (void)context:(id)arg1 needsPasswordWithCompletion:(id /* block */)arg2;
 - (void)displayAlertForContext:(id)arg1 error:(id)arg2 completion:(id /* block */)arg3;
 - (id)init;
 - (id)passwordField;

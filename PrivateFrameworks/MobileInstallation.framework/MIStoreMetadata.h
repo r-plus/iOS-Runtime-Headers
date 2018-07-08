@@ -10,6 +10,7 @@
     NSNumber * _betaExternalVersionIdentifier;
     NSString * _bundleShortVersionString;
     NSString * _bundleVersion;
+    bool  _deviceBasedVPP;
     NSNumber * _downloaderID;
     NSNumber * _familyID;
     bool  _gameCenterEnabled;
@@ -52,6 +53,7 @@
 @property (nonatomic, retain) NSNumber *betaExternalVersionIdentifier;
 @property (nonatomic, copy) NSString *bundleShortVersionString;
 @property (nonatomic, copy) NSString *bundleVersion;
+@property (nonatomic) bool deviceBasedVPP;
 @property (nonatomic, retain) NSNumber *downloaderID;
 @property (nonatomic, retain) NSNumber *familyID;
 @property (getter=isGameCenterEnabled, nonatomic) bool gameCenterEnabled;
@@ -101,6 +103,7 @@
 - (id)bundleVersion;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (bool)deviceBasedVPP;
 - (id)dictionaryRepresentation;
 - (id)downloaderID;
 - (void)encodeWithCoder:(id)arg1;
@@ -138,6 +141,7 @@
 - (void)setBundleShortVersionString:(id)arg1;
 - (void)setBundleVersion:(id)arg1;
 - (void)setDSPersonID:(id)arg1;
+- (void)setDeviceBasedVPP:(bool)arg1;
 - (void)setDownloaderID:(id)arg1;
 - (void)setFamilyID:(id)arg1;
 - (void)setGameCenterEnabled:(bool)arg1;

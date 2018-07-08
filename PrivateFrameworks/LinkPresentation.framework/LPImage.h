@@ -25,6 +25,7 @@
 @property (nonatomic, readonly, copy) LPImageProperties *properties;
 
 + (id)_PNGImageNamed:(id)arg1;
++ (id)_loadImageSubsampledToScreenSizeFromData:(id)arg1;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;

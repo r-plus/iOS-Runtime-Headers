@@ -4,6 +4,7 @@
 
 @interface ADAdImpressionPublicAttributes : NSObject <NSSecureCoding> {
     NSString * _accessibilityLabel;
+    bool  _adLibManagedVideo;
     long long  _adPrivacyMarkPosition;
     NSURL * _audioURL;
     NSString * _batchResponseIdentifier;
@@ -24,6 +25,7 @@
     NSURL * _logoImageURL;
     NSArray * _matchClauses;
     long long  _maximumPretapRequestCount;
+    NSDictionary * _mediaAsset;
     double  _minimumIntervalBetweenPresentations;
     NSDictionary * _nativeMediaCreativeMetadata;
     NSArray * _nativeMetadata;
@@ -41,6 +43,7 @@
 }
 
 @property (nonatomic, copy) NSString *accessibilityLabel;
+@property (nonatomic) bool adLibManagedVideo;
 @property (nonatomic) long long adPrivacyMarkPosition;
 @property (nonatomic, retain) NSURL *audioURL;
 @property (nonatomic, copy) NSString *batchResponseIdentifier;
@@ -55,6 +58,7 @@
 @property (nonatomic, retain) NSURL *logoImageURL;
 @property (nonatomic, retain) NSArray *matchClauses;
 @property (nonatomic) long long maximumPretapRequestCount;
+@property (nonatomic, retain) NSDictionary *mediaAsset;
 @property (nonatomic) double minimumIntervalBetweenPresentations;
 @property (nonatomic, retain) NSDictionary *nativeMediaCreativeMetadata;
 @property (nonatomic, retain) NSArray *nativeMetadata;
@@ -70,6 +74,7 @@
 + (bool)supportsSecureCoding;
 
 - (id)accessibilityLabel;
+- (bool)adLibManagedVideo;
 - (long long)adPrivacyMarkPosition;
 - (id)audioURL;
 - (id)batchResponseIdentifier;
@@ -88,12 +93,14 @@
 - (id)logoImageURL;
 - (id)matchClauses;
 - (long long)maximumPretapRequestCount;
+- (id)mediaAsset;
 - (double)minimumIntervalBetweenPresentations;
 - (id)nativeMediaCreativeMetadata;
 - (id)nativeMetadata;
 - (struct CGSize { double x1; double x2; })portraitSize;
 - (bool)requiresMRAID;
 - (void)setAccessibilityLabel:(id)arg1;
+- (void)setAdLibManagedVideo:(bool)arg1;
 - (void)setAdPrivacyMarkPosition:(long long)arg1;
 - (void)setAudioURL:(id)arg1;
 - (void)setBatchResponseIdentifier:(id)arg1;
@@ -108,6 +115,7 @@
 - (void)setLogoImageURL:(id)arg1;
 - (void)setMatchClauses:(id)arg1;
 - (void)setMaximumPretapRequestCount:(long long)arg1;
+- (void)setMediaAsset:(id)arg1;
 - (void)setMinimumIntervalBetweenPresentations:(double)arg1;
 - (void)setNativeMediaCreativeMetadata:(id)arg1;
 - (void)setNativeMetadata:(id)arg1;

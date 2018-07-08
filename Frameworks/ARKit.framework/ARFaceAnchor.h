@@ -18,19 +18,30 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) ARFaceTrackingData *trackingData;
 
+// Image: /System/Library/Frameworks/ARKit.framework/ARKit
+
 + (id)blendShapeMapping;
 + (void)initialize;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)blendShapes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugDescription;
+- (void)encodeWithCoder:(id)arg1;
 - (id)geometry;
 - (const /* Warning: Unrecognized filer type: '1' using 'void*' */ void**)imageVertices;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 trackingData:(id)arg2;
+- (bool)isEqualToFaceAnchor:(id)arg1;
 - (bool)isTracked;
 - (void)setIsTracked:(bool)arg1;
 - (void)setTrackingData:(id)arg1;
 - (id)trackingData;
+
+// Image: /System/Library/PrivateFrameworks/AvatarKit.framework/AvatarKit
+
+- (float)_avt_rawBlendShapeAtLocation:(id)arg1;
+- (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })_avt_rawTransform;
 
 @end

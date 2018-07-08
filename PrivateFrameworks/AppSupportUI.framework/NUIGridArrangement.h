@@ -12,36 +12,47 @@
             struct _NUIGridArrangementCell {} *__begin_; 
             struct _NUIGridArrangementCell {} *__end_; 
             struct __compressed_pair<_NUIGridArrangementCell *, std::__1::allocator<_NUIGridArrangementCell> > { 
-                struct _NUIGridArrangementCell {} *__first_; 
+                struct _NUIGridArrangementCell {} *__value_; 
             } __end_cap_; 
         } cells; 
         struct vector<_NUIGridArrangementDimension, std::__1::allocator<_NUIGridArrangementDimension> > { 
             struct _NUIGridArrangementDimension {} *__begin_; 
             struct _NUIGridArrangementDimension {} *__end_; 
             struct __compressed_pair<_NUIGridArrangementDimension *, std::__1::allocator<_NUIGridArrangementDimension> > { 
-                struct _NUIGridArrangementDimension {} *__first_; 
+                struct _NUIGridArrangementDimension {} *__value_; 
             } __end_cap_; 
         } columns; 
         struct vector<_NUIGridArrangementDimension, std::__1::allocator<_NUIGridArrangementDimension> > { 
             struct _NUIGridArrangementDimension {} *__begin_; 
             struct _NUIGridArrangementDimension {} *__end_; 
             struct __compressed_pair<_NUIGridArrangementDimension *, std::__1::allocator<_NUIGridArrangementDimension> > { 
-                struct _NUIGridArrangementDimension {} *__first_; 
+                struct _NUIGridArrangementDimension {} *__value_; 
             } __end_cap_; 
         } rows; 
         struct vector<CGRect, std::__1::allocator<CGRect> > { 
             struct CGRect {} *__begin_; 
             struct CGRect {} *__end_; 
             struct __compressed_pair<CGRect *, std::__1::allocator<CGRect> > { 
-                struct CGRect {} *__first_; 
+                struct CGRect {} *__value_; 
             } __end_cap_; 
         } viewFrames; 
     }  _arrangement;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _bounds;
     <NUIArrangementContainer> * _container;
     <NUIGridArrangementDataSource> * _dataSource;
     struct { 
         unsigned int delegateWidth : 1; 
         unsigned int delegateHeight : 1; 
+        unsigned int containerDirection : 1; 
     }  _flags;
     double  _scale;
 }

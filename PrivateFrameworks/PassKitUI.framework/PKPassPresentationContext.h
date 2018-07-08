@@ -5,6 +5,7 @@
 @interface PKPassPresentationContext : NSObject {
     NSArray * _additionalPassUniqueIdentifiers;
     bool  _animated;
+    bool  _fieldDetect;
     bool  _persistentCardEmulation;
     bool  _postPayment;
     <NSCopying> * _userInfo;
@@ -13,6 +14,7 @@
 
 @property (nonatomic, copy) NSArray *additionalPassUniqueIdentifiers;
 @property (nonatomic) bool animated;
+@property (getter=isFieldDetect, nonatomic) bool fieldDetect;
 @property (getter=wantsPersistentCardEmulation, nonatomic) bool persistentCardEmulation;
 @property (getter=isPostPayment, nonatomic) bool postPayment;
 @property (nonatomic, copy) <NSCopying> *userInfo;
@@ -27,9 +29,11 @@
 - (id)additionalPassUniqueIdentifiers;
 - (bool)animated;
 - (id)description;
+- (bool)isFieldDetect;
 - (bool)isPostPayment;
 - (void)setAdditionalPassUniqueIdentifiers:(id)arg1;
 - (void)setAnimated:(bool)arg1;
+- (void)setFieldDetect:(bool)arg1;
 - (void)setPersistentCardEmulation:(bool)arg1;
 - (void)setPostPayment:(bool)arg1;
 - (void)setUserInfo:(id)arg1;

@@ -34,6 +34,7 @@
 - (void).cxx_destruct;
 - (id)_childFocusRegionsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inCoordinateSpace:(id)arg2;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
+- (bool)_fencingEffectsAreVisible;
 - (void)_geometryChanges:(id)arg1 forAncestor:(id)arg2;
 - (long long)_interfaceOrientationForScene:(id)arg1;
 - (struct CGSize { double x1; double x2; })_intrinsicSizeWithinSize:(struct CGSize { double x1; double x2; })arg1;

@@ -3,12 +3,14 @@
  */
 
 @interface MPGenericTracklistPlaybackQueue : MPRemotePlaybackQueue {
+    MPIdentifierSet * _collectionIdentifierSet;
     NSString * _firstTrackIdentifier;
     long long  _repeatType;
     long long  _shuffleType;
     NSArray * _trackIdentifiers;
 }
 
+@property (nonatomic, readonly) MPIdentifierSet *collectionIdentifierSet;
 @property (nonatomic, readonly) NSString *firstTrackIdentifier;
 @property (nonatomic, readonly) long long repeatType;
 @property (nonatomic, readonly) long long shuffleType;
@@ -16,7 +18,10 @@
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
+- (id)collectionIdentifierSet;
 - (id)description;
 - (id)firstTrackIdentifier;
 - (id)initWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue { }*)arg1;

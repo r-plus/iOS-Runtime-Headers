@@ -12,21 +12,25 @@
     const char * _utf8;
 }
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (const char *)UTF8String;
 - (const char *)_fastCStringContents:(bool)arg1;
 - (unsigned short)characterAtIndex:(unsigned long long)arg1;
+- (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataUsingEncoding:(unsigned long long)arg1;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)fastestEncoding;
 - (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (unsigned long long)hash;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithUTF8Data:(id)arg1;
 - (id)initWithUTF8DataNullTerminated:(id)arg1;
 - (id)initWithUTF8String:(const char *)arg1;
 - (unsigned long long)length;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)replacementObjectForCoder:(id)arg1;
 
 @end

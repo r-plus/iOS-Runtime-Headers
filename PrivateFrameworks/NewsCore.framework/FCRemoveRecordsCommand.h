@@ -8,6 +8,8 @@
 
 @property (nonatomic, copy) NSArray *recordIDs;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (bool)canCoalesceWithCommand:(id)arg1;
 - (void)coalesceWithCommand:(id)arg1;

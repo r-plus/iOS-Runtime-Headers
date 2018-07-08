@@ -8,7 +8,7 @@
     SXContext * _context;
     FCFlintManifest * _flintManifest;
     FCFlintResourceManager * _flintResourceManager;
-    SXHost * _host;
+    <SXHost> * _host;
 }
 
 @property (nonatomic, retain) NUANFAssetLoader *assetLoader;
@@ -19,7 +19,7 @@
 @property (nonatomic, readonly) FCFlintManifest *flintManifest;
 @property (nonatomic, readonly) FCFlintResourceManager *flintResourceManager;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) SXHost *host;
+@property (nonatomic, readonly) <SXHost> *host;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

@@ -68,6 +68,7 @@
 @property (nonatomic, readonly) double scale;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) long long tags;
+@property (getter=isTatlDisplay, nonatomic, readonly) bool tatlDisplay;
 
 // Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
 
@@ -111,6 +112,7 @@
 - (bool)isHiddenDisplay;
 - (bool)isMainDisplay;
 - (bool)isOverscanned;
+- (bool)isTatlDisplay;
 - (id)name;
 - (struct CGPoint { double x1; double x2; })nativeCenter;
 - (double)nativeOrientation;

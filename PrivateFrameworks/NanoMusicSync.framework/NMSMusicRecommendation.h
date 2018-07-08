@@ -5,6 +5,7 @@
 @interface NMSMusicRecommendation : NSObject <NSCopying> {
     MPArtworkCatalog * _artworkCatalog;
     NSString * _identifier;
+    NSDate * _lastModifiedDate;
     MPModelObject * _modelObject;
     bool  _selected;
     NSObject<OS_dispatch_queue> * _serializerQueue;
@@ -17,6 +18,7 @@
 @property (nonatomic, readonly) MPArtworkCatalog *artworkCatalog;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) bool isHeavyRotation;
+@property (nonatomic, readonly) NSDate *lastModifiedDate;
 @property (nonatomic, readonly) bool referencesOnlyLibraryContainers;
 @property (getter=isSelected, nonatomic) bool selected;
 @property (nonatomic, readonly) NSString *storeRecommendationID;
@@ -43,6 +45,7 @@
 - (bool)isEqual:(id)arg1;
 - (bool)isHeavyRotation;
 - (bool)isSelected;
+- (id)lastModifiedDate;
 - (bool)referencesOnlyLibraryContainers;
 - (void)setSelected:(bool)arg1;
 - (id)storeRecommendationID;

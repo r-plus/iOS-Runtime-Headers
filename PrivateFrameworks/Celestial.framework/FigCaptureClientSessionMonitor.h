@@ -7,6 +7,8 @@
     NSString * _applicationID;
     int  _applicationState;
     id  _applicationStateChangeNotificationToken;
+    unsigned int  _bksApplicationState;
+    bool  _bksApplicationStateInitialized;
     NSString * _cachedApplicationIDToInheritAppStateFrom;
     bool  _clientCanInheritApplicationState;
     int  _clientType;
@@ -18,6 +20,7 @@
     id  _interruptionStateChangeNotificationToken;
     bool  _invalid;
     int  _layoutState;
+    bool  _layoutStateInitialized;
     int  _pid;
     int  _pidToInheritAppStateFrom;
     int  _resolvedExtensionApplicationState;
@@ -33,6 +36,9 @@
 @property (nonatomic, readonly) struct opaqueCMSession { }*session;
 @property (readonly) Class superclass;
 
++ (int)_applicationStateForBKSApplicationState:(unsigned int)arg1 clientType:(int)arg2 applicationID:(id)arg3;
++ (int)_applicationStateForClientLayoutState:(int)arg1 clientType:(int)arg2;
++ (bool)_isSupportedExtensionClientType:(int)arg1;
 + (id)_stringForApplicationState:(int)arg1;
 + (id)_stringForBKSApplicationState:(unsigned int)arg1;
 + (id)_stringForClientLayoutState:(int)arg1;
@@ -46,13 +52,16 @@
 - (void)_handleApplicationStateChange:(unsigned int)arg1;
 - (void)_handleAudioInterruptionChange:(int)arg1;
 - (void)_handleCMSessionManagerNofification:(id)arg1;
-- (bool)_isSupportedExtensionClientType;
+- (bool)_isApplicationStateMonitoringRequiredForClient;
+- (bool)_isDisplayLayoutMonitoringRequiredForClient;
 - (id)_logString;
 - (void)_notifyIfResolvedSupportedExtensionApplicationStateOrLayoutStateDidChangeUsingLayoutStateChanged:(bool)arg1;
 - (int)_registerCMSessionForObservation;
 - (id)_resolveApplicationID;
+- (int)_resolveApplicationState;
 - (void)_setUpApplicationInfo;
 - (void)_updateApplicationState;
+- (void)_updateClientStateCondition:(void*)arg1 newValue:(id)arg2;
 - (id)applicationID;
 - (void)dealloc;
 - (id)description;

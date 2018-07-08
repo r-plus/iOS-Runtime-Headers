@@ -6,7 +6,7 @@
     struct Weak<JSC::JSGlobalObject> { 
         struct WeakImpl {} *m_impl; 
     }  m_globalObject;
-    struct RefPtr<JSC::JSLock> { 
+    struct RefPtr<JSC::JSLock, WTF::DumbPtrTraits<JSC::JSLock> > { 
         struct JSLock {} *m_ptr; 
     }  m_lock;
     NSMapTable * m_owners;

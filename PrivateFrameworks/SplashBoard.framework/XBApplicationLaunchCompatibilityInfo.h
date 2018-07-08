@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SplashBoard.framework/SplashBoard
  */
 
-@interface XBApplicationLaunchCompatibilityInfo : NSObject <BSXPCCoding, NSCoding> {
+@interface XBApplicationLaunchCompatibilityInfo : NSObject <BSXPCCoding, NSSecureCoding> {
     NSString * _bundleContainerPath;
     NSString * _bundleIdentifier;
     NSString * _bundlePath;
@@ -26,6 +26,7 @@
 @property (readonly) Class superclass;
 
 + (id)compatibilityInfoForAppInfo:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (bool)allowsSavingLaunchImages;
@@ -49,5 +50,6 @@
 - (void)setBundlePath:(id)arg1;
 - (void)setLaunchesOpaque:(bool)arg1;
 - (void)setSandboxPath:(id)arg1;
+- (void)set_launchInterfaces:(id)arg1;
 
 @end

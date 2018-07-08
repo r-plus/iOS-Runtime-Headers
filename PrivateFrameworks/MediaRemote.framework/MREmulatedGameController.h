@@ -15,14 +15,15 @@
 @property (nonatomic) <MREmulatedGameControllerDelegate> *delegate;
 @property (nonatomic, readonly) int profile;
 
+- (void).cxx_destruct;
 - (void)_handleGameControllerDidChange:(id)arg1;
 - (double)buttonAUpDelay;
 - (id)controller;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithProperties:(void*)arg1;
+- (id)initWithProperties:(id)arg1;
 - (int)profile;
-- (void)sendGameControllerEvent:(void*)arg1;
+- (void)sendGameControllerEvent:(id)arg1;
 - (void)setButtonAUpDelay:(double)arg1;
 - (void)setController:(id)arg1;
 - (void)setDelegate:(id)arg1;

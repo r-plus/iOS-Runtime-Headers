@@ -2,13 +2,16 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKExtensionVendorContext : PKExtensionBaseContext <PKExtensionVendorContextProtocol>
+@interface PKExtensionVendorContext : PKExtensionBaseContext <PKExtensionVendorContextProtocol> {
+    PKEntitlementWhitelist * _whitelist;
+}
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)authorizationDidAuthorizePaymentCompleteWithResult:(id)arg1;
 - (void)authorizationDidAuthorizePaymentCompleteWithStatus:(long long)arg1;
 - (void)authorizationDidAuthorizePeerPaymentQuoteCompleteWithResult:(id)arg1;
@@ -20,6 +23,7 @@
 - (void)authorizationDidSelectShippingAddressCompleteWithUpdate:(id)arg1;
 - (void)authorizationDidSelectShippingMethodCompleteWithStatus:(long long)arg1 paymentSummaryItems:(id)arg2;
 - (void)authorizationDidSelectShippingMethodCompleteWithUpdate:(id)arg1;
+- (id)entitlementWhitelist;
 - (void)handleDismissWithCompletion:(id /* block */)arg1;
 - (void)handleHostApplicationDidBecomeActive;
 - (void)handleHostApplicationDidCancel;

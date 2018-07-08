@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITabBar : UIView <DebugHierarchyObject, _UIShadowedView> {
+@interface UITabBar : UIView <_UIShadowedView> {
     _UITabBarAppearanceStorage * _appearanceStorage;
     NSArray * _backgroundEffects;
     long long  _barMetrics;
@@ -84,8 +84,6 @@
 @property (nonatomic, retain) UIColor *tintColor;
 @property (getter=isTranslucent, nonatomic) bool translucent;
 @property (nonatomic, copy) UIColor *unselectedItemTintColor;
-
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (void)_initializeForIdiom:(long long)arg1;
 + (id)_unselectedTabTintColorForView:(id)arg1;
@@ -188,15 +186,6 @@
 - (void)_updateTabBarItemView:(id)arg1;
 - (void)_updateTintedImages:(id)arg1 selected:(bool)arg2;
 - (bool)_vibrantLabels;
-- (void)dealloc;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
-- (id)debugHierarchyValueForPropertyWithName:(id)arg1;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)addConstraint:(id)arg1;
 - (id)backgroundEffects;
 - (id)backgroundImage;
@@ -204,6 +193,7 @@
 - (id)barTintColor;
 - (void)beginCustomizingItems:(id)arg1;
 - (bool)canBecomeFocused;
+- (void)dealloc;
 - (id)delegate;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)dismissCustomizeSheet:(bool)arg1;

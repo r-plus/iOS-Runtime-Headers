@@ -15,7 +15,7 @@
                 struct Lookup {} *__begin_; 
                 struct Lookup {} *__end_; 
                 struct __compressed_pair<TSCH3D::ObjectState::Lookup *, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { 
-                    struct Lookup {} *__first_; 
+                    struct Lookup {} *__value_; 
                 } __end_cap_; 
             } mAttributes; 
             struct array<SFUtility::ObjcSharedPtr<NSObject>, 8> { 
@@ -58,7 +58,7 @@
                 struct Lookup {} *__begin_; 
                 struct Lookup {} *__end_; 
                 struct __compressed_pair<TSCH3D::ObjectState::Lookup *, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { 
-                    struct Lookup {} *__first_; 
+                    struct Lookup {} *__value_; 
                 } __end_cap_; 
             } mAttributes; 
             struct array<SFUtility::ObjcSharedPtr<NSObject>, 8> { 

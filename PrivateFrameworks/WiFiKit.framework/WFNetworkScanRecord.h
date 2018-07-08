@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WiFiKit.framework/WiFiKit
  */
 
-@interface WFNetworkScanRecord : NSObject <WFNetworkListRecord> {
+@interface WFNetworkScanRecord : NSObject <NSCopying, WFNetworkListRecord> {
     bool  _adhoc;
     bool  _airPortBaseStation;
     bool  _ambiguousSSID;
@@ -31,14 +31,15 @@
     bool  _unconfiguredAccessory;
     bool  _unconfiguredAccessorySTAOnly;
     long long  _unconfiguredAccessoryType;
+    NSString * _unconfiguredDeviceID;
     NSString * _unconfiguredDeviceName;
 }
 
 @property (getter=isAdhoc, nonatomic) bool adhoc;
-@property (getter=isAirPortBaseStation, nonatomic, readonly) bool airPortBaseStation;
-@property (getter=isAmbiguousSSID, nonatomic, readonly) bool ambiguousSSID;
+@property (getter=isAirPortBaseStation, nonatomic) bool airPortBaseStation;
+@property (getter=isAmbiguousSSID, nonatomic) bool ambiguousSSID;
 @property (retain) NSDictionary *attributes;
-@property (nonatomic, readonly, copy) NSString *bssid;
+@property (nonatomic, copy) NSString *bssid;
 @property (getter=isCarPlay, nonatomic) bool carPlay;
 @property (nonatomic) long long carPlayType;
 @property (nonatomic, retain) NSNumber *channel;
@@ -47,7 +48,7 @@
 @property (nonatomic, retain) NSDictionary *eapProfile;
 @property (getter=isEnterprise, nonatomic) bool enterprise;
 @property (readonly) unsigned long long hash;
-@property (getter=isHidden, nonatomic, readonly) bool hidden;
+@property (getter=isHidden, nonatomic) bool hidden;
 @property (getter=isHotspot20, nonatomic) bool hotspot20;
 @property (nonatomic, copy) NSString *hotspot20Name;
 @property (getter=isHotspot20Provisioned, nonatomic) bool hotspot20Provisioned;
@@ -57,8 +58,8 @@
 @property (nonatomic) unsigned int phyMode;
 @property (nonatomic) bool requiresPassword;
 @property (nonatomic) bool requiresUsername;
-@property (nonatomic, readonly) long long rssi;
-@property (nonatomic, readonly) float scaledRSSI;
+@property (nonatomic) long long rssi;
+@property (nonatomic) float scaledRSSI;
 @property (getter=isSecure, nonatomic) bool secure;
 @property (nonatomic) long long securityMode;
 @property (nonatomic, copy) NSString *ssid;
@@ -67,6 +68,7 @@
 @property (getter=isUnconfiguredAccessory, nonatomic) bool unconfiguredAccessory;
 @property (getter=isUnconfiguredAccessorySTAOnly, nonatomic) bool unconfiguredAccessorySTAOnly;
 @property (nonatomic) long long unconfiguredAccessoryType;
+@property (copy) NSString *unconfiguredDeviceID;
 @property (nonatomic, copy) NSString *unconfiguredDeviceName;
 
 - (void).cxx_destruct;
@@ -78,6 +80,7 @@
 - (long long)carPlayType;
 - (id)channel;
 - (id)configurationIssues;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)eapProfile;
 - (unsigned long long)hash;
@@ -111,12 +114,16 @@
 - (float)scaledRSSI;
 - (long long)securityMode;
 - (void)setAdhoc:(bool)arg1;
+- (void)setAirPortBaseStation:(bool)arg1;
+- (void)setAmbiguousSSID:(bool)arg1;
 - (void)setAttributes:(id)arg1;
+- (void)setBssid:(id)arg1;
 - (void)setCarPlay:(bool)arg1;
 - (void)setCarPlayType:(long long)arg1;
 - (void)setChannel:(id)arg1;
 - (void)setEapProfile:(id)arg1;
 - (void)setEnterprise:(bool)arg1;
+- (void)setHidden:(bool)arg1;
 - (void)setHotspot20:(bool)arg1;
 - (void)setHotspot20Name:(id)arg1;
 - (void)setHotspot20Provisioned:(bool)arg1;
@@ -126,12 +133,15 @@
 - (void)setPhyMode:(unsigned int)arg1;
 - (void)setRequiresPassword:(bool)arg1;
 - (void)setRequiresUsername:(bool)arg1;
+- (void)setRssi:(long long)arg1;
+- (void)setScaledRSSI:(float)arg1;
 - (void)setSecure:(bool)arg1;
 - (void)setSecurityMode:(long long)arg1;
 - (void)setSsid:(id)arg1;
 - (void)setUnconfiguredAccessory:(bool)arg1;
 - (void)setUnconfiguredAccessorySTAOnly:(bool)arg1;
 - (void)setUnconfiguredAccessoryType:(long long)arg1;
+- (void)setUnconfiguredDeviceID:(id)arg1;
 - (void)setUnconfiguredDeviceName:(id)arg1;
 - (id)ssid;
 - (id)subtitle;
@@ -139,6 +149,7 @@
 - (id)title;
 - (long long)type;
 - (long long)unconfiguredAccessoryType;
+- (id)unconfiguredDeviceID;
 - (id)unconfiguredDeviceName;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface VKMapTileList : NSObject {
-    /* Warning: unhandled struct encoding: '{vector<VKMapTile *, std::__1::allocator<VKMapTile *> >="__begin_"^@"__end_"^@"__end_cap_"{__compressed_pair<VKMapTile **, std::__1::allocator<VKMapTile *> >="__first_"^@}}' */ struct vector<VKMapTile *, std::__1::allocator<VKMapTile *> > { 
+    /* Warning: unhandled struct encoding: '{vector<VKMapTile *, std::__1::allocator<VKMapTile *> >="__begin_"^@"__end_"^@"__end_cap_"{__compressed_pair<VKMapTile **, std::__1::allocator<VKMapTile *> >="__value_"^@}}' */ struct vector<VKMapTile *, std::__1::allocator<VKMapTile *> > { 
         __end_ **__begin_; 
     }  _list;
     float  _maximumStyleZ;

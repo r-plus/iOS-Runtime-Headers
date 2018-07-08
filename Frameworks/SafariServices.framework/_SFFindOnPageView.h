@@ -73,10 +73,12 @@
 - (bool)isFocused;
 - (bool)isShowing;
 - (id)keyCommands;
+- (id)matchLabelText;
 - (void)next;
 - (unsigned long long)numberOfFindMatches;
 - (void)prepareFindOnPageWithString:(id)arg1;
 - (void)previous;
+- (void)selectFindOnPageText;
 - (void)setFindString:(id)arg1;
 - (void)setHighlightedMatchIndex:(long long)arg1;
 - (void)setNumberOfFindMatches:(unsigned long long)arg1;

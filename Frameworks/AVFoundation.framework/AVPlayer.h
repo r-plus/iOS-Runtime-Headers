@@ -23,6 +23,7 @@
 @property (nonatomic) float maxRateForAudioPlayback;
 @property (nonatomic) float minRateForAudioPlayback;
 @property (nonatomic, copy) NSString *multichannelAudioStrategy;
+@property (nonatomic) unsigned long long preferredVideoDecoderGPURegistryID;
 @property (nonatomic, readonly) long long status;
 
 // Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
@@ -250,6 +251,7 @@
 - (void)playImmediatelyAtRate:(float)arg1;
 - (id)playerAVAudioSession;
 - (id)playerRole;
+- (unsigned long long)preferredVideoDecoderGPURegistryID;
 - (void)prepareItem:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (bool)preparesItemsForPlaybackAsynchronously;
 - (void)prerollAtRate:(float)arg1 completionHandler:(id /* block */)arg2;
@@ -291,6 +293,7 @@
 - (void)setMuted:(bool)arg1;
 - (void)setOutputContext:(id)arg1;
 - (void)setPlayerRole:(id)arg1;
+- (void)setPreferredVideoDecoderGPURegistryID:(unsigned long long)arg1;
 - (void)setPreparesItemsForPlaybackAsynchronously:(bool)arg1;
 - (void)setRate:(float)arg1;
 - (void)setRate:(float)arg1 time:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 atHostTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;

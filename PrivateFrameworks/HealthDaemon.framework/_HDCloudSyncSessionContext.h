@@ -11,6 +11,7 @@
     bool  _hasOpenSequence;
     bool  _isComplete;
     HDSyncAnchorRangeMap * _pendingAnchorRangeMap;
+    HDProfile * _profile;
     NSProgress * _progress;
     bool  _success;
     NSMutableSet * _syncEntityClassesWithProcessedChanges;
@@ -28,6 +29,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool isComplete;
 @property (nonatomic, readonly) HDSyncAnchorRangeMap *pendingAnchorRangeMap;
+@property (nonatomic, readonly) HDProfile *profile;
 @property (nonatomic, readonly) NSProgress *progress;
 @property (nonatomic) bool success;
 @property (readonly) Class superclass;
@@ -43,10 +45,12 @@
 - (unsigned long long)changesetCount;
 - (id /* block */)completion;
 - (id)error;
+- (void)finishProgress;
 - (bool)hasOpenSequence;
-- (id)initWithChangedSyncEntityCount:(unsigned long long)arg1;
+- (id)initWithChangedSyncEntityCount:(unsigned long long)arg1 profile:(id)arg2;
 - (bool)isComplete;
 - (id)pendingAnchorRangeMap;
+- (id)profile;
 - (id)progress;
 - (bool)resetInvalidArchiveCreatorWithSessionUUID:(id)arg1 error:(id*)arg2;
 - (void)setArchiveCount:(unsigned long long)arg1;

@@ -15,6 +15,8 @@
     bool  _persistentStore;
 }
 
+@property (nonatomic, readonly) bool persistentStore;
+
 + (void)releaseTemporarySharedInstance;
 + (void)resetSharedInstance;
 + (id)sharedInstance;
@@ -27,5 +29,6 @@
 - (id)initAndPersist:(bool)arg1;
 - (id)initWithInMemoryStore;
 - (id)initWithPersistentStore;
+- (bool)persistentStore;
 
 @end

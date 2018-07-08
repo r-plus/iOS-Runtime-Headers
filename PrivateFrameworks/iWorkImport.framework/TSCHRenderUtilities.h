@@ -10,6 +10,7 @@
 + (bool)centerPointForSeries:(id)arg1 index:(unsigned long long)arg2 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 point:(struct CGPoint { double x1; double x2; }*)arg4 nullsUseIntercept:(bool)arg5;
 + (void)drawFill:(id)arg1 inContext:(struct CGContext { }*)arg2 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 + (void)drawFill:(id)arg1 inContext:(struct CGContext { }*)arg2 path:(struct CGPath { }*)arg3;
++ (void)drawImageFill:(id)arg1 inContext:(struct CGContext { }*)arg2 path:(struct CGPath { }*)arg3 withinBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
 + (void)drawNullFillSwatchInContext:(struct CGContext { }*)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 + (void)drawSymbol:(int)arg1 inContext:(struct CGContext { }*)arg2 at:(struct CGPoint { double x1; double x2; })arg3 width:(double)arg4 fill:(id)arg5 stroke:(id)arg6;
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })integralFillRenderingRectFromElementRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

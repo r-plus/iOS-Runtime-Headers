@@ -21,8 +21,8 @@
 - (id)copyForArchiving;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })documentPageRange;
 - (unsigned long long)documentStartPageIndex;
-- (bool)hasPageHintOfKind:(int)arg1 atPageIndex:(unsigned long long)arg2;
-- (bool)hasPageHintOfKind:(int)arg1 beforePageIndex:(unsigned long long)arg2;
+- (bool)hasPageHintOfKind:(long long)arg1 atPageIndex:(unsigned long long)arg2;
+- (bool)hasPageHintOfKind:(long long)arg1 beforePageIndex:(unsigned long long)arg2;
 - (id)init;
 - (id)initWithArchive:(const struct SectionHintArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TP::PageHintArchive> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; unsigned int x6; }*)arg1 unarchiver:(id)arg2;
 - (unsigned long long)lastPageIndex;

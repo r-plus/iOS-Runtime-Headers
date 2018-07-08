@@ -7,6 +7,7 @@
 @property (getter=isCachedResponse, nonatomic) bool cachedResponse;
 @property (nonatomic, retain) NSString *clientCorrelationKey;
 @property (nonatomic) double connectionEndTime;
+@property (nonatomic) bool connectionReused;
 @property (nonatomic) unsigned long long connectionStartNStatRXBytes;
 @property (nonatomic) unsigned long long connectionStartNStatTXBytes;
 @property (nonatomic) double connectionStartTime;
@@ -39,6 +40,7 @@
 
 - (id)clientCorrelationKey;
 - (double)connectionEndTime;
+- (bool)connectionReused;
 - (unsigned long long)connectionStartNStatRXBytes;
 - (unsigned long long)connectionStartNStatTXBytes;
 - (double)connectionStartTime;
@@ -70,6 +72,7 @@
 - (void)setCachedResponse:(bool)arg1;
 - (void)setClientCorrelationKey:(id)arg1;
 - (void)setConnectionEndTime:(double)arg1;
+- (void)setConnectionReused:(bool)arg1;
 - (void)setConnectionStartNStatRXBytes:(unsigned long long)arg1;
 - (void)setConnectionStartNStatTXBytes:(unsigned long long)arg1;
 - (void)setConnectionStartTime:(double)arg1;

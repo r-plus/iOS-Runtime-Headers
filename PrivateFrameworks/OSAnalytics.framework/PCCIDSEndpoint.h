@@ -17,6 +17,7 @@
 - (id)deviceIds;
 - (id)init;
 - (bool)isDeviceNearby:(id)arg1;
+- (void)runWithDelegate:(id)arg1;
 - (id)send:(id)arg1 file:(id)arg2 metadata:(id)arg3 error:(id*)arg4;
 - (id)send:(id)arg1 message:(id)arg2 error:(id*)arg3;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(bool)arg4 error:(id)arg5;

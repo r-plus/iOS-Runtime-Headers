@@ -71,12 +71,12 @@
             struct UUIDData<TSP::UUIDData> {} **__begin_; 
             struct UUIDData<TSP::UUIDData> {} **__end_; 
             struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> **, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> *> > { 
-                struct UUIDData<TSP::UUIDData> {} **__first_; 
+                struct UUIDData<TSP::UUIDData> {} **__value_; 
             } __end_cap_; 
         } __map_; 
         unsigned long long __start_; 
         struct __compressed_pair<unsigned long, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
-            unsigned long long __first_; 
+            unsigned long long __value_; 
         } __size_; 
     }  _recentColumnResults;
     struct deque<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
@@ -85,12 +85,12 @@
             struct UUIDData<TSP::UUIDData> {} **__begin_; 
             struct UUIDData<TSP::UUIDData> {} **__end_; 
             struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> **, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> *> > { 
-                struct UUIDData<TSP::UUIDData> {} **__first_; 
+                struct UUIDData<TSP::UUIDData> {} **__value_; 
             } __end_cap_; 
         } __map_; 
         unsigned long long __start_; 
         struct __compressed_pair<unsigned long, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
-            unsigned long long __first_; 
+            unsigned long long __value_; 
         } __size_; 
     }  _recentRowResults;
     unsigned long long  _rowIndex;

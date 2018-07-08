@@ -6,6 +6,7 @@
     NSDate * _arrivalActualTime;
     SFAirport * _arrivalAirport;
     NSString * _arrivalGate;
+    NSDate * _arrivalGateTime;
     NSDate * _arrivalPublishedTime;
     NSDate * _arrivalRunwayTime;
     NSString * _arrivalTerminal;
@@ -28,6 +29,7 @@
 @property (nonatomic, copy) NSDate *arrivalActualTime;
 @property (nonatomic, retain) SFAirport *arrivalAirport;
 @property (nonatomic, copy) NSString *arrivalGate;
+@property (nonatomic, copy) NSDate *arrivalGateTime;
 @property (nonatomic, copy) NSDate *arrivalPublishedTime;
 @property (nonatomic, copy) NSDate *arrivalRunwayTime;
 @property (nonatomic, copy) NSString *arrivalTerminal;
@@ -55,6 +57,7 @@
 - (id)arrivalActualTime;
 - (id)arrivalAirport;
 - (id)arrivalGate;
+- (id)arrivalGateTime;
 - (id)arrivalPublishedTime;
 - (id)arrivalRunwayTime;
 - (id)arrivalTerminal;
@@ -77,6 +80,7 @@
 - (void)setArrivalActualTime:(id)arg1;
 - (void)setArrivalAirport:(id)arg1;
 - (void)setArrivalGate:(id)arg1;
+- (void)setArrivalGateTime:(id)arg1;
 - (void)setArrivalPublishedTime:(id)arg1;
 - (void)setArrivalRunwayTime:(id)arg1;
 - (void)setArrivalTerminal:(id)arg1;

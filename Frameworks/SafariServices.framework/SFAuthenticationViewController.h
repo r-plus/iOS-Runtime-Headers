@@ -3,6 +3,7 @@
  */
 
 @interface SFAuthenticationViewController : SFSafariViewController <UIViewControllerTransitioningDelegate> {
+    NSString * _callbackURLScheme;
     id /* block */  _dismissCompletionHandler;
     _UIFallbackPresentationViewController * _fallbackPresentationViewController;
 }
@@ -15,12 +16,13 @@
 
 - (void).cxx_destruct;
 - (void)_presentViewController;
+- (void)_restartServiceViewController;
 - (id /* block */)dismissCompletionHandler;
 - (void)dismissViewControllerAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (id)initWithURL:(id)arg1 callbackURLScheme:(id)arg2;
 - (void)remoteViewController:(id)arg1 didDecideCookieSharingForURL:(id)arg2 shouldCancel:(bool)arg3;
 - (void)remoteViewController:(id)arg1 hostApplicationOpenURL:(id)arg2;
+- (void)setDefersAddingRemoteViewController:(bool)arg1;
 - (void)setDismissCompletionHandler:(id /* block */)arg1;
-- (void)viewDidLoad;
 
 @end

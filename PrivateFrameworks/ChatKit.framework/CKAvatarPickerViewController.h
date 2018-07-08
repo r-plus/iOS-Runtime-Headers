@@ -46,6 +46,7 @@
 - (void)_handleTapOnCollectionView:(id)arg1;
 - (void)_handleTranscriptScroll:(id)arg1;
 - (void)_setTitle:(id)arg1 animated:(bool)arg2;
+- (bool)_shouldUseBanner;
 - (id)_titleSupplementaryViewAtIndexPath:(id)arg1;
 - (id)avatarDisplayName;
 - (id)avatarOrbPresentingViewController;

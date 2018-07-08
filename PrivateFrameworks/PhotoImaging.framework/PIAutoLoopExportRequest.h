@@ -11,6 +11,7 @@
 @property (readonly) NSURL *destinationLongExposureURL;
 @property (readonly) NSURL *destinationMaskURL;
 @property (readonly) NSString *destinationUTI;
+@property (readonly) NUColorSpace *outputColorSpace;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -22,6 +23,7 @@
 - (id)initWithRequest:(id)arg1;
 - (long long)mediaComponentType;
 - (id)newRenderJob;
+- (id)outputColorSpace;
 - (void)submit:(id /* block */)arg1;
 
 @end

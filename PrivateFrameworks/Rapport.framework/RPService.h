@@ -42,7 +42,7 @@
 @property (nonatomic, copy) id /* block */ sessionEndedHandler;
 @property (nonatomic, copy) id /* block */ sessionStartedHandler;
 @property (nonatomic, copy) id /* block */ showPINHandler;
-@property (nonatomic, readonly, copy) NSDictionary *txtDictionary;
+@property (nonatomic, copy) NSDictionary *txtDictionary;
 
 - (void).cxx_destruct;
 - (void)_activateWithCompletion:(id /* block */)arg1;
@@ -85,6 +85,7 @@
 - (void)setSessionEndedHandler:(id /* block */)arg1;
 - (void)setSessionStartedHandler:(id /* block */)arg1;
 - (void)setShowPINHandler:(id /* block */)arg1;
+- (void)setTxtDictionary:(id)arg1;
 - (id /* block */)showPINHandler;
 - (id)txtDictionary;
 

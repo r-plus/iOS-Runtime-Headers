@@ -24,11 +24,14 @@
 - (bool)isProvisionallyEnrolled;
 - (bool)isSupervised;
 - (bool)isTeslaEnrolled;
+- (id)language;
+- (id)languageScript;
 - (id)memberQueue;
 - (id)memberQueueDetails;
 - (id)memberQueueSetAsideDetails;
 - (id)provisionalEnrollmentExpirationDate;
 - (void)refreshDetailsFromDisk;
+- (id)region;
 - (id)setAsideDetails;
 - (void)setDetails:(id)arg1;
 - (void)setMemberQueue:(id)arg1;

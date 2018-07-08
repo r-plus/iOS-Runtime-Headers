@@ -53,6 +53,7 @@
 - (void)clearModifiedTileTracking;
 - (id)color;
 - (double)colorBlendFactor;
+- (void)commonInit;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)createTileStampFromColumn:(unsigned long long)arg1 row:(unsigned long long)arg2 withWidth:(unsigned long long)arg3 height:(unsigned long long)arg4 addToTileSet:(bool)arg5;

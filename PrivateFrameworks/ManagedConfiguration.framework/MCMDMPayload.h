@@ -7,12 +7,14 @@
     NSString * _checkInURLString;
     bool  _checkOutWhenRemoved;
     NSNumber * _checkOutWhenRemovedNum;
+    NSString * _controlURLString;
     NSData * _identityPersistentID;
     NSString * _identityUUID;
     NSArray * _serverCapabilities;
     NSString * _serverURLString;
     bool  _signMessage;
     NSNumber * _signMessageNum;
+    NSString * _statusURLString;
     NSString * _topic;
     bool  _useDevelopmentAPNS;
     NSNumber * _useDevelopmentAPNSNum;
@@ -22,6 +24,7 @@
 @property (nonatomic, readonly, retain) NSString *checkInURLString;
 @property (nonatomic, readonly) bool checkOutWhenRemoved;
 @property (nonatomic, readonly) NSNumber *checkOutWhenRemovedNum;
+@property (nonatomic, readonly, retain) NSString *controlURLString;
 @property (nonatomic, retain) NSData *identityPersistentID;
 @property (nonatomic, readonly, retain) NSString *identityUUID;
 @property (nonatomic, readonly, retain) NSArray *localizedAccessRightDescriptions;
@@ -29,6 +32,7 @@
 @property (nonatomic, readonly, retain) NSString *serverURLString;
 @property (nonatomic, readonly) bool signMessage;
 @property (nonatomic, readonly) NSNumber *signMessageNum;
+@property (nonatomic, readonly, retain) NSString *statusURLString;
 @property (nonatomic, readonly, retain) NSString *topic;
 @property (nonatomic, readonly) bool useDevelopmentAPNS;
 @property (nonatomic, readonly) NSNumber *useDevelopmentAPNSNum;
@@ -45,6 +49,7 @@
 - (id)checkInURLString;
 - (bool)checkOutWhenRemoved;
 - (id)checkOutWhenRemovedNum;
+- (id)controlURLString;
 - (id)description;
 - (id)identityPersistentID;
 - (id)identityUUID;
@@ -57,6 +62,7 @@
 - (void)setIdentityPersistentID:(id)arg1;
 - (bool)signMessage;
 - (id)signMessageNum;
+- (id)statusURLString;
 - (id)stubDictionary;
 - (id)subtitle1Description;
 - (id)subtitle1Label;

@@ -11,6 +11,7 @@
 
 @optional
 
+- (void)clickInteraction:(UIClickInteraction *)arg1 didObserveForce:(double)arg2;
 - (UIView *)clickInteractionHighlightView:(UIClickInteraction *)arg1;
 
 @end

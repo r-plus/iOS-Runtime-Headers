@@ -20,7 +20,7 @@
     bool  _recognizeEagerCandidates;
     struct unique_ptr<quasar::SpeechRecognizer, std::__1::default_delete<quasar::SpeechRecognizer> > { 
         struct __compressed_pair<quasar::SpeechRecognizer *, std::__1::default_delete<quasar::SpeechRecognizer> > { 
-            struct SpeechRecognizer {} *__first_; 
+            struct SpeechRecognizer {} *__value_; 
         } __ptr_; 
     }  _recognizer;
     NSData * _userProfileData;

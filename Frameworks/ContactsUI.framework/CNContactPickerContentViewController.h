@@ -20,6 +20,7 @@
     NSArray * _displayedPropertyKeys;
     bool  _hidesPromptInLandscape;
     bool  _hidesSearchableSources;
+    CNManagedConfiguration * _managedConfiguration;
     bool  _onlyRealContacts;
     NSPredicate * _predicateForEnablingContact;
     NSPredicate * _predicateForSelectionOfContact;
@@ -47,6 +48,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool hidesPromptInLandscape;
 @property (nonatomic) bool hidesSearchableSources;
+@property (nonatomic, retain) CNManagedConfiguration *managedConfiguration;
 @property (nonatomic, readonly) UINavigationController *navigationController;
 @property (nonatomic) bool onlyRealContacts;
 @property (nonatomic, copy) NSPredicate *predicateForEnablingContact;
@@ -93,6 +95,7 @@
 - (id)init;
 - (void)invalidate;
 - (void)invalidateSelectionAnimated:(bool)arg1;
+- (id)managedConfiguration;
 - (id)navigationController;
 - (bool)onlyRealContacts;
 - (id)predicateForEnablingContact;
@@ -116,6 +119,7 @@
 - (void)setDisplayedPropertyKeys:(id)arg1;
 - (void)setHidesPromptInLandscape:(bool)arg1;
 - (void)setHidesSearchableSources:(bool)arg1;
+- (void)setManagedConfiguration:(id)arg1;
 - (void)setOnlyRealContacts:(bool)arg1;
 - (void)setPredicateForEnablingContact:(id)arg1;
 - (void)setPredicateForSelectionOfContact:(id)arg1;

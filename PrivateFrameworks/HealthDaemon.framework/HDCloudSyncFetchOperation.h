@@ -11,6 +11,7 @@
     NSMutableSet * _emptyZonesForGarbageCollection;
     NSMutableDictionary * _inactiveRecordZonesByStoreIdentifierMap;
     HDCloudSyncMasterRecord * _masterRecord;
+    NSUUID * _operationIdentifier;
     NSProgress * _progress;
     HDCloudSyncStoreRecord * _pushStoreRecord;
     NSSet * _pushZonesForCleanup;
@@ -20,6 +21,7 @@
     NSMutableSet * _reclaimedIdentifiers;
     NSSet * _recordZoneIDs;
     NSMutableSet * _sequenceRecords;
+    NSDate * _startTime;
     NSMutableDictionary * _storeRecordsCacheMap;
     HDCloudSyncStore * _syncPushStore;
     NSMutableSet * _syncStorePullIdentifiers;

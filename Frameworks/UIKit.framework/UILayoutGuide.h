@@ -182,10 +182,6 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)widthAnchor;
 
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
-
 // Image: /System/Library/Frameworks/AVKit.framework/AVKit
 
 - (id)avkit_constraintsFromCenterAnchorsToCenterAnchorsOfItem:(id)arg1;

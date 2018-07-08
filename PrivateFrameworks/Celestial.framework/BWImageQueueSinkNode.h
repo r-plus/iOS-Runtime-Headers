@@ -4,8 +4,16 @@
 
 @interface BWImageQueueSinkNode : BWSinkNode {
     NSMutableArray * _bufferIDsInQueue;
+    bool  _didCallFirstFrameCallback;
     unsigned long long  _enqueuedBufferContextCount;
     struct _EnqueuedBufferContext {} ** _enqueuedBufferContexts;
+    long long  _firstFrameHostTime;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _firstFramePTS;
     unsigned long long  _framesSinceLastHarmonicCompensation;
     NSObject<OS_os_transaction> * _holdingBuffersForClientAssertion;
     struct _CAImageQueue { } * _imageQueue;

@@ -6,17 +6,17 @@
     UIActivityIndicatorView * _checkingForUpdateSpinner;
     UILabel * _checkingStatusLabel;
     NSString * _currentVersion;
-    NSString * _sourceOfUpdateRestriction;
     int  _state;
     UILabel * _subtitleLabel;
+    bool  _updatesDeferred;
 }
 
 @property (nonatomic, retain) UIActivityIndicatorView *checkingForUpdateSpinner;
 @property (nonatomic, retain) UILabel *checkingStatusLabel;
 @property (nonatomic, retain) NSString *currentVersion;
-@property (nonatomic, retain) NSString *sourceOfUpdateRestriction;
 @property (nonatomic) int state;
 @property (nonatomic, retain) UILabel *subtitleLabel;
+@property bool updatesDeferred;
 
 - (void).cxx_destruct;
 - (id)checkingForUpdateSpinner;
@@ -27,11 +27,11 @@
 - (void)setCheckingForUpdateSpinner:(id)arg1;
 - (void)setCheckingStatusLabel:(id)arg1;
 - (void)setCurrentVersion:(id)arg1;
-- (void)setSourceOfUpdateRestriction:(id)arg1;
 - (void)setState:(int)arg1;
 - (void)setSubtitleLabel:(id)arg1;
-- (id)sourceOfUpdateRestriction;
+- (void)setUpdatesDeferred:(bool)arg1;
 - (int)state;
 - (id)subtitleLabel;
+- (bool)updatesDeferred;
 
 @end

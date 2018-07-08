@@ -35,7 +35,7 @@
 - (void)_presentMissingTLKsAlert;
 - (void)_presentSetupWillCompleteLaterAlertController;
 - (void)_presentTermsAndConditionsWithError:(id)arg1 completion:(id /* block */)arg2;
-- (void)_processCloudStorePCSErrorWithTargetDevice:(id)arg1;
+- (void)_processCloudStorePCSError;
 - (void)_provisionPeerPaymentPass;
 - (void)_resetApplyPayManateeView;
 - (void)_setShowCheckmark:(bool)arg1;

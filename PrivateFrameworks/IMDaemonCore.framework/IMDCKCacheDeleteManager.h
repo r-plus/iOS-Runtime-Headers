@@ -6,27 +6,19 @@
     bool  _allowsWritingToDisk;
     bool  _alreadyCapturedErrorWithAutoBugCapture;
     bool  _deviceLowOnDiskSpace;
-    unsigned long long  _successfullyFetchedAttachments;
-    unsigned long long  _successfullyValidatedAttachments;
-    unsigned long long  _totalNumberOfAttachmentsToFetch;
-    unsigned long long  _totalNumberOfTransfersToValidate;
 }
 
 @property (nonatomic) bool allowsWritingToDisk;
 @property (nonatomic) bool alreadyCapturedErrorWithAutoBugCapture;
 @property (getter=isDeviceLowOnDiskSpace, nonatomic) bool deviceLowOnDiskSpace;
-@property (nonatomic) unsigned long long successfullyFetchedAttachments;
-@property (nonatomic) unsigned long long successfullyValidatedAttachments;
-@property (nonatomic) unsigned long long totalNumberOfAttachmentsToFetch;
-@property (nonatomic) unsigned long long totalNumberOfTransfersToValidate;
 
 + (id)sharedInstance;
 
 - (id)__wrapperAroundCacheDeletePurgeableCallback:(id)arg1 urgency:(int)arg2;
 - (id)__wrapperAroundCacheDeletePurgingCallback:(id)arg1 urgency:(int)arg2;
+- (id)_cacheDeleteRequestCacheableSpaceGuidanceWithID:(id)arg1 diskVolume:(id)arg2 urgency:(int)arg3 requestedSize:(unsigned long long)arg4;
 - (void)_cacheDeleteSetUp;
 - (id)_ckUtilitiesSharedInstance;
-- (void)_clearMetrics;
 - (long long)_deleteAttachmentsAndReturnBytesDeleted:(int)arg1;
 - (long long)_deleteFilesOnDiskAndUpdateTransfers:(id)arg1;
 - (void)_fetchTransfersFromCloudKit:(id)arg1;
@@ -37,13 +29,13 @@
 - (unsigned long long)_indexOfNextBatch:(id)arg1 totalTransfers:(id)arg2 indexOfTransfers:(unsigned long long)arg3;
 - (void)_postTransferInfoOfDeletedTransfers:(id)arg1;
 - (long long)_purgeableSpaceGivenUrgency:(int)arg1;
-- (void)_recordMetrics;
 - (bool)_shouldFetchNextBatch:(unsigned long long)arg1 totalTransfers:(id)arg2;
 - (bool)allowsWritingToDisk;
 - (bool)alreadyCapturedErrorWithAutoBugCapture;
 - (bool)canWriteFileOfEstimatedSize:(unsigned long long)arg1 refreshCachedValue:(bool)arg2;
 - (id)createDictionaryForNotDeletingAnyAttachments:(id)arg1 urgency:(int)arg2;
 - (id)deleteAttachmentsAndReturnBytesDeleted:(id)arg1 urgency:(int)arg2;
+- (id)init;
 - (bool)isDeviceLowOnDiskSpace;
 - (void)metricAttachmentsToPurge:(long long)arg1;
 - (long long)purgeAttachments:(long long)arg1;
@@ -53,13 +45,6 @@
 - (void)setAllowsWritingToDisk:(bool)arg1;
 - (void)setAlreadyCapturedErrorWithAutoBugCapture:(bool)arg1;
 - (void)setDeviceLowOnDiskSpace:(bool)arg1;
-- (void)setSuccessfullyFetchedAttachments:(unsigned long long)arg1;
-- (void)setSuccessfullyValidatedAttachments:(unsigned long long)arg1;
-- (void)setTotalNumberOfAttachmentsToFetch:(unsigned long long)arg1;
-- (void)setTotalNumberOfTransfersToValidate:(unsigned long long)arg1;
-- (unsigned long long)successfullyFetchedAttachments;
-- (unsigned long long)successfullyValidatedAttachments;
-- (unsigned long long)totalNumberOfAttachmentsToFetch;
-- (unsigned long long)totalNumberOfTransfersToValidate;
+- (bool)shouldDownloadAssetsOfSize:(unsigned long long)arg1 refreshCachedValue:(bool)arg2;
 
 @end

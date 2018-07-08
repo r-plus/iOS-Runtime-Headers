@@ -27,7 +27,6 @@
 - (SXTangierController *)tangierController;
 - (<SXTextSelectionManager> *)textSelectionManager;
 - (void)updateBehaviorForComponentView:(SXComponentView *)arg1;
-- (<SXVideoPlayerViewControllerProvider> *)videoPlayerViewControllerProvider;
 - (SXViewport *)viewport;
 
 @end

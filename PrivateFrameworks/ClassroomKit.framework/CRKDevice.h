@@ -17,6 +17,7 @@
     NSArray * _installedApplications;
     NSString * _instructorImageIdentifier;
     unsigned long long  _interfaceOrientation;
+    NSDate * _internetDateAndTime;
     unsigned long long  _lockState;
     unsigned long long  _loginState;
     NSString * _managementLockPasscode;
@@ -27,6 +28,7 @@
     NSString * _pipOpenApplication;
     unsigned long long  _platform;
     NSString * _primaryOpenApplication;
+    bool  _requestingUnenroll;
     unsigned long long  _screenState;
     NSString * _secondaryOpenApplication;
     NSString * _serialNumber;
@@ -36,6 +38,7 @@
     NSString * _systemName;
     NSString * _systemVersion;
     NSArray * _trustedAnchorCertificateFingerprints;
+    double  _uptimeAtInternetDateAndTimeFetch;
     NSString * _userDisplayName;
     NSString * _userFamilyName;
     NSString * _userGivenName;
@@ -60,6 +63,7 @@
 @property (nonatomic, copy) NSArray *installedApplications;
 @property (nonatomic, copy) NSString *instructorImageIdentifier;
 @property (nonatomic) unsigned long long interfaceOrientation;
+@property (nonatomic, retain) NSDate *internetDateAndTime;
 @property (nonatomic) unsigned long long lockState;
 @property (nonatomic) unsigned long long loginState;
 @property (nonatomic, copy) NSString *managementLockPasscode;
@@ -70,6 +74,7 @@
 @property (nonatomic, copy) NSString *pipOpenApplication;
 @property (nonatomic) unsigned long long platform;
 @property (nonatomic, copy) NSString *primaryOpenApplication;
+@property (getter=isRequestingUnenroll, nonatomic) bool requestingUnenroll;
 @property (nonatomic) unsigned long long screenState;
 @property (nonatomic, copy) NSString *secondaryOpenApplication;
 @property (nonatomic, copy) NSString *serialNumber;
@@ -79,6 +84,7 @@
 @property (nonatomic, copy) NSString *systemName;
 @property (nonatomic, copy) NSString *systemVersion;
 @property (nonatomic, copy) NSArray *trustedAnchorCertificateFingerprints;
+@property (nonatomic) double uptimeAtInternetDateAndTimeFetch;
 @property (nonatomic, copy) NSString *userDisplayName;
 @property (nonatomic, copy) NSString *userFamilyName;
 @property (nonatomic, copy) NSString *userGivenName;
@@ -90,6 +96,7 @@
 
 + (id)CRKKeyForDMFKey:(id)arg1;
 + (id)allPropertyKeys;
++ (id)bootDate;
 + (id)keyTranslations;
 + (bool)supportsSecureCoding;
 
@@ -112,13 +119,16 @@
 - (id)installedApplications;
 - (id)instructorImageIdentifier;
 - (unsigned long long)interfaceOrientation;
+- (id)internetDateAndTime;
 - (bool)isAppLocked;
+- (bool)isApplicationInstalled:(id)arg1;
 - (bool)isApplicationOpen:(id)arg1;
 - (bool)isEphemeralMultiUser;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToDevice:(id)arg1;
 - (bool)isOrientationLocked;
 - (bool)isPasscodeEnabled;
+- (bool)isRequestingUnenroll;
 - (bool)isSupervised;
 - (unsigned long long)lockState;
 - (unsigned long long)loginState;
@@ -144,6 +154,7 @@
 - (void)setInstalledApplications:(id)arg1;
 - (void)setInstructorImageIdentifier:(id)arg1;
 - (void)setInterfaceOrientation:(unsigned long long)arg1;
+- (void)setInternetDateAndTime:(id)arg1;
 - (void)setLockState:(unsigned long long)arg1;
 - (void)setLoginState:(unsigned long long)arg1;
 - (void)setManagementLockPasscode:(id)arg1;
@@ -154,6 +165,7 @@
 - (void)setPipOpenApplication:(id)arg1;
 - (void)setPlatform:(unsigned long long)arg1;
 - (void)setPrimaryOpenApplication:(id)arg1;
+- (void)setRequestingUnenroll:(bool)arg1;
 - (void)setScreenState:(unsigned long long)arg1;
 - (void)setSecondaryOpenApplication:(id)arg1;
 - (void)setSerialNumber:(id)arg1;
@@ -163,6 +175,7 @@
 - (void)setSystemName:(id)arg1;
 - (void)setSystemVersion:(id)arg1;
 - (void)setTrustedAnchorCertificateFingerprints:(id)arg1;
+- (void)setUptimeAtInternetDateAndTimeFetch:(double)arg1;
 - (void)setUserDisplayName:(id)arg1;
 - (void)setUserFamilyName:(id)arg1;
 - (void)setUserGivenName:(id)arg1;
@@ -177,6 +190,7 @@
 - (id)systemName;
 - (id)systemVersion;
 - (id)trustedAnchorCertificateFingerprints;
+- (double)uptimeAtInternetDateAndTimeFetch;
 - (id)userDisplayName;
 - (id)userFamilyName;
 - (id)userGivenName;

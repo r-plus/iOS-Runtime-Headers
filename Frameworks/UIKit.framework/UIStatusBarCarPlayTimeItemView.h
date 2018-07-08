@@ -9,20 +9,15 @@
     NSString * _timeString;
 }
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 - (void).cxx_destruct;
 - (void)_gatheringLogsDidChangeStatusNotification:(id)arg1;
 - (bool)_showRadarButtonForInternalInstalls;
 - (id)_timeImageSet;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (bool)allowsUserInteraction;
 - (long long)buttonType;
 - (bool)canBecomeFocused;
 - (id)contentsImage;
+- (void)dealloc;
 - (double)extraLeftPadding;
 - (double)extraRightPadding;
 - (id)highlightImage;

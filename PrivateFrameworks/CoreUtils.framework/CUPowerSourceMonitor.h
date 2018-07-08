@@ -4,9 +4,11 @@
 
 @interface CUPowerSourceMonitor : NSObject {
     bool  _activateCalled;
+    NSMutableDictionary * _aggregateSources;
     unsigned int  _changeFlags;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     id /* block */  _invalidationHandler;
+    NSMutableDictionary * _pendingAggregates;
     id /* block */  _powerSourceChangedHandler;
     id /* block */  _powerSourceFoundHandler;
     id /* block */  _powerSourceLostHandler;
@@ -25,6 +27,9 @@
 @property (nonatomic, copy) id /* block */ powerSourceLostHandler;
 
 - (void).cxx_destruct;
+- (void)_aggregatePowerSourceFound:(id)arg1;
+- (void)_aggregatePowerSourceLost:(id)arg1;
+- (void)_aggregatePowerSourceUpdate:(id)arg1 changes:(unsigned int)arg2;
 - (void)_cleanup;
 - (void)_handlePowerSourceFound:(id)arg1 desc:(id)arg2 adapterDesc:(id)arg3;
 - (void)_handlePowerSourceLost:(id)arg1 sourceID:(id)arg2;

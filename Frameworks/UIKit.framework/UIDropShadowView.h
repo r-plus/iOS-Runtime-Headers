@@ -14,12 +14,7 @@
 @property (nonatomic) double cornerRadius;
 @property (nonatomic) bool masksTopCornersOnly;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 - (void).cxx_destruct;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)contentView;
 - (double)cornerRadius;
 - (void)didFinishRotation;

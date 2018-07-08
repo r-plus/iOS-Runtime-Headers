@@ -5,7 +5,7 @@
 @interface ISStoreAuthenticateOperation : ISOperation <SSAuthenticateRequestDelegate> {
     SSAuthenticateResponse * _authenticateResponse;
     SSMutableAuthenticationContext * _authenticationContext;
-    id  parentViewController;
+    id  _parentViewController;
 }
 
 @property (readonly) SSAuthenticateResponse *authenticateResponse;

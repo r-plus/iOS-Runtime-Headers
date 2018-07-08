@@ -3,6 +3,7 @@
  */
 
 @interface TSTCommentHosting : NSObject <TSDComment> {
+    NSString * _annotationUUID;
     struct TSTCellUID { 
         struct UUIDData<TSP::UUIDData> { 
             union { 
@@ -65,7 +66,7 @@
 
 @property (nonatomic, readonly) int annotationDisplayStringType;
 @property (nonatomic, readonly) int annotationType;
-@property (nonatomic, readonly) NSString *annotationUUID;
+@property (nonatomic, retain) NSString *annotationUUID;
 @property (nonatomic, retain) TSKAnnotationAuthor *author;
 @property (nonatomic, readonly) struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; } cellID;
 @property (nonatomic, readonly) struct TSTCellUID { struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_1_1_1; } x1; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_2_1_1; } x2; } cellUID;
@@ -94,6 +95,8 @@
 - (bool)isFloatingComment;
 - (bool)isHighlight;
 - (bool)isInDocument;
+- (void)p_updateAnnotationUUID;
+- (void)setAnnotationUUID:(id)arg1;
 - (void)setAuthor:(id)arg1;
 - (void)setStorage:(id)arg1;
 - (void)setTableInfo:(id)arg1;

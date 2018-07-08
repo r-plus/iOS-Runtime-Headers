@@ -4,6 +4,7 @@
 
 @interface PSUIEnhancedRegulatoryPane : PSEditingPane <UITableViewDataSource, UITableViewDelegate> {
     UIImageView * _EPUPImageView;
+    UIImageView * _QRSNImageView;
     UITableView * _internalBuildTableView;
     NSArray * _platformInfoArray;
     UIImageView * _primaryImageView;

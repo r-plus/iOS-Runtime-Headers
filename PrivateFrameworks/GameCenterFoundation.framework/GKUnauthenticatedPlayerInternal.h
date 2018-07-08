@@ -6,6 +6,8 @@
     int  _encodingCount;
 }
 
++ (bool)supportsSecureCoding;
+
 - (id)alias;
 - (void)encodeWithCoder:(id)arg1;
 - (bool)isEqual:(id)arg1;

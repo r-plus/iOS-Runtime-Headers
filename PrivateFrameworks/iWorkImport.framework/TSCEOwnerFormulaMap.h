@@ -7,14 +7,14 @@
         struct pair<TSUCellCoord, TSCEFormula> {} *__begin_; 
         struct pair<TSUCellCoord, TSCEFormula> {} *__end_; 
         struct __compressed_pair<std::__1::pair<TSUCellCoord, TSCEFormula> *, std::__1::allocator<std::__1::pair<TSUCellCoord, TSCEFormula> > > { 
-            struct pair<TSUCellCoord, TSCEFormula> {} *__first_; 
+            struct pair<TSUCellCoord, TSCEFormula> {} *__value_; 
         } __end_cap_; 
     }  _formulas;
     struct vector<TSUCellCoord, std::__1::allocator<TSUCellCoord> > { 
         struct TSUCellCoord {} *__begin_; 
         struct TSUCellCoord {} *__end_; 
         struct __compressed_pair<TSUCellCoord *, std::__1::allocator<TSUCellCoord> > { 
-            struct TSUCellCoord {} *__first_; 
+            struct TSUCellCoord {} *__value_; 
         } __end_cap_; 
     }  _nonFormulaCells;
 }

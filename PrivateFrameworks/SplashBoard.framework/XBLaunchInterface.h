@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SplashBoard.framework/SplashBoard
  */
 
-@interface XBLaunchInterface : NSObject <BSXPCCoding, NSCoding> {
+@interface XBLaunchInterface : NSObject <BSXPCCoding, NSSecureCoding> {
     bool  _default;
     NSString * _identifier;
     NSString * _name;
@@ -21,6 +21,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned long long type;
 @property (nonatomic, retain) NSArray *urlSchemes;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (bool)_isDefault;

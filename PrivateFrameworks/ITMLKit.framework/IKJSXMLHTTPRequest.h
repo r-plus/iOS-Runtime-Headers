@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKJSXMLHTTPRequest : IKJSEventListenerObject <IKJSXMLHTTPRequest, IKNetworkRequestLoader, ISStoreURLOperationDelegate, NSURLSessionDataDelegate, NSURLSessionTaskDelegate> {
+@interface IKJSXMLHTTPRequest : IKJSEventListenerObject <IKJSXMLHTTPRequest, ISStoreURLOperationDelegate, NSURLSessionDataDelegate, NSURLSessionTaskDelegate> {
     bool  _async;
     NSHTTPURLResponse * _cachedURLResponse;
     NSString * _dataToSend;

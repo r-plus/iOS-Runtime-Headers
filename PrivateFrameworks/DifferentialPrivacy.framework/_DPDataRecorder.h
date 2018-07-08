@@ -31,6 +31,7 @@
 - (double)privacyParameter;
 - (id)randomizer;
 - (unsigned long long)range;
+- (void)recordBitValues:(id)arg1;
 - (void)recordNumbers:(id)arg1;
 - (void)recordStrings:(id)arg1;
 - (void)recordWords:(id)arg1;

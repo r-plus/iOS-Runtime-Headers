@@ -3,7 +3,7 @@
  */
 
 @interface FCFeedItemHeadlinesOperation : FCOperation {
-    <FCAppConfiguration> * _appConfiguration;
+    <FCCoreConfiguration> * _configuration;
     <FCContentContext> * _context;
     NSDictionary * _feedContextByFeedID;
     NSDictionary * _feedIDsByArticleID;
@@ -17,7 +17,7 @@
     bool  _shouldFilterHeadlinesWithoutSourceChannels;
 }
 
-@property (nonatomic, copy) <FCAppConfiguration> *appConfiguration;
+@property (nonatomic, copy) <FCCoreConfiguration> *configuration;
 @property (nonatomic, retain) <FCContentContext> *context;
 @property (nonatomic, copy) NSDictionary *feedContextByFeedID;
 @property (nonatomic, copy) NSDictionary *feedIDsByArticleID;
@@ -32,7 +32,7 @@
 
 - (void).cxx_destruct;
 - (void)_fetchUnadornedHeadlinesWithCompletionHandler:(id /* block */)arg1;
-- (id)appConfiguration;
+- (id)configuration;
 - (id)context;
 - (id)feedContextByFeedID;
 - (id)feedIDsByArticleID;
@@ -45,7 +45,7 @@
 - (id /* block */)rapidUpdateRefreshTest;
 - (id)resultHeadlines;
 - (id)resultHeadlinesByFeedItem;
-- (void)setAppConfiguration:(id)arg1;
+- (void)setConfiguration:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setFeedContextByFeedID:(id)arg1;
 - (void)setFeedIDsByArticleID:(id)arg1;

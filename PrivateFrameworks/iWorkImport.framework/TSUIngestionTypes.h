@@ -4,6 +4,7 @@
 
 @interface TSUIngestionTypes : NSObject
 
++ (id)highEfficiencyImageTypes;
 + (bool)isValidPlainTextUTI:(id)arg1;
 + (id)p_supportedPlainTextTypes;
 + (id)p_unsupportedPlainTextTypes;

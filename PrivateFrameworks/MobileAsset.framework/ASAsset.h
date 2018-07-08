@@ -93,15 +93,6 @@
 - (long long)_contentVersion;
 - (long long)_formatVersion;
 
-// Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
-
-- (void)cancelDownloadIfNecessary;
-- (void)cleanupAsset;
-- (bool)isDownloading;
-- (bool)isDownloadingOrInstalled;
-- (bool)isEmergencyUpdate;
-- (bool)isInstalled;
-
 // Image: /System/Library/PrivateFrameworks/TextInputCore.framework/TextInputCore
 
 - (id)laterAsset:(id)arg1;

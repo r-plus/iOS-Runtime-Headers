@@ -4,6 +4,7 @@
 
 @interface IMCloudKitEventNotificationTest : IMRuntimeTestCase <IMCloudKitEventHandler> {
     IMCloudKitHookTestSingleton * _cloudKitHooks;
+    double  _previousInterval;
 }
 
 @property (nonatomic, retain) IMCloudKitHookTestSingleton *cloudKitHooks;

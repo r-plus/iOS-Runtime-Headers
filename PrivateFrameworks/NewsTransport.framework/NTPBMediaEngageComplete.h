@@ -17,6 +17,7 @@
     NSMutableArray * _fractionalCohortMemberships;
     NSString * _groupFeedId;
     int  _groupType;
+    NSData * _groupViewExposureId;
     struct { 
         unsigned int backendArticleVersionInt64 : 1; 
         unsigned int mediaDuration : 1; 
@@ -87,6 +88,7 @@
 @property (nonatomic, retain) NSMutableArray *fractionalCohortMemberships;
 @property (nonatomic, retain) NSString *groupFeedId;
 @property (nonatomic) int groupType;
+@property (nonatomic, retain) NSData *groupViewExposureId;
 @property (nonatomic) bool hasAdSupportedChannel;
 @property (nonatomic, readonly) bool hasArticleId;
 @property (nonatomic, readonly) bool hasArticleSessionId;
@@ -100,6 +102,7 @@
 @property (nonatomic, readonly) bool hasFeedViewExposureId;
 @property (nonatomic, readonly) bool hasGroupFeedId;
 @property (nonatomic) bool hasGroupType;
+@property (nonatomic, readonly) bool hasGroupViewExposureId;
 @property (nonatomic, readonly) bool hasIadNativeAd;
 @property (nonatomic, readonly) bool hasIadNativeCampaign;
 @property (nonatomic, readonly) bool hasIadNativeCampaignAd;
@@ -199,6 +202,7 @@
 - (id)groupFeedId;
 - (int)groupType;
 - (id)groupTypeAsString:(int)arg1;
+- (id)groupViewExposureId;
 - (bool)hasAdSupportedChannel;
 - (bool)hasArticleId;
 - (bool)hasArticleSessionId;
@@ -212,6 +216,7 @@
 - (bool)hasFeedViewExposureId;
 - (bool)hasGroupFeedId;
 - (bool)hasGroupType;
+- (bool)hasGroupViewExposureId;
 - (bool)hasIadNativeAd;
 - (bool)hasIadNativeCampaign;
 - (bool)hasIadNativeCampaignAd;
@@ -288,6 +293,7 @@
 - (void)setFractionalCohortMemberships:(id)arg1;
 - (void)setGroupFeedId:(id)arg1;
 - (void)setGroupType:(int)arg1;
+- (void)setGroupViewExposureId:(id)arg1;
 - (void)setHasAdSupportedChannel:(bool)arg1;
 - (void)setHasArticleType:(bool)arg1;
 - (void)setHasBackendArticleVersion:(bool)arg1;

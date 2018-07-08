@@ -3,7 +3,7 @@
  */
 
 @interface WebUserMediaPolicyCheckerListener : NSObject <WebAllowDenyPolicyListener> {
-    struct RefPtr<WebCore::MediaDevicesEnumerationRequest> { 
+    struct RefPtr<WebCore::MediaDevicesEnumerationRequest, WTF::DumbPtrTraits<WebCore::MediaDevicesEnumerationRequest> > { 
         struct MediaDevicesEnumerationRequest {} *m_ptr; 
     }  _request;
 }
@@ -19,7 +19,7 @@
 - (void)cancelMediaDevicesEnumerationRequest;
 - (void)deny;
 - (void)denyOnlyThisRequest;
-- (id)initWithMediaDevicesEnumerationRequest:(struct Ref<WebCore::MediaDevicesEnumerationRequest> { struct MediaDevicesEnumerationRequest {} *x1; }*)arg1;
+- (id)initWithMediaDevicesEnumerationRequest:(struct Ref<WebCore::MediaDevicesEnumerationRequest, WTF::DumbPtrTraits<WebCore::MediaDevicesEnumerationRequest> > { struct MediaDevicesEnumerationRequest {} *x1; }*)arg1;
 - (bool)shouldClearCache;
 
 @end

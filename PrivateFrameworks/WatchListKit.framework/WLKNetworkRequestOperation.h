@@ -8,7 +8,6 @@
     NSURL * _baseURL;
     NSString * _callerOverride;
     NSXPCConnection * _connection;
-    <WLKNetworkRequestOperationDelegate> * _delegate;
     bool  _encodeQueryParams;
     NSString * _endpoint;
     NSError * _error;
@@ -31,7 +30,6 @@
 @property (nonatomic, copy) NSURL *baseURL;
 @property (nonatomic, retain) NSString *callerOverride;
 @property (nonatomic, readonly, copy) NSURL *defaultBaseURL;
-@property (nonatomic) <WLKNetworkRequestOperationDelegate> *delegate;
 @property (nonatomic) bool encodeQueryParams;
 @property (nonatomic, readonly, copy) NSString *endpoint;
 @property (nonatomic, readonly) NSError *error;
@@ -56,8 +54,6 @@
 - (id)_connection;
 - (void)_didFailWithError:(id)arg1;
 - (void)_didFinishWithResponse:(id)arg1;
-- (void)_failWithError:(id)arg1;
-- (void)_finishWithResponse:(id)arg1;
 - (id)_requestPropertiesWithAPIEndpoint:(id)arg1 baseURL:(id)arg2 queryParameters:(id)arg3 httpMethod:(id)arg4 additionalHeaderFields:(id)arg5;
 - (id)_requestPropertiesWithServerRouteKey:(id)arg1 queryParameters:(id)arg2 additionalHeaderFields:(id)arg3;
 - (id)_runNetworkOperationAndReturnError:(id*)arg1;
@@ -66,7 +62,6 @@
 - (id)baseURL;
 - (id)callerOverride;
 - (id)defaultBaseURL;
-- (id)delegate;
 - (void)didFail;
 - (void)didFinish;
 - (bool)encodeQueryParams;
@@ -96,7 +91,6 @@
 - (void)setAllowAuthentication:(bool)arg1;
 - (void)setBaseURL:(id)arg1;
 - (void)setCallerOverride:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)setEncodeQueryParams:(bool)arg1;
 - (void)setRequestCompletionBlock:(id /* block */)arg1;
 - (void)setRequiresMescal:(bool)arg1;

@@ -31,7 +31,7 @@
 @property (nonatomic, copy) NTPBSectionSlotCostInfo *videoSectionSlotCostInfo;
 
 - (void).cxx_destruct;
-- (id)_itemsForSection:(id)arg1 items:(id)arg2 previouslyChosenItems:(id)arg3 allowLeadingCell:(bool)arg4 leadingCellItemID:(id*)arg5 priorClusterIDsInOtherSections:(id)arg6 sectionItemsLimit:(unsigned long long)arg7 otherArticleIDs:(id)arg8 embedsLimit:(unsigned long long)arg9 remainingSlots:(double)arg10 slotsUsed:(double*)arg11 noMoreItemsToGive:(bool*)arg12 noRoomForMoreItems:(bool*)arg13;
+- (id)_itemsForSection:(id)arg1 items:(id)arg2 previouslyChosenItems:(id)arg3 allowLeadingCell:(bool)arg4 leadingCellItemID:(id*)arg5 priorClusterIDsInOtherSections:(id)arg6 sectionItemsLimit:(unsigned long long)arg7 otherArticleIDs:(id)arg8 embedsLimit:(unsigned long long)arg9 remainingSlots:(double)arg10 slotsUsed:(double*)arg11 noMoreItemsToGive:(bool*)arg12 noRoomForMoreItems:(bool*)arg13 slotAllocationByDynamicSlotItemID:(id)arg14;
 - (id)_sectionFilterTransformationWithDescriptor:(id)arg1 priorClusterIDsInOtherSections:(id)arg2 priorClusterIDsInSection:(id)arg3 otherArticleIDs:(id)arg4 embedsLimit:(unsigned long long)arg5;
 - (id)aggregateSections:(id)arg1 itemsBySectionDescriptor:(id)arg2;
 - (bool)allowLeadingCell;

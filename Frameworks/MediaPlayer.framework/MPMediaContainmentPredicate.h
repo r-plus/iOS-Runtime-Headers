@@ -11,6 +11,7 @@
 @property (nonatomic, readonly, copy) NSSet *values;
 
 + (id)predicateWithProperty:(id)arg1 values:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)ML3PredicateForContainer;

@@ -11,6 +11,7 @@
     NSMutableArray * _historyStateCacheMRU;
     NSMutableOrderedSet * _observers;
     unsigned long long  _startIndex;
+    NRSwitchRecordCollection * _switchRecords;
 }
 
 @property (nonatomic, readonly) unsigned long long count;
@@ -23,6 +24,7 @@
 @property (nonatomic, readonly) unsigned long long nextIndex;
 @property (nonatomic) unsigned long long startIndex;
 @property (nonatomic, readonly) unsigned int switchIndex;
+@property (nonatomic, retain) NRSwitchRecordCollection *switchRecords;
 
 + (bool)supportsSecureCoding;
 
@@ -61,9 +63,11 @@
 - (void)setHistoryStateCacheIndex:(id)arg1;
 - (void)setHistoryStateCacheMRU:(id)arg1;
 - (void)setStartIndex:(unsigned long long)arg1;
+- (void)setSwitchRecords:(id)arg1;
 - (unsigned long long)startIndex;
 - (id)stateAtIndex:(unsigned long long)arg1;
 - (id)switchDeviceIDFromDiff:(id)arg1;
 - (unsigned int)switchIndex;
+- (id)switchRecords;
 
 @end

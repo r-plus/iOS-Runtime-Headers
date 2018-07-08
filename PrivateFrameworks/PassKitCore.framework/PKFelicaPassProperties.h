@@ -2,10 +2,8 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@interface PKFelicaPassProperties : NSObject <NSCopying, NSSecureCoding> {
-    NSString * _appletFormat;
-    bool  _blacklisted;
-    NSString * _currencyCode;
+@interface PKFelicaPassProperties : PKTransitPassProperties <NSCopying, NSSecureCoding> {
+    bool  _balanceAllowedForCommute;
     NSString * _greenCarDestinationStation;
     NSString * _greenCarOriginStation;
     bool  _greenCarTicketUsed;
@@ -13,7 +11,7 @@
     bool  _hasGreenCarTicket;
     bool  _hasShinkansenTicket;
     bool  _inShinkansenStation;
-    bool  _inStation;
+    bool  _lowBalanceGateNotificationEnabled;
     NSDateComponents * _shinkansenArrivalTime;
     NSNumber * _shinkansenCarNumber;
     NSDateComponents * _shinkansenDepartureTime;
@@ -33,12 +31,9 @@
     NSString * _shinkansenTrainName;
     NSDateComponents * _shinkansenValidityStartDate;
     NSNumber * _shinkansenValidityTerm;
-    NSDecimalNumber * _transitBalance;
 }
 
-@property (nonatomic, copy) NSString *appletFormat;
-@property (getter=isBlacklisted, nonatomic) bool blacklisted;
-@property (nonatomic, copy) NSString *currencyCode;
+@property (getter=isBalanceAllowedForCommute, nonatomic) bool balanceAllowedForCommute;
 @property (nonatomic, copy) NSString *greenCarDestinationStation;
 @property (nonatomic, copy) NSString *greenCarOriginStation;
 @property (getter=isGreenCarTicketUsed, nonatomic) bool greenCarTicketUsed;
@@ -46,7 +41,7 @@
 @property (nonatomic) bool hasGreenCarTicket;
 @property (nonatomic) bool hasShinkansenTicket;
 @property (getter=isInShinkansenStation, nonatomic) bool inShinkansenStation;
-@property (getter=isInStation, nonatomic) bool inStation;
+@property (getter=isLowBalanceGateNotificationEnabled, nonatomic) bool lowBalanceGateNotificationEnabled;
 @property (nonatomic, copy) NSDateComponents *shinkansenArrivalTime;
 @property (nonatomic, copy) NSNumber *shinkansenCarNumber;
 @property (nonatomic, copy) NSDateComponents *shinkansenDepartureTime;
@@ -66,20 +61,15 @@
 @property (nonatomic, copy) NSString *shinkansenTrainName;
 @property (nonatomic, copy) NSDateComponents *shinkansenValidityStartDate;
 @property (nonatomic, copy) NSNumber *shinkansenValidityTerm;
-@property (nonatomic, copy) NSDecimalNumber *transitBalance;
 
 + (id)passPropertiesForPass:(id)arg1;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_stringForRow:(id)arg1 seat:(id)arg2;
-- (id)appletFormat;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)currencyCode;
-- (id)decimalTransitBalance;
 - (id)displayableShinkansenSeat;
 - (id)displayableShinkansenSecondarySeat;
-- (id)displayableTransitBalance;
 - (void)encodeWithCoder:(id)arg1;
 - (id)greenCarDestinationStation;
 - (id)greenCarOriginStation;
@@ -88,14 +78,13 @@
 - (bool)hasShinkansenTicket;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFelicaAppletState:(id)arg1 paymentApplication:(id)arg2;
-- (bool)isBlacklisted;
+- (id)initWithTransitAppletState:(id)arg1 paymentApplication:(id)arg2;
+- (bool)isBalanceAllowedForCommute;
 - (bool)isGreenCarTicketUsed;
 - (bool)isInShinkansenStation;
-- (bool)isInStation;
+- (bool)isLowBalanceGateNotificationEnabled;
 - (bool)isShinkansenTicketActive;
-- (void)setAppletFormat:(id)arg1;
-- (void)setBlacklisted:(bool)arg1;
-- (void)setCurrencyCode:(id)arg1;
+- (void)setBalanceAllowedForCommute:(bool)arg1;
 - (void)setGreenCarDestinationStation:(id)arg1;
 - (void)setGreenCarOriginStation:(id)arg1;
 - (void)setGreenCarTicketUsed:(bool)arg1;
@@ -103,7 +92,7 @@
 - (void)setHasGreenCarTicket:(bool)arg1;
 - (void)setHasShinkansenTicket:(bool)arg1;
 - (void)setInShinkansenStation:(bool)arg1;
-- (void)setInStation:(bool)arg1;
+- (void)setLowBalanceGateNotificationEnabled:(bool)arg1;
 - (void)setShinkansenArrivalTime:(id)arg1;
 - (void)setShinkansenCarNumber:(id)arg1;
 - (void)setShinkansenDepartureTime:(id)arg1;
@@ -123,7 +112,6 @@
 - (void)setShinkansenTrainName:(id)arg1;
 - (void)setShinkansenValidityStartDate:(id)arg1;
 - (void)setShinkansenValidityTerm:(id)arg1;
-- (void)setTransitBalance:(id)arg1;
 - (id)shinkansenArrivalTime;
 - (id)shinkansenCarNumber;
 - (id)shinkansenDepartureTime;
@@ -142,6 +130,5 @@
 - (id)shinkansenTrainName;
 - (id)shinkansenValidityStartDate;
 - (id)shinkansenValidityTerm;
-- (id)transitBalance;
 
 @end

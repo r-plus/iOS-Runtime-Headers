@@ -5,6 +5,7 @@
 @interface UIStatusBar_Base : _UIScrollsToTopInitiatorView <UIStatusBarServerClient> {
     <UIViewControllerTransitionCoordinator> * __transitionCoordinator;
     int  _activeStyleOverride;
+    bool  _disablesRasterization;
     <UIStatusBarCarPlayDockDataProviding> * _dockDataProvider;
     NSArray * _enabledPartIdentifiers;
     bool  _foreground;
@@ -31,6 +32,7 @@
 
 @property (nonatomic) <UIViewControllerTransitionCoordinator> *_transitionCoordinator;
 @property (nonatomic) int activeStyleOverride;
+@property (setter=_setDisablesRasterization:, nonatomic) bool disablesRasterization;
 @property (nonatomic) <UIStatusBarCarPlayDockDataProviding> *dockDataProvider;
 @property (nonatomic, copy) NSArray *enabledPartIdentifiers;
 @property (nonatomic) bool foreground;
@@ -53,8 +55,6 @@
 @property (nonatomic, readonly) int styleOverrides;
 @property (nonatomic, copy) UIStatusBarStyleRequest *styleRequest;
 @property (nonatomic) bool suppressesHiddenSideEffects;
-
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (long long)_defaultStyleForRequestedStyle:(long long)arg1 styleOverrides:(int)arg2 simulateLegacyAppearance:(bool)arg3;
 + (long long)_defaultStyleForRequestedStyle:(long long)arg1 styleOverrides:(int)arg2 simulateLegacyAppearance:(bool)arg3 activeStyleOverride:(int*)arg4;
@@ -83,6 +83,7 @@
 - (bool)_rectIntersectsTimeItem:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (long long)_requestStyle;
 - (void)_requestStyle:(long long)arg1 animationParameters:(id)arg2 forced:(bool)arg3;
+- (void)_setDisablesRasterization:(bool)arg1;
 - (void)_setOverrideHeight:(double)arg1;
 - (void)_setRequestedStyle:(long long)arg1;
 - (bool)_shouldSeekHigherPriorityTouchTarget;
@@ -93,10 +94,6 @@
 - (id)_transitionCoordinator;
 - (bool)_usesModernBar;
 - (void)_willEnterForeground:(id)arg1;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)actionForPartWithIdentifier:(id)arg1;
 - (id)actionForRegionWithIdentifier:(id)arg1;
 - (int)activeStyleOverride;
@@ -107,9 +104,11 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })currentFrame;
 - (double)currentHeight;
 - (long long)currentStyle;
+- (void)dealloc;
 - (double)defaultDoubleHeight;
 - (double)defaultHeight;
 - (void)didMoveToSuperview;
+- (bool)disablesRasterization;
 - (id)dockDataProvider;
 - (id)enabledPartIdentifiers;
 - (void)forceUpdate:(bool)arg1;

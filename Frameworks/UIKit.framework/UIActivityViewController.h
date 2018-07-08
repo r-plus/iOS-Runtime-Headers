@@ -21,6 +21,8 @@
     bool  _allowsEmbedding;
     NSArray * _applicationActivities;
     unsigned long long  _backgroundTaskIdentifier;
+    unsigned long long  _beginPerformingActivityTimestamp;
+    unsigned long long  _beginShareUIConnectionTimestamp;
     long long  _completedProviderCount;
     id /* block */  _completionHandler;
     id /* block */  _completionWithItemsHandler;
@@ -28,11 +30,14 @@
     long long  _excludedActivityCategories;
     NSArray * _excludedActivityTypes;
     <NSCopying> * _extensionRequestIdentifier;
+    bool  _hasPerformedInitialPresentation;
     NSArray * _includedActivityTypes;
+    bool  _isPerformingPresentation;
     long long  _originalPopoverBackgroundStyle;
     Class  _originalPopoverBackgroundViewClass;
     bool  _performActivityForStateRestoration;
     id /* block */  _preCompletionHandler;
+    bool  _presentationWasDelayed;
     _UIShareExtensionRemoteViewController * _remoteContentViewController;
     NSArray * _resolvedActivityItemsForCurrentActivity;
     NSExtension * _shareExtension;
@@ -65,6 +70,8 @@
 @property (nonatomic) bool allowsEmbedding;
 @property (nonatomic, copy) NSArray *applicationActivities;
 @property (nonatomic) unsigned long long backgroundTaskIdentifier;
+@property (getter=_beginPerformingActivityTimestamp, setter=_setBeginPerformingActivityTimestamp:, nonatomic) unsigned long long beginPerformingActivityTimestamp;
+@property (getter=_beginShareUIConnectionTimestamp, setter=_setBeginShareUIConnectionTimestamp:, nonatomic) unsigned long long beginShareUIConnectionTimestamp;
 @property (nonatomic) long long completedProviderCount;
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (nonatomic, copy) id /* block */ completionWithItemsHandler;
@@ -75,12 +82,15 @@
 @property (nonatomic) long long excludedActivityCategories;
 @property (nonatomic, copy) NSArray *excludedActivityTypes;
 @property (nonatomic, copy) <NSCopying> *extensionRequestIdentifier;
+@property (getter=_hasPerformedInitialPresentation, setter=_setHasPerformedInitialPresentation:, nonatomic) bool hasPerformedInitialPresentation;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSArray *includedActivityTypes;
+@property (getter=_isPerformingPresentation, setter=_setIsPerformingPresentation:, nonatomic) bool isPerformingPresentation;
 @property (nonatomic) long long originalPopoverBackgroundStyle;
 @property (nonatomic, retain) Class originalPopoverBackgroundViewClass;
 @property (nonatomic) bool performActivityForStateRestoration;
 @property (nonatomic, copy) id /* block */ preCompletionHandler;
+@property (getter=_presentationWasDelayed, setter=_setPresentationWasDelayed:, nonatomic) bool presentationWasDelayed;
 @property (nonatomic, retain) _UIShareExtensionRemoteViewController *remoteContentViewController;
 @property (nonatomic, readonly) NSArray *resolvedActivityItemsForCurrentActivity;
 @property (nonatomic, retain) NSExtension *shareExtension;
@@ -95,6 +105,8 @@
 @property (nonatomic) bool waitingForInitialShareServicePreferredContentSize;
 @property (nonatomic) bool willDismissActivityViewController;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (bool)_popoverPresentationUsesModernPresentation;
 + (bool)_usesActionSheetPresentationController;
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
@@ -108,6 +120,8 @@
 - (id)_availableActivities;
 - (void)_beginDismissalDetectionOfViewControllerForSelectedActivityShouldAutoCancel;
 - (void)_beginInProgressActivityExecutionForcedStrongReference;
+- (unsigned long long)_beginPerformingActivityTimestamp;
+- (unsigned long long)_beginShareUIConnectionTimestamp;
 - (void)_cancel;
 - (void)_changeActionPresentationDismissButtonHidden:(bool)arg1;
 - (void)_changeActionPresentationDismissButtonTitle:(id)arg1;
@@ -124,13 +138,14 @@
 - (void)_endDismissalDetectionOfViewControllerForSelectedActivityShouldAutoCancel;
 - (void)_endInProgressActivityExecutionForcedStrongReference;
 - (void)_executeActivity;
+- (bool)_hasPerformedInitialPresentation;
 - (void)_insertIntoActivitiesByUUID:(id)arg1;
 - (void)_installViewController:(id)arg1;
+- (bool)_isPerformingPresentation;
 - (void)_loadOrPreheatActivityViewControllerConfiguration;
 - (id)_newShareUIConfigurationForCurrentState;
 - (id)_newShareUIConfigurationWithMatchingResults:(id)arg1;
 - (id)_orderedAvailableActivitiesByPerformingMatching;
-- (void)_performActivity:(id)arg1;
 - (void)_performActivityOfType:(id)arg1 executionEnvironment:(long long)arg2;
 - (void)_performDismissWithCompletionHandler:(id /* block */)arg1;
 - (id)_placeholderActivityItemValues;
@@ -140,13 +155,19 @@
 - (void)_prepareActivity:(id)arg1 completion:(id /* block */)arg2;
 - (void)_presentationControllerDismissalTransitionDidEndNotification:(id)arg1;
 - (id)_presentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
+- (bool)_presentationWasDelayed;
 - (bool)_queueBackgroundOperationsForActivityItems:(id)arg1 activityBeingPerformed:(id)arg2;
 - (void)_removeFromActivitiesByUUID:(id)arg1;
 - (bool)_requiresCustomPresentationController;
 - (void)_resetAfterActivity:(bool)arg1;
 - (id)_securityScopedURLsForMatching;
 - (void)_sendInitialShareServiceConfigurationAndUpdatePreferredContentSize;
+- (void)_setBeginPerformingActivityTimestamp:(unsigned long long)arg1;
+- (void)_setBeginShareUIConnectionTimestamp:(unsigned long long)arg1;
+- (void)_setHasPerformedInitialPresentation:(bool)arg1;
+- (void)_setIsPerformingPresentation:(bool)arg1;
 - (void)_setPopoverController:(id)arg1;
+- (void)_setPresentationWasDelayed:(bool)arg1;
 - (void)_setupLegacyAlertPresentationControllers;
 - (void)_shareServiceFinishedInitialPreferredContentSizeUpdate;
 - (bool)_shouldExecuteItemOperation:(id)arg1 forActivity:(id)arg2;
@@ -275,5 +296,11 @@
 - (bool)waitingForInitialShareServicePreferredContentSize;
 - (bool)willDismissActivityViewController;
 - (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
+
+// Image: /System/Library/AccessibilityBundles/GAXClient.bundle/GAXClient
+
++ (Class)safeCategoryBaseClass;
+
+- (void)_performActivity:(id)arg1;
 
 @end

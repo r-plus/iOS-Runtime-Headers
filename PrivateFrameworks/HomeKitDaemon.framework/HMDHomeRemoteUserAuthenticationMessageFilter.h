@@ -15,6 +15,7 @@
 + (id)logCategory;
 
 - (void).cxx_destruct;
+- (bool)__shouldCheckMessage:(id)arg1;
 - (bool)acceptMessage:(id)arg1 target:(id)arg2 errorReason:(id*)arg3;
 - (id)home;
 - (id)initWithHome:(id)arg1;

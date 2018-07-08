@@ -13,7 +13,6 @@
     NSURL * _localMediumImageURL;
     NSURL * _mediumImageURL;
     NSMutableDictionary * _namingSimilarityInfoByClassID;
-    bool  _needFederatedAuthFlow;
     NSString * _passwordType;
     NSString * _phoneticFamilyName;
     NSString * _phoneticGivenName;
@@ -31,7 +30,6 @@
 @property (nonatomic, retain) NSURL *localMediumImageURL;
 @property (nonatomic, retain) NSURL *mediumImageURL;
 @property (nonatomic, retain) NSMutableDictionary *namingSimilarityInfoByClassID;
-@property (nonatomic) bool needFederatedAuthFlow;
 @property (nonatomic, retain) NSString *passwordType;
 @property (nonatomic, retain) NSString *phoneticFamilyName;
 @property (nonatomic, retain) NSString *phoneticGivenName;
@@ -60,7 +58,6 @@
 - (id)localMediumImageURL;
 - (id)mediumImageURL;
 - (id)namingSimilarityInfoByClassID;
-- (bool)needFederatedAuthFlow;
 - (id)passwordType;
 - (id)phoneticFamilyName;
 - (id)phoneticGivenName;
@@ -76,7 +73,6 @@
 - (void)setLocalMediumImageURL:(id)arg1;
 - (void)setMediumImageURL:(id)arg1;
 - (void)setNamingSimilarityInfoByClassID:(id)arg1;
-- (void)setNeedFederatedAuthFlow:(bool)arg1;
 - (void)setPasswordType:(id)arg1;
 - (void)setPhoneticFamilyName:(id)arg1;
 - (void)setPhoneticGivenName:(id)arg1;

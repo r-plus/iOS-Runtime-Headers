@@ -17,7 +17,6 @@
     NSNumber * __recipeGenerationDuration;
     NSMutableDictionary * __renderingDurationByVariationType;
     NSMutableDictionary * __renderingOperationsByVariationType;
-    NSNumber * __totalRenderingDuration;
     NSURL * __videoURL;
     NSNumber * __videoURLDuration;
     int  __videoURLRequestID;
@@ -33,12 +32,14 @@
     NSProgress * _recipeGenerationProgress;
     bool  _renderAllResources;
     NSMutableDictionary * _resultsByVariationType;
+    unsigned char  _signpostID;
     long long  _status;
     NSString * _statusDescription;
     struct CGSize { 
         double width; 
         double height; 
     }  _targetSize;
+    NSNumber * _totalRenderingDuration;
     PXUpdater * _updater;
     NSProgress * _videoURLProgress;
     NSObject<OS_dispatch_queue> * _workQueue;
@@ -59,7 +60,6 @@
 @property (setter=_setRecipeGenerationDuration:, nonatomic, retain) NSNumber *_recipeGenerationDuration;
 @property (nonatomic, readonly) NSMutableDictionary *_renderingDurationByVariationType;
 @property (nonatomic, readonly) NSMutableDictionary *_renderingOperationsByVariationType;
-@property (setter=_setTotalRenderingDuration:, nonatomic, retain) NSNumber *_totalRenderingDuration;
 @property (setter=_setVideoURL:, nonatomic, retain) NSURL *_videoURL;
 @property (setter=_setVideoURLDuration:, nonatomic, retain) NSNumber *_videoURLDuration;
 @property (setter=_setVideoURLRequestID:, nonatomic) int _videoURLRequestID;
@@ -78,9 +78,11 @@
 @property (setter=_setStatusDescription:, nonatomic, copy) NSString *statusDescription;
 @property (readonly) Class superclass;
 @property (nonatomic) struct CGSize { double x1; double x2; } targetSize;
+@property (nonatomic, retain) NSNumber *totalRenderingDuration;
 
 + (id)_imageURLCache;
 + (void)_performSimulatedWorkWithProgress:(id)arg1;
++ (id)_renderingLog;
 + (id)_videoURLCache;
 + (id)placeholderFilters;
 + (id)sharedOperationQueue;
@@ -141,11 +143,9 @@
 - (void)_setResult:(id)arg1 forVariationType:(long long)arg2;
 - (void)_setStatus:(long long)arg1;
 - (void)_setStatusDescription:(id)arg1;
-- (void)_setTotalRenderingDuration:(id)arg1;
 - (void)_setVideoURL:(id)arg1;
 - (void)_setVideoURLDuration:(id)arg1;
 - (void)_setVideoURLRequestID:(int)arg1;
-- (id)_totalRenderingDuration;
 - (void)_updateAnalysisResult;
 - (void)_updateCachedAnalysisResult;
 - (void)_updateEditModel;
@@ -180,9 +180,11 @@
 - (id)renderResultForVariationType:(long long)arg1;
 - (void)setRenderAllResources:(bool)arg1;
 - (void)setTargetSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setTotalRenderingDuration:(id)arg1;
 - (long long)status;
 - (id)statusDescription;
 - (struct CGSize { double x1; double x2; })targetSize;
+- (id)totalRenderingDuration;
 - (void)unloadResults;
 
 @end

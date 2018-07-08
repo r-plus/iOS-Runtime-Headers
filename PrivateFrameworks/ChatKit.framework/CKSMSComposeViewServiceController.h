@@ -4,15 +4,18 @@
 
 @interface CKSMSComposeViewServiceController : UINavigationController <CKComposeChatControllerDelegate, CKSMSComposeViewServiceProtocol> {
     bool  _canEditRecipients;
+    <CKSMSComposeViewServiceControllerDelegate> * _composeDelegate;
     bool  _disableCameraAttachments;
     bool  _forceMMS;
     id /* block */  _gameCenterPickerBlock;
     CKModalTranscriptController * _modalTranscriptController;
     bool  _supportsAttachments;
     bool  _supportsMessageInspection;
+    NSArray * _utiTypes;
 }
 
 @property (nonatomic) bool canEditRecipients;
+@property (nonatomic) <CKSMSComposeViewServiceControllerDelegate> *composeDelegate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ gameCenterPickerBlock;
@@ -38,8 +41,10 @@
 - (bool)composeChatControllerCanEditRecipients;
 - (void)composeChatControllerDidCancelComposition:(id)arg1;
 - (bool)composeChatControllerShouldShowBackButtonViewDuringSendAnimation:(id)arg1;
+- (id)composeDelegate;
 - (void)dealloc;
 - (void)disableCameraAttachments;
+- (void)donateInteractionWithRecipients:(id)arg1;
 - (void)forceCancelComposition;
 - (void)forceMMS;
 - (id /* block */)gameCenterPickerBlock;
@@ -51,6 +56,7 @@
 - (void)insertRemoteItemForSending:(id)arg1;
 - (id)modalTranscriptController;
 - (void)setCanEditRecipients:(bool)arg1;
+- (void)setComposeDelegate:(id)arg1;
 - (void)setGameCenterModeWithPickerBlock:(id /* block */)arg1;
 - (void)setGameCenterPickedHandles:(id)arg1 playerNames:(id)arg2;
 - (void)setGameCenterPickerBlock:(id /* block */)arg1;
@@ -59,6 +65,7 @@
 - (void)setText:(id)arg1 subject:(id)arg2 addresses:(id)arg3;
 - (void)setTextEntryContentsVisible:(bool)arg1;
 - (void)setUICustomizationData:(id)arg1;
+- (void)setUTIs:(id)arg1;
 - (bool)supportsAttachments;
 - (bool)supportsMessageInspection;
 - (void)viewDidAppear:(bool)arg1;

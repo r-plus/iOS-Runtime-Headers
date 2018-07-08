@@ -22,6 +22,7 @@
 - (id)initWithMediaRemoteCommand:(unsigned int)arg1 options:(id)arg2 response:(id)arg3;
 - (id)options;
 - (id)requestLabel;
+- (void)setCommandOptionValue:(id)arg1 forKey:(id)arg2;
 - (void)setRequestLabel:(id)arg1;
 - (void)setUserInitiatedOptions:(id)arg1;
 - (id)userInitiatedOptions;

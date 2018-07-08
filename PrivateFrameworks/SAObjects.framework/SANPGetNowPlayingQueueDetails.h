@@ -8,6 +8,8 @@
 @property (nonatomic) long long nextItemCount;
 @property (nonatomic) long long previousItemCount;
 
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+
 + (id)getNowPlayingQueueDetails;
 + (id)getNowPlayingQueueDetailsWithDictionary:(id)arg1 context:(id)arg2;
 
@@ -21,5 +23,9 @@
 - (void)setHashedRouteUIDs:(id)arg1;
 - (void)setNextItemCount:(long long)arg1;
 - (void)setPreviousItemCount:(long long)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+
+- (void)af_addEntriesToAnalyticsContext:(id)arg1;
 
 @end

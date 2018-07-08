@@ -3,8 +3,8 @@
  */
 
 @interface SXComponentSizer : NSObject {
-    SXComponent * _component;
-    SXComponentLayout * _componentLayout;
+    <SXComponent> * _component;
+    <SXComponentLayout> * _componentLayout;
     SXComponentStyle * _componentStyle;
     SXDocumentController * _documentController;
     NSMutableDictionary * _infoForRendering;
@@ -15,8 +15,8 @@
     }  _suggestedSize;
 }
 
-@property (nonatomic, readonly) SXComponent *component;
-@property (nonatomic, readonly) SXComponentLayout *componentLayout;
+@property (nonatomic, readonly) <SXComponent> *component;
+@property (nonatomic, readonly) <SXComponentLayout> *componentLayout;
 @property (nonatomic, readonly) SXComponentStyle *componentStyle;
 @property (nonatomic, readonly) SXDocumentController *documentController;
 @property (nonatomic, readonly) NSMutableDictionary *infoForRendering;

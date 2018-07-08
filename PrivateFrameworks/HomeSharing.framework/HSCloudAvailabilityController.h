@@ -16,6 +16,7 @@
     bool  _isShowingAllMusic;
     bool  _isShowingAllVideo;
     bool  _isUpdateInProgress;
+    bool  _isWiFiAssociated;
     bool  _isWiFiEnabled;
     unsigned long long  _networkReachabilityObservationCount;
     long long  _networkType;
@@ -44,7 +45,7 @@
 - (bool)_uncachedIsAutoDownloadOnCellularAllowed;
 - (bool)_uncachedIsShowingAllMusic;
 - (bool)_uncachedIsShowingAllVideo;
-- (void)_wifiEnabledDidChangeNotification:(id)arg1;
+- (void)_wifiStateDidChangeNotification:(id)arg1;
 - (void)airplaneModeChanged;
 - (void)beginObservingNetworkReachability;
 - (bool)canShowCloudDownloadButtons;

@@ -11,11 +11,13 @@
     NAFuture * _setupAccessoryAdapterModeFuture;
 }
 
+@property (nonatomic, readonly) HMAccessoryCollectionSetting *alarmCollectionSetting;
 @property (nonatomic, retain) NAFuture *alarmManagerForSynchronizationFuture;
 @property (nonatomic, readonly, copy) NSSet *alarmsWithPendingEdits;
 @property (nonatomic, readonly, copy) NSMutableSet *internalAlarmsBeingAdded;
 @property (nonatomic, readonly, copy) NSMutableSet *internalAlarmsBeingRemoved;
 @property (nonatomic, readonly, copy) NSMutableSet *internalAlarmsBeingUpdated;
+@property (nonatomic, readonly) bool isAdapterReady;
 @property (nonatomic, retain) NSHashTable *observers;
 @property (nonatomic, readonly) NAFuture *setupAccessoryAdapterModeFuture;
 
@@ -32,18 +34,21 @@
 - (void)accessorySettingWasUpdated:(id)arg1 value:(id)arg2;
 - (id)addAlarm:(id)arg1;
 - (void)addObserver:(id)arg1;
+- (id)alarmCollectionSetting;
 - (id)alarmCollectionSettingFuture;
 - (id)alarmManagerAlarms;
 - (id)alarmManagerForSynchronizationFuture;
 - (id)alarmSettingsCurrentItemsFuture;
 - (id)alarmsWithPendingEdits;
 - (id)allAlarms;
+- (id)allAlarmsFuture;
 - (id)initWithMediaProfileContainer:(id)arg1 keyPaths:(id)arg2 mode:(unsigned long long)arg3 updateHandler:(id /* block */)arg4;
 - (id)initWithMediaProfileContainer:(id)arg1 keyPaths:(id)arg2 updateHandler:(id /* block */)arg3;
 - (id)initWithMediaProfileContainer:(id)arg1 mode:(unsigned long long)arg2;
 - (id)internalAlarmsBeingAdded;
 - (id)internalAlarmsBeingRemoved;
 - (id)internalAlarmsBeingUpdated;
+- (bool)isAdapterReady;
 - (id)observers;
 - (id)removeAlarm:(id)arg1;
 - (void)removeObserver:(id)arg1;

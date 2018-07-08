@@ -18,6 +18,8 @@
 @property (setter=_setWantsTraitPropagation:, nonatomic) bool _wantsTraitPropagation;
 @property (nonatomic, readonly) _UIHostedWindowHostingHandle *hostingHandle;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
 - (bool)__hostViewUnderlapsStatusBar;
 - (void)__setHostViewUnderlapsStatusBar:(bool)arg1;
@@ -53,8 +55,13 @@
 - (void)dealloc;
 - (void)didSetResponderTargetForCalloutBar:(id)arg1;
 - (id)hostingHandle;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setScreen:(id)arg1;
 - (void)set_hostedWindowDelegate:(id)arg1;
+
+// Image: /System/Library/AccessibilityBundles/GAXClient.bundle/GAXClient
+
++ (Class)safeCategoryBaseClass;
+
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 @end

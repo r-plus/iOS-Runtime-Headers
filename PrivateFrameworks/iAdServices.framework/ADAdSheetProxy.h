@@ -3,7 +3,6 @@
  */
 
 @interface ADAdSheetProxy : NSObject {
-    <ADAdSheetProxyDelegate> * _delegate;
     long long  _interruptionCount;
     double  _lastLaunchTimestamp;
     NSMutableSet * _launchAssertions;
@@ -15,7 +14,6 @@
     bool  _waitingForAdSheet;
 }
 
-@property (nonatomic) <ADAdSheetProxyDelegate> *delegate;
 @property (nonatomic) long long interruptionCount;
 @property (nonatomic) double lastLaunchTimestamp;
 @property (nonatomic, retain) NSMutableSet *launchAssertions;
@@ -33,7 +31,6 @@
 - (void)_considerLaunchingAdSheet;
 - (void)considerLaunchingAdSheet;
 - (void)dealloc;
-- (id)delegate;
 - (id)init;
 - (long long)interruptionCount;
 - (double)lastLaunchTimestamp;
@@ -47,7 +44,6 @@
 - (void)reportAdSheetUnexpectedTermination;
 - (void)resetAdSheetThrottle;
 - (bool)serviceLaunchThrottled;
-- (void)setDelegate:(id)arg1;
 - (void)setInterruptionCount:(long long)arg1;
 - (void)setLastLaunchTimestamp:(double)arg1;
 - (void)setLaunchAssertions:(id)arg1;

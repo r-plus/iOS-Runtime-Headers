@@ -58,13 +58,16 @@
 - (unsigned int)pixelFormat;
 - (unsigned long long)planeCount;
 - (unsigned long long)protectionOptions;
+- (unsigned long long)registryID;
 - (void)removeAllAttachments;
 - (void)removeAttachmentForKey:(id)arg1;
 - (unsigned int)seed;
 - (void)setAllAttachments:(id)arg1;
 - (void)setAttachment:(id)arg1 forKey:(id)arg2;
 - (int)setPurgeable:(unsigned int)arg1 oldState:(unsigned int*)arg2;
+- (void)setTimestamp:(unsigned long long)arg1 atIndex:(unsigned long long)arg2;
 - (bool)supportsProtectionOptions:(unsigned long long)arg1;
+- (unsigned long long)timestampAtIndex:(unsigned long long)arg1;
 - (int)unlockWithOptions:(unsigned int)arg1 seed:(unsigned int*)arg2;
 - (long long)width;
 - (long long)widthOfPlaneAtIndex:(unsigned long long)arg1;

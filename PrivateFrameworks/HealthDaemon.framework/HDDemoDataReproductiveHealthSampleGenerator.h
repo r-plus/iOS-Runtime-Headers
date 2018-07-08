@@ -14,6 +14,8 @@
 @property (nonatomic) double nextOvulationTestSampleTime;
 @property (nonatomic) double nextSexualActivitySampleTime;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)_basalBodyTempMultiplier;
 - (long long)_computeNextLuteinizingHormoneSurgeForDemoPerson:(id)arg1 atTime:(double)arg2;

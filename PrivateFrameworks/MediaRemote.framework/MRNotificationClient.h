@@ -3,11 +3,11 @@
  */
 
 @interface MRNotificationClient : NSObject {
+    NSObject<OS_dispatch_queue> * _customNotificationsQueue;
     NSOrderedSet * _errorNotifications;
     NSOrderedSet * _externalScreenNotifications;
-    id /* block */  _notificationCallback;
+    NSObject<OS_dispatch_queue> * _notificationQueue;
     NSOrderedSet * _nowPlayingNotifications;
-    NSObject<OS_dispatch_queue> * _nowPlayingNotificationsQueue;
     NSOrderedSet * _originNotifications;
     bool  _receivesExternalScreenTypeChangedNotifications;
     bool  _receivesOriginChangedNotifications;
@@ -24,8 +24,7 @@
     NSOrderedSet * _volumeControlNotifications;
 }
 
-@property (nonatomic, copy) id /* block */ notificationCallback;
-@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *nowPlayingNotificationQueue;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *notificationQueue;
 @property (nonatomic) bool receivesExternalScreenTypeChangedNotifications;
 @property (nonatomic) bool receivesOriginChangedNotifications;
 @property (nonatomic) bool receivesPlaybackErrorNotifications;
@@ -37,11 +36,11 @@
 
 + (id)nowPlayingNotifications;
 
-- (void)dealloc;
-- (id)initWithNotificationCallback:(id /* block */)arg1;
+- (void).cxx_destruct;
+- (bool)_postNotification:(id)arg1 userInfo:(id)arg2 object:(id)arg3 withHandler:(id /* block */)arg4;
+- (id)init;
 - (bool)isRegisteredForNowPlayingNotifications;
-- (id /* block */)notificationCallback;
-- (id)nowPlayingNotificationQueue;
+- (id)notificationQueue;
 - (bool)postNotification:(id)arg1 userInfo:(id)arg2 object:(id)arg3;
 - (bool)receivesExternalScreenTypeChangedNotifications;
 - (bool)receivesOriginChangedNotifications;
@@ -51,7 +50,7 @@
 - (bool)receivesVoiceInputRecordingStateNotifications;
 - (bool)receivesVolumeControlNotifications;
 - (void)registerForNowPlayingNotificationsWithQueue:(id)arg1;
-- (void)setNotificationCallback:(id /* block */)arg1;
+- (void)registerForNowPlayingNotificationsWithQueue:(id)arg1 force:(bool)arg2;
 - (void)setReceivesExternalScreenTypeChangedNotifications:(bool)arg1;
 - (void)setReceivesOriginChangedNotifications:(bool)arg1;
 - (void)setReceivesPlaybackErrorNotifications:(bool)arg1;

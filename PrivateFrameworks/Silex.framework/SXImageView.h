@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXImageView : UIImageView <STAXCustomRotorItemProvider, SXAnimatedImageDelegate, SXDragable, SXReachabilityObserver> {
+@interface SXImageView : UIImageView <STAXCustomRotorItemProvider, SXAnimatedImageDelegate, SXDraggable, SXReachabilityObserver> {
     NSTimer * _activeTimer;
     UIActivityIndicatorView * _activityIndicatorView;
     SXAnimatedImage * _animatedImage;
@@ -51,7 +51,7 @@
 @property (nonatomic) <SXImageViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *dragIdentifier;
-@property (nonatomic, readonly) <UIItemProviderWriting> *dragObject;
+@property (nonatomic, readonly) <NSItemProviderWriting> *dragObject;
 @property (nonatomic, readonly) UIView *dragPreviewView;
 @property (nonatomic, copy) id /* block */ frameChangeBlock;
 @property (nonatomic) unsigned long long frameIndex;

@@ -10,8 +10,8 @@
     unsigned int  _rssiMinCount;
 }
 
+- (int)_estimateRSSIForSFBLEDevice:(id)arg1;
 - (void)dealloc;
 - (id)initWithProximityInfo:(id)arg1;
-- (bool)updateWithSFBLEDevice:(id)arg1;
 
 @end

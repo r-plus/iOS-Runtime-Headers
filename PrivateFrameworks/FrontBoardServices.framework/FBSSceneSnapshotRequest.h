@@ -3,14 +3,14 @@
  */
 
 @interface FBSSceneSnapshotRequest : NSObject <BSXPCCoding> {
-    bool  _allowProtectedContent;
+    bool  _allowsProtectedContent;
     <FBSSceneSnapshotRequestDelegate> * _delegate;
     bool  _handled;
     NSString * _sceneID;
     FBSSceneSettings * _settings;
 }
 
-@property (nonatomic, readonly) bool allowProtectedContent;
+@property (nonatomic, readonly) bool allowsProtectedContent;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FBSSceneSnapshotRequestDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -19,7 +19,7 @@
 @property (nonatomic, readonly, copy) FBSSceneSettings *settings;
 @property (readonly) Class superclass;
 
-- (bool)allowProtectedContent;
+- (bool)allowsProtectedContent;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
@@ -27,7 +27,7 @@
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithSettings:(id)arg1;
-- (id)initWithSettings:(id)arg1 allowProtectedContent:(bool)arg2;
+- (id)initWithSettings:(id)arg1 allowsProtectedContent:(bool)arg2;
 - (id)initWithXPCDictionary:(id)arg1;
 - (bool)performSnapshotWithContext:(id)arg1;
 - (id)sceneID;

@@ -8,6 +8,8 @@
     unsigned long long  _onFlags;
 }
 
++ (bool)supportsSecureCoding;
+
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

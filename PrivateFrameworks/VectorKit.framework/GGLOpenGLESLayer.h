@@ -9,7 +9,7 @@
     }  _backingSize;
     struct unique_ptr<ggl::OESContext, std::__1::default_delete<ggl::OESContext> > { 
         struct __compressed_pair<ggl::OESContext *, std::__1::default_delete<ggl::OESContext> > { 
-            struct OESContext {} *__first_; 
+            struct OESContext {} *__value_; 
         } __ptr_; 
     }  _context;
     <GGLLayerDelegate> * _delegate;
@@ -19,7 +19,7 @@
     }  _device;
     struct unique_ptr<ggl::RenderBuffer, std::__1::default_delete<ggl::RenderBuffer> > { 
         struct __compressed_pair<ggl::RenderBuffer *, std::__1::default_delete<ggl::RenderBuffer> > { 
-            struct RenderBuffer {} *__first_; 
+            struct RenderBuffer {} *__value_; 
         } __ptr_; 
     }  _texture;
 }

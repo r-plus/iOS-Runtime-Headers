@@ -7,6 +7,7 @@
 }
 
 @property (nonatomic, readonly) NSString *formatString;
+@property (nonatomic, readonly) bool formatStringContainsAMPMSpecifier;
 @property (nonatomic, readonly) bool formatStringContainsOnlyDate;
 
 + (id)nowFormatForLocale:(id)arg1;
@@ -15,6 +16,7 @@
 - (void).cxx_destruct;
 - (id)asDateTimeFormat;
 - (id)formatString;
+- (bool)formatStringContainsAMPMSpecifier;
 - (bool)formatStringContainsOnlyDate;
 - (unsigned long long)hash;
 - (id)initWithFormatString:(id)arg1;

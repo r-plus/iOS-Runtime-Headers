@@ -26,7 +26,6 @@
 - (id)_templateImageWithImage:(id)arg1;
 - (id)baselineOffset;
 - (unsigned long long)hash;
-- (void)imageWithCompletion:(id /* block */)arg1 forScale:(double)arg2;
 - (id)imageWithScaleFactor:(double)arg1;
 - (id)imageWithSession:(id)arg1;
 - (id)initWithJSONObject:(id)arg1;

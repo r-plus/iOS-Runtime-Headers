@@ -10,6 +10,7 @@
     WeatherLocationManager * _locationManager;
     bool  _locationServicesActive;
     WeatherPreferences * _preferences;
+    bool  _stopUpdateIfNeeded;
 }
 
 @property (nonatomic, copy) id /* block */ WeatherLocationManagerGenerator;
@@ -22,6 +23,7 @@
 @property (nonatomic, retain) WeatherLocationManager *locationManager;
 @property (nonatomic) bool locationServicesActive;
 @property (nonatomic, retain) WeatherPreferences *preferences;
+@property (nonatomic) bool stopUpdateIfNeeded;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -35,7 +37,9 @@
 - (void)_teardownLocationManager;
 - (void)_weatherPreferencesWereSynchronized:(id)arg1;
 - (void)_willDeliverForecastModel:(id)arg1;
+- (void)checkIfNeedsToUpdate;
 - (unsigned long long)citySource;
+- (void)clearLocationUpdateState;
 - (void)dealloc;
 - (id)forecastModel;
 - (id)geocodeRequest;
@@ -54,7 +58,12 @@
 - (void)setLocationManager:(id)arg1;
 - (void)setLocationServicesActive:(bool)arg1;
 - (void)setPreferences:(id)arg1;
+- (void)setStopUpdateIfNeeded:(bool)arg1;
 - (void)setWeatherLocationManagerGenerator:(id /* block */)arg1;
+- (bool)shouldNotUseUpdatedLocation;
+- (bool)stopUpdateIfNeeded;
+- (void)syncLastUpdateTime;
 - (void)ubiquitousDefaultsDidChange:(id)arg1;
+- (bool)updateLocationTrackingStatus;
 
 @end

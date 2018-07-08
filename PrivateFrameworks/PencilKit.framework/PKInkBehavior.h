@@ -11,7 +11,7 @@
         struct PKOutputFunction {} *__begin_; 
         struct PKOutputFunction {} *__end_; 
         struct __compressed_pair<PKOutputFunction *, std::__1::allocator<PKOutputFunction> > { 
-            struct PKOutputFunction {} *__first_; 
+            struct PKOutputFunction {} *__value_; 
         } __end_cap_; 
     }  _aspectRatioOutput;
     double  _baseAlpha;
@@ -24,7 +24,7 @@
         struct PKOutputFunction {} *__begin_; 
         struct PKOutputFunction {} *__end_; 
         struct __compressed_pair<PKOutputFunction *, std::__1::allocator<PKOutputFunction> > { 
-            struct PKOutputFunction {} *__first_; 
+            struct PKOutputFunction {} *__value_; 
         } __end_cap_; 
     }  _brushOpacityOutput;
     double  _dynamicStep;
@@ -32,7 +32,7 @@
         struct PKOutputFunction {} *__begin_; 
         struct PKOutputFunction {} *__end_; 
         struct __compressed_pair<PKOutputFunction *, std::__1::allocator<PKOutputFunction> > { 
-            struct PKOutputFunction {} *__first_; 
+            struct PKOutputFunction {} *__value_; 
         } __end_cap_; 
     }  _edgeWidthOutput;
     bool  _immutableVelocity;
@@ -42,7 +42,7 @@
         struct PKOutputFunction {} *__begin_; 
         struct PKOutputFunction {} *__end_; 
         struct __compressed_pair<PKOutputFunction *, std::__1::allocator<PKOutputFunction> > { 
-            struct PKOutputFunction {} *__first_; 
+            struct PKOutputFunction {} *__value_; 
         } __end_cap_; 
     }  _opacityOutput;
     unsigned int  _particleCount;
@@ -55,7 +55,7 @@
         struct PKOutputFunction {} *__begin_; 
         struct PKOutputFunction {} *__end_; 
         struct __compressed_pair<PKOutputFunction *, std::__1::allocator<PKOutputFunction> > { 
-            struct PKOutputFunction {} *__first_; 
+            struct PKOutputFunction {} *__value_; 
         } __end_cap_; 
     }  _radiusOutput;
     bool  _randomRotation;

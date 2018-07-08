@@ -3,6 +3,7 @@
  */
 
 @interface SXVideoAdProvider : NSObject <ADBannerViewInternalDelegate, SXVideoAdProviding> {
+    <SXVASTAnalyticsEventInfoFactory> * _analyticsEventInfoFactory;
     <SXAnalyticsReporting> * _analyticsReporter;
     <SXVideoAdProviderDataSource> * _dataSource;
     <SXVideoAdViewControllerProviding> * _fullscreenViewControllerProvider;
@@ -10,8 +11,11 @@
     SXPrerollAdResponse * _response;
     SXVideoAdStateManager * _stateManager;
     SXTimeline * _timeline;
+    <SXVisibilityMonitoring> * _videoPlayerVisibilityMonitor;
+    <SXVisibilityMonitoring> * _videoVisibilityMonitor;
 }
 
+@property (nonatomic, readonly) <SXVASTAnalyticsEventInfoFactory> *analyticsEventInfoFactory;
 @property (nonatomic, retain) <SXAnalyticsReporting> *analyticsReporter;
 @property (nonatomic) <SXVideoAdProviderDataSource> *dataSource;
 @property (readonly, copy) NSString *debugDescription;
@@ -24,17 +28,24 @@
 @property (nonatomic, readonly) unsigned long long skipThreshold;
 @property (nonatomic, readonly) SXVideoAdStateManager *stateManager;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) double threshold;
 @property (nonatomic, readonly) SXTimeline *timeline;
+@property (nonatomic, readonly) <SXVisibilityMonitoring> *videoPlayerVisibilityMonitor;
+@property (nonatomic, readonly) <SXVisibilityMonitoring> *videoVisibilityMonitor;
 
 - (void).cxx_destruct;
+- (id)analyticsEventInfoFactory;
 - (id)analyticsReporter;
 - (void)configureTimelineForImpressionReporting;
 - (id)dataSource;
+- (void)enteredFullscreen;
+- (void)exitedFullscreen;
 - (id)fullscreenViewControllerProvider;
 - (bool)hasAction;
-- (id)initWithDataSource:(id)arg1 viewControllerProvider:(id)arg2;
+- (id)initWithViewControllerProvider:(id)arg1 analyticsEventInfoFactory:(id)arg2 videoPlayerVisibilityMonitor:(id)arg3 videoVisibilityMonitor:(id)arg4;
 - (id /* block */)loadWithCompletionBlock:(id /* block */)arg1;
 - (id)metadata;
+- (void)muteStateChanged:(bool)arg1;
 - (void)playbackFailedWithError:(id)arg1;
 - (void)playbackFinished;
 - (void)playbackInitiated;
@@ -52,8 +63,12 @@
 - (unsigned long long)skipThreshold;
 - (void)skipped;
 - (id)stateManager;
+- (void)tappedToToggleControls;
+- (double)threshold;
 - (void)timeElapsed:(double)arg1 duration:(double)arg2;
 - (id)timeline;
+- (id)videoPlayerVisibilityMonitor;
+- (id)videoVisibilityMonitor;
 - (id)viewControllerForStoryboardPresentationFromBannerView:(id)arg1;
 
 @end

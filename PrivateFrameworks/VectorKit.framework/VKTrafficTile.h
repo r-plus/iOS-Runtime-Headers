@@ -8,7 +8,7 @@
     }  _builtTrafficStyle;
     struct unique_ptr<md::CasedTrafficLayer, std::__1::default_delete<md::CasedTrafficLayer> > { 
         struct __compressed_pair<md::CasedTrafficLayer *, std::__1::default_delete<md::CasedTrafficLayer> > { 
-            struct CasedTrafficLayer {} *__first_; 
+            struct CasedTrafficLayer {} *__value_; 
         } __ptr_; 
     }  _casedTrafficLayer;
     NSData * _data;
@@ -27,12 +27,12 @@
     VKTileKeyMap * _dynamicTiles;
     struct unique_ptr<md::PilledTrafficLayer, std::__1::default_delete<md::PilledTrafficLayer> > { 
         struct __compressed_pair<md::PilledTrafficLayer *, std::__1::default_delete<md::PilledTrafficLayer> > { 
-            struct PilledTrafficLayer {} *__first_; 
+            struct PilledTrafficLayer {} *__value_; 
         } __ptr_; 
     }  _pilledTrafficLayer;
     struct unique_ptr<md::SolidTrafficLayer, std::__1::default_delete<md::SolidTrafficLayer> > { 
         struct __compressed_pair<md::SolidTrafficLayer *, std::__1::default_delete<md::SolidTrafficLayer> > { 
-            struct SolidTrafficLayer {} *__first_; 
+            struct SolidTrafficLayer {} *__value_; 
         } __ptr_; 
     }  _solidTrafficLayer;
     struct FeatureAttributeSet { 
@@ -40,7 +40,7 @@
             struct FeatureAttributePair {} *__begin_; 
             struct FeatureAttributePair {} *__end_; 
             struct __compressed_pair<gss::FeatureAttributePair *, std::__1::allocator<gss::FeatureAttributePair> > { 
-                struct FeatureAttributePair {} *__first_; 
+                struct FeatureAttributePair {} *__value_; 
             } __end_cap_; 
         } _attributes; 
     }  _styleAttributes;
@@ -50,7 +50,7 @@
     }  _trafficData;
     struct unique_ptr<md::TrafficStream, std::__1::default_delete<md::TrafficStream> > { 
         struct __compressed_pair<md::TrafficStream *, std::__1::default_delete<md::TrafficStream> > { 
-            struct TrafficStream {} *__first_; 
+            struct TrafficStream {} *__value_; 
         } __ptr_; 
     }  _trafficStream;
 }

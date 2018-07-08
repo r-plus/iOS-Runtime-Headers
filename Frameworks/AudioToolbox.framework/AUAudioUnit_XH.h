@@ -9,7 +9,7 @@
     struct OpaqueAudioComponentInstance { } * _componentInstance;
     struct unique_ptr<AUProcAndUserData, std::__1::default_delete<AUProcAndUserData> > { 
         struct __compressed_pair<AUProcAndUserData *, std::__1::default_delete<AUProcAndUserData> > { 
-            struct AUProcAndUserData {} *__first_; 
+            struct AUProcAndUserData {} *__value_; 
         } __ptr_; 
     }  _elementCountListenerToken;
     NSExtension * _extension;
@@ -26,7 +26,7 @@
         struct AUAudioUnit_XH_PropListener {} *__begin_; 
         struct AUAudioUnit_XH_PropListener {} *__end_; 
         struct __compressed_pair<AUAudioUnit_XH_PropListener *, std::__1::allocator<AUAudioUnit_XH_PropListener> > { 
-            struct AUAudioUnit_XH_PropListener {} *__first_; 
+            struct AUAudioUnit_XH_PropListener {} *__value_; 
         } __end_cap_; 
     }  _propListeners;
     <AUAudioUnitXPCProtocol> * _remote;
@@ -54,7 +54,7 @@
                 struct Element {} *__begin_; 
                 struct Element {} *__end_; 
                 struct __compressed_pair<IPCAUSharedMemoryBase::Element *, std::__1::allocator<IPCAUSharedMemoryBase::Element> > { 
-                    struct Element {} *__first_; 
+                    struct Element {} *__value_; 
                 } __end_cap_; 
             } mElements; 
             unsigned int mMaxFrames; 
@@ -63,7 +63,7 @@
         } mSharedMemory; 
         struct unique_ptr<SemaphoreIOMessenger_Sender, std::__1::default_delete<SemaphoreIOMessenger_Sender> > { 
             struct __compressed_pair<SemaphoreIOMessenger_Sender *, std::__1::default_delete<SemaphoreIOMessenger_Sender> > { 
-                struct SemaphoreIOMessenger_Sender {} *__first_; 
+                struct SemaphoreIOMessenger_Sender {} *__value_; 
             } __ptr_; 
         } mMessenger; 
         unsigned int mWorkIntervalPort; 
@@ -106,7 +106,7 @@
     NSUUID * _requestIdentifier;
     struct unique_ptr<AUSyncCaller, std::__1::default_delete<AUSyncCaller> > { 
         struct __compressed_pair<AUSyncCaller *, std::__1::default_delete<AUSyncCaller> > { 
-            struct AUSyncCaller {} *__first_; 
+            struct AUSyncCaller {} *__value_; 
         } __ptr_; 
     }  _syncCaller;
     NSObject<OS_dispatch_queue> * _viewControllerRequestQueue;

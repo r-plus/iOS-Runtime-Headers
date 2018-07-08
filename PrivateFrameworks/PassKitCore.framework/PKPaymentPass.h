@@ -48,7 +48,6 @@
 @property (nonatomic, retain) PKPaymentApplication *devicePrimaryContactlessPaymentApplication;
 @property (nonatomic, retain) PKPaymentApplication *devicePrimaryInAppPaymentApplication;
 @property (nonatomic, retain) PKPaymentApplication *devicePrimaryPaymentApplication;
-@property (nonatomic, readonly, copy) PKFelicaPassProperties *felicaProperties;
 @property (nonatomic) bool hasAssociatedPeerPaymentAccount;
 @property (nonatomic, copy) NSString *issuerCountryCode;
 @property (nonatomic, copy) NSString *localizedSuspendedReason;
@@ -65,15 +64,19 @@
 @property (nonatomic) bool supportsDPANNotifications;
 @property (nonatomic) bool supportsDefaultCardSelection;
 @property (nonatomic) bool supportsFPANNotifications;
+@property (nonatomic, readonly) bool supportsOnlyTransit;
 @property (nonatomic) bool supportsPeerPayment;
 @property (nonatomic) bool supportsSerialNumberBasedProvisioning;
 @property (nonatomic, copy) NSString *transactionPushTopic;
 @property (nonatomic, copy) NSURL *transactionServiceURL;
+@property (nonatomic, readonly, copy) PKTransitPassProperties *transitProperties;
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
 + (unsigned long long)defaultSettings;
 + (id)displayableErrorForAction:(id)arg1 andReason:(unsigned long long)arg2;
++ (id)displayableErrorForTransitAction:(id)arg1 andReason:(unsigned long long)arg2;
++ (id)displayableNoPaymentNetworkErrorMessageForAction:(id)arg1 isTransit:(bool)arg2;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -111,6 +114,8 @@
 - (bool)isDevicePrimaryPaymentApplicationPersonalized;
 - (bool)isPaymentOptionSelectable;
 - (bool)isPrivateLabel;
+- (bool)isSuicaPass;
+- (bool)isTransitPass;
 - (id)issuerCountryCode;
 - (id)localizedSuspendedReason;
 - (id)messagePushTopic;
@@ -161,12 +166,14 @@
 - (bool)supportsDPANNotifications;
 - (bool)supportsDefaultCardSelection;
 - (bool)supportsFPANNotifications;
+- (bool)supportsOnlyTransit;
 - (bool)supportsPeerPayment;
 - (bool)supportsSerialNumberBasedProvisioning;
 - (bool)supportsWebPaymentMode:(long long)arg1 withExclusionList:(id)arg2;
 - (bool)supportsWebPaymentMode:(long long)arg1 withExclusionList:(id)arg2 clientOSVersion:(id)arg3;
 - (id)transactionPushTopic;
 - (id)transactionServiceURL;
+- (id)transitProperties;
 - (void)updateDevicePaymentApplicationsWithSecureElementIdentifiers:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit

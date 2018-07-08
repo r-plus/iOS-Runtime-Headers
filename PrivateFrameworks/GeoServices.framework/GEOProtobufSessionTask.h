@@ -40,11 +40,13 @@
 @property (nonatomic, readonly) unsigned long long taskIdentifier;
 
 - (void).cxx_destruct;
+- (void)_decodeResponseFromTask:(id)arg1 completion:(id /* block */)arg2;
 - (void)cancel;
 - (id)clientMetrics;
 - (void)completeWithCancelled:(bool)arg1 error:(id)arg2 response:(id)arg3;
 - (void)completeWithErrorCode:(long long)arg1;
 - (bool)completedAsCancelled;
+- (void)dataSession:(id)arg1 didCompleteSubtask:(id)arg2 completion:(id /* block */)arg3;
 - (void)dataSession:(id)arg1 didCompleteTask:(id)arg2;
 - (void)dataSession:(id)arg1 willSendRequest:(id)arg2 forTask:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)dataTask;

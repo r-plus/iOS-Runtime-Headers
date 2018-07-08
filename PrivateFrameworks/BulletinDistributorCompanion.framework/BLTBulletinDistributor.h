@@ -18,7 +18,6 @@
     BLTSettingSync * _settingSync;
     bool  _standaloneTestModeEnabled;
     NSDate * _startupTime;
-    NSMutableDictionary * _transcodedAttachmentsForBulletinID;
     BLTUserNotificationList * _userNotificationList;
     BLTWatchKitAppList * _watchKitAppList;
 }
@@ -43,7 +42,6 @@
 @property (nonatomic) bool standaloneTestModeEnabled;
 @property (nonatomic, retain) NSDate *startupTime;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) NSMutableDictionary *transcodedAttachmentsForBulletinID;
 @property (nonatomic, retain) BLTUserNotificationList *userNotificationList;
 @property (nonatomic, retain) BLTWatchKitAppList *watchKitAppList;
 
@@ -136,7 +134,6 @@
 - (void)setSettingSync:(id)arg1;
 - (void)setStandaloneTestModeEnabled:(bool)arg1;
 - (void)setStartupTime:(id)arg1;
-- (void)setTranscodedAttachmentsForBulletinID:(id)arg1;
 - (void)setUserNotificationList:(id)arg1;
 - (void)setWatchKitAppList:(id)arg1;
 - (id)settingOverrides;
@@ -145,7 +142,6 @@
 - (void)spoolSectionInfoWithCompletion:(id /* block */)arg1;
 - (bool)standaloneTestModeEnabled;
 - (id)startupTime;
-- (id)transcodedAttachmentsForBulletinID;
 - (id)userNotificationList;
 - (id)watchKitAppList;
 - (void)willSendLightsAndSirensWithPublisherBulletinID:(id)arg1 recordID:(id)arg2 inPhoneSection:(id)arg3 systemApp:(bool)arg4 completion:(id /* block */)arg5;

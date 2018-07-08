@@ -17,7 +17,7 @@
 - (void).cxx_destruct;
 - (id)article;
 - (id)feedDataProvider;
-- (id)initWithArticle:(id)arg1 settings:(id)arg2 streamHeadlines:(id)arg3 topics:(id)arg4;
+- (id)initWithArticle:(id)arg1 settings:(id)arg2 headlines:(id)arg3 topics:(id)arg4;
 - (id)settings;
 - (id)topicsDataProvider;
 

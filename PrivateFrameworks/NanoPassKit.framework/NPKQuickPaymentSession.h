@@ -53,7 +53,7 @@
 - (void)_checkContactlessValidity:(unsigned long long)arg1 authorizationValidity:(unsigned long long)arg2 performWork:(id /* block */)arg3;
 - (void)_checkContactlessValidity:(unsigned long long)arg1 performWork:(id /* block */)arg2;
 - (void)_handleConventionalTransactionWithContext:(id)arg1;
-- (void)_handleFelicaTransitTransactionWithContext:(id)arg1;
+- (void)_handleTransitTransactionWithContext:(id)arg1;
 - (void)_internalQueue_deactivateSessionWithCompletion:(id /* block */)arg1;
 - (void)_internalQueue_getContactlessAndAuthorizationValidityAndPerformWork:(id /* block */)arg1;
 - (void)_internalQueue_invokeDeactivationCompletionBlocks;

@@ -88,8 +88,6 @@
 @property (nonatomic, readonly) <UITextInputTokenizer> *tokenizer;
 @property (nonatomic, copy) NSDictionary *typingAttributes;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 + (id)activeFieldEditor;
 + (id)excludedElementsForHTML;
 + (id)sharedFieldEditor;
@@ -132,10 +130,6 @@
 - (void)_tvUpdateTextColor;
 - (void)_unobscureAllText;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_unobscuredSecureRange;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)activateEditor;
 - (void)addTextAlternativesDisplayStyleToRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (bool)allowsAttachments;
@@ -156,6 +150,7 @@
 - (long long)comparePosition:(id)arg1 toPosition:(id)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentFrameForView:(id)arg1;
 - (void)deactivateEditorDiscardingEdits:(bool)arg1;
+- (void)dealloc;
 - (void)deleteBackward;
 - (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)drawsAsAtom;

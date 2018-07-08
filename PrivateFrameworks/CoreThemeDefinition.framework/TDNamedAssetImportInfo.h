@@ -39,6 +39,10 @@
     NSString * _name;
     long long  _nameIdentifier;
     bool  _optOutOfThinning;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _physicalSizeInMeters;
     bool  _preservesVectorRepresentation;
     long long  _renditionType;
     struct CGSize { 
@@ -92,6 +96,7 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) long long nameIdentifier;
 @property (nonatomic) bool optOutOfThinning;
+@property (nonatomic) struct CGSize { double x1; double x2; } physicalSizeInMeters;
 @property (nonatomic) bool preservesVectorRepresentation;
 @property (nonatomic) long long renditionType;
 @property (nonatomic) struct CGSize { double x1; double x2; } resizableSliceSize;
@@ -140,6 +145,7 @@
 - (id)name;
 - (long long)nameIdentifier;
 - (bool)optOutOfThinning;
+- (struct CGSize { double x1; double x2; })physicalSizeInMeters;
 - (bool)preservesVectorRepresentation;
 - (long long)renditionSubtype;
 - (long long)renditionType;
@@ -171,6 +177,7 @@
 - (void)setName:(id)arg1;
 - (void)setNameIdentifier:(long long)arg1;
 - (void)setOptOutOfThinning:(bool)arg1;
+- (void)setPhysicalSizeInMeters:(struct CGSize { double x1; double x2; })arg1;
 - (void)setPreservesVectorRepresentation:(bool)arg1;
 - (void)setRenditionType:(long long)arg1;
 - (void)setResizableSliceSize:(struct CGSize { double x1; double x2; })arg1;

@@ -19,6 +19,7 @@
 - (void)graphDidPrepareNodes:(id)arg1;
 - (void)imageQueueSinkNode:(id)arg1 didAttemptToEnqueuePreviewSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 withSuccess:(bool)arg3;
 - (void)imageQueueSinkNodeDidDisplayFirstFrame:(id)arg1;
+- (void)imageQueueSinkNodeDidDisplayFirstFrame:(id)arg1 atHostTime:(long long)arg2;
 - (id)initWithFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
 - (void)node:(id)arg1 format:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)node:(id)arg1 format:(id)arg2 didBecomeLiveForOutput:(id)arg3;

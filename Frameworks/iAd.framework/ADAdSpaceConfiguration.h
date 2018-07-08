@@ -8,6 +8,16 @@
     NSString * _authenticationUserName;
     NSSet * _context;
     int  _creativeType;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _currentAppSize;
     NSString * _identifier;
     long long  _options;
     NSURL * _serverURL;
@@ -18,6 +28,7 @@
 @property (nonatomic, copy) NSString *authenticationUserName;
 @property (nonatomic, copy) NSSet *context;
 @property (nonatomic) int creativeType;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } currentAppSize;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic) long long options;
 @property (nonatomic, copy) NSURL *serverURL;
@@ -29,6 +40,7 @@
 - (id)authenticationUserName;
 - (id)context;
 - (int)creativeType;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })currentAppSize;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
@@ -40,6 +52,7 @@
 - (void)setAuthenticationUserName:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setCreativeType:(int)arg1;
+- (void)setCurrentAppSize:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setOptions:(long long)arg1;
 - (void)setServerURL:(id)arg1;

@@ -5,7 +5,7 @@
 @interface TSPUnarchiver : NSObject {
     struct FieldPath { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<unsigned int> { unsigned int *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; int x6; } * _currentFieldPath;
     <TSPUnarchiverDelegate> * _delegate;
-    struct vector<void (^)(), std::__1::allocator<void (^)()> >="__begin_"^@?"__end_"^@?"__end_cap_"{__compressed_pair<void (^__strong *)(), std::__1::allocator<void (^)()> >="__first_"^@? {}  _finalizeHandlers;
+    struct vector<void (^)(), std::__1::allocator<void (^)()> >="__begin_"^@?"__end_"^@?"__end_cap_"{__compressed_pair<void (^__strong *)(), std::__1::allocator<void (^)()> >="__value_"^@? {}  _finalizeHandlers;
     <TSPLazyReferenceDelegate> * _lazyReferenceDelegate;
     struct auto_ptr<google::protobuf::Message> { 
         struct Message {} *__ptr_; 
@@ -18,14 +18,14 @@
         struct UnarchiverReference {} *__begin_; 
         struct UnarchiverReference {} *__end_; 
         struct __compressed_pair<TSP::UnarchiverReference *, std::__1::allocator<TSP::UnarchiverReference> > { 
-            struct UnarchiverReference {} *__first_; 
+            struct UnarchiverReference {} *__value_; 
         } __end_cap_; 
     }  _references;
     struct vector<TSP::UnarchiverRepeatedReference, std::__1::allocator<TSP::UnarchiverRepeatedReference> > { 
         struct UnarchiverRepeatedReference {} *__begin_; 
         struct UnarchiverRepeatedReference {} *__end_; 
         struct __compressed_pair<TSP::UnarchiverRepeatedReference *, std::__1::allocator<TSP::UnarchiverRepeatedReference> > { 
-            struct UnarchiverRepeatedReference {} *__first_; 
+            struct UnarchiverRepeatedReference {} *__value_; 
         } __end_cap_; 
     }  _repeatedReferences;
     struct auto_ptr<std::__1::unordered_map<const long long, bool, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, bool> > > > { 

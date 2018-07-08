@@ -3,12 +3,14 @@
  */
 
 @interface NFContainer : NSObject <NFDefinitionContainer, NFRegistrationContainer> {
+    NFCallbackStore * _callbackStore;
     NSMutableDictionary * _definitions;
     NFContainerPool * _pool;
     NSMutableDictionary * _privateContainers;
     <NFResolver> * _resolver;
 }
 
+@property (nonatomic, retain) NFCallbackStore *callbackStore;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) NSMutableDictionary *definitions;
 @property (readonly, copy) NSString *description;
@@ -19,6 +21,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)callbackStore;
 - (id)debugDescription;
 - (id)definitionForKey:(id)arg1;
 - (id)definitions;
@@ -35,6 +38,7 @@
 - (id)registerProtocol:(id)arg1 factory:(id /* block */)arg2;
 - (id)registerProtocol:(id)arg1 name:(id)arg2 factory:(id /* block */)arg3;
 - (id)resolver;
+- (void)setCallbackStore:(id)arg1;
 - (void)setDefinitions:(id)arg1;
 - (void)setPool:(id)arg1;
 - (void)setPrivateContainers:(id)arg1;

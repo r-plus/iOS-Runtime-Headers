@@ -11,6 +11,7 @@
 - (id)copyAsShapeInfoWithContext:(id)arg1;
 - (bool)displaysInstructionalText;
 - (id)instructionalText;
+- (bool)isAllowedInGroups;
 - (bool)isEmpty;
 - (int)kind;
 - (Class)layoutClass;

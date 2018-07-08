@@ -14,6 +14,7 @@
     NPWaldo * _parentWaldo;
     NWEndpoint * _probeEndpoint;
     bool  _probePending;
+    bool  _reResolve;
     NWEndpoint * _savedEndpoint;
 }
 
@@ -28,6 +29,7 @@
 @property NPWaldo *parentWaldo;
 @property (readonly) NWEndpoint *probeEndpoint;
 @property bool probePending;
+@property bool reResolve;
 @property (retain) NWEndpoint *savedEndpoint;
 
 + (bool)supportsSecureCoding;
@@ -50,7 +52,7 @@
 - (void)iterateOnRampsForAddressFamily:(id)arg1 withBlock:(id /* block */)arg2;
 - (id)label;
 - (id)lastUsed;
-- (void)linkWithOnRamps;
+- (void)linkWithOnRampsRetainMissingAddressFamilies:(bool)arg1;
 - (id)location;
 - (id)nextOnRampForLatency:(id)arg1 outIndex:(long long*)arg2;
 - (id)onRampEndpoint;
@@ -58,6 +60,7 @@
 - (id)parentWaldo;
 - (id)probeEndpoint;
 - (bool)probePending;
+- (bool)reResolve;
 - (void)resolveWithCompletionHandler:(id /* block */)arg1;
 - (id)savedEndpoint;
 - (void)setCurrentIndex:(long long)arg1 addressFamily:(id)arg2;
@@ -68,8 +71,8 @@
 - (void)setOnRampLists:(id)arg1;
 - (void)setParentWaldo:(id)arg1;
 - (void)setProbePending:(bool)arg1;
+- (void)setReResolve:(bool)arg1;
 - (void)setSavedEndpoint:(id)arg1;
-- (void)unresolve;
 - (id)unsynthesizeAddresses:(id)arg1;
 
 @end

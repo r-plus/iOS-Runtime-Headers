@@ -10,6 +10,7 @@
         unsigned int travelTimeAggressiveEstimate : 1; 
         unsigned int travelTimeBestEstimate : 1; 
         unsigned int travelTimeConservativeEstimate : 1; 
+        unsigned int isOfflineResponse : 1; 
         unsigned int routeNoLongerValid : 1; 
     }  _has;
     unsigned int  _historicTravelTime;
@@ -22,6 +23,7 @@
     NSMutableArray * _incidentsOnETARoutes;
     NSMutableArray * _incidentsOnReRoutes;
     NSMutableArray * _invalidSectionZilchPoints;
+    bool  _isOfflineResponse;
     NSMutableArray * _reroutedRoutes;
     NSData * _routeID;
     bool  _routeNoLongerValid;
@@ -47,6 +49,7 @@
 @property (nonatomic, retain) NSMutableArray *enrouteNotices;
 @property (nonatomic, readonly) double expectedTime;
 @property (nonatomic) bool hasHistoricTravelTime;
+@property (nonatomic) bool hasIsOfflineResponse;
 @property (nonatomic, readonly) bool hasRouteID;
 @property (nonatomic) bool hasRouteNoLongerValid;
 @property (nonatomic) bool hasStaticTravelTime;
@@ -64,6 +67,7 @@
 @property (nonatomic, retain) NSMutableArray *incidentsOnETARoutes;
 @property (nonatomic, retain) NSMutableArray *incidentsOnReRoutes;
 @property (nonatomic, retain) NSMutableArray *invalidSectionZilchPoints;
+@property (nonatomic) bool isOfflineResponse;
 @property (nonatomic, retain) NSMutableArray *reroutedRoutes;
 @property (nonatomic, retain) NSData *routeID;
 @property (nonatomic) bool routeNoLongerValid;
@@ -124,6 +128,7 @@
 - (unsigned long long)enrouteNoticesCount;
 - (double)expectedTime;
 - (bool)hasHistoricTravelTime;
+- (bool)hasIsOfflineResponse;
 - (bool)hasRouteID;
 - (bool)hasRouteNoLongerValid;
 - (bool)hasStaticTravelTime;
@@ -150,6 +155,7 @@
 - (id)invalidSectionZilchPointsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)invalidSectionZilchPointsCount;
 - (bool)isEqual:(id)arg1;
+- (bool)isOfflineResponse;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (double)remainingTimeAlongRoute:(unsigned int)arg1 currentStepRemainingDistance:(double)arg2;
@@ -161,6 +167,7 @@
 - (void)setDebugBannerTitle:(id)arg1 bannerDescription:(id)arg2 bannerSpoken:(id)arg3;
 - (void)setEnrouteNotices:(id)arg1;
 - (void)setHasHistoricTravelTime:(bool)arg1;
+- (void)setHasIsOfflineResponse:(bool)arg1;
 - (void)setHasRouteNoLongerValid:(bool)arg1;
 - (void)setHasStaticTravelTime:(bool)arg1;
 - (void)setHasTravelTimeAggressiveEstimate:(bool)arg1;
@@ -172,6 +179,7 @@
 - (void)setIncidentsOnETARoutes:(id)arg1;
 - (void)setIncidentsOnReRoutes:(id)arg1;
 - (void)setInvalidSectionZilchPoints:(id)arg1;
+- (void)setIsOfflineResponse:(bool)arg1;
 - (void)setReroutedRoutes:(id)arg1;
 - (void)setRouteID:(id)arg1;
 - (void)setRouteNoLongerValid:(bool)arg1;

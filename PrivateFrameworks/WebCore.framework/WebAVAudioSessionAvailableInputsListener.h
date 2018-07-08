@@ -3,7 +3,7 @@
  */
 
 @interface WebAVAudioSessionAvailableInputsListener : NSObject {
-    struct Function<void ()>="m_callableWrapper"{unique_ptr<WTF::Function<void ()>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void ()>::CallableWrapperBase> >="__ptr_"{__compressed_pair<WTF::Function<void ()>::CallableWrapperBase *, std::__1::default_delete<WTF::Function<void ()>::CallableWrapperBase> >="__first_"^{CallableWrapperBase {}  _callback;
+    struct Function<void ()>="m_callableWrapper"{unique_ptr<WTF::Function<void ()>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void ()>::CallableWrapperBase> >="__ptr_"{__compressed_pair<WTF::Function<void ()>::CallableWrapperBase *, std::__1::default_delete<WTF::Function<void ()>::CallableWrapperBase> >="__value_"^{CallableWrapperBase {}  _callback;
 }
 
 - (id).cxx_construct;

@@ -4,7 +4,9 @@
 
 @interface _GEOURLManifestListenerCallbackWithQueue : NSObject <_GEOURLManifestListenerCallback> {
     id /* block */  _handler;
+    unsigned int  _qos;
     NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_voucher> * _voucher;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface PKPaymentSetupFieldBuiltInDateOfBirth : PKPaymentSetupFieldDate {
-    NSDate * _dateOfBirth;
+    NSDate * _defaultDate;
 }
 
 - (void).cxx_destruct;

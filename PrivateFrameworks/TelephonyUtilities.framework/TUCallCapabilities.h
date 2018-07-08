@@ -4,15 +4,11 @@
 
 @interface TUCallCapabilities : NSObject
 
-+ (id)_client;
 + (void)_sendNotificationsAfterRunningBlock:(id /* block */)arg1;
-+ (void)_setClientServer:(id)arg1;
 + (bool)accountsMatchForSecondaryCalling;
 + (bool)accountsSupportSecondaryCalling;
 + (bool)areCTCapabilitiesValid;
 + (bool)areRelayCallingFeaturesEnabled;
-+ (id)callCapabilitiesClientXPCInterface;
-+ (id)callCapabilitiesServerXPCInterface;
 + (bool)canAttemptEmergencyCallsInAirplaneMode;
 + (bool)canAttemptEmergencyCallsWithoutCellularConnection;
 + (bool)canAttemptTelephonyCallsInAirplaneMode;
@@ -32,6 +28,7 @@
 + (bool)isDirectFaceTimeVideoCallingCurrentlyAvailable;
 + (bool)isDirectTelephonyCallingCurrentlyAvailable;
 + (bool)isEmergencyCallbackModeEnabled;
++ (bool)isEmergencyCallbackPossible;
 + (bool)isFaceTimeAudioAvailable;
 + (bool)isFaceTimeVideoAvailable;
 + (bool)isRelayCallingEnabled;

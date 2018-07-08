@@ -32,6 +32,7 @@
 
 - (void)addPerfSampleHandler:(void *)arg1; // needs 1 arg types, found 8: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <MTLCommandBuffer> *, NSData *, unsigned long long, void*
 - (NSArray *)availableCounters;
+- (NSArray *)availableCountersAndDict;
 - (NSDictionary *)counterInfo;
 - (NSArray *)getRequestedCounters;
 - (unsigned long long)getStatLocations;

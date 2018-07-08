@@ -7,9 +7,11 @@
     NSData * _digest;
     struct { 
         unsigned int timestamp : 1; 
+        unsigned int originIdentifier : 1; 
         unsigned int state : 1; 
     }  _has;
     NSData * _nowPlayingInfo;
+    int  _originIdentifier;
     NSData * _payload;
     NSData * _playbackQueue;
     int  _state;
@@ -22,12 +24,14 @@
 @property (nonatomic, readonly) bool hasApplicationInfo;
 @property (nonatomic, readonly) bool hasDigest;
 @property (nonatomic, readonly) bool hasNowPlayingInfo;
+@property (nonatomic) bool hasOriginIdentifier;
 @property (nonatomic, readonly) bool hasPayload;
 @property (nonatomic, readonly) bool hasPlaybackQueue;
 @property (nonatomic) bool hasState;
 @property (nonatomic, readonly) bool hasSupportedCommands;
 @property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) NSData *nowPlayingInfo;
+@property (nonatomic) int originIdentifier;
 @property (nonatomic, retain) NSData *payload;
 @property (nonatomic, retain) NSData *playbackQueue;
 @property (nonatomic) int state;
@@ -44,6 +48,7 @@
 - (bool)hasApplicationInfo;
 - (bool)hasDigest;
 - (bool)hasNowPlayingInfo;
+- (bool)hasOriginIdentifier;
 - (bool)hasPayload;
 - (bool)hasPlaybackQueue;
 - (bool)hasState;
@@ -53,14 +58,17 @@
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)nowPlayingInfo;
+- (int)originIdentifier;
 - (id)payload;
 - (id)playbackQueue;
 - (bool)readFrom:(id)arg1;
 - (void)setApplicationInfo:(id)arg1;
 - (void)setDigest:(id)arg1;
+- (void)setHasOriginIdentifier:(bool)arg1;
 - (void)setHasState:(bool)arg1;
 - (void)setHasTimestamp:(bool)arg1;
 - (void)setNowPlayingInfo:(id)arg1;
+- (void)setOriginIdentifier:(int)arg1;
 - (void)setPayload:(id)arg1;
 - (void)setPlaybackQueue:(id)arg1;
 - (void)setState:(int)arg1;

@@ -10,6 +10,5 @@
 @property (readonly) Class superclass;
 
 - (void)getPlaybackContextForIntent:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)getRemotePlaybackQueueForIntent:(id)arg1 playerPath:(id)arg2 withCompletion:(id /* block */)arg3;
 
 @end

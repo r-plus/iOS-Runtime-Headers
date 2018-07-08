@@ -3,7 +3,7 @@
  */
 
 @interface TSCHChartSeries : NSObject <TSCHPropertyMapsGeneratedProtocol, TSCHStyleOwnerCollaborationSupport, TSCHStyleOwning, TSCHUnretainedParent> {
-    TSUPointerKeyDictionary * mAxisTable;
+    TSUIntegerKeyDictionary * mAxisTable;
     unsigned long long  mBarGapIndex;
     TSCHChartModel * mChartModel;
     TSCHErrorBarData * mErrorBarData;
@@ -40,6 +40,7 @@
 + (id)stackedPercentageNumberFormat;
 + (unsigned char)styleOwnerPathType;
 
+- (void).cxx_destruct;
 - (int)adjustedNumberFormatType;
 - (id)axisForAxisType:(int)arg1;
 - (id)axisIDForAxisType:(int)arg1;

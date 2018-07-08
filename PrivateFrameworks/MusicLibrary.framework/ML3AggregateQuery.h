@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@interface ML3AggregateQuery : ML3Query {
+@interface ML3AggregateQuery : ML3Query <NSSecureCoding> {
     Class  _aggregateEntityClass;
     NSString * _foreignPersistentIDProperty;
     bool  _isFastCountable;
@@ -11,6 +11,8 @@
 @property (nonatomic, readonly) Class aggregateEntityClass;
 @property (nonatomic, readonly) NSString *foreignPersistentIDProperty;
 @property (nonatomic) bool isFastCountable;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (Class)aggregateEntityClass;

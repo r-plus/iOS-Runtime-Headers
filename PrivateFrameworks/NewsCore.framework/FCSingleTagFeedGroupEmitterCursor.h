@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCSingleTagFeedGroupEmitterCursor : NSObject <NSCoding, NSCopying> {
+@interface FCSingleTagFeedGroupEmitterCursor : FCFeedGroupEmittingCursor <NSCopying> {
     FCFeedRange * _freeFeedRange;
     FCFeedRange * _paidFeedRange;
 }
 
 @property (nonatomic, copy) FCFeedRange *freeFeedRange;
 @property (nonatomic, copy) FCFeedRange *paidFeedRange;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

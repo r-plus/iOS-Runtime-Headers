@@ -10,6 +10,7 @@
     UIFont * _footnoteFont;
     UIFont * _headlineFont;
     UIFont * _subheadlineFont;
+    UIFont * _title0Font;
     UIFont * _title1Font;
     UIFont * _title2Font;
     UIFont * _title3Font;
@@ -24,6 +25,7 @@
 @property (nonatomic, copy) UIFont *footnoteFont;
 @property (nonatomic, copy) UIFont *headlineFont;
 @property (nonatomic, copy) UIFont *subheadlineFont;
+@property (nonatomic, copy) UIFont *title0Font;
 @property (nonatomic, copy) UIFont *title1Font;
 @property (nonatomic, copy) UIFont *title2Font;
 @property (nonatomic, copy) UIFont *title3Font;
@@ -49,12 +51,14 @@
 - (void)setFootnoteFont:(id)arg1;
 - (void)setHeadlineFont:(id)arg1;
 - (void)setSubheadlineFont:(id)arg1;
+- (void)setTitle0Font:(id)arg1;
 - (void)setTitle1Font:(id)arg1;
 - (void)setTitle2Font:(id)arg1;
 - (void)setTitle3Font:(id)arg1;
 - (void)setTraitCollection:(id)arg1;
 - (void)setTraitEnvironment:(id)arg1;
 - (id)subheadlineFont;
+- (id)title0Font;
 - (id)title1Font;
 - (id)title2Font;
 - (id)title3Font;

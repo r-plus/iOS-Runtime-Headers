@@ -29,5 +29,6 @@
 - (void)getPushNotifications:(id /* block */)arg1;
 - (id)init;
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)queryMemoryFootprint:(id /* block */)arg1;
 
 @end

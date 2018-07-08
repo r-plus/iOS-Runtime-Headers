@@ -4,6 +4,8 @@
 
 @interface HFFaucetServiceItem : HFServiceItem
 
++ (id)supportedServiceTypes;
+
 - (bool)_shouldSubsumeValveInOverallActiveState;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (bool)containsActionableCharacteristics;

@@ -5,7 +5,7 @@
 @interface SXPhoneNumberActionActivityProvider : NSObject <SXActionActivityProvider> {
     <SXContactsPresenter> * _contactsPresenter;
     <SXDeviceCapabilities> * _deviceCapabilities;
-    SXHost * _host;
+    <SXHost> * _host;
     <SXMessagePresenter> * _messagePresenter;
 }
 
@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) <SXDeviceCapabilities> *deviceCapabilities;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) SXHost *host;
+@property (nonatomic, readonly) <SXHost> *host;
 @property (nonatomic, readonly) <SXMessagePresenter> *messagePresenter;
 @property (readonly) Class superclass;
 

@@ -77,6 +77,8 @@
 + (id)faceWithJSONObjectRepresentation:(id)arg1 forMigration:(bool)arg2;
 + (id)fixedComplicationSlots;
 + (bool)isFaceStyleAvailableInternal:(long long)arg1;
++ (bool)isFaceStyleRestricted:(long long)arg1;
++ (bool)isRestricted;
 + (id)localizedNameForCustomEditMode:(long long)arg1;
 + (unsigned long long)maximumRemoteComplicationsOnAnyFace;
 + (id)monogramSlot;

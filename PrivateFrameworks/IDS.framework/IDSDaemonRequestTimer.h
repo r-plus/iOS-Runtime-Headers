@@ -17,6 +17,7 @@
 - (void)_criticalInvokeTimeoutBlockForRequestID:(id)arg1;
 - (void)_handleSystemTimerFired:(id)arg1;
 - (void)dealloc;
+- (long long)inFlightRequestCount;
 - (id)init;
 - (id)invalidateTimeoutAndReturnHandlerForRequestID:(id)arg1;
 - (id)invalidateTimeoutsAndReturnHandlersForAllRequests;

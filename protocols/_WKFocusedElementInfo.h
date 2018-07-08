@@ -7,6 +7,7 @@
 
 - (bool)isUserInitiated;
 - (long long)type;
+- (NSObject<NSSecureCoding> *)userObject;
 - (NSString *)value;
 
 @end

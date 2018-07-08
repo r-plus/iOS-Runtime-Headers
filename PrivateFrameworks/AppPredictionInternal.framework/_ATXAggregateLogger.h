@@ -33,6 +33,8 @@
 + (id)stringForPredictionOutcome:(unsigned long long)arg1;
 + (id)validPropertyStringForLaunchReasonValues;
 + (bool)yesWithProbability:(double)arg1;
++ (void)yesWithProbabilityAlwaysSays:(bool)arg1;
++ (void)yesWithProbabilityStopMocking;
 
 - (void).cxx_destruct;
 - (id)init;

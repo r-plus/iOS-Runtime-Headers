@@ -21,9 +21,13 @@
 @property (nonatomic, retain) HMDelegateCaller *delegateCaller;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSArray *hf_allCameraProfiles;
+@property (nonatomic, readonly) NSArray *hf_allServices;
 @property (nonatomic, readonly) NSSet *hf_allVisibleServices;
+@property (nonatomic, readonly) NSArray *hf_allZones;
 @property (nonatomic, readonly, copy) NSDate *hf_dateAdded;
 @property (nonatomic, readonly, copy) NSString *hf_displayName;
+@property (nonatomic, readonly) NSArray *hf_unpairedHomePods;
 @property (nonatomic, readonly) UIImage *hf_wallpaperImage;
 @property (nonatomic, readonly) HMHome *home;
 @property (nonatomic) HMHome *home;
@@ -87,6 +91,7 @@
 - (id)hf_displayName;
 - (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
 - (id)hf_serializedStateDumpRepresentation;
+- (id)hf_unpairedHomePods;
 - (id)hf_updateDateAdded:(id)arg1;
 - (id)hf_updateWallpaperImage:(id)arg1;
 - (id)hf_wallpaperImage;

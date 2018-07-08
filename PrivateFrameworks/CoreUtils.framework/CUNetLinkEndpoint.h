@@ -4,7 +4,6 @@
 
 @interface CUNetLinkEndpoint : NSObject {
     bool  _client;
-    NSObject<OS_dispatch_queue> * _dispatchQueue;
     unsigned long long  _expireTime;
     union { 
         struct sockaddr { 

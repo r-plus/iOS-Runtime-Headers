@@ -7,14 +7,14 @@
         struct HDActivityCacheActiveSource {} *__begin_; 
         struct HDActivityCacheActiveSource {} *__end_; 
         struct __compressed_pair<HDActivityCacheActiveSource *, std::__1::allocator<HDActivityCacheActiveSource> > { 
-            struct HDActivityCacheActiveSource {} *__first_; 
+            struct HDActivityCacheActiveSource {} *__value_; 
         } __end_cap_; 
     }  _activationLogSamples;
     struct vector<HDActivityCacheActiveSource, std::__1::allocator<HDActivityCacheActiveSource> > { 
         struct HDActivityCacheActiveSource {} *__begin_; 
         struct HDActivityCacheActiveSource {} *__end_; 
         struct __compressed_pair<HDActivityCacheActiveSource *, std::__1::allocator<HDActivityCacheActiveSource> > { 
-            struct HDActivityCacheActiveSource {} *__first_; 
+            struct HDActivityCacheActiveSource {} *__value_; 
         } __end_cap_; 
     }  _activeSourcesList;
     double  _builderEndTime;
@@ -36,10 +36,10 @@
             struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<_HKDataTypeCode, std::__1::map<long long, _HDActivityCacheSourceTotal, std::__1::less<long long>, std::__1::allocator<std::__1::pair<const long long, _HDActivityCacheSourceTotal> > > >, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
-                } __first_; 
+                } __value_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<_HKDataTypeCode, std::__1::__value_type<_HKDataTypeCode, std::__1::map<long long, _HDActivityCacheSourceTotal, std::__1::less<long long>, std::__1::allocator<std::__1::pair<const long long, _HDActivityCacheSourceTotal> > > >, std::__1::less<_HKDataTypeCode>, true> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __pair3_; 
         } __tree_; 
     }  _sourceTotalsByIntervalIndexByTypeCode;
@@ -47,14 +47,14 @@
         struct HDActivityCacheStatisticsBuilderStandHourSample {} *__begin_; 
         struct HDActivityCacheStatisticsBuilderStandHourSample {} *__end_; 
         struct __compressed_pair<HDActivityCacheStatisticsBuilderStandHourSample *, std::__1::allocator<HDActivityCacheStatisticsBuilderStandHourSample> > { 
-            struct HDActivityCacheStatisticsBuilderStandHourSample {} *__first_; 
+            struct HDActivityCacheStatisticsBuilderStandHourSample {} *__value_; 
         } __end_cap_; 
     }  _standHourSamples;
     struct vector<HDActivityCacheStatisticsBuilderWorkoutSample, std::__1::allocator<HDActivityCacheStatisticsBuilderWorkoutSample> > { 
         struct HDActivityCacheStatisticsBuilderWorkoutSample {} *__begin_; 
         struct HDActivityCacheStatisticsBuilderWorkoutSample {} *__end_; 
         struct __compressed_pair<HDActivityCacheStatisticsBuilderWorkoutSample *, std::__1::allocator<HDActivityCacheStatisticsBuilderWorkoutSample> > { 
-            struct HDActivityCacheStatisticsBuilderWorkoutSample {} *__first_; 
+            struct HDActivityCacheStatisticsBuilderWorkoutSample {} *__value_; 
         } __end_cap_; 
     }  _workouts;
 }

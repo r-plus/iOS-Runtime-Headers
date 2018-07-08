@@ -12,6 +12,7 @@
     bool  _keyboardInTransition;
     bool  _showLanguageLabel;
     int  _state;
+    bool  _switchingLanguage;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,8 +21,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool showLanguageLabel;
 @property (readonly) Class superclass;
-
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+@property (nonatomic) bool switchingLanguage;
 
 + (id)activeInstance;
 + (Class)dictationViewClass;
@@ -29,17 +29,13 @@
 + (id)sharedInstance;
 + (struct CGSize { double x1; double x2; })viewSize;
 
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)applicationEnteredBackground;
 - (void)applicationWillResignActive;
 - (float)audioLevelForFlamesView:(id)arg1;
 - (struct CGPoint { double x1; double x2; })backgroundOffset;
 - (struct CGPoint { double x1; double x2; })contentOffset;
 - (struct CGSize { double x1; double x2; })currentScreenSize;
-- (void)didEndIndirectSelectionGesture;
+- (void)dealloc;
 - (id)displayDelegate;
 - (bool)drawsOwnBackground;
 - (id)endpointButton;
@@ -56,9 +52,10 @@
 - (void)setDisplayDelegate:(id)arg1;
 - (void)setShowLanguageLabel:(bool)arg1;
 - (void)setState:(int)arg1;
+- (void)setSwitchingLanguage:(bool)arg1;
 - (void)show;
 - (bool)showLanguageLabel;
+- (bool)switchingLanguage;
 - (bool)visible;
-- (void)willBeginIndirectSelectionGesture;
 
 @end

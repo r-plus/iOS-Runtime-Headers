@@ -6,69 +6,69 @@
     unsigned long long  _coastLineCount;
     struct unique_ptr<ggl::Debug::BaseMesh, std::__1::default_delete<ggl::Debug::BaseMesh> > { 
         struct __compressed_pair<ggl::Debug::BaseMesh *, std::__1::default_delete<ggl::Debug::BaseMesh> > { 
-            struct BaseMesh {} *__first_; 
+            struct BaseMesh {} *__value_; 
         } __ptr_; 
     }  _coastLineMesh;
     unsigned long long  _coastLineVertCount;
     unsigned long long  _junctionCount;
     struct unique_ptr<ggl::DebugPoints::BaseMesh, std::__1::default_delete<ggl::DebugPoints::BaseMesh> > { 
         struct __compressed_pair<ggl::DebugPoints::BaseMesh *, std::__1::default_delete<ggl::DebugPoints::BaseMesh> > { 
-            struct BaseMesh {} *__first_; 
+            struct BaseMesh {} *__value_; 
         } __ptr_; 
     }  _junctionsPointsMesh;
     unsigned long long  _namedLineCount;
     struct unique_ptr<ggl::Debug::BaseMesh, std::__1::default_delete<ggl::Debug::BaseMesh> > { 
         struct __compressed_pair<ggl::Debug::BaseMesh *, std::__1::default_delete<ggl::Debug::BaseMesh> > { 
-            struct BaseMesh {} *__first_; 
+            struct BaseMesh {} *__value_; 
         } __ptr_; 
     }  _namedLineMesh;
     unsigned long long  _namedLineVertCount;
     unsigned long long  _overpassCount;
     struct unique_ptr<ggl::DebugPoints::BaseMesh, std::__1::default_delete<ggl::DebugPoints::BaseMesh> > { 
         struct __compressed_pair<ggl::DebugPoints::BaseMesh *, std::__1::default_delete<ggl::DebugPoints::BaseMesh> > { 
-            struct BaseMesh {} *__first_; 
+            struct BaseMesh {} *__value_; 
         } __ptr_; 
     }  _overpassPointsMesh;
     unsigned long long  _poiCount;
     struct unique_ptr<ggl::DebugPoints::BaseMesh, std::__1::default_delete<ggl::DebugPoints::BaseMesh> > { 
         struct __compressed_pair<ggl::DebugPoints::BaseMesh *, std::__1::default_delete<ggl::DebugPoints::BaseMesh> > { 
-            struct BaseMesh {} *__first_; 
+            struct BaseMesh {} *__value_; 
         } __ptr_; 
     }  _poiPointsMesh;
     unsigned long long  _polygonCount;
     struct unique_ptr<ggl::Debug::BaseMesh, std::__1::default_delete<ggl::Debug::BaseMesh> > { 
         struct __compressed_pair<ggl::Debug::BaseMesh *, std::__1::default_delete<ggl::Debug::BaseMesh> > { 
-            struct BaseMesh {} *__first_; 
+            struct BaseMesh {} *__value_; 
         } __ptr_; 
     }  _polygonLineMesh;
     unsigned long long  _polygonVertCount;
     struct unique_ptr<ggl::DebugPoints::BaseMesh, std::__1::default_delete<ggl::DebugPoints::BaseMesh> > { 
         struct __compressed_pair<ggl::DebugPoints::BaseMesh *, std::__1::default_delete<ggl::DebugPoints::BaseMesh> > { 
-            struct BaseMesh {} *__first_; 
+            struct BaseMesh {} *__value_; 
         } __ptr_; 
     }  _realTransitNodesMesh;
     unsigned long long  _unnamedLineCount;
     struct unique_ptr<ggl::Debug::BaseMesh, std::__1::default_delete<ggl::Debug::BaseMesh> > { 
         struct __compressed_pair<ggl::Debug::BaseMesh *, std::__1::default_delete<ggl::Debug::BaseMesh> > { 
-            struct BaseMesh {} *__first_; 
+            struct BaseMesh {} *__value_; 
         } __ptr_; 
     }  _unnamedLineMesh;
     unsigned long long  _unnamedLineVertCount;
     struct unique_ptr<ggl::Debug::BaseMesh, std::__1::default_delete<ggl::Debug::BaseMesh> > { 
         struct __compressed_pair<ggl::Debug::BaseMesh *, std::__1::default_delete<ggl::Debug::BaseMesh> > { 
-            struct BaseMesh {} *__first_; 
+            struct BaseMesh {} *__value_; 
         } __ptr_; 
     }  _venueBuildingOutlineMesh;
     struct unique_ptr<ggl::Debug::BaseMesh, std::__1::default_delete<ggl::Debug::BaseMesh> > { 
         struct __compressed_pair<ggl::Debug::BaseMesh *, std::__1::default_delete<ggl::Debug::BaseMesh> > { 
-            struct BaseMesh {} *__first_; 
+            struct BaseMesh {} *__value_; 
         } __ptr_; 
     }  _venueOutlineMesh;
     unsigned long long  _venueOutlinesCount;
     unsigned long long  _vertexCount;
     struct unique_ptr<ggl::DebugPoints::BaseMesh, std::__1::default_delete<ggl::DebugPoints::BaseMesh> > { 
         struct __compressed_pair<ggl::DebugPoints::BaseMesh *, std::__1::default_delete<ggl::DebugPoints::BaseMesh> > { 
-            struct BaseMesh {} *__first_; 
+            struct BaseMesh {} *__value_; 
         } __ptr_; 
     }  _verticesPointsMesh;
 }

@@ -38,6 +38,7 @@
 - (id)_findLosingChatGUIDsInArrayOfChats:(struct NSArray { Class x1; }*)arg1 withWinner:(id)arg2;
 - (void)_forceReloadChats:(bool)arg1;
 - (void)_insertChatUsingCKRecord:(id)arg1;
+- (bool)_isUsingStingRay;
 - (id)_lookupChatUsingID:(id)arg1;
 - (void)_makeAllAttachmentsClassC;
 - (void)_markForksAsSyncedForChat:(id)arg1;
@@ -55,7 +56,7 @@
 - (id)chatForHandles:(id)arg1 account:(id)arg2 chatIdentifier:(id)arg3 style:(unsigned char)arg4 groupID:(id)arg5 displayName:(id)arg6 guid:(id)arg7;
 - (id)chatForRoom:(id)arg1 account:(id)arg2 chatIdentifier:(id)arg3 guid:(id)arg4;
 - (id)chats;
-- (id)chatsToUploadToCloudKitWithLimit:(unsigned long long)arg1;
+- (id)chatsToUploadToCloudKitWithLimit:(unsigned long long)arg1 isUsingStingRay:(bool)arg2;
 - (void)clearPendingDeleteTable;
 - (id)cnaliasResolver;
 - (id)copyRecordIDsAndGUIDsPendingCloudKitDelete;
@@ -82,6 +83,7 @@
 - (id)messagesToUploadToCloudKitWithLimit:(unsigned long long)arg1;
 - (id)personCentricGroupedChatsDictionary;
 - (void)processMessageUsingCKRecord:(id)arg1;
+- (void)processMessageUsingCKRecord:(id)arg1 updatedLastMessageCount:(int)arg2;
 - (void)removeChat:(id)arg1;
 - (void)removeItem:(id)arg1 fromChat:(id)arg2;
 - (void)removeMessage:(id)arg1 fromChat:(id)arg2;
@@ -92,9 +94,10 @@
 - (void)systemDidLeaveFirstDataProtectionLock;
 - (void)systemDidUnlock;
 - (void)updateChatUsingCKRecord:(id)arg1;
-- (void)updateChatWithGUID:(id)arg1 serverChangeToken:(id)arg2 CKSystemPropertiesBlob:(id)arg3;
+- (void)updateChatWithGUID:(id)arg1 serverChangeToken:(id)arg2 recordID:(id)arg3;
 - (void)updateGroupIDForChat:(id)arg1 newGroupID:(id)arg2;
 - (void)updateLastMessageForChat:(id)arg1 hintMessage:(id)arg2;
+- (void)updateLastMessageForChat:(id)arg1 hintMessage:(id)arg2 historyQuery:(bool)arg3;
 - (bool)updateProperties:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3;
 - (void)updateStateForChat:(id)arg1 forcePost:(bool)arg2;
 - (void)updateStateForChat:(id)arg1 fromMessage:(id)arg2 toMessage:(id)arg3 forcePost:(bool)arg4 hintMessage:(id)arg5;

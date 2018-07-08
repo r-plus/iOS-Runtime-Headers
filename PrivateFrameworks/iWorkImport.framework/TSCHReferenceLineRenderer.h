@@ -4,7 +4,7 @@
 
 @interface TSCHReferenceLineRenderer : TSCHRenderer
 
-- (void)addSelection:(id)arg1 toCGPath:(struct CGPath { }*)arg2;
+- (void)addSelection:(id)arg1 toCGPath:(struct CGPath { }*)arg2 useWrapWidth:(bool)arg3;
 - (bool)canRenderSelectionPath:(id)arg1;
 - (int)chunkPlane;
 - (void)p_renderIntoContext:(struct CGContext { }*)arg1 visible:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;

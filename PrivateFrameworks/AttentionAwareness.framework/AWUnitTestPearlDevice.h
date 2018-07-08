@@ -15,6 +15,7 @@
         unsigned long long singleShotCount; 
     }  _sampleStats;
     struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; } * _sampleStatsPtr;
+    id /* block */  _smartCoverCallback;
 }
 
 @property (nonatomic) <BKDevicePearlDelegate> *delegate;
@@ -41,5 +42,7 @@
 - (void)setQueue:(id)arg1;
 - (void)setSampleState:(bool)arg1;
 - (void)setSampleStatsPtr:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; }*)arg1;
+- (void)setSmartCoverCallback:(id /* block */)arg1;
+- (void)setSmartCoverClosed:(bool)arg1;
 
 @end

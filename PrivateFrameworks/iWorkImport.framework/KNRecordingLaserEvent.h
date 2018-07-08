@@ -6,7 +6,7 @@
     struct CGPoint { 
         double x; 
         double y; 
-    }  mUnitLocation;
+    }  _unitLocation;
 }
 
 @property (nonatomic, readonly) struct CGPoint { double x1; double x2; } unitLocation;

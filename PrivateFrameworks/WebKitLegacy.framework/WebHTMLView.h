@@ -11,7 +11,6 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (void)initialize;
 + (id)supportedImageMIMETypes;
 + (id)supportedMIMETypes;
 + (id)supportedMediaMIMETypes;
@@ -20,9 +19,8 @@
 
 - (id)_accessibilityParentForSubview:(id)arg1;
 - (double)_adjustedBottomOfPageWithTop:(double)arg1 bottom:(double)arg2 limit:(double)arg3;
-- (void)_applyEditingStyleToSelection:(struct Ref<WebCore::EditingStyle> { struct EditingStyle {} *x1; }*)arg1 withUndoAction:(int)arg2;
+- (void)_applyEditingStyleToSelection:(struct Ref<WebCore::EditingStyle, WTF::DumbPtrTraits<WebCore::EditingStyle> > { struct EditingStyle {} *x1; }*)arg1 withUndoAction:(int)arg2;
 - (void)_applyStyleToSelection:(id)arg1 withUndoAction:(int)arg2;
-- (void)_autoscroll;
 - (bool)_beginPrintModeWithMinimumPageWidth:(double)arg1 height:(double)arg2 maximumPageWidth:(double)arg3;
 - (bool)_beginPrintModeWithPageWidth:(float)arg1 height:(float)arg2 shrinkToFit:(bool)arg3;
 - (bool)_beginScreenPaginationModeWithPageSize:(struct CGSize { double x1; double x2; })arg1 shrinkToFit:(bool)arg2;
@@ -33,7 +31,6 @@
 - (bool)_canIncreaseSelectionListLevel;
 - (bool)_canSmartCopyOrDelete;
 - (void)_changeWordCaseWithSelector:(SEL)arg1;
-- (void)_clearLastHitViewIfSelf;
 - (id)_compositingLayersHostingView;
 - (id)_dataSource;
 - (void)_decreaseSelectionListLevel;
@@ -47,8 +44,7 @@
 - (id)_frame;
 - (void)_frameOrBoundsChanged;
 - (id)_frameView;
-- (bool)_handleEditingKeyEvent:(struct KeyboardEvent { int (**x1)(); struct Weak<WebCore::JSDOMObject> { struct WeakImpl {} *x_2_1_1; } x2; unsigned int x3; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_4_1_1; } x4; bool x5; bool x6; bool x7; bool x8; bool x9; bool x10; bool x11; bool x12; bool x13; bool x14; unsigned short x15; struct RefPtr<WebCore::EventTarget> { struct EventTarget {} *x_16_1_1; } x16; struct EventPath {} *x17; struct RefPtr<WebCore::EventTarget> { struct EventTarget {} *x_18_1_1; } x18; unsigned long long x19; struct RefPtr<WebCore::Event> { struct Event {} *x_20_1_1; } x20; struct RefPtr<WebCore::DOMWindow> { struct DOMWindow {} *x_21_1_1; } x21; int x22; bool x23; bool x24; bool x25; bool x26; bool x27; bool x28; struct unique_ptr<WebCore::PlatformKeyboardEvent, std::__1::default_delete<WebCore::PlatformKeyboardEvent> > { struct __compressed_pair<WebCore::PlatformKeyboardEvent *, std::__1::default_delete<WebCore::PlatformKeyboardEvent> > { struct PlatformKeyboardEvent {} *x_1_2_1; } x_29_1_1; } x29; }*)arg1;
-- (bool)_hasHTMLDocument;
+- (bool)_handleEditingKeyEvent:(struct KeyboardEvent { int (**x1)(); struct Weak<WebCore::JSDOMObject> { struct WeakImpl {} *x_2_1_1; } x2; unsigned int x3; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> > { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_4_1_1; } x4; bool x5; bool x6; bool x7; bool x8; bool x9; bool x10; bool x11; bool x12; bool x13; bool x14; int x15; struct RefPtr<WebCore::EventTarget, WTF::DumbPtrTraits<WebCore::EventTarget> > { struct EventTarget {} *x_16_1_1; } x16; struct EventPath {} *x17; struct RefPtr<WebCore::EventTarget, WTF::DumbPtrTraits<WebCore::EventTarget> > { struct EventTarget {} *x_18_1_1; } x18; struct MonotonicTime { double x_19_1_1; } x19; struct RefPtr<WebCore::Event, WTF::DumbPtrTraits<WebCore::Event> > { struct Event {} *x_20_1_1; } x20; struct RefPtr<WebCore::DOMWindow, WTF::DumbPtrTraits<WebCore::DOMWindow> > { struct DOMWindow {} *x_21_1_1; } x21; int x22; bool x23; bool x24; bool x25; bool x26; bool x27; bool x28; struct unique_ptr<WebCore::PlatformKeyboardEvent, std::__1::default_delete<WebCore::PlatformKeyboardEvent> > { struct __compressed_pair<WebCore::PlatformKeyboardEvent *, std::__1::default_delete<WebCore::PlatformKeyboardEvent> > { struct PlatformKeyboardEvent {} *x_1_2_1; } x_29_1_1; } x29; }*)arg1;
 - (bool)_hasInsertionPoint;
 - (bool)_hasSelection;
 - (bool)_hasSelectionOrInsertionPoint;
@@ -57,7 +53,6 @@
 - (id)_increaseSelectionListLevelUnordered;
 - (id)_insertOrderedList;
 - (id)_insertUnorderedList;
-- (bool)_insideAnotherHTMLView;
 - (bool)_isEditable;
 - (bool)_isInPrintMode;
 - (bool)_isInScreenPaginationMode;
@@ -75,24 +70,14 @@
 - (void)_setMouseDownEvent:(id)arg1;
 - (void)_setPrinting:(bool)arg1 minimumPageLogicalWidth:(float)arg2 logicalHeight:(float)arg3 originalPageWidth:(float)arg4 originalPageHeight:(float)arg5 maximumShrinkRatio:(float)arg6 adjustViewSize:(bool)arg7 paginateScreenContent:(bool)arg8;
 - (void)_setToolTip:(id)arg1;
-- (void)_setTransparentBackground:(bool)arg1;
-- (bool)_shouldDeleteRange:(id)arg1;
 - (bool)_shouldInsertFragment:(id)arg1 replacingDOMRange:(id)arg2 givenAction:(long long)arg3;
 - (bool)_shouldInsertText:(id)arg1 replacingDOMRange:(id)arg2 givenAction:(long long)arg3;
 - (bool)_shouldReplaceSelectionWithText:(id)arg1 givenAction:(long long)arg2;
-- (void)_startAutoscrollTimer:(id)arg1;
 - (void)_stopAutoscrollTimer;
 - (id)_topHTMLView;
-- (bool)_transparentBackground;
-- (void)_updateControlTints;
-- (void)_updateSelectionForInputManager;
 - (bool)_wantsKeyDownForEvent:(id)arg1;
 - (id)_webView;
-- (bool)_web_isDrawingIntoAcceleratedLayer;
-- (bool)_web_isDrawingIntoLayer;
-- (void)_web_makePluginSubviewsPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (void)_web_updateLayoutAndStyleIfNeededRecursive;
-- (void)_windowChangedKeyState;
 - (bool)acceptsFirstResponder;
 - (id)accessibilityFocusedUIElement;
 - (id)accessibilityHitTest:(struct CGPoint { double x1; double x2; })arg1;
@@ -102,7 +87,6 @@
 - (void)alignJustified:(id)arg1;
 - (void)alignLeft:(id)arg1;
 - (void)alignRight:(id)arg1;
-- (void)attachRootLayer:(id)arg1;
 - (bool)becomeFirstResponder;
 - (bool)callDelegateDoCommandBySelectorIfNeeded:(SEL)arg1;
 - (void)capitalizeWord:(id)arg1;
@@ -114,8 +98,8 @@
 - (void)closeIfNotCurrentView;
 - (long long)conversationIdentifier;
 - (void)copy:(id)arg1;
-- (struct Command { struct EditorInternalCommand {} *x1; int x2; struct RefPtr<WebCore::Frame> { struct Frame {} *x_3_1_1; } x3; })coreCommandByName:(const char *)arg1;
-- (struct Command { struct EditorInternalCommand {} *x1; int x2; struct RefPtr<WebCore::Frame> { struct Frame {} *x_3_1_1; } x3; })coreCommandBySelector:(SEL)arg1;
+- (struct Command { struct EditorInternalCommand {} *x1; int x2; struct RefPtr<WebCore::Frame, WTF::DumbPtrTraits<WebCore::Frame> > { struct Frame {} *x_3_1_1; } x3; })coreCommandByName:(const char *)arg1;
+- (struct Command { struct EditorInternalCommand {} *x1; int x2; struct RefPtr<WebCore::Frame, WTF::DumbPtrTraits<WebCore::Frame> > { struct Frame {} *x_3_1_1; } x3; })coreCommandBySelector:(SEL)arg1;
 - (unsigned long long)countMatchesForText:(id)arg1 inDOMRange:(id)arg2 options:(unsigned long long)arg3 limit:(unsigned long long)arg4 markMatches:(bool)arg5;
 - (void)cut:(id)arg1;
 - (void)dataSourceUpdated:(id)arg1;
@@ -132,7 +116,6 @@
 - (void)deleteWordBackward:(id)arg1;
 - (void)deleteWordForward:(id)arg1;
 - (void)deselectAll;
-- (void)detachRootLayer;
 - (void)doCommandBySelector:(SEL)arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)drawSingleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

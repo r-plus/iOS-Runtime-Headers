@@ -68,6 +68,7 @@
     NSString * _telemetryService;
     NSURL * _telemetryURL;
     NSNumber * _timestamp;
+    NSData * _updateHash;
     NSNumber * _useGeohashFromServer;
     NSNumber * _usedEdgesGeneration;
     NSNumber * _version;
@@ -133,6 +134,7 @@
 @property (copy) NSNumber *probeTFO;
 @property (copy) NSNumber *probeTimeout;
 @property (copy) NSNumber *probeUseTFOHeuristics;
+@property bool reResolve;
 @property bool reprocessCancelled;
 @property bool reprocessPending;
 @property (readonly) NSObject<OS_dispatch_queue> *reprocessQueue;
@@ -148,6 +150,7 @@
 @property (copy) NSString *telemetryService;
 @property (copy) NSURL *telemetryURL;
 @property (copy) NSNumber *timestamp;
+@property (retain) NSData *updateHash;
 @property (copy) NSNumber *useGeohashFromServer;
 @property (copy) NSNumber *usedEdgesGeneration;
 @property (copy) NSNumber *version;
@@ -230,7 +233,8 @@
 - (id)latencyFactorB;
 - (id)latencyFactorX;
 - (void)link;
-- (void)linkLatencies;
+- (void)linkAllSignatures:(bool)arg1;
+- (void)linkLatenciesAllSignatures:(bool)arg1;
 - (void)loadObservedRTTSamples:(id)arg1;
 - (id)locationCheckInterval;
 - (id)locationCheckTimestamp;
@@ -253,6 +257,7 @@
 - (id)probeTimeout;
 - (id)probeUseTFOHeuristics;
 - (bool)pushCurrentDayPassesToKernelUpdateGeneration:(bool)arg1;
+- (bool)reResolve;
 - (void)rebuildLatencyMapAllSignatures:(bool)arg1;
 - (void)refreshDayPassesWithCompletionHandler:(id /* block */)arg1;
 - (void)removeDayPassesFromKernel;
@@ -319,6 +324,7 @@
 - (void)setProbeTFO:(id)arg1;
 - (void)setProbeTimeout:(id)arg1;
 - (void)setProbeUseTFOHeuristics:(id)arg1;
+- (void)setReResolve:(bool)arg1;
 - (void)setReprocessCancelled:(bool)arg1;
 - (void)setReprocessPending:(bool)arg1;
 - (void)setReprocessSampleSize:(id)arg1;
@@ -333,6 +339,7 @@
 - (void)setTelemetryService:(id)arg1;
 - (void)setTelemetryURL:(id)arg1;
 - (void)setTimestamp:(id)arg1;
+- (void)setUpdateHash:(id)arg1;
 - (void)setUseGeohashFromServer:(id)arg1;
 - (void)setUsedEdgesGeneration:(id)arg1;
 - (void)setVersion:(id)arg1;
@@ -349,8 +356,8 @@
 - (id)telemetryURL;
 - (id)timestamp;
 - (void)timestampNetworkSignature:(id)arg1;
-- (void)unresolve;
 - (void)updateEdgeSelection:(unsigned long long)arg1;
+- (id)updateHash;
 - (void)updateMetaDataNeedProbe:(bool)arg1 refresh:(bool)arg2 push:(bool)arg3 minRTT:(unsigned long long)arg4;
 - (bool)updateNetworkAgentWithKeybagData:(id)arg1;
 - (void)updateWithAppData:(id)arg1;

@@ -19,7 +19,7 @@
         struct TITokenID {} *__begin_; 
         struct TITokenID {} *__end_; 
         struct __compressed_pair<TITokenID *, std::__1::allocator<TITokenID> > { 
-            struct TITokenID {} *__first_; 
+            struct TITokenID {} *__value_; 
         } __end_cap_; 
     }  m_buffered_tokens;
 }

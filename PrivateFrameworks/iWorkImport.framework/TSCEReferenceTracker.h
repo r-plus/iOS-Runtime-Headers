@@ -9,7 +9,7 @@
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<TSCEFormulaID *, std::__1::allocator<TSCEFormulaID> > { 
-            struct { /* ? */ } *__first_; 
+            struct { /* ? */ } *__value_; 
         } __end_cap_; 
     }  _formulaIDsToRewrite;
     bool  _isRegisteredWithCalculationEngine;

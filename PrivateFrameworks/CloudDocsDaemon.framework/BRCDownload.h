@@ -33,6 +33,7 @@
 
 - (void).cxx_destruct;
 - (id)clientZone;
+- (void)dealloc;
 - (unsigned long long)doneSize;
 - (id)etag;
 - (id)initWithDocument:(id)arg1 stageID:(id)arg2;

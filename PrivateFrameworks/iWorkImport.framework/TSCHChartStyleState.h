@@ -20,6 +20,7 @@
 
 + (id)styleState;
 
+- (void).cxx_destruct;
 - (id)allStyles;
 - (id)applyStyleSwapTuple:(id)arg1;
 - (id)applyStyleSwapTuple:(id)arg1 ignoringBeforeValues:(bool)arg2;
@@ -27,7 +28,6 @@
 - (id)chartStyle;
 - (void)checkParagraphStyleIndicies;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)enumerateSemanticTagsAndUsagesWithPropertySetType:(long long)arg1 usingBlock:(id /* block */)arg2;
 - (id)fallbackSemanticTagForSemanticTag:(id)arg1;

@@ -8,20 +8,28 @@
     NSString * _applicationBundleVersion;
     NSData * _bluetoothAddress;
     bool  _connected;
+    int  _deviceClass;
+    unsigned int  _groupedDeviceCount;
     struct { 
         unsigned int protocolVersion : 1; 
+        unsigned int deviceClass : 1; 
+        unsigned int groupedDeviceCount : 1; 
         unsigned int lastSupportedMessageType : 1; 
         unsigned int sharedQueueVersion : 1; 
         unsigned int allowsPairing : 1; 
         unsigned int connected : 1; 
+        unsigned int isProxyGroupPlayer : 1; 
         unsigned int supportsACL : 1; 
         unsigned int supportsExtendedMotion : 1; 
         unsigned int supportsSharedQueue : 1; 
         unsigned int supportsSystemPairing : 1; 
+        unsigned int tightlySyncedGroup : 1; 
     }  _has;
+    bool  _isProxyGroupPlayer;
     unsigned int  _lastSupportedMessageType;
     NSString * _localReceiverPairingIdentity;
     NSString * _localizedModelName;
+    NSString * _managedConfigDeviceID;
     NSString * _name;
     unsigned long long  _protocolVersion;
     unsigned int  _sharedQueueVersion;
@@ -31,6 +39,7 @@
     bool  _supportsSystemPairing;
     NSString * _systemBuildVersion;
     NSString * _systemMediaApplication;
+    bool  _tightlySyncedGroup;
     NSString * _uniqueIdentifier;
 }
 
@@ -39,14 +48,20 @@
 @property (nonatomic, retain) NSString *applicationBundleVersion;
 @property (nonatomic, retain) NSData *bluetoothAddress;
 @property (nonatomic) bool connected;
+@property (nonatomic) int deviceClass;
+@property (nonatomic) unsigned int groupedDeviceCount;
 @property (nonatomic) bool hasAllowsPairing;
 @property (nonatomic, readonly) bool hasApplicationBundleIdentifier;
 @property (nonatomic, readonly) bool hasApplicationBundleVersion;
 @property (nonatomic, readonly) bool hasBluetoothAddress;
 @property (nonatomic) bool hasConnected;
+@property (nonatomic) bool hasDeviceClass;
+@property (nonatomic) bool hasGroupedDeviceCount;
+@property (nonatomic) bool hasIsProxyGroupPlayer;
 @property (nonatomic) bool hasLastSupportedMessageType;
 @property (nonatomic, readonly) bool hasLocalReceiverPairingIdentity;
 @property (nonatomic, readonly) bool hasLocalizedModelName;
+@property (nonatomic, readonly) bool hasManagedConfigDeviceID;
 @property (nonatomic, readonly) bool hasName;
 @property (nonatomic) bool hasProtocolVersion;
 @property (nonatomic) bool hasSharedQueueVersion;
@@ -56,10 +71,13 @@
 @property (nonatomic) bool hasSupportsSystemPairing;
 @property (nonatomic, readonly) bool hasSystemBuildVersion;
 @property (nonatomic, readonly) bool hasSystemMediaApplication;
+@property (nonatomic) bool hasTightlySyncedGroup;
 @property (nonatomic, readonly) bool hasUniqueIdentifier;
+@property (nonatomic) bool isProxyGroupPlayer;
 @property (nonatomic) unsigned int lastSupportedMessageType;
 @property (nonatomic, retain) NSString *localReceiverPairingIdentity;
 @property (nonatomic, retain) NSString *localizedModelName;
+@property (nonatomic, retain) NSString *managedConfigDeviceID;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic) unsigned long long protocolVersion;
 @property (nonatomic) unsigned int sharedQueueVersion;
@@ -69,8 +87,10 @@
 @property (nonatomic) bool supportsSystemPairing;
 @property (nonatomic, retain) NSString *systemBuildVersion;
 @property (nonatomic, retain) NSString *systemMediaApplication;
+@property (nonatomic) bool tightlySyncedGroup;
 @property (nonatomic, retain) NSString *uniqueIdentifier;
 
+- (void).cxx_destruct;
 - (bool)allowsPairing;
 - (id)applicationBundleIdentifier;
 - (id)applicationBundleVersion;
@@ -78,17 +98,22 @@
 - (bool)connected;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
+- (int)deviceClass;
 - (id)dictionaryRepresentation;
+- (unsigned int)groupedDeviceCount;
 - (bool)hasAllowsPairing;
 - (bool)hasApplicationBundleIdentifier;
 - (bool)hasApplicationBundleVersion;
 - (bool)hasBluetoothAddress;
 - (bool)hasConnected;
+- (bool)hasDeviceClass;
+- (bool)hasGroupedDeviceCount;
+- (bool)hasIsProxyGroupPlayer;
 - (bool)hasLastSupportedMessageType;
 - (bool)hasLocalReceiverPairingIdentity;
 - (bool)hasLocalizedModelName;
+- (bool)hasManagedConfigDeviceID;
 - (bool)hasName;
 - (bool)hasProtocolVersion;
 - (bool)hasSharedQueueVersion;
@@ -98,12 +123,15 @@
 - (bool)hasSupportsSystemPairing;
 - (bool)hasSystemBuildVersion;
 - (bool)hasSystemMediaApplication;
+- (bool)hasTightlySyncedGroup;
 - (bool)hasUniqueIdentifier;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
+- (bool)isProxyGroupPlayer;
 - (unsigned int)lastSupportedMessageType;
 - (id)localReceiverPairingIdentity;
 - (id)localizedModelName;
+- (id)managedConfigDeviceID;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
 - (unsigned long long)protocolVersion;
@@ -113,8 +141,13 @@
 - (void)setApplicationBundleVersion:(id)arg1;
 - (void)setBluetoothAddress:(id)arg1;
 - (void)setConnected:(bool)arg1;
+- (void)setDeviceClass:(int)arg1;
+- (void)setGroupedDeviceCount:(unsigned int)arg1;
 - (void)setHasAllowsPairing:(bool)arg1;
 - (void)setHasConnected:(bool)arg1;
+- (void)setHasDeviceClass:(bool)arg1;
+- (void)setHasGroupedDeviceCount:(bool)arg1;
+- (void)setHasIsProxyGroupPlayer:(bool)arg1;
 - (void)setHasLastSupportedMessageType:(bool)arg1;
 - (void)setHasProtocolVersion:(bool)arg1;
 - (void)setHasSharedQueueVersion:(bool)arg1;
@@ -122,9 +155,12 @@
 - (void)setHasSupportsExtendedMotion:(bool)arg1;
 - (void)setHasSupportsSharedQueue:(bool)arg1;
 - (void)setHasSupportsSystemPairing:(bool)arg1;
+- (void)setHasTightlySyncedGroup:(bool)arg1;
+- (void)setIsProxyGroupPlayer:(bool)arg1;
 - (void)setLastSupportedMessageType:(unsigned int)arg1;
 - (void)setLocalReceiverPairingIdentity:(id)arg1;
 - (void)setLocalizedModelName:(id)arg1;
+- (void)setManagedConfigDeviceID:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setProtocolVersion:(unsigned long long)arg1;
 - (void)setSharedQueueVersion:(unsigned int)arg1;
@@ -134,6 +170,7 @@
 - (void)setSupportsSystemPairing:(bool)arg1;
 - (void)setSystemBuildVersion:(id)arg1;
 - (void)setSystemMediaApplication:(id)arg1;
+- (void)setTightlySyncedGroup:(bool)arg1;
 - (void)setUniqueIdentifier:(id)arg1;
 - (unsigned int)sharedQueueVersion;
 - (bool)supportsACL;
@@ -142,6 +179,7 @@
 - (bool)supportsSystemPairing;
 - (id)systemBuildVersion;
 - (id)systemMediaApplication;
+- (bool)tightlySyncedGroup;
 - (id)uniqueIdentifier;
 - (void)writeTo:(id)arg1;
 

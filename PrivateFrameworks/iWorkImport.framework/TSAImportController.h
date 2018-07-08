@@ -14,7 +14,6 @@
         unsigned int isPasswordProtected : 1; 
         unsigned int isCleanedUp : 1; 
         unsigned int isImportCancelled : 1; 
-        unsigned int preserveDocumentAfterImport : 1; 
         unsigned int shouldNotifyProgress : 1; 
     }  _flags;
     NSMutableSet * _importWarnings;
@@ -27,6 +26,7 @@
     NSString * _sourcePath;
     TSUTemporaryDirectory * _temporaryDFFDirectory;
     TSUTemporaryDirectory * _temporaryDirectory;
+    NSURL * _temporaryURL;
 }
 
 @property (nonatomic, readonly) NSDictionary *additionalDocumentPropertiesForWrite;
@@ -45,8 +45,8 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool ignoreDocumentSupport;
 @property (nonatomic, readonly) <TSKImporter> *importer;
-@property (nonatomic, readonly) NSDictionary *incompatibleMediaContainersWithDataUnsupportedOnAllDevices;
-@property (nonatomic, readonly) NSDictionary *incompatibleMediaContainersWithDataUnsupportedOnThisDevice;
+@property (nonatomic, readonly) NSMapTable *incompatibleMediaContainersWithDataUnsupportedOnAllDevices;
+@property (nonatomic, readonly) NSMapTable *incompatibleMediaContainersWithDataUnsupportedOnThisDevice;
 @property (nonatomic, readonly) bool isBrowsingVersions;
 @property (nonatomic, readonly) bool isDocumentSupportTemporary;
 @property (nonatomic, readonly) bool isImportCancelled;
@@ -54,14 +54,15 @@
 @property (readonly) NSSet *observedPresentedItemUbiquityAttributes;
 @property (readonly, retain) NSOperationQueue *presentedItemOperationQueue;
 @property (readonly, copy) NSURL *presentedItemURL;
-@property (nonatomic) bool preserveDocumentAfterImport;
 @property (readonly, copy) NSURL *primaryPresentedItemURL;
 @property (nonatomic, retain) TSUProgressContext *progressContext;
 @property (nonatomic, readonly) bool shouldUpdateAdditionalResourceRequestsAfterImport;
 @property (nonatomic, readonly) NSString *sourcePath;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) TSUTemporaryDirectory *temporaryDirectory;
 @property (nonatomic, readonly) NSURL *temporaryURL;
 
+- (void).cxx_destruct;
 - (void)_beginImport;
 - (void)_continueImportWithSuccess:(bool)arg1 error:(id)arg2 completedSteps:(int)arg3;
 - (void)_performImportWithCompletedSteps:(int)arg1;
@@ -78,6 +79,7 @@
 - (bool)beginImport;
 - (void)beginImportAsync;
 - (void)cancelImport;
+- (void)checkDownloadPermissionForMissingResourceAccessTypes:(long long)arg1 estimatedMissingResourcesSize:(unsigned long long)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)dealloc;
 - (id)defaultDraftName;
 - (id)delegate;
@@ -98,17 +100,19 @@
 - (bool)isBrowsingVersions;
 - (bool)isImportCancelled;
 - (bool)isPasswordProtected;
+- (id)logContext;
 - (id)makeObjectContextWithTemplateInfo:(id)arg1 error:(id*)arg2;
 - (id)name;
 - (bool)needsFileCoordination;
 - (id)packageDataForWrite;
+- (long long)packageType;
 - (void)prepareForImportDisplayingProgress:(bool)arg1;
 - (void)presentPersistenceError:(id)arg1;
 - (void)presentedItemDidMoveToURL:(id)arg1;
 - (id)presentedItemOperationQueue;
 - (id)presentedItemURL;
-- (bool)preserveDocumentAfterImport;
 - (id)progressContext;
+- (id)progressTitleForDownloadingResourceAccessTypes:(long long)arg1;
 - (void)relinquishPresentedItemToWriter:(id /* block */)arg1;
 - (void)removeFilePresenter;
 - (void)removeWarning:(id)arg1;
@@ -117,7 +121,6 @@
 - (void)retrievePassphraseForEncryptedDocumentWithImporter:(id)arg1 completion:(id /* block */)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setFileURL:(id)arg1;
-- (void)setPreserveDocumentAfterImport:(bool)arg1;
 - (void)setProgressContext:(id)arg1;
 - (id)sharingStateForContext:(id)arg1;
 - (bool)shouldUpdateAdditionalResourceRequestsAfterImport;
@@ -127,6 +130,7 @@
 - (void)suspendSaveAndAutosaveWithReason:(id)arg1;
 - (id)templateInfoWithName:(id)arg1;
 - (id)templateInfoWithName:(id)arg1 variantIndex:(unsigned long long)arg2;
+- (id)temporaryDirectory;
 - (id)temporaryURL;
 - (id)warnings;
 - (void)willSaveImportedDocument;

@@ -4,6 +4,7 @@
 
 @interface CKUITheme : NSObject {
     long long  _HUDStyle;
+    long long  _businessStatusBarStyle;
     UIColor * _darkAppTintColor;
     UIColor * _detailsCellStaticTextColor;
     UIColor * _transcriptNavBarTextColor;
@@ -30,8 +31,6 @@
 @property (nonatomic, readonly) UIColor *browserSwitcherGutterDividerColor;
 @property (nonatomic, readonly) UIColor *businessDescriptionViewControllerBackgroundColor;
 @property (nonatomic, readonly) UIColor *businessInfoViewDescriptionTextColor;
-@property (nonatomic, readonly) UIColor *businessNavBarTintColor;
-@property (nonatomic, readonly) UIColor *businessNavTintColor;
 @property (nonatomic, readonly) long long businessStatusBarStyle;
 @property (nonatomic, readonly) UIColor *contactCellTextColor;
 @property (nonatomic, readonly) CNContactStyle *contactStyle;
@@ -159,8 +158,6 @@
 - (id)browserSwitcherGutterDividerColor;
 - (id)businessDescriptionViewControllerBackgroundColor;
 - (id)businessInfoViewDescriptionTextColor;
-- (id)businessNavBarTintColor;
-- (id)businessNavTintColor;
 - (long long)businessStatusBarStyle;
 - (id)business_balloonColors;
 - (id)business_balloonOverlayColor;
@@ -248,7 +245,9 @@
 - (id)messageAcknowledgmentWhiteColor;
 - (id)messagesControllerBackgroundColor;
 - (long long)navBarStyle;
+- (long long)navBarTextStyleForBusinessChat:(id)arg1;
 - (id)notificationSubtitleColor;
+- (id)primaryBrandColorForBusinessChat:(id)arg1;
 - (id)progressBarTrackTintColor;
 - (id)progressViewColorForColorType:(BOOL)arg1;
 - (id)recipientTextColorForColorType:(BOOL)arg1;
@@ -267,6 +266,7 @@
 - (id)searchResultsCellBackgroundColor;
 - (id)searchResultsCellSelectedColor;
 - (id)searchResultsSeperatorColor;
+- (id)secondaryBrandColorForBusinessChat:(id)arg1;
 - (id)segmentedControlSelectionTintColor;
 - (id)sendButtonColorForColorType:(BOOL)arg1;
 - (void)setHUDStyle:(long long)arg1;
@@ -282,6 +282,7 @@
 - (id)siri_unfilledBalloonColor;
 - (id)siri_waveformColor;
 - (long long)statusBarStyle;
+- (long long)statusBarStyleForBusinessChat:(id)arg1;
 - (id)stickerDetailsSubheaderTextColor;
 - (id)syncProgressLabelColor;
 - (id)syncProgressUserActionButtonTextColor;

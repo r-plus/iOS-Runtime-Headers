@@ -146,6 +146,7 @@
 - (unsigned long long)unreadCount;
 - (unsigned long long)unreadCountMatchingCriterion:(id)arg1;
 - (void)updateMessages:(id)arg1 updateNumberOfAttachments:(bool)arg2;
+- (void)updateServerUnreadCountClosingConnection:(bool)arg1;
 - (id)willSetFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (void)writeUpdatedMessageDataToDisk;
 

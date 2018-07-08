@@ -2,7 +2,9 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@interface ML3Predicate : NSObject <NSCoding, NSCopying>
+@interface ML3Predicate : NSObject <NSCopying, NSSecureCoding>
+
++ (bool)supportsSecureCoding;
 
 - (id)SQLForEntityClass:(Class)arg1;
 - (id)SQLJoinClausesForClass:(Class)arg1;

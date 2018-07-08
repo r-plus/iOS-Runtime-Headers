@@ -22,6 +22,7 @@
     NSString * _uniqueIdentifier;
 }
 
+- (id)_APSRelayTopic;
 - (const struct __CFDictionary {}**)_DuetActivityProperties;
 - (const struct __CFData {}**)_TCPConnectionMetadata;
 - (unsigned short)_TLSNegotiatedCipherSuite;

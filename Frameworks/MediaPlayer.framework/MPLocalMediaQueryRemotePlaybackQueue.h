@@ -16,6 +16,8 @@
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)description;
 - (id)firstItem;

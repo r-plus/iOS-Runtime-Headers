@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDuetContext.framework/CoreDuetContext
  */
 
-@interface _CDContextualKeyPathAndValue : NSObject {
+@interface _CDContextualKeyPathAndValue : NSObject <NSSecureCoding> {
     _CDContextualKeyPath * _keyPath;
     _CDContextValue * _value;
 }

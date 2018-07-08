@@ -25,6 +25,7 @@
 @property AVOutputContext *parentOutputContext;
 @property (readonly) bool providesControlForAllVolumeFeatures;
 @property (readonly) Class superclass;
+@property (readonly) bool supportsMultipleOutputDevices;
 @property (readonly) float volume;
 
 + (id)auxiliaryOutputContext;
@@ -74,6 +75,7 @@
 - (void)setOutputDevices:(id)arg1;
 - (void)setParentOutputContext:(id)arg1;
 - (void)setVolume:(float)arg1;
+- (bool)supportsMultipleOutputDevices;
 - (float)volume;
 
 @end

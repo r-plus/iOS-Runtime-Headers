@@ -24,7 +24,7 @@
             struct ManeuverArrowInfo {} *__begin_; 
             struct ManeuverArrowInfo {} *__end_; 
             struct __compressed_pair<md::ManeuverArrowInfo *, std::__1::allocator<md::ManeuverArrowInfo> > { 
-                struct ManeuverArrowInfo {} *__first_; 
+                struct ManeuverArrowInfo {} *__value_; 
             } __end_cap_; 
         } _maneuverArrows; 
     }  _maneuverArrowCoordinates;
@@ -38,7 +38,7 @@
         struct fast_shared_ptr<md::RouteLineSection> {} *__begin_; 
         struct fast_shared_ptr<md::RouteLineSection> {} *__end_; 
         struct __compressed_pair<geo::fast_shared_ptr<md::RouteLineSection> *, std::__1::allocator<geo::fast_shared_ptr<md::RouteLineSection> > > { 
-            struct fast_shared_ptr<md::RouteLineSection> {} *__first_; 
+            struct fast_shared_ptr<md::RouteLineSection> {} *__value_; 
         } __end_cap_; 
     }  _sections;
     double  _simplificationEpsilonPoints;

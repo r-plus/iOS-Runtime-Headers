@@ -3,6 +3,7 @@
  */
 
 @interface MFMessageComposeViewController : UINavigationController {
+    NSArray * _UTITypes;
     NSArray * _attachments;
     NSString * _body;
     unsigned long long  _currentAttachedAudioCount;
@@ -41,6 +42,7 @@
 + (double)maxTrimDurationForAudio;
 + (double)maxTrimDurationForVideo;
 
+- (id)UTITypes;
 - (id)_MIMETypeForURL:(id)arg1;
 - (id)_contentTypeForMIMEType:(id)arg1;
 - (bool)_isAudioMIMEType:(id)arg1;
@@ -76,6 +78,7 @@
 - (void)setModalPresentationStyle:(long long)arg1;
 - (void)setRecipients:(id)arg1;
 - (void)setSubject:(id)arg1;
+- (void)setUTITypes:(id)arg1;
 - (void)smsComposeControllerCancelled:(id)arg1;
 - (void)smsComposeControllerSendStarted:(id)arg1;
 - (void)smsComposeControllerShouldSendMessageWithText:(id)arg1 toRecipients:(id)arg2 completion:(id /* block */)arg3;

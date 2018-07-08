@@ -9,6 +9,7 @@
 @property (nonatomic) <CMWakeGestureDelegate> *delegate;
 
 + (bool)isWakeGestureAvailable;
++ (bool)isWakeGestureEnabledOniPad;
 + (id)sharedManager;
 
 - (id)delegate;

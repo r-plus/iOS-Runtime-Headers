@@ -18,7 +18,9 @@
 @property (nonatomic, retain) NSDictionary *stringToCommand;
 @property (nonatomic, readonly) NSNumber *testId;
 
++ (id)_stringToCommand;
 + (id)responseWithDictionary:(id)arg1;
++ (id)stringFromCommand:(long long)arg1;
 
 - (void).cxx_destruct;
 - (long long)command;

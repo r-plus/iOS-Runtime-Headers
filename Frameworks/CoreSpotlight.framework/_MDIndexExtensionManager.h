@@ -40,6 +40,7 @@
 - (id)extensionLoader;
 - (id)extensions;
 - (id)extensionsCondition;
+- (id)fetchFileProviderBundleMap;
 - (void)findExtensionsWithCompletionBlock:(id /* block */)arg1;
 - (id)indexExtensionsByBundleID;
 - (void)indexRequestsPerformDataJob:(id)arg1 forBundle:(id)arg2 completionHandler:(id /* block */)arg3;

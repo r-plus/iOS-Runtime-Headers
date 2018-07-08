@@ -3,13 +3,14 @@
  */
 
 @interface TSDDrawableComment : TSKSosBase <TSDComment> {
+    NSString * _annotationUUID;
     TSDDrawableInfo * _parent;
     TSDCommentStorage * mStorage;
 }
 
 @property (nonatomic, readonly) int annotationDisplayStringType;
 @property (nonatomic, readonly) int annotationType;
-@property (nonatomic, readonly) NSString *annotationUUID;
+@property (nonatomic, retain) NSString *annotationUUID;
 @property (nonatomic, retain) TSKAnnotationAuthor *author;
 @property (nonatomic, readonly) NSDate *date;
 @property (readonly, copy) NSString *debugDescription;
@@ -33,7 +34,9 @@
 - (bool)isFloatingComment;
 - (bool)isHighlight;
 - (bool)isInDocument;
+- (void)p_updateAnnotationUUID;
 - (id)parent;
+- (void)setAnnotationUUID:(id)arg1;
 - (void)setAuthor:(id)arg1;
 - (void)setParent:(id)arg1;
 - (void)setStorage:(id)arg1;

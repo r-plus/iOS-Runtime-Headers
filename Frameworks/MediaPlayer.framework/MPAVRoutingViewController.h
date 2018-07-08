@@ -22,6 +22,7 @@
     bool  _needsDisplayedRoutesUpdate;
     bool  _onScreen;
     MPAVRoutingViewControllerUpdate * _pendingUpdate;
+    <MPAVOutputDevicePlaybackDataSource> * _playbackDataSource;
     long long  _routeDiscoveryMode;
     MPAVRoutingController * _routingController;
     bool  _shouldAutomaticallyUpdateRoutesList;
@@ -56,6 +57,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned long long iconStyle;
 @property (nonatomic) unsigned long long mirroringStyle;
+@property (nonatomic) <MPAVOutputDevicePlaybackDataSource> *playbackDataSource;
 @property (nonatomic, readonly) unsigned long long style;
 @property (readonly) Class superclass;
 @property (nonatomic) <MPAVRoutingViewControllerThemeDelegate> *themeDelegate;
@@ -66,6 +68,7 @@
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_applyUpdate:(id)arg1;
 - (void)_beginRouteDiscovery;
+- (void)_configureCell:(id)arg1 forIndexPath:(id)arg2;
 - (id)_crashLogDateFormatter;
 - (id)_displayAsPickedRoutesInRoutes:(id)arg1;
 - (id)_displayableRoutesInRoutes:(id)arg1;
@@ -76,6 +79,7 @@
 - (void)_initWithStyle:(unsigned long long)arg1 routingController:(id)arg2;
 - (double)_normalCellHeight;
 - (bool)_pickOrGroupRoute:(id)arg1 completion:(id /* block */)arg2;
+- (void)_promptForHijackIfNeeded:(id)arg1 handler:(id /* block */)arg2;
 - (void)_registerNotifications;
 - (void)_reloadEmptyStateVisibility;
 - (id)_routingController;
@@ -113,6 +117,7 @@
 - (id)initWithStyle:(unsigned long long)arg1 routingController:(id)arg2;
 - (unsigned long long)mirroringStyle;
 - (long long)numberOfSectionsInTableView:(id)arg1;
+- (id)playbackDataSource;
 - (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)routingCell:(id)arg1 mirroringSwitchValueDidChange:(bool)arg2;
 - (void)routingController:(id)arg1 didFailToPickRouteWithError:(id)arg2;
@@ -125,6 +130,7 @@
 - (void)setEndpointRoute:(id)arg1;
 - (void)setIconStyle:(unsigned long long)arg1;
 - (void)setMirroringStyle:(unsigned long long)arg1;
+- (void)setPlaybackDataSource:(id)arg1;
 - (void)setThemeDelegate:(id)arg1;
 - (unsigned long long)style;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
@@ -136,6 +142,7 @@
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
+- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(bool)arg2;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
 

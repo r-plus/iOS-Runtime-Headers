@@ -15,9 +15,6 @@
     struct RetainPtr<NSArray<UITextSuggestion *> > { 
         void *m_ptr; 
     }  _suggestions;
-    struct RetainPtr<NSObject<NSSecureCoding> > { 
-        void *m_ptr; 
-    }  _userObject;
 }
 
 @property (nonatomic, copy) NSString *accessoryViewCustomButtonTitle;
@@ -40,7 +37,7 @@
 - (id)customInputView;
 - (id)focusedElementInfo;
 - (bool)forceSecureTextEntry;
-- (id)initWithContentView:(id)arg1 focusedElementInfo:(id)arg2 userObject:(id)arg3;
+- (id)initWithContentView:(id)arg1 focusedElementInfo:(id)arg2;
 - (void)invalidate;
 - (bool)isValid;
 - (void)setAccessoryViewCustomButtonTitle:(id)arg1;

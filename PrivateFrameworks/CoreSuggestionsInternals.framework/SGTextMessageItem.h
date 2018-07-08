@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@interface SGTextMessageItem : NSObject {
+@interface SGTextMessageItem : NSObject <NSSecureCoding> {
     NSString * _content;
     NSArray * _features;
     NSString * _language;
@@ -13,6 +13,8 @@
 @property (retain) NSArray *features;
 @property (readonly) NSString *language;
 @property (readonly) SGTextMessage *message;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)content;

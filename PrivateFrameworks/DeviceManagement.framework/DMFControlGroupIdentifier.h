@@ -34,6 +34,7 @@
 // Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
 
 + (id)crk_adHocXPCGroupIdentifier;
++ (id)crk_asmXPCGroupIdentifier;
 + (id)crk_managedXPCGroupIdentifier;
 
 @end

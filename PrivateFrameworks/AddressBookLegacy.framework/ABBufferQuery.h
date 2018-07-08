@@ -5,6 +5,7 @@
 @interface ABBufferQuery : NSObject {
     void * _addressBook;
     bool  _fetchLinkedContacts;
+    CNManagedConfiguration * _managedConfiguration;
     bool  _needsMultivalueEntryTable;
     bool  _needsMultivalueTable;
     bool  _needsPersonLinkTable;
@@ -17,12 +18,14 @@
     bool  _requestedImageThumbnail;
     NSIndexSet * _requestedMultivalueIdentifiers;
     NSIndexSet * _requestedPropertyIdentifiers;
+    NSIndexSet * _scopedStoreIdentifiers;
     unsigned int  _sortOrder;
     struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; double x3; bool x4; } * _statement;
 }
 
 @property (nonatomic) void*addressBook;
 @property (nonatomic, readonly) bool fetchLinkedContacts;
+@property (nonatomic, readonly) CNManagedConfiguration *managedConfiguration;
 @property (nonatomic, readonly) bool needsMultivalueEntryTable;
 @property (nonatomic, readonly) bool needsMultivalueTable;
 @property (nonatomic, readonly) bool needsPersonLinkTable;
@@ -35,6 +38,7 @@
 @property (nonatomic, readonly) bool requestedImageThumbnail;
 @property (nonatomic, readonly) NSIndexSet *requestedMultivalueIdentifiers;
 @property (nonatomic, readonly) NSIndexSet *requestedPropertyIdentifiers;
+@property (nonatomic, readonly) NSIndexSet *scopedStoreIdentifiers;
 @property (nonatomic, readonly) unsigned int sortOrder;
 @property (nonatomic) struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; double x3; bool x4; }*statement;
 
@@ -44,9 +48,13 @@
 - (void)appendCustomPropertySelectsToQueryString:(id)arg1;
 - (void)appendFromClauseToQueryString:(id)arg1;
 - (void)appendOrderByClauseToQueryString:(id)arg1;
+- (void)appendWhereClauseToQueryString:(id)arg1;
+- (void)bindWhereClause:(id)arg1;
+- (void)bindWithClause:(id)arg1;
 - (void)dealloc;
 - (bool)fetchLinkedContacts;
-- (id)initWithAddressBook:(void*)arg1 whereClause:(id)arg2 whereClauseBindBlock:(id /* block */)arg3 requestedProperties:(struct __CFSet { }*)arg4 includeLinkedContacts:(bool)arg5 sortOrder:(unsigned int)arg6;
+- (id)initWithAddressBook:(void*)arg1 whereClause:(id)arg2 whereClauseBindBlock:(id /* block */)arg3 requestedProperties:(struct __CFSet { }*)arg4 includeLinkedContacts:(bool)arg5 sortOrder:(unsigned int)arg6 managedConfiguration:(id)arg7;
+- (id)managedConfiguration;
 - (bool)needsMultivalueEntryTable;
 - (bool)needsMultivalueTable;
 - (bool)needsPersonLinkTable;
@@ -60,6 +68,8 @@
 - (bool)requestedImageThumbnail;
 - (id)requestedMultivalueIdentifiers;
 - (id)requestedPropertyIdentifiers;
+- (id)scopedStoreIdentifiers;
+- (id)scopedStoresForManagedConfiguration:(id)arg1;
 - (void)setAddressBook:(void*)arg1;
 - (void)setPropertyIndices:(struct __CFDictionary { }*)arg1;
 - (void)setStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; double x3; bool x4; }*)arg1;

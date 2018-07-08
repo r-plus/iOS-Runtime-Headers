@@ -13,6 +13,7 @@
 @property (nonatomic, retain) GKPlayerInternal *player;
 
 + (id)secureCodedPropertyKeys;
++ (bool)supportsSecureCoding;
 
 - (unsigned int)concernID;
 - (void)dealloc;

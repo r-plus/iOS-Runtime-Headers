@@ -23,7 +23,7 @@
 
 - (void).cxx_destruct;
 - (void)_contentSizeDidChange;
-- (void)attributionCellButton:(id)arg1 isHighighted:(bool)arg2;
+- (void)attributionCellButton:(id)arg1 isHighighted:(bool)arg2 executeAction:(bool)arg3;
 - (void)attributionClicked;
 - (id)cellDelegate;
 - (void)createConstraints;

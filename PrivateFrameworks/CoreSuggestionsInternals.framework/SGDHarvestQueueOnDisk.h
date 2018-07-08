@@ -10,13 +10,16 @@
     NSString * _dirPath;
     long long  _idCounter;
     id  _lockStateChangeToken;
+    unsigned long long  _maxPendingWrites;
     unsigned long long  _maxQueueItems;
+    unsigned long long  _pendingWrites;
     NSObject<OS_dispatch_queue> * _queue;
     SGDHarvestQueueFileReader * _reader;
     SGDHarvestQueueFileWriter * _writerHighPriority;
     SGDHarvestQueueFileWriter * _writerLowPriority;
 }
 
+@property (nonatomic) unsigned long long maxPendingWrites;
 @property (nonatomic) unsigned long long maxQueueItems;
 
 - (void).cxx_destruct;
@@ -38,11 +41,13 @@
 - (void)deleteWithItemId:(long long)arg1 fileId:(int)arg2;
 - (id)initWithDirectory:(id)arg1;
 - (void)markAsFailedWithId:(long long)arg1;
+- (unsigned long long)maxPendingWrites;
 - (unsigned long long)maxQueueItems;
 - (void)pop:(id /* block */)arg1;
 - (void)popByItemId:(long long)arg1 callback:(id /* block */)arg2;
 - (void)popBySourceKey:(id)arg1 messageId:(id)arg2 callback:(id /* block */)arg3;
 - (void)popHighPriority:(id /* block */)arg1;
+- (void)setMaxPendingWrites:(unsigned long long)arg1;
 - (void)setMaxQueueItems:(unsigned long long)arg1;
 - (void)writePermafail:(id)arg1;
 

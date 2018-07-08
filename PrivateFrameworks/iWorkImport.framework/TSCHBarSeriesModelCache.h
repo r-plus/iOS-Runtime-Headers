@@ -36,6 +36,7 @@
 @property (readonly) TSCHChartValueAxis *valueAxis;
 @property (readonly) bool valueLabelsOn;
 
+- (void).cxx_destruct;
 - (double)barGapRatio;
 - (double)barGroupGapRatio;
 - (double)barWidthRatio;

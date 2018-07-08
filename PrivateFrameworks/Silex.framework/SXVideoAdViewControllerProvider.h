@@ -2,20 +2,14 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXVideoAdViewControllerProvider : NSObject <SXVideoAdViewControllerProviding> {
-    UIViewController * _viewController;
-}
+@interface SXVideoAdViewControllerProvider : NSObject <SXVideoAdViewControllerProviding>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) UIViewController *viewController;
 @property (nonatomic, readonly) UIViewController *viewControllerForModalPresentation;
 
-- (void).cxx_destruct;
-- (id)initWithViewController:(id)arg1;
-- (id)viewController;
 - (id)viewControllerForModalPresentation;
 
 @end

@@ -29,18 +29,18 @@
 - (void)_handleVolumeWarningDidChange:(id)arg1;
 - (void)_sendMessage:(id)arg1 type:(long long)arg2 timeout:(double)arg3 queueOne:(id)arg4 priority:(long long)arg5;
 - (void)beginObservingAudioRoutesForCategory:(id)arg1;
-- (void)beginObservingVolume;
+- (void)beginObservingVolumeForTarget:(id)arg1;
 - (id)delegate;
 - (void)endObservingAudioRoutesForCategory:(id)arg1;
-- (void)endObservingVolume;
+- (void)endObservingVolumeForTarget:(id)arg1;
 - (id)init;
 - (void)pickAudioRouteWithIdentifier:(id)arg1 category:(id)arg2;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(bool)arg4 error:(id)arg5;
 - (void)setDelegate:(id)arg1;
 - (void)setHapticIntensity:(float)arg1;
-- (void)setMuted:(bool)arg1 category:(id)arg2;
+- (void)setMuted:(bool)arg1 target:(id)arg2;
 - (void)setProminentHapticEnabled:(bool)arg1;
 - (void)setSystemMuted:(bool)arg1;
-- (void)setVolumeValue:(float)arg1 category:(id)arg2;
+- (void)setVolumeValue:(float)arg1 target:(id)arg2;
 
 @end

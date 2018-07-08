@@ -255,6 +255,7 @@
 - (int)state;
 - (void)stopDictation;
 - (void)stopDictation:(bool)arg1;
+- (void)stopDictationByTimer;
 - (void)stopDictationIgnoreFinalizePhrases;
 - (void)stopHelpMessageDisplay;
 - (id)streamingOperations;

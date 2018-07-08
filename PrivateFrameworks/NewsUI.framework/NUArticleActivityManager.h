@@ -4,6 +4,7 @@
 
 @interface NUArticleActivityManager : NSObject <NUActivityProvider> {
     <NUURLHandling> * _URLHandler;
+    <NUURLModifying> * _URLModifier;
     <FCHeadlineProviding> * _headline;
     FCReadingHistory * _readingHistory;
     FCReadingList * _readingList;
@@ -12,6 +13,7 @@
 }
 
 @property (nonatomic, readonly) <NUURLHandling> *URLHandler;
+@property (nonatomic, readonly) <NUURLModifying> *URLModifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -24,6 +26,7 @@
 
 - (void).cxx_destruct;
 - (id)URLHandler;
+- (id)URLModifier;
 - (id)activities;
 - (id)activityImageForHeadline:(id)arg1 withType:(unsigned long long)arg2;
 - (id)activityItemSources;
@@ -34,7 +37,7 @@
 - (bool)articleSavedForHeadline:(id)arg1;
 - (bool)channelMutedForHeadline:(id)arg1;
 - (id)headline;
-- (id)initWithHeadline:(id)arg1 readingHistory:(id)arg2 readingList:(id)arg3 subscriptionList:(id)arg4 URLHandler:(id)arg5 reportConcernViewPresenter:(id)arg6;
+- (id)initWithHeadline:(id)arg1 readingHistory:(id)arg2 readingList:(id)arg3 subscriptionList:(id)arg4 URLHandler:(id)arg5 reportConcernViewPresenter:(id)arg6 URLModifier:(id)arg7;
 - (id /* block */)performBlockForHeadline:(id)arg1 withType:(unsigned long long)arg2;
 - (id)readingHistory;
 - (id)readingList;

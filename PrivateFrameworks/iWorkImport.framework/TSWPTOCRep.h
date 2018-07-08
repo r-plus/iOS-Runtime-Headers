@@ -8,7 +8,6 @@
 
 - (bool)canMakePathEditable;
 - (unsigned long long)charIndexAtPoint:(struct CGPoint { double x1; double x2; })arg1;
-- (id)hitRep:(struct CGPoint { double x1; double x2; })arg1;
 - (id)hyperlinkRegions;
 - (unsigned long long)i_indexOfHitTOCEntryAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)i_paragraphStyleAtPoint:(struct CGPoint { double x1; double x2; })arg1;

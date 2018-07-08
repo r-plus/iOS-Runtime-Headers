@@ -20,6 +20,7 @@
 + (bool)imageLayerDebug;
 + (bool)imageRenderJobUseSurfaceRenderer;
 + (bool)imageRenderJobUseTextureRenderer;
++ (bool)imageSourceDisableCacheImmediately;
 + (bool)imageSourceDisableRAW;
 + (long long)imageTileSize;
 + (bool)isViewDebugEnabled;
@@ -42,6 +43,7 @@
 + (void)setImageLayerDebug:(bool)arg1;
 + (void)setImageRenderJobUseSurfaceRenderer:(bool)arg1;
 + (void)setImageRenderJobUseTextureRenderer:(bool)arg1;
++ (void)setImageSourceDisableCacheImmediately:(bool)arg1;
 + (void)setImageSourceDisableRAW:(bool)arg1;
 + (void)setImageTileSize:(long long)arg1;
 + (void)setPlatformHasWideColor:(bool)arg1;

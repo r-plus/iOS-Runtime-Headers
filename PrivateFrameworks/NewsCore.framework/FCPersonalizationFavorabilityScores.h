@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCPersonalizationFavorabilityScores : NSObject {
+@interface FCPersonalizationFavorabilityScores : NSObject <NSSecureCoding> {
     NTPBPublisherFavorabilityScores * _pbFavorabilityScores;
     NSDictionary * _tagIDToScores;
 }

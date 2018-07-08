@@ -3,7 +3,7 @@
  */
 
 @interface WBSHistoryURLCompletionMatchData : NSObject <WBSURLCompletionMatchData> {
-    struct RefPtr<SafariShared::HistoryURLCompletionItem> { 
+    struct RefPtr<SafariShared::HistoryURLCompletionItem, WTF::DumbPtrTraits<SafariShared::HistoryURLCompletionItem> > { 
         struct HistoryURLCompletionItem {} *m_ptr; 
     }  _item;
 }
@@ -24,7 +24,7 @@
 - (void)enumeratePageTitlesUsingBlock:(id /* block */)arg1;
 - (void)enumerateUserVisibleURLsUsingBlock:(id /* block */)arg1;
 - (id)init;
-- (id)initWithCompletionItem:(struct HistoryURLCompletionItem { struct atomic<unsigned int> { unsigned int x_1_1_1; } x1; long long x2; long long x3; long long x4; struct vector<WTF::RefPtr<SafariShared::HistoryURLCompletionItem>, std::__1::allocator<WTF::RefPtr<SafariShared::HistoryURLCompletionItem> > > { struct RefPtr<SafariShared::HistoryURLCompletionItem> {} *x_5_1_1; struct RefPtr<SafariShared::HistoryURLCompletionItem> {} *x_5_1_2; struct __compressed_pair<WTF::RefPtr<SafariShared::HistoryURLCompletionItem> *, std::__1::allocator<WTF::RefPtr<SafariShared::HistoryURLCompletionItem> > > { struct RefPtr<SafariShared::HistoryURLCompletionItem> {} *x_3_2_1; } x_5_1_3; } x5; struct HistoryURLCompletionItem {} *x6; id x7; double x8; int x9; struct vector<int, std::__1::allocator<int> > { int *x_10_1_1; int *x_10_1_2; struct __compressed_pair<int *, std::__1::allocator<int> > { int *x_3_2_1; } x_10_1_3; } x10; struct vector<int, std::__1::allocator<int> > { int *x_11_1_1; int *x_11_1_2; struct __compressed_pair<int *, std::__1::allocator<int> > { int *x_3_2_1; } x_11_1_3; } x11; }*)arg1;
+- (id)initWithCompletionItem:(struct HistoryURLCompletionItem { struct atomic<unsigned int> { unsigned int x_1_1_1; } x1; long long x2; long long x3; long long x4; struct vector<WTF::RefPtr<SafariShared::HistoryURLCompletionItem, WTF::DumbPtrTraits<SafariShared::HistoryURLCompletionItem> >, std::__1::allocator<WTF::RefPtr<SafariShared::HistoryURLCompletionItem, WTF::DumbPtrTraits<SafariShared::HistoryURLCompletionItem> > > > { struct RefPtr<SafariShared::HistoryURLCompletionItem, WTF::DumbPtrTraits<SafariShared::HistoryURLCompletionItem> > {} *x_5_1_1; struct RefPtr<SafariShared::HistoryURLCompletionItem, WTF::DumbPtrTraits<SafariShared::HistoryURLCompletionItem> > {} *x_5_1_2; struct __compressed_pair<WTF::RefPtr<SafariShared::HistoryURLCompletionItem, WTF::DumbPtrTraits<SafariShared::HistoryURLCompletionItem> > *, std::__1::allocator<WTF::RefPtr<SafariShared::HistoryURLCompletionItem, WTF::DumbPtrTraits<SafariShared::HistoryURLCompletionItem> > > > { struct RefPtr<SafariShared::HistoryURLCompletionItem, WTF::DumbPtrTraits<SafariShared::HistoryURLCompletionItem> > {} *x_3_2_1; } x_5_1_3; } x5; }*)arg1;
 - (bool)lastVisitWasFailure;
 - (double)lastVisitedTimeInterval;
 - (id)matchDataByMergingWithMatchData:(id)arg1;

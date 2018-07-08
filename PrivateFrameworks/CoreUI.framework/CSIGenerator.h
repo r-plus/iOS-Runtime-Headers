@@ -23,9 +23,9 @@
     short  _colorSpaceID;
     double  _compressionQuality;
     long long  _compressionType;
+    NSArray * _containedNamedElements;
     CUIShapeEffectPreset * _effectPreset;
     int  _exifOrientation;
-    NSArray * _explicitlyPackedContents;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -57,6 +57,10 @@
         double width; 
         double height; 
     }  _originalUncroppedSize;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _physicalSizeInMeters;
     unsigned int  _pixelFormat;
     bool  _preservedVectorRepresentation;
     NSData * _rawData;
@@ -100,6 +104,7 @@
 @property (nonatomic) double opacity;
 @property (nonatomic) bool optOutOfThinning;
 @property (nonatomic) struct CGSize { double x1; double x2; } originalUncroppedSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } physicalSizeInMeters;
 @property (nonatomic) unsigned int pixelFormat;
 @property (nonatomic) bool preservedVectorRepresentation;
 @property (nonatomic) unsigned int scaleFactor;
@@ -141,11 +146,11 @@
 - (id)gradient;
 - (id)initWithCanvasSize:(struct CGSize { double x1; double x2; })arg1 sliceCount:(unsigned int)arg2 layout:(short)arg3;
 - (id)initWithColorNamed:(id)arg1 colorSpaceID:(unsigned long long)arg2 components:(id)arg3;
-- (id)initWithExplicitlyPackedList:(id)arg1;
 - (id)initWithExternalReference:(id)arg1 tags:(id)arg2;
 - (id)initWithInternalReferenceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 layout:(short)arg2;
 - (id)initWithLayerStackData:(id)arg1 withCanvasSize:(struct CGSize { double x1; double x2; })arg2;
 - (id)initWithMultisizeImageSetNamed:(id)arg1 sizesByIndex:(id)arg2;
+- (id)initWithNameList:(id)arg1;
 - (id)initWithRawData:(id)arg1 pixelFormat:(unsigned int)arg2 layout:(short)arg3;
 - (id)initWithShapeEffectPreset:(id)arg1 forScaleFactor:(unsigned int)arg2;
 - (id)initWithTextureForPixelFormat:(long long)arg1;
@@ -162,6 +167,7 @@
 - (double)opacity;
 - (bool)optOutOfThinning;
 - (struct CGSize { double x1; double x2; })originalUncroppedSize;
+- (struct CGSize { double x1; double x2; })physicalSizeInMeters;
 - (unsigned int)pixelFormat;
 - (bool)preservedVectorRepresentation;
 - (id)rawData;
@@ -189,6 +195,7 @@
 - (void)setOpacity:(double)arg1;
 - (void)setOptOutOfThinning:(bool)arg1;
 - (void)setOriginalUncroppedSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPhysicalSizeInMeters:(struct CGSize { double x1; double x2; })arg1;
 - (void)setPixelFormat:(unsigned int)arg1;
 - (void)setPreservedVectorRepresentation:(bool)arg1;
 - (void)setScaleFactor:(unsigned int)arg1;

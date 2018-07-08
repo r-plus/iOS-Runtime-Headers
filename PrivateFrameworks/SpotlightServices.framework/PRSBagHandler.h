@@ -57,7 +57,7 @@
 @property (nonatomic, retain) NSMutableDictionary *resourceMetadata;
 @property (nonatomic) bool resourceMetadataNeedsWrite;
 @property (nonatomic, retain) NSString *resourceMetadataPath;
-@property (readonly) double searchRenderTimeout;
+@property (nonatomic) double searchRenderTimeout;
 @property (nonatomic) long long status;
 @property (nonatomic, retain) NSArray *suggestionRankerModelParams;
 @property (nonatomic) bool use2LayerRanking;
@@ -121,6 +121,7 @@
 - (void)setResourceMetadata:(id)arg1;
 - (void)setResourceMetadataNeedsWrite:(bool)arg1;
 - (void)setResourceMetadataPath:(id)arg1;
+- (void)setSearchRenderTimeout:(double)arg1;
 - (void)setStatus:(long long)arg1;
 - (void)setSuggestionRankerModelParams:(id)arg1;
 - (void)setUse2LayerRanking:(bool)arg1;

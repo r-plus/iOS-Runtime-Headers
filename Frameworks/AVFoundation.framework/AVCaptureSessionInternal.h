@@ -14,6 +14,7 @@
     struct OpaqueFigCaptureSession { } * figCaptureSession;
     bool  figCaptureSessionRunning;
     bool  figCaptureSessionStarted;
+    struct ct_green_tea_logger_s { } * greenTeaLogger;
     NSMutableArray * inputs;
     bool  interrupted;
     AVCaptureSessionConfiguration * liveAVCaptureSessionConfiguration;
@@ -29,6 +30,7 @@
     NSString * sessionPreset;
     NSError * stopError;
     bool  usesApplicationAudioSession;
+    bool  videoInputDeviceUsed;
     NSHashTable * videoPreviewLayers;
     bool  waitingForFigCaptureSessionConfigurationToBecomeLive;
     bool  waitingForFigCaptureSessionToStart;

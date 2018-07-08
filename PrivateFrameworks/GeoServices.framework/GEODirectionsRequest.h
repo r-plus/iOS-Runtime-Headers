@@ -140,7 +140,9 @@
 - (void)addWaypointTyped:(id)arg1;
 - (id)additionalEnabledMarkets;
 - (void)clearDeviceHistoricalLocations;
+- (void)clearLocations;
 - (void)clearServiceTags;
+- (void)clearSessionId;
 - (void)clearWaypointTypeds;
 - (id)clientCapabilities;
 - (id)commonOptions;

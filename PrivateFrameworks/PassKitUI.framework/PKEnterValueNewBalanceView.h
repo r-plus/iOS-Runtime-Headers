@@ -7,13 +7,12 @@
     NSDecimalNumber * _cardBalance;
     NSString * _currencyCode;
     NSNumberFormatter * _currentAmountFormatter;
+    UILabel * _label;
     NSDecimalNumber * _maxBalance;
     NSDecimalNumber * _maxLoadAmount;
     NSString * _maxLoadAmountText;
     NSDecimalNumber * _minBalance;
     NSDecimalNumber * _minLoadAmount;
-    UILabel * _newBalanceAmount;
-    UILabel * _newBalancePrompt;
     NSString * _promptText;
     bool  _showSpinner;
     UIActivityIndicatorView * _spinner;
@@ -35,6 +34,7 @@
 - (void)_addSubviews;
 - (void)_createAmountFormatter;
 - (id)_minimalFormattedStringForAmount:(id)arg1;
+- (id)_textForPrompt:(id)arg1 amount:(id)arg2;
 - (void)_updateAdditionalAmount:(id)arg1 subtractAdditionalAmountFromCurrentAmount:(bool)arg2;
 - (void)_updateBalanceText;
 - (void)addAmountToBalance:(id)arg1;

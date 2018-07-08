@@ -53,6 +53,7 @@
 - (id)_tintColor;
 - (void)_updateCornerRadius;
 - (void)_updateImageView;
+- (id)backgroundColor;
 - (id /* block */)completion;
 - (long long)contentMode;
 - (double)cornerRadius;
@@ -65,6 +66,7 @@
 - (bool)isImageLoaded;
 - (void)layoutSubviews;
 - (id)placeholderImage;
+- (void)setBackgroundColor:(id)arg1;
 - (void)setCompletion:(id /* block */)arg1;
 - (void)setContentMode:(long long)arg1;
 - (void)setCornerRadius:(double)arg1;

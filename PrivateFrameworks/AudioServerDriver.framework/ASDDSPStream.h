@@ -5,7 +5,7 @@
 @interface ASDDSPStream : ASDStream {
     struct unique_ptr<applesauce::experimental::sync::LockFreeHashTable<unsigned long long, ASDDSPGraphHelper *, 3>, std::__1::default_delete<applesauce::experimental::sync::LockFreeHashTable<unsigned long long, ASDDSPGraphHelper *, 3> > > { 
         struct __compressed_pair<applesauce::experimental::sync::LockFreeHashTable<unsigned long long, ASDDSPGraphHelper *, 3> *, std::__1::default_delete<applesauce::experimental::sync::LockFreeHashTable<unsigned long long, ASDDSPGraphHelper *, 3> > > { 
-            struct LockFreeHashTable<unsigned long long, ASDDSPGraphHelper *, 3> {} *__first_; 
+            struct LockFreeHashTable<unsigned long long, ASDDSPGraphHelper *, 3> {} *__value_; 
         } __ptr_; 
     }  _clientToGraphMap;
     ASDStreamDSPConfiguration * _currentDSPConfiguration;
@@ -18,7 +18,7 @@
             struct __list_node_base<ASDDSPGraphHelper, void *> {} *__next_; 
         } __end_; 
         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<ASDDSPGraphHelper, void *> > > { 
-            unsigned long long __first_; 
+            unsigned long long __value_; 
         } __size_alloc_; 
     }  _graphHelpers;
     long long  _ioReferenceCount;
@@ -29,7 +29,7 @@
     NSObject<OS_dispatch_queue> * _propertyQueue;
     struct unique_ptr<ASDDSPStreamHelper, std::__1::default_delete<ASDDSPStreamHelper> > { 
         struct __compressed_pair<ASDDSPStreamHelper *, std::__1::default_delete<ASDDSPStreamHelper> > { 
-            struct ASDDSPStreamHelper {} *__first_; 
+            struct ASDDSPStreamHelper {} *__value_; 
         } __ptr_; 
     }  _streamHelper;
     NSArray * _underlyingStreams;

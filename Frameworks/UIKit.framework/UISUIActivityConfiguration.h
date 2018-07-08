@@ -10,6 +10,7 @@
     bool  _activitySupportsPromiseURLs;
     NSString * _activityType;
     NSUUID * _activityUUID;
+    bool  _appIsDocumentTypeOwner;
     NSString * _defaultActivityTitle;
     long long  _defaultSortGroup;
     long long  _encodingType;
@@ -32,6 +33,7 @@
 @property (nonatomic, readonly) NSString *activityTitle;
 @property (nonatomic, readonly) NSString *activityType;
 @property (nonatomic, readonly) NSUUID *activityUUID;
+@property (nonatomic, readonly) bool appIsDocumentTypeOwner;
 @property (nonatomic, readonly) NSString *defaultActivityTitle;
 @property (nonatomic, readonly) long long defaultSortGroup;
 @property (nonatomic) long long encodingType;
@@ -47,13 +49,13 @@
 
 - (void).cxx_destruct;
 - (void)_collectPropertiesFromAttributesOfUnderlyingActivity:(id)arg1;
+- (void)_decodeBasicPropertiesWithCoder:(id)arg1;
+- (void)_decodeForEncodingByClassNameWithCoder:(id)arg1;
+- (void)_decodeForEncodingByPropertiesWithCoder:(id)arg1;
+- (void)_encodeBasicPropertiesWithCoder:(id)arg1;
 - (void)_encodeByClassNameWithCoder:(id)arg1;
 - (void)_encodeByPropertiesWithCoder:(id)arg1;
-- (void)_encodeOverridePropertiesWithCoder:(id)arg1;
 - (id)_init;
-- (void)_initByLoadingClassNameWithCoder:(id)arg1;
-- (void)_initByLoadingOverridePropertiesWithCoder:(id)arg1;
-- (void)_initByLoadingPropertiesWithCoder:(id)arg1;
 - (void)_validateProperties;
 - (long long)activityCategory;
 - (id)activityClassName;
@@ -64,6 +66,7 @@
 - (id)activityTitle;
 - (id)activityType;
 - (id)activityUUID;
+- (bool)appIsDocumentTypeOwner;
 - (id)defaultActivityTitle;
 - (long long)defaultSortGroup;
 - (void)encodeWithCoder:(id)arg1;

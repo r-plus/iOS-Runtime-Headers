@@ -59,6 +59,7 @@
 @property (nonatomic, retain) UIView *imageDropSnapshot;
 @property (nonatomic, copy) NSString *localDragSessionID;
 @property (nonatomic) <MFMailComposeViewDelegate> *mailComposeViewDelegate;
+@property (nonatomic, readonly) bool shouldShowInsertPhotosButton;
 @property (nonatomic, readonly) bool shouldShowMarkupButton;
 @property bool shouldShowStandardButtons;
 @property (readonly) Class superclass;
@@ -204,6 +205,7 @@
 - (void)setSelectedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setSelectionStart:(id)arg1 offset:(int)arg2 end:(id)arg3 offset:(int)arg4 affinity:(int)arg5;
 - (void)setShouldShowStandardButtons:(bool)arg1;
+- (bool)shouldShowInsertPhotosButton;
 - (bool)shouldShowMarkupButton;
 - (bool)shouldShowStandardButtons;
 - (void)splitUpBlockQuotesOverlappingEndOfRange:(id)arg1;

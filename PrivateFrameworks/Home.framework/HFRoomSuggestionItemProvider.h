@@ -19,6 +19,7 @@
 - (id)home;
 - (id)init;
 - (id)initWithHome:(id)arg1;
+- (id)initWithHome:(id)arg1 suggestionVendor:(id)arg2;
 - (id)invalidationReasons;
 - (id)items;
 - (id)reloadItems;

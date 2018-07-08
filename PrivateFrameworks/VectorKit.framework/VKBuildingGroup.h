@@ -7,31 +7,31 @@
         struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__begin_; 
         struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__end_; 
         struct __compressed_pair<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > *, std::__1::allocator<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > > > { 
-            struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__first_; 
+            struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__value_; 
         } __end_cap_; 
     }  _extrusionFillCullingGroups;
     struct unique_ptr<ggl::MeshVendor<ggl::BuildingFacade::BuildingMesh>, std::__1::default_delete<ggl::MeshVendor<ggl::BuildingFacade::BuildingMesh> > > { 
         struct __compressed_pair<ggl::MeshVendor<ggl::BuildingFacade::BuildingMesh> *, std::__1::default_delete<ggl::MeshVendor<ggl::BuildingFacade::BuildingMesh> > > { 
-            struct MeshVendor<ggl::BuildingFacade::BuildingMesh> {} *__first_; 
+            struct MeshVendor<ggl::BuildingFacade::BuildingMesh> {} *__value_; 
         } __ptr_; 
     }  _extrusionFillMeshVendor;
     struct vector<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > >, std::__1::allocator<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > > > { 
         struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__begin_; 
         struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__end_; 
         struct __compressed_pair<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > *, std::__1::allocator<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > > > { 
-            struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__first_; 
+            struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__value_; 
         } __end_cap_; 
     }  _extrusionStrokeCullingGroups;
     struct unique_ptr<ggl::MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh>, std::__1::default_delete<ggl::MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh> > > { 
         struct __compressed_pair<ggl::MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh> *, std::__1::default_delete<ggl::MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh> > > { 
-            struct MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh> {} *__first_; 
+            struct MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh> {} *__value_; 
         } __ptr_; 
     }  _extrusionStrokeMeshVendor;
     struct vector<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > >, std::__1::allocator<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > > > { 
         struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__begin_; 
         struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__end_; 
         struct __compressed_pair<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > *, std::__1::allocator<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > > > { 
-            struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__first_; 
+            struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__value_; 
         } __end_cap_; 
     }  _fillCullingGroupsForPointyRoofs;
     struct optional<md::MeshSet<ggl::PolygonBase::CompressedMeshMesh, ggl::PolygonBase::CompressedVbo> > { 
@@ -43,14 +43,14 @@
                     struct pair<unsigned short, unsigned int> {} *__begin_; 
                     struct pair<unsigned short, unsigned int> {} *__end_; 
                     struct __compressed_pair<std::__1::pair<unsigned short, unsigned int> *, std::__1::allocator<std::__1::pair<unsigned short, unsigned int> > > { 
-                        struct pair<unsigned short, unsigned int> {} *__first_; 
+                        struct pair<unsigned short, unsigned int> {} *__value_; 
                     } __end_cap_; 
                 } _vertexAndIndexCounts; 
                 struct vector<std::__1::shared_ptr<ggl::PolygonBase::CompressedMeshMesh>, std::__1::allocator<std::__1::shared_ptr<ggl::PolygonBase::CompressedMeshMesh> > > { 
                     struct shared_ptr<ggl::PolygonBase::CompressedMeshMesh> {} *__begin_; 
                     struct shared_ptr<ggl::PolygonBase::CompressedMeshMesh> {} *__end_; 
                     struct __compressed_pair<std::__1::shared_ptr<ggl::PolygonBase::CompressedMeshMesh> *, std::__1::allocator<std::__1::shared_ptr<ggl::PolygonBase::CompressedMeshMesh> > > { 
-                        struct shared_ptr<ggl::PolygonBase::CompressedMeshMesh> {} *__first_; 
+                        struct shared_ptr<ggl::PolygonBase::CompressedMeshMesh> {} *__value_; 
                     } __end_cap_; 
                 } _meshes; 
                 struct DataWrite<ggl::PolygonBase::CompressedVbo> { 
@@ -89,52 +89,52 @@
         struct shared_ptr<ggl::PolygonBase::CompressedMeshMesh> {} *__begin_; 
         struct shared_ptr<ggl::PolygonBase::CompressedMeshMesh> {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<ggl::PolygonBase::CompressedMeshMesh> *, std::__1::allocator<std::__1::shared_ptr<ggl::PolygonBase::CompressedMeshMesh> > > { 
-            struct shared_ptr<ggl::PolygonBase::CompressedMeshMesh> {} *__first_; 
+            struct shared_ptr<ggl::PolygonBase::CompressedMeshMesh> {} *__value_; 
         } __end_cap_; 
     }  _fillMeshesForPointyRoofs;
     struct vector<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> >, std::__1::allocator<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> > > > { 
         struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *__begin_; 
         struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> > *, std::__1::allocator<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> > > > { 
-            struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *__first_; 
+            struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *__value_; 
         } __end_cap_; 
     }  _flatRoofStyleQueries;
     struct vector<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > >, std::__1::allocator<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > > > { 
         struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__begin_; 
         struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__end_; 
         struct __compressed_pair<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > *, std::__1::allocator<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > > > { 
-            struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__first_; 
+            struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__value_; 
         } __end_cap_; 
     }  _pointyRoofFillCullingGroups;
     struct unique_ptr<ggl::MeshVendor<ggl::BuildingPointyRoof::BuildingMesh>, std::__1::default_delete<ggl::MeshVendor<ggl::BuildingPointyRoof::BuildingMesh> > > { 
         struct __compressed_pair<ggl::MeshVendor<ggl::BuildingPointyRoof::BuildingMesh> *, std::__1::default_delete<ggl::MeshVendor<ggl::BuildingPointyRoof::BuildingMesh> > > { 
-            struct MeshVendor<ggl::BuildingPointyRoof::BuildingMesh> {} *__first_; 
+            struct MeshVendor<ggl::BuildingPointyRoof::BuildingMesh> {} *__value_; 
         } __ptr_; 
     }  _pointyRoofFillMeshVendor;
     struct vector<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > >, std::__1::allocator<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > > > { 
         struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__begin_; 
         struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__end_; 
         struct __compressed_pair<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > *, std::__1::allocator<std::__1::vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > > > { 
-            struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__first_; 
+            struct vector<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> >, std::__1::allocator<std::__1::vector<FeatureRange, std::__1::allocator<FeatureRange> > > > {} *__value_; 
         } __end_cap_; 
     }  _pointyRoofStrokeCullingGroups;
     struct unique_ptr<ggl::MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh>, std::__1::default_delete<ggl::MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh> > > { 
         struct __compressed_pair<ggl::MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh> *, std::__1::default_delete<ggl::MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh> > > { 
-            struct MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh> {} *__first_; 
+            struct MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh> {} *__value_; 
         } __ptr_; 
     }  _pointyRoofStrokeMeshVendor;
     struct vector<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> >, std::__1::allocator<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> > > > { 
         struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *__begin_; 
         struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> > *, std::__1::allocator<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> > > > { 
-            struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *__first_; 
+            struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *__value_; 
         } __end_cap_; 
     }  _selectedFlatRoofStyleQueries;
     struct vector<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> >, std::__1::allocator<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> > > > { 
         struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *__begin_; 
         struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> > *, std::__1::allocator<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> > > > { 
-            struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *__first_; 
+            struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *__value_; 
         } __end_cap_; 
     }  _selectedStyleQueries;
     struct optional<md::MeshSet<ggl::BuildingFlatStroke::BuildingFlatStrokeMesh, ggl::BuildingFlatStroke::DefaultVbo> > { 
@@ -146,14 +146,14 @@
                     struct pair<unsigned short, unsigned int> {} *__begin_; 
                     struct pair<unsigned short, unsigned int> {} *__end_; 
                     struct __compressed_pair<std::__1::pair<unsigned short, unsigned int> *, std::__1::allocator<std::__1::pair<unsigned short, unsigned int> > > { 
-                        struct pair<unsigned short, unsigned int> {} *__first_; 
+                        struct pair<unsigned short, unsigned int> {} *__value_; 
                     } __end_cap_; 
                 } _vertexAndIndexCounts; 
                 struct vector<std::__1::shared_ptr<ggl::BuildingFlatStroke::BuildingFlatStrokeMesh>, std::__1::allocator<std::__1::shared_ptr<ggl::BuildingFlatStroke::BuildingFlatStrokeMesh> > > { 
                     struct shared_ptr<ggl::BuildingFlatStroke::BuildingFlatStrokeMesh> {} *__begin_; 
                     struct shared_ptr<ggl::BuildingFlatStroke::BuildingFlatStrokeMesh> {} *__end_; 
                     struct __compressed_pair<std::__1::shared_ptr<ggl::BuildingFlatStroke::BuildingFlatStrokeMesh> *, std::__1::allocator<std::__1::shared_ptr<ggl::BuildingFlatStroke::BuildingFlatStrokeMesh> > > { 
-                        struct shared_ptr<ggl::BuildingFlatStroke::BuildingFlatStrokeMesh> {} *__first_; 
+                        struct shared_ptr<ggl::BuildingFlatStroke::BuildingFlatStrokeMesh> {} *__value_; 
                     } __end_cap_; 
                 } _meshes; 
                 struct DataWrite<ggl::BuildingFlatStroke::DefaultVbo> { 
@@ -192,14 +192,14 @@
         struct shared_ptr<ggl::BuildingFlatStroke::BuildingFlatStrokeMesh> {} *__begin_; 
         struct shared_ptr<ggl::BuildingFlatStroke::BuildingFlatStrokeMesh> {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<ggl::BuildingFlatStroke::BuildingFlatStrokeMesh> *, std::__1::allocator<std::__1::shared_ptr<ggl::BuildingFlatStroke::BuildingFlatStrokeMesh> > > { 
-            struct shared_ptr<ggl::BuildingFlatStroke::BuildingFlatStrokeMesh> {} *__first_; 
+            struct shared_ptr<ggl::BuildingFlatStroke::BuildingFlatStrokeMesh> {} *__value_; 
         } __end_cap_; 
     }  _strokeMeshes;
     struct vector<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> >, std::__1::allocator<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> > > > { 
         struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *__begin_; 
         struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *__end_; 
         struct __compressed_pair<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> > *, std::__1::allocator<std::__1::shared_ptr<gss::StylesheetQuery<gss::PropertyID> > > > { 
-            struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *__first_; 
+            struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > {} *__value_; 
         } __end_cap_; 
     }  _styleQueries;
 }

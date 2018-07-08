@@ -67,8 +67,6 @@
 @property (nonatomic, retain) NSMutableSet *touchIgnoredUUIDSet;
 @property (nonatomic, retain) _UIKBRTTouchVelocities *touchVelocities;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 + (bool)_showSmallDisplayKeyplane;
 + (Class)_subclassForScreenTraits:(id)arg1;
 + (struct CGSize { double x1; double x2; })keyboardSizeForInputMode:(id)arg1 screenTraits:(id)arg2 keyboardType:(long long)arg3;
@@ -94,10 +92,6 @@
 - (id)_uikbrtTouchDrifting:(id)arg1 touchIdentifiersForFingerID:(unsigned long long)arg2;
 - (void)_uikbrtTouchDriftingStateChanged:(id)arg1;
 - (void)_updateTouchState:(id)arg1 errorVector:(struct CGPoint { double x1; double x2; })arg2 rowOffsetFromHomeRow:(long long)arg3;
-- (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (void)acceptRecentInputIfNecessary;
 - (id)activationIndicatorView;
 - (id)activeTouchUUID;
@@ -123,6 +117,7 @@
 - (unsigned long long)cursorLocation;
 - (void)deactivateActiveKeys;
 - (void)deactivateActiveKeysClearingTouchInfo:(bool)arg1 clearingDimming:(bool)arg2;
+- (void)dealloc;
 - (id /* block */)deferredTaskForActiveTouch;
 - (id /* block */)deferredTouchDownTask;
 - (id /* block */)deferredTouchMovedTask;

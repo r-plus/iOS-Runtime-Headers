@@ -72,6 +72,7 @@
 + (id)fallbackTitlePropertyForGroupingType:(long long)arg1;
 + (id)persistentIDPropertyForGroupingType:(long long)arg1;
 + (id)screenshotArtworkCatalogCacheProperties;
++ (bool)supportsSecureCoding;
 + (id)titlePropertyForGroupingType:(long long)arg1;
 
 - (bool)MPSD_isDownloadInProgress;

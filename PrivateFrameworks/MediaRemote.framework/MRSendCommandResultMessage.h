@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) NSArray *results;
 @property (nonatomic, readonly) unsigned int sendError;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithSendError:(unsigned int)arg1 results:(id)arg2;
 - (id)results;
 - (unsigned int)sendError;

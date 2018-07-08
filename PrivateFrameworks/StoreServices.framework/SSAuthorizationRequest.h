@@ -4,6 +4,7 @@
 
 @interface SSAuthorizationRequest : SSRequest <SSXPCCoding> {
     NSNumber * _accountIdentifier;
+    bool  _allowSilentAuthentication;
     NSString * _clientIdentifierHeader;
     NSNumber * _familyAccountIdentifier;
     NSString * _keybagPath;
@@ -15,6 +16,7 @@
 }
 
 @property (copy) NSNumber *accountIdentifier;
+@property (nonatomic) bool allowSilentAuthentication;
 @property (readonly) id authorizationToken;
 @property (copy) NSString *clientIdentifierHeader;
 @property (readonly, copy) NSString *debugDescription;
@@ -32,6 +34,7 @@
 - (void).cxx_destruct;
 - (id)_init;
 - (id)accountIdentifier;
+- (bool)allowSilentAuthentication;
 - (id)authorizationToken;
 - (id)clientIdentifierHeader;
 - (id)copyXPCEncoding;
@@ -42,6 +45,7 @@
 - (id)keybagPath;
 - (id)reason;
 - (void)setAccountIdentifier:(id)arg1;
+- (void)setAllowSilentAuthentication:(bool)arg1;
 - (void)setClientIdentifierHeader:(id)arg1;
 - (void)setFamilyAccountIdentifier:(id)arg1;
 - (void)setKeybagPath:(id)arg1;

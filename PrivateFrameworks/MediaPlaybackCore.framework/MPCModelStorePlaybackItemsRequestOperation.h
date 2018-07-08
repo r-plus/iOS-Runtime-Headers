@@ -4,6 +4,7 @@
 
 @interface MPCModelStorePlaybackItemsRequestOperation : MPAsyncOperation {
     NSProgress * _activeProgress;
+    NSObject<OS_dispatch_queue> * _activeProgressQueue;
     NSOperationQueue * _operationQueue;
     MPCModelStorePlaybackItemsRequest * _request;
     id /* block */  _responseHandler;

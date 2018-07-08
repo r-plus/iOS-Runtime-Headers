@@ -4,6 +4,7 @@
 
 @interface _HKBehavior : NSObject {
     bool  _collectsData;
+    bool  _deviceSupportsHeartRateMotionContexts;
     bool  _futureMigrationsEnabled;
     bool  _hasTelephonyCapability;
     NSString * _hostReadAuthorizationUsageDescription;
@@ -37,8 +38,10 @@
 @property (nonatomic, readonly) NSDictionary *currentDiskUsage;
 @property (nonatomic, readonly, copy) NSString *currentInternalDeviceModel;
 @property (nonatomic, readonly, copy) NSString *currentOSBuild;
+@property (nonatomic, readonly, copy) NSString *currentOSName;
 @property (nonatomic, readonly, copy) NSString *currentOSVersion;
 @property (nonatomic, readonly) struct { long long x1; long long x2; long long x3; } currentOSVersionStruct;
+@property (nonatomic) bool deviceSupportsHeartRateMotionContexts;
 @property (nonatomic) bool futureMigrationsEnabled;
 @property (nonatomic) bool hasTelephonyCapability;
 @property (nonatomic, copy) NSString *hostReadAuthorizationUsageDescription;
@@ -64,6 +67,7 @@
 @property (nonatomic) bool supportsSwimmingWorkoutSessions;
 @property (nonatomic, readonly) unsigned long long totalDiskCapacity;
 
++ (bool)_deviceSupportsHeartRateMotionContexts;
 + (bool)_futureMigrationsEnabled;
 + (bool)_hasCompletedBuddy;
 + (bool)_hasTelephonyCapability;
@@ -75,6 +79,7 @@
 + (long long)_runningInStoreDemoModeFProgramNumber;
 + (bool)_shouldShowBuddy;
 + (bool)activePairedWatchHasSmartFitnessCoaching;
++ (bool)activePairedWatchSupportsHeartRateMotionContexts;
 + (id)activePairedWatchWithoutSOSMedicalIDContactsSupport;
 + (bool)allPairedWatchesMeetMinimumVersion:(int)arg1;
 + (bool)anyPairedWatchHasFlightsClimbedCapability;
@@ -102,6 +107,7 @@
 + (void)setSharedBehavior:(id)arg1;
 + (id)sharedBehavior;
 + (bool)shouldShowBuddy;
++ (bool)showSensitiveLogItems;
 + (int)syncProtocolVersionForNRDevice:(id)arg1;
 + (int)syncProtocolVersionForSystemBuildVersion:(id)arg1;
 
@@ -116,8 +122,10 @@
 - (id)currentDiskUsage;
 - (id)currentInternalDeviceModel;
 - (id)currentOSBuild;
+- (id)currentOSName;
 - (id)currentOSVersion;
 - (struct { long long x1; long long x2; long long x3; })currentOSVersionStruct;
+- (bool)deviceSupportsHeartRateMotionContexts;
 - (bool)futureMigrationsEnabled;
 - (bool)hasTelephonyCapability;
 - (id)hostReadAuthorizationUsageDescription;
@@ -133,6 +141,7 @@
 - (id)localTimeZone;
 - (bool)runningInStoreDemoModeF201;
 - (void)setCollectsData:(bool)arg1;
+- (void)setDeviceSupportsHeartRateMotionContexts:(bool)arg1;
 - (void)setFutureMigrationsEnabled:(bool)arg1;
 - (void)setHasTelephonyCapability:(bool)arg1;
 - (void)setHostReadAuthorizationUsageDescription:(id)arg1;

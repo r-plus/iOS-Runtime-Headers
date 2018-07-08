@@ -5,6 +5,7 @@
 @interface NTPBArticleRecord : PBCodable <NSCopying> {
     NSString * _accessoryText;
     NSMutableArray * _allowedStorefrontIDs;
+    NSData * _articleRecirculationConfiguration;
     long long  _backendArticleVersion;
     NTPBRecordBase * _base;
     long long  _behaviorFlags;
@@ -51,6 +52,7 @@
     NSString * _primaryAudience;
     NTPBDate * _publishDate;
     long long  _publisherArticleVersion;
+    NSMutableArray * _publisherSpecifiedArticleIds;
     NSString * _referencedArticleID;
     NSMutableArray * _relatedArticleIDs;
     NSString * _shortExcerpt;
@@ -81,12 +83,15 @@
     NSString * _title;
     NSString * _titleCompact;
     NSMutableArray * _topics;
+    NSString * _videoCallToActionTitle;
+    NSString * _videoCallToActionURL;
     double  _videoDuration;
     NSString * _videoURL;
 }
 
 @property (nonatomic, retain) NSString *accessoryText;
 @property (nonatomic, retain) NSMutableArray *allowedStorefrontIDs;
+@property (nonatomic, retain) NSData *articleRecirculationConfiguration;
 @property (nonatomic) long long backendArticleVersion;
 @property (nonatomic, retain) NTPBRecordBase *base;
 @property (nonatomic) long long behaviorFlags;
@@ -101,6 +106,7 @@
 @property (nonatomic, retain) NSMutableArray *flintFontResourceIDs;
 @property (nonatomic, retain) COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort *globalCohort;
 @property (nonatomic, readonly) bool hasAccessoryText;
+@property (nonatomic, readonly) bool hasArticleRecirculationConfiguration;
 @property (nonatomic) bool hasBackendArticleVersion;
 @property (nonatomic, readonly) bool hasBase;
 @property (nonatomic) bool hasBehaviorFlags;
@@ -147,6 +153,8 @@
 @property (nonatomic, readonly) bool hasThumbnailWidgetURL;
 @property (nonatomic, readonly) bool hasTitle;
 @property (nonatomic, readonly) bool hasTitleCompact;
+@property (nonatomic, readonly) bool hasVideoCallToActionTitle;
+@property (nonatomic, readonly) bool hasVideoCallToActionURL;
 @property (nonatomic) bool hasVideoDuration;
 @property (nonatomic, readonly) bool hasVideoURL;
 @property (nonatomic, retain) NSMutableArray *iAdCategories;
@@ -161,6 +169,7 @@
 @property (nonatomic, retain) NSString *primaryAudience;
 @property (nonatomic, retain) NTPBDate *publishDate;
 @property (nonatomic) long long publisherArticleVersion;
+@property (nonatomic, retain) NSMutableArray *publisherSpecifiedArticleIds;
 @property (nonatomic, retain) NSString *referencedArticleID;
 @property (nonatomic, retain) NSMutableArray *relatedArticleIDs;
 @property (nonatomic, retain) NSString *shortExcerpt;
@@ -192,6 +201,8 @@
 @property (nonatomic, retain) NSString *titleCompact;
 @property (nonatomic, readonly) NSArray *topicIDs;
 @property (nonatomic, retain) NSMutableArray *topics;
+@property (nonatomic, retain) NSString *videoCallToActionTitle;
+@property (nonatomic, retain) NSString *videoCallToActionURL;
 @property (nonatomic) double videoDuration;
 @property (nonatomic, retain) NSString *videoURL;
 
@@ -204,6 +215,7 @@
 + (Class)iAdKeywordsType;
 + (Class)iAdSectionIDsType;
 + (Class)moreFromPublisherArticleIDsType;
++ (Class)publisherSpecifiedArticleIdsType;
 + (Class)relatedArticleIDsType;
 + (Class)topicsType;
 
@@ -215,11 +227,13 @@
 - (void)addIAdKeywords:(id)arg1;
 - (void)addIAdSectionIDs:(id)arg1;
 - (void)addMoreFromPublisherArticleIDs:(id)arg1;
+- (void)addPublisherSpecifiedArticleIds:(id)arg1;
 - (void)addRelatedArticleIDs:(id)arg1;
 - (void)addTopics:(id)arg1;
 - (id)allowedStorefrontIDs;
 - (id)allowedStorefrontIDsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)allowedStorefrontIDsCount;
+- (id)articleRecirculationConfiguration;
 - (long long)backendArticleVersion;
 - (id)base;
 - (long long)behaviorFlags;
@@ -233,6 +247,7 @@
 - (void)clearIAdKeywords;
 - (void)clearIAdSectionIDs;
 - (void)clearMoreFromPublisherArticleIDs;
+- (void)clearPublisherSpecifiedArticleIds;
 - (void)clearRelatedArticleIDs;
 - (void)clearTopics;
 - (id)clusterID;
@@ -250,6 +265,7 @@
 - (unsigned long long)flintFontResourceIDsCount;
 - (id)globalCohort;
 - (bool)hasAccessoryText;
+- (bool)hasArticleRecirculationConfiguration;
 - (bool)hasBackendArticleVersion;
 - (bool)hasBase;
 - (bool)hasBehaviorFlags;
@@ -296,6 +312,8 @@
 - (bool)hasThumbnailWidgetURL;
 - (bool)hasTitle;
 - (bool)hasTitleCompact;
+- (bool)hasVideoCallToActionTitle;
+- (bool)hasVideoCallToActionURL;
 - (bool)hasVideoDuration;
 - (bool)hasVideoURL;
 - (unsigned long long)hash;
@@ -321,6 +339,9 @@
 - (id)primaryAudience;
 - (id)publishDate;
 - (long long)publisherArticleVersion;
+- (id)publisherSpecifiedArticleIds;
+- (id)publisherSpecifiedArticleIdsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)publisherSpecifiedArticleIdsCount;
 - (bool)readFrom:(id)arg1;
 - (id)referencedArticleID;
 - (id)relatedArticleIDs;
@@ -328,6 +349,7 @@
 - (unsigned long long)relatedArticleIDsCount;
 - (void)setAccessoryText:(id)arg1;
 - (void)setAllowedStorefrontIDs:(id)arg1;
+- (void)setArticleRecirculationConfiguration:(id)arg1;
 - (void)setBackendArticleVersion:(long long)arg1;
 - (void)setBase:(id)arg1;
 - (void)setBehaviorFlags:(long long)arg1;
@@ -372,6 +394,7 @@
 - (void)setPrimaryAudience:(id)arg1;
 - (void)setPublishDate:(id)arg1;
 - (void)setPublisherArticleVersion:(long long)arg1;
+- (void)setPublisherSpecifiedArticleIds:(id)arg1;
 - (void)setReferencedArticleID:(id)arg1;
 - (void)setRelatedArticleIDs:(id)arg1;
 - (void)setShortExcerpt:(id)arg1;
@@ -402,6 +425,8 @@
 - (void)setTitle:(id)arg1;
 - (void)setTitleCompact:(id)arg1;
 - (void)setTopics:(id)arg1;
+- (void)setVideoCallToActionTitle:(id)arg1;
+- (void)setVideoCallToActionURL:(id)arg1;
 - (void)setVideoDuration:(double)arg1;
 - (void)setVideoURL:(id)arg1;
 - (id)shortExcerpt;
@@ -434,6 +459,8 @@
 - (id)topics;
 - (id)topicsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)topicsCount;
+- (id)videoCallToActionTitle;
+- (id)videoCallToActionURL;
 - (double)videoDuration;
 - (id)videoURL;
 - (void)writeTo:(id)arg1;

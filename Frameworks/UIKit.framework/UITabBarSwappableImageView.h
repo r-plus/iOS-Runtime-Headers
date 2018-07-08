@@ -11,12 +11,7 @@
     UIImage * _value;
 }
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 - (void).cxx_destruct;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
 - (id)initWithImage:(id)arg1 alternateImage:(id)arg2 landscapeImage:(id)arg3 landscapeAlternateImage:(id)arg4;
 - (void)setAlternateImage:(id)arg1;
 - (void)setCurrentImage;

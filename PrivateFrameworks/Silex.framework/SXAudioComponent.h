@@ -11,4 +11,6 @@
 
 + (id)typeString;
 
+- (unsigned long long)traits;
+
 @end

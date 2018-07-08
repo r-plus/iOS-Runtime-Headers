@@ -10,10 +10,11 @@
 
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)MACAddress;
 - (float)batteryLevel;
 - (bool)canAccessRemoteAssets;
-- (void)dealloc;
+- (bool)canRelayCommunicationChannel;
 - (id)descriptor;
 - (unsigned int)deviceSubtype;
 - (unsigned int)deviceType;
@@ -22,10 +23,12 @@
 - (bool)hasBatteryLevel;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDescriptor:(id)arg1;
+- (bool)isDeviceGroupable;
 - (bool)isGroupLeader;
 - (bool)isGroupable;
 - (bool)isLocalDevice;
 - (bool)isRemoteControllable;
+- (id)logicalDeviceID;
 - (id)modelID;
 - (id)modelSpecificInfo;
 - (id)name;

@@ -17,8 +17,8 @@
 @property (nonatomic, retain) NSMutableArray *resultZoneIDsEligibleForDeletion;
 
 - (void).cxx_destruct;
-- (void)_migrateZoneNames:(id)arg1 completion:(id /* block */)arg2;
-- (void)_migrateZoneWithName:(id)arg1 completion:(id /* block */)arg2;
+- (void)_migrateZoneID:(id)arg1 completion:(id /* block */)arg2;
+- (void)_migrateZoneIDs:(id)arg1 completion:(id /* block */)arg2;
 - (bool)canRetryWithError:(id)arg1 retryAfter:(id*)arg2;
 - (id)database;
 - (id /* block */)migrationCompletionHandler;

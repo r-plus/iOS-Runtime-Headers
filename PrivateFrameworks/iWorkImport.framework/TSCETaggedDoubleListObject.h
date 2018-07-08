@@ -8,7 +8,7 @@
             struct TSCETaggedDouble {} *__begin_; 
             struct TSCETaggedDouble {} *__end_; 
             struct __compressed_pair<TSCETaggedDouble *, std::__1::allocator<TSCETaggedDouble> > { 
-                struct TSCETaggedDouble {} *__first_; 
+                struct TSCETaggedDouble {} *__value_; 
             } __end_cap_; 
         } _list; 
         unsigned long long _startIdx; 

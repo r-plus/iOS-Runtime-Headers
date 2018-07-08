@@ -3,7 +3,7 @@
  */
 
 @interface KNRecordingPauseEvent : KNRecordingEvent {
-    long long  mPauseEventType;
+    long long  _pauseEventType;
 }
 
 @property (nonatomic, readonly) long long pauseEventType;

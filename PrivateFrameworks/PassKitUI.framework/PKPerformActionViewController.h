@@ -5,13 +5,16 @@
 @interface PKPerformActionViewController : UIViewController <PKPaymentAuthorizationCoordinatorDelegate, PKPaymentAuthorizationCoordinatorPrivateDelegate, PKPerformActionViewDelegate> {
     PKPaymentPassAction * _action;
     UIView<PKPerformActionView> * _actionView;
+    UIBarButtonItem * _button;
     PKServiceProviderPurchase * _completedPurchase;
     <PKPerformActionViewControllerDelegate> * _delegate;
+    bool  _fieldsVerified;
     PKPerformActionLoadingView * _loadingView;
     PKPaymentPass * _pass;
     PKPerformActionPassView * _passView;
     <PKPaymentDataProvider> * _paymentDataProvider;
     bool  _remoteContentFetched;
+    UIBarButtonItem * _spinner;
     PKPaymentWebService * _webService;
 }
 
@@ -25,7 +28,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) PKPaymentWebService *webService;
 
-+ (id)alertControllerForUnableReason:(unsigned long long)arg1 displayableError:(id)arg2 addCardActionHandler:(id /* block */)arg3;
++ (id)alertControllerForUnableReason:(unsigned long long)arg1 action:(id)arg2 displayableError:(id)arg3 addCardActionHandler:(id /* block */)arg4;
 + (id)navigationBarBackgroundColor;
 
 - (void).cxx_destruct;
@@ -33,10 +36,13 @@
 - (void)_canPerformPaymentWithCompletion:(id /* block */)arg1;
 - (void)_cancelButtonPressed:(id)arg1;
 - (void)_fetchRemoteContentIfNeeded;
+- (void)_presentPaymentSetupControllerWithAllowedPaymentNetworks:(id)arg1;
 - (void)_reloadActionView;
 - (void)_rightBarButtonPressed:(id)arg1;
+- (bool)_shouldPresentPaymentRequest:(long long)arg1;
 - (void)_showGenericErrorAlert:(id /* block */)arg1;
 - (void)_showLoadingView:(bool)arg1;
+- (void)_showSpinner:(bool)arg1;
 - (id)action;
 - (id)actionView;
 - (id)delegate;

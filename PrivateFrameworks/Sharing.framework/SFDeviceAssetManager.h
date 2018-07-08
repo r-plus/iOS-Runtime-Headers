@@ -4,44 +4,59 @@
 
 @interface SFDeviceAssetManager : NSObject {
     bool  _activateCalled;
+    NSURL * _cacheDirectory;
+    NSDictionary * _cachedProductMappings;
+    NSMutableDictionary * _cachedQueryPaths;
     MAAsset * _deviceAssetManagement;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     bool  _invalidateCalled;
     bool  _invalidateDone;
     NSString * _networkStatus;
     NSDictionary * _productTypesMappingTable;
+    CUReachabilityMonitor * _reachabilityMonitor;
+    bool  _useProcessLocalCache;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (nonatomic, readonly) NSString *networkStatus;
-@property (nonatomic, readonly) NSDictionary *productTypesMappingTable;
+@property (nonatomic) bool useProcessLocalCache;
 
 - (void).cxx_destruct;
 - (void)activate;
 - (void)addKeyValuePair:(id)arg1 with:(id)arg2 toQuery:(id)arg3;
-- (id)additionalMappedProducts;
-- (id)bundleAtURL:(id)arg1 error:(id*)arg2;
+- (void)addQueryResultToLocalCache:(id)arg1 url:(id)arg2 isFallback:(bool)arg3;
+- (id)cacheDirectory;
+- (bool)canUseMobileAssetSPI;
 - (id)dispatchQueue;
 - (void)getAssetBundleForDeviceQuery:(id)arg1 timeout:(double)arg2 withCompletionHandler:(id /* block */)arg3;
+- (id)hardcodedMappedProducts;
 - (id)init;
 - (void)invalidate;
-- (id)locallyCachedMappedProductTypeForProductType:(id)arg1;
+- (id)locallyCachedProductMappings;
+- (id)locallyCachedQueryResults;
 - (void)logNetworkStatus;
+- (void)mappedProductTypeForProductType:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)networkStatus;
 - (void)onqueue_activate;
-- (void)onqueue_downloadAsset:(id)arg1 queryLogString:(id)arg2 withCompletionHandler:(id /* block */)arg3;
-- (void)onqueue_findAssetBundleForAssetQuery:(id)arg1 queryLogString:(id)arg2 fallback:(bool)arg3 retryAttempt:(bool)arg4 withCompletionHandler:(id /* block */)arg5;
+- (void)onqueue_downloadAsset:(id)arg1 ucat:(struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; char *x15; struct LogCategoryPrivate {} *x16; }*)arg2 queryLogString:(id)arg3 withCompletionHandler:(id /* block */)arg4;
+- (void)onqueue_findAssetBundleForAssetQuery:(id)arg1 ucat:(struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; char *x15; struct LogCategoryPrivate {} *x16; }*)arg2 queryType:(id)arg3 fallback:(bool)arg4 retryAttempt:(bool)arg5 withCompletionHandler:(id /* block */)arg6;
 - (void)onqueue_findAssetBundleForDeviceQuery:(id)arg1 installedOnly:(bool)arg2 fallback:(bool)arg3 withCompletionHandler:(id /* block */)arg4;
 - (void)onqueue_getAssetBundleForDeviceQuery:(id)arg1 timeout:(double)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)onqueue_getCachedAssetBundleForTask:(id)arg1;
 - (void)onqueue_invalidate;
+- (void)onqueue_manuallyFindFallbackAssetBundleMatchingQuery:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)onqueue_mappedProductTypeForProductType:(id)arg1;
 - (void)onqueue_purgeAssetsMatchingQuery:(id)arg1;
+- (id)onqueue_updateMappedProductTypeForProductType:(id)arg1;
 - (void)onqueue_updateMetaDataWithCompletionHandler:(id /* block */)arg1;
 - (void)onqueue_validateProductTypeInQuery:(id)arg1;
-- (id)productTypesMappingTable;
 - (void)purgeAssetsMatchingQuery:(id)arg1;
-- (id)queryLogStringForQuery:(id)arg1 installedOnly:(bool)arg2 fallback:(bool)arg3;
+- (id)queryTypeForInstalledOnly:(bool)arg1 fallback:(bool)arg2;
 - (void)setDispatchQueue:(id)arg1;
+- (void)setUseProcessLocalCache:(bool)arg1;
+- (void)storeProductMappingsInLocalCache:(id)arg1;
+- (void)storeQueryResultsInLocalCache:(id)arg1;
+- (bool)useProcessLocalCache;
 
 @end

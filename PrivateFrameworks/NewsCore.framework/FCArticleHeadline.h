@@ -11,6 +11,7 @@
     long long  _backendArticleVersion;
     long long  _behaviorFlags;
     NSArray * _blockedStorefrontIDs;
+    bool  _boundToContext;
     bool  _canBePurchased;
     NSString * _clusterID;
     unsigned long long  _contentType;
@@ -20,6 +21,7 @@
     bool  _featureCandidate;
     COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohort * _globalCohort;
     bool  _hasThumbnail;
+    bool  _hiddenFromFeeds;
     NSArray * _iAdCategories;
     NSArray * _iAdKeywords;
     NSArray * _iAdSectionIDs;
@@ -67,6 +69,8 @@
     NSArray * _topicIDs;
     NSArray * _topics;
     NSString * _versionIdentifier;
+    NSString * _videoCallToActionTitle;
+    NSURL * _videoCallToActionURL;
     double  _videoDuration;
     NSURL * _videoURL;
 }
@@ -84,6 +88,7 @@
 - (id)allowedStorefrontIDs;
 - (id)articleID;
 - (id)articleInterestToken;
+- (id)articleRecirculationConfigJSON;
 - (id)articleRecord;
 - (long long)backendArticleVersion;
 - (id)backingArticleRecordData;
@@ -105,9 +110,11 @@
 - (id)init;
 - (id)initWithArticleRecord:(id)arg1 articleInterestToken:(id)arg2 sourceChannel:(id)arg3 storyStyleConfigs:(id)arg4 storyTypeTimeout:(long long)arg5 rapidUpdatesTimeout:(long long)arg6 assetManager:(id)arg7;
 - (id)initWithArticleRecordData:(id)arg1 sourceChannel:(id)arg2 assetManager:(id)arg3;
+- (bool)isBoundToContext;
 - (bool)isDeleted;
 - (bool)isDraft;
 - (bool)isFeatureCandidate;
+- (bool)isHiddenFromFeeds;
 - (bool)isPaid;
 - (bool)isSponsored;
 - (id)lastFetchedDate;
@@ -167,6 +174,8 @@
 - (id)topicIDs;
 - (id)topics;
 - (id)versionIdentifier;
+- (id)videoCallToActionTitle;
+- (id)videoCallToActionURL;
 - (double)videoDuration;
 - (id)videoURL;
 

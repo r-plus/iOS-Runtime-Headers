@@ -3,11 +3,11 @@
  */
 
 @interface KNSlideTree : TSPContainedObject <KNSlideCollection> {
-    NSMutableArray * mDisplayedSlideNodeCache;
-    TSUPointerKeyDictionary * mFormulaReferenceNamesForSlideNodesCache;
-    NSMutableOrderedSet * mSlideNodes;
-    NSMutableDictionary * mSlideNodesForFormulaReferenceNamesCache;
-    NSMutableDictionary * mSlideNodesForUniqueIdentifiersCache;
+    NSMutableArray * _displayedSlideNodeCache;
+    TSUPointerKeyDictionary * _formulaReferenceNamesForSlideNodesCache;
+    NSMutableOrderedSet * _slideNodes;
+    NSMutableDictionary * _slideNodesForFormulaReferenceNamesCache;
+    NSMutableDictionary * _slideNodesForUniqueIdentifiersCache;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -25,6 +25,7 @@
 + (id)slideNodeDepthMapToCleanUpSlideNodes:(id)arg1 minimumValidDepth:(unsigned long long)arg2;
 + (id)slideNodeDepthMapToCleanUpSlideNodes:(id)arg1 minimumValidDepth:(unsigned long long)arg2 canExceedSlideTreeMaxDepth:(bool)arg3;
 
+- (void).cxx_destruct;
 - (void)addSlideNode:(id)arg1 atDepth:(unsigned long long)arg2 dolcContext:(id)arg3;
 - (void)addSlideNodeForDocumentUpgrade:(id)arg1 atDepth:(unsigned long long)arg2;
 - (unsigned long long)byBuildPageIndexForSlideIndex:(unsigned long long)arg1 andEventIndex:(unsigned long long)arg2;

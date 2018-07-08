@@ -13,8 +13,8 @@
 @property struct _PCSIdentitySetData { }*set;
 
 - (void).cxx_destruct;
+- (void)createIdentity:(id)arg1 complete:(id /* block */)arg2;
 - (id)createIdentityOperation:(id)arg1;
-- (void)createNewIdentity:(id)arg1 roll:(bool)arg2 complete:(id /* block */)arg3;
 - (void)createNewIdentity:(id)arg1 roll:(bool)arg2 sync:(bool)arg3 complete:(id /* block */)arg4;
 - (void)dealloc;
 - (id)dsid;

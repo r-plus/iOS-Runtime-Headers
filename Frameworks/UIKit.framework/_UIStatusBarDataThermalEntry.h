@@ -10,6 +10,8 @@
 @property (nonatomic) long long color;
 @property (nonatomic) bool sunlightMode;
 
++ (bool)supportsSecureCoding;
+
 - (id)_ui_descriptionBuilder;
 - (long long)color;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

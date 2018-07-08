@@ -3,13 +3,17 @@
  */
 
 @interface AWDBarcodeSupportCodeDetectedEvent : PBCodable <NSCopying> {
+    int  _appLinkPreferredOpenStrategy;
     int  _barcodeDataType;
+    int  _barcodeURLType;
     int  _clientType;
     unsigned long long  _detectionTimeMs;
     struct { 
         unsigned int detectionTimeMs : 1; 
         unsigned int timestamp : 1; 
+        unsigned int appLinkPreferredOpenStrategy : 1; 
         unsigned int barcodeDataType : 1; 
+        unsigned int barcodeURLType : 1; 
         unsigned int clientType : 1; 
         unsigned int invalidBarcodeDataType : 1; 
     }  _has;
@@ -17,10 +21,14 @@
     unsigned long long  _timestamp;
 }
 
+@property (nonatomic) int appLinkPreferredOpenStrategy;
 @property (nonatomic) int barcodeDataType;
+@property (nonatomic) int barcodeURLType;
 @property (nonatomic) int clientType;
 @property (nonatomic) unsigned long long detectionTimeMs;
+@property (nonatomic) bool hasAppLinkPreferredOpenStrategy;
 @property (nonatomic) bool hasBarcodeDataType;
+@property (nonatomic) bool hasBarcodeURLType;
 @property (nonatomic) bool hasClientType;
 @property (nonatomic) bool hasDetectionTimeMs;
 @property (nonatomic) bool hasInvalidBarcodeDataType;
@@ -28,11 +36,17 @@
 @property (nonatomic) int invalidBarcodeDataType;
 @property (nonatomic) unsigned long long timestamp;
 
+- (int)StringAsAppLinkPreferredOpenStrategy:(id)arg1;
 - (int)StringAsBarcodeDataType:(id)arg1;
+- (int)StringAsBarcodeURLType:(id)arg1;
 - (int)StringAsClientType:(id)arg1;
 - (int)StringAsInvalidBarcodeDataType:(id)arg1;
+- (int)appLinkPreferredOpenStrategy;
+- (id)appLinkPreferredOpenStrategyAsString:(int)arg1;
 - (int)barcodeDataType;
 - (id)barcodeDataTypeAsString:(int)arg1;
+- (int)barcodeURLType;
+- (id)barcodeURLTypeAsString:(int)arg1;
 - (int)clientType;
 - (id)clientTypeAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
@@ -40,7 +54,9 @@
 - (id)description;
 - (unsigned long long)detectionTimeMs;
 - (id)dictionaryRepresentation;
+- (bool)hasAppLinkPreferredOpenStrategy;
 - (bool)hasBarcodeDataType;
+- (bool)hasBarcodeURLType;
 - (bool)hasClientType;
 - (bool)hasDetectionTimeMs;
 - (bool)hasInvalidBarcodeDataType;
@@ -51,10 +67,14 @@
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
+- (void)setAppLinkPreferredOpenStrategy:(int)arg1;
 - (void)setBarcodeDataType:(int)arg1;
+- (void)setBarcodeURLType:(int)arg1;
 - (void)setClientType:(int)arg1;
 - (void)setDetectionTimeMs:(unsigned long long)arg1;
+- (void)setHasAppLinkPreferredOpenStrategy:(bool)arg1;
 - (void)setHasBarcodeDataType:(bool)arg1;
+- (void)setHasBarcodeURLType:(bool)arg1;
 - (void)setHasClientType:(bool)arg1;
 - (void)setHasDetectionTimeMs:(bool)arg1;
 - (void)setHasInvalidBarcodeDataType:(bool)arg1;

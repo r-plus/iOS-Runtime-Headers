@@ -23,6 +23,7 @@
 - (void)setRetargeted:(bool)arg1;
 - (void)setType:(long long)arg1;
 - (void)setupWithDuration:(double)arg1 delay:(double)arg2 view:(id)arg3 options:(unsigned long long)arg4 factory:(id)arg5 parentState:(id)arg6 start:(id /* block */)arg7 completion:(id /* block */)arg8;
+- (bool)shouldAnimatePropertyWithKey:(id)arg1;
 - (long long)type;
 
 @end

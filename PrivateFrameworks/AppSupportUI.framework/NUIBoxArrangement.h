@@ -12,19 +12,32 @@
             struct _NUIBoxArrangementCell {} *__begin_; 
             struct _NUIBoxArrangementCell {} *__end_; 
             struct __compressed_pair<_NUIBoxArrangementCell *, std::__1::allocator<_NUIBoxArrangementCell> > { 
-                struct _NUIBoxArrangementCell {} *__first_; 
+                struct _NUIBoxArrangementCell {} *__value_; 
             } __end_cap_; 
         } cells; 
         struct vector<CGRect, std::__1::allocator<CGRect> > { 
             struct CGRect {} *__begin_; 
             struct CGRect {} *__end_; 
             struct __compressed_pair<CGRect *, std::__1::allocator<CGRect> > { 
-                struct CGRect {} *__first_; 
+                struct CGRect {} *__value_; 
             } __end_cap_; 
         } viewFrames; 
     }  _arrangement;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _bounds;
     <NUIArrangementContainer> * _container;
     <NUIBoxArrangementDataSource> * _dataSource;
+    struct { 
+        unsigned int containerDirection : 1; 
+    }  _flags;
     double  _scale;
 }
 

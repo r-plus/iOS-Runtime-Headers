@@ -13,6 +13,7 @@
     long long  _reason;
     NSString * _requestIdentifier;
     SSURLRequestProperties * _requestProperties;
+    NSURL * _requestURL;
     NSString * _storeCorrelationID;
 }
 
@@ -23,6 +24,7 @@
 @property long long reason;
 @property (copy) NSString *requestIdentifier;
 @property (readonly) SSURLRequestProperties *requestProperties;
+@property (nonatomic, copy) NSURL *requestURL;
 @property (nonatomic, retain) NSString *storeCorrelationID;
 
 + (id)newLoadAutomaticDownloadQueueOperation;
@@ -48,6 +50,7 @@
 - (long long)reason;
 - (id)requestIdentifier;
 - (id)requestProperties;
+- (id)requestURL;
 - (id)resolveBagURLForKey:(id)arg1 bagContext:(id)arg2 error:(id*)arg3;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setDownloadsMetadata:(id)arg1;
@@ -55,6 +58,7 @@
 - (void)setPowerAssertionIdentifier:(id)arg1;
 - (void)setReason:(long long)arg1;
 - (void)setRequestIdentifier:(id)arg1;
+- (void)setRequestURL:(id)arg1;
 - (void)setStoreCorrelationID:(id)arg1;
 - (id)storeCorrelationID;
 - (void)unlock;

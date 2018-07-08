@@ -18,7 +18,10 @@
 + (bool)isFPSGraphEnabled;
 + (bool)isFPSLoggingEnabled;
 + (bool)isFPSLoggingTimerDisabled;
++ (bool)isGLEverywhereEnabled;
 + (bool)isGLStateValidationEnabled;
++ (bool)isMaxConcurrentTexturePrecachingEnabled;
++ (bool)isMetalDisabled;
 + (bool)isMotionBlurBlacklistedWithCapabilities:(id)arg1;
 + (bool)isMotionBlurCapableWithAnimationContext:(id)arg1;
 + (bool)isRandomNumberSeedInspectionEnabled;

@@ -7,7 +7,7 @@
         struct HGRef<HGBitmap> {} *__begin_; 
         struct HGRef<HGBitmap> {} *__end_; 
         struct __compressed_pair<HGRef<HGBitmap> *, std::__1::allocator<HGRef<HGBitmap> > > { 
-            struct HGRef<HGBitmap> {} *__first_; 
+            struct HGRef<HGBitmap> {} *__value_; 
         } __end_cap_; 
     }  _bitmaps;
     struct CGSize { 

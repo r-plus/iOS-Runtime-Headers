@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXJSONDynamicAdLayout : SXJSONObject <SXDynamicAdLayout>
+@interface SXJSONDynamicAdLayout : SXJSONObject <SXAutoPlacementLayout>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

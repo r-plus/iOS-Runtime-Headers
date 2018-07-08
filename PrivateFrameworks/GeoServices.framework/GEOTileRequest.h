@@ -4,6 +4,7 @@
 
 @interface GEOTileRequest : NSObject {
     GEOTileKeyMap * _additionalInfos;
+    bool  _allowNetwork;
     GEOApplicationAuditToken * _auditToken;
     NSString * _bundleIdentifier;
     NSString * _bundleVersion;
@@ -17,6 +18,7 @@
 }
 
 @property (nonatomic, readonly) GEOTileKeyMap *additionalInfos;
+@property (nonatomic, readonly) bool allowNetwork;
 @property (nonatomic, readonly) GEOApplicationAuditToken *auditToken;
 @property (nonatomic, readonly) NSString *bundleIdentifier;
 @property (nonatomic, readonly) NSString *bundleVersion;
@@ -30,6 +32,7 @@
 
 - (void).cxx_destruct;
 - (id)additionalInfos;
+- (bool)allowNetwork;
 - (id)auditToken;
 - (id)bundleIdentifier;
 - (id)bundleVersion;
@@ -38,7 +41,7 @@
 - (id)description;
 - (id)init;
 - (id)initWithKeyList:(id)arg1 manifestConfiguration:(id)arg2 locale:(id)arg3;
-- (id)initWithKeyList:(id)arg1 manifestConfiguration:(id)arg2 locale:(id)arg3 cachedEtags:(id)arg4 cachedData:(id)arg5 priorities:(id)arg6 additionalInfos:(id)arg7 bundleIdentifier:(id)arg8 bundleVersion:(id)arg9 auditToken:(id)arg10 requireWiFi:(bool)arg11;
+- (id)initWithKeyList:(id)arg1 manifestConfiguration:(id)arg2 locale:(id)arg3 cachedEtags:(id)arg4 cachedData:(id)arg5 priorities:(id)arg6 additionalInfos:(id)arg7 bundleIdentifier:(id)arg8 bundleVersion:(id)arg9 auditToken:(id)arg10 requireWiFi:(bool)arg11 allowNetwork:(bool)arg12;
 - (id)keyList;
 - (id)locale;
 - (id)manifestConfiguration;

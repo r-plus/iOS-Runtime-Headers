@@ -3,21 +3,28 @@
  */
 
 @interface MRNowPlayingOriginClientRequests : NSObject <MRNowPlayingClientState> {
+    _MRDeviceInfoMessageProtobuf * _deviceInfo;
     NSMutableArray * _nowPlayingClients;
-    void * _origin;
+    _MROriginProtobuf * _origin;
     NSObject<OS_dispatch_queue> * _serialQueue;
     NSMutableDictionary * _transactionCallbacks;
 }
 
-@property (nonatomic, readonly) void*origin;
+@property (nonatomic, copy) _MRDeviceInfoMessageProtobuf *deviceInfo;
+@property (nonatomic, readonly) _MROriginProtobuf *origin;
 
-- (void)dealloc;
-- (id)initWithOrigin:(void*)arg1;
-- (id)nowPlayingClientRequestsForPlayerPath:(void*)arg1;
+- (void).cxx_destruct;
+- (void)_handleDeviceInfoDidChange:(id)arg1;
+- (id)debugDescription;
+- (id)deviceInfo;
+- (id)existingNowPlayingClientRequestsForPlayerPath:(id)arg1;
+- (id)initWithOrigin:(id)arg1;
+- (id)nowPlayingClientRequestsForPlayerPath:(id)arg1;
 - (id)nowPlayingClients;
-- (void*)origin;
-- (void)removeClient:(void*)arg1;
+- (id)origin;
+- (void)removeClient:(id)arg1;
 - (void)restoreNowPlayingClientState;
+- (void)setDeviceInfo:(id)arg1;
 - (void)setTransactionCallback:(id /* block */)arg1 forName:(unsigned long long)arg2;
 - (id /* block */)transactionCallbackForName:(unsigned long long)arg1;
 

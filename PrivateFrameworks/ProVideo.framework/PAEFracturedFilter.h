@@ -8,7 +8,7 @@
         struct FracturedFXPoolItem {} **__begin_; 
         struct FracturedFXPoolItem {} **__end_; 
         struct __compressed_pair<FracturedUtils::FracturedFXPoolItem **, std::__1::allocator<FracturedUtils::FracturedFXPoolItem *> > { 
-            struct FracturedFXPoolItem {} **__first_; 
+            struct FracturedFXPoolItem {} **__value_; 
         } __end_cap_; 
     }  _fxPool;
     NSLock * _fxPoolLock;

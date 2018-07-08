@@ -13,10 +13,9 @@
         double *__begin_; 
         double *__end_; 
         struct __compressed_pair<double *, std::__1::allocator<double> > { 
-            double *__first_; 
+            double *__value_; 
         } __end_cap_; 
     }  _spacingAfter;
-    Class  _spacingViewClass;
     NSMutableArray * _spacingViews;
     struct { 
         unsigned int delegateMinSpacing : 1; 
@@ -32,28 +31,28 @@
             struct _NUIGridArrangementCell {} *__begin_; 
             struct _NUIGridArrangementCell {} *__end_; 
             struct __compressed_pair<_NUIGridArrangementCell *, std::__1::allocator<_NUIGridArrangementCell> > { 
-                struct _NUIGridArrangementCell {} *__first_; 
+                struct _NUIGridArrangementCell {} *__value_; 
             } __end_cap_; 
         } cells; 
         struct vector<_NUIGridArrangementDimension, std::__1::allocator<_NUIGridArrangementDimension> > { 
             struct _NUIGridArrangementDimension {} *__begin_; 
             struct _NUIGridArrangementDimension {} *__end_; 
             struct __compressed_pair<_NUIGridArrangementDimension *, std::__1::allocator<_NUIGridArrangementDimension> > { 
-                struct _NUIGridArrangementDimension {} *__first_; 
+                struct _NUIGridArrangementDimension {} *__value_; 
             } __end_cap_; 
         } columns; 
         struct vector<_NUIGridArrangementDimension, std::__1::allocator<_NUIGridArrangementDimension> > { 
             struct _NUIGridArrangementDimension {} *__begin_; 
             struct _NUIGridArrangementDimension {} *__end_; 
             struct __compressed_pair<_NUIGridArrangementDimension *, std::__1::allocator<_NUIGridArrangementDimension> > { 
-                struct _NUIGridArrangementDimension {} *__first_; 
+                struct _NUIGridArrangementDimension {} *__value_; 
             } __end_cap_; 
         } rows; 
         struct vector<CGRect, std::__1::allocator<CGRect> > { 
             struct CGRect {} *__begin_; 
             struct CGRect {} *__end_; 
             struct __compressed_pair<CGRect *, std::__1::allocator<CGRect> > { 
-                struct CGRect {} *__first_; 
+                struct CGRect {} *__value_; 
             } __end_cap_; 
         } viewFrames; 
     }  _visibleArrangement;
@@ -72,7 +71,6 @@
 @property (nonatomic, readonly) long long effectiveAxis;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) double spacing;
-@property (nonatomic, retain) Class spacingViewClass;
 @property (readonly) Class superclass;
 
 - (id).cxx_construct;
@@ -105,10 +103,8 @@
 - (void)setDistribution:(long long)arg1;
 - (void)setSpacing:(double)arg1;
 - (void)setSpacing:(double)arg1 afterArrangedSubviewAtIndex:(long long)arg2;
-- (void)setSpacingViewClass:(Class)arg1;
 - (double)spacing;
 - (double)spacingAfterArrangedSubviewAtIndex:(long long)arg1;
-- (Class)spacingViewClass;
 - (id)viewForFirstBaselineLayout;
 - (id)viewForLastBaselineLayout;
 

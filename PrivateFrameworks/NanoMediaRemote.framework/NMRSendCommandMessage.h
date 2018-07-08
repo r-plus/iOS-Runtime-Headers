@@ -11,16 +11,18 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSDictionary *options;
+@property (nonatomic, readonly) NSNumber *originIdentifier;
 @property (nonatomic, readonly) NSDate *serializationDate;
 @property (readonly) Class superclass;
 
-+ (id)messageWithCommand:(unsigned int)arg1 options:(id)arg2;
++ (id)messageWithCommand:(unsigned int)arg1 options:(id)arg2 originIdentifier:(id)arg3;
 
 - (void).cxx_destruct;
 - (unsigned int)command;
-- (id)initWithCommand:(unsigned int)arg1 options:(id)arg2;
+- (id)initWithCommand:(unsigned int)arg1 options:(id)arg2 originIdentifier:(id)arg3;
 - (id)initWithProtobufData:(id)arg1;
 - (id)options;
+- (id)originIdentifier;
 - (id)protobufData;
 - (id)serializationDate;
 

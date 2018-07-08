@@ -3,7 +3,7 @@
  */
 
 @interface VSTableHeaderFooterView : UIView {
-    UIButton * _button;
+    UIView * _button;
     <VSTableHeaderFooterViewDelegate> * _delegate;
     VSFontCenter * _fontCenter;
     long long  _kind;
@@ -11,7 +11,7 @@
     UILabel * _textLabel;
 }
 
-@property (nonatomic, retain) UIButton *button;
+@property (nonatomic, retain) UIView *button;
 @property (nonatomic) <VSTableHeaderFooterViewDelegate> *delegate;
 @property (nonatomic, retain) VSFontCenter *fontCenter;
 @property (nonatomic) long long kind;

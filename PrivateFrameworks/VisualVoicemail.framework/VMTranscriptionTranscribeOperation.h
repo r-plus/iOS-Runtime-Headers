@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VisualVoicemail.framework/VisualVoicemail
  */
 
-@interface VMTranscriptionTranscribeOperation : VMSpeechURLRecognitionRequestOperation <_SFSpeechRecognitionTaskDelegatePrivate> {
+@interface VMTranscriptionTranscribeOperation : VMSpeechURLRecognitionRequestOperation <_VMSpeechRecognitionTaskDelegatePrivate> {
     double  _duration;
     NSObject<OS_dispatch_semaphore> * _semaphore;
     double  _timeout;

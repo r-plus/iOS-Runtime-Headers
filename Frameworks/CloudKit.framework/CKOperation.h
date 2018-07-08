@@ -22,6 +22,7 @@
     NSObject<OS_os_activity> * _osActivity;
     NSString * _parentSectionID;
     CKPlaceholderOperation * _placeholderOperation;
+    bool  _queueHasStarted;
     id /* block */  _requestCompletedBlock;
     CKOperationConfiguration * _resolvedConfiguration;
     NSMutableArray * _savedRequestUUIDs;
@@ -59,6 +60,7 @@
 @property (nonatomic, readonly) NSString *parentSectionID;
 @property (retain) CKPlaceholderOperation *placeholderOperation;
 @property (nonatomic) bool preferAnonymousRequests;
+@property bool queueHasStarted;
 @property (nonatomic, copy) id /* block */ requestCompletedBlock;
 @property (nonatomic, readonly) NSArray *requestUUIDs;
 @property (nonatomic, readonly) CKOperationConfiguration *resolvedConfiguration;
@@ -139,6 +141,7 @@
 - (bool)preferAnonymousRequests;
 - (void)processOperationResult:(id)arg1;
 - (long long)qualityOfService;
+- (bool)queueHasStarted;
 - (id /* block */)requestCompletedBlock;
 - (id)requestUUIDs;
 - (id)resolvedConfiguration;
@@ -172,6 +175,7 @@
 - (void)setPlaceholderOperation:(id)arg1;
 - (void)setPreferAnonymousRequests:(bool)arg1;
 - (void)setQualityOfService:(long long)arg1;
+- (void)setQueueHasStarted:(bool)arg1;
 - (void)setRequestCompletedBlock:(id /* block */)arg1;
 - (void)setSavedRequestUUIDs:(id)arg1;
 - (void)setSavedResponseHTTPHeadersByRequestUUID:(id)arg1;
@@ -195,6 +199,11 @@
 - (bool)usesBackgroundSession;
 - (long long)usesBackgroundSessionOverride;
 - (id)w3cNavigationTimingByRequestUUID;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
+- (id)longOperationDescription;
+- (id)shortOperationDescription;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 

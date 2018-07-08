@@ -12,18 +12,18 @@
             double width; 
             double height; 
         } size; 
-    }  mCanvasRect;
-    long long  mCurrentSlideNumber;
-    NSArray * mSlides;
+    }  _canvasRect;
+    long long  _currentSlideNumber;
+    NSArray * _slides;
 }
 
 @property (nonatomic) long long currentSlideNumber;
 
+- (void).cxx_destruct;
 - (void)addHyperlinksForReps:(id)arg1 targetRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 context:(struct CGContext { }*)arg3;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })canvasRect;
 - (id)currentSlideName;
 - (long long)currentSlideNumber;
-- (void)dealloc;
 - (id)destinationFromUrl:(id)arg1;
 - (long long)getFirstNonHiddenIndex:(unsigned long long)arg1 delta:(long long)arg2;
 - (bool)ignoreUrl:(id)arg1;

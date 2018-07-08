@@ -17,6 +17,7 @@
 @property (readonly) Class superclass;
 
 + (id)contactBuffersDecoderForFetchRequest:(id)arg1;
++ (id)cursorProtocolInterface;
 + (id)serviceProtocolInterface;
 
 - (void).cxx_destruct;
@@ -38,8 +39,8 @@
 - (id)groupsMatchingPredicate:(id)arg1 error:(id*)arg2;
 - (id)identifierWithError:(id*)arg1;
 - (id)init;
-- (id)initWithContactsEnvironment:(id)arg1;
 - (id)initWithContactsEnvironment:(id)arg1 connection:(id)arg2;
+- (id)initWithContactsEnvironment:(id)arg1 managedConfiguration:(id)arg2;
 - (id)logger;
 - (id)meContactIdentifiers:(id*)arg1;
 - (id)policyForContainerWithIdentifier:(id)arg1 error:(id*)arg2;

@@ -15,7 +15,7 @@
     int  _interface;
     bool  _isRoamingAllowed;
     bool  _isWiFiEnabled;
-    NSLock * _lock;
+    NSConditionLock * _lock;
     NSMutableArray * _observers;
     NSObject<OS_dispatch_queue> * _prefsQueue;
     RadiosPreferences * _radiosPreferences;
@@ -43,6 +43,7 @@
 + (id)sharedInstance;
 
 - (void)_checkKeys:(id)arg1 forStore:(struct __SCDynamicStore { }*)arg2;
+- (void)_checkKeys_nts:(id)arg1 forStore:(struct __SCDynamicStore { }*)arg2;
 - (void)_handleNotification:(id)arg1 info:(id)arg2 forConnection:(struct __CTServerConnection { }*)arg3;
 - (void)_handleWiFiNotification:(unsigned int)arg1;
 - (void)_inititializeWifiManager;

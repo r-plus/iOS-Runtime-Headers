@@ -31,7 +31,6 @@
 - (void)_makePreloadBatchForSteps:(id)arg1;
 - (void)_makePreloadBatchForTilesOnRouteWithSteps:(id)arg1 andPriority:(unsigned int)arg2;
 - (void)_performNextRequests;
-- (void)_performSubscriptionRequests;
 - (struct PolylineCoordinate { unsigned int x1; float x2; })_polylineCoordinateForDouble:(double)arg1;
 - (void)_processBatches;
 - (void)_processedFinishedBatch:(id)arg1 withPartialStatus:(unsigned long long)arg2;

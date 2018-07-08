@@ -14,11 +14,13 @@
     bool  _didPlayPresentationSound;
     NSString * _iconImagePath;
     bool  _ignoreIfAlreadyDisplaying;
+    bool  _ignoresQuietMode;
     bool  _pendInSetupIfNotAllowed;
     bool  _pendWhileKeyBagLocked;
     bool  _presented;
 }
 
+@property (setter=_setIgnoresQuietMode:, nonatomic) bool _ignoresQuietMode;
 @property (nonatomic) bool allowInCar;
 @property (nonatomic) bool allowInSetup;
 @property (nonatomic) bool allowMessageInCar;
@@ -48,10 +50,12 @@
 - (bool)_hasActiveKeyboardOnScreen;
 - (id)_iconImage;
 - (id)_iconImagePath;
+- (bool)_ignoresQuietMode;
 - (bool)_isPresented;
 - (void)_noteVolumeOrLockPressed;
 - (id)_prepareNewAlertControllerWithLockedState:(bool)arg1 requirePasscodeForActions:(bool)arg2;
 - (id)_publicDescription;
+- (void)_setIgnoresQuietMode:(bool)arg1;
 - (void)_setPresented:(bool)arg1;
 - (id)alertController;
 - (void)alertItemDidAppear;

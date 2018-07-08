@@ -2,17 +2,10 @@
    Image: /System/Library/PrivateFrameworks/FindMyDevice.framework/FindMyDevice
  */
 
-@interface FMDFMIPManager : NSObject {
-    NSURL * _managedLostModeFileURL;
-    NSURL * _needsLocateAckLostModeFileURL;
-}
-
-@property (nonatomic, retain) NSURL *managedLostModeFileURL;
-@property (nonatomic, retain) NSURL *needsLocateAckLostModeFileURL;
+@interface FMDFMIPManager : NSObject
 
 + (id)sharedInstance;
 
-- (void).cxx_destruct;
 - (void)_disableFMIPUsingToken:(id)arg1 inContext:(unsigned long long)arg2 completion:(id /* block */)arg3;
 - (void)_forceFMWUpgradeAlertWithCompletion:(id /* block */)arg1;
 - (void)_initiateLostModeExitAuthForIDSDeviceID:(id)arg1 withCompletion:(id /* block */)arg2;
@@ -30,12 +23,12 @@
 - (void)deviceActivationDidSucceed;
 - (void)didChangeFMIPAccountInfo:(id)arg1;
 - (void)didReceiveLostModeExitAuthToken:(id)arg1;
+- (void)disableBiometricIDForLostModeWithCompletion:(id /* block */)arg1;
 - (void)disableFMIPUsingToken:(id)arg1 forPairedDeviceWithUDID:(id)arg2 withCompletion:(id /* block */)arg3;
 - (id)disableFMIPUsingToken:(id)arg1 inContext:(unsigned long long)arg2;
 - (void)disableFMIPUsingToken:(id)arg1 inContext:(unsigned long long)arg2 completion:(id /* block */)arg3;
 - (void)disableLostMode;
 - (void)disableManagedLostModeWithLocatedMessage:(id)arg1 completion:(id /* block */)arg2;
-- (void)disableTouchIDForLostModeWithCompletion:(id /* block */)arg1;
 - (void)enableActivationLockWithCompletion:(id /* block */)arg1;
 - (id)enableFMIPInContext:(unsigned long long)arg1;
 - (id)enableLostModeWithInfo:(id)arg1;
@@ -57,18 +50,14 @@
 - (id)lostModeInfo;
 - (bool)lostModeIsActive;
 - (void)lowBatteryLocateEnabledWithCompletion:(id /* block */)arg1;
-- (id)managedLostModeFileURL;
 - (void)markAsMissingSupportedForPairedDeviceWithUDID:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)markPairedDeviceWithUDID:(id)arg1 asMissingUsingToken:(id)arg2 withCompletion:(id /* block */)arg3;
-- (id)needsLocateAckLostModeFileURL;
 - (bool)needsLostModeExitAuth;
 - (id)newErrorForCode:(int)arg1 message:(id)arg2;
 - (id)pathsToPreserveAcrossWipe;
 - (void)playSoundWithOptions:(id)arg1 completion:(id /* block */)arg2;
 - (void)setDailyLocateReportEnabled:(bool)arg1;
 - (void)setLowBatteryLocateEnabled:(bool)arg1 withCompletion:(id /* block */)arg2;
-- (void)setManagedLostModeFileURL:(id)arg1;
-- (void)setNeedsLocateAckLostModeFileURL:(id)arg1;
 - (void)showDailyLocateReport;
 - (void)signatureHeadersWithData:(id)arg1 completion:(id /* block */)arg2;
 - (void)soundStoppedForAccessoryIdentifier:(id)arg1;

@@ -9,12 +9,14 @@
     NSString * _cautionaryTextKey;
     NSDictionary * _chartingPredicatesByTimeScope;
     HKDisplayTypeChartingRules * _chartingRules;
+    HKValueRange * _defaultAxisRangeOverride;
     NSPredicate * _defaultChartingPredicate;
     UIImage * _detailImage;
     bool  _disallowsSourceReordering;
     NSString * _displayNameKey;
     long long  _displayTypeIdentifier;
     NSString * _embeddedDisplayNameKey;
+    bool  _excludeFromDataTypeSearch;
     NSString * _keywordsNameKey;
     NSString * _labelDisplayNameKey;
     HKObjectType * _objectType;
@@ -42,6 +44,7 @@
 @property (nonatomic, readonly) long long categoryIdentifier;
 @property (nonatomic, readonly) NSString *cautionaryText;
 @property (nonatomic, readonly) HKDisplayTypeChartingRules *chartingRules;
+@property (nonatomic, retain) HKValueRange *defaultAxisRangeOverride;
 @property (nonatomic, readonly) UIImage *detailImage;
 @property (nonatomic, readonly) bool disallowsSourceReordering;
 @property (nonatomic, readonly) HKDisplayCategory *displayCategory;
@@ -49,6 +52,7 @@
 @property (nonatomic, readonly) UIImage *displayTypeIcon;
 @property (nonatomic, readonly) long long displayTypeIdentifier;
 @property (nonatomic, readonly) NSString *embeddedDisplayName;
+@property (nonatomic, readonly) bool excludeFromDataTypeSearch;
 @property (nonatomic, readonly) bool hidden;
 @property (nonatomic, readonly) bool isActivitySummary;
 @property (nonatomic, readonly) bool isCharacteristic;
@@ -101,6 +105,7 @@
 - (id)chartingRules;
 - (id)colorWithDisplayCategoryController:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)defaultAxisRangeOverride;
 - (id)defaultDataRange;
 - (id)defaultValuePredicate;
 - (id)description;
@@ -111,6 +116,7 @@
 - (id)displayTypeIcon;
 - (long long)displayTypeIdentifier;
 - (id)embeddedDisplayName;
+- (bool)excludeFromDataTypeSearch;
 - (unsigned long long)hash;
 - (bool)hidden;
 - (id)hk_enumeratedValueLabels;
@@ -132,6 +138,7 @@
 - (unsigned long long)roundingMode;
 - (id)sampleType;
 - (double)scalarValue;
+- (void)setDefaultAxisRangeOverride:(id)arg1;
 - (void)setShouldDisplayUnitStringOnYAxis:(bool)arg1;
 - (id)shareIcon;
 - (id)shortenedDisplayName;

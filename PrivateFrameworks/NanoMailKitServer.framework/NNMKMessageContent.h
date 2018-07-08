@@ -7,6 +7,7 @@
     NSString * _externalReferenceId;
     bool  _mainAlternativeValid;
     NSString * _messageId;
+    unsigned long long  _originalContentSize;
     bool  _partiallyLoaded;
     NSData * _textData;
 }
@@ -15,6 +16,7 @@
 @property (nonatomic, retain) NSString *externalReferenceId;
 @property (nonatomic) bool mainAlternativeValid;
 @property (nonatomic, retain) NSString *messageId;
+@property (nonatomic) unsigned long long originalContentSize;
 @property (nonatomic) bool partiallyLoaded;
 @property (nonatomic, retain) NSData *textData;
 
@@ -29,11 +31,13 @@
 - (id)initWithCoder:(id)arg1;
 - (bool)mainAlternativeValid;
 - (id)messageId;
+- (unsigned long long)originalContentSize;
 - (bool)partiallyLoaded;
 - (void)setAttachments:(id)arg1;
 - (void)setExternalReferenceId:(id)arg1;
 - (void)setMainAlternativeValid:(bool)arg1;
 - (void)setMessageId:(id)arg1;
+- (void)setOriginalContentSize:(unsigned long long)arg1;
 - (void)setPartiallyLoaded:(bool)arg1;
 - (void)setTextData:(id)arg1;
 - (id)textData;

@@ -11,6 +11,7 @@
     CLKTextProvider * _description2TextProvider;
     CLKTextProvider * _description3TextProvider;
     NTKUpNextAccessoryDescription * _descriptionAccessory;
+    unsigned long long  _headerFontStyle;
     unsigned int  _headerImageEdge;
     CLKImageProvider * _headerImageProvider;
     CLKTextProvider * _headerTextProvider;
@@ -28,6 +29,7 @@
     NSString * _overrideBodyString;
     UIImage * _overrideHeaderImage;
     unsigned long long  _style;
+    NSTimeZone * _timeZone;
     UIColor * _tintColor;
     bool  _tintColorAffectsHeader;
     bool  _useMonospaceFont;
@@ -42,6 +44,7 @@
 @property (nonatomic, copy) CLKTextProvider *description2TextProvider;
 @property (nonatomic, copy) CLKTextProvider *description3TextProvider;
 @property (nonatomic, copy) NTKUpNextAccessoryDescription *descriptionAccessory;
+@property (nonatomic) unsigned long long headerFontStyle;
 @property (nonatomic) unsigned int headerImageEdge;
 @property (nonatomic, copy) CLKImageProvider *headerImageProvider;
 @property (nonatomic, copy) CLKTextProvider *headerTextProvider;
@@ -69,6 +72,7 @@
 - (id)description3TextProvider;
 - (id)descriptionAccessory;
 - (unsigned long long)hash;
+- (unsigned long long)headerFontStyle;
 - (unsigned int)headerImageEdge;
 - (id)headerImageProvider;
 - (id)headerTextProvider;
@@ -86,6 +90,7 @@
 - (void)setDescription2TextProvider:(id)arg1;
 - (void)setDescription3TextProvider:(id)arg1;
 - (void)setDescriptionAccessory:(id)arg1;
+- (void)setHeaderFontStyle:(unsigned long long)arg1;
 - (void)setHeaderImageEdge:(unsigned int)arg1;
 - (void)setHeaderImageProvider:(id)arg1;
 - (void)setHeaderTextProvider:(id)arg1;

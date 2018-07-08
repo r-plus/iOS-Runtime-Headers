@@ -30,6 +30,8 @@
     struct MFiSAP { } * _mfiSAP;
     NSString * _model;
     NSString * _name;
+    unsigned int  _pairSetupFlags;
+    unsigned int  _pairVerifyFlags;
     struct { 
         void *context; 
         int (*showSetupCode_f)(); 
@@ -95,6 +97,8 @@
 @property (nonatomic) unsigned long long features;
 @property (nonatomic, copy) NSString *model;
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic) unsigned int pairSetupFlags;
+@property (nonatomic) unsigned int pairVerifyFlags;
 @property (nonatomic) bool pausesAfterApply;
 @property (nonatomic, copy) id /* block */ progressHandler;
 @property (nonatomic) bool skipPairSetup;
@@ -139,6 +143,8 @@
 - (id)init;
 - (id)model;
 - (id)name;
+- (unsigned int)pairSetupFlags;
+- (unsigned int)pairVerifyFlags;
 - (bool)pausesAfterApply;
 - (id /* block */)progressHandler;
 - (bool)removed:(id)arg1;
@@ -149,6 +155,8 @@
 - (void)setFeatures:(unsigned long long)arg1;
 - (void)setModel:(id)arg1;
 - (void)setName:(id)arg1;
+- (void)setPairSetupFlags:(unsigned int)arg1;
+- (void)setPairVerifyFlags:(unsigned int)arg1;
 - (void)setPairingDelegate:(const void*)arg1;
 - (void)setPausesAfterApply:(bool)arg1;
 - (void)setPostConfigMetrics:(const struct { double x1; int x2; unsigned char x3; unsigned char x4; int x5; unsigned int x6; unsigned int x7; }*)arg1;

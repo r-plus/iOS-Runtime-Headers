@@ -3,6 +3,7 @@
  */
 
 @interface AKAppleIDAuthenticationInAppContext : AKAppleIDAuthenticationContext <AKAppleIDAuthenticationUIProvider, AKBasicLoginAlertControllerDelegate, RemoteUIControllerDelegate> {
+    <AKAppleIDAuthenticationInAppContextPasswordDelegate> * __passwordDelegate;
     <AKAppleIDAuthenticationInAppContextAlertDelegate> * _alertDelegate;
     AKBasicLoginAlertController * _basicLoginViewController;
     RUIObjectModel * _currentRemoteOM;
@@ -10,19 +11,17 @@
     <AKAppleIDAuthenticationInAppContextDelegate> * _delegate;
     bool  _forceInlinePresentation;
     bool  _isPresentingServerUI;
-    NSHTTPURLResponse * _latestReadResponse;
     UINavigationController * _modalRemoteUINavController;
     UINavigationController * _navController;
     bool  _overrideFirstActionSignal;
     UIViewController * _presentingViewController;
     RemoteUIController * _remoteUIController;
-    id /* block */  _serverUICompletion;
-    AKAppleIDServerResourceLoadDelegate * _serverUIDelegate;
-    AKAppleIDServerUIDataHarvester * _serverUIHelper;
+    AKAppleIDServerUIContextController * _serverUIContextController;
     AAUICDPStingrayRemoteUIController * _stingrayController;
     UIViewController * _topViewControllerOnLoadStart;
 }
 
+@property (setter=_setPasswordDelegate:, nonatomic) <AKAppleIDAuthenticationInAppContextPasswordDelegate> *_passwordDelegate;
 @property (nonatomic) <AKAppleIDAuthenticationInAppContextAlertDelegate> *alertDelegate;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <AKAppleIDAuthenticationInAppContextDelegate> *delegate;
@@ -36,12 +35,23 @@
 - (void)_assertValidPresentingViewController;
 - (void)_cleanUpBasicLogin;
 - (void)_cleanUpBasicLoginWithCompletion:(id /* block */)arg1;
-- (void)_completeWithFinalResponse:(id)arg1;
+- (void)_contextDidDismissLoginAlertController;
+- (void)_contextDidEndPresentingSecondaryUI;
+- (void)_contextDidPresentLoginController;
+- (void)_contextWillBeginPresentingSecondaryUI;
+- (void)_contextWillDismissLoginAlertController;
+- (void)_dismissServerProvidedUIWithCompletion:(id /* block */)arg1;
 - (void)_handleBackButtonTap:(id)arg1;
 - (bool)_isDeferrableFinalResponseHarvested;
+- (bool)_isSatisfyingPasswordRequirements;
 - (id)_navController;
+- (id)_passwordDelegate;
+- (void)_presentBasicLoginUIAlertWithCompletion:(id /* block */)arg1;
+- (void)_presentIDPProvidedUIWithConfiguration:(id)arg1 completion:(id /* block */)arg2;
 - (void)_presentLoginAlertWithError:(id)arg1 title:(id)arg2 message:(id)arg3 waitForInteraction:(bool)arg4 completion:(id /* block */)arg5;
+- (void)_presentServerProvidedUIWithConfiguration:(id)arg1 completion:(id /* block */)arg2;
 - (id)_remoteUIController;
+- (void)_setPasswordDelegate:(id)arg1;
 - (id)alertDelegate;
 - (void)basicLoginAlertControllerDidDismiss:(id)arg1;
 - (void)basicLoginAlertControllerDidPresent:(id)arg1;
@@ -60,7 +70,7 @@
 - (void)presentLoginAlertWithError:(id)arg1 title:(id)arg2 message:(id)arg3 completion:(id /* block */)arg4;
 - (void)presentSecondFactorAlertWithError:(id)arg1 title:(id)arg2 message:(id)arg3 completion:(id /* block */)arg4;
 - (void)presentSecondFactorUIWithCompletion:(id /* block */)arg1;
-- (void)presentServerProvidedUIWithURLRequest:(id)arg1 delegate:(id)arg2 completion:(id /* block */)arg3;
+- (void)presentServerProvidedUIWithConfiguration:(id)arg1 completion:(id /* block */)arg2;
 - (id)presentingViewController;
 - (void)remoteUIController:(id)arg1 didDismissModalNavigationWithObjectModels:(id)arg2;
 - (void)remoteUIController:(id)arg1 didFinishLoadWithError:(id)arg2;

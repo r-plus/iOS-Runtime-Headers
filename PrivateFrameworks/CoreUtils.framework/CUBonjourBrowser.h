@@ -3,14 +3,18 @@
  */
 
 @interface CUBonjourBrowser : NSObject {
+    bool  _activateCalled;
+    bool  _activated;
     struct BonjourBrowser { } * _bonjourBrowser;
     unsigned long long  _browseFlags;
+    bool  _browseFlagsChanged;
     unsigned int  _changeFlags;
     id /* block */  _deviceChangedHandler;
     id /* block */  _deviceFoundHandler;
     id /* block */  _deviceLostHandler;
     struct NSMutableDictionary { Class x1; } * _devices;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSString * _domain;
     id /* block */  _interruptionHandler;
     bool  _invalidateCalled;
     bool  _invalidateDone;
@@ -26,12 +30,14 @@
 @property (nonatomic, copy) id /* block */ deviceFoundHandler;
 @property (nonatomic, copy) id /* block */ deviceLostHandler;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
+@property (nonatomic, copy) NSString *domain;
 @property (nonatomic, copy) id /* block */ interruptionHandler;
 @property (nonatomic, copy) id /* block */ invalidationHandler;
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic, copy) NSString *serviceType;
 
 - (void).cxx_destruct;
+- (void)_activateSafeInvokeBlock:(id /* block */)arg1;
 - (void)_bonjourHandleAddOrUpdateDevice:(id)arg1;
 - (void)_bonjourHandleEventType:(unsigned int)arg1 info:(id)arg2;
 - (void)_bonjourHandleRemoveDevice:(id)arg1;
@@ -39,6 +45,8 @@
 - (void)_interrupted;
 - (void)_invalidated;
 - (void)_lostAllDevices;
+- (void)_update;
+- (void)_updateLocked;
 - (void)activate;
 - (unsigned long long)browseFlags;
 - (unsigned int)changeFlags;
@@ -49,6 +57,7 @@
 - (id /* block */)deviceFoundHandler;
 - (id /* block */)deviceLostHandler;
 - (id)dispatchQueue;
+- (id)domain;
 - (id)init;
 - (id /* block */)interruptionHandler;
 - (void)invalidate;
@@ -61,9 +70,11 @@
 - (void)setDeviceFoundHandler:(id /* block */)arg1;
 - (void)setDeviceLostHandler:(id /* block */)arg1;
 - (void)setDispatchQueue:(id)arg1;
+- (void)setDomain:(id)arg1;
 - (void)setInterruptionHandler:(id /* block */)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setServiceType:(id)arg1;
+- (void)update;
 
 @end

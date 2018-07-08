@@ -11,7 +11,6 @@
 @property (nonatomic, readonly) ICDataPersister *dataPersister;
 
 + (id)pasteboardDataFromPersistenceData:(id)arg1;
-+ (id)pasteboardDataFromPersistenceData:(id)arg1 secureCoding:(bool)arg2;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;

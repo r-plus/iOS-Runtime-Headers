@@ -3,9 +3,9 @@
  */
 
 @interface FCFeedViewportExpandPersistenceGapOperation : FCOperation {
-    <FCAppConfiguration> * _appConfiguration;
     FCFeedViewportBookmark * _bookmark;
     bool  _cachedOnly;
+    <FCCoreConfiguration> * _configuration;
     FCCloudContext * _context;
     id /* block */  _expandGapCompletionHandler;
     FCFeedViewportPersistenceGap * _gap;
@@ -17,9 +17,9 @@
     FCFeedViewport * _viewport;
 }
 
-@property (nonatomic, copy) <FCAppConfiguration> *appConfiguration;
 @property (nonatomic, copy) FCFeedViewportBookmark *bookmark;
 @property (nonatomic) bool cachedOnly;
+@property (nonatomic, copy) <FCCoreConfiguration> *configuration;
 @property (nonatomic, retain) FCCloudContext *context;
 @property (nonatomic, copy) id /* block */ expandGapCompletionHandler;
 @property (nonatomic, copy) FCFeedViewportPersistenceGap *gap;
@@ -31,9 +31,9 @@
 @property (nonatomic, retain) FCFeedViewport *viewport;
 
 - (void).cxx_destruct;
-- (id)appConfiguration;
 - (id)bookmark;
 - (bool)cachedOnly;
+- (id)configuration;
 - (id)context;
 - (id /* block */)expandGapCompletionHandler;
 - (id)gap;
@@ -44,9 +44,9 @@
 - (id)inflatedGroup;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
-- (void)setAppConfiguration:(id)arg1;
 - (void)setBookmark:(id)arg1;
 - (void)setCachedOnly:(bool)arg1;
+- (void)setConfiguration:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setExpandGapCompletionHandler:(id /* block */)arg1;
 - (void)setGap:(id)arg1;

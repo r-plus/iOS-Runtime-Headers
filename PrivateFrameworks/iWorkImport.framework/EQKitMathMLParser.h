@@ -16,12 +16,12 @@
                 int **__begin_; 
                 int **__end_; 
                 struct __compressed_pair<EQKitMathMLParserState **, std::__1::allocator<EQKitMathMLParserState *> > { 
-                    int **__first_; 
+                    int **__value_; 
                 } __end_cap_; 
             } __map_; 
             unsigned long long __start_; 
             struct __compressed_pair<unsigned long, std::__1::allocator<EQKitMathMLParserState> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __size_; 
         } c; 
     }  mState;

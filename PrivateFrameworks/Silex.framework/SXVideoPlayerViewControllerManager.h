@@ -11,6 +11,8 @@
     bool  _presentedAndAppeared;
     NSMutableDictionary * _videoAnalyticsRouters;
     NSMutableDictionary * _videoPlayerViewControllers;
+    NSMutableDictionary * _visibilityMonitors;
+    SXVolumeProvider * _volumeProvider;
 }
 
 @property (nonatomic, copy) NSURL *autoplayURL;
@@ -25,21 +27,25 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSMutableDictionary *videoAnalyticsRouters;
 @property (nonatomic, readonly) NSMutableDictionary *videoPlayerViewControllers;
+@property (nonatomic, readonly) NSMutableDictionary *visibilityMonitors;
+@property (nonatomic, readonly) SXVolumeProvider *volumeProvider;
 
 - (void).cxx_destruct;
 - (id)autoplayURL;
 - (void)configureAutoplayForVideoWithURL:(id)arg1 analyticsRouter:(id)arg2;
-- (id)init;
+- (id)initWithVolumeProvider:(id)arg1;
 - (id)loseOwnershipBlocks;
 - (id)pendingLoseOwnershipBlocks;
 - (id)pendingReceiveOwnershipBlocks;
 - (id)pendingVideoPlayerViewControllers;
 - (bool)presentedAndAppeared;
-- (void)registerExistingVideoPlayerViewController:(id)arg1 URL:(id)arg2 analyticsRouter:(id)arg3 loseOwnershipBlock:(id /* block */)arg4;
+- (void)registerExistingVideoPlayerViewController:(id)arg1 URL:(id)arg2 analyticsRouter:(id)arg3 videoPlayerVisibilityMonitor:(id)arg4 loseOwnershipBlock:(id /* block */)arg5;
 - (void)setAutoplayURL:(id)arg1;
 - (void)setPresentedAndAppeared:(bool)arg1;
 - (id)videoAnalyticsRouters;
 - (id)videoPlayerViewControllerForURL:(id)arg1 receiveOwnershipBlock:(id /* block */)arg2;
 - (id)videoPlayerViewControllers;
+- (id)visibilityMonitors;
+- (id)volumeProvider;
 
 @end

@@ -3,6 +3,7 @@
  */
 
 @interface TSPFilePackageWriter : TSPPackageWriter {
+    bool  _apfsMode;
     TSUZipFileWriter * _delayedZipArchiveWriter;
     bool  _onlyWriteToDelayedZipArchive;
     TSUSafeSaveAssistant * _safeSaveAssistant;

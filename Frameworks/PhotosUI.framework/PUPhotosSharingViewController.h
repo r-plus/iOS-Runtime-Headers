@@ -35,6 +35,7 @@
     UIBarButtonItem * _cancelButton;
     bool  _defaultIrisEnabled;
     <PUPhotosSharingViewControllerDelegate> * _delegate;
+    id /* block */  _didAppearCompletion;
     bool  _didAttemptShareViaAirDrop;
     UIBarButtonItem * _doneButton;
     UIView * _embeddedActivityView;
@@ -85,6 +86,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUPhotosSharingViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, copy) id /* block */ didAppearCompletion;
 @property (setter=_setEmbeddedActivityView:, nonatomic, retain) UIView *embeddedActivityView;
 @property (nonatomic, copy) NSArray *excludedActivityTypes;
 @property (nonatomic, readonly) NSPredicate *filterPredicate;
@@ -213,6 +215,7 @@
 - (id)currentIndexPath;
 - (void)dealloc;
 - (id)delegate;
+- (id /* block */)didAppearCompletion;
 - (id)embeddedActivityView;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })embeddedActivityViewFrameWhenShowing:(bool)arg1;
 - (id)excludedActivityTypes;
@@ -256,6 +259,7 @@
 - (void)setAllowAirPlayActivity:(bool)arg1;
 - (void)setAssetTransitionInfo:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDidAppearCompletion:(id /* block */)arg1;
 - (void)setExcludedActivityTypes:(id)arg1;
 - (void)setLockScreenCamera:(bool)arg1;
 - (void)setOneUpPhotosSharingTransitionContext:(id)arg1;

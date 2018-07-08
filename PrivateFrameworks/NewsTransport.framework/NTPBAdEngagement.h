@@ -14,6 +14,8 @@
     NSString * _feedId;
     int  _feedType;
     NSData * _feedViewExposureId;
+    int  _groupType;
+    NSData * _groupViewExposureId;
     struct { 
         unsigned int videoAdDuration : 1; 
         unsigned int videoAdPlayTime : 1; 
@@ -23,6 +25,7 @@
         unsigned int adLocation : 1; 
         unsigned int adType : 1; 
         unsigned int feedType : 1; 
+        unsigned int groupType : 1; 
         unsigned int newsProductType : 1; 
         unsigned int videoAdPlacementPosition : 1; 
         unsigned int videoAdType : 1; 
@@ -51,6 +54,8 @@
 @property (nonatomic, retain) NSString *feedId;
 @property (nonatomic) int feedType;
 @property (nonatomic, retain) NSData *feedViewExposureId;
+@property (nonatomic) int groupType;
+@property (nonatomic, retain) NSData *groupViewExposureId;
 @property (nonatomic) bool hasAdCreativeType;
 @property (nonatomic) bool hasAdEngagementType;
 @property (nonatomic, readonly) bool hasAdImpressionId;
@@ -62,6 +67,8 @@
 @property (nonatomic, readonly) bool hasFeedId;
 @property (nonatomic) bool hasFeedType;
 @property (nonatomic, readonly) bool hasFeedViewExposureId;
+@property (nonatomic) bool hasGroupType;
+@property (nonatomic, readonly) bool hasGroupViewExposureId;
 @property (nonatomic, readonly) bool hasIadAd;
 @property (nonatomic, readonly) bool hasIadCampaign;
 @property (nonatomic, readonly) bool hasIadLine;
@@ -89,6 +96,7 @@
 - (int)StringAsAdLocation:(id)arg1;
 - (int)StringAsAdType:(id)arg1;
 - (int)StringAsFeedType:(id)arg1;
+- (int)StringAsGroupType:(id)arg1;
 - (int)StringAsNewsProductType:(id)arg1;
 - (int)StringAsVideoAdType:(id)arg1;
 - (int)adCreativeType;
@@ -110,6 +118,9 @@
 - (int)feedType;
 - (id)feedTypeAsString:(int)arg1;
 - (id)feedViewExposureId;
+- (int)groupType;
+- (id)groupTypeAsString:(int)arg1;
+- (id)groupViewExposureId;
 - (bool)hasAdCreativeType;
 - (bool)hasAdEngagementType;
 - (bool)hasAdImpressionId;
@@ -121,6 +132,8 @@
 - (bool)hasFeedId;
 - (bool)hasFeedType;
 - (bool)hasFeedViewExposureId;
+- (bool)hasGroupType;
+- (bool)hasGroupViewExposureId;
 - (bool)hasIadAd;
 - (bool)hasIadCampaign;
 - (bool)hasIadLine;
@@ -151,12 +164,15 @@
 - (void)setFeedId:(id)arg1;
 - (void)setFeedType:(int)arg1;
 - (void)setFeedViewExposureId:(id)arg1;
+- (void)setGroupType:(int)arg1;
+- (void)setGroupViewExposureId:(id)arg1;
 - (void)setHasAdCreativeType:(bool)arg1;
 - (void)setHasAdEngagementType:(bool)arg1;
 - (void)setHasAdImpressionTimeThreshold:(bool)arg1;
 - (void)setHasAdLocation:(bool)arg1;
 - (void)setHasAdType:(bool)arg1;
 - (void)setHasFeedType:(bool)arg1;
+- (void)setHasGroupType:(bool)arg1;
 - (void)setHasNewsProductType:(bool)arg1;
 - (void)setHasVideoAdDuration:(bool)arg1;
 - (void)setHasVideoAdPlacementPosition:(bool)arg1;

@@ -7,24 +7,24 @@
         struct __hash_table<sqlite3_stmt *, std::__1::hash<sqlite3_stmt *>, std::__1::equal_to<sqlite3_stmt *>, std::__1::allocator<sqlite3_stmt *> > { 
             struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<sqlite3_stmt *, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<sqlite3_stmt *, void *> *> *> > > { 
                 struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<sqlite3_stmt *, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<sqlite3_stmt *, void *> *> *> > > { 
-                    struct __hash_node_base<std::__1::__hash_node<sqlite3_stmt *, void *> *> {} **__first_; 
+                    struct __hash_node_base<std::__1::__hash_node<sqlite3_stmt *, void *> *> {} **__value_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<sqlite3_stmt *, void *> *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<sqlite3_stmt *, void *> *> *> > { 
-                            unsigned long long __first_; 
+                            unsigned long long __value_; 
                         } __data_; 
-                    } __second_; 
+                    } __value_; 
                 } __ptr_; 
             } __bucket_list_; 
             struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<sqlite3_stmt *, void *> *>, std::__1::allocator<std::__1::__hash_node<sqlite3_stmt *, void *> > > { 
                 struct __hash_node_base<std::__1::__hash_node<sqlite3_stmt *, void *> *> { 
                     struct __hash_node_base<std::__1::__hash_node<sqlite3_stmt *, void *> *> {} *__next_; 
-                } __first_; 
+                } __value_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::hash<sqlite3_stmt *> > { 
-                unsigned long long __first_; 
+                unsigned long long __value_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::equal_to<sqlite3_stmt *> > { 
-                float __first_; 
+                float __value_; 
             } __p3_; 
         } __table_; 
     }  _activeStatements;
@@ -60,6 +60,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_assertNoActiveStatements;
+- (int)_copyContentsFromDatabase:(struct sqlite3 { }*)arg1 toDatabase:(struct sqlite3 { }*)arg2;
 - (bool)_executeSQL:(id)arg1 cache:(bool)arg2 error:(id*)arg3 bindingHandler:(id /* block */)arg4 enumerationHandler:(id /* block */)arg5;
 - (bool)_executeSQL:(id)arg1 error:(id*)arg2;
 - (bool)_executeSQL:(id)arg1 error:(id*)arg2 retryIfBusy:(bool)arg3;
@@ -91,7 +92,9 @@
 - (bool)detachProtectedDatabaseWithError:(id*)arg1;
 - (id)dumpSchemaWithError:(id*)arg1;
 - (bool)enableIncrementalAutovacuumWithError:(id*)arg1;
+- (bool)executeSQL:(id)arg1 error:(id*)arg2;
 - (bool)executeSQL:(id)arg1 error:(id*)arg2 bindingHandler:(id /* block */)arg3 enumerationHandler:(id /* block */)arg4;
+- (bool)executeSQLStatements:(id)arg1 error:(id*)arg2;
 - (bool)executeUncachedSQL:(id)arg1 error:(id*)arg2 bindingHandler:(id /* block */)arg3 enumerationHandler:(id /* block */)arg4;
 - (id)fileURL;
 - (bool)foreignKeyExistsFromTable:(id)arg1 column:(id)arg2 toTable:(id)arg3 column:(id)arg4 error:(id*)arg5;
@@ -99,7 +102,9 @@
 - (id)getLastErrorWithResultCode:(int)arg1;
 - (id)highFrequencyDatabaseURL;
 - (bool)incrementalVacuumDatabaseIfNeeded:(id)arg1 error:(id*)arg2;
+- (id)initMemoryDatabaseFromURL:(id)arg1 delegate:(id)arg2;
 - (id)initMemoryDatabaseWithDelegate:(id)arg1;
+- (id)initWithDatabaseURL:(id)arg1 copyingDatabase:(id)arg2 delegate:(id)arg3;
 - (id)initWithDatabaseURL:(id)arg1 delegate:(id)arg2;
 - (bool)isDatabaseWithNameAttached:(id)arg1;
 - (bool)isOpen;

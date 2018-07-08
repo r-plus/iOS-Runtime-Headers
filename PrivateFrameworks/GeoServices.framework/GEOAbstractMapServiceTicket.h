@@ -14,6 +14,7 @@
     GEOMapRegion * _resultBoundingRegion;
     NSString * _resultDisplayHeader;
     NSString * _resultSectionHeader;
+    NSArray * _retainedSearchMetadata;
     int  _searchResultType;
     bool  _shouldEnableRedoSearch;
     bool  _showDymSuggestionCloseButton;
@@ -36,6 +37,7 @@
 @property (nonatomic, readonly) GEOMapRegion *resultBoundingRegion;
 @property (nonatomic, readonly) NSString *resultDisplayHeader;
 @property (nonatomic, readonly) NSString *resultSectionHeader;
+@property (nonatomic, readonly) NSArray *retainedSearchMetadata;
 @property (nonatomic, readonly) int searchResultType;
 @property (nonatomic, readonly) bool shouldEnableRedoSearch;
 @property (nonatomic, readonly) bool showDymSuggestionCloseButton;
@@ -56,6 +58,7 @@
 - (id)resultBoundingRegion;
 - (id)resultDisplayHeader;
 - (id)resultSectionHeader;
+- (id)retainedSearchMetadata;
 - (int)searchResultType;
 - (bool)shouldEnableRedoSearch;
 - (bool)showDymSuggestionCloseButton;

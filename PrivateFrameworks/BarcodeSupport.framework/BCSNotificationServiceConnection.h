@@ -11,7 +11,7 @@
 - (void).cxx_destruct;
 - (void)cancelNotifications;
 - (void)dealloc;
-- (void)notifyParsedBarcodeWithData:(id)arg1 withReply:(id /* block */)arg2;
+- (void)notifyParsedBarcodeWithData:(id)arg1 codePayload:(id)arg2 withReply:(id /* block */)arg3;
 - (id)serviceConnection;
 - (void)setServiceConnection:(id)arg1;
 

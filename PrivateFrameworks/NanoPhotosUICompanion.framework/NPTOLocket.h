@@ -4,7 +4,9 @@
 
 @interface NPTOLocket : NSObject <PHPhotoLibraryChangeObserver> {
     PHAssetCollection * _assetCollection;
+    NSTimer * _changeNotificationCoalescingTimer;
     PHPhotoLibrary * _library;
+    bool  _notifiedChangesInProgress;
     NPTOLocketReader * _reader;
     bool  _registeredAsPhotoLibraryChangeObserver;
 }
@@ -19,7 +21,10 @@
 - (id)_changeDetailsToDictionary:(id)arg1;
 - (id)_makeFetchOptions;
 - (id)_makeReaderWithFetchResult:(id)arg1;
+- (void)_notifyDidBeginChangesIfNeeded;
+- (void)_notifyDidEndChangesIfNeeded;
 - (void)_registerPhotoLibraryChangeObserverIfNeeded;
+- (void)_scheduleNotifyDidEndChangesIfNeeded;
 - (void)_unregisterPhotoLibraryChangeObserverIfNeeded;
 - (id)allAssets;
 - (void)dealloc;

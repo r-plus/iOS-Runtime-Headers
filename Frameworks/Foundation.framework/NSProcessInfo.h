@@ -23,6 +23,7 @@
 @property (readonly) int processIdentifier;
 @property (copy) NSString *processName;
 @property (readonly) unsigned long long processorCount;
+@property (nonatomic, readonly, copy) NSString *safari_deviceUDID;
 @property (nonatomic, readonly) bool safari_systemSupportsCloudKitBookmarks;
 @property (readonly) double systemUptime;
 @property (readonly, copy) NSString *userName;
@@ -95,6 +96,10 @@
 // Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
 
 - (bool)_navigation_isNavd;
+
+// Image: /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
+
+- (id)safari_deviceUDID;
 
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 

@@ -14,7 +14,7 @@
         struct HDActivityCacheHeartRateStatisticsBuilderHeartRateSample {} *__begin_; 
         struct HDActivityCacheHeartRateStatisticsBuilderHeartRateSample {} *__end_; 
         struct __compressed_pair<HDActivityCacheHeartRateStatisticsBuilderHeartRateSample *, std::__1::allocator<HDActivityCacheHeartRateStatisticsBuilderHeartRateSample> > { 
-            struct HDActivityCacheHeartRateStatisticsBuilderHeartRateSample {} *__first_; 
+            struct HDActivityCacheHeartRateStatisticsBuilderHeartRateSample {} *__value_; 
         } __end_cap_; 
     }  _heartRateSamples;
     NSMutableDictionary * _recoveryReadingsByWorkoutUUID;
@@ -26,7 +26,7 @@
         struct HDActivityCacheStatisticsBuilderWorkoutSample {} *__begin_; 
         struct HDActivityCacheStatisticsBuilderWorkoutSample {} *__end_; 
         struct __compressed_pair<HDActivityCacheStatisticsBuilderWorkoutSample *, std::__1::allocator<HDActivityCacheStatisticsBuilderWorkoutSample> > { 
-            struct HDActivityCacheStatisticsBuilderWorkoutSample {} *__first_; 
+            struct HDActivityCacheStatisticsBuilderWorkoutSample {} *__value_; 
         } __end_cap_; 
     }  _workouts;
 }

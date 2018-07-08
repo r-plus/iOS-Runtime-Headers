@@ -11,6 +11,8 @@
     bool  _allowsStorePurchases;
     NSMutableDictionary * _cachedSettings;
     MCProfileConnection * _connection;
+    long long  _maximumMovieRatingForAgeGate;
+    long long  _maximumTVShowRatingForAgeGate;
 }
 
 @property (nonatomic, readonly) bool allowsAccountModification;
@@ -23,7 +25,9 @@
 @property (nonatomic, readonly) bool hasRestrictionsPasscode;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) long long maximumMovieRating;
+@property (nonatomic) long long maximumMovieRatingForAgeGate;
 @property (nonatomic, readonly) long long maximumTVShowRating;
+@property (nonatomic) long long maximumTVShowRatingForAgeGate;
 @property (readonly) Class superclass;
 
 + (id)sharedRestrictionsMonitor;
@@ -42,8 +46,12 @@
 - (bool)hasRestrictionsPasscode;
 - (id)init;
 - (long long)maximumMovieRating;
+- (long long)maximumMovieRatingForAgeGate;
 - (long long)maximumTVShowRating;
+- (long long)maximumTVShowRatingForAgeGate;
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
+- (void)setMaximumMovieRatingForAgeGate:(long long)arg1;
+- (void)setMaximumTVShowRatingForAgeGate:(long long)arg1;
 - (void)synchronizeWithCompletionHandler:(id /* block */)arg1;
 
 @end

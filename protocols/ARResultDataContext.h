@@ -5,8 +5,13 @@
 
 @required
 
+- (long long)cameraPosition;
 - (ARImageData *)imageData;
 - (NSArray *)resultDataOfClass:(Class)arg1;
-- (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })sessionOriginTransform;
+
+@optional
+
+- (NSArray *)anchorsToAdd;
+- (NSArray *)anchorsToRemove;
 
 @end

@@ -97,6 +97,7 @@
 - (struct BufferStates { struct array<TSCH3D::GLSingleState, 2> { struct GLSingleState { unsigned int x_1_2_1; struct UpdatableValue<unsigned int> { unsigned int x_2_3_1; } x_1_2_2; } x_1_1_1[2]; } x1; }*)bufferStates;
 - (id)capabilitiesForExtensions:(id)arg1;
 - (id)childrenContexts;
+- (bool)clearIfBoundAsCurrentContext;
 - (void)clearParent;
 - (void)dealloc;
 - (id)description;

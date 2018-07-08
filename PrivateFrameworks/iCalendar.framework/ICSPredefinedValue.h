@@ -7,6 +7,7 @@
 }
 
 + (id)numberWithLong:(long long)arg1;
++ (bool)supportsSecureCoding;
 
 - (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;

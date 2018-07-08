@@ -19,6 +19,8 @@
 - (void).cxx_destruct;
 - (unsigned long long)desiredFieldOptions;
 - (id)desiredKeys;
+- (id)experimentalizableKeys;
+- (id)experimentalizedKeysByOriginalKey;
 - (id)genericKeys;
 - (id)initWithContentDatabase:(id)arg1 contentDirectory:(id)arg2 desiredTagRecordFieldOptions:(unsigned long long)arg3;
 - (id)initWithContentDatabase:(id)arg1 contentDirectory:(id)arg2 experimentalizableFieldsPostfix:(id)arg3 activeTreatmentID:(id)arg4;

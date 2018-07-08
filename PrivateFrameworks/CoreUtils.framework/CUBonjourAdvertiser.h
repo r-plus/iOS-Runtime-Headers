@@ -3,7 +3,6 @@
  */
 
 @interface CUBonjourAdvertiser : NSObject {
-    bool  _activateCalled;
     bool  _activated;
     unsigned long long  _advertiseFlags;
     bool  _advertiseFlagsChanged;
@@ -27,7 +26,7 @@
     NSDictionary * _txtDictionary;
     bool  _txtDictionaryChanged;
     struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; char *x15; struct LogCategoryPrivate {} *x16; } * _ucat;
-    bool  _updating;
+    bool  _updatePending;
 }
 
 @property (nonatomic) unsigned long long advertiseFlags;
@@ -42,9 +41,8 @@
 @property (nonatomic, copy) NSDictionary *txtDictionary;
 
 - (void).cxx_destruct;
-- (void)_activate;
+- (void)_activateLocked;
 - (void)_activateSafeInvokeBlock:(id /* block */)arg1;
-- (void)_update;
 - (void)_updateLocked;
 - (void)_updateTXTDictionary;
 - (void)activate;
@@ -60,7 +58,6 @@
 - (void)invalidate;
 - (id)label;
 - (id)name;
-- (void)performUpdate:(id /* block */)arg1;
 - (int)port;
 - (id)serviceType;
 - (void)setAdvertiseFlags:(unsigned long long)arg1;

@@ -4,6 +4,7 @@
 
 @interface PIAutoLoopMirrorVideoNode : PIAutoLoopVideoNode
 
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })_conformTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)_evaluateAudioMix:(out id*)arg1;
 - (id)_evaluateVideo:(out id*)arg1;
 - (id)_evaluateVideoComposition:(out id*)arg1;

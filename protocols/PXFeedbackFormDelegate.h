@@ -18,5 +18,6 @@
 
 - (bool)shouldContinuePresentingFormAfterFeedback;
 - (bool)wantsCustomFeedbackSection;
+- (bool)wantsPositiveFeedbackSection;
 
 @end

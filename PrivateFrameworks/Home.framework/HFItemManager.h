@@ -81,6 +81,7 @@
 - (id)_itemsToUpdateForAllowAccessWhileLockedSettingChange;
 - (id)_itemsToUpdateForIncomingInvitation:(id)arg1;
 - (id)_itemsToUpdateForMediaObjectChange:(id)arg1;
+- (id)_itemsToUpdateForMediaProfileContainer:(id)arg1;
 - (id)_itemsToUpdateForMediaSessionChange:(id)arg1;
 - (id)_itemsToUpdateForMediaSystemChange:(id)arg1;
 - (id)_itemsToUpdateForModifiedAccessories:(id)arg1;
@@ -234,6 +235,7 @@
 - (void)home:(id)arg1 didUpdateNameForServiceGroup:(id)arg2;
 - (void)home:(id)arg1 didUpdateNameForTrigger:(id)arg2;
 - (void)home:(id)arg1 didUpdateNameForZone:(id)arg2;
+- (void)home:(id)arg1 didUpdateReprovisionStateForAccessory:(id)arg2;
 - (void)home:(id)arg1 didUpdateRoom:(id)arg2 forAccessory:(id)arg3;
 - (void)home:(id)arg1 didUpdateStateForOutgoingInvitations:(id)arg2;
 - (void)home:(id)arg1 didUpdateTrigger:(id)arg2;

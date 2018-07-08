@@ -18,9 +18,8 @@
 - (id)initWithConnection:(id)arg1;
 - (void)rpcFetchAndProcessChanges:(id)arg1 reply:(id /* block */)arg2;
 - (void)rpcFetchAndProcessClassAChanges:(id)arg1 reply:(id /* block */)arg2;
-- (void)rpcForceUploadAnalyticsWithReply:(id /* block */)arg1;
-- (void)rpcGetAnalyticsJSONWithReply:(id /* block */)arg1;
-- (void)rpcGetAnalyticsSysdiagnoseWithReply:(id /* block */)arg1;
+- (void)rpcGetCKDeviceIDWithReply:(id /* block */)arg1;
+- (void)rpcKnownBadState:(id)arg1 reply:(id /* block */)arg2;
 - (void)rpcPerformanceCounters:(id /* block */)arg1;
 - (void)rpcPushOutgoingChanges:(id)arg1 reply:(id /* block */)arg2;
 - (void)rpcResetCloudKit:(id)arg1 reply:(id /* block */)arg2;

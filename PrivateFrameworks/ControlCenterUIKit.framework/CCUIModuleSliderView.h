@@ -4,6 +4,9 @@
 
 @interface CCUIModuleSliderView : UIControl <CCUIContentClipping, CCUIContentModuleExpandedStateListener, CCUIContentModuleTopLevelGestureProvider, CCUIGroupRendering, UIGestureRecognizerDelegate> {
     CCUICAPackageView * _compensatingGlyphPackageView;
+    double  _continuousSliderCornerRadius;
+    UIView * _continuousValueBackgroundView;
+    UIView * _continuousValueClippingView;
     _UIEdgeFeedbackGenerator * _edgeFeedbackGenerator;
     bool  _firstStepIsDisabled;
     bool  _firstStepIsOff;
@@ -29,6 +32,7 @@
 }
 
 @property (getter=isContentClippingRequired, nonatomic, readonly) bool contentClippingRequired;
+@property (nonatomic) double continuousSliderCornerRadius;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool firstStepIsDisabled;
@@ -55,8 +59,9 @@
 - (void)_configureCompensatingGlyphPackageView:(id)arg1;
 - (void)_configureGlyphPackageView:(id)arg1;
 - (void)_continueTrackingWithGestureRecognizer:(id)arg1;
-- (id)_continuousValueView;
+- (id)_continuousValueClippingView;
 - (id)_createBackgroundViewForStep:(unsigned long long)arg1;
+- (void)_createContinuousSliderClippingViewWithBackgroundView:(id)arg1;
 - (id)_createSeparatorView;
 - (void)_createSeparatorViewsForNumberOfSteps:(unsigned long long)arg1;
 - (void)_createStepViewsForNumberOfSteps:(unsigned long long)arg1;
@@ -78,6 +83,7 @@
 - (float)_valueForPanGestureRecognizer:(id)arg1 withAbsoluteReference:(bool)arg2;
 - (float)_valueFromStep:(unsigned long long)arg1;
 - (void)contentModuleWillTransitionToExpandedContentMode:(bool)arg1;
+- (double)continuousSliderCornerRadius;
 - (bool)firstStepIsDisabled;
 - (bool)firstStepIsOff;
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
@@ -93,6 +99,7 @@
 - (void)layoutSubviews;
 - (unsigned long long)numberOfSteps;
 - (id)punchOutRootLayer;
+- (void)setContinuousSliderCornerRadius:(double)arg1;
 - (void)setFirstStepIsDisabled:(bool)arg1;
 - (void)setFirstStepIsOff:(bool)arg1;
 - (void)setGlyphImage:(id)arg1;

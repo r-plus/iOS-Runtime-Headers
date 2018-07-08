@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCFeedCursor : NSObject <NSCoding, NSCopying> {
+@interface FCFeedCursor : NSObject <NSCopying, NSSecureCoding> {
     unsigned long long  _order;
 }
 
@@ -16,6 +16,7 @@
 + (id)cursorForDate:(id)arg1;
 + (id)cursorForOrder:(unsigned long long)arg1;
 + (id)cursorForTopOfFeed;
++ (bool)supportsSecureCoding;
 
 - (id)bottommostCursor:(id)arg1;
 - (long long)compareToCursor:(id)arg1;

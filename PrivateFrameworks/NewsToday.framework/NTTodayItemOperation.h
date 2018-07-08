@@ -3,7 +3,7 @@
  */
 
 @interface NTTodayItemOperation : FCOperation {
-    <FCAppConfiguration> * _appConfiguration;
+    <FCNewsAppConfiguration> * _appConfiguration;
     NSDictionary * _catchUpOperationResultsBySectionDescriptor;
     <FCContentContext> * _contentContext;
     NSArray * _feedItems;
@@ -13,10 +13,11 @@
     <NTTodayResultOperationInfoProviding> * _operationInfo;
     NSDictionary * _resultAssetFileURLsByRemoteURL;
     NSDictionary * _resultTodayItemsBySectionDescriptor;
+    NSDictionary * _slotAllocationByDynamicSlotItemID;
     id /* block */  _todayItemCompletion;
 }
 
-@property (nonatomic, copy) <FCAppConfiguration> *appConfiguration;
+@property (nonatomic, copy) <FCNewsAppConfiguration> *appConfiguration;
 @property (nonatomic, copy) NSDictionary *catchUpOperationResultsBySectionDescriptor;
 @property (nonatomic, retain) <FCContentContext> *contentContext;
 @property (nonatomic, copy) NSArray *feedItems;
@@ -26,6 +27,7 @@
 @property (nonatomic, copy) <NTTodayResultOperationInfoProviding> *operationInfo;
 @property (nonatomic, retain) NSDictionary *resultAssetFileURLsByRemoteURL;
 @property (nonatomic, retain) NSDictionary *resultTodayItemsBySectionDescriptor;
+@property (nonatomic, copy) NSDictionary *slotAllocationByDynamicSlotItemID;
 @property (nonatomic, copy) id /* block */ todayItemCompletion;
 
 - (void).cxx_destruct;
@@ -54,7 +56,9 @@
 - (void)setOperationInfo:(id)arg1;
 - (void)setResultAssetFileURLsByRemoteURL:(id)arg1;
 - (void)setResultTodayItemsBySectionDescriptor:(id)arg1;
+- (void)setSlotAllocationByDynamicSlotItemID:(id)arg1;
 - (void)setTodayItemCompletion:(id /* block */)arg1;
+- (id)slotAllocationByDynamicSlotItemID;
 - (id /* block */)todayItemCompletion;
 - (bool)validateOperation;
 

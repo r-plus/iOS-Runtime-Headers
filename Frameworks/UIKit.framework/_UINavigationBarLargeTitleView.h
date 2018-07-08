@@ -52,6 +52,7 @@
 - (void)adoptFinalStateFromTransition:(id)arg1 transitionCompleted:(bool)arg2;
 - (bool)alignAccessoryViewToTitleBaseline;
 - (id)alternateTitles;
+- (void)ensureBackButtonTruncationOccursWithContext:(id)arg1;
 - (id)fontMetrics;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;

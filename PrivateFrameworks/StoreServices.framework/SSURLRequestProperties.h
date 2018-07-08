@@ -3,6 +3,7 @@
  */
 
 @interface SSURLRequestProperties : NSObject <NSCoding, NSCopying, NSMutableCopying, SSXPCCoding> {
+    NSDictionary * _additionalMetrics;
     long long  _allowedRetryCount;
     bool  _allowsBootstrapCellularData;
     unsigned long long  _cachePolicy;
@@ -28,6 +29,7 @@
     bool  _shouldDecodeResponse;
     bool  _shouldDisableCellular;
     bool  _shouldDisableCellularFallback;
+    bool  _shouldDisableReversePush;
     bool  _shouldProcessProtocol;
     bool  _shouldSendSecureToken;
     bool  _shouldSetCookies;
@@ -50,6 +52,7 @@
 @property (readonly) long long URLBagType;
 @property (readonly, copy) id /* block */ URLBagURLBlock;
 @property (readonly, copy) NSArray *URLs;
+@property (readonly, copy) NSDictionary *additionalMetrics;
 @property (readonly) long long allowedRetryCount;
 @property (readonly) bool allowsBootstrapCellularData;
 @property (readonly) unsigned long long cachePolicy;
@@ -74,6 +77,7 @@
 @property (readonly) bool shouldDecodeResponse;
 @property (readonly) bool shouldDisableCellular;
 @property (readonly) bool shouldDisableCellularFallback;
+@property (readonly) bool shouldDisableReversePush;
 @property (readonly) bool shouldProcessProtocol;
 @property (readonly) bool shouldSendSecureToken;
 @property (readonly) bool shouldSetCookies;
@@ -93,6 +97,7 @@
 - (id /* block */)URLBagURLBlock;
 - (id)URLs;
 - (id)_initCommon;
+- (id)additionalMetrics;
 - (long long)allowedRetryCount;
 - (bool)allowsBootstrapCellularData;
 - (unsigned long long)cachePolicy;
@@ -127,6 +132,7 @@
 - (bool)shouldDecodeResponse;
 - (bool)shouldDisableCellular;
 - (bool)shouldDisableCellularFallback;
+- (bool)shouldDisableReversePush;
 - (bool)shouldProcessProtocol;
 - (bool)shouldSendSecureToken;
 - (bool)shouldSetCookies;

@@ -6,6 +6,7 @@
     NSDate * _endDate;
     long long  _gracePeriod;
     NSString * _priorityKey;
+    NSString * _reason;
     double  _repeatInterval;
     bool  _repeating;
     bool  _requireMainsPower;
@@ -15,6 +16,7 @@
 }
 
 @property (nonatomic, retain) NSDate *endDate;
+@property (nonatomic, copy) NSString *reason;
 @property (nonatomic) double repeatInterval;
 @property (getter=isRepeating, nonatomic) bool repeating;
 @property (nonatomic) bool requireMainsPower;
@@ -37,11 +39,13 @@
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToScheduledAcivityCriteria:(id)arg1;
 - (bool)isRepeating;
+- (id)reason;
 - (double)repeatInterval;
 - (bool)requireMainsPower;
 - (bool)requireNetworkConnectivity;
 - (bool)requireScreenSleep;
 - (void)setEndDate:(id)arg1;
+- (void)setReason:(id)arg1;
 - (void)setRepeatInterval:(double)arg1;
 - (void)setRepeating:(bool)arg1;
 - (void)setRequireMainsPower:(bool)arg1;

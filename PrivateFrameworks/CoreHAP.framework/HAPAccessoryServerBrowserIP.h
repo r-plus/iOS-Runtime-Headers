@@ -41,6 +41,7 @@
 - (void)_processPendingBonjourEvent:(id)arg1;
 - (int)_purgePendingBonjourEvents:(id)arg1 withProcessing:(bool)arg2;
 - (void)_removeDevice:(id)arg1;
+- (void)_reprovisionDevice:(id)arg1;
 - (int)_server:(id*)arg1 forBonjourDevice:(id)arg2;
 - (int)_server:(id*)arg1 forWACDevice:(id)arg2;
 - (void)_setReachability:(bool)arg1 forServer:(id)arg2;
@@ -54,6 +55,7 @@
 - (long long)linkType;
 - (void)matchAccessoryServerWithSetupID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)mergeScanResults:(id)arg1;
+- (void)notifyDelegatesOfWACCompletionWithIdentifier:(id)arg1 error:(id)arg2;
 - (id)pendingBonjourEvents;
 - (void)processPendingBonjourRemoveEvents:(id)arg1;
 - (id)scanInstance;
@@ -67,8 +69,9 @@
 - (void)setScanInstance:(id)arg1;
 - (void)setScanResults:(id)arg1;
 - (void)startDiscoveringAccessoryServers;
+- (void)startDiscoveringWACAccessoryServerWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)startDiscoveringWACAccessoryServers;
-- (void)startWACScan;
+- (void)startWACScanWithIdentifier:(id)arg1;
 - (void)stopDiscoveringAccessoryServers;
 - (void)stopDiscoveringWACAccessoryServers;
 - (void)stopWACScan;

@@ -47,7 +47,6 @@
 - (void)_isFolderSharingSupported;
 - (bool)_isOwner;
 - (bool)_isOwnerOrShareAlreadyAccepted;
-- (void)_isURLWellFormed;
 - (void)_isUserSignedInToiCloudDrive;
 - (bool)_isiWorkShare;
 - (void)_jumpToSelector:(SEL)arg1;

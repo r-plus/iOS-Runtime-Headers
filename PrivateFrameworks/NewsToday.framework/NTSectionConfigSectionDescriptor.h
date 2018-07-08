@@ -8,9 +8,7 @@
     NSString * _backgroundGradientColor;
     unsigned long long  _cachedResultCutoffTime;
     NSString * _compactName;
-    NSString * _discoverMoreVideosSubtitle;
-    NSString * _discoverMoreVideosTitle;
-    NSURL * _discoverMoreVideosURL;
+    NTPBDiscoverMoreVideosInfo * _discoverMoreVideosInfo;
     bool  _displaysAsVideoPlaylist;
     unsigned long long  _fallbackOrder;
     NSObject<NTSectionFetchDescriptor> * _fetchDescriptor;
@@ -20,6 +18,7 @@
     unsigned long long  _minimumStoriesAllocation;
     NSString * _name;
     NSString * _nameColor;
+    bool  _openVideoPlaylistInApp;
     NSString * _personalizationFeatureID;
     int  _readArticlesFilterMethod;
     NSString * _referralBarName;
@@ -38,9 +37,7 @@
 @property (nonatomic, readonly, copy) NSString *compactName;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly, copy) NSString *discoverMoreVideosSubtitle;
-@property (nonatomic, readonly, copy) NSString *discoverMoreVideosTitle;
-@property (nonatomic, readonly, copy) NSURL *discoverMoreVideosURL;
+@property (nonatomic, readonly, copy) NTPBDiscoverMoreVideosInfo *discoverMoreVideosInfo;
 @property (nonatomic, readonly) bool displaysAsVideoPlaylist;
 @property (nonatomic, readonly) unsigned long long fallbackOrder;
 @property (nonatomic, copy) NSObject<NTSectionFetchDescriptor> *fetchDescriptor;
@@ -51,6 +48,7 @@
 @property (nonatomic, readonly) unsigned long long minimumStoriesAllocation;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSString *nameColor;
+@property (nonatomic, readonly) bool openVideoPlaylistInApp;
 @property (nonatomic, readonly, copy) NSString *personalizationFeatureID;
 @property (nonatomic, readonly) int readArticlesFilterMethod;
 @property (nonatomic, readonly, copy) NSString *referralBarName;
@@ -71,9 +69,7 @@
 - (id)compactName;
 - (void)configureCatchUpOperationWithFetchRequest:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)discoverMoreVideosSubtitle;
-- (id)discoverMoreVideosTitle;
-- (id)discoverMoreVideosURL;
+- (id)discoverMoreVideosInfo;
 - (bool)displaysAsVideoPlaylist;
 - (unsigned long long)fallbackOrder;
 - (id)fetchDescriptor;
@@ -81,12 +77,13 @@
 - (id)incrementalLimitTransformationWithFeedPersonalizer:(id)arg1 limit:(unsigned long long)arg2 priorFeedItems:(id)arg3;
 - (id)incrementalSortTransformationWithFeedPersonalizer:(id)arg1;
 - (id)init;
-- (id)initWithSectionConfig:(id)arg1 appConfiguration:(id)arg2 todayData:(id)arg3 supplementalFeedFilterOptions:(long long)arg4;
+- (id)initWithSectionConfig:(id)arg1 topStoriesChannelID:(id)arg2 hiddenFeedIDs:(id)arg3 todayData:(id)arg4 supplementalFeedFilterOptions:(long long)arg5;
 - (int)leadingCellPromotionPolicy;
 - (unsigned long long)maximumStoriesAllocation;
 - (unsigned long long)minimumStoriesAllocation;
 - (id)name;
 - (id)nameColor;
+- (bool)openVideoPlaylistInApp;
 - (id)personalizationFeatureID;
 - (int)readArticlesFilterMethod;
 - (id)referralBarName;

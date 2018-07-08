@@ -7,10 +7,10 @@
         struct TSWPParagraphMetrics {} *__begin_; 
         struct TSWPParagraphMetrics {} *__end_; 
         struct __compressed_pair<TSWPParagraphMetrics *, std::__1::allocator<TSWPParagraphMetrics> > { 
-            struct TSWPParagraphMetrics {} *__first_; 
+            struct TSWPParagraphMetrics {} *__value_; 
         } __end_cap_; 
     }  _paragraphMetrics;
-    TSUWeakReference * _storageReference;
+    TSWPStorage * _storage;
 }
 
 @property (readonly, copy) NSString *debugDescription;

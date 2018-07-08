@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UICollectionViewController : UIViewController <DebugHierarchyObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewFocusDelegate_Legacy, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Deprecated, _UIKeyboardAutoRespondingScrollViewController> {
+@interface UICollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewFocusDelegate_Legacy, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Deprecated, _UIKeyboardAutoRespondingScrollViewController> {
     UICollectionView * _collectionView;
     struct { 
         unsigned int clearsSelectionOnViewWillAppear : 1; 
@@ -24,8 +24,6 @@
 @property (getter=_scrollView, nonatomic, readonly, retain) UIScrollView<_UIKeyboardAutoRespondingScrollView> *scrollView;
 @property (readonly) Class superclass;
 @property (nonatomic) bool useLayoutToLayoutNavigationTransitions;
-
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (void).cxx_destruct;
 - (void)__viewDidAppear:(bool)arg1;
@@ -77,9 +75,5 @@
 - (void)willPresentPreviewViewController:(id)arg1 forItemAtIndexPath:(id)arg2;
 - (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3;
 - (void)willPresentPreviewViewController:(id)arg1 forPosition:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3;
-
-// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
-
-- (id)debugHierarchyPropertyDescriptions;
 
 @end

@@ -4,10 +4,10 @@
 
 @interface MRSetStateMessage : MRProtocolMessage
 
-@property (nonatomic, readonly) void*state;
+@property (nonatomic, readonly) _MRSetStateMessageProtobuf *state;
 
-- (id)initWithNowPlayingState:(void*)arg1;
-- (void*)state;
+- (id)initWithNowPlayingState:(id)arg1;
+- (id)state;
 - (unsigned long long)type;
 
 @end

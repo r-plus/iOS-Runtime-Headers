@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreUtils.framework/CoreUtils
  */
 
-@interface CUTCPConnection : NSObject {
+@interface CUTCPConnection : NSObject <CUReadWriteRequestable> {
     id /* block */  _activateCompletion;
     double  _connectTimeoutSecs;
     struct AsyncConnection { } * _connector;

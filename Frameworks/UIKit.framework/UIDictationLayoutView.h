@@ -3,24 +3,17 @@
  */
 
 @interface UIDictationLayoutView : UIDictationView {
+    bool  _blackTextColor;
     NSString * _currentDictationLanguage;
     UIButton * _globeButton;
     bool  _hideSwitcher;
     UIButton * _keyboardButton;
     UILabel * _languageLabel;
-    bool  _selectionGestureDetected;
-    UIButton * _startButton;
-    UIButton * _stopButton;
     UIButton * _waveTapEndpointButton;
 }
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
+- (id)darkGrayColor;
 - (void)dealloc;
-
-// Image: /Developer/usr/lib/libMainThreadChecker.dylib
-
-- (void)didEndIndirectSelectionGesture;
 - (void)finishReturnToKeyboard;
 - (void)globeButtonPressed:(id)arg1 withEvent:(id)arg2;
 - (void)globeButtonPressed:(id)arg1 withEvent:(id)arg2 location:(struct CGPoint { double x1; double x2; })arg3;
@@ -31,8 +24,6 @@
 - (void)returnToKeyboard;
 - (void)setRenderConfig:(id)arg1;
 - (void)setState:(int)arg1;
-- (void)startStopButtonPressed;
 - (void)updateLanguageLabel;
-- (void)willBeginIndirectSelectionGesture;
 
 @end

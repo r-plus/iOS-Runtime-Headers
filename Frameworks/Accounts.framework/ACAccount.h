@@ -77,8 +77,10 @@
 @property (setter=aa_setUndergoingRepair:, nonatomic) bool aa_isUndergoingRepair;
 @property (setter=aa_setUsesCloudDocs:, nonatomic) bool aa_isUsingCloudDocs;
 @property (nonatomic, readonly) bool aa_isUsingiCloud;
+@property (setter=aa_setLastKnownQuota:, nonatomic, copy) NSNumber *aa_lastKnownQuota;
 @property (setter=aa_setLastName:, nonatomic, copy) NSString *aa_lastName;
 @property (nonatomic, readonly) NSString *aa_mapsToken;
+@property (nonatomic, readonly) NSString *aa_mdmServerToken;
 @property (setter=aa_setMiddleName:, nonatomic, copy) NSString *aa_middleName;
 @property (nonatomic, readonly) bool aa_needsEmailConfiguration;
 @property (nonatomic, readonly) bool aa_needsRegistration;
@@ -87,6 +89,7 @@
 @property (nonatomic, readonly) NSString *aa_personID;
 @property (nonatomic, readonly) NSString *aa_primaryEmail;
 @property (nonatomic, readonly) NSString *aa_protocolVersion;
+@property (nonatomic, readonly, copy) AARegionInfo *aa_regionInfo;
 @property (nonatomic, readonly) int aa_repairerPID;
 @property (nonatomic, readonly) bool aa_serviceUnavailable;
 @property (nonatomic, readonly) NSDictionary *aa_serviceUnavailableInfo;
@@ -137,6 +140,7 @@
 @property (nonatomic, readonly) NSDictionary *ck_dataclassProperties;
 @property (nonatomic, readonly) NSString *ck_identifier;
 @property (nonatomic, readonly) NSString *clientToken;
+@property (nonatomic, readonly) bool cls_isEligibleAccount;
 @property (nonatomic, retain) NSDictionary *communicationServiceRules;
 @property (nonatomic, retain) NSDate *creationDate;
 @property (nonatomic, retain) ACAccountCredential *credential;
@@ -303,6 +307,10 @@
 - (id)userFullName;
 - (id)username;
 
+// Image: /System/Library/Frameworks/ClassKit.framework/ClassKit
+
+- (bool)cls_isEligibleAccount;
+
 // Image: /System/Library/PrivateFrameworks/AccountsUI.framework/AccountsUI
 
 - (id)displayUsername;
@@ -350,8 +358,10 @@
 - (bool)aa_isUndergoingRepair;
 - (bool)aa_isUsingCloudDocs;
 - (bool)aa_isUsingiCloud;
+- (id)aa_lastKnownQuota;
 - (id)aa_lastName;
 - (id)aa_mapsToken;
+- (id)aa_mdmServerToken;
 - (id)aa_middleName;
 - (bool)aa_needsEmailConfiguration;
 - (bool)aa_needsRegistration;
@@ -360,6 +370,7 @@
 - (id)aa_personID;
 - (id)aa_primaryEmail;
 - (id)aa_protocolVersion;
+- (id)aa_regionInfo;
 - (void)aa_removeCerts;
 - (int)aa_repairerPID;
 - (bool)aa_serviceUnavailable;
@@ -368,7 +379,9 @@
 - (void)aa_setCloudDocsMigrationComplete:(bool)arg1;
 - (void)aa_setFirstName:(id)arg1;
 - (void)aa_setHSAToken:(id)arg1;
+- (void)aa_setLastKnownQuota:(id)arg1;
 - (void)aa_setLastName:(id)arg1;
+- (void)aa_setMDMServerToken:(id)arg1;
 - (void)aa_setMapsToken:(id)arg1;
 - (void)aa_setMiddleName:(id)arg1;
 - (void)aa_setNeedsToVerifyTerms:(bool)arg1;

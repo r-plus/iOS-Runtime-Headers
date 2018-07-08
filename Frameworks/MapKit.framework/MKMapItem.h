@@ -66,6 +66,8 @@
 @property (getter=_hasDisplayableAmenities, readonly) bool hasDisplayableAmenities;
 @property (getter=_hasEncyclopedicInfo, nonatomic, readonly) bool hasEncyclopedicInfo;
 @property (getter=_hasFlyover, nonatomic, readonly) bool hasFlyover;
+@property (getter=_hasGenderNeutralRestroom, nonatomic, readonly) bool hasGenderNeutralRestroom;
+@property (getter=_hasGenderNeutralRestroomAmenity, nonatomic, readonly) bool hasGenderNeutralRestroomAmenity;
 @property (getter=_hasGoodForKidsAmenity, nonatomic, readonly) bool hasGoodForKidsAmenity;
 @property (getter=_hasLocalizedOperatingHours, nonatomic, readonly) bool hasLocalizedOperatingHours;
 @property (getter=_hasMUID, nonatomic, readonly) bool hasMUID;
@@ -90,10 +92,9 @@
 @property (getter=_isMapItemTypeSettlement, nonatomic, readonly) bool isMapItemTypeSettlement;
 @property (getter=_isMapItemTypeTransit, nonatomic) bool isMapItemTypeTransit;
 @property (getter=_isMapItemTypeUnknown, nonatomic, readonly) bool isMapItemTypeUnknown;
+@property (getter=_isMessageIDVerified, nonatomic, readonly) bool isMessageIDVerified;
 @property (nonatomic, readonly) bool isPlaceHolder;
 @property (getter=_isStandAloneBrand, nonatomic, readonly) bool isStandAloneBrand;
-@property (getter=_localizedMessageBusinessOperatingHours, nonatomic, readonly) NSString *localizedMessageBusinessOperatingHours;
-@property (getter=_localizedOperatingHours, nonatomic, readonly) NSString *localizedOperatingHours;
 @property (getter=_localizedResponseTime, nonatomic, readonly) NSString *localizedResponseTime;
 @property (getter=_localizedSampleSizeForUserRatingScoreString, nonatomic, readonly) NSString *localizedSampleSizeForUserRatingScoreString;
 @property (getter=_messageBusinessHours, nonatomic, readonly) NSArray *messageBusinessHours;
@@ -102,6 +103,8 @@
 @property (nonatomic, readonly) MKMapItemMetadata *metadata;
 @property (getter=_muid, nonatomic, readonly) unsigned long long muid;
 @property (nonatomic, copy) NSString *name;
+@property (getter=_navBackgroundbrandColor, nonatomic, readonly) UIColor *navBackgroundbrandColor;
+@property (getter=_navTintBrandColor, nonatomic, readonly) UIColor *navTintBrandColor;
 @property (getter=_needsAttribution, nonatomic, readonly) bool needsAttribution;
 @property (getter=_normalizedUserRatingScore, nonatomic, readonly) float normalizedUserRatingScore;
 @property (getter=_openingHoursOptions, nonatomic, readonly) unsigned long long openingHoursOptions;
@@ -206,6 +209,7 @@
 - (id)_attributionFor:(id)arg1 sourceStringFormat:(id)arg2 moreSourceStringFormat:(id)arg3 imageTintColor:(id)arg4;
 - (id)_attributionWithDisplayName:(id)arg1 attributionFormat:(id)arg2 logo:(id)arg3 isSnippetLogo:(bool)arg4;
 - (id)_bestBrandIconURLForSize:(struct CGSize { double x1; double x2; })arg1 allowSmaller:(bool)arg2;
+- (id)_bestNavbarBrandIconURLForSize:(struct CGSize { double x1; double x2; })arg1 allowSmaller:(bool)arg2;
 - (id)_browseCategories;
 - (id)_businessClaim;
 - (bool)_canGetDirections;
@@ -244,6 +248,8 @@
 - (bool)_hasDisplayableAmenities;
 - (bool)_hasEncyclopedicInfo;
 - (bool)_hasFlyover;
+- (bool)_hasGenderNeutralRestroom;
+- (bool)_hasGenderNeutralRestroomAmenity;
 - (bool)_hasGoodForKidsAmenity;
 - (bool)_hasLocalizedCategoryNamesForType:(unsigned int)arg1;
 - (bool)_hasLocalizedOperatingHours;
@@ -263,7 +269,6 @@
 - (id)_htmlRepresentation;
 - (id)_identifier;
 - (id)_initWithLabelMarker:(id)arg1;
-- (bool)_isBusinessClosed;
 - (bool)_isEmptyContactMapItem;
 - (bool)_isEquivalentURLRepresentationTo:(id)arg1;
 - (bool)_isMapItemTypeAddress;
@@ -272,16 +277,11 @@
 - (bool)_isMapItemTypeSettlement;
 - (bool)_isMapItemTypeTransit;
 - (bool)_isMapItemTypeUnknown;
+- (bool)_isMessageIDVerified;
 - (bool)_isStandAloneBrand;
 - (void)_launchActivityForBrandItem;
-- (id)_localizedBusinessHoursWithCurrentOpeningHoursOptions;
-- (id)_localizedBusinessHoursWithOpeningHoursOptions:(unsigned long long)arg1 andOperationsHours:(id)arg2;
-- (id)_localizedBusinessHoursWithOptions:(unsigned long long)arg1;
 - (id)_localizedCategoryNamesForType:(unsigned int)arg1;
-- (id)_localizedMessageBusinessHoursWithCurrentOpeningHoursOptions;
-- (id)_localizedMessageBusinessOperatingHours;
 - (id)_localizedNextOpeningStringShort:(bool)arg1;
-- (id)_localizedOperatingHours;
 - (id)_localizedResponseTime;
 - (id)_localizedSampleSizeForUserRatingScoreString;
 - (id)_mapsDataString;
@@ -289,6 +289,8 @@
 - (id)_messageID;
 - (id)_messageURLString;
 - (unsigned long long)_muid;
+- (id)_navBackgroundbrandColor;
+- (id)_navTintBrandColor;
 - (bool)_needsAttribution;
 - (float)_normalizedUserRatingScore;
 - (unsigned long long)_openingHoursOptions;
@@ -346,6 +348,7 @@
 - (unsigned long long)hash;
 - (id)initWithAddressDictionary:(id)arg1;
 - (id)initWithCLLocation:(id)arg1;
+- (id)initWithCLLocation:(id)arg1 placeType:(int)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContact:(id)arg1;
 - (id)initWithGeoMapItem:(id)arg1 isPlaceHolderPlace:(bool)arg2;
@@ -381,7 +384,6 @@
 - (id)url;
 - (id)urlRepresentation;
 - (id)userValues;
-- (void)validateMessageIDWithCompletion:(id /* block */)arg1;
 - (id)venueLabelWithContext:(unsigned long long)arg1;
 - (id)yelpID;
 

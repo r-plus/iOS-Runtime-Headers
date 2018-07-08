@@ -18,6 +18,7 @@
 - (id)initRandomKeyWithSpecifier:(id)arg1;
 - (id)initWithAttributes:(id)arg1;
 - (id)initWithData:(id)arg1 specifier:(id)arg2 error:(id*)arg3;
+- (bool)isEqual:(id)arg1;
 - (id)keyData;
 - (struct NSString { Class x1; }*)keyDomain;
 - (id)keySpecifier;

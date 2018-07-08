@@ -6,9 +6,11 @@
     MRAVConcreteOutputDevice * _designatedGroupLeader;
     MRTransportExternalDevice * _externalDevice;
     NSString * _instanceIdentifier;
+    id  _outputContextDidChangeNotificationToken;
     NSArray * _outputDevices;
     NSDictionary * _outsourcedExternalDeviceCache;
     NSObject<OS_dispatch_queue> * _serialQueue;
+    NSString * _uniqueIdentifier;
 }
 
 @property (nonatomic, retain) MRAVConcreteOutputDevice *designatedGroupLeader;
@@ -16,15 +18,17 @@
 @property (nonatomic, copy) NSArray *outputDevices;
 @property (nonatomic, copy) NSDictionary *outsourcedExternalDeviceCache;
 
-- (void)_endpointOutputDevicesDidInvalidate:(id)arg1;
+- (void).cxx_destruct;
 - (void)_onQueue_reloadExternalDevice;
 - (void)_onQueue_setDesignatedGroupLeader:(id)arg1;
 - (void)_onQueue_setExternalDevice:(id)arg1;
+- (void)_updateOutputContextInfo;
 - (void)dealloc;
 - (id)designatedGroupLeader;
 - (id)externalDevice;
 - (id)initWithOutputDevices:(id)arg1;
 - (id)instanceIdentifier;
+- (bool)isProxyGroupPlayer;
 - (id)outputDeviceForDistantDevice:(id)arg1;
 - (id)outputDevices;
 - (id)outsourcedExternalDeviceCache;
@@ -32,5 +36,6 @@
 - (void)setExternalDevice:(id)arg1;
 - (void)setOutputDevices:(id)arg1;
 - (void)setOutsourcedExternalDeviceCache:(id)arg1;
+- (id)uniqueIdentifier;
 
 @end

@@ -37,7 +37,7 @@
     struct Renderer { int (**x1)(); struct shared_ptr<md::TaskContext> { struct TaskContext {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; struct unique_ptr<md::RenderQueue, std::__1::default_delete<md::RenderQueue> > { struct __compressed_pair<md::RenderQueue *, std::__1::default_delete<md::RenderQueue> > { struct RenderQueue {} *x_1_2_1; } x_3_1_1; } x3; struct RenderLayer {} *x4[28]; struct RenderLayer {} *x5[65]; struct RunLoopController {} *x6; struct MapEngine {} *x7; } * _mapRenderer;
     struct unique_ptr<md::RenderQueue, std::__1::default_delete<md::RenderQueue> > { 
         struct __compressed_pair<md::RenderQueue *, std::__1::default_delete<md::RenderQueue> > { 
-            struct RenderQueue {} *__first_; 
+            struct RenderQueue {} *__value_; 
         } __ptr_; 
     }  _renderQueue;
     struct RunLoopController { struct MapEngine {} *x1; } * _runLoopController;

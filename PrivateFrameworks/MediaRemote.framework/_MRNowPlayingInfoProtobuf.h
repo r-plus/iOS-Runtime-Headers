@@ -74,6 +74,7 @@
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic) unsigned long long uniqueIdentifier;
 
+- (void).cxx_destruct;
 - (int)StringAsRepeatMode:(id)arg1;
 - (int)StringAsShuffleMode:(id)arg1;
 - (id)album;
@@ -81,7 +82,6 @@
 - (id)artworkDataDigest;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (double)duration;

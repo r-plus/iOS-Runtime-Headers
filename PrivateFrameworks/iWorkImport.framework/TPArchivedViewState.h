@@ -9,11 +9,14 @@
     bool  _changeTrackingPaused;
     NSMutableDictionary * _chartUIState;
     TSKSelectionPath * _compatibilitySelectionPath;
+    TSDFreehandDrawingToolkitUIState * _freehandDrawingToolkitUIState;
     bool  _hasShowsCTDeletions;
     bool  _hasShowsCTMarkup;
     bool  _inspectorHidden;
     bool  _layoutBordersVisible;
     bool  _masterDrawablesSelectable;
+    long long  _pageViewState;
+    bool  _pencilAnnotationsHidden;
     bool  _rulerVisible;
     NSString * _selectedInspectorSwitchSegmentIdentifier;
     TSKSelectionPath * _selectionPath;
@@ -24,8 +27,8 @@
     bool  _showsComments;
     bool  _showsPageNavigator;
     double  _viewScale;
-    int  _viewScaleMode;
-    int  _viewScaleModeiOS;
+    long long  _viewScaleMode;
+    long long  _viewScaleModeiOS;
     struct CGRect { 
         struct CGPoint { 
             double x; 

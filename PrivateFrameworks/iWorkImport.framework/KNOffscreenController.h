@@ -4,7 +4,6 @@
 
 @interface KNOffscreenController : NSObject {
     KNAnimatedSlideView * _animatedSlideView;
-    bool  _isImageGenerationCancelled;
     struct CGSize { 
         double width; 
         double height; 
@@ -18,7 +17,6 @@
 
 - (void).cxx_destruct;
 - (id)animatedSlideView;
-- (void)cancelImageGeneration;
 - (struct CGImage { }*)copyImageOfCurrentEventIgnoringBuildVisilibity:(bool)arg1;
 - (void)dealloc;
 - (void)drawCurrentEventIntoContext:(struct CGContext { }*)arg1 intoRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 ignoreBuildVisibility:(bool)arg3;
